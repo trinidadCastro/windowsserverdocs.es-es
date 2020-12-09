@@ -6,12 +6,12 @@ ms.assetid: da58f312-bd3b-4bb6-98ca-6177869dd6ad
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 81c35d1a5673793220ec860266d129a4ecdb4046
-ms.sourcegitcommit: b18effcba95c85d6e08e7d29808b576491a5352e
+ms.openlocfilehash: eab47e24ad8c2bd5436b3516babee9237c3c80f3
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/15/2020
-ms.locfileid: "88243197"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96865574"
 ---
 # <a name="data-center-bridging-dcb"></a>Protocolo de puente del centro de datos \(DCB\)
 
@@ -72,7 +72,7 @@ A continuación se muestra una lista que resume las funciones proporcionadas por
 7. Admite la coexistencia de soluciones QoS de calidad de servicio de Windows Server 2016 \( \) .
 
 >[!NOTE]
->Antes de usar cualquier RDMA en la versión RoCE Ethernet convergente \( \) de RDMA, debe habilitar DCB. Aunque no es necesario para redes iWARP de protocolo RDMA de área extensa de Internet \( \) , las pruebas han determinado que todas las \- tecnologías RDMA basadas en Ethernet funcionan mejor con DCB. Por ello, debe considerar la posibilidad de usar DCB para las implementaciones de RDMA de iWARP. Para obtener más información, vea [acceso directo a memoria remota (RDMA) y switch Embedded Teaming (Set)](../../../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md).
+>Antes de usar cualquier RDMA en la versión RoCE Ethernet convergente \( \) de RDMA, debe habilitar DCB. Aunque no es necesario para redes iWARP de protocolo RDMA de área extensa de Internet \( \) , las pruebas han determinado que todas las \- tecnologías RDMA basadas en Ethernet funcionan mejor con DCB. Por ello, debe considerar la posibilidad de usar DCB para las implementaciones de RDMA de iWARP. Para más información, consulte [Acceso directo a memoria remota (RDMA) y Switch Embedded Teaming (SET)](../../../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md).
 
 ##  <a name="practical-applications-of-dcb"></a>Aplicaciones prácticas de DCB
 
@@ -102,10 +102,10 @@ Hay comandos de Windows PowerShell de DCB para Windows Server 2016 y Windows Ser
 
 En el siguiente tema de Windows Server 2016 se proporcionan las descripciones y la sintaxis de los cmdlets de Windows PowerShell para todos los \( \) \( \) cmdlets específicos de QoS Quality of Service de calidad de servicio \- . Enumera los cmdlets por orden alfabético según el verbo que aparece al principio del cmdlet.
 
-- [Módulo DcbQoS](/powershell/module/dcbqos/?view=win10-ps)
+- [Módulo DcbQoS](/powershell/module/dcbqos/)
 
 ### <a name="windows-server-2012-r2-windows-powershell-commands-for-dcb"></a>Windows Server 2012 R2 comandos de Windows PowerShell para DCB
 
 En el siguiente tema de Windows Server 2012 R2 se proporcionan las descripciones y la sintaxis de los cmdlets de Windows PowerShell para todos los \( \) \( \) cmdlets específicos de QoS Quality of Service de calidad de servicio \- . Enumera los cmdlets por orden alfabético según el verbo que aparece al principio del cmdlet.
 
-- [Cmdlets de Calidad de servicio (QoS) del Protocolo de puente del centro de datos (DCB) en Windows PowerShell](/powershell/module/dcbqos/?view=win10-ps&viewFallbackFrom=winserverr2-ps)
+- [Cmdlets de Calidad de servicio (QoS) del Protocolo de puente del centro de datos (DCB) en Windows PowerShell](/powershell/module/dcbqos/)

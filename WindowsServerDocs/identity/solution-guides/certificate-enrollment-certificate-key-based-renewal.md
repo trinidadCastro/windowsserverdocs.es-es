@@ -5,12 +5,12 @@ ms.author: delhan
 manager: dcscontentpm
 ms.date: 11/12/2019
 ms.topic: article
-ms.openlocfilehash: 92ca0c028d1275bf2d884a7c89be6ae2b351b78f
-ms.sourcegitcommit: 2365a7b23e2eccd13be350306c622d2ad9d36bc8
+ms.openlocfilehash: 9f9930cc59badf19036c598f11f2a5b423711c94
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96788152"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866074"
 ---
 # <a name="configuring-certificate-enrollment-web-service-for-certificate-key-based-renewal-on-a-custom-port"></a>Configuración del Servicio web de inscripción de certificados para la renovación basada en claves de certificados en un puerto personalizado
 
@@ -308,11 +308,11 @@ Una vez finalizada la prueba, revierta la configuración de tiempo al valor orig
 
 [Servicios Web de inscripción de certificados](https://techcommunity.microsoft.com/t5/Ask-the-Directory-Services-Team/Certificate-Enrollment-Web-Services/ba-p/397385)
 
-[Install-AdcsEnrollmentPolicyWebService](/powershell/module/adcsdeployment/install-adcsenrollmentpolicywebservice?view=win10-ps)
+[Install-AdcsEnrollmentPolicyWebService](/powershell/module/adcsdeployment/install-adcsenrollmentpolicywebservice)
 
-[Install-AdcsEnrollmentWebService](/powershell/module/adcsdeployment/install-adcsenrollmentwebservice?view=win10-ps)
+[Install-AdcsEnrollmentWebService](/powershell/module/adcsdeployment/install-adcsenrollmentwebservice)
 
-Vea también
+Consulte también
 
 [Foro de seguridad de Windows Server](https://aka.ms/adcsforum)
 

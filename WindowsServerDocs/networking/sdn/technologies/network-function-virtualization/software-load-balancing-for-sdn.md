@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 97abf182-4725-4026-801c-122db96964ed
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: 43591a1cca143037e9abe555321276cb0f83263b
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 1dc52e6b2bebf66f6a80e846481ec3f1656db443
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87995510"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866494"
 ---
 # <a name="software-load-balancing-slb-for-sdn"></a>\(SLB \) de equilibrio de carga de software para Sdn
 
@@ -29,7 +29,7 @@ El SLB de Windows Server incluye las siguientes funcionalidades.
 
 -   Admite direcciones IP dinámicas (DIP) en redes de área local virtuales (VLAN) y en redes virtuales que se crean con virtualización de red de Hyper-V.
 
--   Compatibilidad con sondeos de estado.
+-   Compatibilidad con el sondeo de estado.
 
 -   Listo para el escalado en la nube, incluida la capacidad de escalado horizontal, y capacidad de escalado vertical para multiplexores y agentes de host.
 
@@ -44,69 +44,69 @@ Mediante el SLB de Windows Server, puede escalar horizontalmente las capacidades
 
 SLB funciona mediante la asignación de direcciones IP virtuales (VIP) a direcciones IP dinámicas (DIP) que forman parte de un conjunto de recursos de servicio en la nube en el centro de trabajo.
 
-Las VIP son direcciones IP únicas que proporcionan acceso público a un grupo de máquinas virtuales con equilibrio de carga. Por ejemplo, las VIP son direcciones IP que se exponen en Internet para que los inquilinos y los clientes de inquilinos puedan conectarse a los recursos de inquilino en el centro de servicios en la nube.
+Las direcciones IP virtuales son direcciones IP únicas que proporcionan acceso público a un grupo de máquinas virtuales con equilibrio de carga. Por ejemplo, las VIP son direcciones IP que se exponen en Internet para que los inquilinos y los clientes de inquilinos puedan conectarse a los recursos de inquilino en el centro de servicios en la nube.
 
-Las DIP son las direcciones IP de las máquinas virtuales miembro de un grupo con equilibrio de carga detrás de la VIP. Las DIP se asignan dentro de la infraestructura de la nube a los recursos del inquilino.
+Las DIP son las direcciones IP de las máquinas virtuales que forman parte de un grupo con equilibrio de carga situado detrás de la dirección IP virtual. Las DIP se asignan dentro de la infraestructura en la nube a los recursos del inquilino.
 
-Las VIP se encuentran en el multiplexor SLB (MUX).  El MUX se compone de una o más máquinas virtuales (VM).  La controladora de red proporciona cada MUX con cada VIP y, a su vez, cada MUX usa Protocolo de puerta de enlace de borde (BGP) para anunciar cada VIP a los enrutadores de la red física como una ruta/32.  BGP permite que los enrutadores de red físicos:
+Las direcciones IP virtuales se encuentran en el multiplexor que actúa como equilibrador de carga de software (MUX).  El MUX se compone de una o más máquinas virtuales (VM).  Controladora de red proporciona cada MUX con cada dirección IP virtual y, a su vez, cada MUX usa Protocolo de puerta de enlace de borde (BGP) para anunciar cada dirección IP virtual a los enrutadores de la red física como una ruta /32.  BGP permite que los enrutadores de la red física:
 
 -   Obtenga información acerca de que hay una VIP disponible en cada MUX, incluso si las MUX se encuentran en distintas subredes de una red de nivel 3.
 
--   Reparta la carga de cada VIP en todas las MUX disponibles mediante el enrutamiento de múltiples rutas (ECMP) de igual costo.
+-   Distribuyan la carga de cada dirección IP virtual en todos los MUX disponibles mediante el enrutamiento multidireccional de igual costo (ECMP).
 
--   Detectar automáticamente un error o eliminación de MUX y dejar de enviar tráfico al MUX con errores.
+-   Detecten automáticamente un error o eliminación del MUX y dejen de enviar tráfico al MUX con errores.
 
--   Reparta la carga desde el MUX con errores o eliminado en el MUX correcto.
+-   Distribuyan la carga del MUX con errores o eliminado entre los MUX que funcionen correctamente.
 
 Cuando el tráfico público llega desde Internet, el MUX de SLB examina el tráfico, que contiene la dirección VIP como destino, y asigna y reescribe el tráfico para que llegue a una DIP individual. En el tráfico de red entrante, esta transacción se realiza en un proceso de dos pasos que se divide entre las máquinas virtuales de MUX y el host de Hyper-V en el que se encuentra la DIP de destino:
 
--   Equilibrio de carga: MUX usa la VIP para seleccionar una DIP, encapsula el paquete y reenvía el tráfico al host de Hyper-V donde se encuentra la DIP.
+-   Equilibrio de carga: el MUX usa la dirección IP virtual para seleccionar una DIP, encapsula el paquete y reenvía el tráfico al host de Hyper-V donde se encuentra la DIP.
 
 -   Traducción de direcciones de red (NAT): el host de Hyper-V quita la encapsulación del paquete, traduce la VIP a una DIP, vuelve a asignar los puertos y reenvía el paquete a la máquina virtual DIP.
 
 El MUX sabe cómo asignar VIP a los DIP correctos debido a las directivas de equilibrio de carga que se definen mediante el uso de la controladora de red. Estas reglas incluyen el protocolo, el puerto front-end, el puerto back-end y el algoritmo de distribución (5, 3 o 2 tuplas).
 
-Cuando las máquinas virtuales de inquilinos responden y envían tráfico de red saliente a las ubicaciones de Internet o de inquilinos remotos, ya que el host de Hyper-V realiza la NAT, el tráfico omite el MUX y va directamente al enrutador perimetral desde el host de Hyper-V. Este proceso de omisión de MUX se denomina Direct Server Return (DSR).
+Cuando las máquinas virtuales de inquilinos responden y envían tráfico de red saliente a las ubicaciones de Internet o de inquilinos remotos, ya que el host de Hyper-V realiza la NAT, el tráfico omite el MUX y va directamente al enrutador perimetral desde el host de Hyper-V. A este proceso en el que se ignora el MUX se le denomina Direct Server Return (DSR).
 
-Y después de establecer el flujo de tráfico de red inicial, el tráfico de red entrante omite completamente el MUX de SLB.
+Una vez establecido el flujo de tráfico de red inicial, el tráfico de red entrante ignorará completamente el MUX del equilibrador de carga de software.
 
-En la ilustración siguiente, un equipo cliente realiza una consulta DNS para la dirección IP de un sitio de SharePoint de la compañía; en este caso, una empresa ficticia denominada contoso. Se produce el siguiente proceso.
+En la ilustración siguiente, un equipo cliente realiza una consulta DNS para la dirección IP de un sitio de SharePoint de una empresa, en este caso, una empresa ficticia denominada Contoso. Se produce el siguiente proceso.
 
--   El servidor DNS devuelve el 107.105.47.60 de VIP al cliente.
+-   El servidor DNS devuelve la dirección IP virtual 107.105.47.60 al cliente.
 
--   El cliente envía una solicitud HTTP a la dirección VIP.
+-   El cliente envía una solicitud HTTP a la dirección IP virtual.
 
--   La red física tiene varias rutas de acceso disponibles para llegar a la dirección VIP ubicada en cualquier MUX.  Cada enrutador a lo largo del proceso usa ECMP para elegir el siguiente segmento de la ruta de acceso hasta que la solicitud llega a un MUX.
+-   La red física tiene varias rutas de acceso disponibles para llegar a la dirección IP virtual ubicada en cualquier MUX.  Cada enrutador a lo largo del proceso usa ECMP para elegir el siguiente segmento de la ruta hasta que la solicitud llega a un MUX.
 
--   El MUX que recibe la solicitud comprueba las directivas configuradas y observa que hay dos DIP disponibles, 10.10.10.5 y 10.10.20.5, en una red virtual para controlar la solicitud a la VIP 107.105.47.60
+-   El MUX que recibe la solicitud comprueba las directivas configuradas y observa que hay dos DIP disponibles, 10.10.10.5 y 10.10.20.5, en una red virtual para enviar la solicitud a la dirección IP virtual 107.105.47.60
 
 -   El MUX selecciona la 10.10.10.5 DIP y encapsula los paquetes con VXLAN para que pueda enviarlos al host que contiene la DIP mediante la dirección de red física del host.
 
 -   El host recibe el paquete encapsulado y lo inspecciona.  Quita la encapsulación y vuelve a escribir el paquete para que el destino sea ahora el 10.10.10.5 DIP en lugar de la dirección VIP y envía el tráfico a la máquina virtual DIP.
 
--   La solicitud ahora alcanzó el sitio de Contoso SharePoint en la granja de servidores 2. El servidor genera una respuesta y la envía al cliente, usando su propia dirección IP como origen.
+-   La solicitud ahora alcanzó el sitio de Contoso SharePoint en la granja de servidores 2. El servidor genera una respuesta y la envía al cliente mediante su propia dirección IP como origen.
 
--   El host intercepta el paquete saliente en el conmutador virtual que recuerda que el cliente, ahora el destino, realizó la solicitud original a la VIP.  El host reescribe el origen del paquete para que sea la dirección VIP, de modo que el cliente no vea la dirección DIP.
+-   El host intercepta el paquete saliente en el conmutador virtual que recuerda que el cliente, ahora el destino, realizó la solicitud original a la dirección IP virtual.  El host reescribe el origen del paquete para que sea la dirección VIP, de modo que el cliente no vea la dirección DIP.
 
 -   El host reenvía el paquete directamente a la puerta de enlace predeterminada de la red física que usa su tabla de enrutamiento estándar para reenviar el paquete al cliente que finalmente recibe la respuesta.
 
 ![Proceso de equilibrio de carga de software](../../../media/Software-Load-Balancing--SLB--for-SDN/slb_process.jpg)
 
-**Tráfico interno del centro de recursos de equilibrio de carga**
+**Equilibrio de carga del tráfico interno del centro de datos**
 
 Al equilibrar la carga del tráfico de red interno al centro de usuarios, por ejemplo, entre los recursos de inquilino que se ejecutan en servidores diferentes y que son miembros de la misma red virtual, el conmutador virtual de Hyper-V al que se conectan las máquinas virtuales realiza NAT.
 
-Con el equilibrio de carga de tráfico interno, el MUX envía y procesa la primera solicitud, que selecciona la DIP adecuada y enruta el tráfico a la DIP. A partir de ese momento, el flujo de tráfico establecido omite el MUX y va directamente de la máquina virtual a la máquina virtual.
+Con el equilibrio de carga de tráfico interno, el MUX envía y procesa la primera solicitud, que selecciona la DIP adecuada y enruta el tráfico a la DIP. A partir de ese momento, el flujo de tráfico establecido ignora al MUX y va directamente desde una máquina virtual a otra.
 
 **Sondeos de mantenimiento**
 
 SLB incluye sondeos de estado para validar el estado de la infraestructura de red, incluido lo siguiente.
 
--   Sondeo TCP a Puerto
+-   Sondeo TCP a puerto
 
--   Sondeo HTTP para el puerto y la dirección URL
+-   Sondeo HTTP a puerto y dirección URL
 
-A diferencia de un dispositivo de equilibrador de carga tradicional en el que el sondeo se origina en el dispositivo y se desplaza por la conexión a la DIP, el sondeo de SLB se origina en el host donde se encuentra la DIP y va directamente desde el agente de host de SLB a la DIP, con lo que se distribuye el trabajo entre los hosts.
+A diferencia de un dispositivo de equilibrio de carga tradicional en el que el sondeo se origina en el dispositivo y se desplaza por la conexión a la dirección DIP, el sondeo del equilibrador de carga de software se origina en el host donde se encuentra la dirección DIP y va directamente desde el agente de host del equilibrador de carga de software a la dirección DIP, con lo que se distribuye aún más el trabajo entre los hosts.
 
 ## <a name="software-load-balancing-infrastructure"></a><a name="bkmk_infrastructure"></a>Infraestructura de equilibrio de carga de software
 Para implementar SLB de Windows Server, primero debe implementar la controladora de red en Windows Server 2016 y una o varias máquinas virtuales SLB MUX.
@@ -136,29 +136,29 @@ La controladora de red hospeda el administrador de SLB y realiza las acciones si
 
 -   Proporciona el estado de mantenimiento de la infraestructura de SLB.
 
-### <a name="slb-mux"></a>MUX DE SLB
-El MUX de SLB procesa el tráfico de red entrante y asigna VIP a DIP y, a continuación, reenvía el tráfico a la DIP correcta. Cada MUX también usa BGP para publicar rutas de VIP en enrutadores perimetrales. BGP Keep Alive notifica a MUX cuando se produce un error en MUX, lo que permite a Active MUX redistribuir la carga en caso de que se produzca un error de MUX, lo que proporciona esencialmente equilibrio de carga para los equilibradores de carga.
+### <a name="slb-mux"></a>Multiplexor (MUX) que actúa como equilibrador de carga de software
+Este MUX procesa el tráfico de red entrante y asigna las direcciones IP virtuales a las direcciones DIP y, a continuación, reenvía el tráfico a la dirección DIP correcta. Cada MUX usa también BGP para publicar rutas de VIP a los enrutadores perimetrales. BGP Keep Alive notifica a MUX cuando se produce un error en MUX, lo que permite a Active MUX redistribuir la carga en caso de que se produzca un error de MUX, lo que proporciona esencialmente equilibrio de carga para los equilibradores de carga.
 
 ### <a name="hosts-that-are-running-hyper-v"></a>Hosts que ejecutan Hyper-V
 Puede usar SLB con equipos que ejecutan Windows Server 2016 e Hyper-V. Las máquinas virtuales del host de Hyper-V pueden ejecutar cualquier sistema operativo compatible con Hyper-V.
 
-### <a name="slb-host-agent"></a>Agente de host de SLB
+### <a name="slb-host-agent"></a>Agente de host del equilibrador de carga de software
 Al implementar SLB, debe usar System Center, Windows PowerShell u otra aplicación de administración para implementar el agente de host de SLB en cada equipo host de Hyper-V. Puede instalar el agente de host de SLB en todas las versiones de Windows Server 2016 que proporcionan compatibilidad con Hyper-V, incluido nano Server.
 
-El agente de host de SLB escucha las actualizaciones de directivas de SLB desde la controladora de red. Además, el agente de host de programa las reglas para SLB en los conmutadores virtuales de Hyper-V habilitados para SDN que están configurados en el equipo local.
+El agente de host del equilibrador de carga de software escucha las actualizaciones de directivas del equilibrador que proceden de Controladora de red. Además, el agente de host de programa las reglas para SLB en los conmutadores virtuales de Hyper-V habilitados para SDN que están configurados en el equipo local.
 
 ### <a name="sdn-enabled-hyper-v-virtual-switch"></a>Conmutador virtual de Hyper-V habilitado con SDN
 Para que un conmutador virtual sea compatible con SLB, debe usar el administrador de conmutadores virtuales de Hyper-V o los comandos de Windows PowerShell para crear el conmutador y, a continuación, debe habilitar la plataforma de filtrado virtual (VFP) para el conmutador virtual.
 
-Para obtener información sobre cómo habilitar VFP en conmutadores virtuales, vea los comandos de Windows PowerShell [Get-VMSystemSwitchExtension](/powershell/module/hyper-v/get-vmsystemswitchextension?view=win10-ps) y [enable-VMSwitchExtension](/powershell/module/hyper-v/enable-vmswitchextension?f=255&MSPPError=-2147217396&view=win10-ps).
+Para más información sobre cómo habilitar VFP en conmutadores virtuales, consulte los comandos de Windows PowerShell [Get-VMSystemSwitchExtension](/powershell/module/hyper-v/get-vmsystemswitchextension) y [Enable-VMSwitchExtension](/powershell/module/hyper-v/enable-vmswitchextension?f=255&MSPPError=-2147217396).
 
 El conmutador virtual de Hyper-V habilitado con SDN realiza las siguientes acciones para SLB.
 
--   Procesa la ruta de acceso de datos para SLB.
+-   Procesa la ruta de acceso de datos para el equilibrador de carga de software.
 
 -   Recibe el tráfico de red entrante del MUX.
 
--   Omite el MUX para el tráfico de red saliente y lo envía al enrutador mediante DSR.
+-   Ignora al MUX para el tráfico de red saliente y lo envía al enrutador mediante Direct Server Return.
 
 -   Se ejecuta en instancias de nano Server de Hyper-V.
 
@@ -167,11 +167,11 @@ El enrutador BGP realiza las siguientes acciones para SLB.
 
 -   Enruta el tráfico entrante al MUX mediante ECMP.
 
--   En el caso del tráfico de red saliente, usa la ruta proporcionada por el host.
+-   En el caso del tráfico de red saliente, usa la ruta que el host proporciona.
 
--   Escucha las actualizaciones de ruta para las direcciones VIP de SLB MUX.
+-   Escucha las actualizaciones de ruta para las direcciones VIP del MUX que actúa como equilibrador de carga de software.
 
--   Quita SLB MUX de la rotación de SLB si se produce un error de Keep Alive.
+-   Elimina estos MUX de la rotación de equilibradores de carga de software si se produce un error en la conexión persistente.
 
 ## <a name="software-load-balancing-features"></a><a name="bkmk_features"></a>Características de equilibrio de carga de software
 A continuación se muestran algunas de las características y capacidades de SLB.
@@ -206,7 +206,7 @@ A continuación se muestran algunas de las características y capacidades de SLB
 
 -   Puede implementar SLB en más de 2 nodos en una configuración activa/activa.
 
--   MUX se puede Agregar y quitar del grupo de MUX sin que ello afecte al servicio SLB. Esto mantiene la disponibilidad de SLB cuando se revisan MUX individuales.
+-   Los MUX se pueden agregar y quitar del grupo de MUX sin que ello afecte al servicio del equilibrador de carga de software. Esto mantiene la disponibilidad del equilibrador de carga de software cuando se están revisando MUX individuales.
 
 -   Las instancias individuales de MUX tienen un tiempo de actividad del 99%
 

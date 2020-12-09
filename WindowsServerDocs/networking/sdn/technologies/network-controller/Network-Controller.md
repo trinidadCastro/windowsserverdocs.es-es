@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 31f3fa4e-cd25-4bf3-89e9-a01a6cec7893
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: 27ceace93c42ccabdb2db0208c6e3dabce41e1b0
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: 5f789904903838e838e5de0c8de78266055fbcd6
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766818"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866504"
 ---
 # <a name="network-controller"></a>Controladora de red
 
@@ -28,13 +28,13 @@ Con Controladora de red puede automatizar la configuración de la infraestructur
 > - [Implementación de controladora de red con Windows PowerShell](../../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)
 > - [Instalación del rol de servidor de Controladora de red mediante el Administrador del servidor](Install-the-Network-Controller-server-role-using-Server-Manager.md)
 > - [Pasos posteriores a la implementación de la controladora de red](post-deploy-steps-nc.md)
-> - [Cmdlets de controladora de red](/powershell/module/networkcontroller/?view=win10-ps)
+> - [Cmdlets de controladora de red](/powershell/module/networkcontroller/)
 
-## <a name="network-controller-overview"></a><a name="bkmk_overview"></a>Resumen de Controladora de red
+## <a name="network-controller-overview"></a><a name="bkmk_overview"></a>Información general de la controladora de red
 
 La controladora de red es un rol de servidor escalable y de alta disponibilidad, y proporciona una API de interfaz de programación de aplicaciones \( \) que permite que la controladora de red se comunique con la red y una segunda API que le permite comunicarse con la controladora de red.
 
-Puede implementar la controladora de red en entornos de dominio y que no sean de dominio. En entornos de dominio, el controlador de red autentica los usuarios y los dispositivos de red mediante Kerberos. en entornos que no son de dominio, debe implementar certificados para la autenticación.
+Puede implementar Controladora de red en entornos de dominio y en entornos que no pertenecen a un dominio. En entornos de dominio, Controladora de red autentica los usuarios y dispositivos de red mediante Kerberos. En entornos que no son de dominio, debe implementar certificados para la autenticación.
 
 >[!IMPORTANT]
 >No implemente el rol del servidor Controladora de red en hosts físicos. Para implementar la controladora de red, debe instalar el rol de servidor de la controladora de red en una máquina virtual de Hyper-V \( \) que esté instalada en un host de Hyper-v. Una vez que haya instalado el controlador de red en las máquinas virtuales en tres hosts de Hyper- \- v diferentes, debe habilitar los \- hosts de Hyper v para las redes definidas por software de \( Sdn \) agregando los hosts a la controladora de red mediante el comando de Windows PowerShell **New-NetworkControllerServer**. Al hacerlo, permite funcionar al equilibrador de carga de las redes definidas por software. Para obtener más información, consulte [New-NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver).
@@ -62,21 +62,21 @@ Mediante Windows PowerShell, la API REST o una aplicación de administración, p
 
 En la siguiente ilustración, un administrador usa una herramienta de administración que interactúa directamente con Controladora de red. La controladora de red proporciona información acerca de la infraestructura de red, incluida la infraestructura física y virtual, a la herramienta de administración y realiza cambios de configuración en función de las acciones del administrador cuando se usa la herramienta.
 
-![Información general de la controladora de red](../../../media/Network-Controller/NetController_overview.png)
+![Introducción a la controladora de red](../../../media/Network-Controller/NetController_overview.png)
 
 Si va a implementar un controlador de red en un entorno de laboratorio de pruebas, puede ejecutar el rol de servidor de la controladora de red en una máquina virtual de Hyper-V \( \) que esté instalada en un host de Hyper-v.
 
 Para lograr una alta disponibilidad en centros de recursos de mayor tamaño, puede implementar un clúster con tres máquinas virtuales que estén instaladas en tres o más hosts de Hyper-V. Para obtener más información, consulte [alta disponibilidad de la controladora de red](network-controller-high-availability.md).
 
-## <a name="network-controller-features"></a><a name="bkmk_features"></a>Características de Controladora de red
+## <a name="network-controller-features"></a><a name="bkmk_features"></a>Características de la controladora de red
 
 Las siguientes características de Controladora de red le permiten configurar y administrar dispositivos y servicios de red físicos y virtuales.
 
 -   [Administración de Firewall](#bkmk_firewall)
 
--   [Administrador del equilibrador de carga de software](#bkmk_slb)
+-   [Administración de Load Balancer de software](#bkmk_slb)
 
--   [Administración de redes virtuales](#bkmk_virtual)
+-   [Administración de Virtual Network](#bkmk_virtual)
 
 -   [Administración de puerta de enlace RAS](#bkmk_gateway)
 
@@ -89,13 +89,13 @@ Esta característica de Controladora de red le permite configurar y administrar 
 
 Para obtener más información, consulte [información general sobre el firewall del centro](../../../sdn/technologies/network-function-virtualization/Datacenter-Firewall-Overview.md)de datos.
 
-### <a name="software-load-balancer-management"></a><a name="bkmk_slb"></a>Administrador del equilibrador de carga de software
+### <a name="software-load-balancer-management"></a><a name="bkmk_slb"></a>Administración de Load Balancer de software
 
 Esta característica de red le permite habilitar múltiples servidores para que alojen la misma carga de trabajo, lo que proporciona alta disponibilidad y escalabilidad.
 
 Para obtener más información, consulte [equilibrio de carga de Software &#40;SLB&#41; para Sdn](../network-function-virtualization/software-load-balancing-for-sdn.md).
 
-### <a name="virtual-network-management"></a><a name="bkmk_virtual"></a>Administración de redes virtuales
+### <a name="virtual-network-management"></a><a name="bkmk_virtual"></a>Administración de Virtual Network
 
 Esta característica de Controladora de red le permite implementar y configurar en MV individuales la virtualización de red Hyper-V, lo que incluye el Conmutador virtual de Hyper-V y adaptadores de red virtuales, así como almacenar y distribuir directivas de red virtual.
 
@@ -126,7 +126,7 @@ Para obtener más información sobre la puerta de enlace RAS, consulte [puerta d
 
 ## <a name="network-controller-deployment-options"></a>Opciones de implementación de la controladora de red
 
-Para implementar la controladora de red mediante System Center Virtual Machine Manager \( VMM \) , consulte [configuración de una controladora de red de Sdn en el tejido de VMM](/system-center/vmm/sdn-controller?view=sc-vmm-2019).
+Para implementar la controladora de red mediante System Center Virtual Machine Manager \( VMM \) , consulte [configuración de una controladora de red de Sdn en el tejido de VMM](/system-center/vmm/sdn-controller).
 
 Para implementar la controladora de red mediante scripts, consulte [implementación de una infraestructura de red definida por software mediante scripts](../../deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md).
 

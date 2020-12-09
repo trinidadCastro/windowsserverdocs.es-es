@@ -6,12 +6,12 @@ ms.assetid: b5e3c405-cb76-4ff2-8042-c2284448c435
 ms.author: benarm
 author: BenjaminArmstrong
 ms.date: 9/30/2016
-ms.openlocfilehash: 98a7dbdfa0bb89ba8c857e171b513c00ba297896
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: aa192a9447bdcc49f3943534b53a3523e905f1c8
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746070"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866174"
 ---
 # <a name="set-up-hosts-for-live-migration-without-failover-clustering"></a>Configurar hosts para la migración en vivo sin clústeres de conmutación por error
 
@@ -41,7 +41,7 @@ Tenga en cuenta cómo desea configurar lo siguiente:
       CredSPP requiere iniciar sesión en situaciones que podrían no ser obvias. Por ejemplo, si inicia sesión en TestServer01 para trasladar una máquina virtual a TestServer02 y, después, desea devolver la máquina virtual a TestServer01, deberá iniciar sesión en TestServer02 antes de intentar volver a la máquina virtual a TestServer01. Si no lo hace, se producirá un error en el intento de autenticación, se producirá un error y se mostrará el siguiente mensaje:
 
       "Error en la operación de migración de la máquina virtual en el origen de la migración.
-      No se pudo establecer una conexión con el *nombre del equipo*host: no hay credenciales disponibles en el paquete de seguridad 0x8009030E ".
+      No se pudo establecer una conexión con el *nombre del equipo* host: no hay credenciales disponibles en el paquete de seguridad 0x8009030E ".
 
 -   **Rendimiento**: ¿tiene sentido configurar las opciones de rendimiento? Estas opciones pueden reducir el uso de la red y la CPU, además de agilizar las migraciones en vivo. Tenga en cuenta sus requisitos y su infraestructura, y Pruebe distintas configuraciones que le ayudarán a decidir. Las opciones se describen al final del paso 2.
 
@@ -74,7 +74,7 @@ Si ha decidido usar Kerberos para autenticar el tráfico de migración en vivo, 
 
     -   Para mover máquinas virtuales, seleccione **Servicio de migración del sistema virtual de Microsoft**.
 
-10. En la pestaña **Delegación** del cuadro de diálogo Propiedades, compruebe que los servicios que seleccionó en el paso anterior se incluyan en lista como los servicios a los que el equipo de destino puede presentarle credenciales delegadas. Haga clic en **Aceptar**.
+10. En la pestaña **Delegación** del cuadro de diálogo Propiedades, compruebe que los servicios que seleccionó en el paso anterior se incluyan en lista como los servicios a los que el equipo de destino puede presentarle credenciales delegadas. Haga clic en **OK**.
 
 11. Desde la carpeta **Computers**, seleccione la cuenta de equipo del servidor de destino y repita el proceso. En el cuadro de diálogo **Seleccionar usuarios o equipos**, asegúrese de especificar el nombre del servidor de origen.
 
@@ -98,20 +98,20 @@ En este paso se incluye la elección de opciones de autenticación y redes. Como
 
 5.  En **migraciones en vivo simultáneas**, especifique un número diferente si no desea usar el valor predeterminado de 2.
 
-6.  En **Migraciones en vivo entrantes**, si quiere usar conexiones de red específicas para aceptar tráfico de migración en vivo, haga clic en **Agregar** para escribir la información de la dirección IP. De lo contrario, haga clic en **Usar cualquier red disponible para la migración en vivo**. Haga clic en **Aceptar**.
+6.  En **Migraciones en vivo entrantes**, si quiere usar conexiones de red específicas para aceptar tráfico de migración en vivo, haga clic en **Agregar** para escribir la información de la dirección IP. De lo contrario, haga clic en **Usar cualquier red disponible para la migración en vivo**. Haga clic en **OK**.
 
 7.  Para elegir las opciones de Kerberos y rendimiento, expanda **migraciones en vivo** y, luego, seleccione **características avanzadas**.
 
     - Si ha configurado la delegación restringida, en **Protocolo de autenticación**, seleccione **Kerberos**.
     - En **Opciones de rendimiento**, revise los detalles y elija una opción diferente si es adecuado para su entorno.
 
-8. Haga clic en **Aceptar**.
+8. Haga clic en **OK**.
 
 9. Seleccione el otro servidor en el administrador de Hyper-V y repita los pasos.
 
 ### <a name="use-windows-powershell-to-set-up-the-source-and-destination-computers-for-live-migration"></a>Usar Windows PowerShell para configurar los equipos de origen y de destino para la migración en vivo
 
-Hay tres cmdlets disponibles para configurar la migración en vivo en hosts que no están en clúster: [enable-VMMigration](/powershell/module/hyper-v/enable-vmmigration?view=win10-ps), [set-VMMigrationNetwork](/powershell/module/hyper-v/set-vmmigrationnetwork?view=win10-ps)y [set-VMHost](/powershell/module/hyper-v/set-vmhost?view=win10-ps). Este ejemplo utiliza los tres y hace lo siguiente:
+Hay tres cmdlets disponibles para configurar la migración en vivo en hosts que no están en clúster: [enable-VMMigration](/powershell/module/hyper-v/enable-vmmigration), [set-VMMigrationNetwork](/powershell/module/hyper-v/set-vmmigrationnetwork)y [set-VMHost](/powershell/module/hyper-v/set-vmhost). Este ejemplo utiliza los tres y hace lo siguiente:
   - Configura la migración en vivo en el host local
   - Permite el tráfico de migración entrante solo en una red específica
   - Elige Kerberos como el protocolo de autenticación

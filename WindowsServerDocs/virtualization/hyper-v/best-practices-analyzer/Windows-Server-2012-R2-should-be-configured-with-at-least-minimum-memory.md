@@ -6,12 +6,12 @@ author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 01da6f02-1a5f-4d3e-9bef-4d122a91c5c2
 ms.date: 8/16/2016
-ms.openlocfilehash: b6c459b80e9149f20fbf1a01e7d0759f12e8e401
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 1e077356b0e7bd918d54e55dac6f979eda5c4aeb
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90745320"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96865844"
 ---
 # <a name="windows-server-2012-r2-should-be-configured-with-at-least-the-minimum-amount-of-memory"></a>Windows Server 2012 R2 debe configurarse con al menos la cantidad mínima de memoria
 
@@ -63,5 +63,5 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 Set-VMMemory <MyVM> -StartupBytes 512MB
 ```
 
-## <a name="see-also"></a>Consulte también
-[Set-VMMemory](/powershell/module/hyper-v/set-vmmemory?view=win10-ps)
+## <a name="see-also"></a>Vea también
+[Set-VMMemory](/powershell/module/hyper-v/set-vmmemory)

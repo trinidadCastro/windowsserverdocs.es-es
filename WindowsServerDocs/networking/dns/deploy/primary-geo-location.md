@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: ef9828f8-c0ad-431d-ae52-e2065532e68f
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 9a1abc00bd8683c716563159aac889a98f364f87
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 36089433b9168e8c49e443b77317c29366c6b9e5
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996880"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866524"
 ---
 # <a name="use-dns-policy-for-geo-location-based-traffic-management-with-primary-servers"></a>Uso de directiva DNS para la administración del tráfico basada en la ubicación geográfica con servidores principales
 
@@ -20,7 +20,7 @@ ms.locfileid: "87996880"
 Puede usar este tema para obtener información sobre cómo configurar la Directiva de DNS para permitir que los servidores DNS principales respondan a las consultas de cliente DNS en función de la ubicación geográfica del cliente y el recurso al que el cliente intenta conectarse, proporcionando al cliente la dirección IP del recurso más cercano.
 
 >[!IMPORTANT]
->En este escenario se muestra cómo implementar la Directiva DNS para la administración del tráfico basada en la ubicación geográfica cuando solo se usan servidores DNS principales. También puede realizar la administración de tráfico basada en la ubicación geográfica cuando tenga servidores DNS principales y secundarios. Si tiene una implementación primaria-secundaria, complete primero los pasos descritos en este tema y, a continuación, complete los pasos que se proporcionan en el tema [uso de la Directiva DNS para la administración del tráfico basado en la ubicación geográfica con las implementaciones principales y secundarias](primary-secondary-geo-location.md).
+>En este escenario se muestra cómo implementar la Directiva DNS para la administración del tráfico basada en la ubicación geográfica cuando solo se usan servidores DNS principales. También puede realizar la administración de tráfico basada en la ubicación geográfica cuando tenga servidores DNS principales y secundarios. Si tiene una implementación primaria-secundaria, complete primero los pasos descritos en este tema y, a continuación, complete los pasos que se proporcionan en el tema [uso de la Directiva de DNS para la administración del tráfico basado en Geo-Location con implementaciones de Primary-Secondary](primary-secondary-geo-location.md).
 
 Con las nuevas directivas DNS, puede crear una directiva DNS que permita que el servidor DNS responda a una consulta de cliente que solicite la dirección IP de un servidor Web. Las instancias del servidor Web podrían estar ubicadas en distintos centros de recursos en diferentes ubicaciones físicas. DNS puede evaluar las ubicaciones del cliente y del servidor Web y, a continuación, responder a la solicitud de cliente proporcionando al cliente una dirección IP de servidor web para un servidor Web que se encuentra físicamente más cerca del cliente.
 
@@ -29,14 +29,14 @@ Puede usar los siguientes parámetros de la Directiva DNS para controlar las res
 - **Subred de cliente**. Nombre de una subred de cliente predefinida. Se utiliza para comprobar la subred desde la que se envió la consulta.
 - **Protocolo de transporte**. Protocolo de transporte utilizado en la consulta. Las entradas posibles son **UDP** y **TCP**.
 - **Protocolo de Internet**. Protocolo de red utilizado en la consulta. Las entradas posibles son **IPv4** e **IPv6**.
-- **Dirección IP**de la interfaz del servidor. Dirección IP de la interfaz de red del servidor DNS que recibió la solicitud DNS.
+- **Dirección IP** de la interfaz del servidor. Dirección IP de la interfaz de red del servidor DNS que recibió la solicitud DNS.
 - **FQDN**. El nombre de dominio completo (FQDN) del registro en la consulta, con la posibilidad de usar un carácter comodín.
 - **Tipo de consulta**. Tipo de registro que se consulta (A, SRV, TXT, etc.).
 - **Hora del día**. Hora del día a la que se recibe la consulta.
 
 Puede combinar los criterios siguientes con un operador lógico (y/o) para formular expresiones de directiva. Cuando estas expresiones coinciden, se espera que las directivas realicen una de las acciones siguientes.
 
-- **Omitir**. El servidor DNS quita la consulta de forma silenciosa.
+- **Ignore**. El servidor DNS quita la consulta de forma silenciosa.
 - **Denegar** El servidor DNS responde a esa consulta con una respuesta de error.
 - **Permitir** El servidor DNS responde con la respuesta administrada por el tráfico.
 
@@ -52,7 +52,7 @@ Para asegurarse de que los clientes de woodgrove.com obtienen una experiencia de
 
 En la ilustración siguiente se muestra este escenario.
 
-![Ejemplo de administración de tráfico basada en la ubicación geográfica](../../media/DNS-Policy-Geo1/dns_policy_geo1.png)
+![Ejemplo de administración de tráfico basado en Geo-Location](../../media/DNS-Policy-Geo1/dns_policy_geo1.png)
 
 ##  <a name="how-the-dns-name-resolution-process-works"></a><a name="bkmk_works"></a>Cómo funciona el proceso de resolución de nombres DNS
 
@@ -67,7 +67,7 @@ En este escenario, el servidor DNS autoritativo suele ver la solicitud de resolu
 >[!NOTE]
 >Las directivas DNS usan la dirección IP del remitente en el paquete UDP/TCP que contiene la consulta DNS. Si la consulta alcanza el servidor principal a través de varios saltos de resolución/LDNS, la Directiva solo tendrá en cuenta la dirección IP del último solucionador desde el que el servidor DNS recibe la consulta.
 
-##  <a name="how-to-configure-dns-policy-for-geo-location-based-query-responses"></a><a name="bkmk_config"></a>Configuración de la Directiva de DNS para las respuestas de consultas basadas en la ubicación geográfica
+##  <a name="how-to-configure-dns-policy-for-geo-location-based-query-responses"></a><a name="bkmk_config"></a>Configuración de la Directiva de DNS para respuestas de consultas basadas en Geo-Location
 Para configurar la Directiva de DNS para las respuestas de consultas basadas en la ubicación geográfica, debe realizar los pasos siguientes.
 
 1. [Crear las subredes de cliente DNS](#bkmk_subnets)
@@ -96,7 +96,7 @@ Add-DnsServerClientSubnet -Name "USSubnet" -IPv4Subnet "192.0.0.0/24"
 Add-DnsServerClientSubnet -Name "EuropeSubnet" -IPv4Subnet "141.1.0.0/24"
 ```
 
-Para obtener más información, consulte [Add-DnsServerClientSubnet](/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps).
+Para obtener más información, consulte [Add-DnsServerClientSubnet](/powershell/module/dnsserver/add-dnsserverclientsubnet).
 
 ### <a name="create-zone-scopes"></a><a name="bkmk_scopes"></a>Crear ámbitos de zona
 Una vez configuradas las subredes de cliente, debe particionar la zona cuyo tráfico desea redirigir en dos ámbitos de zona diferentes, un ámbito para cada una de las subredes de cliente DNS que ha configurado.
@@ -115,7 +115,7 @@ Add-DnsServerZoneScope -ZoneName "woodgrove.com" -Name "USZoneScope"
 Add-DnsServerZoneScope -ZoneName "woodgrove.com" -Name "EuropeZoneScope"
 ```
 
-Para obtener más información, consulte [Add-DnsServerZoneScope](/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps).
+Para obtener más información, consulte [Add-DnsServerZoneScope](/powershell/module/dnsserver/add-dnsserverzonescope).
 
 ### <a name="add-records-to-the-zone-scopes"></a><a name="bkmk_records"></a>Agregar registros a los ámbitos de zona
 Ahora debe agregar los registros que representan el host del servidor Web en los dos ámbitos de zona.
@@ -138,7 +138,7 @@ Add-DnsServerResourceRecord -ZoneName "woodgrove.com" -A -Name "www" -IPv4Addres
 
 El parámetro **ZoneScope** no se incluye al agregar un registro en el ámbito predeterminado. Esto es lo mismo que agregar registros a una zona DNS estándar.
 
-Para obtener más información, consulte [Add-DnsServerResourceRecord](/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps).
+Para obtener más información, consulte [Add-DnsServerResourceRecord](/powershell/module/dnsserver/add-dnsserverresourcerecord).
 
 ### <a name="create-the-policies"></a><a name="bkmk_policies"></a>Crear las directivas
 Después de crear las subredes, las particiones (ámbitos de zona) y los registros agregados, debe crear directivas que conecten las subredes y las particiones, de modo que cuando una consulta provenga de un origen en una de las subredes de cliente DNS, la respuesta de la consulta se devuelva desde el ámbito correcto de la zona. No se requieren directivas para asignar el ámbito de zona predeterminado.
@@ -150,7 +150,7 @@ Add-DnsServerQueryResolutionPolicy -Name "USPolicy" -Action ALLOW -ClientSubnet 
 Add-DnsServerQueryResolutionPolicy -Name "EuropePolicy" -Action ALLOW -ClientSubnet "eq,EuropeSubnet" -ZoneScope "EuropeZoneScope,1" -ZoneName "woodgrove.com"
 ```
 
-Para obtener más información, consulte [Add-DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps).
+Para obtener más información, consulte [Add-DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy).
 
 Ahora el servidor DNS está configurado con las directivas DNS necesarias para redirigir el tráfico en función de la ubicación geográfica.
 

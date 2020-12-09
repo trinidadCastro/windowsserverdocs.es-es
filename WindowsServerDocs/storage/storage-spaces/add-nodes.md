@@ -8,12 +8,12 @@ author: cosmosdarwin
 ms.date: 11/06/2017
 description: Cómo agregar servidores o unidades a un clúster de Espacios de almacenamiento directo
 ms.localizationpriority: medium
-ms.openlocfilehash: b9a26d3ac982cccf4471f3a3e03bfdae55b55eed
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 8e2d032086336207b48d9d12e30c491ec27bcfc0
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87961069"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96865954"
 ---
 # <a name="adding-servers-or-drives-to-storage-spaces-direct"></a>Agregar servidores o unidades a espacios de almacenamiento directo
 
@@ -21,7 +21,7 @@ ms.locfileid: "87961069"
 
 En este tema se describe cómo agregar servidores o unidades a espacios de almacenamiento directo.
 
-## <a name="adding-servers"></a><a name="adding-servers"></a>Agregar servidores
+## <a name="adding-servers"></a><a name="adding-servers"></a> Agregar servidores
 
 Mediante la adición de servidores, también conocida como escalado horizontal, se agrega capacidad de almacenamiento y también se puede mejorar el rendimiento, así como mejorar la eficiencia del almacenamiento. Si tu implementación es hiperconvergida, la adición de servidores también proporciona más recursos de proceso para la carga de trabajo.
 
@@ -164,7 +164,7 @@ Si la implementación usa la tolerancia a errores de chasis o bastidor, debes es
 
 3. Agrega el servidor al clúster como se describe en [Agregar servidores](#adding-servers). Cuando el servidor nuevo se une al clúster, se asocia automáticamente (mediante su nombre) al dominio de error del marcador de posición.
 
-## <a name="adding-drives"></a><a name="adding-drives"></a>Agregar unidades
+## <a name="adding-drives"></a><a name="adding-drives"></a> Agregar unidades
 
 Mediante la adición de unidades (también conocida como escalado vertical) se agrega capacidad de almacenamiento y se puede mejorar el rendimiento. Si tienes ranuras disponibles, puedes agregar unidades a cada servidor para expandir la capacidad de almacenamiento sin agregar servidores. Puedes agregar unidades de caché o unidades de capacidad independientemente en cualquier momento.
 
@@ -198,7 +198,7 @@ La optimización usa dos trabajos: uno denominado *optimizar* y otro denominado 
 Get-StorageJob
 ```
 
-Puede optimizar manualmente un grupo de almacenamiento con el cmdlet [Optimize-StoragePool](/powershell/module/storage/optimize-storagepool?view=win10-ps) . Veamos un ejemplo:
+Puede optimizar manualmente un grupo de almacenamiento con el cmdlet [Optimize-StoragePool](/powershell/module/storage/optimize-storagepool) . Veamos un ejemplo:
 
 ```powershell
 Get-StoragePool <PoolName> | Optimize-StoragePool

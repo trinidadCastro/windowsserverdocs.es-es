@@ -6,12 +6,12 @@ ms.assetid: 7ec0e14c-4498-4bd9-8fe6-b94260198efc
 ms.author: benarm
 author: BenjaminArmstrong
 ms.date: 04/07/2020
-ms.openlocfilehash: 92dd65669a537d619d9104378adae26c91878dca
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: cae0a1218badc9d3110a14c81f95ffa2a944702b
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746740"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866394"
 ---
 # <a name="supported-suse-virtual-machines-on-hyper-v"></a>Máquinas virtuales de SUSE compatibles en Hyper-V
 
@@ -34,7 +34,7 @@ SLES12 + es solo 64 bits.
 |**Característica**|**Versión del sistema operativo Windows Server**|**SLES 15 SP1**|**SLES 15**|**SLES 12 SP3-SP5**|**SLES 12 SP2**|**SLES 12 SP1**|**SLES 11 SP4**|**SLES 11 SP3**|
 |-|-|-|-|-|-|-|-|-|
 |**Disponibilidad**||Integrada|Integrada|Integrada|Integrada|Integrada|Integrada|Integrada|
-|**[Principal](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|**[Core](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Windows Server 2016 hora precisa|2019, 2016|&#10004;|&#10004;|&#10004;|&#10004;||||
 |**[Redes](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**|||||||||
 |Tramas gigantes|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
@@ -53,7 +53,7 @@ SLES12 + es solo 64 bits.
 |**[Memoria](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**|||||||||
 |Compatibilidad con el kernel PAE|2019, 2016, 2012 R2|N/D|N/D|N/D|N/D|N/D|&#10004;|&#10004;|
 |Configuración de la brecha de MMIO|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|Memoria dinámica: agregar en caliente|2019, 2016, 2012 R2|&#10004; Nota 6|&#10004;Nota 6|&#10004; Nota 6|&#10004; Nota 6|&#10004; Nota 6|&#10004; Nota 4, 5, 6|&#10004; Nota 4, 5, 6|
+|Memoria dinámica Hot-Add|2019, 2016, 2012 R2|&#10004; Nota 6|&#10004;Nota 6|&#10004; Nota 6|&#10004; Nota 6|&#10004; Nota 6|&#10004; Nota 4, 5, 6|&#10004; Nota 4, 5, 6|
 |Memoria dinámica: globos|2019, 2016, 2012 R2|&#10004; Nota 6|&#10004; Nota 6|&#10004; Nota 6|&#10004; Nota 6|&#10004; Nota 6|&#10004; Nota 4, 5, 6|&#10004; Nota 4, 5, 6|
 |Tamaño de memoria en tiempo de ejecución|2019, 2016|&#10004; Nota 6|&#10004; Nota 6|&#10004; Nota 6|&#10004; Nota 6||||
 |**[Vídeo](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**|||||||||
@@ -85,7 +85,7 @@ SLES12 + es solo 64 bits.
 
 5. La compatibilidad con memoria dinámica solo está disponible en las máquinas virtuales de 64 bits.
 
-6. Si usa Memoria dinámica en sistemas operativos Windows Server 2016 o Windows Server 2012, especifique la **memoria de inicio**, la **memoria mínima**y los parámetros de **memoria máxima** en múltiplos de 128 megabytes (MB). Si no lo hace, pueden producirse errores de adición en caliente y es posible que no vea ningún aumento de la memoria en un sistema operativo invitado.
+6. Si usa Memoria dinámica en sistemas operativos Windows Server 2016 o Windows Server 2012, especifique la **memoria de inicio**, la **memoria mínima** y los parámetros de **memoria máxima** en múltiplos de 128 megabytes (MB). Si no lo hace, pueden producirse errores de Hot-Add y es posible que no vea ningún aumento de la memoria en un sistema operativo invitado.
 
 7. En Windows Server 2016 o Windows Server 2012 R2, es posible que la infraestructura de pares clave-valor no funcione correctamente sin una actualización de software de Linux. Póngase en contacto con el proveedor de distribución para obtener la actualización de software en caso de que vea problemas con esta característica.
 
@@ -98,9 +98,9 @@ SLES12 + es solo 64 bits.
 
    ```
 
-## <a name="see-also"></a>Consulte también
+## <a name="see-also"></a>Vea también
 
-* [Set-VMFirmware](/powershell/module/hyper-v/set-vmfirmware?view=win10-ps)
+* [Set-VMFirmware](/powershell/module/hyper-v/set-vmfirmware)
 
 * [Compatibilidad con máquinas virtuales de alta y Red Hat Enterprise Linux en Hyper-V](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
 

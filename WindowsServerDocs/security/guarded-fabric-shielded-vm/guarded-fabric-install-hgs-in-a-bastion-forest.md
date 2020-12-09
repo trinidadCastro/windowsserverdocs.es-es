@@ -5,12 +5,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: 358fae9a9ee477537d3ee929ff81920175d58298
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: 34aa075b088e556695ea1697e578682e6c801bbb
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766418"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866324"
 ---
 # <a name="install-hgs-in-an-existing-bastion-forest"></a>Instalación de HGS en un bosque bastión existente
 
@@ -41,7 +41,7 @@ También puede preconfigurar los objetos de clúster si la cuenta con la que est
 
 ## <a name="group-managed-service-account"></a>Cuenta de servicio administrada de grupo
 
-La cuenta de servicio administrada de grupo (gMSA) es la identidad que usa HGS para recuperar y usar sus certificados. Use [New-ADServiceAccount](/powershell/module/addsadministration/new-adserviceaccount?view=win10-ps) para crear un gMSA.
+La cuenta de servicio administrada de grupo (gMSA) es la identidad que usa HGS para recuperar y usar sus certificados. Use [New-ADServiceAccount](/powershell/module/addsadministration/new-adserviceaccount) para crear un gMSA.
 Si esta es la primera gMSA del dominio, deberá agregar una clave raíz del servicio de distribución de claves.
 
 Cada nodo de HGS tendrá que permitir el acceso a la contraseña de gMSA.
@@ -81,7 +81,7 @@ No es necesario usar JEA para administrar HGS, pero todavía debe configurarse a
 La configuración del punto de conexión de JEA consiste en designar dos grupos de seguridad que contienen los administradores de HGS y los revisores de HGS.
 Los usuarios que pertenecen al grupo de administración pueden agregar, cambiar o quitar directivas en HGS; los revisores solo pueden ver la configuración actual.
 
-Cree dos grupos de seguridad para estos grupos de JEA mediante Active Directory herramientas de administración o [New-AdGroup](/powershell/module/addsadministration/new-adgroup?view=win10-ps).
+Cree dos grupos de seguridad para estos grupos de JEA mediante Active Directory herramientas de administración o [New-AdGroup](/powershell/module/addsadministration/new-adgroup).
 
 ```powershell
 New-ADGroup -Name 'HgsJeaReviewers' -GroupScope DomainLocal
@@ -140,7 +140,7 @@ Compruebe los objetos de directiva de grupo para ver la configuración siguiente
 
 **Nombre de la Directiva:** Seguridad de red: configurar tipos de cifrado permitidos para Kerberos
 
-**Acción**: si se configura esta Directiva, debe actualizar la cuenta de GMSA con [set-ADServiceAccount](/powershell/module/addsadministration/set-adserviceaccount?view=win10-ps) para usar solo los tipos de cifrado admitidos en esta Directiva. Por ejemplo, si la Directiva solo permite \_ HMAC \_ SHA1 y AES256 \_ HMAC \_ SHA1, debe ejecutar `Set-ADServiceAccount -Identity HGSgMSA -KerberosEncryptionType AES128,AES256` .
+**Acción**: si se configura esta Directiva, debe actualizar la cuenta de GMSA con [set-ADServiceAccount](/powershell/module/addsadministration/set-adserviceaccount) para usar solo los tipos de cifrado admitidos en esta Directiva. Por ejemplo, si la Directiva solo permite \_ HMAC \_ SHA1 y AES256 \_ HMAC \_ SHA1, debe ejecutar `Set-ADServiceAccount -Identity HGSgMSA -KerberosEncryptionType AES128,AES256` .
 
 
 

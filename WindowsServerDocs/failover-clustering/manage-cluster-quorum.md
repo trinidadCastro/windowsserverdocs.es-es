@@ -7,12 +7,12 @@ ms.author: jgerend
 manager: lizross
 ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ff6b6cfa6f8af87310970d9adab10d5df14c90d
-ms.sourcegitcommit: 0b3d6661c44aa1a697087e644437279142726d84
+ms.openlocfilehash: cf4b9a5196c6cf92d4f075d25e03ab719b341422
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90083696"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96865734"
 ---
 # <a name="configure-and-manage-quorum"></a>Configurar y administrar el cuórum
 
@@ -81,7 +81,7 @@ En Windows Server 2012, como opción de configuración avanzada de cuórum, pued
 
 Con la administración de cuórum dinámico también se puede ejecutar un clúster en el último nodo de clúster superviviente. Al ajustar de forma dinámica el requisito de mayoría del cuórum, el clúster puede sostener apagados de nodo secuenciales en un nodo único.
 
-El voto dinámico asignado a un clúster de un nodo se puede comprobar con la propiedad común **DynamicWeight** del nodo de clúster mediante el cmdlet de Windows PowerShell [Get-ClusterNode](/powershell/module/failoverclusters/get-clusternode?view=win10-ps) . El valor 0 indica que el nodo no tiene un voto de cuórum. El valor 1 indica que el nodo tiene un voto de cuórum.
+El voto dinámico asignado a un clúster de un nodo se puede comprobar con la propiedad común **DynamicWeight** del nodo de clúster mediante el cmdlet de Windows PowerShell [Get-ClusterNode](/powershell/module/failoverclusters/get-clusternode) . El valor 0 indica que el nodo no tiene un voto de cuórum. El valor 1 indica que el nodo tiene un voto de cuórum.
 
 Comprueba la asignación de votos de todos los nodos de clúster mediante la prueba de validación **Validar quórum de clúster**.
 
@@ -94,7 +94,7 @@ Comprueba la asignación de votos de todos los nodos de clúster mediante la pru
 
 ## <a name="general-recommendations-for-quorum-configuration"></a>Recomendaciones generales para la configuración de cuórum
 
-El software del clúster configura automáticamente el cuórum para un nuevo clúster según el número de nodos configurados y la disponibilidad del almacenamiento compartido. Esta suele ser la configuración de cuórum más apropiada para dicho clúster. Pero es buena idea revisar la configuración de cuórum después de crear el clúster y antes de usar el clúster en producción. Para ver la configuración detallada del cuórum de clúster, puede usar el Asistente para validar una configuración o el cmdlet [Test-Cluster de](/powershell/module/failoverclusters/test-cluster?view=win10-ps) Windows PowerShell para ejecutar la prueba **validar configuración de cuórum** . En Administrador de clústeres de conmutación por error, la configuración de cuórum básica se muestra en la información de resumen del clúster seleccionado, o puede revisar la información sobre los recursos de cuórum que devuelve al ejecutar el cmdlet de Windows PowerShell [Get-ClusterQuorum](/powershell/module/failoverclusters/get-clusterquorum?view=win10-ps) .
+El software del clúster configura automáticamente el cuórum para un nuevo clúster según el número de nodos configurados y la disponibilidad del almacenamiento compartido. Esta suele ser la configuración de cuórum más apropiada para dicho clúster. Pero es buena idea revisar la configuración de cuórum después de crear el clúster y antes de usar el clúster en producción. Para ver la configuración detallada del cuórum de clúster, puede usar el Asistente para validar una configuración o el cmdlet [Test-Cluster de](/powershell/module/failoverclusters/test-cluster) Windows PowerShell para ejecutar la prueba **validar configuración de cuórum** . En Administrador de clústeres de conmutación por error, la configuración de cuórum básica se muestra en la información de resumen del clúster seleccionado, o puede revisar la información sobre los recursos de cuórum que devuelve al ejecutar el cmdlet de Windows PowerShell [Get-ClusterQuorum](/powershell/module/failoverclusters/get-clusterquorum) .
 
 En cualquier momento, puedes ejecutar la prueba **Validar configuración de quórum** para comprobar que la configuración de quórum es óptima para el clúster. La salida de la prueba indica si es recomendable realizar cambios en la configuración de cuórum y cuáles son las opciones óptimas. Si se recomienda realizar un cambio, puedes usar el Asistente para configurar cuórum de clúster para aplicar la configuración recomendada.
 
@@ -124,11 +124,11 @@ Para completar este procedimiento se requiere, como mínimo, pertenecer al grupo
 ### <a name="change-the-quorum-configuration-in-a-failover-cluster-by-using-failover-cluster-manager"></a>Cambiar la configuración de cuórum en un clúster de conmutación por error mediante Administrador de clústeres de conmutación por error
 
 1. En el Administrador de clústeres de conmutación por error, selecciona o especifica lo que quieras cambiar.
-2. Con el clúster seleccionado, en **acciones**, seleccione **más acciones**y, a continuación, seleccione **configurar cuórum de clúster**. Se abrirá el Asistente para configurar cuórum de clúster. Seleccione **Siguiente**.
+2. Con el clúster seleccionado, en **acciones**, seleccione **más acciones** y, a continuación, seleccione **configurar cuórum de clúster**. Se abrirá el Asistente para configurar cuórum de clúster. Seleccione **Next** (Siguiente).
 3. En la página **Seleccionar opción de configuración de quórum**, selecciona una de las tres opciones de configuración y completa los pasos para dicha opción. Antes de modificar la configuración del cuórum puedes revisar las opciones. Para obtener más información sobre las opciones, vea [Descripción del cuórum](#understanding-quorum), anteriormente en este tema.
 
     - Para permitir que el clúster restablezca automáticamente la configuración de cuórum que sea óptima para la configuración de clúster actual, seleccione **usar la configuración de cuórum predeterminada** y, a continuación, complete el asistente.
-    - Para agregar o cambiar el testigo de cuórum, seleccione **seleccionar el testigo de cuórum**y, a continuación, complete los pasos siguientes. Para obtener más información y conocer consideraciones sobre la configuración de un testigo de quórum, consulta [Configuración de testigos](#witness-configuration) anteriormente en este tema.
+    - Para agregar o cambiar el testigo de cuórum, seleccione **seleccionar el testigo de cuórum** y, a continuación, complete los pasos siguientes. Para obtener más información y conocer consideraciones sobre la configuración de un testigo de quórum, consulta [Configuración de testigos](#witness-configuration) anteriormente en este tema.
 
       1. En la página **Seleccionar testigo de quórum**, selecciona una opción para configurar un testigo de disco o un testigo de recurso compartido de archivos. El asistente indica las opciones de selección de testigo recomendadas para el clúster.
 
@@ -141,7 +141,7 @@ Para completar este procedimiento se requiere, como mínimo, pertenecer al grupo
           > [!NOTE]
           > Esta opción está disponible en Windows Server 2016 y versiones posteriores.
 
-    - Para configurar las opciones de administración de cuórum y agregar o cambiar el testigo de cuórum, seleccione **Configuración avanzada de cuórum**y, a continuación, complete los pasos siguientes. Para obtener información y conocer las consideraciones sobre las opciones de configuración de quórum avanzada, consulta [Asignación de votos de nodos](#node-vote-assignment) y [Administración de quórum dinámico](#dynamic-quorum-management) anteriormente en este tema.
+    - Para configurar las opciones de administración de cuórum y agregar o cambiar el testigo de cuórum, seleccione **Configuración avanzada de cuórum** y, a continuación, complete los pasos siguientes. Para obtener información y conocer las consideraciones sobre las opciones de configuración de quórum avanzada, consulta [Asignación de votos de nodos](#node-vote-assignment) y [Administración de quórum dinámico](#dynamic-quorum-management) anteriormente en este tema.
 
       1. En la página **Seleccionar configuración de votación**, selecciona una opción para asignar votos a nodos. De manera predeterminada, todos los nodos tienen asignado un voto. Pero en algunos escenarios puedes asignar votos a un subconjunto específico de nodos.
 
@@ -163,16 +163,16 @@ Para completar este procedimiento se requiere, como mínimo, pertenecer al grupo
           > [!NOTE]
           > Esta opción está disponible en Windows Server 2016 y versiones posteriores.
 
-4. Seleccione **Siguiente**. Confirme las selecciones en la página de confirmación que aparece y, a continuación, seleccione **siguiente**.
+4. Seleccione **Next** (Siguiente). Confirme las selecciones en la página de confirmación que aparece y, a continuación, seleccione **siguiente**.
 
-Una vez que se ejecute el asistente y aparezca la página **Resumen** , si desea ver un informe de las tareas realizadas por el asistente, seleccione **Ver informe**. El informe más reciente permanecerá en la carpeta <em>systemroot</em>** \\ cluster \\ Reports** con el nombre **QuorumConfiguration. mht**.
+Una vez que se ejecute el asistente y aparezca la página **Resumen** , si desea ver un informe de las tareas realizadas por el asistente, seleccione **Ver informe**. El informe más reciente permanecerá en la carpeta <em>systemroot</em>**\\ cluster \\ Reports** con el nombre **QuorumConfiguration. mht**.
 
 > [!NOTE]
 > Después de configurar el quórum de clúster, ejecuta la prueba **Validar configuración de quórum** para comprobar la configuración de quórum actualizada.
 
 ### <a name="windows-powershell-equivalent-commands"></a>Comandos equivalentes de Windows PowerShell
 
-En los siguientes ejemplos se muestra cómo usar el cmdlet [set-ClusterQuorum](/powershell/module/failoverclusters/set-clusterquorum?view=win10-ps) y otros cmdlets de Windows PowerShell para configurar el cuórum de clúster.
+En los siguientes ejemplos se muestra cómo usar el cmdlet [set-ClusterQuorum](/powershell/module/failoverclusters/set-clusterquorum) y otros cmdlets de Windows PowerShell para configurar el cuórum de clúster.
 
 En el ejemplo siguiente se cambia la configuración de quórum en el clúster *CONTOSO-FC1* a una configuración de quórum de mayoría de nodo sencilla sin testigo de quórum.
 
@@ -186,7 +186,7 @@ En el ejemplo siguiente se cambia la configuración de cuórum en el clúster lo
 Set-ClusterQuorum -NodeAndDiskMajority "Cluster Disk 2"
 ```
 
-En el ejemplo siguiente se cambia la configuración de cuórum en el clúster local a una mayoría de nodo con configuración de testigo. El recurso de recurso compartido de archivos denominado * \\ \\ contoso-FS \\ FSW* se configura como un testigo de recurso compartido de archivos.
+En el ejemplo siguiente se cambia la configuración de cuórum en el clúster local a una mayoría de nodo con configuración de testigo. El recurso de recurso compartido de archivos denominado *\\ \\ contoso-FS \\ FSW* se configura como un testigo de recurso compartido de archivos.
 
 ```PowerShell
 Set-ClusterQuorum -NodeAndFileShareMajority "\\fileserver\fsw"
@@ -321,5 +321,5 @@ En la tabla siguiente se resumen las consideraciones y recomendaciones para esta
 ## <a name="more-information"></a>Más información
 
 * [Clústeres de conmutación por error](./failover-clustering-overview.md)
-* [Cmdlets de Windows PowerShell de clústeres de conmutación por error](/powershell/module/failoverclusters/?view=win10-ps)
+* [Cmdlets de Windows PowerShell de clústeres de conmutación por error](/powershell/module/failoverclusters/)
 * [Descripción del Cuórum de clústeres y grupos](../storage/storage-spaces/understand-quorum.md)

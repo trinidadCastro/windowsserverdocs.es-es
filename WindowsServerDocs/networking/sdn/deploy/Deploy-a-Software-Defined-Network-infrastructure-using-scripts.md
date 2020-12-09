@@ -7,12 +7,12 @@ ms.assetid: 5ba5bb37-ece0-45cb-971b-f7149f658d19
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/23/2018
-ms.openlocfilehash: 4e3ebcae7696d1b16930e50aacff4f0edc198ce7
-ms.sourcegitcommit: 3181fcb69a368f38e0d66002e8bc6fd9628b1acc
+ms.openlocfilehash: 244f18baefa0be9b9b392682e48931e7d4e195b8
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96330397"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96865624"
 ---
 # <a name="deploy-a-software-defined-network-infrastructure-using-scripts"></a>Implementación de una infraestructura de red definida por software con scripts
 
@@ -22,7 +22,7 @@ En este tema, se implementa una infraestructura de red definida por software de 
 
 Si desea que las cargas de trabajo de inquilinos se comuniquen fuera de sus redes virtuales, puede configurar las reglas NAT de SLB, los túneles de puerta de enlace de sitio a sitio o el reenvío de capa 3 para enrutar entre cargas de trabajo virtuales y físicas.
 
-También puede implementar una infraestructura de SDN mediante Virtual Machine Manager (VMM). Para obtener más información, consulte [configuración de una infraestructura de red definida por software (SDN) en el tejido de VMM](/system-center/vmm/deploy-sdn?view=sc-vmm-2019).
+También puede implementar una infraestructura de SDN mediante Virtual Machine Manager (VMM). Para obtener más información, consulte [configuración de una infraestructura de red definida por software (SDN) en el tejido de VMM](/system-center/vmm/deploy-sdn).
 
 ## <a name="pre-deployment"></a>Anterior a la implementación
 
@@ -86,7 +86,7 @@ Para empezar, configure el conmutador virtual de Hyper-v (servidores físicos) y
 
    a. Haga clic con el botón secundario en **Inicio**, seleccione **sistema** y, a continuación, haga clic en **Cambiar configuración**.
    b. Haga clic en **Cambiar**.
-   c. Haga clic en **dominio** y especifique el nombre de dominio.  "" "" d. Haga clic en **Aceptar**.
+   c. Haga clic en **dominio** y especifique el nombre de dominio.  "" "" d. Haga clic en **OK**.
    e. Escriba las credenciales de nombre de usuario y contraseña cuando se le solicite.
    f. Reinicie el servidor.
 

@@ -7,12 +7,12 @@ ms.assetid: 244a4b48-06e5-4796-8750-a50e4f88ac72
 ms.author: lizross
 author: eross-msft
 ms.date: 09/13/2018
-ms.openlocfilehash: 4417748504a0458396cd02e965547c2573f2c44f
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 2edcd046958854698fbcc61d96f2716a26de3367
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990085"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866274"
 ---
 # <a name="network-load-balancing"></a>Equilibrio de carga de red
 
@@ -141,7 +141,7 @@ Install-WindowsFeature NLB -IncludeManagementTools
 
 Una vez completada la instalación, no es necesario reiniciar el equipo.
 
-Para obtener más información, consulta [Install-WindowsFeature](/powershell/module/servermanager/install-windowsfeature?view=win10-ps).
+Para obtener más información, consulta [Install-WindowsFeature](/powershell/module/servermanager/install-windowsfeature).
 
 ### <a name="network-load-balancing-manager"></a>Administrador de equilibrio de carga de red
 Para abrir el Administrador de equilibrio de carga de red en el Administrador del servidor, haga clic en **Herramientas** y, luego, en **Administrador de equilibrio de carga de red**.
@@ -152,7 +152,7 @@ En la tabla siguiente se proporcionan vínculos a información adicional acerca 
 |Tipo de contenido|Referencias|
 |----------------|--------------|
 |Implementación|[Guía de implementación de equilibrio de carga de red](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754833(v=ws.10)) &#124; configurar el [equilibrio de carga de red con Terminal Services](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771300(v=ws.10))|
-|Operaciones|[Administración de clústeres de equilibrio de carga de red](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753954(v=ws.10)) &#124; [establecer parámetros de equilibrio de carga de red](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731619(v=ws.10)) &#124; [controlar hosts en clústeres de equilibrio de carga de red](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770870(v=ws.10))|
+|Operations|[Administración de clústeres de equilibrio de carga de red](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753954(v=ws.10)) &#124; [establecer parámetros de equilibrio de carga de red](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731619(v=ws.10)) &#124; [controlar hosts en clústeres de equilibrio de carga de red](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770870(v=ws.10))|
 |Solución de problemas|[Solución de problemas de clústeres de equilibrio de carga de red](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732592(v=ws.10)) &#124; [eventos y errores de clúster NLB](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731678(v=ws.10))|
 |Herramientas y configuración|[Cmdlets de NLB de Windows PowerShell](https://go.microsoft.com/fwlink/p/?LinkId=238123)|
 |Recursos de la comunidad|[Foro de \( clústeres de alta disponibilidad \)](https://go.microsoft.com/fwlink/p/?LinkId=230641)

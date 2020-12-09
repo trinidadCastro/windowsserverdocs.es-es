@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: c9cecb94-3cd5-4da7-9a3e-084148b8226b
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 05daf36ebf875269906b0c287204e4ff131a678e
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 31fdb8921bcb896cb009dcd4d67d57c6c503efa6
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996952"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96865614"
 ---
 # <a name="whats-new-in-dns-server-in-windows-server"></a>Novedades del servidor DNS en Windows Server
 
@@ -32,7 +32,7 @@ En Windows Server 2016, el servidor DNS ofrece compatibilidad mejorada en las á
 
 ## <a name="dns-policies"></a>Directivas de DNS
 
-Puede usar la Directiva de DNS para la administración del tráfico basada en la ubicación geográfica, las respuestas de DNS inteligentes basadas en la hora del día, para administrar un solo servidor DNS configurado para la \- implementación de cerebro dividido, aplicar filtros en consultas DNS, etc. Los elementos siguientes proporcionan más detalles acerca de estas capacidades.
+Puede usar la Directiva de DNS para la administración del tráfico basada en Geo-Location, las respuestas de DNS inteligentes basadas en la hora del día, para administrar un solo servidor DNS configurado para la \- implementación de cerebro dividido, aplicar filtros en consultas DNS, etc. Los elementos siguientes proporcionan más detalles acerca de estas capacidades.
 
 -   **Equilibrio de carga de la aplicación.** Cuando haya implementado varias instancias de una aplicación en diferentes ubicaciones, puede usar la Directiva de DNS para equilibrar la carga de tráfico entre las distintas instancias de aplicación, asignando dinámicamente la carga de tráfico para la aplicación.
 
@@ -145,8 +145,8 @@ Los siguientes nuevos cmdlets y parámetros de Windows PowerShell se introdujero
 
 Para obtener más información, vea los siguientes temas de referencia de comandos de Windows Server 2016 Windows PowerShell.
 
-- [Módulo DnsServer](/powershell/module/dnsserver/?view=win10-ps)
-- [Módulo DnsClient](/powershell/module/dnsclient/?view=win10-ps)
+- [Módulo DnsServer](/powershell/module/dnsserver/)
+- [Módulo DnsClient](/powershell/module/dnsclient/)
 
 ## <a name="additional-references"></a>Referencias adicionales
 

@@ -6,12 +6,12 @@ ms.topic: article
 ms.author: dacuo
 author: dcuomo
 ms.date: 09/07/2018
-ms.openlocfilehash: 66f0f72dc6a577030ad43103e5f9d08a9458e64d
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: b9288e289da063b9a6175a9409154940a6d19d1f
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87995098"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866254"
 ---
 # <a name="rsc-in-the-vswitch"></a>RSC en vSwitch
 >Se aplica a: Windows Server 2019
@@ -32,7 +32,7 @@ Por ejemplo:
 
     -   Host de Hyper-V
 
-    -   Espacios de almacenamiento directos
+    -   Espacios de almacenamiento directo
 
 -   NIC virtuales de invitado de Hyper-V
 
@@ -77,4 +77,4 @@ Set-VMSwitch -Name vSwitchName -EnableSoftwareRsc $false
 ```PowerShell
 Set-VMSwitch -Name vSwitchName -EnableSoftwareRsc $True
 ```
-Para obtener más información, consulte [set-VMSwitch](/powershell/module/hyper-v/set-vmswitch?view=win10-ps).
+Para obtener más información, consulte [set-VMSwitch](/powershell/module/hyper-v/set-vmswitch).

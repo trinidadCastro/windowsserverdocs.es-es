@@ -6,12 +6,12 @@ ms.assetid: 75c32e42-97f7-48df-aac9-1d82d34825e1
 ms.author: benarm
 author: BenjaminArmstrong
 ms.date: 01/17/2017
-ms.openlocfilehash: b02c30a612ef6aa1ed56e1c26e86c21a48b5b138
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: f006b20c023f009bc366da97b3f7982b985aa2c4
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746640"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96865764"
 ---
 # <a name="use-live-migration-without-failover-clustering-to-move-a-virtual-machine"></a>Usar la migración en vivo sin clústeres de conmutación por error para migrar una máquina virtual
 
@@ -56,7 +56,7 @@ PS C:\> Move-VM LMTest TestServer02 -IncludeStorage -DestinationStoragePath D:\L
 Si no ha configurado la delegación restringida, debe iniciar sesión en el servidor de origen para poder trasladar una máquina virtual. Si no lo hace, se producirá un error en el intento de autenticación, se producirá un error y se mostrará este mensaje:
 
 "Error en la operación de migración de la máquina virtual en el origen de la migración.
-No se pudo establecer una conexión con el *nombre del equipo*host: no hay credenciales disponibles en el paquete de seguridad 0x8009030E ".
+No se pudo establecer una conexión con el *nombre del equipo* host: no hay credenciales disponibles en el paquete de seguridad 0x8009030E ".
 
  Para solucionar este problema, inicie sesión en el servidor de origen y vuelva a intentar el movimiento. Para evitar tener que iniciar sesión en un servidor de origen antes de realizar una migración en vivo, configure la delegación restringida. Necesitará credenciales de administrador de dominio para configurar la delegación restringida. Para obtener instrucciones, consulte [configuración de hosts para la migración en vivo](../deploy/Set-up-hosts-for-live-migration-without-Failover-Clustering.md).
 
@@ -71,9 +71,9 @@ No se pudo establecer una conexión con el *nombre del equipo*host: no hay crede
 1. En el administrador de Hyper-V, en el panel **virtual machines** , haga clic con el botón secundario en la máquina virtual y haga clic en configuración.
 2. En el panel de navegación, expanda **procesadores** y haga clic en **compatibilidad**.
 3. Active **migrar a un equipo con una versión de procesador diferente**.
-4. Haga clic en **Aceptar**.
+4. Haga clic en **OK**.
 
-   Para usar Windows PowerShell, use el cmdlet [set-VMProcessor](/powershell/module/hyper-v/set-vmprocessor?view=win10-ps) :
+   Para usar Windows PowerShell, use el cmdlet [set-VMProcessor](/powershell/module/hyper-v/set-vmprocessor) :
 
    ```
    PS C:\> Set-VMProcessor TestVM -CompatibilityForMigrationEnabled $true

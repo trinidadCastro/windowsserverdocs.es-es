@@ -7,12 +7,12 @@ ms.author: johnmar
 ms.date: 01/30/2019
 description: En este artículo se describe el escenario de conjuntos de clústeres
 ms.localizationpriority: medium
-ms.openlocfilehash: b5b3f36cbc6627b13d2bba678cc1aeec02e57d81
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: edef2a8585a773069eb4b7f36ee607926e78b60c
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87961169"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96865944"
 ---
 # <a name="cluster-sets"></a>Conjuntos de clústeres
 
@@ -40,7 +40,7 @@ A continuación se proporciona un resumen rápido de cada uno de los elementos d
 
 **Clúster de administración**
 
-El clúster de administración de un conjunto de clústeres es un clúster de conmutación por error que hospeda el plano de administración de alta disponibilidad del conjunto de clústeres completo y el Servidor de archivos de escalabilidad horizontal de referencia de espacio de nombres de almacenamiento unificado (espacio de nombres de conjunto de clústeres) (SOFS). Un clúster de administración se desacopla lógicamente de los clústeres de miembros que ejecutan las cargas de trabajo de máquina virtual. Esto hace que el plano de administración del conjunto de clústeres sea resistente a cualquier error localizado en todo el clúster, por ejemplo, pérdida de energía de un clúster de miembros.
+El clúster de administración de un conjunto de clústeres es un clúster de conmutación por error que hospeda el plano de administración de alta disponibilidad de todo el conjunto de clústeres y la referencia de espacio de nombres de almacenamiento unificado (espacio de nombres de conjunto de clústeres) Scale-Out servidor de archivos (SOFS). Un clúster de administración se desacopla lógicamente de los clústeres de miembros que ejecutan las cargas de trabajo de máquina virtual. Esto hace que el plano de administración del conjunto de clústeres sea resistente a cualquier error localizado en todo el clúster, por ejemplo, pérdida de energía de un clúster de miembros.
 
 **Clúster de miembros**
 
@@ -48,15 +48,15 @@ Un clúster miembro de un conjunto de clústeres es normalmente un clúster hipe
 
 **Referencia de espacio de nombres de conjunto de clúster SOFS**
 
-Una referencia de espacio de nombres de conjunto de clústeres (espacio de nombres de conjunto de clústeres) SOFS es una Servidor de archivos de escalabilidad horizontal donde cada recurso compartido de SMB en el espacio de nombres del conjunto de clústeres SOFS es un recurso compartido de referencia, de tipo "SimpleReferral" recién introducido en Windows Server 2019. Esta referencia permite a los clientes de bloque de mensajes del servidor (SMB) tener acceso al recurso compartido de SMB de destino hospedado en el clúster de miembros SOFS. El SOFS de referencia de espacio de nombres del conjunto de clústeres es un mecanismo de referencia ligero y, como tal, no participa en la ruta de acceso de e/s. Las referencias SMB se almacenan en caché de forma perpetua en cada uno de los nodos de cliente y el espacio de nombres de los conjuntos de clústeres actualiza dinámicamente estas referencias según sea necesario.
+Una referencia de espacio de nombres de conjunto de clústeres (espacio de nombres de conjunto de clústeres) SOFS es un servidor de archivos de Scale-Out donde cada recurso compartido de SMB en el espacio de nombres del conjunto de clústeres SOFS es un recurso compartido de referencia, de tipo "SimpleReferral" recién incorporado en Windows Server 2019. Esta referencia permite a los clientes de bloque de mensajes del servidor (SMB) tener acceso al recurso compartido de SMB de destino hospedado en el clúster de miembros SOFS. El SOFS de referencia de espacio de nombres del conjunto de clústeres es un mecanismo de referencia ligero y, como tal, no participa en la ruta de acceso de e/s. Las referencias SMB se almacenan en caché de forma perpetua en cada uno de los nodos de cliente y el espacio de nombres de los conjuntos de clústeres actualiza dinámicamente estas referencias según sea necesario.
 
 **Clúster de conjunto maestro**
 
-En un conjunto de clústeres, la comunicación entre los clústeres miembros se acopla de manera flexible y se coordina mediante un nuevo recurso de clúster denominado "cluster Set Master" (CS-Master). Al igual que cualquier otro recurso de clúster, CS-Master tiene alta disponibilidad y resistencia a errores de clúster de miembros individuales o a errores de nodo de clúster de administración. A través de un nuevo proveedor de WMI de conjunto de clústeres, CS-Master proporciona el punto de conexión de administración para todas las interacciones de administración del conjunto de clústeres.
+En un conjunto de clústeres, la comunicación entre los clústeres miembros se acopla de manera flexible y se coordina mediante un nuevo recurso de clúster denominado "cluster Set Master" (CS-Master). Al igual que cualquier otro recurso de clúster, CS-Master es de alta disponibilidad y resistente a errores de clúster de miembros individuales o a errores de nodo de clúster de administración. A través de un nuevo proveedor de WMI de conjunto de clústeres, CS-Master proporciona el punto de conexión de administración para todas las interacciones de administración del conjunto de clústeres.
 
 **Trabajo de conjunto de clústeres**
 
-En una implementación de conjunto de clústeres, CS-Master interactúa con un nuevo recurso de clúster en los clústeres miembros denominados "cluster Set Worker" (CS-worker). CS-Worker actúa como el único enlace en el clúster para orquestar las interacciones de clústeres locales según lo solicite el CS-Master. Algunos ejemplos de estas interacciones incluyen la selección de ubicación de máquinas virtuales y el inventario de recursos locales del clúster. Solo hay una instancia de CS-Worker para cada uno de los clústeres miembros de un conjunto de clústeres.
+En una implementación de conjunto de clústeres, el CS-Master interactúa con un nuevo recurso de clúster en los clústeres miembros denominados "cluster Set Worker" (CS-worker). CS-Worker actúa como el único enlace en el clúster para orquestar las interacciones de clústeres locales según lo solicite el CS-Master. Algunos ejemplos de estas interacciones incluyen la selección de ubicación de máquinas virtuales y el inventario de recursos locales del clúster. Solo hay una instancia de CS-Worker para cada uno de los clústeres miembro de un conjunto de clústeres.
 
 **Dominio de error**
 
@@ -77,7 +77,7 @@ Los conjuntos de clústeres permiten agrupar varios clústeres en clústeres par
 3. Agregue nodos de proceso adicionales a las unidades en el clúster actual. Esto nos lleva a la opción 1 que debe tenerse en cuenta.
 4. Comprar un clúster completamente nuevo
 
-Aquí es donde los conjuntos de clústeres ofrecen la ventaja de escalado. Si agrego mis clústeres a un conjunto de clústeres, puedo aprovechar el almacenamiento o la memoria que puede haber disponible en otro clúster sin ninguna compra adicional. Desde el punto de vista de la resistencia, agregar nodos adicionales a un Espacios de almacenamiento directo no va a proporcionar votos adicionales para el cuórum. Como se mencionó [aquí](drive-symmetry-considerations.md), un clúster de espacios de almacenamiento directo puede sobrevivir a la pérdida de 2 nodos antes de la baja. Si tiene un clúster de HCl de 4 nodos, los tres nodos dejarán de funcionar todo el clúster. Si tiene un clúster de 8 nodos, los tres nodos dejarán de funcionar todo el clúster. Con los conjuntos de clústeres que tienen dos clústeres HCI de 4 nodos en el conjunto, se desactivan 2 nodos de una HCl y 1 nodo en el otro HCl, ambos clústeres permanecen al mismo tiempo. ¿Es mejor crear un clúster de Espacios de almacenamiento directo de 16 nodos de gran tamaño o dividirlo en cuatro clústeres de 4 nodos y usar conjuntos de clústeres?  Tener cuatro clústeres de 4 nodos con conjuntos de clústeres proporciona la misma escala, pero una mayor resistencia en el caso de que varios nodos de proceso se desactivan (de forma inesperada o por mantenimiento) y la producción se mantiene.
+Aquí es donde los conjuntos de clústeres ofrecen la ventaja de escalado. Si agrego mis clústeres a un conjunto de clústeres, puedo aprovechar el almacenamiento o la memoria que puede haber disponible en otro clúster sin ninguna compra adicional. Desde el punto de vista de la resistencia, agregar nodos adicionales a un Espacios de almacenamiento directo no va a proporcionar votos adicionales para el cuórum. Como se mencionó [aquí](drive-symmetry-considerations.md), un clúster de espacios de almacenamiento directo puede sobrevivir a la pérdida de 2 nodos antes de la baja. Si tiene un clúster de HCl de 4 nodos, los tres nodos dejarán de funcionar todo el clúster. Si tiene un clúster de 8 nodos, los tres nodos dejarán de funcionar todo el clúster. Con los conjuntos de clústeres que tienen clústeres HCI de 2 4 nodos en el conjunto, se desactivan 2 nodos en una HCl y 1 nodo en el otro HCl, ambos clústeres permanecen al día. ¿Es mejor crear un clúster de Espacios de almacenamiento directo de 16 nodos grande o dividirlo en clústeres de 4 4 nodos y usar conjuntos de clústeres?  El hecho de tener clústeres de 4 4 nodos con conjuntos de clústeres proporciona la misma escala, pero una mayor resistencia en el caso de que varios nodos de proceso se desactivan (de forma inesperada o por mantenimiento) y la producción se mantiene.
 
 ## <a name="considerations-for-deploying-cluster-sets"></a>Consideraciones para la implementación de conjuntos de clústeres
 
@@ -95,7 +95,7 @@ Hay algunos otros elementos a tener en cuenta en los casos en los que un SDDC m�
 
 ## <a name="scale-out-file-server-and-cluster-sets"></a>Conjuntos de clústeres y servidores de archivos de escalabilidad horizontal
 
-En Windows Server 2019, hay un nuevo rol de servidor de archivos de escalabilidad horizontal denominado infraestructura Servidor de archivos de escalabilidad horizontal (SOFS).
+En Windows Server 2019, hay un nuevo rol de servidor de archivos de escalabilidad horizontal denominado infraestructura Scale-Out servidor de archivos (SOFS).
 
 Las siguientes consideraciones se aplican a un rol de SOFS de infraestructura:
 
@@ -270,7 +270,7 @@ Sin embargo, aún no se ha completado el proceso, ya que la ruta de acceso a la 
 
 Por ejemplo: se agrega un clúster existente y tiene máquinas virtuales preconfiguradas que residen en el Volumen compartido de clúster local (CSV). La ruta de acceso del VHDX sería algo similar a "C:\ClusterStorage\Volume1\MYVM\Virtual Hard Disks\MYVM.vhdx". Es necesario realizar una migración de almacenamiento, ya que las rutas de acceso de CSV están preparadas en un clúster de un solo miembro y, por lo tanto, no serán accesibles para la máquina virtual una vez que se migren en vivo a través de los clústeres de miembros.
 
-En este ejemplo, CLUSTER3 se agregó al conjunto de clústeres mediante Add-ClusterSetMember con la infraestructura Servidor de archivos de escalabilidad horizontal como SOFS-CLUSTER3. Para migrar la configuración y el almacenamiento de la máquina virtual, el comando es:
+En este ejemplo, CLUSTER3 se agregó al conjunto de clústeres mediante Add-ClusterSetMember con la infraestructura Scale-Out servidor de archivos como SOFS-CLUSTER3. Para migrar la configuración y el almacenamiento de la máquina virtual, el comando es:
 
 ```PowerShell
 Move-VMStorage -DestinationStoragePath \\SOFS-CLUSTER3\Volume1 -Name MYVM
@@ -285,7 +285,7 @@ WARNING: Report file location: C:\Windows\Cluster\Reports\Update-ClusterVirtualM
 
 Esta advertencia se puede omitir porque la advertencia es "no se detectó ningún cambio en la configuración de almacenamiento del rol de máquina virtual". La razón de la advertencia como la ubicación física real no cambia; solo las rutas de acceso de configuración.
 
-Para obtener más información sobre Move-VMStorage, consulte este [vínculo](/powershell/module/hyper-v/move-vmstorage?view=win10-ps).
+Para obtener más información sobre Move-VMStorage, consulte este [vínculo](/powershell/module/hyper-v/move-vmstorage).
 
 La migración en vivo de una máquina virtual entre clústeres de conjuntos de clústeres diferentes no es la misma que en el pasado. En escenarios de conjuntos que no son de clúster, los pasos serían los siguientes:
 
@@ -323,7 +323,7 @@ New-ClusterSetFaultDomain -Name FD1 -FdType Logical -CimSession CSMASTER -Member
 New-ClusterSetFaultDomain -Name FD2 -FdType Logical -CimSession CSMASTER -MemberCluster CLUSTER3,CLUSTER4 -Description "This is my second fault domain"
 ```
 
-Para asegurarse de que se han creado correctamente, se puede ejecutar Get-ClusterSetFaultDomain con la salida que se muestra.
+Para asegurarse de que se han creado correctamente, Get-ClusterSetFaultDomain se puede ejecutar con la salida mostrada.
 
 ```PowerShell
 PS C:\> Get-ClusterSetFaultDomain -CimSession CSMASTER -FdName FD1 | fl *

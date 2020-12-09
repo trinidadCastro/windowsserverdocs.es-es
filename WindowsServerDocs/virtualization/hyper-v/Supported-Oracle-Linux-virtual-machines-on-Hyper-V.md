@@ -6,12 +6,12 @@ ms.assetid: c02fdb5b-62f3-43cb-a190-ab74b3ebcf77
 ms.author: benarm
 author: BenjaminArmstrong
 ms.date: 06/05/2020
-ms.openlocfilehash: 7c1029f31abe70b09bddc83f928ee492be18ef2b
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: e4cf39e9c96a92df3962fa1a8fc2493c3022d898
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746400"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866414"
 ---
 # <a name="supported-oracle-linux-virtual-machines-on-hyper-v"></a>Oracle Linux compatibles con máquinas virtuales en Hyper-V
 
@@ -43,7 +43,7 @@ En esta sección:
 |       **Característica**     |       **Versión de Windows Server**      |       **8.0-8.1 (RHCK)** |
 |-----------------------|---------------------------------------|-------------------|
 |       **Disponibilidad**        |   |
-|       **[Principal](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**      | 2019, 2016, 2012 R2 | &#10004; |
+|       **[Core](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**      | 2019, 2016, 2012 R2 | &#10004; |
 |       Windows Server 2016 hora precisa       | 2019, 2016 | &#10004; |
 |       **[Redes](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**      |   |
 |       Tramas gigantes        | 2019, 2016, 2012 R2 | &#10004; |
@@ -62,13 +62,13 @@ En esta sección:
 |       **[Memoria](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)** | |
 |       Compatibilidad con el kernel PAE  | 2019, 2016, 2012 R2 |  N/D |
 |       Configuración de la brecha de MMIO  | 2019, 2016, 2012 R2 | &#10004; |
-|       Memoria dinámica: agregar en caliente | 2019, 2016, 2012 R2  | &#10004; Nota 7, 8, 9 |
+|       Memoria dinámica Hot-Add | 2019, 2016, 2012 R2  | &#10004; Nota 7, 8, 9 |
 |       Memoria dinámica: globos | 2019, 2016, 2012 R2 | &#10004; Nota 7, 8, 9 |
 |       Tamaño de memoria en tiempo de ejecución | 2019, 2016  | &#10004;  |
 |       **[Vídeo](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)** | |
 |       Dispositivo de vídeo específico de Hyper-V | 2019, 2016, 2012 R2 | &#10004;   |
 |       **[Varios](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)** | |
-|       Par clave-valor  | 2019, 2016, 2012 R2 | &#10004;   |
+|       Key-Value par  | 2019, 2016, 2012 R2 | &#10004;   |
 |       Interrupción no enmascarable | 2019, 2016, 2012 R2 | &#10004;  |
 |       Copia de archivos de host a invitado | 2019, 2016, 2012 R2 | &#10004;  |
 |       comando lsvmbus | 2019, 2016, 2012 R2 | &#10004;  |
@@ -156,7 +156,7 @@ Integrado
 <tr height="50px">
 <td width="20%">
 
-**[Principal](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**
+**[Core](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**
 </td>
 <td width="20%">
 
@@ -775,7 +775,7 @@ Configuración de la brecha de MMIO
 <tr height="50px">
 <td width="20%">
 
-Memoria dinámica agregar en caliente
+Memoria dinámica Hot-Add
 </td>
 <td width="20%">
 
@@ -1270,7 +1270,7 @@ Esta serie solo tiene kernels de 64 bits.
 |       **Característica**     |       **Versión de Windows Server**      |       **6.8-6.10 (RHCK)** |       **6.8-6.10 (UEK4)**     |
 |-----------------------|---------------------------------------|-------------------|-------------------|
 |       **Disponibilidad**     |   | LIS 4,3  | Integrado  |
-|       **[Principal](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**      | 2019, 2016, 2012 R2 | &#10004; | &#10004;
+|       **[Core](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**      | 2019, 2016, 2012 R2 | &#10004; | &#10004;
 |       Windows Server 2016 hora precisa       | 2019, 2016 | |
 |       **[Redes](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**      |   |  |
 |       Tramas gigantes        | 2019, 2016, 2012 R2 | &#10004; | &#10004;|
@@ -1289,13 +1289,13 @@ Esta serie solo tiene kernels de 64 bits.
 |       **[Memoria](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)** | |  |
 |       Compatibilidad con el kernel PAE  | 2019, 2016, 2012 R2 |  N/D | N/D
 |       Configuración de la brecha de MMIO  | 2019, 2016, 2012 R2 | &#10004; | &#10004;  |
-|       Memoria dinámica: agregar en caliente | 2019, 2016, 2012 R2  | &#10004; Nota 6, 8, 9 | &#10004; Nota 6, 8, 9 |
+|       Memoria dinámica Hot-Add | 2019, 2016, 2012 R2  | &#10004; Nota 6, 8, 9 | &#10004; Nota 6, 8, 9 |
 |       Memoria dinámica: globos | 2019, 2016, 2012 R2 | &#10004; Nota 6, 8, 9 | &#10004; Nota 6, 8, 9 |
 |       Tamaño de memoria en tiempo de ejecución | 2019, 2016  |  | |
 |       **[Vídeo](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)** | | |
 |       Dispositivo de vídeo específico de Hyper-V | 2019, 2016, 2012 R2 | &#10004;   | &#10004; |
 |       **[Varios](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)** | | |
-|       Par clave-valor  | 2019, 2016, 2012 R2 | &#10004; Nota 10, 11   | &#10004; Nota 10, 11  |
+|       Key-Value par  | 2019, 2016, 2012 R2 | &#10004; Nota 10, 11   | &#10004; Nota 10, 11  |
 |       Interrupción no enmascarable | 2019, 2016, 2012 R2 | &#10004;  | &#10004; |
 |       Copia de archivos de host a invitado | 2019, 2016, 2012 R2 | &#10004;  | &#10004; |
 |       comando lsvmbus | 2019, 2016, 2012 R2 | &#10004;  | &#10004; |
@@ -1321,13 +1321,13 @@ Esta serie solo tiene kernels de 64 bits.
 
 6. La compatibilidad con memoria dinámica solo está disponible en las máquinas virtuales de 64 bits.
 
-7. La compatibilidad con la adición en caliente no está habilitada de forma predeterminada en esta distribución. Para habilitar la compatibilidad con la adición en caliente, debe agregar una regla de udev en/etc/udev/rules.d/como se indica a continuación:
+7. La compatibilidad con Hot-Add no está habilitada de forma predeterminada en esta distribución. Para habilitar la compatibilidad con Hot-Add, debe agregar una regla de udev en/etc/udev/rules.d/como se indica a continuación:
 
    1. Cree un archivo **/etc/udev/rules.d/100-Balloon.rules**. Puede usar cualquier otro nombre que desee para el archivo.
 
    2. Agregue el siguiente contenido al archivo: `SUBSYSTEM=="memory", ACTION=="add", ATTR{state}="online"`
 
-   3. Reinicie el sistema para habilitar la compatibilidad con la adición en caliente.
+   3. Reinicie el sistema para habilitar la compatibilidad con Hot-Add.
 
    Mientras que la descarga de Linux Integration Services crea esta regla en la instalación, la regla también se quita cuando se desinstala LIS, por lo que la regla debe volver a crearse si se necesita memoria dinámica después de la desinstalación.
 
@@ -1337,7 +1337,7 @@ Esta serie solo tiene kernels de 64 bits.
 
    * Las aplicaciones que tienden a consumir toda la memoria disponible en un sistema se limitan a consumir hasta el 80 por ciento de la RAM disponible.
 
-9. Si utiliza Memoria dinámica en un sistema operativo Windows Server 2016 o Windows Server 2012 R2, especifique la **memoria de inicio**, la **memoria mínima**y los parámetros de **memoria máxima** en múltiplos de 128 megabytes (MB). Si no lo hace, pueden producirse errores de adición en caliente y es posible que no vea ningún aumento de la memoria en un sistema operativo invitado.
+9. Si utiliza Memoria dinámica en un sistema operativo Windows Server 2016 o Windows Server 2012 R2, especifique la **memoria de inicio**, la **memoria mínima** y los parámetros de **memoria máxima** en múltiplos de 128 megabytes (MB). Si no lo hace, pueden producirse errores de adición en caliente y es posible que no vea ningún aumento de la memoria en un sistema operativo invitado.
 
 10. Para habilitar la infraestructura de pares clave-valor (KVP), instale el paquete RPM de hypervkvpd o HyperV-daemons en el Oracle Linux ISO. También puede instalar el paquete directamente desde Oracle Linux repositorios de yum.
 
@@ -1352,9 +1352,9 @@ Esta serie solo tiene kernels de 64 bits.
     La descarga de Integration Services de Linux se puede aplicar a las máquinas virtuales de generación 2 existentes, pero no a la capacidad de generación 2.
 
 
-Consulte también
+Vea también
 
-* [Set-VMFirmware](/powershell/module/hyper-v/set-vmfirmware?view=win10-ps)
+* [Set-VMFirmware](/powershell/module/hyper-v/set-vmfirmware)
 
 * [Compatibilidad con máquinas virtuales de alta y Red Hat Enterprise Linux en Hyper-V](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
 

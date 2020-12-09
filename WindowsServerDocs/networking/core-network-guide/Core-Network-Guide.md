@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: b3cd60f7-d380-4712-9a78-0a8f551e1121
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 6db855343ef037fb1e55925620f1842c7fdff98a
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: f746422ee05afc4f000693138c1f2efb3b7f70a9
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997142"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866124"
 ---
 # <a name="core-network-components"></a>Componentes de la red principal
 
@@ -133,7 +133,7 @@ TCP/IP proporciona utilidades de TCP/IP básicas que permiten a los equipos basa
 
 -  Windows 7
 
--  Windows Server 2008
+-  Windows Server 2008
 
 - Windows Vista
 
@@ -162,7 +162,7 @@ En la siguiente ilustración se muestra la topología de una red principal de Wi
 ### <a name="core-network-components"></a>Componentes de la red principal
 A continuación se detallan los componentes de una red principal.
 
-##### <a name="router"></a>Router
+##### <a name="router"></a>Enrutador
 En esta guía de implementación se proporcionan instrucciones para implementar una red principal con dos subredes separadas por un enrutador con reenvío de DHCP habilitado. Sin embargo, se puede implementar un conmutador de nivel 2 o nivel 3, o un concentrador, según los requisitos y recursos de los que se disponga. Si se implementa un conmutador, deberá tener la capacidad de reenviar DHCP; de lo contrario, se deberá colocar un servidor DHCP en cada subred. Si implementa un concentrador, estará implementando una sola subred, por lo que no será necesario habilitar el reenvío de DHCP o colocar otro ámbito en el servidor DHCP.
 
 ##### <a name="static-tcpip-configurations"></a>Configuración de TCP/IP estática
@@ -222,7 +222,7 @@ Para obtener más información, vea la sección [Planear la implementación de D
 Para cada servidor de la red principal, debe cambiar el nombre del equipo y asignar y configurar una dirección IPv4 estática y otras propiedades TCP/IP para el equipo.
 
 #### <a name="planning-naming-conventions-for-computers-and-devices"></a>Planear las convenciones de nomenclatura para equipos y dispositivos
-Para mantener la coherencia en toda la red, es una buena idea usar nombres coherentes para servidores, impresoras y demás dispositivos. Los nombres de los equipos se pueden usar para ayudar a los usuarios y administradores a identificar con facilidad el propósito y la ubicación del servidor, impresora u otro dispositivo. Por ejemplo, si tiene tres servidores DNS, uno en San Francisco, uno en los Ángeles y otro en Chicago, podría usar el número de ubicación de la *función de servidor*de Convención de nomenclatura - *location* - *number*:
+Para mantener la coherencia en toda la red, es una buena idea usar nombres coherentes para servidores, impresoras y demás dispositivos. Los nombres de los equipos se pueden usar para ayudar a los usuarios y administradores a identificar con facilidad el propósito y la ubicación del servidor, impresora u otro dispositivo. Por ejemplo, si tiene tres servidores DNS, uno en San Francisco, uno en los Ángeles y otro en Chicago, podría usar el número de ubicación de la *función de servidor* de Convención de nomenclatura - *location* - *number*:
 
 - DNS-DEN-01. Este nombre representa el servidor DNS en Denver, Colorado. Si se agregan más servidores DNS en Denver, se puede incrementar el valor numérico del nombre, como en DNS-DEN-02 y DNS-DEN-03.
 
@@ -282,7 +282,7 @@ En la siguiente tabla se proporcionan elementos de una configuración de ejemplo
 |Elementos de configuración:|Valores de ejemplo:|
 |------------------------|-------------------|
 |Nombre DNS completo|Ejemplos:<p>-corp.contoso.com<br />-example.com|
-|Nivel funcional del bosque|-Windows Server 2008 <br />-Windows Server 2008 R2 <br />-Windows Server 2012 <br />-Windows Server 2012 R2 <br />-Windows Server 2016|
+|Nivel funcional de bosque|-Windows Server 2008 <br />-Windows Server 2008 R2 <br />-Windows Server 2012 <br />-Windows Server 2012 R2 <br />-Windows Server 2016|
 |Ubicación de la carpeta de bases de datos de Active Directory Domain Services|E:\Configuration\\<p>O bien, acepte la ubicación predeterminada.|
 |Ubicación de la carpeta de archivos de registro de Active Directory Domain Services|E:\Configuration\\<p>O bien, acepte la ubicación predeterminada.|
 |Ubicación de la carpeta SYSVOL de Active Directory Domain Services|E:\Configuration\\<p>O bien, acepte la ubicación predeterminada.|
@@ -480,7 +480,7 @@ Puede usar los procedimientos de este tema para configurar las propiedades del P
 
 1.  En la barra de tareas, haga clic con el botón secundario en el icono Red y después haga clic en **Abrir el Centro de redes y recursos compartidos**.
 
-2.  En **centro de redes y recursos compartidos**, haga clic en **Cambiar configuración del adaptador**. Se abre la carpeta **Conexiones de red** y muestra las conexiones de red disponibles.
+2.  En  **centro de redes y recursos compartidos**, haga clic en **Cambiar configuración del adaptador**. Se abre la carpeta **Conexiones de red** y muestra las conexiones de red disponibles.
 
 3.  En **Conexiones de red**, haga clic con el botón secundario en la conexión que desea configurar y, a continuación, haga clic en **Propiedades**. Se abre el cuadro de diálogo **Propiedades** de la conexión de red.
 
@@ -499,7 +499,7 @@ Puede usar los procedimientos de este tema para configurar las propiedades del P
 
 9. En **Servidor DNS alternativo**, escriba la dirección IP del servidor DNS alternativo si lo hay. Si tiene previsto usar el equipo local como servidor DNS alternativo, escriba la dirección IP de ese equipo.
 
-10. Haga clic en **Aceptar**y, a continuación, en **Cerrar**.
+10. Haga clic en **Aceptar** y, a continuación, en **Cerrar**.
 
 > [!NOTE]
 > Para obtener información acerca de cómo configurar una dirección IP estática en equipos que ejecutan otros sistemas operativos de Microsoft, consulte [el Apéndice B: configuración de direcciones IP estáticas](#BKMK_B).
@@ -548,8 +548,8 @@ Puede usar los siguientes comandos para instalar y configurar AD DS y DNS. Debe 
 
 >[!NOTE]
 >Para obtener más información sobre estos comandos de Windows PowerShell, vea los temas de referencia siguientes.
->- [Install-WindowsFeature](/powershell/module/servermanager/install-windowsfeature?view=win10-ps)
->- [Install-ADDSForest](/powershell/module/addsdeployment/install-addsforest?view=win10-ps)
+>- [Install-WindowsFeature](/powershell/module/servermanager/install-windowsfeature)
+>- [Install-ADDSForest](/powershell/module/addsdeployment/install-addsforest)
 
 Para poder realizar este procedimiento debe pertenecer, como mínimo, al grupo **Administradores**.
 
@@ -561,9 +561,9 @@ Install-WindowsFeature AD-Domain-Services -IncludeManagementTools`
 
 Cuando la instalación se ha completado correctamente, se muestra el siguiente mensaje en Windows PowerShell.
 
-| Correcto | Reinicio necesario | Código de salida |  Resultado de la característica |
+| Success | Reinicio necesario | Código de salida |  Resultado de la característica |
 |--|--|--|--|
-| True | No | Correcto | {Active Directory Domain Services, grupo P... |
+| True | No | Success | {Active Directory Domain Services, grupo P... |
 
 - En Windows PowerShell, escriba el siguiente comando, reemplace el texto **Corp.contoso.com** por el nombre de dominio y, a continuación, presione ENTRAR:
 
@@ -597,7 +597,7 @@ Install-ADDSForest -DomainName "corp.contoso.com"
 Get-WindowsFeature
 ````
 
-Los resultados de este comando se muestran en Windows PowerShell y deben ser similares a los resultados de la imagen siguiente. En el caso de las tecnologías instaladas, los corchetes a la izquierda del nombre de la tecnología contienen el carácter **X**y el valor de **Estado de instalación** está **instalado**.
+Los resultados de este comando se muestran en Windows PowerShell y deben ser similares a los resultados de la imagen siguiente. En el caso de las tecnologías instaladas, los corchetes a la izquierda del nombre de la tecnología contienen el carácter **X** y el valor de **Estado de instalación** está **instalado**.
 
 ![Resultados del comando Get-WindowsFeature](../media/Core-Network-Guide/server-roles-installed.jpg)
 
@@ -612,21 +612,21 @@ Los resultados de este comando se muestran en Windows PowerShell y deben ser sim
 
 3.  En **Seleccionar tipo de instalación**, asegúrese de que la opción **Instalación basada en características o en roles** está seleccionada y, a continuación, haga clic en **Siguiente**.
 
-4.  En **Seleccionar servidor de destino**, asegúrese de que la opción **Seleccionar un servidor del grupo de servidores** está seleccionada. En **Grupo de servidores**, asegúrese de que el equipo local está seleccionado. Haga clic en **Next**.
+4.  En **Seleccionar servidor de destino**, asegúrese de que la opción **Seleccionar un servidor del grupo de servidores** está seleccionada. En **Grupo de servidores**, asegúrese de que el equipo local está seleccionado. Haga clic en **Siguiente**.
 
-5.  En **Seleccionar roles de servidor**, en **Roles**, haga clic en **Active Directory Domain Services**. En **¿Desea agregar características requeridas para Active Directory Domain Services?**, haga clic en **Agregar características**. Haga clic en **Next**.
+5.  En **Seleccionar roles de servidor**, en **Roles**, haga clic en **Active Directory Domain Services**. En **¿Desea agregar características requeridas para Active Directory Domain Services?**, haga clic en **Agregar características**. Haga clic en **Siguiente**.
 
 6.  En **Seleccionar características**, haga clic en **Siguiente**. En **Active Directory Domain Services**, repase la información proporcionada y haga clic en **Siguiente**.
 
 7.  En **Confirmar selecciones de instalación**, haga clic en **Instalar**. La página Progreso de la instalación muestra el estado durante el proceso de instalación. Cuando el proceso finalice, haga clic en **Promover este servidor a controlador de dominio** en los detalles del mensaje. Se abre el Asistente para configuración de Active Directory Domain Services.
 
-8.  En **Configuración de implementación**, seleccione **Agregar un nuevo bosque**. En **Nombre de dominio raíz**, escriba el nombre de dominio completo (FQDN) del dominio. Por ejemplo, si el FQDN es corp.contoso.com, escriba **corp.contoso.com**. Haga clic en **Next**.
+8.  En **Configuración de implementación**, seleccione **Agregar un nuevo bosque**. En **Nombre de dominio raíz**, escriba el nombre de dominio completo (FQDN) del dominio. Por ejemplo, si el FQDN es corp.contoso.com, escriba **corp.contoso.com**. Haga clic en **Siguiente**.
 
-9. En **Opciones del controlador de dominio**, en **Seleccionar nivel funcional del nuevo bosque y dominio raíz**, seleccione el nivel funcional del bosque y del dominio que quiera usar. En **Especificar capacidades del controlador de dominio**, asegúrese de que **Servidor de Sistema de nombres de dominio (DNS)** y **Catálogo global (GC)** están seleccionados. En **Contraseña** y **Confirmar contraseña**, escriba la contraseña del Modo de restauración de servicios de directorio (DSRM) que desea usar. Haga clic en **Next**.
+9. En **Opciones del controlador de dominio**, en **Seleccionar nivel funcional del nuevo bosque y dominio raíz**, seleccione el nivel funcional del bosque y del dominio que quiera usar. En **Especificar capacidades del controlador de dominio**, asegúrese de que **Servidor de Sistema de nombres de dominio (DNS)** y **Catálogo global (GC)** están seleccionados. En **Contraseña** y **Confirmar contraseña**, escriba la contraseña del Modo de restauración de servicios de directorio (DSRM) que desea usar. Haga clic en **Siguiente**.
 
 10. En **Opciones de DNS**, haga clic en **Siguiente**.
 
-11. En **Opciones adicionales**, confirme el nombre NetBIOS asignado al dominio y cámbielo solamente si es necesario. Haga clic en **Next**.
+11. En **Opciones adicionales**, confirme el nombre NetBIOS asignado al dominio y cámbielo solamente si es necesario. Haga clic en **Siguiente**.
 
 12. En **Rutas de acceso**, en **Especificar la ubicación de la base de datos de AD DS, archivos de registro y SYSVOL**, haga lo siguiente:
 
@@ -634,11 +634,11 @@ Los resultados de este comando se muestran en Windows PowerShell y deben ser sim
 
     - Escriba las ubicaciones de las carpetas que desea usar para **Carpeta de la base de datos**, **Carpeta de archivos de registro** y **Carpeta SYSVOL**.
 
-13. Haga clic en **Next**.
+13. Haga clic en **Siguiente**.
 
 14. En **Revisar opciones**, repase las selecciones realizadas.
 
-15. Si desea exportar la configuración a un script de Windows PowerShell, haga clic en **Ver script**. El script se abre en el Bloc de notas y puede guardarlo en la ubicación de carpeta que desee. Haga clic en **Next**. Las selecciones realizadas se validan en **Comprobación de requisitos previos**. Cuando finalice la comprobación, haga clic en **Instalar**. Cuando Windows se lo solicite, haga clic en **Cerrar**. El servidor se reinicia para completar la instalación de AD DS y DNS.
+15. Si desea exportar la configuración a un script de Windows PowerShell, haga clic en **Ver script**. El script se abre en el Bloc de notas y puede guardarlo en la ubicación de carpeta que desee. Haga clic en **Siguiente**. Las selecciones realizadas se validan en **Comprobación de requisitos previos**. Cuando finalice la comprobación, haga clic en **Instalar**. Cuando Windows se lo solicite, haga clic en **Cerrar**. El servidor se reinicia para completar la instalación de AD DS y DNS.
 
 16. Para comprobar que la instalación se ha realizado correctamente, consulte la consola de Administrador del servidor una vez que se haya reiniciado el servidor. Tanto AD DS como DNS deben aparecer en el panel izquierdo, como los elementos resaltados en la imagen siguiente.
 
@@ -662,7 +662,7 @@ El requisito mínimo para llevar a cabo este procedimiento consiste en pertenece
 
 ###### <a name="to-create-a-user-account"></a>Para crear una cuenta de usuario
 
-1.  En DC1, en Administrador del servidor, haga clic en **Herramientas** y, a continuación, haga clic en **Usuarios y equipos de Active Directory **. Se abre MMC de Usuarios y equipos de Active Directory. Haga clic en el nodo de su dominio si no está seleccionado. Por ejemplo, si el dominio es corp.contoso.com, haga clic en **corp.contoso.com**.
+1.  En DC1, en Administrador del servidor, haga clic en **Herramientas** y, a continuación, haga clic en **Usuarios y equipos de Active Directory**. Se abre MMC de Usuarios y equipos de Active Directory. Haga clic en el nodo de su dominio si no está seleccionado. Por ejemplo, si el dominio es corp.contoso.com, haga clic en **corp.contoso.com**.
 
 2.  En el panel de detalles, haga clic con el botón secundario en la carpeta a la que desea agregar una cuenta de usuario.
 
@@ -680,7 +680,7 @@ El requisito mínimo para llevar a cabo este procedimiento consiste en pertenece
 
 7.  Modifique **Nombre completo** para agregar iniciales o invertir el orden del nombre y los apellidos.
 
-8.  En **Nombre de inicio de sesión de usuario**, escriba el nombre correspondiente. Haga clic en **Next**.
+8.  En **Nombre de inicio de sesión de usuario**, escriba el nombre correspondiente. Haga clic en **Siguiente**.
 
 9. En **Nuevo objeto: usuario**, en **Contraseña** y en **Confirmar contraseña**, escriba la contraseña del usuario y, a continuación, seleccione las opciones apropiadas para la contraseña.
 
@@ -693,7 +693,7 @@ El requisito mínimo para realizar este procedimiento es la pertenencia al grupo
 
 ###### <a name="to-assign-group-membership"></a>Para asignar la pertenencia a grupos
 
-1.  En DC1, en Administrador del servidor, haga clic en **Herramientas** y, a continuación, haga clic en **Usuarios y equipos de Active Directory **. Se abre MMC de Usuarios y equipos de Active Directory. Haga clic en el nodo de su dominio si no está seleccionado. Por ejemplo, si el dominio es corp.contoso.com, haga clic en **corp.contoso.com**.
+1.  En DC1, en Administrador del servidor, haga clic en **Herramientas** y, a continuación, haga clic en **Usuarios y equipos de Active Directory**. Se abre MMC de Usuarios y equipos de Active Directory. Haga clic en el nodo de su dominio si no está seleccionado. Por ejemplo, si el dominio es corp.contoso.com, haga clic en **corp.contoso.com**.
 
 2.  En el panel de detalles, haga doble clic en la carpeta que contiene el grupo al cual desea agregar un miembro.
 
@@ -732,19 +732,19 @@ El requisito mínimo para llevar a cabo este procedimiento es la pertenencia al 
 
 5.  En **Tipo de zona**, seleccione **Zona principal**.
 
-6.  Si el servidor DNS es un controlador de dominio grabable, asegúrese de que la opción **Almacenar la zona en Active Directory** está seleccionada. Haga clic en **Next**.
+6.  Si el servidor DNS es un controlador de dominio grabable, asegúrese de que la opción **Almacenar la zona en Active Directory** está seleccionada. Haga clic en **Siguiente**.
 
-7.  En **Ámbito de replicación de zona de Active Directory**, seleccione **Para todos los servidores DNS que se ejecutan en controladores de dominio en este dominio**, a menos que tenga un motivo específico para elegir una opción diferente. Haga clic en **Next**.
+7.  En **Ámbito de replicación de zona de Active Directory**, seleccione **Para todos los servidores DNS que se ejecutan en controladores de dominio en este dominio**, a menos que tenga un motivo específico para elegir una opción diferente. Haga clic en **Siguiente**.
 
-8.  En la primera página del asistente **Nombre de la zona de búsqueda inversa**, seleccione **Zona de búsqueda inversa para IPv4**. Haga clic en **Next**.
+8.  En la primera página del asistente **Nombre de la zona de búsqueda inversa**, seleccione **Zona de búsqueda inversa para IPv4**. Haga clic en **Siguiente**.
 
 9. En la segunda página del asistente **Nombre de la zona de búsqueda inversa**, realice una de las siguientes acciones:
 
     - En **Id. de red**, escriba el identificador de red del intervalo de direcciones IP. Por ejemplo, si el intervalo de direcciones IP oscila entre 10.0.0.1 y 10.0.0.254, escriba **10.0.0**.
 
-    - En **Nombre de la zona de búsqueda inversa**, el nombre de la zona de búsqueda inversa para IPv4 se agrega automáticamente. Haga clic en **Next**.
+    - En **Nombre de la zona de búsqueda inversa**, el nombre de la zona de búsqueda inversa para IPv4 se agrega automáticamente. Haga clic en **Siguiente**.
 
-10. En **Actualización dinámica**, seleccione el tipo de actualizaciones dinámicas que desea permitir. Haga clic en **Next**.
+10. En **Actualización dinámica**, seleccione el tipo de actualizaciones dinámicas que desea permitir. Haga clic en **Siguiente**.
 
 11. En **Finalización del Asistente para nueva zona**, repase sus opciones y, a continuación, haga clic en **Finalizar**.
 
@@ -774,11 +774,11 @@ Haga lo siguiente en todos los servidores que vaya a implementar, a excepción d
 
 3.  En **Nombre del equipo**, en **Miembro del**, haga clic en **Dominio** y, a continuación, escriba el nombre del dominio al que quiere unirse. Por ejemplo, si el nombre del dominio es corp.contoso.com, escriba **corp.contoso.com**.
 
-4.  Haga clic en **Aceptar**. Se abre el cuadro de diálogo **Seguridad de Windows**.
+4.  Haga clic en **OK**. Se abre el cuadro de diálogo **Seguridad de Windows**.
 
-5.  En **Cambios en el dominio o el nombre del equipo**, escriba el nombre del usuario en **Nombre de usuario** y la contraseña en **Contraseña** y, a continuación, haga clic en **Aceptar**. Se abrirá el cuadro de diálogo **Cambios en el dominio o el nombre del equipo** y le dará la bienvenida al dominio. Haga clic en **Aceptar**.
+5.  En **Cambios en el dominio o el nombre del equipo**, escriba el nombre del usuario en **Nombre de usuario** y la contraseña en **Contraseña** y, a continuación, haga clic en **Aceptar**. Se abrirá el cuadro de diálogo **Cambios en el dominio o el nombre del equipo** y le dará la bienvenida al dominio. Haga clic en **OK**.
 
-6.  El cuadro de diálogo **Cambios en el dominio o el nombre del equipo** muestra un mensaje que le indica que debe reiniciar el equipo para aplicar los cambios. Haga clic en **Aceptar**.
+6.  El cuadro de diálogo **Cambios en el dominio o el nombre del equipo** muestra un mensaje que le indica que debe reiniciar el equipo para aplicar los cambios. Haga clic en **OK**.
 
 7.  En el cuadro de diálogo **Propiedades del sistema**, en la pestaña **Nombre del equipo**, haga clic en **Cerrar**. Se abrirá el cuadro de diálogo **Microsoft Windows**, que muestra un mensaje que indica de nuevo que debe reiniciar el equipo para aplicar los cambios. Haga clic en **Reiniciar ahora**.
 
@@ -850,13 +850,13 @@ El requisito mínimo para llevar a cabo este procedimiento consiste en pertenece
 
 3.  En **Seleccionar tipo de instalación**, asegúrese de que la opción **Instalación basada en características o en roles** está seleccionada y, a continuación, haga clic en **Siguiente**.
 
-4.  En **Seleccionar servidor de destino**, asegúrese de que la opción **Seleccionar un servidor del grupo de servidores** está seleccionada. En **Grupo de servidores**, asegúrese de que el equipo local está seleccionado. Haga clic en **Next**.
+4.  En **Seleccionar servidor de destino**, asegúrese de que la opción **Seleccionar un servidor del grupo de servidores** está seleccionada. En **Grupo de servidores**, asegúrese de que el equipo local está seleccionado. Haga clic en **Siguiente**.
 
-5.  En **Seleccionar roles de servidor**, en **roles**, seleccione **servidor DHCP**. En **¿Desea agregar características requeridas para servidor DHCP?**, haga clic en **Agregar características**. Haga clic en **Next**.
+5.  En **Seleccionar roles de servidor**, en **roles**, seleccione **servidor DHCP**. En **¿Desea agregar características requeridas para servidor DHCP?**, haga clic en **Agregar características**. Haga clic en **Siguiente**.
 
 6.  En **Seleccionar características**, haga clic en **Siguiente**. En **Servidor DHCP**, repase la información proporcionada y haga clic en **Siguiente**.
 
-7.  En **Confirmar selecciones de instalación**, haga clic en **Reiniciar automáticamente el servidor de destino en caso necesario**. Si se le pide confirmar la selección, haga clic en **Sí** y, a continuación, haga clic en **Instalar**. La página progreso de la **instalación** muestra el estado durante el proceso de instalación. Cuando se complete el proceso, el mensaje "Configuración requerida. Se muestra instalación correcta en *NombreDeEquipo*", donde *NombreDeEquipo* es el nombre del equipo en el que instaló el servidor DHCP. En la ventana del mensaje, haga clic en **Completar configuración de DHCP**. Se abre el Asistente posterior a la instalación de DHCP. Haga clic en **Next**.
+7.  En **Confirmar selecciones de instalación**, haga clic en **Reiniciar automáticamente el servidor de destino en caso necesario**. Si se le pide confirmar la selección, haga clic en **Sí** y, a continuación, haga clic en **Instalar**. La página progreso de la **instalación** muestra el estado durante el proceso de instalación. Cuando se complete el proceso, el mensaje "Configuración requerida. Se muestra instalación correcta en *NombreDeEquipo*", donde *NombreDeEquipo* es el nombre del equipo en el que instaló el servidor DHCP. En la ventana del mensaje, haga clic en **Completar configuración de DHCP**. Se abre el Asistente posterior a la instalación de DHCP. Haga clic en **Siguiente**.
 
 8.  En **Autorización**, escriba las credenciales que desea usar para autorizar el servidor DHCP en Active Directory Domain Services y, a continuación, haga clic en **Confirmar**. Cuando se haya completado la autorización, haga clic en **Cerrar**.
 
@@ -871,7 +871,7 @@ El requisito mínimo para realizar este procedimiento consiste en pertenecer a *
 
 2.  En **DHCP**, expanda el nombre del servidor. Por ejemplo, si el nombre del servidor DHCP es DHCP1.corp.contoso.com, haga clic en la flecha abajo situada junto a **dhcp1.Corp.contoso.com**.
 
-3.  Debajo del nombre del servidor, haga clic con el botón secundario en **IPv4**y, a continuación, haga clic en **nuevo ámbito**. Se abre el Asistente para ámbito nuevo.
+3.  Debajo del nombre del servidor, haga clic con el botón secundario en **IPv4** y, a continuación, haga clic en **nuevo ámbito**. Se abre el Asistente para ámbito nuevo.
 
 4.  En **Éste es el Asistente para ámbito nuevo**, haga clic en **Siguiente**.
 
@@ -887,7 +887,7 @@ El requisito mínimo para realizar este procedimiento consiste en pertenecer a *
 
     3.  Si fuera necesario, modifique los valores de **Longitud** o **Máscara de subred** para su esquema de direcciones.
 
-    4.  Haga clic en **Next**.
+    4.  Haga clic en **Siguiente**.
 
 8.  En **Agregar exclusiones**, realice lo siguiente:
 
@@ -919,7 +919,7 @@ El requisito mínimo para realizar este procedimiento consiste en pertenecer a *
 
 15. En **Activar ámbito**, seleccione **Activar este ámbito ahora**.
 
-16. Haga clic en **Siguiente**y después en **Finalizar**.
+16. Haga clic en **Siguiente** y después en **Finalizar**.
 
 > [!IMPORTANT]
 > Para crear ámbitos para otras subredes, repita este procedimiento. Use un intervalo de direcciones IP diferente por cada subred que desee implementar y asegúrese de que el reenvío de mensajes DHCP está habilitado en todos los enrutadores que llevan a otras subredes.
@@ -945,13 +945,13 @@ El requisito mínimo para realizar este procedimiento consiste en pertenecer a *
 
 4.  En **nombre de equipo**, haga clic en **cambiar**. Se abre el cuadro de diálogo **Cambios en el dominio o el nombre del equipo**.
 
-5.  En **cambios en el dominio o el nombre del equipo** , en **miembro de**, haga clic en **dominio**y, a continuación, escriba el nombre del dominio al que desea unirse. Por ejemplo, si el nombre del dominio es corp.contoso.com, escriba **corp.contoso.com**.
+5.  En **cambios en el dominio o el nombre del equipo** , en **miembro de**, haga clic en **dominio** y, a continuación, escriba el nombre del dominio al que desea unirse. Por ejemplo, si el nombre del dominio es corp.contoso.com, escriba **corp.contoso.com**.
 
-6.  Haga clic en **Aceptar**. Se abre el cuadro de diálogo **Seguridad de Windows**.
+6.  Haga clic en **OK**. Se abre el cuadro de diálogo **Seguridad de Windows**.
 
-7.  En **Cambios en el dominio o el nombre del equipo**, escriba el nombre del usuario en **Nombre de usuario** y la contraseña en **Contraseña** y, a continuación, haga clic en **Aceptar**. Se abrirá el cuadro de diálogo **Cambios en el dominio o el nombre del equipo** y le dará la bienvenida al dominio. Haga clic en **Aceptar**.
+7.  En **Cambios en el dominio o el nombre del equipo**, escriba el nombre del usuario en **Nombre de usuario** y la contraseña en **Contraseña** y, a continuación, haga clic en **Aceptar**. Se abrirá el cuadro de diálogo **Cambios en el dominio o el nombre del equipo** y le dará la bienvenida al dominio. Haga clic en **OK**.
 
-8.  El cuadro de diálogo **Cambios en el dominio o el nombre del equipo** muestra un mensaje que le indica que debe reiniciar el equipo para aplicar los cambios. Haga clic en **Aceptar**.
+8.  El cuadro de diálogo **Cambios en el dominio o el nombre del equipo** muestra un mensaje que le indica que debe reiniciar el equipo para aplicar los cambios. Haga clic en **OK**.
 
 9. En el cuadro de diálogo **Propiedades del sistema**, en la pestaña **Nombre del equipo**, haga clic en **Cerrar**. Se abrirá el cuadro de diálogo **Microsoft Windows**, que muestra un mensaje que indica de nuevo que debe reiniciar el equipo para aplicar los cambios. Haga clic en **Reiniciar ahora**.
 
@@ -959,19 +959,19 @@ El requisito mínimo para realizar este procedimiento consiste en pertenecer a *
 
 1.  Inicie sesión en el equipo con la cuenta de administrador local.
 
-2.  Haga clic con el botón secundario en **Inicio**y, a continuación, haga clic en **sistema**. Se abre el cuadro de diálogo **Sistema**.
+2.  Haga clic con el botón secundario en **Inicio** y, a continuación, haga clic en **sistema**. Se abre el cuadro de diálogo **Sistema**.
 
 3.  En **sistema**, haga clic en **Configuración avanzada del sistema**. Se abre el cuadro de diálogo **Propiedades del sistema**. Haga clic en la ficha **Nombre de equipo**.
 
 4.  En **nombre de equipo**, haga clic en **cambiar**. Se abre el cuadro de diálogo **Cambios en el dominio o el nombre del equipo**.
 
-5.  En **cambios en el dominio o el nombre del equipo** , en **miembro de**, haga clic en **dominio**y, a continuación, escriba el nombre del dominio al que desea unirse. Por ejemplo, si el nombre del dominio es corp.contoso.com, escriba **corp.contoso.com**.
+5.  En **cambios en el dominio o el nombre del equipo** , en **miembro de**, haga clic en **dominio** y, a continuación, escriba el nombre del dominio al que desea unirse. Por ejemplo, si el nombre del dominio es corp.contoso.com, escriba **corp.contoso.com**.
 
-6.  Haga clic en **Aceptar**. Se abre el cuadro de diálogo **Seguridad de Windows**.
+6.  Haga clic en **OK**. Se abre el cuadro de diálogo **Seguridad de Windows**.
 
-7.  En **Cambios en el dominio o el nombre del equipo**, escriba el nombre del usuario en **Nombre de usuario** y la contraseña en **Contraseña** y, a continuación, haga clic en **Aceptar**. Se abrirá el cuadro de diálogo **Cambios en el dominio o el nombre del equipo** y le dará la bienvenida al dominio. Haga clic en **Aceptar**.
+7.  En **Cambios en el dominio o el nombre del equipo**, escriba el nombre del usuario en **Nombre de usuario** y la contraseña en **Contraseña** y, a continuación, haga clic en **Aceptar**. Se abrirá el cuadro de diálogo **Cambios en el dominio o el nombre del equipo** y le dará la bienvenida al dominio. Haga clic en **OK**.
 
-8.  El cuadro de diálogo **Cambios en el dominio o el nombre del equipo** muestra un mensaje que le indica que debe reiniciar el equipo para aplicar los cambios. Haga clic en **Aceptar**.
+8.  El cuadro de diálogo **Cambios en el dominio o el nombre del equipo** muestra un mensaje que le indica que debe reiniciar el equipo para aplicar los cambios. Haga clic en **OK**.
 
 9. En el cuadro de diálogo **Propiedades del sistema**, en la pestaña **Nombre del equipo**, haga clic en **Cerrar**. Se abrirá el cuadro de diálogo **Microsoft Windows**, que muestra un mensaje que indica de nuevo que debe reiniciar el equipo para aplicar los cambios. Haga clic en **Reiniciar ahora**.
 
@@ -1069,13 +1069,13 @@ Para completar este procedimiento, debe ser miembro del grupo **Admins. del domi
 
 3.  En **Seleccionar tipo de instalación**, asegúrese de que la opción **Instalación basada en características o en roles** está seleccionada y, a continuación, haga clic en **Siguiente**.
 
-4.  En **Seleccionar servidor de destino**, asegúrese de que la opción **Seleccionar un servidor del grupo de servidores** está seleccionada. En **Grupo de servidores**, asegúrese de que el equipo local está seleccionado. Haga clic en **Next**.
+4.  En **Seleccionar servidor de destino**, asegúrese de que la opción **Seleccionar un servidor del grupo de servidores** está seleccionada. En **Grupo de servidores**, asegúrese de que el equipo local está seleccionado. Haga clic en **Siguiente**.
 
-5.  En **Seleccionar roles de servidor**, en **roles**, seleccione **servicios de acceso y directivas de redes**. Se abre un cuadro de diálogo en el que se pregunta si debe agregar características necesarias para servicios de acceso y directivas de redes. Haz clic en **Agregar características requeridas**y, a continuación, haz clic en **Siguiente**.
+5.  En **Seleccionar roles de servidor**, en **roles**, seleccione **servicios de acceso y directivas de redes**. Se abre un cuadro de diálogo en el que se pregunta si debe agregar características necesarias para servicios de acceso y directivas de redes. Haz clic en **Agregar características requeridas** y, a continuación, haz clic en **Siguiente**.
 
 6.  En **Seleccionar características**, haga clic en **Siguiente**. En **Servicios de acceso y directivas de redes**, repase la información proporcionada y haga clic en **Siguiente**.
 
-7.  En **Seleccionar servicios de rol**, haga clic en **Servidor de directivas de redes**.  En **¿Desea agregar características requeridas para Servidor de directivas de redes?**, haga clic en **Agregar características**. Haga clic en **Next**.
+7.  En **Seleccionar servicios de rol**, haga clic en **Servidor de directivas de redes**.  En **¿Desea agregar características requeridas para Servidor de directivas de redes?**, haga clic en **Agregar características**. Haga clic en **Siguiente**.
 
 8.  En **Confirmar selecciones de instalación**, haga clic en **Reiniciar automáticamente el servidor de destino en caso necesario**. Si se le pide confirmar la selección, haga clic en **Sí** y, a continuación, haga clic en **Instalar**. La página Progreso de la instalación muestra el estado durante el proceso de instalación. Una vez completado el proceso, se muestra el mensaje "instalación correcta en *NombreDeEquipo*", donde *NombreDeEquipo* es el nombre del equipo en el que instaló el servidor de directivas de redes. Haga clic en **Cerrar**.
 
@@ -1146,7 +1146,7 @@ Para completar este procedimiento, debe pertenecer al grupo **Administradores**.
 
 4.  En la página **Seleccionar servidor de destino** , asegúrese de que el equipo local está seleccionado y, a continuación, haga clic en **siguiente**.
 
-5.  En la página **Seleccionar roles de servidor** , desplácese a y seleccione **servidor Web (IIS)**. Se abre el cuadro **de diálogo Agregar características necesarias para el servidor Web (IIS)** . Haz clic en **Agregar características requeridas**y, a continuación, haz clic en **Siguiente**.
+5.  En la página **Seleccionar roles de servidor** , desplácese a y seleccione **servidor Web (IIS)**. Se abre el cuadro **de diálogo Agregar características necesarias para el servidor Web (IIS)** . Haz clic en **Agregar características requeridas** y, a continuación, haz clic en **Siguiente**.
 
 6.  Haga clic en **Siguiente** hasta haber aceptado todas las configuraciones predeterminadas del servidor web y, a continuación, haga clic en **Instalar**.
 
@@ -1261,7 +1261,7 @@ El requisito mínimo para realizar este procedimiento es la pertenencia al grupo
 
 10. En **Servidor DNS alternativo**, escriba la dirección IP del servidor DNS alternativo si lo hay. Si tiene previsto usar el equipo local como servidor DNS alternativo, escriba la dirección IP de ese equipo.
 
-11. Haga clic en **Aceptar**y, a continuación, en **Cerrar**.
+11. Haga clic en **Aceptar** y, a continuación, en **Cerrar**.
 
 ### <a name="windows-server-2008"></a><a name="bkmk_NetFndtn_Pln_CfgStatic08"></a>Windows Server 2008
 El requisito mínimo para realizar este procedimiento es la pertenencia al grupo **Administradores** o grupo equivalente.
@@ -1288,7 +1288,7 @@ El requisito mínimo para realizar este procedimiento es la pertenencia al grupo
 
 10. En **Servidor DNS alternativo**, escriba la dirección IP del servidor DNS alternativo si lo hay. Si tiene previsto usar el equipo local como servidor DNS alternativo, escriba la dirección IP de ese equipo.
 
-11. Haga clic en **Aceptar**y, a continuación, en **Cerrar**.
+11. Haga clic en **Aceptar** y, a continuación, en **Cerrar**.
 
 ## <a name="appendix-c---joining-computers-to-the-domain"></a><a name="BKMK_C"></a>Apéndice C: unir equipos al dominio
 Puede usar estos procedimientos para unir equipos que ejecutan Windows Server 2008 R2, Windows 7, Windows Server 2008 y Windows Vista al dominio.
@@ -1318,11 +1318,11 @@ El requisito mínimo para completar este procedimiento es la pertenencia al grup
 
 5.  En **Nombre del equipo**, en **Miembro del**, seleccione **Dominio** y, a continuación, escriba el nombre del dominio al que quiere unirse. Por ejemplo, si el nombre del dominio es corp.contoso.com, escriba **corp.contoso.com**.
 
-6.  Haga clic en **Aceptar**. Se abre el cuadro de diálogo **Seguridad de Windows**.
+6.  Haga clic en **OK**. Se abre el cuadro de diálogo **Seguridad de Windows**.
 
-7.  En **Cambios en el dominio o el nombre del equipo**, escriba el nombre del usuario en **Nombre de usuario** y la contraseña en **Contraseña** y, a continuación, haga clic en **Aceptar**. Se abrirá el cuadro de diálogo **Cambios en el dominio o el nombre del equipo** y le dará la bienvenida al dominio. Haga clic en **Aceptar**.
+7.  En **Cambios en el dominio o el nombre del equipo**, escriba el nombre del usuario en **Nombre de usuario** y la contraseña en **Contraseña** y, a continuación, haga clic en **Aceptar**. Se abrirá el cuadro de diálogo **Cambios en el dominio o el nombre del equipo** y le dará la bienvenida al dominio. Haga clic en **OK**.
 
-8.  El cuadro de diálogo **Cambios en el dominio o el nombre del equipo** muestra un mensaje que le indica que debe reiniciar el equipo para aplicar los cambios. Haga clic en **Aceptar**.
+8.  El cuadro de diálogo **Cambios en el dominio o el nombre del equipo** muestra un mensaje que le indica que debe reiniciar el equipo para aplicar los cambios. Haga clic en **OK**.
 
 9. En el cuadro de diálogo **Propiedades del sistema**, en la pestaña **Nombre del equipo**, haga clic en **Cerrar**. Se abrirá el cuadro de diálogo **Microsoft Windows**, que muestra un mensaje que indica de nuevo que debe reiniciar el equipo para aplicar los cambios. Haga clic en **Reiniciar ahora**.
 
@@ -1341,11 +1341,11 @@ El requisito mínimo para completar este procedimiento es la pertenencia al grup
 
 5.  En **Nombre del equipo**, en **Miembro del**, seleccione **Dominio** y, a continuación, escriba el nombre del dominio al que quiere unirse. Por ejemplo, si el nombre del dominio es corp.contoso.com, escriba **corp.contoso.com**.
 
-6.  Haga clic en **Aceptar**. Se abre el cuadro de diálogo **Seguridad de Windows**.
+6.  Haga clic en **OK**. Se abre el cuadro de diálogo **Seguridad de Windows**.
 
-7.  En **Cambios en el dominio o el nombre del equipo**, escriba el nombre del usuario en **Nombre de usuario** y la contraseña en **Contraseña** y, a continuación, haga clic en **Aceptar**. Se abrirá el cuadro de diálogo **Cambios en el dominio o el nombre del equipo** y le dará la bienvenida al dominio. Haga clic en **Aceptar**.
+7.  En **Cambios en el dominio o el nombre del equipo**, escriba el nombre del usuario en **Nombre de usuario** y la contraseña en **Contraseña** y, a continuación, haga clic en **Aceptar**. Se abrirá el cuadro de diálogo **Cambios en el dominio o el nombre del equipo** y le dará la bienvenida al dominio. Haga clic en **OK**.
 
-8.  El cuadro de diálogo **Cambios en el dominio o el nombre del equipo** muestra un mensaje que le indica que debe reiniciar el equipo para aplicar los cambios. Haga clic en **Aceptar**.
+8.  El cuadro de diálogo **Cambios en el dominio o el nombre del equipo** muestra un mensaje que le indica que debe reiniciar el equipo para aplicar los cambios. Haga clic en **OK**.
 
 9. En el cuadro de diálogo **Propiedades del sistema**, en la pestaña **Nombre del equipo**, haga clic en **Cerrar**. Se abrirá el cuadro de diálogo **Microsoft Windows**, que muestra un mensaje que indica de nuevo que debe reiniciar el equipo para aplicar los cambios. Haga clic en **Reiniciar ahora**.
 
@@ -1423,7 +1423,7 @@ Las siguientes tablas recogen elementos de configuración de la preinstalación 
 
 - [Cambiar el nombre del equipo](#BKMK_rename)
 
-|Elemento de configuración|Valor de ejemplo|Valor|
+|Elemento de configuración|Valor de ejemplo|Value|
 |----------------------|-----------------|---------|
 |Nombre del equipo|DC1||
 
@@ -1433,7 +1433,7 @@ Elementos de configuración para el procedimiento de implementación de una red 
 |Elementos de configuración|Valores de ejemplo|Valores|
 |-----------------------|------------------|----------|
 |Nombre DNS completo|corp.contoso.com||
-|Nivel funcional del bosque|Windows Server 2003||
+|Nivel funcional de bosque|Windows Server 2003||
 |Ubicación de la carpeta de bases de datos de Active Directory Domain Services|E:\Configuration\\<p>O bien, acepte la ubicación predeterminada.||
 |Ubicación de la carpeta de archivos de registro de Active Directory Domain Services|E:\Configuration\\<p>O bien, acepte la ubicación predeterminada.||
 |Ubicación de la carpeta SYSVOL de Active Directory Domain Services|E:\Configuration\\<p>O bien, acepte la ubicación predeterminada.||
@@ -1468,7 +1468,7 @@ Las siguientes tablas recogen elementos de configuración de la preinstalación 
 
 - [Cambiar el nombre del equipo](#BKMK_rename)
 
-|Elemento de configuración|Valor de ejemplo|Valor|
+|Elemento de configuración|Valor de ejemplo|Value|
 |----------------------|-----------------|---------|
 |Nombre del equipo|DHCP1||
 
@@ -1481,7 +1481,7 @@ Elementos de configuración para el procedimiento de implementación de una red 
 |Configuración del servidor DNS|DC1||
 |Dirección IP del servidor DNS preferido|10.0.0.2||
 |Dirección IP del servidor DNS alternativo|10.0.0.15||
-|Nombre del ámbito|Corp1||
+|Nombre de ámbito|Corp1||
 |Dirección IP inicial|10.0.0.1||
 |Dirección IP final|10.0.0.254||
 |Máscara de subred|255.255.255.0||
@@ -1494,7 +1494,7 @@ Elementos de configuración para crear un intervalo de exclusión al crear un á
 
 |Elementos de configuración|Valores de ejemplo|Valores|
 |-----------------------|------------------|----------|
-|Nombre del ámbito|Corp1||
+|Nombre de ámbito|Corp1||
 |Descripción del ámbito|Subred 1 de la oficina principal||
 |Dirección IP inicial del intervalo de exclusión|10.0.0.1||
 |Dirección IP final del intervalo de exclusión|10.0.0.15||
@@ -1508,7 +1508,7 @@ Elementos de configuración para el procedimiento de implementación de Windows 
 |Descripción del ámbito|Subred 2 de la oficina principal||
 |(intervalo de direcciones IP)<p>Dirección IP inicial|10.0.1.1||
 |(intervalo de direcciones IP)<p>Dirección IP final|10.0.1.254||
-|Longitud|8||
+|Length|8||
 |Máscara de subred|255.255.255.0||
 |(Intervalo de exclusión) Dirección IP inicial|10.0.1.1||
 |Dirección IP final del intervalo de exclusión|10.0.1.15||
@@ -1535,7 +1535,7 @@ Las tres tablas siguientes muestran elementos de configuración de la preinstala
 
 - [Cambiar el nombre del equipo](#BKMK_rename)
 
-|Elemento de configuración|Valor de ejemplo|Valor|
+|Elemento de configuración|Valor de ejemplo|Value|
 |----------------------|-----------------|---------|
 |Nombre del equipo|NPS1||
 

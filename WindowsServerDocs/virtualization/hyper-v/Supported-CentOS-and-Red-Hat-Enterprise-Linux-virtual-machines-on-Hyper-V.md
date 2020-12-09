@@ -6,12 +6,12 @@ ms.assetid: 4bf8783d-dee5-4b3e-8cce-2b11b117c189
 author: danihalfin
 ms.author: vichen
 ms.date: 04/06/2020
-ms.openlocfilehash: 46372029bb31a8b76f564dca9851a8ce473240ea
-ms.sourcegitcommit: 82fe3e79ea14c51ae3c445d8fa3ed43843597314
+ms.openlocfilehash: 654af785cfdd9c3a5bd054c75d6712d547ada991
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92098504"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866434"
 ---
 <a name="supported-centos-and-red-hat-enterprise-linux-virtual-machines-on-hyper-v"></a>Compatibilidad con máquinas virtuales de alta y Red Hat Enterprise Linux en Hyper-V
 =========================================================================
@@ -258,7 +258,7 @@ Mientras que la descarga de Linux Integration Services crea esta regla en la ins
 
 -   Las aplicaciones que tienden a consumir toda la memoria disponible en un sistema se limitan a consumir hasta el 80 por ciento de la RAM disponible.
 
-1.  Si utiliza Memoria dinámica en un sistema operativo Windows Server 2016 o Windows Server 2012 R2, especifique la **memoria de inicio**, la **memoria mínima**y los parámetros de **memoria máxima** en múltiplos de 128 megabytes (MB).
+1.  Si utiliza Memoria dinámica en un sistema operativo Windows Server 2016 o Windows Server 2012 R2, especifique la **memoria de inicio**, la **memoria mínima** y los parámetros de **memoria máxima** en múltiplos de 128 megabytes (MB).
     Si no lo hace, pueden producirse errores de adición en caliente y es posible que no vea ningún aumento de la memoria en un sistema operativo invitado.
 
 2.  Ciertas distribuciones, incluidas las que usan LIS 4,0 y 4,1, solo ofrecen soporte técnico y no proporcionan compatibilidad con Hot-Add. En este escenario, se puede usar la característica de memoria dinámica si se establece el parámetro de memoria de inicio en un valor que es igual al parámetro de memoria máxima. Esto hace que toda la memoria necesaria se Hot-Added a la máquina virtual en el momento del arranque y, posteriormente, en función de los requisitos de memoria del host, Hyper-V puede asignar o desasignar memoria libremente del invitado mediante el uso de globos. Configure la **memoria de inicio** y la **memoria mínima** en o por encima del valor recomendado para la distribución.
@@ -275,9 +275,9 @@ Mientras que la descarga de Linux Integration Services crea esta regla en la ins
 
 1.  En Red Hat Enterprise Linux o de la 5,2, 5,3 y 5,4, la funcionalidad de inmovilización del sistema de archivos no está disponible, por lo que la copia de seguridad de máquinas virtuales en directo tampoco está disponible.
 
-Consulte también
+Vea también
 
--   [Set-VMFirmware](/powershell/module/hyper-v/set-vmfirmware?view=win10-ps)
+-   [Set-VMFirmware](/powershell/module/hyper-v/set-vmfirmware)
 
 -   [Máquinas virtuales Debian admitidas en Hyper-V](Supported-Debian-virtual-machines-on-Hyper-V.md)
 

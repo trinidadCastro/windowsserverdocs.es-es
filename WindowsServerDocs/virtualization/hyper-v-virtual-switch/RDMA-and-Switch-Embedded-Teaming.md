@@ -6,12 +6,12 @@ ms.topic: get-started-article
 ms.assetid: 68c35b64-4d24-42be-90c9-184f2b5f19be
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 54d3ecbf752ce806a14d16088476bbb270e28271
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 9b8d1470b3e146625d794697231291c1f8156402
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989131"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866194"
 ---
 # <a name="remote-direct-memory-access-rdma-and-switch-embedded-teaming-set"></a>Acceso directo a memoria remota \( RDMA \) y switch conjunto de formación de equipos incrustado \(\)
 
@@ -145,7 +145,7 @@ Comprobar las capacidades de RDMA; Asegúrese de que las funcionalidades son dis
 Get-NetAdapterRdma | fl *
 ```
 
-## <a name="switch-embedded-teaming-set"></a>Cambiar la formación de equipos incrustada (SET)
+## <a name="switch-embedded-teaming-set"></a>Formación de equipos insertada en el conmutador (SET)
 
 En esta sección se proporciona información general sobre Switch Embedded Teaming (SET) en Windows Server 2016 y contiene las siguientes secciones.
 
@@ -171,7 +171,7 @@ En esta sección se proporciona información general sobre Switch Embedded Teami
 
 ## <a name="set-overview"></a><a name="bkmk_over"></a>ESTABLECER información general
 
-SET es una solución alternativa para la formación de equipos NIC que puede usar en entornos que incluyen Hyper-V y la pila de SDN de redes definidas por software \( \) en Windows Server 2016. El conjunto integra la funcionalidad de formación de equipos NIC en el conmutador virtual de Hyper-V.
+SET es una solución alternativa para la formación de equipos NIC que puede usar en entornos que incluyen Hyper-V y la pila de SDN de redes definidas por software \( \) en Windows Server 2016. SET integra la funcionalidad de formación de equipos de NIC en el conmutador virtual de Hyper-V.
 
 El conjunto le permite agrupar entre uno y ocho adaptadores de red Ethernet físicos en uno o varios adaptadores de red virtuales basados en software. Estos adaptadores de red virtuales proporcionan un rendimiento rápido y tolerancia a errores en caso de que se produzca un error en el adaptador de red.
 
@@ -260,7 +260,7 @@ Las opciones para establecer el modo de distribución de equilibrio de carga de 
 Las máquinas virtuales están conectadas a un puerto del conmutador virtual de Hyper-V. Al usar el modo de puerto de Hyper-V para conjuntos de equipos, el puerto del conmutador virtual de Hyper-V y la dirección MAC asociada se usan para dividir el tráfico de red entre los miembros del equipo de conjunto.
 
 > [!NOTE]
-> Cuando se usa SET junto con Packet Direct, el **modificador** de modo de formación de equipos independiente y el **Puerto de Hyper-V** del modo de equilibrio de carga son obligatorios.
+> Cuando se usa SET junto con Packet Direct, el  **modificador** de modo de formación de equipos independiente y el **Puerto de Hyper-V** del modo de equilibrio de carga son obligatorios.
 
 Dado que el conmutador adyacente siempre ve una dirección MAC determinada en un puerto determinado, el conmutador distribuye la carga de entrada (el tráfico del conmutador al host) al puerto en el que se encuentra la dirección MAC. Esto es especialmente útil cuando se usan colas de máquinas virtuales (VMQ), ya que se puede colocar una cola en la NIC específica en la que se espera que llegue el tráfico.
 
@@ -346,7 +346,7 @@ Para obtener información sobre cómo crear un equipo de conjunto mediante VMM, 
 
 Debe crear un equipo de conjunto al mismo tiempo que crea el conmutador virtual de Hyper-V mediante el comando de Windows PowerShell **New-VMSwitch** .
 
-Al crear el conmutador virtual de Hyper-V, debe incluir el nuevo parámetro **EnableEmbeddedTeaming** en la sintaxis del comando. En el ejemplo siguiente, se crea un conmutador de Hyper-V denominado **TeamedvSwitch** con formación de equipos incrustada y dos miembros de equipo iniciales.
+Al crear el conmutador virtual de Hyper-V, debe incluir el nuevo parámetro **EnableEmbeddedTeaming** en la sintaxis del comando. En el ejemplo siguiente, se crea un conmutador de Hyper-V denominado  **TeamedvSwitch** con formación de equipos incrustada y dos miembros de equipo iniciales.
 
 ```
 New-VMSwitch -Name TeamedvSwitch -NetAdapterName "NIC 1","NIC 2" -EnableEmbeddedTeaming $true
@@ -374,7 +374,7 @@ Set-VMSwitchTeam -Name TeamedvSwitch -NetAdapterName "NIC 1","NIC 3"
 
 ### <a name="removing-a-set-team"></a>Quitar un equipo establecido
 
-Solo puede quitar un equipo de conjunto si quita el conmutador virtual de Hyper-V que contiene el equipo establecido.  Use el tema [Remove-VMSwitch](/powershell/module/hyper-v/remove-vmswitch?view=win10-ps) para obtener información sobre cómo quitar el conmutador virtual de Hyper-V. En el ejemplo siguiente se quita un conmutador virtual denominado **SETvSwitch**.
+Solo puede quitar un equipo de conjunto si quita el conmutador virtual de Hyper-V que contiene el equipo establecido.  Use el tema [Remove-VMSwitch](/powershell/module/hyper-v/remove-vmswitch) para obtener información sobre cómo quitar el conmutador virtual de Hyper-V. En el ejemplo siguiente se quita un conmutador virtual denominado **SETvSwitch**.
 
 ```
 Remove-VMSwitch "SETvSwitch"

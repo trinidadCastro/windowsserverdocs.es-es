@@ -6,12 +6,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 06/13/2018
 ms.topic: article
-ms.openlocfilehash: c615bd6426098e00854e873d3e1eb2cfbfaa0734
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 9e26d558755b0ae37ac07fb21ff42360693e4303
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970942"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96865714"
 ---
 # <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016-or-later"></a>Compilar una aplicación Web de una sola página mediante OAuth y ADAL.JS con AD FS 2016 o posterior
 
@@ -25,7 +25,7 @@ En este escenario, cuando el usuario inicia sesión, el front-end de JavaScript 
 >[!NOTE]
 >Este tutorial **solo** es aplicable a AD FS Server 2016 y versiones posteriores.
 
-## <a name="overview"></a>Introducción
+## <a name="overview"></a>Información general
 En este ejemplo, vamos a crear un flujo de autenticación en el que un cliente de aplicación de una sola página se autenticará en AD FS para proteger el acceso a los recursos de WebAPI en el back-end. A continuación se muestra el flujo de autenticación general
 
 ![Autorización de AD FS](media/Single-Page-Application-with-AD-FS/authenticationflow.PNG)
@@ -35,7 +35,7 @@ Cuando se usa una aplicación de una sola página, el usuario navega a una ubica
 Si ADAL ve un desencadenador para la autenticación, usa la información proporcionada por la aplicación y dirige la autenticación a su AD FS STS.  La aplicación de una sola página, que se registra como un cliente público en AD FS, se configura automáticamente para el flujo de concesión implícita. La solicitud de autorización genera un token de identificador que se devuelve a la aplicación a través de un #fragment. Otras llamadas al back-end de WebAPI llevarán este token de identificador como el token de portador en el encabezado para obtener acceso a WebAPI.
 
 ## <a name="setting-up-the-development-box"></a>Configuración del cuadro de desarrollo
-En este tutorial se usa Visual Studio 2015. El proyecto usa la biblioteca de ADAL JS. Para obtener información sobre ADAL, lea [biblioteca de autenticación de Active Directory .net.](/dotnet/api/microsoft.identitymodel.clients.activedirectory?view=azure-dotnet)
+En este tutorial se usa Visual Studio 2015. El proyecto usa la biblioteca de ADAL JS. Para obtener información sobre ADAL, lea [biblioteca de autenticación de Active Directory .net.](/dotnet/api/microsoft.identitymodel.clients.activedirectory)
 
 ## <a name="setting-up-the-environment"></a>Configuración del entorno
 En este tutorial, usaremos una configuración básica de:
@@ -80,7 +80,7 @@ En el ejemplo, WebAPI se configura para escuchar en https://localhost:44326/ . E
 
     ![Crear nuevo grupo de aplicaciones](media/Single-Page-Application-with-AD-FS/appgroup_step1.png)
 
-2. En la **aplicación nativa**de la página siguiente, proporcione el identificador de cliente de la aplicación y el URI de redireccionamiento, como se muestra a continuación
+2. En la **aplicación nativa** de la página siguiente, proporcione el identificador de cliente de la aplicación y el URI de redireccionamiento, como se muestra a continuación
 
     ![Crear nuevo grupo de aplicaciones](media/Single-Page-Application-with-AD-FS/appgroup_step2.png)
 
@@ -111,7 +111,7 @@ Abra el archivo **app.js** y cambie la definición de **adalProvider.init** a:
 
 |Configuración|Descripción|
 |--------|--------|
-|instance|Su dirección URL de STS, por ejemplo,https://fs.contoso.com/|
+|instance|Su dirección URL de STS, por ejemplo, https://fs.contoso.com/|
 |tenant|Guárdela como ' ADFS '|
 |clientID|Este es el identificador de cliente que especificó al configurar el cliente público para la aplicación de una sola página.|
 
@@ -172,7 +172,7 @@ El explorador (use chrome browser) cargará el SPA y aparecerá la siguiente pan
 
 Haga clic en Inicio de sesión.  La lista de tareas desencadenará el flujo de autenticación y ADAL JS dirigirá la autenticación a AD FS
 
-![Iniciar sesión](media/Single-Page-Application-with-AD-FS/singleapp4a.PNG)
+![Inicio de sesión](media/Single-Page-Application-with-AD-FS/singleapp4a.PNG)
 
 En Fiddler, puede ver el token que se devuelve como parte de la dirección URL en el # Fragment.
 
@@ -182,5 +182,5 @@ Ahora podrá llamar a la API de back-end para agregar elementos de la lista de t
 
 ![Fiddler](media/Single-Page-Application-with-AD-FS/singleapp6.PNG)
 
-## <a name="next-steps"></a>Pasos a seguir
+## <a name="next-steps"></a>Pasos siguientes
 [Desarrollo de AD FS](../../ad-fs/AD-FS-Development.md)

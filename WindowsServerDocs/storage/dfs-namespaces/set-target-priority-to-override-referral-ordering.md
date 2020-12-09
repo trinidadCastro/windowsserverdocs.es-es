@@ -6,12 +6,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 04a295b8f6249521c809770af2c85fdce5dd54b4
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: f562a39d6b89ab117f6c3d8b274c03e5810f58c3
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971222"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866214"
 ---
 # <a name="set-target-priority-to-override-referral-ordering"></a>Set target priority to override referral ordering
 
@@ -31,7 +31,7 @@ Para establecer la prioridad de destino en un destino de raíz para un espacio d
 
 3.  En el panel de **detalles** , en la pestaña **servidores de espacio de nombres** , haga clic con el botón secundario en el destino de raíz cuya prioridad desee cambiar y, a continuación, haga clic en **propiedades**.
 
-4.  En la pestaña **Opciones avanzadas** , haga clic en **invalidar orden de referencia**y, a continuación, haga clic en la prioridad que desee.
+4.  En la pestaña **Opciones avanzadas** , haga clic en **invalidar orden de referencia** y, a continuación, haga clic en la prioridad que desee.
 
     -   **Primero entre todos los destinos**  Especifica que siempre se debe hacer referencia a los usuarios a este destino si el destino está disponible.
     -   **Último entre todos los destinos** Especifica que nunca se debe hacer referencia a este destino a los usuarios a menos que todos los demás destinos no estén disponibles.
@@ -48,10 +48,10 @@ Para establecer la prioridad de destino en un destino de carpeta, utilice el sig
 
 3.  En el panel de **detalles** , en la pestaña destinos de la **carpeta** , haga clic con el botón secundario en el destino de carpeta cuya prioridad desee cambiar y, a continuación, haga clic en **propiedades** .
 
-4.  En la pestaña **Opciones avanzadas** , haga clic en **invalidar orden de referencia** y, a continuación, haga clic en la prioridad que desee.
+4.  En la pestaña **Opciones avanzadas** , haga clic en **invalidar orden de referencia**  y, a continuación, haga clic en la prioridad que desee.
 
 > [!NOTE]
-> Para establecer las prioridades de destino mediante Windows PowerShell, use los cmdlets [set-DfsnRootTarget](/powershell/module/dfsr/update-dfsrconfigurationfromad?view=win10-ps) y [set-DfsnFolderTarget](/powershell/module/dfsr/update-dfsrconfigurationfromad?view=win10-ps) con los parámetros **ReferralPriorityClass** y **ReferralPriorityRank** . Estos cmdlets se introdujeron en Windows Server 2012.
+> Para establecer las prioridades de destino mediante Windows PowerShell, use los cmdlets  [set-DfsnRootTarget](/powershell/module/dfsr/update-dfsrconfigurationfromad) y [set-DfsnFolderTarget](/powershell/module/dfsr/update-dfsrconfigurationfromad) con los parámetros **ReferralPriorityClass** y **ReferralPriorityRank** . Estos cmdlets se introdujeron en Windows Server 2012.
 
 ## <a name="additional-references"></a>Referencias adicionales
 

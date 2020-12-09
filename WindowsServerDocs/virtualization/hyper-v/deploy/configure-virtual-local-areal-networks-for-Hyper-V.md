@@ -6,12 +6,12 @@ ms.assetid: 8510a709-001c-4eee-b6d6-c451e8a8a836
 ms.author: benarm
 author: BenjaminArmstrong
 ms.date: 10/11/2016
-ms.openlocfilehash: 7b756127e7396ec96e3f8e6901aaabef1d5664aa
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 22f9890fd1a3a90fcbab59a9ed1de8481e117e75
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746030"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866164"
 ---
 # <a name="configure-virtual-local-area-networks-for-hyper-v"></a>Configuración de redes de área local virtual para Hyper-V
 Redes de área local virtuales las \( VLAN \) ofrecen una manera de aislar el tráfico de red. Las VLAN se configuran en conmutadores y enrutadores que admiten 802.1 q. Si configura varias VLAN y desea que se produzca la comunicación entre ellas, deberá configurar los dispositivos de red para que lo permitan.
@@ -43,14 +43,14 @@ En el host, configurará el conmutador virtual para permitir el tráfico de red 
 
 3. En **hardware**, seleccione un conmutador virtual que esté configurado con una VLAN.
 
-4. En el panel derecho, seleccione **Habilitar identificación de LAN virtual**y, a continuación, escriba el mismo identificador de VLAN que el que especificó para el conmutador virtual.
+4. En el panel derecho, seleccione **Habilitar identificación de LAN virtual** y, a continuación, escriba el mismo identificador de VLAN que el que especificó para el conmutador virtual.
 
 Si la máquina virtual necesita usar más VLAN, realice una de las siguientes acciones:
 
 - Conecte más adaptadores de red virtuales a los conmutadores virtuales adecuados y asigne los identificadores de VLAN. Asegúrese de configurar las direcciones IP correctamente y de que el tráfico que desea enrutar a través de la VLAN use también la dirección IP correcta.
 
-- Configure el adaptador de red virtual en el modo de tronco mediante el cmdlet [set \- VMNetworkAdapterVlan](/powershell/module/hyper-v/set-vmnetworkadaptervlan?view=win10-ps) .
+- Configure el adaptador de red virtual en el modo de tronco mediante el cmdlet [set \- VMNetworkAdapterVlan](/powershell/module/hyper-v/set-vmnetworkadaptervlan) .
 
-## <a name="see-also"></a>Consulte también
+## <a name="see-also"></a>Vea también
 
 [\-Conmutador virtual de Hyper V](../../hyper-v-virtual-switch/hyper-v-virtual-switch.md)

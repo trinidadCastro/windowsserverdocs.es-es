@@ -6,12 +6,12 @@ author: BenjaminArmstrong
 ms.date: 12/20/2016
 ms.topic: article
 ms.assetid: 9cafd6cb-dbbe-4b91-b26c-dee1c18fd8c2
-ms.openlocfilehash: 9056beec7d07d1657ece3703f461ecfe5d9cd0fc
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: f82ccc4e6dc2dbd7a34d829c0bc753fc6533f8dd
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746450"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866114"
 ---
 # <a name="manage-hyper-v-integration-services"></a>Administrar Integration Services de Hyper-V
 
@@ -34,7 +34,7 @@ En el panel Integration Services se enumeran todos los servicios de integración
 
 ### <a name="turn-an-integration-service-on-or-off-using-powershell"></a>Activar o desactivar un servicio de integración mediante PowerShell
 
-Para hacer esto en PowerShell, use [enable-VMIntegrationService](/powershell/module/hyper-v/enable-vmintegrationservice?view=win10-ps) y [Disable-VMIntegrationService](/powershell/module/hyper-v/disable-vmintegrationservice?view=win10-ps).
+Para hacer esto en PowerShell, use [enable-VMIntegrationService](/powershell/module/hyper-v/enable-vmintegrationservice) y [Disable-VMIntegrationService](/powershell/module/hyper-v/disable-vmintegrationservice).
 
 En los siguientes ejemplos se muestra cómo activar y desactivar el servicio de integración de copia de archivos invitados para una máquina virtual denominada "demovm".
 
@@ -44,7 +44,7 @@ En los siguientes ejemplos se muestra cómo activar y desactivar el servicio de 
     Get-VMIntegrationService -VMName "DemoVM"
     ```
 
-1. El resultado debe ser similar al siguiente:
+1. La salida debe ser similar a esta:
 
     ``` PowerShell
    VMName      Name                    Enabled PrimaryStatusDescription SecondaryStatusDescription

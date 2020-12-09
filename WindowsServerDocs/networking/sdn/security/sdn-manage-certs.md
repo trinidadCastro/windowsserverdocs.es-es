@@ -7,12 +7,12 @@ ms.assetid: c4e2f6c7-0364-4bf8-bb66-9af59c0bbd74
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/22/2018
-ms.openlocfilehash: 71152234b72a0557ca0d189896826d66c6ce0f49
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 2bd72ec096d7c1301601848602a1d55e44ca5086
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996513"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866514"
 ---
 # <a name="manage-certificates-for-software-defined-networking"></a>Administrar certificados para redes definidas por software
 
@@ -56,7 +56,7 @@ Al crear \- certificados autofirmados, puede usar las siguientes directrices.
 
 #### <a name="multiple-node"></a>Nodo múltiple
 
-Puede usar el comando [New-SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate?view=win10-ps) de Windows PowerShell para crear un \- certificado autofirmado.
+Puede usar el comando [New-SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate) de Windows PowerShell para crear un \- certificado autofirmado.
 
 **Sintaxis**
 
@@ -72,7 +72,7 @@ New-SelfSignedCertificate -KeyUsageProperty All -Provider "Microsoft Strong Cryp
 
 #### <a name="single-node"></a>Nodo único
 
-Puede usar el comando [New-SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate?view=win10-ps) de Windows PowerShell para crear un \- certificado autofirmado.
+Puede usar el comando [New-SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate) de Windows PowerShell para crear un \- certificado autofirmado.
 
 **Sintaxis**
 
@@ -114,16 +114,16 @@ Mientras configura una plantilla de certificado en el paso siguiente, asegúrese
 >[!NOTE]
 >Antes de llevar a cabo este procedimiento, debe revisar los requisitos de certificado y las plantillas de certificado disponibles en la consola de plantillas de certificado. Puede modificar una plantilla existente o crear un duplicado de una plantilla existente y, a continuación, modificar la copia de la plantilla. Se recomienda crear una copia de una plantilla existente.
 
-1. En el servidor donde está instalado AD CS, en Administrador del servidor, haga clic en **herramientas**y, a continuación, haga clic en **entidad de certificación**. Se abre el MMC de la entidad de certificación Microsoft Management Console \( \) .
-2. En MMC, haga doble clic en el nombre de la entidad de certificación, haga clic con el botón secundario en **plantillas de certificado**y, a continuación, haga clic en **administrar**.
+1. En el servidor donde está instalado AD CS, en Administrador del servidor, haga clic en **herramientas** y, a continuación, haga clic en **entidad de certificación**. Se abre el MMC de la entidad de certificación Microsoft Management Console \( \) .
+2. En MMC, haga doble clic en el nombre de la entidad de certificación, haga clic con el botón secundario en **plantillas de certificado** y, a continuación, haga clic en **administrar**.
 3. Se abre la consola de plantillas de certificado. Se mostrarán todas las plantillas de certificado en el panel de detalles.
 4. En el panel de detalles, haga clic en la plantilla que desea duplicar.
 5.  Haga clic en el menú **acción** y, a continuación, haga clic en **plantilla duplicada**. Se abrirá el cuadro de diálogo **propiedades** de la plantilla.
 6.  En el cuadro de diálogo **propiedades** de la plantilla, en la pestaña **nombre de sujeto** , haga clic en **suministrar en la solicitud**. \(Esta configuración es necesaria para los certificados SSL de la controladora de red.\)
 7.  En el cuadro de diálogo **propiedades** de la plantilla, en la pestaña **tratamiento** de la solicitud, asegúrese de que la opción permitir que la **clave privada se pueda exportar** esté seleccionada. Asegúrese también de que la firma y el uso de **cifrado** estén seleccionados.
-8.  En el cuadro de diálogo **propiedades** de la plantilla, en la pestaña **extensiones** , seleccione **uso de clave**y, a continuación, haga clic en **Editar**.
+8.  En el cuadro de diálogo **propiedades** de la plantilla, en la pestaña **extensiones** , seleccione **uso de clave** y, a continuación, haga clic en **Editar**.
 9.  En **firma**, asegúrese de que está seleccionada la opción **firma digital** .
-10.  En el cuadro de diálogo **propiedades** de la plantilla, en la pestaña **extensiones** , seleccione **directivas de aplicación**y, a continuación, haga clic en **Editar**.
+10.  En el cuadro de diálogo **propiedades** de la plantilla, en la pestaña **extensiones** , seleccione **directivas de aplicación** y, a continuación, haga clic en **Editar**.
 11.  En **directivas de aplicación**, asegúrese de que se muestra la autenticación del **cliente** y la **autenticación del servidor** .
 12.  Guarde la copia de la plantilla de certificado con un nombre único, como la **plantilla de controladora de red**.
 
@@ -135,7 +135,7 @@ Puede usar el complemento certificados para solicitar certificados. Puede solici
 
 1. Abra el complemento certificados de un equipo.
 2. En el árbol de consola, haga clic en **certificados \( equipo \) local**. Seleccione el almacén de certificados **personal** .
-3. En el menú **acción** , seleccione * * todas las tareas<strong>y, a continuación, haga clic en * * solicitar nuevo certificado</strong> para iniciar el Asistente para inscripción de certificados. Haga clic en **Next**.
+3. En el menú **acción** , seleccione * * todas las tareas <strong>y, a continuación, haga clic en * * solicitar nuevo certificado</strong> para iniciar el Asistente para inscripción de certificados. Haga clic en **Siguiente**.
 4. Seleccione la Directiva de inscripción de certificados de **Administrador configurada** y haga clic en **siguiente**.
 5. Seleccione la **Directiva de inscripción de Active Directory** \( basada en la plantilla de CA que configuró en la sección anterior \) .
 6. Expanda la sección **detalles** y configure los siguientes elementos.
@@ -155,8 +155,8 @@ Después de crear un \- certificado autofirmado o firmado por una entidad de cer
 Después, debe copiar los dos archivos exportados en las carpetas **ServerCertificate.cr** y **NCCertificate.cr** que especificó en el momento en que importó la plantilla de servicio de NC.
 
 1. Abra el complemento certificados (certlm. msc) y busque el certificado en el almacén de certificados personal del equipo local.
-2. Haga clic con el botón secundario \- en el certificado, seleccione **todas las tareas**y, a continuación, haga clic en **exportar**. Se abre el Asistente para exportar certificados. Haga clic en **Next**.
-3. Seleccione la opción exportar la clave **privada y haga**clic en **siguiente**.
+2. Haga clic con el botón secundario \- en el certificado, seleccione **todas las tareas** y, a continuación, haga clic en **exportar**. Se abre el Asistente para exportar certificados. Haga clic en **Siguiente**.
+3. Seleccione la opción exportar la clave **privada y haga** clic en **siguiente**.
 4. Elija **intercambio de información personal: PKCS #12 (. PFX)** y acepte el valor predeterminado para **incluir todos los certificados en la ruta de certificación** si es posible.
 5. Asigne los usuarios o grupos y una contraseña para el certificado que va a exportar y haga clic en **Siguiente**.
 6. En la página Archivo que se va a exportar, busque la ubicación en la que quiere colocar el archivo exportado y asígnele un nombre.

@@ -6,12 +6,12 @@ author: JasonGerend
 ms.author: jgerend
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a8ba971fb7224333fb495971cb06d4b97d83a62
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 449ba7e095a372ff1743794723de28cdeba86d3f
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87950459"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866444"
 ---
 # <a name="network-file-system-overview"></a>Introducción a Network File System
 
@@ -58,7 +58,7 @@ La funcionalidad nueva y modificada en Network File System incluye compatibilida
 
 La versión 4,1 de NFS implementa todos los aspectos necesarios, además de algunos de los aspectos opcionales, de [RFC 5661](https://tools.ietf.org/html/rfc5661):
 
-- El **sistema**de archivos es un sistema de archivos que separa el espacio de nombres físico y lógico y es compatible con NFS versión 3 y NFS versión 2. Se proporciona un alias para el sistema de archivos exportado, que forma parte del sistema de pseudo archivo.
+- El **sistema** de archivos es un sistema de archivos que separa el espacio de nombres físico y lógico y es compatible con NFS versión 3 y NFS versión 2. Se proporciona un alias para el sistema de archivos exportado, que forma parte del sistema de pseudo archivo.
 - Las **RPC compuestas** combinan las operaciones pertinentes y reducen el chat.
 - Las **sesiones y la Troncalización de sesión** permiten solo una semántica y permiten una disponibilidad continua y un mejor rendimiento, al mismo tiempo que se usan varias redes entre clientes NFS 4,1 y el servidor NFS.
 
@@ -89,7 +89,7 @@ Observe que Servidor para NFS admite la conmutación por error transparente, per
 
 La implementación y administración de NFS se ha mejorado de las siguientes maneras:
 
-- Más de 40 nuevos cmdlets de Windows PowerShell facilitan la configuración y administración de recursos compartidos de archivos NFS. Para obtener más información, consulte [cmdlets de NFS en Windows PowerShell](/powershell/module/nfs/?view=win10-ps).
+- Más de 40 nuevos cmdlets de Windows PowerShell facilitan la configuración y administración de recursos compartidos de archivos NFS. Para obtener más información, consulte [cmdlets de NFS en Windows PowerShell](/powershell/module/nfs/).
 - La asignación de identidades se ha mejorado con un almacén de asignación de archivos sin formato local y nuevos cmdlets de Windows PowerShell para configurar la asignación de identidades.
 - La interfaz gráfica de usuario Administrador del servidor es más fácil de usar.
 - El nuevo proveedor de WMI versión 2 está disponible para facilitar la administración.
@@ -106,7 +106,7 @@ En Administrador del servidor-o en el [centro de administración de Windows](../
 - **Showmount** muestra los sistemas de archivos montados exportados por servidor para NFS.
 - **Umount** quita las unidades montadas por NFS.
 
-NFS en Windows Server 2012 presenta el módulo NFS para Windows PowerShell con varios cmdlets nuevos específicamente para NFS. Estos cmdlets proporcionan una manera sencilla de automatizar las tareas de administración de NFS. Para obtener más información, consulte [cmdlets de NFS en Windows PowerShell](/powershell/module/nfs/?view=win10-ps).
+NFS en Windows Server 2012 presenta el módulo NFS para Windows PowerShell con varios cmdlets nuevos específicamente para NFS. Estos cmdlets proporcionan una manera sencilla de automatizar las tareas de administración de NFS. Para obtener más información, consulte [cmdlets de NFS en Windows PowerShell](/powershell/module/nfs/).
 
 ## <a name="additional-information"></a>Información adicional
 
@@ -115,5 +115,5 @@ En la tabla siguiente se proporcionan recursos adicionales para evaluar NFS.
 |Tipo de contenido|Referencias|
 |---|---|
 |Implementación|[Implementar el sistema de archivos de red](deploy-nfs.md)|
-|Operaciones|[Cmdlets de NFS en Windows PowerShell](/powershell/module/nfs/?view=win10-ps)|
+|Operations|[Cmdlets de NFS en Windows PowerShell](/powershell/module/nfs/)|
 |Tecnologías relacionadas|[Almacenamiento en Windows Server](../storage.yml)|

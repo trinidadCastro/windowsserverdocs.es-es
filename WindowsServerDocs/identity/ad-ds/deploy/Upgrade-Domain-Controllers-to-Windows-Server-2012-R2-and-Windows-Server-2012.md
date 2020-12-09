@@ -6,12 +6,12 @@ author: iainfoulds
 manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
-ms.openlocfilehash: ebbbefebc420d83f8f74466698729c26395bdbec
-ms.sourcegitcommit: b39ea3b83280f00e5bb100df0dc8beaf1fb55be2
+ms.openlocfilehash: be94260946c696eed060b9b2d85f5042ed737a1f
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94520508"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866354"
 ---
 # <a name="upgrade-domain-controllers-to-windows-server-2012-r2-and-windows-server-2012"></a>Actualizar controladores de dominio a Windows Server 2012 R2 y Windows Server 2012
 
@@ -41,10 +41,10 @@ El método recomendado de actualización de un dominio es promover controladores
    |-----------------------|---------------------------|
    |Instalar un bosque nuevo|Administrador local en el servidor de destino|
    |Instalar un dominio nuevo en un bosque existente|Administradores de empresas|
-   |Instalar más controladores de dominio en un dominio existente|Admins. del dominio|
+   |Instalar más controladores de dominio en un dominio existente|Administradores de dominio|
    |Ejecutar adprep /forestprep|Administradores de esquema, Administradores de empresas y Admins. del dominio|
-   |Ejecutar adprep /domainprep|Admins. del dominio|
-   |Ejecutar adprep /domainprep /gpprep|Admins. del dominio|
+   |Ejecutar adprep /domainprep|Administradores de dominio|
+   |Ejecutar adprep /domainprep /gpprep|Administradores de dominio|
    |Ejecutar adprep /rodcprep|Administradores de empresas|
 
    Puede delegar permisos para instalar AD DS. Para obtener más información, consulte el tema sobre las [tareas de administración de la instalación](/previous-versions/windows/it-pro/windows-server-2003/cc773327(v=ws.10)).
@@ -123,9 +123,9 @@ En la siguiente tabla se incluyen algunos ejemplos sobre cómo configurar estas 
 |||
 |-|-|
 |**Escenario**|**Configuraciones recomendadas**|
-|**Administrado por WSUS**<p>-Instalar actualizaciones una vez por semana<br />-Reinicie Fridays en 11 P.M.|Establecer equipos para instalar automáticamente e impedir el reinicio automático hasta la hora deseada<p>**Directiva** : Configurar actualizaciones automáticas (habilitada)<p>Configurar actualizaciones automáticas: 4-descargar automáticamente y programar la instalación<p>**Directiva** : no reiniciar automáticamente con usuarios que han iniciado sesión (deshabilitado)<p>**Fechas límite de WSUS** : establecer en viernes a las 23:00|
+|**Administrado por WSUS**<p>-Instalar actualizaciones una vez por semana<br />-Reinicie Fridays en 11 P.M.|Establecer equipos para instalar automáticamente e impedir el reinicio automático hasta la hora deseada<p>**Directiva**: Configurar actualizaciones automáticas (habilitada)<p>Configurar actualizaciones automáticas: 4-descargar automáticamente y programar la instalación<p>**Directiva**: no reiniciar automáticamente con usuarios que han iniciado sesión (deshabilitado)<p>**Fechas límite de WSUS**: establecer en viernes a las 23:00|
 |**Administrado por WSUS**<p>-Escalonar instalaciones en distintas horas/días|Establecer grupos de destino para distintos grupos de equipos que deben actualizarse juntos<p>Usar los pasos del escenario anterior<p>Establecer distintas fechas límites para distintos grupos de destino|
-|**No administrado por WSUS: no se admiten las fechas límite**<p>-Escalonar instalaciones en momentos diferentes|**Directiva** : Configurar actualizaciones automáticas (habilitada)<p>Configurar actualizaciones automáticas: 4-descargar automáticamente y programar la instalación<p>**Clave del Registro:** habilite la clave del registro que se describe en el artículo de la Microsoft Knowledge Base [2835627](https://support.microsoft.com/kb/2835627)<p>**Directiva:** Retraso aleatorio de mantenimiento automático (habilitada)<p>Establece **Retraso aleatorio de mantenimiento normal** en PT6H para indicar un retraso aleatorio de seis horas y así tener el siguiente comportamiento:<p>-Las actualizaciones se instalarán en el tiempo de mantenimiento configurado más un retraso aleatorio<p>-El reinicio de cada máquina tendrá lugar exactamente 3 días más tarde<p>Como alternativa, establece una hora de mantenimiento distinta para cada grupo de equipos.|
+|**No administrado por WSUS: no se admiten las fechas límite**<p>-Escalonar instalaciones en momentos diferentes|**Directiva**: Configurar actualizaciones automáticas (habilitada)<p>Configurar actualizaciones automáticas: 4-descargar automáticamente y programar la instalación<p>**Clave del Registro:** habilite la clave del registro que se describe en el artículo de la Microsoft Knowledge Base [2835627](https://support.microsoft.com/kb/2835627)<p>**Directiva:** Retraso aleatorio de mantenimiento automático (habilitada)<p>Establece **Retraso aleatorio de mantenimiento normal** en PT6H para indicar un retraso aleatorio de seis horas y así tener el siguiente comportamiento:<p>-Las actualizaciones se instalarán en el tiempo de mantenimiento configurado más un retraso aleatorio<p>-El reinicio de cada máquina tendrá lugar exactamente 3 días más tarde<p>Como alternativa, establece una hora de mantenimiento distinta para cada grupo de equipos.|
 
 Para obtener más información acerca de por qué el equipo de ingeniería de Windows implementó estos cambios, consulte [cómo reducir las posibilidades de que se le pida que reinicie el equipo](https://docs.microsoft.com/troubleshoot/windows-server/deployment/why-prompted-restart-computer#how-to-reduce-your-chances-of-being-prompted-to-restart-your-computer).
 
@@ -157,7 +157,7 @@ A partir de Windows Server 2008, los controladores de dominio también tienen la
 |--|--|--|--|
 | AllowNT4Crypto | Disabled | Disabled | Los clientes de Bloque de mensajes del servidor (SMB) de terceros pueden no ser compatibles con la configuración predeterminada de seguridad en los controladores de dominio. En todos los casos, esta configuración se puede relajar para permitir la interoperabilidad, pero solamente a costa de la seguridad. Para obtener más información, vea el [artículo 942564](https://go.microsoft.com/fwlink/?LinkId=164558) de Microsoft Knowledge base ( https://go.microsoft.com/fwlink/?LinkId=164558) . |
 | DES | habilitado | Disabled | [Artículo 977321](https://go.microsoft.com/fwlink/?LinkId=177717) de Microsoft Knowledge base (https://go.microsoft.com/fwlink/?LinkId=177717) |
-| Protección extendida/CBT para autenticación integrada | No aplicable | habilitado | Vea el [aviso de seguridad de Microsoft (937811)](https://go.microsoft.com/fwlink/?LinkId=164559) ( https://go.microsoft.com/fwlink/?LinkId=164559) y el [artículo 976918](https://go.microsoft.com/fwlink/?LinkId=178251) de Microsoft Knowledge base () https://go.microsoft.com/fwlink/?LinkId=178251) .<p>Revise e instale la revisión del [artículo 977073](https://go.microsoft.com/fwlink/?LinkId=186394) ( https://go.microsoft.com/fwlink/?LinkId=186394) en Microsoft Knowledge base según sea necesario). |
+| Protección extendida/CBT para autenticación integrada | N/D | habilitado | Vea el [aviso de seguridad de Microsoft (937811)](https://go.microsoft.com/fwlink/?LinkId=164559) ( https://go.microsoft.com/fwlink/?LinkId=164559) y el [artículo 976918](https://go.microsoft.com/fwlink/?LinkId=178251) de Microsoft Knowledge base () https://go.microsoft.com/fwlink/?LinkId=178251) .<p>Revise e instale la revisión del [artículo 977073](https://go.microsoft.com/fwlink/?LinkId=186394) ( https://go.microsoft.com/fwlink/?LinkId=186394) en Microsoft Knowledge base según sea necesario). |
 | LMv2 | habilitado | Disabled | [Artículo 976918](https://go.microsoft.com/fwlink/?LinkId=178251) de Microsoft Knowledge base (https://go.microsoft.com/fwlink/?LinkId=178251) |
 
 ## <a name="operating-system-requirements"></a><a name="BKMK_SysReqs"></a>Requisitos de sistema operativo
@@ -167,7 +167,7 @@ En la tabla siguiente se enumeran los requisitos mínimos del sistema para Windo
 | Requisito | Value |
 | ---------- | ----- |
 | Procesador | Procesador de 64 bits a 1,4 GHz |
-| RAM | 512 MB |
+| MEMORIA RAM | 512 MB |
 | Requisitos de espacio libre en disco | 32 GB |
 | Resolución de pantalla | 800x600 o superior |
 | Varios | Unidad de DVD, teclado y acceso a Internet |
@@ -224,7 +224,7 @@ Los controladores de dominio de Windows 2000 se deben quitar antes de agregar co
 4. Instala controladores de dominio que ejecuten Windows Server 2012.
 5. Quite los controladores de dominio que ejecuten versiones anteriores de Windows Server.
 
-El nuevo nivel funcional de dominio de Windows Server 2012 habilita una característica nueva: la **compatibilidad de KDC con notificaciones, autenticación compuesta y protección de Kerberos de** la Directiva de plantillas administrativas de KDC tiene dos configuraciones ( **proporcionar siempre notificaciones** y **error de solicitudes de autenticación sin blindar** ) que requieren el nivel funcional de dominio de Windows Server 2012.
+El nuevo nivel funcional de dominio de Windows Server 2012 habilita una característica nueva: la **compatibilidad de KDC con notificaciones, autenticación compuesta y protección de Kerberos de** la Directiva de plantillas administrativas de KDC tiene dos configuraciones (**proporcionar siempre notificaciones** y **error de solicitudes de autenticación sin blindar**) que requieren el nivel funcional de dominio de Windows Server 2012.
 
 El nivel funcional del bosque de Windows Server 2012 no proporciona características nuevas, pero asegura que cualquier dominio nuevo creado en el bosque funcione automáticamente en el nivel funcional del dominio de Windows Server 2012. El nivel funcional de dominio de Windows Server 2012 no proporciona otras características nuevas más allá de la compatibilidad de KDC con notificaciones, autenticación compuesta y protección de Kerberos. No obstante, garantiza que cualquier controlador de dominio del dominio ejecute Windows Server 2012. Para obtener más información acerca de otras características que se encuentran disponibles en distintos niveles funcionales, consulte el tema sobre la [descripción de los niveles funcionales de los Servicios de dominio de Active Directory (AD DS)](../active-directory-functional-levels.md).
 
@@ -287,9 +287,9 @@ En la siguiente tabla se recogen las aplicaciones de Microsoft comunes que se in
 |Forefront Threat Management Gateway (TMG)|TMG se puede ejecutar únicamente en Windows Server 2008 y Windows Server 2008 R2. Para obtener más información, consulte [Requisitos del sistema para Forefront TMG](/previous-versions/tn-archive/dd896981(v=technet.10)).|
 |Windows Server Update Services|Esta versión de WSUS ya admite equipos basados en Windows 8 o en Windows Server 2012 como clientes.|
 |Windows Server Update Services 3.0|El artículo [2734608](https://support.microsoft.com/kb/2734608) de Knowledge base permite que los servidores que ejecutan Windows Server Update Services (WSUS) 3,0 SP2 proporcionen actualizaciones a los equipos que ejecutan Windows 8 o windows Server 2012: **Nota:** los clientes con entornos independientes de WSUS 3,0 SP2 o Configuration Manager 2007 entornos de Service Pack 2 con WSUS 3,0 SP2 requieren que [2734608](https://support.microsoft.com/kb/2734608) administre correctamente equipos basados en Windows 8 o Windows Server 2012 como clientes.|
-|[Exchange 2013](/Exchange/plan-and-deploy/prerequisites?view=exchserver-2019)|Windows Server 2012 Standard y Datacenter son compatibles para los siguientes roles: maestro de esquema, servidor de catálogo global, controlador de dominio, buzón y servidor de acceso de cliente.<p>Nivel funcional de bosque: Windows Server 2003 o superior<p>Origen: Requisitos del sistema para Exchange 2013|
+|[Exchange 2013](/Exchange/plan-and-deploy/prerequisites)|Windows Server 2012 Standard y Datacenter son compatibles para los siguientes roles: maestro de esquema, servidor de catálogo global, controlador de dominio, buzón y servidor de acceso de cliente.<p>Nivel funcional de bosque: Windows Server 2003 o superior<p>Origen: Requisitos del sistema para Exchange 2013|
 |Exchange 2010|[Origen: Exchange 2010 Service Pack 3](https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange)<p>Exchange 2010 con Service Pack 3 se puede instalar en servidores miembro de Windows Server 2012.<p>En[Requisitos del sistema para Exchange 2010](/previous-versions/office/exchange-server-2010/aa996719(v=exchg.141)) se indican el maestro de esquema, catálogo global y controlador de dominio más recientes como Windows Server 2008 R2.<p>Nivel funcional de bosque: Windows Server 2003 o superior|
-|SQL Server 2012|Origen: KB [2681562](https://support.microsoft.com/kb/2681562)<p>Windows Server 2012 admite SQL Server 2012 RTM.|
+|SQL Server 2012|Origen: KB [2681562](https://support.microsoft.com/kb/2681562)<p>Windows Server 2012 admite SQL Server 2012 RTM.|
 |SQL Server 2008 R2|Origen: KB [2681562](https://support.microsoft.com/kb/2681562)<p>Se necesita SQL Server 2008 R2 con Service Pack 1 o posterior para instalar en Windows Server 2012.|
 |SQL Server 2008|Origen: KB [2681562](https://support.microsoft.com/kb/2681562)<p>Se necesita SQL Server 2008 con Service Pack 3 o posterior para instalar en Windows Server 2012.|
 |SQL Server 2005|Origen: KB [2681562](https://support.microsoft.com/kb/2681562)<p>No se puede instalar en Windows Server 2012.|
@@ -334,7 +334,7 @@ En la tabla siguiente se enumeran los problemas conocidos relacionados con la in
 | [2747974](https://support.microsoft.com/kb/2747974): el evento 2224 de clonación del controlador de dominio proporciona instrucciones incorrectas | Clonación de controladores de dominio virtuales | El identificador de evento 2224 indica erróneamente que las cuentas de servicio administradas se deben quitar antes de proceder a la clonación. Las cuentas de servicio administradas independientes se deben eliminar, pero las de grupo no impiden la clonación. |
 | [2748266](https://support.microsoft.com/kb/2748266): tras actualizar a Windows 8, no se puede desbloquear una unidad cifrada con BitLocker | BitLocker | Recibirá un error de "aplicación no encontrada" al intentar desbloquear una unidad en un equipo que se ha actualizado desde Windows 7. |
 
-## <a name="see-also"></a>Consulte también
+## <a name="see-also"></a>Vea también
 
 Recursos de evaluación de [Windows Server 2012](https://www.microsoft.com/en-us/evalcenter/) 
  Guía de evaluación de [Windows Server 2012](https://download.microsoft.com/download/5/B/2/5B254183-FA53-4317-B577-7561058CEF42/WS%202012%20Evaluation%20Guide.pdf) 

@@ -6,12 +6,12 @@ ms.topic: article
 author: jasongerend
 ms.date: 06/07/2019
 description: En este tema se describen los espacios de nombres DFS, que es un servicio de rol de Windows Server que permite agrupar las carpetas compartidas ubicadas en distintos servidores en uno o más espacios de nombres estructurados lógicamente.
-ms.openlocfilehash: cc29d4bbb73a3255497b89a438c2f3962fd07751
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 5f2ab44b902d5ed1d27be9eb14bda8f003387f52
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989382"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866004"
 ---
 # <a name="dfs-namespaces-overview"></a>Información general sobre espacios de nombres DFS
 
@@ -30,7 +30,7 @@ Esta es una descripción de los elementos que componen un espacio de nombres DFS
 
 En este tema se describe cómo instalar DFS, las novedades y dónde encontrar información de evaluación e implementación.
 
-Puede administrar los espacios de nombres mediante administración de DFS, los [cmdlets del espacio de nombres DFS (DFSN) en Windows PowerShell](/powershell/module/dfsn/?view=win10-ps), el comando **DfsUtil** o los scripts que llaman a WMI.
+Puede administrar los espacios de nombres mediante administración de DFS, los [cmdlets del espacio de nombres DFS (DFSN) en Windows PowerShell](/powershell/module/dfsn/), el comando **DfsUtil** o los scripts que llaman a WMI.
 
 ## <a name="server-requirements-and-limits"></a>Requisitos y límites del servidor
 
@@ -49,7 +49,7 @@ Los servidores que ejecutan los siguientes sistemas operativos pueden hospedar v
 
 Los servidores que ejecutan los siguientes sistemas operativos pueden hospedar un solo espacio de nombres independiente:
 
-- Windows Server 2008 R2 Standard
+- Windows Server 2008 R2 Standard
 
 En la siguiente tabla se describen otros factores que debe tener en cuenta al seleccionar los servidores que hospedarán un espacio de nombres.
 
@@ -67,7 +67,7 @@ Instale espacios de nombres DFS mediante el [centro de administración de Window
 
 ### <a name="to-install-dfs-by-using-server-manager"></a>Para instalar DFS mediante el Administrador del servidor
 
-1. Abra el Administrador del servidor, haga clic en **Administrar**y, a continuación, en **Agregar roles y características**. Aparece el Asistente para agregar roles y características.
+1. Abra el Administrador del servidor, haga clic en **Administrar** y, a continuación, en **Agregar roles y características**. Aparece el Asistente para agregar roles y características.
 
 2. En la página **Selección de servidor** , seleccione el servidor o el disco duro virtual (VHD) de una máquina virtual sin conexión en la que desee instalar DFS.
 
@@ -75,7 +75,7 @@ Instale espacios de nombres DFS mediante el [centro de administración de Window
 
     - Para instalar el servicio de espacios de nombres DFS, en la página **roles de servidor** , seleccione **espacios de nombres DFS**.
 
-    - Para instalar solamente las Herramientas de administración de DFS, en la página **Características** , expanda **Herramientas de administración remota del servidor**, **Herramientas de administración de roles**, expanda **Herramientas de Servicios de archivo**y, a continuación, seleccione **Herramientas de administración de DFS**.
+    - Para instalar solamente las Herramientas de administración de DFS, en la página **Características** , expanda **Herramientas de administración remota del servidor**, **Herramientas de administración de roles**, expanda **Herramientas de Servicios de archivo** y, a continuación, seleccione **Herramientas de administración de DFS**.
 
          **Herramientas de administración de DFS** instala el complemento Administración de DFS, el módulo Espacios de nombres DFS para Windows PowerShell y las herramientas de línea de comandos, pero no instala ningún servicio DFS en el servidor.
 

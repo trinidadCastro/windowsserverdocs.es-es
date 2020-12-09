@@ -1,23 +1,23 @@
 ---
-title: Herramientas de línea de comandos del servidor de archivos Administrador de recursos
+title: Herramientas de Command-Line de Administrador de recursos del servidor de archivos
 description: En este artículo se describen las herramientas de línea de comandos de Windows Server 2016
 ms.date: 7/7/2017
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 0300e8fa6845c58e61b695546daf4116286d975f
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 937045a4ed0803fd160d9f01d06ade6e73df2d97
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87957522"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96865974"
 ---
 # <a name="file-server-resource-manager-command-line-tools"></a>Herramientas de línea de comandos del servidor de archivos Administrador de recursos
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
-El servidor de archivos Administrador de recursos instala los cmdlets de PowerShell de [FileServerResourceManager](/powershell/module/fileserverresourcemanager/?view=win10-ps) y las siguientes herramientas de línea de comandos:
+El servidor de archivos Administrador de recursos instala los cmdlets de PowerShell de [FileServerResourceManager](/powershell/module/fileserverresourcemanager/) y las siguientes herramientas de línea de comandos:
 
 -   **Dirquota.exe**. Se usa para crear y administrar cuotas, cuotas automáticas y plantillas de cuota.
 -   **Filescrn.exe**. Se usa para crear y administrar filtros de archivos, plantillas de filtro de archivos, excepciones al filtro de archivos y grupos de archivos.
@@ -25,9 +25,9 @@ El servidor de archivos Administrador de recursos instala los cmdlets de PowerSh
 
 Puede usar estas herramientas para administrar recursos de almacenamiento en un equipo local o en un equipo remoto. Para obtener más información acerca de estas herramientas de línea de comandos, consulte las siguientes referencias:
 
--   **Dirquota**:<https://go.microsoft.com/fwlink/?LinkId=92741>
--   **Filescrn**:<https://go.microsoft.com/fwlink/?LinkId=92742>
--   **Storrept**:<https://go.microsoft.com/fwlink/?LinkId=92743>
+-   **Dirquota**: <https://go.microsoft.com/fwlink/?LinkId=92741>
+-   **Filescrn**: <https://go.microsoft.com/fwlink/?LinkId=92742>
+-   **Storrept**: <https://go.microsoft.com/fwlink/?LinkId=92743>
 
 
 > [!Note]

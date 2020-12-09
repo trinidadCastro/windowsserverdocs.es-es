@@ -6,12 +6,12 @@ ms.topic: get-started-article
 ms.assetid: 334b090d-bec4-4e67-8307-13831dbdd1d8
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: 838ce8dfc11cb08b20349f121405991fcbe00270
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: f266ac90478bb25a540ad3a3b88a5c096fe2de87
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991337"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866484"
 ---
 # <a name="network-controller-high-availability"></a>Alta disponibilidad de la controladora de red
 
@@ -30,7 +30,7 @@ Aunque puede implementar la controladora de red como un clúster de máquina ún
 
 ## <a name="network-controller-as-a-service-fabric-application"></a>Controladora de red como una aplicación Service Fabric
 
-Para lograr una alta disponibilidad y escalabilidad, la controladora de red se basa en Service Fabric. Service Fabric proporciona una plataforma de sistemas distribuidos para compilar aplicaciones escalables, confiables y fáciles de administrar.
+Para lograr una alta disponibilidad y escalabilidad, Controladora de red se basa en Service Fabric. Service Fabric proporciona una plataforma de sistemas distribuidos para compilar aplicaciones escalables, confiables y fáciles de administrar.
 
 Como plataforma, Service Fabric proporciona la funcionalidad necesaria para crear un sistema distribuido escalable. Proporciona hospedaje de servicio en varias instancias de sistema operativo, sincronización de información de estado entre instancias, elección de una directriz, detección de errores, equilibrio de carga, etc.
 
@@ -60,7 +60,7 @@ Dado que el controlador de red es el núcleo de una red de centro de recursos, d
 
 ### <a name="persistent-storage"></a>Almacenamiento persistente
 
-La aplicación de controladora de red tiene grandes requisitos de almacenamiento para su configuración y estado. La aplicación también debe ser utilizable en las interrupciones planeadas y no planeadas. Para ello, Service Fabric proporciona un almacén de clave-valor de \( KVS \) que es un almacén transaccional y replicado.
+La aplicación de controladora de red tiene grandes requisitos de almacenamiento para su configuración y estado. La aplicación también debe ser utilizable en las interrupciones planeadas y no planeadas. Para este propósito, Service Fabric proporciona un Key-Value de almacenamiento de \( KVS \) que es un almacén transaccional y replicado.
 
 ### <a name="modularity"></a>Modularidad
 
@@ -78,7 +78,7 @@ Service Fabric modularidad utiliza esquemas de modelo de servicio para maximizar
 
 ## <a name="network-controller-deployment-options"></a>Opciones de implementación de la controladora de red
 
-Para implementar la controladora de red mediante System Center Virtual Machine Manager \( VMM \) , consulte [configuración de una controladora de red de Sdn en el tejido de VMM](/system-center/vmm/sdn-controller?view=sc-vmm-2019).
+Para implementar la controladora de red mediante System Center Virtual Machine Manager \( VMM \) , consulte [configuración de una controladora de red de Sdn en el tejido de VMM](/system-center/vmm/sdn-controller).
 
 Para implementar la controladora de red mediante scripts, consulte [implementación de una infraestructura de red definida por software mediante scripts](../../deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md).
 

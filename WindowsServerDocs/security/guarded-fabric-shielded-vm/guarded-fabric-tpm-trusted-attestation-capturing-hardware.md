@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 04/01/2019
-ms.openlocfilehash: c1d169147c6b09c8a238163a961c192e3e483728
-ms.sourcegitcommit: f45640cf4fda621b71593c63517cfdb983d1dc6a
+ms.openlocfilehash: 8ce4528ec7e8143c6f9af977079eed1cf8cc3940
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92155951"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96865664"
 ---
 # <a name="authorize-guarded-hosts-using-tpm-based-attestation"></a>Autorizar hosts protegidos mediante la atestación basada en TPM
 
@@ -80,7 +80,7 @@ A partir de la versión 1709 de Windows Server, las directivas de integridad de 
 
 Se recomienda crear primero la Directiva de CI en modo auditoría (registro) para ver si falta algo y, a continuación, aplicar la Directiva para las cargas de trabajo de producción del host.
 
-Si usa el cmdlet [New-CIPolicy](/powershell/module/configci/new-cipolicy?view=win10-ps) para generar su propia Directiva de integridad de código, deberá decidir los niveles de regla que se usarán.
+Si usa el cmdlet [New-CIPolicy](/powershell/module/configci/new-cipolicy) para generar su propia Directiva de integridad de código, deberá decidir los niveles de regla que se usarán.
 Se recomienda un nivel principal de **publicador** con la reserva para el **hash**, lo que permite que la mayoría del software firmado digital se actualice sin cambiar la Directiva de CI.
 El nuevo software escrito por el mismo publicador también se puede instalar en el servidor sin cambiar la Directiva de CI.
 Se aplicará un algoritmo hash a los archivos ejecutables que no estén firmados digitalmente: las actualizaciones de estos archivos requerirán la creación de una nueva Directiva de CI.
@@ -101,7 +101,7 @@ Para obtener más información sobre los niveles de regla de directiva de CI dis
 
 3.  Aplique la Directiva de CI al host de referencia:
 
-    1.  Ejecute el siguiente comando para configurar el equipo para usar la Directiva de CI. También puede implementar la Directiva de CI con [Directiva de grupo](/windows/security/threat-protection/windows-defender-application-control/deploy-windows-defender-application-control-policies-using-group-policy) o [System Center Virtual Machine Manager](/system-center/vmm/guarded-deploy-host?view=sc-vmm-2019#manage-and-deploy-code-integrity-policies-with-vmm).
+    1.  Ejecute el siguiente comando para configurar el equipo para usar la Directiva de CI. También puede implementar la Directiva de CI con [Directiva de grupo](/windows/security/threat-protection/windows-defender-application-control/deploy-windows-defender-application-control-policies-using-group-policy) o [System Center Virtual Machine Manager](/system-center/vmm/guarded-deploy-host#manage-and-deploy-code-integrity-policies-with-vmm).
 
         ```powershell
         Invoke-CimMethod -Namespace root/Microsoft/Windows/CI -ClassName PS_UpdateAndCompareCIPolicy -MethodName Update -Arguments @{ FilePath = "C:\temp\HW1CodeIntegrity.p7b" }

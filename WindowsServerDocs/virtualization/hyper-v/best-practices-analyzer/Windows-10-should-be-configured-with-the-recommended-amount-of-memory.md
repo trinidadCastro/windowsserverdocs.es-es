@@ -6,12 +6,12 @@ author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 0c810b82-b06a-4382-b598-5c642e8534be
 ms.date: 8/16/2016
-ms.openlocfilehash: 80bfdff229cbb70f54464a304b4d803bcba75368
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: ffe4b2060b7e57a8c70b00f0157c8fba10a093df
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90747150"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96865914"
 ---
 # <a name="windows-10-should-be-configured-with-the-recommended-amount-of-memory"></a>Windows 10 debe configurarse con la cantidad de memoria recomendada
 
@@ -63,5 +63,5 @@ En las secciones siguientes se proporcionan detalles sobre el problema específi
 Set-VMMemory <MyVM> -StartupBytes 1GB
 ```
 
-## <a name="see-also"></a>Consulte también
-[Set-VMMemory](/powershell/module/hyper-v/set-vmmemory?view=win10-ps)
+## <a name="see-also"></a>Vea también
+[Set-VMMemory](/powershell/module/hyper-v/set-vmmemory)

@@ -6,12 +6,12 @@ author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: b5065a3f-364d-4aa9-8703-eafa7a46b575
 ms.date: 8/16/2016
-ms.openlocfilehash: ab991826d185d46ad1cc15db15d0306f6cf3848b
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 24fae758171c8bd21a913d09fafb0f25ed2a6b60
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90745440"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96865874"
 ---
 # <a name="windows-server-2008-should-be-configured-with-at-least-the-minimum-amount-of-memory"></a>Windows Server 2008 debe configurarse con al menos la cantidad mínima de memoria
 
@@ -28,7 +28,7 @@ Para más información acerca de los análisis y los procedimientos recomendados
 
 En las secciones siguientes, cursiva indica el texto de la interfaz de usuario que aparece en la herramienta de Analizador de procedimientos recomendados para este problema.
 
-## <a name="issue"></a>Problema
+## <a name="issue"></a>Incidencia
 
 *Una máquina virtual que ejecuta Windows Server 2008 se configura con menos de la cantidad mínima de RAM, que es de 512 MB.*
 
@@ -38,7 +38,7 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 
 \<list of virtual machine names>
 
-## <a name="resolution"></a>Solución
+## <a name="resolution"></a>Resolución
 
 *Use el administrador de Hyper-V para aumentar la memoria asignada a esta máquina virtual al menos 512 MB.*
 
@@ -66,5 +66,5 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 Set-VMMemory <MyVM> -StartupBytes 512MB
 ```
 
-## <a name="see-also"></a>Consulte también
-[Set-VMMemory](/powershell/module/hyper-v/set-vmmemory?view=win10-ps)
+## <a name="see-also"></a>Vea también
+[Set-VMMemory](/powershell/module/hyper-v/set-vmmemory)

@@ -6,12 +6,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 04/11/2019
 ms.topic: article
-ms.openlocfilehash: fef394aaef059ec83303c903ca5e548f002775c0
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 3da3a66a6d414c5e80b5f84dc14c5e739a7f788a
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93069077"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866344"
 ---
 # <a name="install-a-new-active-directory-forest-using-azure-cli"></a>Install a new Active Directory forest using Azure CLI (Instalación de un nuevo bosque de Active Directory en la CLI de Azure)
 
@@ -34,7 +34,7 @@ AD DS se pueden ejecutar en una máquina virtual (VM) de Azure de la misma maner
 
 ## <a name="build-the-test-environment"></a>Compilar el entorno de prueba
 
-Usamos el [Azure portal](https://portal.azure.com) y [CLI de Azure](/cli/azure/overview?view=azure-cli-latest) para crear el entorno.
+Usamos el [Azure portal](https://portal.azure.com) y [CLI de Azure](/cli/azure/overview) para crear el entorno.
 
 La CLI de Azure se usa para crear y administrar recursos de Azure desde la línea de comandos o en scripts. En este tutorial se detalla el uso de la CLI de Azure para implementar máquinas virtuales que ejecutan Windows Server 2019. Una vez completada la implementación, nos conectaremos a los servidores e instalaremos AD DS.
 
@@ -44,14 +44,14 @@ Si no tiene una suscripción a Azure, cree una [cuenta gratuita](https://azure.m
 
 El siguiente script automatiza el proceso de creación de dos máquinas virtuales con Windows Server 2019, con el fin de crear controladores de dominio para un nuevo bosque de Active Directory en Azure. Un administrador puede modificar las variables siguientes para que se adapten a sus necesidades y, a continuación, completar, como una operación. El script crea el grupo de recursos necesario, el grupo de seguridad de red con una regla de tráfico para Escritorio remoto, la red virtual y la subred y el grupo de disponibilidad. Cada una de las máquinas virtuales se compila con un disco de datos de 20 GB con el almacenamiento en caché deshabilitado para la instalación de AD DS.
 
-El siguiente script se puede ejecutar directamente desde el Azure Portal. Si decide instalar y usar la CLI localmente, para esta guía de inicio rápido es preciso que ejecute la CLI de Azure versión 2.0.4 o posterior. Ejecute `az --version` para encontrar la versión. Si necesita instalarla o actualizarla, consulte [Instalación de la CLI de Azure 2.0](/cli/azure/install-azure-cli?view=azure-cli-latest).
+El siguiente script se puede ejecutar directamente desde el Azure Portal. Si decide instalar y usar la CLI localmente, para esta guía de inicio rápido es preciso que ejecute la CLI de Azure versión 2.0.4 o posterior. Ejecute `az --version` para encontrar la versión. Si necesita instalarla o actualizarla, consulte [Instalación de la CLI de Azure 2.0](/cli/azure/install-azure-cli).
 
-| Nombre de variable | Finalidad |
+| Nombre de variable | Propósito |
 | :---: | :--- |
 | AdminUsername | Nombre de usuario que se configurará en cada máquina virtual como administrador local. |
 | AdminPassword | Contraseña de texto no cifrado que se configurará en cada máquina virtual como la contraseña de administrador local. |
 | ResourceGroupName | Nombre que se va a usar para el grupo de recursos. No debe duplicar un nombre existente. |
-| Ubicación | Nombre de ubicación de Azure en el que desea realizar la implementación. Muestra las regiones admitidas para la suscripción actual mediante `az account list-locations` . |
+| Location | Nombre de ubicación de Azure en el que desea realizar la implementación. Muestra las regiones admitidas para la suscripción actual mediante `az account list-locations` . |
 | VNetName | Nombre para asignar la red virtual de Azure no debe duplicar un nombre existente. |
 | VNetAddress | Ámbito de IP que se usará para las redes de Azure. No debe duplicar un intervalo existente. |
 | SubnetName | Nombre para asignar la subred IP. No debe duplicar un nombre existente. |
@@ -160,7 +160,7 @@ Puede encontrar información sobre cómo extender una red local a Azure en el ar
 
 ## <a name="configure-the-vms-and-install-active-directory-domain-services"></a>Configurar las máquinas virtuales e instalar Active Directory Domain Services
 
-Una vez completado el script, busque el [Azure portal](https://portal.azure.com)y, a continuación, **máquinas virtuales** .
+Una vez completado el script, busque el [Azure portal](https://portal.azure.com)y, a continuación, **máquinas virtuales**.
 
 ### <a name="configure-the-first-domain-controller"></a>Configuración del primer controlador de dominio
 
@@ -235,7 +235,7 @@ Para quitar el entorno, cuando haya completado las pruebas, se puede eliminar el
 
 ### <a name="remove-using-the-azure-portal"></a>Quitar mediante el Azure Portal
 
-En el Azure Portal, vaya a **grupos de recursos** y elija el grupo de recursos que hemos creado (en este ejemplo, ADonAzureVMs) y, luego, seleccione **Eliminar grupo de recursos** . El proceso solicita confirmación antes de eliminar todos los recursos incluidos en el grupo de recursos.
+En el Azure Portal, vaya a **grupos de recursos** y elija el grupo de recursos que hemos creado (en este ejemplo, ADonAzureVMs) y, luego, seleccione **Eliminar grupo de recursos**. El proceso solicita confirmación antes de eliminar todos los recursos incluidos en el grupo de recursos.
 
 ### <a name="remove-using-the-azure-cli"></a>Quitar mediante el CLI de Azure
 

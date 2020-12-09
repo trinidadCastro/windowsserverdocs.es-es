@@ -6,12 +6,12 @@ ms.author: arduppal
 ms.date: 04/26/2019
 ms.topic: article
 manager: mchad
-ms.openlocfilehash: d5c200d649bfa62314eca26cee3f5fe8601895c3
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 329650a599d9092818bf6923375c03a8d5996825
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87950489"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866184"
 ---
 # <a name="cluster-to-cluster-storage-replica-within-the-same-region-in-azure"></a>Réplica de almacenamiento de clúster a clúster en la misma región de Azure
 
@@ -130,7 +130,7 @@ Parte dos
 
 16. Ejecute las [pruebas de validación del clúster](../../failover-clustering/create-failover-cluster.md#validate-the-configuration) antes de continuar con el siguiente paso.
 
-17. Inicie Windows PowerShell y use el cmdlet [Test-SRTopology](/powershell/module/storagereplica/test-srtopology?view=win10-ps) para determinar si satisface todos los requisitos de la Réplica de almacenamiento. Puede usar el cmdlet en un modo de solo requisitos para una prueba rápida, así como un modo de evaluación del rendimiento de ejecución prolongada.
+17. Inicie Windows PowerShell y use el cmdlet [Test-SRTopology](/powershell/module/storagereplica/test-srtopology) para determinar si satisface todos los requisitos de la Réplica de almacenamiento. Puede usar el cmdlet en un modo de solo requisitos para una prueba rápida, así como un modo de evaluación del rendimiento de ejecución prolongada.
 
 18. Configure la réplica de almacenamiento de clúster a clúster.
 
@@ -156,7 +156,7 @@ Parte dos
     - Ubicación del volumen:-c:\ClusterStorage\DataDisk2
     - Ubicación del registro:-g:
 
-Ejecute el comando siguiente:
+Ejecute el siguiente comando:
 
 ```PowerShell
 

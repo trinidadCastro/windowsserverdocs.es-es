@@ -6,12 +6,12 @@ ms.assetid: 02e31413-6140-4723-a8d6-46c7f667792d
 ms.author: benarm
 author: BenjaminArmstrong
 ms.date: 12/05/2016
-ms.openlocfilehash: f9cdb144e7edacf8a1be0f2d98509517adf5c87e
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 19416bbb8800f12d37d3fdd28760082eb8ea523d
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746600"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866014"
 ---
 # <a name="should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v"></a>¿Debo crear una máquina virtual de generación 1 o 2 en Hyper-V?
 
@@ -59,7 +59,7 @@ En la tabla siguiente se muestran las versiones de Windows de 64 bits que puede 
 | Windows Server 2012 R2 |&#10004;|&#10004;|
 | Windows Server 2012 |&#10004;|&#10004;|
 |Windows Server 2008 R2|&#10004;| &#10006;|
-|Windows Server 2008|&#10004;| &#10006;|
+|Windows Server 2008|&#10004;| &#10006;|
 |Windows 10|&#10004;|&#10004;|
 |Windows 8.1|&#10004;|&#10004;|
 |Windows 8|&#10004;|&#10004;|
@@ -219,7 +219,7 @@ Estas son algunas sugerencias adicionales sobre el uso de máquinas virtuales de
 
 ### <a name="use-ipv6-instead-of-ipv4"></a>Usar IPv6 en lugar de IPv4
 
-De manera predeterminada, las máquinas virtuales de generación 2 usan IPv4. Para usar IPv6 en su lugar, ejecute el cmdlet [set-VMFirmware de](/powershell/module/hyper-v/set-vmfirmware?view=win10-ps) Windows PowerShell. Por ejemplo, el comando siguiente establece el protocolo preferido en IPv6 para una máquina virtual denominada TestVM:
+De manera predeterminada, las máquinas virtuales de generación 2 usan IPv4. Para usar IPv6 en su lugar, ejecute el cmdlet [set-VMFirmware de](/powershell/module/hyper-v/set-vmfirmware) Windows PowerShell. Por ejemplo, el comando siguiente establece el protocolo preferido en IPv6 para una máquina virtual denominada TestVM:
 
 ```powershell
 Set-VMFirmware -VMName TestVM -IPProtocolPreference IPv6
@@ -231,13 +231,13 @@ Los puertos COM no están disponibles en las máquinas virtuales de generación 
 
 Para agregar un puerto COM:
 
-1. Deshabilita arranque seguro. La depuración del kernel no es compatible con arranque seguro. Asegúrese de que la máquina virtual se encuentra en un estado desactivado y, a continuación, use el cmdlet [set-VMFirmware](/powershell/module/hyper-v/set-vmfirmware?view=win10-ps) . Por ejemplo, el siguiente comando deshabilita el arranque seguro en la máquina virtual TestVM:
+1. Deshabilita arranque seguro. La depuración del kernel no es compatible con arranque seguro. Asegúrese de que la máquina virtual se encuentra en un estado desactivado y, a continuación, use el cmdlet [set-VMFirmware](/powershell/module/hyper-v/set-vmfirmware) . Por ejemplo, el siguiente comando deshabilita el arranque seguro en la máquina virtual TestVM:
 
     ```powershell
     Set-VMFirmware -Vmname TestVM -EnableSecureBoot Off
     ```
 
-2. Agregue un puerto COM. Use el cmdlet [set-VMComPort](/powershell/module/hyper-v/set-vmcomport?view=win10-ps) para hacerlo. Por ejemplo, el comando siguiente configura el primer puerto COM de la máquina virtual, TestVM, para conectarse a la canalización con nombre, llamada testpipe, en el equipo local:
+2. Agregue un puerto COM. Use el cmdlet [set-VMComPort](/powershell/module/hyper-v/set-vmcomport) para hacerlo. Por ejemplo, el comando siguiente configura el primer puerto COM de la máquina virtual, TestVM, para conectarse a la canalización con nombre, llamada testpipe, en el equipo local:
 
     ```powershell
     Set-VMComPort -VMName TestVM 1 \\.\pipe\TestPipe
@@ -246,7 +246,7 @@ Para agregar un puerto COM:
 > [!NOTE]
 > Los puertos COM configurados no aparecen en la configuración de una máquina virtual en el administrador de Hyper-V.
 
-## <a name="see-also"></a>Consulte también
+## <a name="see-also"></a>Vea también
 
 - [Máquinas virtuales Linux y FreeBSD en Hyper-V](../Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)
 - [Usos de recursos locales en la máquina virtual de Hyper-V con VMConnect](../learn-more/Use-local-resources-on-Hyper-V-virtual-machine-with-VMConnect.md)

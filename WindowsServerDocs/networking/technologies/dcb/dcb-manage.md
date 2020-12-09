@@ -6,12 +6,12 @@ ms.assetid: 1575cc7c-62a7-4add-8f78-e5d93effe93f
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 9732be4cb0f9301e7011075a663f5499bcf8a277
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 2ca7e336b0949e6dbc0bf1359e463f01605e38bf
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87993980"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96865585"
 ---
 # <a name="manage-data-center-bridging-dcb"></a>Administrar el protocolo de puente del centro de datos (DCB)
 
@@ -172,7 +172,7 @@ You can then use the **Get-NetQosTrafficClass** command to view settings.
 
 Después de quitar una clase de tráfico, el valor de 802.1 p asignado a esa clase de tráfico se reasigna a la clase de tráfico predeterminada. Cualquier ancho de banda reservado para una clase de tráfico se devuelve a la asignación de clase de tráfico predeterminada cuando se quita la clase de tráfico.
 
-## <a name="per-network-interface-policies"></a>Directivas de interfaz por red
+## <a name="per-network-interface-policies"></a>Directivas de interfaz de Per-Network
 
 En todos los ejemplos anteriores se establecen directivas globales. A continuación se muestran ejemplos de cómo puede establecer y obtener directivas por NIC.
 
@@ -464,10 +464,10 @@ Hay comandos de Windows PowerShell de DCB para Windows Server 2016 y Windows Ser
 
 En el siguiente tema de Windows Server 2016 se proporcionan las descripciones y la sintaxis de los cmdlets de Windows PowerShell para todos los \( \) \( \) cmdlets específicos de QoS Quality of Service de calidad de servicio \- . Enumera los cmdlets por orden alfabético según el verbo que aparece al principio del cmdlet.
 
-- [Módulo DcbQoS](/powershell/module/dcbqos/?view=win10-ps)
+- [Módulo DcbQoS](/powershell/module/dcbqos/)
 
 ### <a name="windows-server-2012-r2-windows-powershell-commands-for-dcb"></a>Windows Server 2012 R2 comandos de Windows PowerShell para DCB
 
 En el siguiente tema de Windows Server 2012 R2 se proporcionan las descripciones y la sintaxis de los cmdlets de Windows PowerShell para todos los \( \) \( \) cmdlets específicos de QoS Quality of Service de calidad de servicio \- . Enumera los cmdlets por orden alfabético según el verbo que aparece al principio del cmdlet.
 
-- [Cmdlets de Calidad de servicio (QoS) del Protocolo de puente del centro de datos (DCB) en Windows PowerShell](/powershell/module/dcbqos/?view=win10-ps&viewFallbackFrom=winserverr2-ps)
+- [Cmdlets de Calidad de servicio (QoS) del Protocolo de puente del centro de datos (DCB) en Windows PowerShell](/powershell/module/dcbqos/)

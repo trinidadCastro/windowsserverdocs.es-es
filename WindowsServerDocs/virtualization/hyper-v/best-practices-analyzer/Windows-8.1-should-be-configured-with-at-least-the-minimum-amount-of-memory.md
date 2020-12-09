@@ -6,12 +6,12 @@ author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 84d7edab-610e-4265-87d0-9869f64b0039
 ms.date: 8/16/2016
-ms.openlocfilehash: dd711757fd50dc2ec7bde71c2073d91fa4ded825
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: b7fa050d45d5430cd4ed98f48c29f4bd3c823dd2
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90745790"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96865904"
 ---
 # <a name="windows-81-should-be-configured-with-at-least-the-minimum-amount-of-memory"></a>Windows 8.1 debe configurarse con al menos la cantidad mínima de memoria
 
@@ -63,5 +63,5 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 Set-VMMemory <MyVM> -StartupBytes 512MB
 ```
 
-## <a name="see-also"></a>Consulte también
-[Set-VMMemory](/powershell/module/hyper-v/set-vmmemory?view=win10-ps)
+## <a name="see-also"></a>Vea también
+[Set-VMMemory](/powershell/module/hyper-v/set-vmmemory)

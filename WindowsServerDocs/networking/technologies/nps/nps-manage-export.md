@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: d268dc57-78f8-47ba-9a7a-a607e8b9225c
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: a7f6de6b4ee0e442aed5f718c7025a6eb2e70388
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 7558a431d2745866d03edbed1346b75604dc20ff
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87995472"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866464"
 ---
 # <a name="export-an-nps-configuration-for-import-on-another-server"></a>Exportar una configuración de NPS para importar en otro servidor
 
@@ -60,7 +60,7 @@ En el ejemplo siguiente, la configuración de NPS se exporta a un archivo XML ub
 Export-NpsConfiguration –Path c:\config.xml
 ```
 
-Para obtener más información, vea [Export-NpsConfiguration](/powershell/module/nps/export-npsconfiguration?view=win10-ps).
+Para obtener más información, vea [Export-NpsConfiguration](/powershell/module/nps/export-npsconfiguration).
 
 Después de exportar la configuración de NPS, copie el archivo XML en el servidor de destino.
 
@@ -78,7 +78,7 @@ El comando siguiente importa la configuración del archivo denominado C:\Npsconf
 Import-NpsConfiguration -Path "C:\Npsconfig.xml"
 ```
 
-Para obtener más información, consulte [Import-NpsConfiguration](/powershell/module/nps/import-npsconfiguration?view=win10-ps).
+Para obtener más información, consulte [Import-NpsConfiguration](/powershell/module/nps/import-npsconfiguration).
 
 ## <a name="export-and-import-the-nps-configuration-by-using-netsh"></a>Exportar e importar la configuración de NPS mediante netsh
 
@@ -95,11 +95,11 @@ Para completar este procedimiento, debe pertenecer al grupo Administradores.
 
 ### <a name="to-copy-an-nps-configuration-to-another-nps-using-netsh-commands"></a>Para copiar una configuración de NPS en otro NPS mediante comandos Netsh
 
-1. En el NPS de origen, abra el **símbolo del sistema**, escriba **netsh**y, a continuación, presione Entrar.
+1. En el NPS de origen, abra el **símbolo del sistema**, escriba **netsh** y, a continuación, presione Entrar.
 
-2. En el símbolo del sistema de **netsh** , escriba **NPS**y, a continuación, presione Entrar.
+2. En el símbolo del sistema de **netsh** , escriba **NPS** y, a continuación, presione Entrar.
 
-3. En el símbolo del sistema **netsh NPS** , escriba **Export filename =**"*path\file.xml*" **exportPSK = Yes**, donde *path* es la ubicación de la carpeta donde desea guardar el archivo de configuración de NPS y *File* es el nombre del archivo XML que desea guardar. Presiona Entrar.
+3. En el símbolo del sistema **netsh NPS** , escriba **Export filename =**"*path\file.xml*" **exportPSK = Yes**, donde *path* es la ubicación de la carpeta donde desea guardar el archivo de configuración de NPS y *File* es el nombre del archivo XML que desea guardar. Presione ENTRAR.
 
     Esto almacena los valores de configuración (incluida la configuración del registro) en un archivo XML. La ruta de acceso puede ser relativa o absoluta, o puede ser una ruta de acceso UNC (Convención de nomenclatura universal). Después de presionar entrar, aparece un mensaje que indica si la exportación al archivo se realizó correctamente.
 

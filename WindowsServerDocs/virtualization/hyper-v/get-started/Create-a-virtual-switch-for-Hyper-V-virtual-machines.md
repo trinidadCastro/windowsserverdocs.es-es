@@ -6,12 +6,12 @@ ms.assetid: fdc8063c-47ce-4448-b445-d7ff9894dc17
 ms.author: benarm
 author: BenjaminArmstrong
 ms.date: 10/04/2016
-ms.openlocfilehash: a0c89dc706e0403816317d7664325bf82f261705
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 1bb5c6492896cfdaaf9446502e0eee36ef7dd46a
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746040"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866144"
 ---
 # <a name="create-a-virtual-switch-for-hyper-v-virtual-machines"></a>Crear un conmutador virtual para las máquinas virtuales de Hyper-V
 
@@ -35,7 +35,7 @@ Las redes de máquinas virtuales pueden ser un asunto complejo. Y hay varias car
     |-------------------|---------------|
     |Externo|Proporciona acceso a las máquinas virtuales a una red física para comunicarse con los servidores y los clientes de una red externa. Permite que las máquinas virtuales del mismo servidor de Hyper-V se comuniquen entre sí.|
     |Interno|Permite la comunicación entre máquinas virtuales en el mismo servidor de Hyper-V y entre las máquinas virtuales y el sistema operativo del host de administración.|
-    |Private|Solo permite la comunicación entre máquinas virtuales en el mismo servidor de Hyper-V. Una red privada se aísla de todo el tráfico de red externo en el servidor de Hyper-V. Este tipo de red es útil cuando se debe crear un entorno de red aislado, como un dominio de prueba aislado.|
+    |Privados|Solo permite la comunicación entre máquinas virtuales en el mismo servidor de Hyper-V. Una red privada se aísla de todo el tráfico de red externo en el servidor de Hyper-V. Este tipo de red es útil cuando se debe crear un entorno de red aislado, como un dominio de prueba aislado.|
 
 4.  Seleccione **crear conmutador virtual**.
 
@@ -54,7 +54,7 @@ Las redes de máquinas virtuales pueden ser un asunto complejo. Y hay varias car
 
     ![Captura de pantalla que muestra las opciones de ID. de VLAN](../media/Hyper-V-NewSwitch-VLAN.png)
 
-8.  Haga clic en **Aceptar**.
+8.  Haga clic en **OK**.
 
 9. Haga clic en **Sí**.
 
@@ -72,7 +72,7 @@ Las redes de máquinas virtuales pueden ser un asunto complejo. Y hay varias car
     Get-NetAdapter
     ```
 
-4.  Cree un conmutador virtual con el cmdlet [New-VMSwitch](/powershell/module/hyper-v/new-vmswitch?view=win10-ps) . Por ejemplo, para crear un conmutador virtual externo denominado ExternalSwitch, con el adaptador de red Ethernet y con **permitir que el sistema operativo de administración comparta este adaptador de red** activado, ejecute el siguiente comando.
+4.  Cree un conmutador virtual con el cmdlet [New-VMSwitch](/powershell/module/hyper-v/new-vmswitch) . Por ejemplo, para crear un conmutador virtual externo denominado ExternalSwitch, con el adaptador de red Ethernet y con **permitir que el sistema operativo de administración comparta este adaptador de red** activado, ejecute el siguiente comando.
 
     ```
     New-VMSwitch -name ExternalSwitch  -NetAdapterName Ethernet -AllowManagementOS $true

@@ -6,12 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: f651f60b5ba9e871a88a2df15d87b6819e851642
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 1dc0b0c278577e7318ead6b4e3ebba04b21c8a9c
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87956292"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866293"
 ---
 # <a name="walkthrough-guide-manage-risk-with-additional-multi-factor-authentication-for-sensitive-applications"></a>Guía de tutorial: administración de riesgos con la autenticación multifactor adicional para aplicaciones confidenciales
 
@@ -76,7 +76,7 @@ Para configurar MFA debe seleccionar un método de autenticación adicional. En 
 
 -   Configurar y seleccionar la [autenticación multifactor de Windows Azure](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_8)
 
-#### <a name="certificate-authentication"></a><a name="BKMK_7"></a>Autenticación de certificado
+#### <a name="certificate-authentication"></a><a name="BKMK_7"></a>Autenticación de certificados
 Complete uno de los dos procedimientos siguientes para seleccionar la autenticación de certificado como método de autenticación adicional:
 
 ###### <a name="to-configure-certificate-authentication-as-an-additional-authentication-method-via-the-ad-fs-management-console"></a>Para configurar la autenticación de certificado como método de autenticación adicional mediante la Consola de administración de AD FS
@@ -193,7 +193,7 @@ Ahora ya puede iniciar el Servidor de autenticación multifactor de Windows Azur
 9. Para configurar la autenticación multifactor de Windows Azure como método de autenticación adicional, en la Consola de administración de AD FS, navegue hasta el nodo **Directivas de autenticación** y, en la sección **Autenticación multifactor**, haga clic en el vínculo **Editar** junto al subapartado **Configuración global**. En la ventana **Editar directiva de autenticación global**, seleccione **Multi-Factor Authentication** como método de autenticación adicional y haga clic en **Aceptar**.
 
     > [!NOTE]
-    > Para personalizar el nombre y la descripción del método de autenticación multifactor de Windows Azure, así como de cualquier método de autenticación de terceros, tal como aparecen en la interfaz de usuario de AD FS, ejecute el cmdlet **Set-AdfsAuthenticationProviderWebContent**. Para obtener más información, vea.[https://technet.microsoft.com/library/dn479401.aspx](/powershell/module/adfs/set-adfsauthenticationproviderwebcontent?view=win10-ps)
+    > Para personalizar el nombre y la descripción del método de autenticación multifactor de Windows Azure, así como de cualquier método de autenticación de terceros, tal como aparecen en la interfaz de usuario de AD FS, ejecute el cmdlet **Set-AdfsAuthenticationProviderWebContent**. Para obtener más información, consulte: [https://technet.microsoft.com/library/dn479401.aspx](/powershell/module/adfs/set-adfsauthenticationproviderwebcontent)
 
 ### <a name="set-up-mfa-policy"></a><a name="BKMK_6"></a>Configurar la directiva de MFA
 Para habilitar MFA, debe configurar la directiva de MFA en el servidor de federación. En este tutorial, según nuestra directiva de MFA, la cuenta de **Robert Hatley** debe someterse a MFA porque pertenece al grupo **Finance** que configuró en [configurar el entorno de laboratorio para AD FS en Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md).
@@ -206,7 +206,7 @@ Puede configurar la directiva de MFA mediante la Consola de administración de A
 
 2.  En la página **Acciones** o haciendo clic con el botón secundario en **claimapp**, seleccione **Editar autenticación multifactor personalizada**.
 
-3.  En la ventana **Editar relación de confianza para usuario autenticado para claimapp**, haga clic en el botón **Agregar** junto a la lista **Usuarios/Grupos**. Escriba **Finance** como nombre del grupo de ad que ha creado en [configurar el entorno de laboratorio para AD FS en Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md), haga clic en **Comprobar nombres**y, una vez resuelto el nombre, haga clic en **Aceptar**.
+3.  En la ventana **Editar relación de confianza para usuario autenticado para claimapp**, haga clic en el botón **Agregar** junto a la lista **Usuarios/Grupos**. Escriba **Finance** como nombre del grupo de ad que ha creado en [configurar el entorno de laboratorio para AD FS en Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md), haga clic en **Comprobar nombres** y, una vez resuelto el nombre, haga clic en **Aceptar**.
 
 4.  Haga clic en **Aceptar** en la ventana **Editar relación de confianza para usuario autenticado para claimapp**.
 
@@ -244,6 +244,6 @@ En este paso comprobará la funcionalidad de MFA que configuró en el paso anter
 
     Si configura la autenticación multifactor de Windows Azure como método de autenticación adicional, el texto del mensaje predeterminado será **Se realizará una llamada a su teléfono para completar la autenticación.** Para obtener más información acerca del inicio de sesión con Autenticación multifactor de Windows Azure y con distintas opciones para el método de comprobación preferido, consulte [Introducción a la autenticación multifactor de Windows Azure](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn280950(v=ws.11)).
 
-## <a name="see-also"></a>Consulte también
+## <a name="see-also"></a>Vea también
 [Administración de riesgos con multi-factor Authentication adicionales para aplicaciones](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md) 
  confidenciales [Configurar el entorno de laboratorio para AD FS en Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)

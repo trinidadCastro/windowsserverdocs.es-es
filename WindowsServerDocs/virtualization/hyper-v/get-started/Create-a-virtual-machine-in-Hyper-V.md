@@ -6,12 +6,12 @@ ms.assetid: 59297022-a898-456c-b299-d79cd5860238
 ms.author: benarm
 author: BenjaminArmstrong
 ms.date: 10/04/2016
-ms.openlocfilehash: 9d48020603e8e729c9493d7b01fbc08882b72471
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 56688d61f1ab94ed011414e3967a83df070dbaaa
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746060"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866134"
 ---
 # <a name="create-a-virtual-machine-in-hyper-v"></a>Crear una máquina virtual en Hyper-V
 
@@ -21,9 +21,9 @@ Obtenga información sobre cómo crear una máquina virtual mediante el administ
 
 ## <a name="create-a-virtual-machine-by-using-hyper-v-manager"></a>Crear una máquina virtual mediante el administrador de Hyper-V
 
-1.  Abra **el administrador de Hyper-V**.
+1.  Abra el **administrador de Hyper-V**.
 
-2.  En el panel **acción** , haga clic en **nuevo**y, a continuación, haga clic en **máquina virtual**.
+2.  En el panel **acción** , haga clic en **nuevo** y, a continuación, haga clic en **máquina virtual**.
 
 3.  En el **Asistente para crear nueva máquina virtual**, haga clic en **siguiente**.
 
@@ -41,16 +41,16 @@ Obtenga información sobre cómo crear una máquina virtual mediante el administ
 
 2. Haga clic con el botón derecho en **Windows PowerShell** y seleccione **Ejecutar como administrador**.
 
-3. Obtenga el nombre del conmutador virtual que desea que use la máquina virtual con [Get-VMSwitch](/powershell/module/hyper-v/get-vmswitch?view=win10-ps).  Por ejemplo,
+3. Obtenga el nombre del conmutador virtual que desea que use la máquina virtual con [Get-VMSwitch](/powershell/module/hyper-v/get-vmswitch).  Por ejemplo,
 
    ```
    Get-VMSwitch  * | Format-Table Name
    ```
 
-4. Use el cmdlet [New-VM](/powershell/module/hyper-v/new-vm?view=win10-ps) para crear la máquina virtual.  Vea los ejemplos siguientes:
+4. Use el cmdlet [New-VM](/powershell/module/hyper-v/new-vm) para crear la máquina virtual.  Vea los ejemplos siguientes:
 
    > [!NOTE]
-   > Si puede trasladar esta máquina virtual a un host de Hyper-V que ejecuta Windows Server 2012 R2, use el parámetro-version con  [New-VM](/powershell/module/hyper-v/new-vm?view=win10-ps) para establecer la versión de configuración de la máquina virtual en 5. La versión de configuración de máquina virtual predeterminada para Windows Server 2016 no es compatible con Windows Server 2012 R2 o versiones anteriores. No se puede cambiar la versión de configuración de la máquina virtual después de crear la máquina virtual. Para obtener más información, consulte [versiones de configuración de máquina virtual admitidas](../deploy/Upgrade-virtual-machine-version-in-Hyper-V-on-Windows-or-Windows-Server.md#supported-virtual-machine-configuration-versions).
+   > Si puede trasladar esta máquina virtual a un host de Hyper-V que ejecuta Windows Server 2012 R2, use el parámetro-version con  [New-VM](/powershell/module/hyper-v/new-vm) para establecer la versión de configuración de la máquina virtual en 5. La versión de configuración de máquina virtual predeterminada para Windows Server 2016 no es compatible con Windows Server 2012 R2 o versiones anteriores. No se puede cambiar la versión de configuración de la máquina virtual después de crear la máquina virtual. Para obtener más información, consulte [versiones de configuración de máquina virtual admitidas](../deploy/Upgrade-virtual-machine-version-in-Hyper-V-on-Windows-or-Windows-Server.md#supported-virtual-machine-configuration-versions).
 
    - **Disco duro virtual existente** : para crear una máquina virtual con un disco duro virtual existente, puede usar el siguiente comando, donde,
      - **-Name** es el nombre que se proporciona para la máquina virtual que se va a crear.
@@ -81,7 +81,7 @@ Obtenga información sobre cómo crear una máquina virtual mediante el administ
 
    - **Nuevo disco duro virtual que arranca en la imagen de sistema operativo** : para crear una máquina virtual con un nuevo disco virtual que arranque en una imagen de sistema operativo, consulte el ejemplo de PowerShell en el tutorial de creación de una [máquina virtual para Hyper-V en Windows 10](/virtualization/hyper-v-on-windows/quick-start/create-virtual-machine).
 
-5. Inicie la máquina virtual con el cmdlet [Start-VM](/powershell/module/hyper-v/start-vm?view=win10-ps) . Ejecute el siguiente cmdlet, donde nombre es el nombre de la máquina virtual que creó.
+5. Inicie la máquina virtual con el cmdlet [Start-VM](/powershell/module/hyper-v/start-vm) . Ejecute el siguiente cmdlet, donde nombre es el nombre de la máquina virtual que creó.
 
    ```
    Start-VM -Name <Name>
@@ -104,7 +104,7 @@ En la tabla siguiente se enumeran las opciones que puede elegir al crear una má
 
 |Página|Predeterminado para Windows Server 2016 y Windows 10|Otras opciones|
 |--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|
-|**Especificar el nombre y la ubicación**|Nombre: nueva máquina virtual.<p>Ubicación: **C:\ProgramData\Microsoft\Windows\Hyper-V \\ **.|También puede escribir su propio nombre y elegir otra ubicación para la máquina virtual.<p>Aquí es donde se almacenarán los archivos de configuración de la máquina virtual.|
+|**Especificar el nombre y la ubicación**|Nombre: nueva máquina virtual.<p>Ubicación: **C:\ProgramData\Microsoft\Windows\Hyper-V \\**.|También puede escribir su propio nombre y elegir otra ubicación para la máquina virtual.<p>Aquí es donde se almacenarán los archivos de configuración de la máquina virtual.|
 |**Especificar la generación**|Generación 1|También puede crear una máquina virtual de generación 2. Para obtener más información, consulte ¿ [debo crear una máquina virtual de generación 1 o 2 en Hyper-V?](../plan/Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md)|
 |**Asignar memoria**|Memoria de Inicio: 1024 MB<p>Memoria dinámica: **no seleccionado**|Puede establecer la memoria de inicio de 32 MB a 5902MB.<p>También puede optar por usar Memoria dinámica. Para obtener más información, vea [información general sobre memoria dinámica de Hyper-V](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831766(v=ws.11)).|
 |**Configurar redes**|No conectado|Puede seleccionar una conexión de red para la máquina virtual que se va a usar en una lista de conmutadores virtuales existentes. Consulte [crear un conmutador virtual para máquinas virtuales de Hyper-V](Create-a-virtual-switch-for-Hyper-V-virtual-machines.md).|
@@ -114,7 +114,7 @@ En la tabla siguiente se enumeran las opciones que puede elegir al crear una má
 
 ## <a name="additional-references"></a>Referencias adicionales
 
-- [New-VM](/powershell/module/hyper-v/new-vm?view=win10-ps)
+- [New-VM](/powershell/module/hyper-v/new-vm)
 
 - [Versiones de configuración de máquina virtual admitidas](../deploy/Upgrade-virtual-machine-version-in-Hyper-V-on-Windows-or-Windows-Server.md#supported-virtual-machine-configuration-versions)
 
