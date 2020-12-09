@@ -6,12 +6,12 @@ ms.topic: get-started-article
 ms.assetid: c6f36998-5b64-45d1-b1f0-0f0d6604dbe3
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 9b0b23b6058655baf599ed66877228b39eb807f9
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 5dee105eaf14c92145e1fe70fe4627d37b2baa82
+ms.sourcegitcommit: b0c73df80d7b4ff0c332d77e0cc07f7e6e061600
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87993923"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96925564"
 ---
 # <a name="whats-new-in-dhcp"></a>Novedades del DHCP
 
@@ -28,6 +28,10 @@ En las secciones siguientes se proporciona información acerca de las nuevas car
 El cliente DHCP de Windows 10 se ha actualizado en la actualización del 10 de mayo de 2020 (también denominada Windows 10, versión 2004). Cuando se ejecuta un cliente de Windows y se conecta a Internet a través de un teléfono Android anclado, la conexión se debe marcar como "medida". Anteriormente, las conexiones se marcaban como desmedidos. Tenga en cuenta que no todos los teléfonos con tethering de Android se detectarán como medidos y otras redes también pueden aparecer como medida.
 
 Además, el nombre de proveedor de cliente tradicional se ha actualizado en algunos dispositivos basados en Windows. Este valor solía ser simplemente MSFT 5,0. Algunos dispositivos se mostrarán ahora como MSFT 5,0 XBOX.
+
+## <a name="new-dhcp-client-side-features-in-the-windows-10-april-2018-update"></a>Nuevas características del cliente DHCP en la actualización 2018 de abril de Windows 10
+
+El cliente DHCP de Windows 10 se ha actualizado en la actualización de Windows de abril de 2018 (también denominada Windows 10, versión 1803) para leer y aplicar la opción 119, la opción de búsqueda en el dominio, del servidor DHCP al que se conecta el sistema. La opción de búsqueda en el dominio proporciona sufijos DNS para búsquedas DNS de nombres cortos. La opción 119 de DHCP se especifica en [RFC 3397](https://tools.ietf.org/html/rfc3397).
 
 ## <a name="dhcp-subnet-selection-options"></a>Opciones de selección de subred DHCP
 
@@ -52,11 +56,11 @@ La compatibilidad con NAP se presentó al rol de servidor DHCP con Windows Serve
 
 |Sistema operativo|Compatibilidad con NAP|
 |--------------------|---------------|
-| Windows Server 2008 |Compatible|
+| Windows Server 2008 |Compatible|
 | Windows Server 2008 R2 |Compatible|
 | Windows Server 2012 |Compatible|
 | Windows Server 2012 R2 |Compatible|
-| Windows Server 2016|No compatibles|
+| Windows Server 2016|No compatible|
 
 En una implementación de NAP, un servidor DHCP que ejecute un sistema operativo que admita NAP puede funcionar como un punto de cumplimiento NAP para el método de cumplimiento NAP DHCP. Para obtener más información acerca de DHCP en NAP, consulte [lista de comprobación: implementar un diseño de cumplimiento DHCP](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd314186(v=ws.10)).
 

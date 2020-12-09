@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 763d11a8-4225-4d96-b56f-1ec62e256bfd
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: 3546b48c40af7eea48fcb1f0c995d459a05201a0
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: b9adf3dafe23f920be40e62834a84a0abffb1aba
+ms.sourcegitcommit: b0c73df80d7b4ff0c332d77e0cc07f7e6e061600
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996497"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96925575"
 ---
 # <a name="security-for-sdn"></a>Seguridad para SDN
 
@@ -31,4 +31,4 @@ Puede usar los temas de esta sección para obtener información sobre la segurid
 Esta sección contiene los temas siguientes.
 
 - [Seguridad de la controladora de red](nc-security.md)
-- [Administrar certificados para redes definidas por software](sdn-manage-certs.md)"" ""
+- [Administrar certificados para redes definidas por software](sdn-manage-certs.md)
