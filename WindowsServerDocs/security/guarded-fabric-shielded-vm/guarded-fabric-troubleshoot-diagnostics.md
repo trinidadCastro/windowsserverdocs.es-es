@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 01/14/2020
-ms.openlocfilehash: 40381a08c22c8b559fbf2b7da8e8151e91c77718
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 5aa8b0f93a98e9cbf142476e6b05056d9a47eefd
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87995372"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96864814"
 ---
 # <a name="troubleshooting-using-the-guarded-fabric-diagnostic-tool"></a>Solución de problemas con la herramienta de diagnóstico de tejido protegido
 
@@ -19,7 +19,7 @@ ms.locfileid: "87995372"
 
 En este tema se describe el uso de la herramienta de diagnóstico de tejido protegido para identificar y corregir errores comunes en la implementación, la configuración y el funcionamiento continuo de la infraestructura de tejido protegido. Esto incluye el servicio de protección de host (HGS), todos los hosts protegidos y servicios de soporte técnico como DNS y Active Directory. La herramienta de diagnóstico se puede usar para realizar un primer paso en la clasificación de un tejido protegido con errores, lo que proporciona a los administradores un punto de partida para resolver las interrupciones e identificar los activos mal configurados. La herramienta no sustituye al funcionamiento de un tejido protegido y solo sirve para comprobar rápidamente los problemas más comunes que se producen durante las operaciones cotidianas.
 
-La documentación completa de los cmdlets que se usan en este artículo se puede encontrar en la [Referencia del módulo HgsDiagnostics](/powershell/module/hgsdiagnostics/?view=win10-ps).
+La documentación completa de los cmdlets que se usan en este artículo se puede encontrar en la [Referencia del módulo HgsDiagnostics](/powershell/module/hgsdiagnostics/).
 
 [!INCLUDE [Guarded fabric diagnostics tool](../../../includes/guarded-fabric-diagnostics-tool.md)]
 
@@ -73,7 +73,7 @@ Es posible restringir el conjunto de diagnósticos que se ejecutan mediante el `
 
 ## <a name="targeting-diagnostics"></a>Destinar diagnósticos
 
-`Get-HgsTrace`funciona con destinos de seguimiento.  Un destino de seguimiento es un objeto que se corresponde con un nodo HGS o un host protegido dentro de un tejido protegido.  Puede considerarse como una extensión de una `PSSession` que incluye la información que solo requiere diagnóstico como el rol del host en el tejido.  Los destinos se pueden generar implícitamente (por ejemplo, diagnóstico local o manual) o explícitamente con el `New-HgsTraceTarget` comando.
+`Get-HgsTrace` funciona con destinos de seguimiento.  Un destino de seguimiento es un objeto que se corresponde con un nodo HGS o un host protegido dentro de un tejido protegido.  Puede considerarse como una extensión de una `PSSession` que incluye la información que solo requiere diagnóstico como el rol del host en el tejido.  Los destinos se pueden generar implícitamente (por ejemplo, diagnóstico local o manual) o explícitamente con el `New-HgsTraceTarget` comando.
 
 ### <a name="local-diagnosis"></a>Diagnóstico local
 
@@ -94,7 +94,7 @@ New-HgsTraceTarget -Local | Get-HgsTrace
 ```
 
 > [!TIP]
-> `Get-HgsTrace`puede aceptar destinos a través de la canalización o directamente a través del `-Target` parámetro.  No hay ninguna diferencia entre ambas operaciones.
+> `Get-HgsTrace` puede aceptar destinos a través de la canalización o directamente a través del `-Target` parámetro.  No hay ninguna diferencia entre ambas operaciones.
 
 ### <a name="remote-diagnosis-using-trace-targets"></a>Diagnóstico remoto con destinos de seguimiento
 

@@ -6,12 +6,12 @@ ms.assetid: 95ea5f7c-25c6-494b-8ffd-2a77f631ee94
 ms.author: benarm
 author: BenjaminArmstrong
 ms.date: 08/29/2020
-ms.openlocfilehash: cc59a9c45a1dee797196c8a12550945d3d834cd7
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 40064ac11b9e6d27ea864ba286278179a2ebd4bf
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746580"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96864025"
 ---
 # <a name="supported-ubuntu-virtual-machines-on-hyper-v"></a>Máquinas virtuales de Ubuntu admitidas en Hyper-V
 
@@ -30,7 +30,7 @@ El siguiente mapa de distribución de características indica las característic
 |**Característica**|**Versión del sistema operativo Windows Server**|**20.04 LTS**|**18.04 LTS**|**16.04 LTS**|**14.04 LTS**|
 |-|-|-|-|-|-|
 |**Disponibilidad**||Integrada|Integrada|Integrada|Integrada|
-|**[Principal](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
+|**[Core](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |Windows Server 2016 hora precisa|2019, 2016|&#10004;|&#10004;|&#10004;||
 |**[Redes](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**||||||
 |Tramas gigantes|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
@@ -49,7 +49,7 @@ El siguiente mapa de distribución de características indica las característic
 |**[Memoria](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**|||||
 |Compatibilidad con el kernel PAE|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |Configuración de la brecha de MMIO|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
-|Memoria dinámica: agregar en caliente|2019, 2016, 2012 R2|&#10004; Nota 6, 7, 8|&#10004; Nota 6, 7, 8|&#10004; Nota 6, 7, 8|&#10004; Nota 6, 7, 8|
+|Memoria dinámica Hot-Add|2019, 2016, 2012 R2|&#10004; Nota 6, 7, 8|&#10004; Nota 6, 7, 8|&#10004; Nota 6, 7, 8|&#10004; Nota 6, 7, 8|
 |Memoria dinámica: globos|2019, 2016, 2012 R2|&#10004; Nota 6, 7, 8|&#10004; Nota 6, 7, 8|&#10004; Nota 6, 7, 8|&#10004; Nota 6, 7, 8|
 |Tamaño de memoria en tiempo de ejecución|2019, 2016|&#10004;|&#10004;|&#10004;|&#10004;|
 |**[Vídeo](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**||||||
@@ -91,7 +91,7 @@ El siguiente mapa de distribución de características indica las característic
 
    * Las aplicaciones que tienden a consumir toda la memoria disponible en un sistema se limitan a consumir hasta el 80 por ciento de la RAM disponible.
 
-8. Si usa Memoria dinámica en los sistemas operativos Windows Server 2019, Windows Server 2016 o Windows Server 2012/2012 R2, especifique la **memoria de inicio**, la **memoria mínima**y los parámetros de **memoria máxima** en múltiplos de 128 megabytes (MB). Si no lo hace, pueden producirse errores de adición en caliente y es posible que no vea ningún aumento de la memoria en un sistema operativo invitado.
+8. Si usa Memoria dinámica en los sistemas operativos Windows Server 2019, Windows Server 2016 o Windows Server 2012/2012 R2, especifique la **memoria de inicio**, la **memoria mínima** y los parámetros de **memoria máxima** en múltiplos de 128 megabytes (MB). Si no lo hace, pueden producirse errores de Hot-Add y es posible que no vea ningún aumento de la memoria en un sistema operativo invitado.
 
 9. En Windows Server 2019, Windows Server 2016 o Windows Server 2012 R2, es posible que la infraestructura de pares clave-valor no funcione correctamente sin una actualización de software de Linux. Póngase en contacto con el proveedor de distribución para obtener la actualización de software en caso de que vea problemas con esta característica.
 
@@ -129,7 +129,7 @@ El siguiente mapa de distribución de características indica las característic
        # sudo mv shimx64.efi bootx64.efi
        ```
 
-## <a name="see-also"></a>Consulte también
+## <a name="see-also"></a>Vea también
 
 * [Compatibilidad con máquinas virtuales de alta y Red Hat Enterprise Linux en Hyper-V](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
 
@@ -143,6 +143,6 @@ El siguiente mapa de distribución de características indica las característic
 
 * [Prácticas recomendadas para ejecutar Linux en Hyper-V](Best-Practices-for-running-Linux-on-Hyper-V.md)
 
-* [Set-VMFirmware](/powershell/module/hyper-v/set-vmfirmware?view=win10-ps)
+* [Set-VMFirmware](/powershell/module/hyper-v/set-vmfirmware)
 
 * [Ubuntu 14,04 en una máquina virtual de generación 2: blog de virtualización de Ben Armstrong](/archive/blogs/virtual_pc_guy/ubuntu-14-04-in-a-generation-2-vm)

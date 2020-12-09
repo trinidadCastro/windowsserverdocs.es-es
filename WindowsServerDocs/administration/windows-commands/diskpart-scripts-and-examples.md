@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 820b83ab9c6c70c24c10c16678da9bf90892135f
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 51ebd58874e2bf56c391fe7ec9a6d257ab5a0567
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89635143"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96864214"
 ---
 # <a name="diskpart-scripts-and-examples"></a>ejemplos y scripts de Diskpart
 
@@ -45,7 +45,7 @@ diskpart /s scriptname.txt
 diskpart /s scriptname.txt > logfile.txt
 ```
 
-### <a name="remarks"></a>Observaciones
+### <a name="remarks"></a>Comentarios
 
 - Cuando se usa el comando **DiskPart** como parte de un script, se recomienda completar todas las operaciones de Diskpart juntas como parte de un único script de Diskpart. Puede ejecutar scripts de Diskpart consecutivos, pero debe permitir al menos 15 segundos entre cada script para un cierre completo de la ejecución anterior antes de volver a ejecutar el comando **DiskPart** en scripts sucesivos. De lo contrario, puede que los scripts sucesivos no funcionen. Puede Agregar una pausa entre scripts de Diskpart consecutivos agregando el `timeout /t 15` comando al archivo por lotes junto con los scripts de Diskpart.
 
@@ -59,4 +59,4 @@ diskpart /s scriptname.txt > logfile.txt
 
 - [Ejemplo: configurar particiones de disco duro basadas en BIOS/MBR mediante Windows PE y DiskPart](/previous-versions/windows/it-pro/windows-8.1-and-8/hh825677(v=win.10))
 
-- [Cmdlets de almacenamiento en Windows PowerShell](/powershell/module/storage/?view=win10-ps)
+- [Cmdlets de almacenamiento en Windows PowerShell](/powershell/module/storage/)

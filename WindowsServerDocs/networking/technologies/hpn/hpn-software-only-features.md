@@ -7,25 +7,25 @@ manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 09/20/2018
-ms.openlocfilehash: 94b7a4b87a74c24acc97289516f6835be9b90ef7
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: ec4867b0c2ca760babd2b07062c9b8ee3d73e8f7
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990317"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96864884"
 ---
 # <a name="software-only-so-features-and-technologies"></a>Funciones y tecnologías de solo software
 Las características de solo software se implementan como parte del sistema operativo y son independientes de las NIC subyacentes. A veces, estas características requieren cierta optimización de la NIC para una operación óptima. Algunos ejemplos son las características de Hyper-v, como la calidad de servicio de las máquinas virtuales (vmQoS), las listas de Access Control (ACL) y las características que no son de Hyper-V, como la formación de equipos NIC.
 
 ## <a name="access-control-lists-acls"></a>Listas de control de acceso (ACL)
 
-Una característica de Hyper-V y SDNv1 para administrar la seguridad de una máquina virtual. Esta característica se aplica a la pila de Hyper-V no virtualizada y a la pila HVNv1. Puede administrar las ACL del conmutador de Hyper-V a través de los cmdlets de PowerShell [Add-VMNetworkAdapterAcl](/powershell/module/hyper-v/add-vmnetworkadapteracl?view=win10-ps) y [Remove-VMNetworkAdapterAcl](/powershell/module/hyper-v/remove-vmnetworkadapteracl?view=win10-ps) .
+Una característica de Hyper-V y SDNv1 para administrar la seguridad de una máquina virtual. Esta característica se aplica a la pila de Hyper-V no virtualizada y a la pila HVNv1. Puede administrar las ACL del conmutador de Hyper-V a través de los cmdlets de PowerShell [Add-VMNetworkAdapterAcl](/powershell/module/hyper-v/add-vmnetworkadapteracl) y [Remove-VMNetworkAdapterAcl](/powershell/module/hyper-v/remove-vmnetworkadapteracl) .
 
 ## <a name="extended-acls"></a>ACL extendidas
 
 Las ACL extendidas del conmutador virtual de Hyper-V permiten configurar las ACL de Puerto extendido del conmutador virtual de Hyper-V para proporcionar protección de firewall y aplicar directivas de seguridad para las máquinas virtuales de inquilino en los centros de recursos. Dado que las ACL de puerto se configuran en el conmutador virtual de Hyper-V en lugar de en las máquinas virtuales, el administrador puede administrar las directivas de seguridad para todos los inquilinos en un entorno de varios inquilinos.
 
-Puede administrar las ACL extendidas del conmutador de Hyper-V a través de los cmdlets de PowerShell [Add-VMNetworkAdapterExtendedAcl](/powershell/module/hyper-v/add-vmnetworkadapterextendedacl?view=win10-ps) y [Remove-VMNetworkAdapterExtendedAcl](/powershell/module/hyper-v/remove-vmnetworkadapteracl?view=win10-ps) .
+Puede administrar las ACL extendidas del conmutador de Hyper-V a través de los cmdlets de PowerShell [Add-VMNetworkAdapterExtendedAcl](/powershell/module/hyper-v/add-vmnetworkadapterextendedacl) y [Remove-VMNetworkAdapterExtendedAcl](/powershell/module/hyper-v/remove-vmnetworkadapteracl) .
 
 >[!TIP]
 >Esta característica se aplica a la pila HNVv1. En el caso de las ACL de la pila de SDN, consulte las ACL de redes definidas por software (SDN) a continuación.
@@ -55,9 +55,9 @@ La extensión de SDN en Windows Server 2016 mejoró la compatibilidad con las AC
 
 La extensión de SDN en Windows Server 2016 mejoró las maneras de proporcionar control de ancho de banda (reservas de salida, límites de salida y límites de entrada) en una 5-tupla. Normalmente, estas directivas se aplican en el nivel vNIC o vmNIC, pero puede hacerlas mucho más específicas. En la pila de Windows Server 2016 SDN V2, se usa la QoS de SDN en lugar de vmQoS. Puede usar la controladora de red para administrar la QoS de SDN.
 
-## <a name="switch-embedded-teaming-set"></a>Cambiar la formación de equipos incrustada (SET)
+## <a name="switch-embedded-teaming-set"></a>Formación de equipos insertada en el conmutador (SET)
 
-SET es una solución alternativa para la formación de equipos NIC que puede usar en entornos que incluyen Hyper-V y la pila de redes definidas por software (SDN) en Windows Server 2016. El conjunto integra la funcionalidad de formación de equipos NIC en el conmutador virtual de Hyper-V. Para obtener información sobre cómo cambiar la formación de equipos incrustados en esta biblioteca, vea [acceso directo a memoria remota (RDMA) y switch Embedded Teaming (Set)](../../../virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming.md).
+SET es una solución alternativa para la formación de equipos NIC que puede usar en entornos que incluyen Hyper-V y la pila de redes definidas por software (SDN) en Windows Server 2016. SET integra la funcionalidad de formación de equipos de NIC en el conmutador virtual de Hyper-V. Para obtener información sobre cómo cambiar la formación de equipos incrustados en esta biblioteca, vea [acceso directo a memoria remota (RDMA) y switch Embedded Teaming (Set)](../../../virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming.md).
 
 ## <a name="virtual-receive-side-scaling-vrss"></a>Ajuste de escala en lado de recepción virtual (vRSS)
 
@@ -69,9 +69,9 @@ Calidad de servicio de la máquina virtual es una característica de Hyper-V que
 
 vmQoS puede establecer límites de salida y reservas de salida. Debe determinar el modo de reserva de salida (peso relativo o ancho de banda absoluto) antes de crear el conmutador de Hyper-V.
 
--  Determine el modo de reserva de salida con el parámetro – MinimumBandwidthMode del cmdlet de PowerShell New-VMSwitch.
+-  Determine el modo de reserva de salida con el parámetro – MinimumBandwidthMode del cmdlet de PowerShell de New-VMSwitch.
 
--  Establezca el valor del límite de salida con el parámetro – MaximumBandwidth en el cmdlet de PowerShell Set-VMNetworkAdapter.
+-  Establezca el valor del límite de salida con el parámetro – MaximumBandwidth en el cmdlet de PowerShell de Set-VMNetworkAdapter.
 
 -  Establezca el valor de la reserva de salida con cualquiera de los siguientes parámetros del cmdlet Set VMNetworkAdapter PowerShell:
 
@@ -79,7 +79,7 @@ vmQoS puede establecer límites de salida y reservas de salida. Debe determinar 
 
    -  Si el parámetro – MinimumBandwidthMode del cmdlet New-VMSwitch es weight, establezca el parámetro – MinimumBandwidthWeight en el cmdlet Set VMNetworkAdapter.
 
-Debido a las limitaciones del algoritmo que se usa para esta característica, se recomienda que el peso más alto o el ancho de banda absoluto no sea más de 20 veces el menor peso o ancho de banda absoluto. Si se necesita más control, considere la posibilidad de usar la pila de SDN y la característica SDN-QoS.
+Debido a las limitaciones del algoritmo que se usa para esta característica, se recomienda que el peso más alto o el ancho de banda absoluto no sea más de 20 veces el menor peso o ancho de banda absoluto. Si se necesita más control, considere el uso de la pila de SDN y la característica SDN-QoS.
 
 
 ---

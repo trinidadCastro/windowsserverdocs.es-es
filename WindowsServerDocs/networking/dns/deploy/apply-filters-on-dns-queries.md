@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: b86beeac-b0bb-4373-b462-ad6fa6cbedfa
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 79e0a0c0e99c49fc251d8aebc3fc76e68603e45c
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 4f309a304e4457b27eec0ae41d581c5a7bf9bd50
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996917"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96865344"
 ---
 # <a name="use-dns-policy-for-applying-filters-on-dns-queries"></a>Uso de la directiva de DNS para aplicar filtros en las consultas DNS
 
@@ -25,7 +25,7 @@ Por ejemplo, puede configurar la Directiva DNS con la lista de bloques de filtro
 
 Otro ejemplo es crear una lista de permitidos de filtro de consulta que solo permita a un conjunto específico de clientes resolver determinados nombres.
 
-## <a name="query-filter-criteria"></a><a name="bkmk_criteria"></a>Criterios de filtro de consulta
+## <a name="query-filter-criteria"></a><a name="bkmk_criteria"></a> Criterios de filtro de consulta
 Puede crear filtros de consulta con cualquier combinación lógica (y/o/no) de los criterios siguientes.
 
 |Nombre|Descripción|
@@ -41,7 +41,7 @@ Puede crear filtros de consulta con cualquier combinación lógica (y/o/no) de l
 En los siguientes ejemplos se muestra cómo crear filtros para la Directiva DNS que bloquean o permiten consultas de resolución de nombres DNS.
 
 >[!NOTE]
->Los comandos de ejemplo de este tema usan el comando de Windows PowerShell **Add-DnsServerQueryResolutionPolicy**. Para obtener más información, consulte [Add-DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps).
+>Los comandos de ejemplo de este tema usan el comando de Windows PowerShell **Add-DnsServerQueryResolutionPolicy**. Para obtener más información, consulte [Add-DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy).
 
 ## <a name="block-queries-from-a-domain"></a><a name="bkmk_block1"></a>Bloquear consultas desde un dominio
 
@@ -49,7 +49,7 @@ En algunas circunstancias, es posible que desee bloquear la resolución de nombr
 
 La Directiva que configure en este ejemplo no se crea en ninguna zona determinada; en su lugar, cree una directiva de nivel de servidor que se aplique a todas las zonas configuradas en el servidor DNS. Las directivas de nivel de servidor son las primeras que se evalúan y, por tanto, coinciden primero cuando el servidor DNS recibe una consulta.
 
-El siguiente comando de ejemplo configura una directiva de nivel de servidor para bloquear cualquier consulta con el **sufijo**de dominio contosomalicious.com.
+El siguiente comando de ejemplo configura una directiva de nivel de servidor para bloquear cualquier consulta con el **sufijo** de dominio contosomalicious.com.
 
 `
 Add-DnsServerQueryResolutionPolicy -Name "BlockListPolicy" -Action IGNORE -FQDN "EQ,*.contosomalicious.com" -PassThru

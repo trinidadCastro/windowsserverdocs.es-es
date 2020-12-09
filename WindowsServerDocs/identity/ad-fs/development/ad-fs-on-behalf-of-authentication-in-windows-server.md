@@ -6,12 +6,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 02/22/2018
 ms.topic: article
-ms.openlocfilehash: c313754b315b48982342fe2797d1ed766ce354a9
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b080f45d36d26ed566eacc5ae1ad84d98dd45d48
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87965172"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96864764"
 ---
 # <a name="build-a-multi-tiered-application-using-on-behalf-of-obo-using-oauth-with-ad-fs-2016-or-later"></a>Compilar una aplicación de varios niveles mediante "en nombre de" (OBO) mediante OAuth con AD FS 2016 o posterior.
 
@@ -20,7 +20,7 @@ En este tutorial se proporcionan instrucciones para implementar una autenticaci�
 > [!WARNING]
 > El ejemplo que se puede compilar aquí es solo con fines educativos. Estas instrucciones son para la implementación más sencilla y mínima posible para exponer los elementos necesarios del modelo. Es posible que el ejemplo no incluya todos los aspectos del control de errores y otras funciones de relación y se Centre solo en obtener una autenticación OBO correcta.
 
-## <a name="overview"></a>Introducción
+## <a name="overview"></a>Información general
 
 En este ejemplo, vamos a crear un flujo de autenticación donde un cliente tendrá acceso a un servicio Web de nivel intermedio y el servicio Web actuará en nombre del cliente autenticado para obtener un token de acceso.
 
@@ -40,7 +40,7 @@ A continuación se muestra el flujo de autenticación que obtendrá el ejemplo
 
 El ejemplo consta de tres módulos
 
-Módulo | Descripción
+Módulo | Description
 -------|------------
 ToDoClient | Cliente nativo con el que interactúa el usuario
 ToDoService | API Web de nivel intermedio que actúa como cliente de la WebAPI de back-end
@@ -48,7 +48,7 @@ WebAPIOBO | API Web de back-end que usa ToDoService para realizar la operación 
 
 ## <a name="setting-up-the-development-box"></a>Configuración del cuadro de desarrollo
 
-En este tutorial se usa Visual Studio 2015. El proyecto usa mucho Biblioteca de autenticación de Active Directory (ADAL). Para obtener información sobre ADAL, lea [biblioteca de autenticación de Active Directory .net](/dotnet/api/microsoft.identitymodel.clients.activedirectory?view=azure-dotnet)
+En este tutorial se usa Visual Studio 2015. El proyecto usa mucho Biblioteca de autenticación de Active Directory (ADAL). Para obtener información sobre ADAL, lea [biblioteca de autenticación de Active Directory .net](/dotnet/api/microsoft.identitymodel.clients.activedirectory)
 
 En el ejemplo también se usa SQL LocalDB v 11.0. Instale SQL LocalDB antes de trabajar en el ejemplo.
 
@@ -279,14 +279,14 @@ Continúe con el resto del asistente, igual que cuando se configuró ToDoListSer
 * Abrir el archivo de Web.config
 * Modificar las claves siguientes
 
-| Clave | Valor |
+| Clave | Value |
 |:-|:-|
-| ida: audiencia | IDENTIFICADOR de ToDoListService tal como se indica en AD FS al configurar ToDoListService WebAPI, por ejemplo,https://localhost:44321/ |
-| ida: ClientID | IDENTIFICADOR de ToDoListService tal como se indica en AD FS al configurar ToDoListService WebAPI, por ejemplo,<https://localhost:44321/> </br>**Es muy importante que ida: Audience y ida: ClientID coincidan entre sí.** |
+| ida: audiencia | IDENTIFICADOR de ToDoListService tal como se indica en AD FS al configurar ToDoListService WebAPI, por ejemplo, https://localhost:44321/ |
+| ida: ClientID | IDENTIFICADOR de ToDoListService tal como se indica en AD FS al configurar ToDoListService WebAPI, por ejemplo, <https://localhost:44321/> </br>**Es muy importante que ida: Audience y ida: ClientID coincidan entre sí.** |
 | ida:ClientSecret | Este es el secreto que AD FS genera al configurar el cliente de ToDoListService en AD FS |
-| ida: AdfsMetadataEndpoint | Esta es la dirección URL de los metadatos de AD FS, por ejemplo,https://fs.anandmsft.com/federationmetadata/2007-06/federationmetadata.xml |
-| ida: OBOWebAPIBase | Esta es la dirección base que se utilizará para llamar a la API de back-end; por ejemplo,https://localhost:44300 |
-| ida:Authority | Esta es la dirección URL del servicio de AD FS, ejemplohttps://fs.anandmsft.com/adfs/ |
+| ida: AdfsMetadataEndpoint | Esta es la dirección URL de los metadatos de AD FS, por ejemplo, https://fs.anandmsft.com/federationmetadata/2007-06/federationmetadata.xml |
+| ida: OBOWebAPIBase | Esta es la dirección base que se utilizará para llamar a la API de back-end; por ejemplo, https://localhost:44300 |
+| ida:Authority | Esta es la dirección URL del servicio de AD FS, ejemplo https://fs.anandmsft.com/adfs/ |
 
 Todas las demás claves ida: XXXXXXX del nodo **appSettings** se pueden eliminar o comentar
 
@@ -513,5 +513,5 @@ En la primera interacción, presentamos el código de acceso al punto de conexi�
 En la segunda interacción con el punto de conexión del token, puede ver que hemos **requested_token_use** establecido como **on_behalf_of** y estamos usando el token de acceso obtenido para el servicio Web de nivel intermedio, es decir, https://localhost:44321/ como la aserción para obtener el token en nombre de.
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO23.PNG)
 
-## <a name="next-steps"></a>Pasos a seguir
+## <a name="next-steps"></a>Pasos siguientes
 [Desarrollo de AD FS](../../ad-fs/AD-FS-Development.md)

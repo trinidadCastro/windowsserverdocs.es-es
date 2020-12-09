@@ -6,12 +6,12 @@ author: billmath
 manager: mtillman
 ms.date: 01/28/2019
 ms.topic: article
-ms.openlocfilehash: 5847b2fe6846fb4f89dcb0239167ea2ce55af1e0
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: dc2ab294e0e42bf640b5fb9b0159314a0373fe0d
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87966842"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96864924"
 ---
 # <a name="configure-azure-mfa-as-authentication-provider-with-ad-fs"></a>Configuración de Azure MFA como proveedor de autenticación con AD FS
 
@@ -75,7 +75,7 @@ Los siguientes requisitos previos son necesarios cuando se usa Azure MFA para la
       - https://adnotifications.windowsazure.com
       - https://login.microsoftonline.com
 - El entorno local está [federado con Azure ad.](/azure/active-directory/hybrid/how-to-connect-install-custom#configuring-federation-with-ad-fs)
-- [Módulo de Azure Active Directory de Windows para Windows PowerShell](/powershell/module/azuread/?view=azureadps-2.0).
+- [Módulo de Azure Active Directory de Windows para Windows PowerShell](/powershell/module/azuread/).
 - Permisos de administrador global en la instancia de Azure AD para configurarlo mediante Azure AD PowerShell.
 - Credenciales de administrador de organización para configurar la granja de AD FS para Azure MFA.
 

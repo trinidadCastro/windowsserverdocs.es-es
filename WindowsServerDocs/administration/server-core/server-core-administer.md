@@ -7,12 +7,12 @@ author: pronichkin
 ms.author: artemp
 ms.localizationpriority: medium
 ms.date: 12/18/2018
-ms.openlocfilehash: 089d6437bd8c246bae3da5898870ea9cdd442656
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.openlocfilehash: 2cdddf706d03aa5b1aa1239b58fd4d8a9f4beed2
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90077872"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96864324"
 ---
 # <a name="administer-a-server-core-server"></a>Administrar un servidor Server Core
 
@@ -79,12 +79,12 @@ Use los cmdlets siguientes para unir un equipo a un dominio.
 Siga los pasos que se indican a continuación para cambiar el nombre del servidor.
 
 1. Determine el nombre actual del servidor con el nombre de **host** o el comando **ipconfig** .
-2. Ejecute **Rename-Computer-COMPUTERNAME \<new_name\> **.
+2. Ejecute **Rename-Computer-COMPUTERNAME \<new_name\>**.
 3. Reinicie el equipo.
 
 ### <a name="activate-the-server"></a>Activar el servidor
 
-Ejecute **slmgr. vbs – IPK \<productkey\> **. A continuación, ejecute **slmgr. vbs – ATO**. Si la activación se realiza correctamente, no recibirá ningún mensaje.
+Ejecute **slmgr.vbs: IPK \<productkey\>**. Después, ejecute **slmgr.vbs – ATO**. Si la activación se realiza correctamente, no recibirá ningún mensaje.
 
 > [!NOTE]
 > También puede activar el servidor por teléfono, mediante un [servidor de servicio de administración de claves (kms)](../../get-started/server-2016-activation.md)o de forma remota. Para activar de forma remota, ejecute el siguiente cmdlet desde un equipo remoto:
@@ -95,7 +95,7 @@ Ejecute **slmgr. vbs – IPK \<productkey\> **. A continuación, ejecute **slmgr
 
 ### <a name="configure-windows-firewall"></a>Configurar el Firewall de Windows
 
-Puede configurar el Firewall de Windows de forma local en el equipo Server Core mediante cmdlets y scripts de Windows PowerShell. Consulte [NetSecurity](/powershell/module/netsecurity/?view=win10-ps) para los cmdlets que puede usar para configurar Firewall de Windows.
+Puede configurar el Firewall de Windows de forma local en el equipo Server Core mediante cmdlets y scripts de Windows PowerShell. Consulte [NetSecurity](/powershell/module/netsecurity/) para los cmdlets que puede usar para configurar Firewall de Windows.
 
 ### <a name="enable-windows-powershell-remoting"></a>Habilitar la comunicación remota de Windows PowerShell
 
@@ -126,9 +126,9 @@ Use la siguiente información de referencia para realizar tareas administrativas
 |                 Cambiar a una dirección IP estática                 | **ipconfig/all** <br>Grabe la información relevante o redirijala a un archivo de texto (**ipconfig/all >ipconfig.txt**).<br>**netsh interface IPv4 show interfaces**<br>Compruebe que haya una lista de interfaces.<br>**netsh interface IPv4 Set Address \<Name ID from interface list\> source = static Address = \<preferred IP address\> Gateway =\<gateway address\>**<br>Ejecute **ipconfig/all** para comprobar que DHCP habilitado está establecido en **no**. |
 |                   Establezca una dirección DNS estática.                   |   <strong>netsh interface IPv4 Add dnsserver name = \<name or ID of the network interface card\> Address = \<IP address of the primary DNS server\> index = 1 <br></strong>netsh interface IPv4 Add dnsserver name = \<name of secondary DNS server\> Address = \<IP address of the secondary DNS server\> index = 2\*\* <br> Repita los pasos necesarios para agregar más servidores.<br>Ejecute **ipconfig/all** para comprobar que las direcciones son correctas.   |
 | Cambiar una dirección IP estática por una dirección IP proporcionada por DHCP |                                                                                                                                      **netsh interface IPv4 Set Address name = \<IP address of local system\> source = DHCP** <br>Ejecute **ipconfig/all** para comprobar que DCHP habilitado está establecido en **sí**.                                                                                                                                      |
-|                      Especificación de una clave de producto                      |                                                                                                                                                                                                   **slmgr. vbs: IPK \<product key\>**                                                                                                                                                                                                    |
-|                  Activar el servidor de forma local                  |                                                                                                                                                                                                           **slmgr. vbs-ATO**                                                                                                                                                                                                            |
-|                 Activar el servidor de forma remota                  |                                            **cscript slmgr. vbs – IPK \<product key\>\<server name\>\<username\>\<password\>** <br>**cscript slmgr. vbs-ATO \<servername\> \<username\>\<password\>** <br>Obtener el GUID del equipo mediante la ejecución de **cscript slmgr. vbs-DID** <br> Ejecutar **cscript slmgr. vbs-DLI \<GUID\> ** <br>Compruebe que el estado de la licencia está establecido en con **licencia (activada)**.                                             |
+|                      Especificación de una clave de producto                      |                                                                                                                                                                                                   **slmgr.vbs: IPK \<product key\>**                                                                                                                                                                                                    |
+|                  Activar el servidor de forma local                  |                                                                                                                                                                                                           **slmgr.vbs-ATO**                                                                                                                                                                                                            |
+|                 Activar el servidor de forma remota                  |                                            **slmgr.vbs de cscript: IPK \<product key\>\<server name\>\<username\>\<password\>** <br>**cscript slmgr.vbs-ATO \<servername\> \<username\>\<password\>** <br>Obtenga el GUID del equipo mediante la ejecución de **cscript slmgr.vbs-DID** <br> Ejecutar **cscript slmgr.vbs-DLI \<GUID\>** <br>Compruebe que el estado de la licencia está establecido en con **licencia (activada)**.                                             |
 
 ### <a name="networking-and-firewall"></a>Funciones de red y firewall
 
@@ -165,8 +165,8 @@ Use la siguiente información de referencia para realizar tareas administrativas
 |                               Tarea                               |                                                                                                                                                                                                             Get-Help                                                                                                                                                                                                              |
 |------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |                    Enumerar los servicios en ejecución                     |                                                                                                                                                                                                  **consulta SC** o **net start**                                                                                                                                                                                                   |
-|                         iniciar un servicio.                          |                                                                                                                                                                                 **Inicio \<service name\> de SC** o **net start \<service name\> **                                                                                                                                                                                  |
-|                          Detención de un servicio                          |                                                                                                                                                                                  **detención \<service name\> de SC** o **net stop \<service name\> **                                                                                                                                                                                   |
+|                         iniciar un servicio.                          |                                                                                                                                                                                 **Inicio \<service name\> de SC** o **net start \<service name\>**                                                                                                                                                                                  |
+|                          Detención de un servicio                          |                                                                                                                                                                                  **detención \<service name\> de SC** o **net stop \<service name\>**                                                                                                                                                                                   |
 | Recuperar una lista de las aplicaciones en ejecución y los procesos asociados |                                                                                                                                                                                                           **tasklist**                                                                                                                                                                                                           |
 |                        Iniciar el Administrador de tareas                        |                                                                                                                                                                                                           **taskmgr**                                                                                                                                                                                                            |
 |    Crear y administrar registros de rendimiento y sesión de seguimiento de eventos    | Para crear un contador, un seguimiento, una colección de datos de configuración o una API: **Logman creación** <br>Para consultar las propiedades del recopilador de datos: **Logman Query** <br>Para iniciar o detener la recopilación de datos: **Logman Start \| Stop** <br>Para eliminar un recopilador: **Logman Delete** <br> Para actualizar las propiedades de un recopilador: **Logman Update** <br>Para importar un conjunto de recopiladores de datos desde un archivo XML o exportarlo a un archivo XML: **Logman Import \| Export** |

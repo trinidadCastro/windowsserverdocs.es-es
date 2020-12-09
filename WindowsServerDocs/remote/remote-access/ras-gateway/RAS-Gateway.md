@@ -7,12 +7,12 @@ ms.assetid: acaa46b7-09b1-4707-9562-116df8db17eb
 ms.author: lizross
 author: eross-msft
 ms.date: 05/23/2018
-ms.openlocfilehash: 7ea0c7fab5ef605ae4cb92c01a235154e7e8f9b3
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 9e8dfd54fc919fa857ad360eb86baf47f8c3e274
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87939876"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96865214"
 ---
 # <a name="ras-gateway"></a>Puerta de enlace RAS
 
@@ -87,7 +87,7 @@ Por ejemplo, si tiene una red física y una red virtual en la misma ubicación f
 
 En otro ejemplo, si las redes virtuales existen en la nube, el CSP puede implementar una puerta de enlace RAS para que pueda crear una conexión de sitio a sitio de red privada virtual (VPN) entre el servidor VPN y la puerta de enlace RAS del CSP. Cuando se establece este vínculo, puede conectarse a los recursos virtuales en la nube a través de la conexión VPN.
 
-Para obtener más información, consulte [alta disponibilidad de puerta de enlace de Ras](../../../networking/sdn/technologies/network-function-virtualization/RAS-Gateway-High-Availability.md).
+Para más información, consulte [Alta disponibilidad de la puerta de enlace de RAS](../../../networking/sdn/technologies/network-function-virtualization/RAS-Gateway-High-Availability.md).
 
 ## <a name="clustering-ras-gateway-for-high-availability"></a><a name="bkmk_clustering"></a>Agrupación en clústeres de puerta de enlace RAS para alta disponibilidad
 La puerta de enlace RAS se implementa en un equipo dedicado que ejecuta Hyper-V y que está configurado con una máquina virtual. Después, la máquina virtual se configura como puerta de enlace de RAS.
@@ -122,9 +122,9 @@ A continuación se indican los escenarios de implementación recomendados para l
 ## <a name="ras-gateway-management-tools"></a><a name="bkmk_manage"></a>Herramientas de administración de puerta de enlace RAS
 A continuación se muestran las herramientas de administración para la puerta de enlace RAS.
 
--   En Windows Server 2016, para implementar un enrutador de puerta de enlace RAS, debe usar los comandos de Windows PowerShell. Para obtener más información, consulte [cmdlets de acceso remoto](/powershell/module/remoteaccess) para windows Server 2016 y Windows 10.
+-   En Windows Server 2016, para implementar un enrutador de puerta de enlace RAS, debe usar los comandos de Windows PowerShell. Para obtener más información, consulte  [cmdlets de acceso remoto](/powershell/module/remoteaccess) para windows Server 2016 y Windows 10.
 
--   En System Center 2012 R2 Virtual Machine Manager (VMM), la puerta de enlace RAS se denomina puerta de enlace de Windows Server. Hay disponible un conjunto limitado de opciones de configuración de Protocolo de puerta de enlace de borde (BGP) en la interfaz de software de VMM, incluidas la **dirección IP BGP local** y **los números de sistema autónomo (ASN)**, la **lista de direcciones IP del par BGP**y **los valores de ASN**. Puede, no obstante, utilizar los comandos de Windows PowerShell BGP de acceso remoto para configurar el resto de características de la puerta de enlace de Windows Server. Para obtener más información, consulte [Virtual Machine Manager (VMM)](/system-center/vmm/overview?view=sc-vmm-2019) y [cmdlets de acceso remoto](/system-center/vmm/overview?view=sc-vmm-2019) para Windows Server 2016 y Windows 10.
+-   En System Center 2012 R2 Virtual Machine Manager (VMM), la puerta de enlace RAS se denomina puerta de enlace de Windows Server. Hay disponible un conjunto limitado de opciones de configuración de Protocolo de puerta de enlace de borde (BGP) en la interfaz de software de VMM, incluidas la **dirección IP BGP local** y **los números de sistema autónomo (ASN)**, la **lista de direcciones IP del par BGP** y **los valores de ASN**. Puede, no obstante, utilizar los comandos de Windows PowerShell BGP de acceso remoto para configurar el resto de características de la puerta de enlace de Windows Server. Para obtener más información, consulte  [Virtual Machine Manager (VMM)](/system-center/vmm/overview) y [cmdlets de acceso remoto](/system-center/vmm/overview) para Windows Server 2016 y Windows 10.
 
 ## <a name="related-topics"></a>Temas relacionados
 - [Alta disponibilidad de puerta de enlace RAS](../../../networking/sdn/technologies/network-function-virtualization/RAS-Gateway-High-Availability.md)

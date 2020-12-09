@@ -5,12 +5,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 05/05/2020
 ms.topic: article
-ms.openlocfilehash: c70c117716f5e60a75182a7529a39daa46c796b1
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: ece40ea47c78c1d45cf55ff9daec551d940276e1
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87942930"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96865154"
 ---
 # <a name="build-plug-ins-with-ad-fs-2019-risk-assessment-model"></a>Compilación de complementos con el modelo de evaluación de riesgos 2019 de AD FS
 
@@ -45,7 +45,7 @@ A continuación se muestra la lista de requisitos previos necesarios para compil
 
 - AD FS 2019 instalado y configurado
 - .NET Framework 4,7 y versiones posteriores
-- Programa para la mejora
+- Visual Studio
 
 ### <a name="build-plug-in-dll"></a>DLL del complemento de compilación
 El siguiente procedimiento le guiará a través de la creación de un archivo dll de complemento de ejemplo.
@@ -188,7 +188,7 @@ Ahora que sabemos cómo compilar y registrar el complemento, vamos a guiar el c�
 Abra el proyecto `ThreatDetectionModule.sln` con Visual Studio y, a continuación, abra el archivo principal **UserRiskAnalyzer.CS** en el **Explorador de soluciones** de la derecha de la pantalla.</br>
 ![model](media/ad-fs-risk-assessment-model/risk17.png)
 
-El archivo contiene la clase principal UserRiskAnalyzer que implementa la clase abstracta [ThreatDetectionModule](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule?view=adfs-2019) y la interfaz [IRequestReceivedThreatDetectionModule](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.irequestreceivedthreatdetectionmodule?view=adfs-2019) para leer la dirección IP desde el contexto de la solicitud, comparar la IP obtenida con las direcciones ip CARGAdas desde AD FS base de archivos y bloquear la solicitud si hay una coincidencia de IP. Vamos a analizar estos tipos con más detalle.
+El archivo contiene la clase principal UserRiskAnalyzer que implementa la clase abstracta [ThreatDetectionModule](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule) y la interfaz [IRequestReceivedThreatDetectionModule](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.irequestreceivedthreatdetectionmodule) para leer la dirección IP desde el contexto de la solicitud, comparar la IP obtenida con las direcciones ip CARGAdas desde AD FS base de archivos y bloquear la solicitud si hay una coincidencia de IP. Vamos a analizar estos tipos con más detalle.
 
 ### <a name="threatdetectionmodule-abstract-class"></a>Clase abstracta ThreatDetectionModule
 
@@ -211,18 +211,18 @@ La clase incluye los siguientes métodos y propiedades.
 
 |Método |Tipo|Definición|
 |-----|-----|-----|
-|[OnAuthenticationPipelineLoad](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onauthenticationpipelineload?view=adfs-2019) |Void|Llamado por AD FS cuando el complemento se carga en su canalización|
-|[OnAuthenticationPipelineUnload](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onauthenticationpipelineunload?view=adfs-2019) |Void|Llamado por AD FS cuando el complemento se descarga de su canalización|
-|[OnConfigurationUpdate](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onconfigurationupdate?view=adfs-2019)| Void|Llamado por AD FS en la actualización de la configuración |
+|[OnAuthenticationPipelineLoad](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onauthenticationpipelineload) |Void|Llamado por AD FS cuando el complemento se carga en su canalización|
+|[OnAuthenticationPipelineUnload](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onauthenticationpipelineunload) |Void|Llamado por AD FS cuando el complemento se descarga de su canalización|
+|[OnConfigurationUpdate](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onconfigurationupdate)| Void|Llamado por AD FS en la actualización de la configuración |
 |**Property** |**Type** |**Definición**|
-|[Lograr](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.vendorname?view=adfs-2019)|String |Obtiene el nombre del proveedor propietario del complemento.|
-|[ModuleIdentifier](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.moduleidentifier?view=adfs-2019)|String |Obtiene el identificador del complemento.|
+|[VendorName](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.vendorname)|String |Obtiene el nombre del proveedor propietario del complemento.|
+|[ModuleIdentifier](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.moduleidentifier)|String |Obtiene el identificador del complemento.|
 
-En nuestro complemento de ejemplo, usamos los métodos [OnAuthenticationPipelineLoad](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onauthenticationpipelineload?view=adfs-2019) y [OnConfigurationUpdate](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onconfigurationupdate?view=adfs-2019) para leer las direcciones IP predefinidas de AD FS dB. Se llama a [OnAuthenticationPipelineLoad](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onauthenticationpipelineload?view=adfs-2019) cuando el complemento se registra con AD FS mientras se llama a [OnConfigurationUpdate](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onconfigurationupdate?view=adfs-2019) cuando se importa el archivo. csv mediante el `Import-AdfsThreatDetectionModuleConfiguration` cmdlet.
+En nuestro complemento de ejemplo, usamos los métodos [OnAuthenticationPipelineLoad](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onauthenticationpipelineload) y [OnConfigurationUpdate](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onconfigurationupdate) para leer las direcciones IP predefinidas de AD FS dB. Se llama a [OnAuthenticationPipelineLoad](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onauthenticationpipelineload) cuando el complemento se registra con AD FS mientras se llama a [OnConfigurationUpdate](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onconfigurationupdate) cuando se importa el archivo. csv mediante el `Import-AdfsThreatDetectionModuleConfiguration` cmdlet.
 
 #### <a name="irequestreceivedthreatdetectionmodule-interface"></a>Interfaz IRequestReceivedThreatDetectionModule
 
-Esta [interfaz](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.irequestreceivedthreatdetectionmodule?view=adfs-2019) le permite implementar la evaluación de riesgos en el punto en el que AD FS recibe la solicitud de autenticación, pero antes de que el usuario escriba las credenciales, es decir, en la fase de solicitud recibida del proceso de autenticación.
+Esta [interfaz](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.irequestreceivedthreatdetectionmodule) le permite implementar la evaluación de riesgos en el punto en el que AD FS recibe la solicitud de autenticación, pero antes de que el usuario escriba las credenciales, es decir, en la fase de solicitud recibida del proceso de autenticación.
 
 ```
 public interface IRequestReceivedThreatDetectionModule
@@ -233,20 +233,20 @@ RequestContext requestContext );
 }
 ```
 
-La interfaz incluye el método [EvaluateRequest](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.irequestreceivedthreatdetectionmodule.evaluaterequest?view=adfs-2019) que permite usar el contexto de la solicitud de autenticación que se ha pasado en el parámetro de entrada requestContext para escribir la lógica de evaluación de riesgos. El parámetro requestContext es de tipo [requestContext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext?view=adfs-2019).
+La interfaz incluye el método [EvaluateRequest](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.irequestreceivedthreatdetectionmodule.evaluaterequest) que permite usar el contexto de la solicitud de autenticación que se ha pasado en el parámetro de entrada requestContext para escribir la lógica de evaluación de riesgos. El parámetro requestContext es de tipo [requestContext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext).
 
-El otro parámetro de entrada pasado es Logger, que es de tipo [ThreatDetectionLogger](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionlogger?view=adfs-2019). El parámetro se puede utilizar para escribir los mensajes de error, de auditoría o de depuración en los registros de AD FS.
+El otro parámetro de entrada pasado es Logger, que es de tipo [ThreatDetectionLogger](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionlogger). El parámetro se puede utilizar para escribir los mensajes de error, de auditoría o de depuración en los registros de AD FS.
 
-El método devuelve [ThrottleStatus](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.throttlestatus?view=adfs-2019) (0 si NotEvaluated, 1 para bloquear y 2 para permitir) AD FS que, a continuación, bloquea o permite la solicitud.
+El método devuelve [ThrottleStatus](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.throttlestatus) (0 si NotEvaluated, 1 para bloquear y 2 para permitir) AD FS que, a continuación, bloquea o permite la solicitud.
 
-En nuestro complemento de ejemplo, la implementación del método [EvaluateRequest](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.irequestreceivedthreatdetectionmodule.evaluaterequest?view=adfs-2019) analiza el [clientIpAddress](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext.clientipaddresses?view=adfs-2019#Microsoft_IdentityServer_Public_ThreatDetectionFramework_RequestContext_ClientIpAddresses) desde el parámetro [requestContext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext?view=adfs-2019) y lo compara con todas las direcciones IP cargadas desde la base de AD FS. Si se encuentra una coincidencia, el método devuelve 2 para el **bloque**; de lo contrario, devuelve 1 para **permitir**. Según el valor devuelto, AD FS bloquea o permite la solicitud.
+En nuestro complemento de ejemplo, la implementación del método [EvaluateRequest](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.irequestreceivedthreatdetectionmodule.evaluaterequest) analiza el [clientIpAddress](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext.clientipaddresses#Microsoft_IdentityServer_Public_ThreatDetectionFramework_RequestContext_ClientIpAddresses) desde el parámetro [requestContext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext) y lo compara con todas las direcciones IP cargadas desde la base de AD FS. Si se encuentra una coincidencia, el método devuelve 2 para el **bloque**; de lo contrario, devuelve 1 para **permitir**. Según el valor devuelto, AD FS bloquea o permite la solicitud.
 
 >[!NOTE]
 >El complemento de ejemplo descrito anteriormente solo implementa la interfaz IRequestReceivedThreatDetectionModule. Sin embargo, el modelo de evaluación de riesgos proporciona dos interfaces adicionales: IPreAuthenticationThreatDetectionModule (para implementar la lógica de evaluación de riesgos de la fase de autenticación previa de durante) y IPostAuthenticationThreatDetectionModule (para implementar la lógica de evaluación de riesgos durante la fase posterior a la autenticación). A continuación se proporcionan los detalles de las dos interfaces.
 
 #### <a name="ipreauthenticationthreatdetectionmodule-interface"></a>Interfaz IPreAuthenticationThreatDetectionModule
 
-Esta [interfaz](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.ipreauthenticationthreatdetectionmodule?view=adfs-2019) le permite implementar la lógica de evaluación de riesgos en el punto en el que el usuario proporciona las credenciales, pero antes de que AD FS las evalúe, es decir, la fase de autenticación previa.
+Esta [interfaz](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.ipreauthenticationthreatdetectionmodule) le permite implementar la lógica de evaluación de riesgos en el punto en el que el usuario proporciona las credenciales, pero antes de que AD FS las evalúe, es decir, la fase de autenticación previa.
 
 ```
 public interface IPreAuthenticationThreatDetectionModule
@@ -260,18 +260,18 @@ IList<Claim> additionalClams
 );
 }
 ```
-La interfaz incluye el método [EvaluatePreAuthentication](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.ipreauthenticationthreatdetectionmodule.evaluatepreauthentication?view=adfs-2019) que permite usar la información pasada en los parámetros de entrada [RequestContext RequestContext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext?view=adfs-2019), [SecurityContext SecurityContext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.securitycontext?view=adfs-2019), [ProtocolContext ProtocolContext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.protocolcontext?view=adfs-2019)y [IList <Claim> additionalClams](/dotnet/api/system.collections.generic.ilist-1?view=netframework-4.7.2) para escribir la lógica de evaluación de riesgos de autenticación previa.
+La interfaz incluye el método [EvaluatePreAuthentication](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.ipreauthenticationthreatdetectionmodule.evaluatepreauthentication) que permite usar la información pasada en los parámetros de entrada [RequestContext RequestContext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext), [SecurityContext SecurityContext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.securitycontext), [ProtocolContext ProtocolContext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.protocolcontext)y [IList <Claim> additionalClams](/dotnet/api/system.collections.generic.ilist-1?view=netframework-4.7.2) para escribir la lógica de evaluación de riesgos de autenticación previa.
 
 >[!NOTE]
->Para obtener una lista de las propiedades que se pasan con cada tipo de contexto, visite las definiciones de clase [RequestContext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext?view=adfs-2019), [SecurityContext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.securitycontext?view=adfs-2019)y [ProtocolContext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.protocolcontext?view=adfs-2019) .
+>Para obtener una lista de las propiedades que se pasan con cada tipo de contexto, visite las definiciones de clase [RequestContext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext), [SecurityContext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.securitycontext)y [ProtocolContext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.protocolcontext) .
 
-El otro parámetro de entrada pasado es Logger, que es de tipo [ThreatDetectionLogger](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionlogger?view=adfs-2019). El parámetro se puede utilizar para escribir los mensajes de error, de auditoría o de depuración en los registros de AD FS.
+El otro parámetro de entrada pasado es Logger, que es de tipo [ThreatDetectionLogger](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionlogger). El parámetro se puede utilizar para escribir los mensajes de error, de auditoría o de depuración en los registros de AD FS.
 
-El método devuelve [ThrottleStatus](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.throttlestatus?view=adfs-2019) (0 si NotEvaluated, 1 para bloquear y 2 para permitir) AD FS que, a continuación, bloquea o permite la solicitud.
+El método devuelve [ThrottleStatus](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.throttlestatus) (0 si NotEvaluated, 1 para bloquear y 2 para permitir) AD FS que, a continuación, bloquea o permite la solicitud.
 
 #### <a name="ipostauthenticationthreatdetectionmodule-interface"></a>Interfaz IPostAuthenticationThreatDetectionModule
 
-Esta [interfaz](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.ipostauthenticationthreatdetectionmodule?view=adfs-2019) le permite implementar la lógica de evaluación de riesgos después de que el usuario haya proporcionado las credenciales y AD FS haya realizado la autenticación, es decir, la fase posterior a la autenticación.
+Esta [interfaz](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.ipostauthenticationthreatdetectionmodule) le permite implementar la lógica de evaluación de riesgos después de que el usuario haya proporcionado las credenciales y AD FS haya realizado la autenticación, es decir, la fase posterior a la autenticación.
 
 ```
 public interface IPostAuthenticationThreatDetectionModule
@@ -287,17 +287,17 @@ IList<Claim> additionalClams
 }
 ```
 
-La interfaz incluye el método [EvaluatePostAuthentication](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.ipostauthenticationthreatdetectionmodule.evaluatepostauthentication?view=adfs-2019) que le permite usar la información que se pasa en los parámetros de entrada [RequestContext RequestContext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext?view=adfs-2019), [SecurityContext SecurityContext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.securitycontext?view=adfs-2019), [ProtocolContext ProtocolContext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.protocolcontext?view=adfs-2019)y [IList <Claim> additionalClams](/dotnet/api/system.collections.generic.ilist-1?view=netframework-4.7.2) para escribir la lógica de evaluación del riesgo posterior a la autenticación.
+La interfaz incluye el método [EvaluatePostAuthentication](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.ipostauthenticationthreatdetectionmodule.evaluatepostauthentication) que le permite usar la información que se pasa en los parámetros de entrada [RequestContext RequestContext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext), [SecurityContext SecurityContext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.securitycontext), [ProtocolContext ProtocolContext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.protocolcontext)y [IList <Claim> additionalClams](/dotnet/api/system.collections.generic.ilist-1?view=netframework-4.7.2) para escribir la lógica de evaluación del riesgo posterior a la autenticación.
 
 >[!NOTE]
-> Para obtener una lista completa de las propiedades que se pasan con cada tipo de contexto, consulte las definiciones de la clase [RequestContext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext?view=adfs-2019), [SecurityContext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.securitycontext?view=adfs-2019)y [ProtocolContext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.protocolcontext?view=adfs-2019) .
+> Para obtener una lista completa de las propiedades que se pasan con cada tipo de contexto, consulte las definiciones de la clase [RequestContext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext), [SecurityContext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.securitycontext)y [ProtocolContext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.protocolcontext) .
 
-El otro parámetro de entrada pasado es Logger, que es de tipo [ThreatDetectionLogger](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionlogger?view=adfs-2019). El parámetro se puede utilizar para escribir los mensajes de error, de auditoría o de depuración en los registros de AD FS.
+El otro parámetro de entrada pasado es Logger, que es de tipo [ThreatDetectionLogger](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionlogger). El parámetro se puede utilizar para escribir los mensajes de error, de auditoría o de depuración en los registros de AD FS.
 
-El método devuelve la [puntuación de riesgo](/dotnet/api/microsoft.identityserver.authentication.riskscoreconstants?view=adfs-2019) que se puede usar en AD FS reglas de directiva y de notificaciones.
+El método devuelve la [puntuación de riesgo](/dotnet/api/microsoft.identityserver.authentication.riskscoreconstants) que se puede usar en AD FS reglas de directiva y de notificaciones.
 
 >[!NOTE]
->Para que el complemento funcione, la clase principal (en este caso UserRiskAnalyzer) debe derivar la clase abstracta [ThreatDetectionModule](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule?view=adfs-2019) y debe implementar al menos una de las tres interfaces descritas anteriormente. Una vez que se registra el archivo dll, AD FS comprueba qué interfaces se han implementado y las llama en la fase adecuada de la canalización.
+>Para que el complemento funcione, la clase principal (en este caso UserRiskAnalyzer) debe derivar la clase abstracta [ThreatDetectionModule](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule) y debe implementar al menos una de las tres interfaces descritas anteriormente. Una vez que se registra el archivo dll, AD FS comprueba qué interfaces se han implementado y las llama en la fase adecuada de la canalización.
 
 ### <a name="faqs"></a>Preguntas más frecuentes
 

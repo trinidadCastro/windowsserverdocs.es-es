@@ -7,12 +7,12 @@ ms.assetid: 9c7a67e0-0953-479c-8736-ccb356230bde
 ms.author: lizross
 author: eross-msft
 ms.date: 06/20/2018
-ms.openlocfilehash: 04498a73c04df8f9bce091c8ba583c323f28bbf1
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 815bc9d01f8e5e8b85cfeecb9beb70963b18d14f
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990402"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96865484"
 ---
 # <a name="network-policy-server-nps"></a>Servidor de directivas de redes (NPS)
 
@@ -27,9 +27,9 @@ Puede usar este tema para obtener información general sobre el servidor de dire
 > - [Planear el servidor de directivas de redes](nps-plan-top.md)
 > - [Implementar el servidor de directivas de redes](nps-deploy.md)
 > - [Administrar el servidor de directivas de redes](nps-manage-top.md)
-> - [Cmdlets del servidor de directivas de redes (NPS) en Windows PowerShell](/powershell/module/nps/?view=win10-ps) para windows Server 2016 y Windows 10
-> - [Cmdlets del servidor de directivas de redes (NPS) en Windows PowerShell](/powershell/module/nps/?view=win10-ps) para windows Server 2012 R2 y Windows 8.1
-> - [Cmdlets de NPS en Windows PowerShell](/powershell/module/nps/?view=win10-ps) para windows Server 2012 y Windows 8
+> - [Cmdlets del servidor de directivas de redes (NPS) en Windows PowerShell](/powershell/module/nps/) para windows Server 2016 y Windows 10
+> - [Cmdlets del servidor de directivas de redes (NPS) en Windows PowerShell](/powershell/module/nps/) para windows Server 2012 R2 y Windows 8.1
+> - [Cmdlets de NPS en Windows PowerShell](/powershell/module/nps/) para windows Server 2012 y Windows 8
 
 El servidor de directivas de redes (NPS) permite crear y aplicar directivas de acceso a la red de toda la organización para la autenticación y autorización de solicitudes de conexión.
 

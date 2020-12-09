@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: c3f17320432d44a84be05040e23e7af30995c969
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 001e0fe38c27e6331a5b2b38d76cd193bfb184f1
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997557"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96864854"
 ---
 # <a name="guarded-fabric-and-shielded-vms"></a>Máquinas virtuales blindadas y tejido protegido
 
@@ -46,7 +46,7 @@ Uno de los objetivos más importantes de proporcionar un entorno hospedado es ga
         - [Implementar un host protegido mediante el modo AD](guarded-fabric-admin-trusted-attestation-creating-a-security-group.md)
         - [Implementar un host protegido mediante el modo TPM](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md)
         - [Confirmar que los hosts protegidos pueden atestiguar](guarded-fabric-confirm-hosts-can-attest-successfully.md)
-        - [Máquinas virtuales blindadas: el proveedor de servicios de hosting implementa hosts protegidos en VMM](/system-center/vmm/guarded-deploy-host?view=sc-vmm-2019)
+        - [Máquinas virtuales blindadas: el proveedor de servicios de hosting implementa hosts protegidos en VMM](/system-center/vmm/guarded-deploy-host)
     - [Implementar máquinas virtuales blindadas](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
         - [Creación de una plantilla de máquina virtual blindada](guarded-fabric-create-a-shielded-vm-template.md)
         - [Preparación de una aplicación auxiliar de blindaje de VM VHD](guarded-fabric-vm-shielding-helper-vhd.md)

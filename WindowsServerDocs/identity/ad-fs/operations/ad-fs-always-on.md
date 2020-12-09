@@ -5,12 +5,12 @@ ms.author: billmath
 manager: daveba
 ms.date: 01/20/2020
 ms.topic: article
-ms.openlocfilehash: c306f901aba2991a238fb994117789d4a9a81a67
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: fac086cdcc08cb8941eba1dda9f4c41058d1b5d2
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87967132"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96865074"
 ---
 # <a name="setting-up-an-ad-fs-deployment-with-alwayson-availability-groups"></a>Configuración de una implementación de AD FS con Grupos de disponibilidad AlwaysOn
 Una topología de distribución geográfica de alta disponibilidad proporciona:
@@ -22,7 +22,7 @@ En la guía siguiente se le guiará a través de una visión general de AD FS co
 
 ## <a name="overview---alwayson-availability-groups"></a>Información general: Grupos de disponibilidad AlwaysOn
 
-Para obtener más información sobre los grupos de disponibilidad AlwaysOn, consulte [información general de grupos de disponibilidad AlwaysOn (SQL Server)](/sql/database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server?view=sql-server-ver15) .
+Para obtener más información sobre los grupos de disponibilidad AlwaysOn, consulte [información general de grupos de disponibilidad AlwaysOn (SQL Server)](/sql/database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server) .
 
 Desde la perspectiva de los nodos de una granja de servidores de AD FS SQL Server, el grupo de disponibilidad AlwaysOn reemplaza la instancia de SQL Server única como base de datos de directivas/artefactos.El agente de escucha del grupo de disponibilidad es lo que el cliente (el servicio de token de seguridad de AD FS) utiliza para conectarse a SQL.
 En el diagrama siguiente se muestra un AD FS granja de SQL Server con el grupo de disponibilidad AlwaysOn.
@@ -38,18 +38,18 @@ En un momento dado, solo una única instancia de SQL Server puede hospedar la r�
 > [!NOTE]
 > Si las máquinas se ejecutan en Azure, configure las máquinas virtuales de Azure para permitir que la configuración del agente de escucha se comunique con los grupos de disponibilidad AlwaysOn. Para obtener más información, [Virtual Machines: agente de escucha de SQL Always on](/azure/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-alwayson-int-listener).
 
-Para obtener información general adicional sobre Grupos de disponibilidad AlwaysOn, consulte [información general de los grupos de disponibilidad de Always On (SQL Server)](/sql/database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server?view=sql-server-ver15).
+Para obtener información general adicional sobre Grupos de disponibilidad AlwaysOn, consulte [información general de los grupos de disponibilidad de Always On (SQL Server)](/sql/database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server).
 
 > [!NOTE]
 > Si la organización requiere conmutación por error en varios centros de datos, se recomienda crear una base de datos de artefactos en cada centro de datos, así como habilitar una caché en segundo plano, lo que reduce la latencia durante el procesamiento de la solicitud. Siga las instrucciones para hacerlo en [ajustar SQL y reducir la latencia](./adfs-sql-latency.md).
 
 ## <a name="deployment-guidance"></a>Guía de implementación
 
-1. <b>Tenga en cuenta la base de datos correcta para los objetivos de la implementación de AD FS.</b> AD FS utiliza una base de datos para almacenar la configuración y, en algunos casos, los datos transaccionales relacionados con la Servicio de federación. Puede usar AD FS software para seleccionar la versión integrada de Windows Internal Database (WID) o Microsoft SQL Server 2008 o una más reciente para almacenar los datos en el servicio de Federación.
+1. <b> Tenga en cuenta la base de datos correcta para los objetivos de la implementación de AD FS. </b> AD FS utiliza una base de datos para almacenar la configuración y, en algunos casos, los datos transaccionales relacionados con la Servicio de federación. Puede usar AD FS software para seleccionar la versión integrada de Windows Internal Database (WID) o Microsoft SQL Server 2008 o una más reciente para almacenar los datos en el servicio de Federación.
 En la tabla siguiente se describen las diferencias en las características admitidas entre WID y SQL Database.
 
 
-| Categoría      | Característica       | Compatible con WID  | Compatible con SQL |
+| Category      | Característica       | Compatible con WID  | Compatible con SQL |
 | ------------------ |:-------------:| :---:|:---: |
 | AD FS características     | Implementación de una granja de servidores de federación | Sí  | Sí |
 | AD FS características     | Resolución de artefactos SAML. Nota: esto no es común para las aplicaciones SAML     |   No | Sí  |
@@ -216,18 +216,18 @@ Realice una copia de seguridad del artefacto de ADFS y de las bases de datos de 
 3.  Para iniciar el Asistente para nuevo grupo de disponibilidad, seleccione el comando Asistente para nuevo grupo de disponibilidad.
 4.  La primera vez que se ejecuta este asistente, aparece una página Introducción. Para omitir esta página en el futuro, puede hacer clic en No volver a mostrar esta página. Después de leer esta página, haga clic en Siguiente.
 5.  En la página Especificar opciones de grupo de disponibilidad, escriba el nombre del nuevo grupo de disponibilidad en el campo Nombre de grupo de disponibilidad. Este nombre debe ser un identificador de SQL Server válido que sea único en el clúster y en el dominio en su totalidad. La longitud máxima del nombre de un grupo de disponibilidad es 128 caracteres. e
-6.  Después, especifique el tipo de clúster. Los tipos de clúster posibles dependen de la versión de SQL Server y del sistema operativo. Elija WSFC, EXTERNAL o NONE. Para obtener información detallada, consulte [especificar el nombre del grupo de disponibilidad](/sql/database-engine/availability-groups/windows/specify-availability-group-name-page?view=sql-server-ver15) .
+6.  Después, especifique el tipo de clúster. Los tipos de clúster posibles dependen de la versión de SQL Server y del sistema operativo. Elija WSFC, EXTERNAL o NONE. Para obtener información detallada, consulte [especificar el nombre del grupo de disponibilidad](/sql/database-engine/availability-groups/windows/specify-availability-group-name-page) .
 
 ![nombre del grupo y el clúster de AoA](media/ad-fs-always-on/createAoAName.png)
 
 7.  En la página Seleccionar bases de datos, la cuadrícula enumera las bases de datos de la instancia del servidor conectado que se pueden convertir en bases de datos de disponibilidad. Seleccione una o varias de las bases de datos enumeradas para participar como bases de datos de disponibilidad en el nuevo grupo de disponibilidad. Estas bases de datos serán inicialmente las bases de datos principales iniciales.
-Para cada base de datos de la lista, la columna Tamaño muestra el tamaño de la base de datos, si se conoce. La columna Estado indica si una base de datos determinada cumple los [requisitos previos](/sql/database-engine/availability-groups/windows/prereqs-restrictions-recommendations-always-on-availability?view=sql-server-ver15) para las bases de datos de disponibilidad. Si los requisitos previos no se cumplen, una breve descripción de estado indica el motivo por el que la base de datos no es apta; por ejemplo, si no utiliza el modelo de recuperación completa. Para obtener más información, haga clic en la descripción del estado.
+Para cada base de datos de la lista, la columna Tamaño muestra el tamaño de la base de datos, si se conoce. La columna Estado indica si una base de datos determinada cumple los [requisitos previos](/sql/database-engine/availability-groups/windows/prereqs-restrictions-recommendations-always-on-availability) para las bases de datos de disponibilidad. Si los requisitos previos no se cumplen, una breve descripción de estado indica el motivo por el que la base de datos no es apta; por ejemplo, si no utiliza el modelo de recuperación completa. Para obtener más información, haga clic en la descripción del estado.
 Si cambia una base de datos para que pueda ser apta, haga clic en Actualizar para actualizar la cuadrícula de bases de datos.
 Si la base de datos contiene una clave maestra de base de datos, escriba la contraseña para dicha clave en la columna Contraseña.
 
 ![seleccionar bases de datos para AoA](media/ad-fs-always-on/createAoASelectDb.png)
 
-8. en la página especificar réplicas, especifique y configure una o varias réplicas para el nuevo grupo de disponibilidad. Esta página contiene cuatro pestañas: En la siguiente tabla se presentan estas pestañas. Para obtener más información, consulte la [página especificar réplicas (Asistente para nuevo grupo de disponibilidad: Asistente para agregar réplica)](/sql/database-engine/availability-groups/windows/specify-replicas-page-new-availability-group-wizard-add-replica-wizard?view=sql-server-ver15) .
+8. en la página especificar réplicas, especifique y configure una o varias réplicas para el nuevo grupo de disponibilidad. Esta página contiene cuatro pestañas: En la siguiente tabla se presentan estas pestañas. Para obtener más información, consulte la [página especificar réplicas (Asistente para nuevo grupo de disponibilidad: Asistente para agregar réplica)](/sql/database-engine/availability-groups/windows/specify-replicas-page-new-availability-group-wizard-add-replica-wizard) .
 
 | Pestaña      | Breve descripción       |
 | ------------------ |:-------------:|
@@ -240,15 +240,15 @@ Si la base de datos contiene una clave maestra de base de datos, escriba la cont
 
 9. En la página Seleccionar sincronización de datos iniciales, elija cómo desea que las nuevas bases de datos secundarias se creen y se unan al grupo de disponibilidad. Elija una de las siguientes opciones:
 -   Propagación automática
- - SQL Server crea automáticamente las réplicas secundarias de cada base de datos del grupo. La propagación automática requiere que la ruta de acceso del archivo de datos y de registro sea la misma en cada instancia de SQL Server que participe en el grupo. Disponible en SQL Server 2016 (13. x) y versiones posteriores. Consulte [inicializar automáticamente Always on grupos de disponibilidad](/sql/database-engine/availability-groups/windows/automatically-initialize-always-on-availability-group?view=sql-server-ver15).
+ - SQL Server crea automáticamente las réplicas secundarias de cada base de datos del grupo. La propagación automática requiere que la ruta de acceso del archivo de datos y de registro sea la misma en cada instancia de SQL Server que participe en el grupo. Disponible en SQL Server 2016 (13. x) y versiones posteriores. Consulte [inicializar automáticamente Always on grupos de disponibilidad](/sql/database-engine/availability-groups/windows/automatically-initialize-always-on-availability-group).
 - Copia de seguridad completa de registros y bases de datos
- - Seleccione esta opción si su entorno cumple los requisitos para iniciar automáticamente la sincronización de datos iniciales (para obtener más información, vea [requisitos previos, restricciones y recomendaciones, anteriormente en este tema)](/sql/database-engine/availability-groups/windows/use-the-availability-group-wizard-sql-server-management-studio?view=sql-server-ver15#Prerequisites).
+ - Seleccione esta opción si su entorno cumple los requisitos para iniciar automáticamente la sincronización de datos iniciales (para obtener más información, vea [requisitos previos, restricciones y recomendaciones, anteriormente en este tema)](/sql/database-engine/availability-groups/windows/use-the-availability-group-wizard-sql-server-management-studio#Prerequisites).
 Si selecciona Completa, después de crear el grupo de disponibilidad, el asistente realizará una copia de seguridad de cada base de datos principal y su registro de transacciones a un recurso compartido de red y restaurará las copias de seguridad en cada instancia de servidor que hospeda una réplica secundaria. El asistente unirá entonces cada base de datos secundaria al grupo de disponibilidad.
 En el campo Especificar una ubicación de red compartida accesible por todas las réplicas:, indique un recurso compartido de copia de seguridad al que todas las instancias del servidor que hospedan réplicas tienen acceso de lectura y escritura. Para obtener más información, vea Requisitos previos, anteriormente en este tema. En el paso de validación, el asistente realizará una prueba para asegurarse de que la ubicación de red proporcionada es válida, la prueba creará una base de datos en la réplica principal, denominada "BackupLocDb_" seguido de un GUID, realizará una copia de seguridad en la ubicación de red proporcionada y después la restaurará en las réplicas secundarias. Se puede eliminar esta base de datos junto con su historial de copias de seguridad y el archivo de copia de seguridad en caso de que el asistente no pueda eliminarlos.
 - Solo unión
  - Si ha preparado manualmente las bases de datos secundarias de las instancias de servidor que hospedarán las réplicas secundarias, puede seleccionar esta opción. El asistente unirá las bases de datos secundarias existentes al grupo de disponibilidad.
 - Omitir la sincronización de datos iniciales
- - Seleccione esta opción si desea usar sus propias bases de datos y copias de seguridad de registros de sus bases de datos principales. Para obtener más información, vea [iniciar el movimiento de datos en una base de datos secundaria Always On (SQL Server)](/sql/database-engine/availability-groups/windows/start-data-movement-on-an-always-on-secondary-database-sql-server?view=sql-server-ver15).
+ - Seleccione esta opción si desea usar sus propias bases de datos y copias de seguridad de registros de sus bases de datos principales. Para obtener más información, vea [iniciar el movimiento de datos en una base de datos secundaria Always On (SQL Server)](/sql/database-engine/availability-groups/windows/start-data-movement-on-an-always-on-secondary-database-sql-server).
 
 ![elegir la opción de sincronización de datos](media/ad-fs-always-on/createAoADataSync.png)
 

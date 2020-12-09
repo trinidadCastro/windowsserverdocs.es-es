@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: a255a4a5-c1a0-4edc-b41a-211bae397e3c
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: e8b19df2313bd0f3f6599aae8a23a18233f469e7
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: 5e9187fd549f9982ab8d0bea5ffa9b45d6e1e3c7
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766928"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96865284"
 ---
 # <a name="use-dns-policy-for-split-brain-dns-deployment"></a>Uso de la Directiva de DNS para la \- implementación de DNS de cerebro dividido
 
@@ -20,7 +20,7 @@ ms.locfileid: "90766928"
 Puede usar este tema para obtener información sobre cómo configurar la Directiva de DNS en Windows Server &reg; 2016 para implementaciones de DNS de cerebro dividido, en las que hay dos versiones de una sola zona: una para los usuarios internos de la intranet de la organización y otra para los usuarios externos, que suelen ser usuarios en Internet.
 
 >[!NOTE]
->Para obtener información sobre cómo usar la Directiva de DNS para la \- implementación de DNS de cerebro dividido con Active Directory zonas DNS integrada, consulte [uso de la Directiva de DNS para DNS de cerebro dividido en Active Directory](dns-sb-with-ad.md).
+>Para obtener información sobre cómo usar la Directiva de DNS para la \- implementación de DNS de cerebro dividido con Active Directory zonas DNS integrada, consulte [uso de la Directiva de dns para Split-Brain DNS en Active Directory](dns-sb-with-ad.md).
 
 Anteriormente, este escenario requería que los administradores de DNS mantengan dos servidores DNS diferentes, cada uno de los cuales proporciona servicios a cada conjunto de usuarios, tanto internos como externos. Si solo algunos registros dentro de la zona se han dividido \- de forma cerebro o ambas instancias de la zona (interna y externa) se han delegado en el mismo dominio primario, se convirtió en un dilema de administración.
 
@@ -28,16 +28,16 @@ Otro escenario de configuración para la implementación de división de cerebro
 
 En este tema se incluyen las siguientes secciones.
 
-- [Ejemplo de implementación de división de cerebro de DNS](#bkmk_sbexample)
+- [Ejemplo de implementación de Split-Brain de DNS](#bkmk_sbexample)
 - [Ejemplo de control de recursividad selectiva de DNS](#bkmk_recursion)
 
-## <a name="example-of-dns-split-brain-deployment"></a><a name="bkmk_sbexample"></a>Ejemplo de implementación de división de cerebro de DNS
+## <a name="example-of-dns-split-brain-deployment"></a><a name="bkmk_sbexample"></a>Ejemplo de implementación de Split-Brain de DNS
 El siguiente es un ejemplo de cómo se puede usar la Directiva de DNS para llevar a cabo el escenario descrito anteriormente de DNS de cerebro dividido.
 
 Esta sección contiene los temas siguientes.
 
-- [Cómo funciona la implementación de división de cerebro de DNS](#bkmk_sbhow)
-- [Configuración de la implementación de división de cerebro de DNS](#bkmk_sbconfigure)
+- [Cómo funciona la implementación de Split-Brain de DNS](#bkmk_sbhow)
+- [Configuración de la implementación de Split-Brain de DNS](#bkmk_sbconfigure)
 
 En este ejemplo se usa una empresa ficticia, Contoso, que mantiene un sitio web de carrera en www.career.contoso.com.
 
@@ -51,9 +51,9 @@ Uso de directivas de DNS estas zonas ahora se pueden hospedar en el mismo servid
 
 En la ilustración siguiente se muestra este escenario.
 
-![Implementación de DNS de cerebro dividido](../../media/DNS-Split-Brain/Dns-Split-Brain-01.jpg)
+![Split-Brain de la implementación de DNS](../../media/DNS-Split-Brain/Dns-Split-Brain-01.jpg)
 
-## <a name="how-dns-split-brain-deployment-works"></a><a name="bkmk_sbhow"></a>Cómo funciona la implementación de división de cerebro de DNS
+## <a name="how-dns-split-brain-deployment-works"></a><a name="bkmk_sbhow"></a>Cómo funciona la implementación de Split-Brain de DNS
 
 Cuando el servidor DNS está configurado con las directivas DNS necesarias, cada solicitud de resolución de nombres se evalúa con respecto a las directivas del servidor DNS.
 
@@ -63,8 +63,8 @@ Si la interfaz de servidor en la que se recibe la consulta coincide con cualquie
 
 Por lo tanto, en nuestro ejemplo, las consultas de DNS para www.career.contoso.com que se reciben en la IP privada (10.0.0.56) reciben una respuesta DNS que contiene una dirección IP interna. y las consultas DNS que se reciben en la interfaz de red pública reciben una respuesta DNS que contiene la dirección IP pública en el ámbito de zona predeterminado (esto es lo mismo que la resolución de consultas normal).
 
-## <a name="how-to-configure-dns-split-brain-deployment"></a><a name="bkmk_sbconfigure"></a>Configuración de la implementación de división de cerebro de DNS
-Para configurar la implementación de un cerebro dividido en DNS mediante la Directiva DNS, debe seguir estos pasos.
+## <a name="how-to-configure-dns-split-brain-deployment"></a><a name="bkmk_sbconfigure"></a>Configuración de la implementación de Split-Brain de DNS
+Para configurar DNS Split-Brain la implementación mediante la Directiva DNS, debe seguir estos pasos.
 
 - [Crear los ámbitos de zona](#bkmk_zscopes)
 - [Agregar registros a los ámbitos de zona](#bkmk_records)
@@ -86,7 +86,7 @@ Puede usar el siguiente comando de ejemplo para particionar el ámbito de zona c
 
 `Add-DnsServerZoneScope -ZoneName "contoso.com" -Name "internal"`
 
-Para obtener más información, consulte [Add-DnsServerZoneScope](/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
+Para obtener más información, consulte [Add-DnsServerZoneScope](/powershell/module/dnsserver/add-dnsserverzonescope)
 
 ### <a name="add-records-to-the-zone-scopes"></a><a name="bkmk_records"></a>Agregar registros a los ámbitos de zona
 
@@ -103,14 +103,14 @@ Add-DnsServerResourceRecord -ZoneName "contoso.com" -A -Name "www.career" -IPv4A
 Add-DnsServerResourceRecord -ZoneName "contoso.com" -A -Name "www.career" -IPv4Address "10.0.0.39” -ZoneScope "internal"
 `
 
-Para obtener más información, consulte [Add-DnsServerResourceRecord](/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps).
+Para obtener más información, consulte [Add-DnsServerResourceRecord](/powershell/module/dnsserver/add-dnsserverresourcerecord).
 
 ### <a name="create-the-dns-policies"></a><a name="bkmk_policies"></a>Crear las directivas de DNS
 
 Una vez que haya identificado las interfaces de servidor para la red externa y la red interna y haya creado los ámbitos de zona, debe crear directivas DNS que conecten los ámbitos de zona externa y interna.
 
 >[!NOTE]
->En este ejemplo se usa la interfaz de servidor como criterio para diferenciar entre los clientes internos y externos. Otro método para diferenciar entre clientes externos e internos es mediante el uso de subredes de cliente como criterio. Si puede identificar las subredes a las que pertenecen los clientes internos, puede configurar la Directiva de DNS para diferenciar en función de la subred de cliente. Para obtener información sobre cómo configurar la administración del tráfico mediante los criterios de subred de cliente, consulte [uso de la Directiva de DNS para la administración del tráfico basado en la ubicación geográfica con los servidores principales](./primary-geo-location.md).
+>En este ejemplo se usa la interfaz de servidor como criterio para diferenciar entre los clientes internos y externos. Otro método para diferenciar entre clientes externos e internos es mediante el uso de subredes de cliente como criterio. Si puede identificar las subredes a las que pertenecen los clientes internos, puede configurar la Directiva de DNS para diferenciar en función de la subred de cliente. Para obtener información sobre cómo configurar la administración del tráfico mediante los criterios de subred de cliente, consulte [uso de la Directiva de DNS para la administración del tráfico basado en Geo-Location con servidores principales](./primary-geo-location.md).
 
 Cuando el servidor DNS recibe una consulta en la interfaz privada, el ámbito de la zona interna devuelve la respuesta de la consulta DNS.
 
@@ -121,7 +121,7 @@ En el siguiente comando de ejemplo, 10.0.0.56 es la dirección IP de la interfaz
 
 `Add-DnsServerQueryResolutionPolicy -Name "SplitBrainZonePolicy" -Action ALLOW -ServerInterface "eq,10.0.0.56" -ZoneScope "internal,1" -ZoneName contoso.com`
 
-Para obtener más información, consulte [Add-DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps).
+Para obtener más información, consulte [Add-DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy).
 
 ## <a name="example-of-dns-selective-recursion-control"></a><a name="bkmk_recursion"></a>Ejemplo de control de recursividad selectiva de DNS
 
@@ -183,7 +183,7 @@ Set-DnsServerRecursionScope -Name . -EnableRecursion $False
 Add-DnsServerRecursionScope -Name "InternalClients" -EnableRecursion $True
 ```
 
-Para obtener más información, consulte [Add-DnsServerRecursionScope](/powershell/module/dnsserver/add-dnsserverrecursionscope?view=win10-ps)
+Para obtener más información, consulte [Add-DnsServerRecursionScope](/powershell/module/dnsserver/add-dnsserverrecursionscope)
 
 #### <a name="create-dns-recursion-policies"></a><a name="bkmk_recpolicy"></a>Crear directivas de recursividad de DNS
 
@@ -199,7 +199,7 @@ Puede usar el siguiente comando de ejemplo para configurar directivas de recursi
 Add-DnsServerQueryResolutionPolicy -Name "SplitBrainRecursionPolicy" -Action ALLOW -ApplyOnRecursion -RecursionScope "InternalClients" -ServerInterfaceIP "EQ,10.0.0.39"
 ```
 
-Para obtener más información, consulte [Add-DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps).
+Para obtener más información, consulte [Add-DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy).
 
 Ahora, el servidor DNS está configurado con las directivas DNS necesarias para un servidor de nombres de cerebro dividido o un servidor DNS con el control de recursividad selectivo habilitado para los clientes internos.
 

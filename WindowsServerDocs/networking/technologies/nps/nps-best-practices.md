@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 90e544bd-e826-4093-8c3b-6a6fc2dfd1d6
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 2fc8c1e4bd51a632e790ae0fca7f50113c23ccc0
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: affb4785301bf71c18991c826dc17cb1cec6e633
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87994162"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96865224"
 ---
 # <a name="network-policy-server-best-practices"></a>Procedimientos recomendados del servidor de directivas de redes
 
@@ -47,13 +47,13 @@ Para hacer un uso más efectivo del registro de NPS:
 
 Para obtener más información, vea [configurar las cuentas del servidor de directivas de redes](nps-accounting-configure.md).
 
-- Para ofrecer capacidad de conmutación por error y redundancia con el registro de SQL Server, coloque dos equipos que ejecuten SQL Server en subredes diferentes. Use el **Asistente para crear publicaciones** de SQL Server para configurar la replicación de base de datos entre los dos servidores. Para obtener más información, vea [SQL Server documentación técnica](/sql/sql-server/?view=sql-server-ver15) y [replicación de SQL Server](/sql/relational-databases/replication/sql-server-replication?view=sql-server-ver15).
+- Para ofrecer capacidad de conmutación por error y redundancia con el registro de SQL Server, coloque dos equipos que ejecuten SQL Server en subredes diferentes. Use el **Asistente para crear publicaciones** de SQL Server para configurar la replicación de base de datos entre los dos servidores. Para obtener más información, vea [SQL Server documentación técnica](/sql/sql-server/) y [replicación de SQL Server](/sql/relational-databases/replication/sql-server-replication).
 
-## <a name="authentication"></a>Autenticación
+## <a name="authentication"></a>Authentication
 
 A continuación, se incluyen recomendaciones para la autenticación.
 
-- Use métodos de autenticación basados en certificados, como el protocolo de autenticación extensible protegido \( PEAP \) y el protocolo de autenticación extensible \( EAP para la \) autenticación segura. No use métodos de autenticación de solo contraseña porque son vulnerables a diversos ataques y no son seguros. Para la autenticación inalámbrica segura, \- se recomienda usar PEAP MS \- CHAP V2, ya que el NPS demuestra su identidad a los clientes inalámbricos mediante el uso de un certificado de servidor, mientras que los usuarios demuestran su identidad con su nombre de usuario y contraseña.  Para obtener más información sobre el uso de NPS en la implementación inalámbrica, consulte [implementación de acceso inalámbrico autenticado mediante 802.1 x basado en contraseña](../../core-network-guide/cncg/wireless/a-deploy-8021x-wireless-access.md).
+- Use métodos de autenticación basados en certificados, como el protocolo de autenticación extensible protegido \( PEAP \) y el protocolo de autenticación extensible \( EAP para la \) autenticación segura. No use métodos de autenticación de solo contraseña porque son vulnerables a diversos ataques y no son seguros. Para la autenticación inalámbrica segura, \- se recomienda usar PEAP MS \- CHAP V2, ya que el NPS demuestra su identidad a los clientes inalámbricos mediante el uso de un certificado de servidor, mientras que los usuarios demuestran su identidad con su nombre de usuario y contraseña.  Para obtener más información sobre el uso de NPS en la implementación inalámbrica, consulte [implementación de acceso inalámbrico autenticado en Password-Based 802.1 x](../../core-network-guide/cncg/wireless/a-deploy-8021x-wireless-access.md).
 - Implemente su propia CA de entidad \( \) de certificación con Active Directory &reg; servicios de Certificate Server \( ad CS \) cuando use métodos seguros de autenticación basados en certificados, como PEAP y EAP, que requieran el uso de un certificado de servidor en NPSs. También puede usar su entidad de certificación para realizar inscripciones de certificados de equipo y de usuario. Para obtener más información sobre la implementación de certificados de servidor en NPS y servidores de acceso remoto, consulte [implementación de certificados de servidor para implementaciones cableadas e inalámbricas de 802.1 x](../../core-network-guide/cncg/server-certs/deploy-server-certificates-for-802.1x-wired-and-wireless-deployments.md).
 
 > [!IMPORTANT]
@@ -71,7 +71,7 @@ A continuación se muestran los procedimientos recomendados para la instalación
 
 - Antes de instalar NPS, instale y pruebe cada uno de los servidores de acceso a la red mediante métodos de autenticación locales antes de configurarlos como clientes RADIUS en NPS.
 
-- Después de instalar y configurar NPS, guarde la configuración mediante el comando de Windows PowerShell [Export-NpsConfiguration](/powershell/module/nps/export-npsconfiguration?view=win10-ps). Guarde la configuración de NPS con este comando cada vez que vuelva a configurar el NPS.
+- Después de instalar y configurar NPS, guarde la configuración mediante el comando de Windows PowerShell [Export-NpsConfiguration](/powershell/module/nps/export-npsconfiguration). Guarde la configuración de NPS con este comando cada vez que vuelva a configurar el NPS.
 
 >[!CAUTION]
 >- El archivo de configuración de NPS exportado contiene secretos compartidos sin cifrar para clientes RADIUS y miembros de grupos de servidores RADIUS remotos. Por este motivo, asegúrese de guardar el archivo en una ubicación segura.

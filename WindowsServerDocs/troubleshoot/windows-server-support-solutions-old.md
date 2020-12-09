@@ -6,12 +6,12 @@ ms.date: 03/16/2018
 ms.topic: article
 author: kaushika-msft
 ms.author: elizapo
-ms.openlocfilehash: ba9654fd60534e53211d65cfd2006320cea20383
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 7bc533063c52af2087d822a428458ba8efab94fc
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997279"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96864674"
 ---
 # <a name="top-support-solutions-for-windows-server-2016"></a>Principales soluciones de soporte técnico para Windows Server 2016
 
@@ -28,7 +28,7 @@ Estas son las principales soluciones de Soporte técnico de Microsoft para los p
 - [Actualización de la pila de mantenimiento para Windows 10 versión 1607 y Windows Server 2016:8 de agosto de 2017](https://support.microsoft.com/help/4035631)
 - [Actualización de compatibilidad para actualizar a Windows 10, versión 1607 y Windows Server 2016:3 de agosto de 2017](https://support.microsoft.com/help/4033524)
 - [No se admite la actualización en contexto del sistema en máquinas virtuales de Azure basadas en Windows](https://support.microsoft.com/help/4014997)
-- [Opciones de actualización y conversión para Windows Server 2016](../get-started/supported-upgrade-paths.md)
+- [Upgrade and conversion options for Windows Server 2016](../get-started/supported-upgrade-paths.md) (Opciones de actualización y conversión de Windows Server 2016)
 - [Matriz de actualización y migración del rol de servidor para Windows Server 2016](../get-started/server-role-upgradeability-table.md)
 - [Instalación y actualización de Windows Server](../get-started/installation-and-upgrade.md)
 - [Notas de la versión: Problemas importantes en Windows Server 2016](../get-started/windows-server-2016-ga-release-notes.md)
@@ -46,7 +46,7 @@ Estas son las principales soluciones de Soporte técnico de Microsoft para los p
 ## <a name="solutions-related-to-dcpromo-and-installing-domain-controllers"></a>Soluciones relacionadas con DCPromo e instalación de controladores de dominio
 - [Requisitos de puertos Active Directory y Active Directory Domain Services](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd772723(v=ws.10))
 - [Active Directory puertos de Firewall: vamos a intentar hacer esto sencillo](http://blogs.msmvps.com/acefekay/2011/11/01/active-directory-firewall-ports-let-s-try-to-make-this-simple/)
-- [Compatibilidad de Exchange Server con Windows Server 2016](/Exchange/plan-and-deploy/supportability-matrix?view=exchserver-2019)
+- [Compatibilidad de Exchange Server con Windows Server 2016](/Exchange/plan-and-deploy/supportability-matrix)
 - [Usar Ntdsutil.exe para transferir o asumir roles FSMO en un controlador de dominio](https://support.microsoft.com/kb/255504)
 - [Solución de problemas de implementación de controladores de dominio](../identity/ad-ds/deploy/troubleshooting-domain-controller-deployment.md)
 - [Solución de problemas del asistente para la instalación de Active Directory](/previous-versions/windows/it-pro/windows-2000-server/bb727058(v=technet.10))

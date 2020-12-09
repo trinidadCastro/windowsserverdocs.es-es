@@ -6,16 +6,16 @@ ms.author: billmath
 manager: mtilman
 ms.date: 05/20/2019
 ms.topic: article
-ms.openlocfilehash: 707eeda20dda1297a168ae4a0597566a25593221
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a5ce41597c7cb25202be61f47c640d3f749568b4
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87962669"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96864544"
 ---
 # <a name="ad-fs-extranet-lockout-and-extranet-smart-lockout"></a>AD FS Extranet Lockout and Extranet Smart Lockout (Bloqueo de extranet de AD FS y bloqueo inteligente de extranet)
 
-## <a name="overview"></a>Introducción
+## <a name="overview"></a>Información general
 
 El bloqueo inteligente de extranet (ESL) evita que los usuarios experimenten el bloqueo de cuentas de extranet de actividades malintencionadas.
 
@@ -55,7 +55,7 @@ Todos los nodos secundarios se pondrá en contacto con el nodo maestro en cada i
 Se admiten las direcciones IPv4 e IPv6.
 
 ### <a name="anatomy-of-a-transaction"></a>Anatomía de una transacción
-- **Comprobación previa a la**autenticación: durante una solicitud de autenticación, ESL comprueba todas las direcciones IP presentadas. Estas direcciones IP serán una combinación de IP de red, IP reenviada y el x-forwarded-for IP opcional. En los registros de auditoría, estas direcciones IP se enumeran en el <IpAddress> campo en el orden x-MS-forwarded-Client-IP, x-forwarded-for, x-MS-Proxy-Client-IP.
+- **Comprobación previa a la** autenticación: durante una solicitud de autenticación, ESL comprueba todas las direcciones IP presentadas. Estas direcciones IP serán una combinación de IP de red, IP reenviada y el x-forwarded-for IP opcional. En los registros de auditoría, estas direcciones IP se enumeran en el <IpAddress> campo en el orden x-MS-forwarded-Client-IP, x-forwarded-for, x-MS-Proxy-Client-IP.
 
   En función de estas direcciones IP, ADFS determina si la solicitud proviene de una ubicación conocida o desconocida y, a continuación, comprueba si el valor de badPwdCount respectivo es menor que el límite de umbral establecido o si el último intento **erróneo** se produjo más tiempo que el intervalo de tiempo de la ventana de observación. Si se cumple una de estas condiciones, ADFS permite que esta transacción se realice en el procesamiento y la validación de credenciales. Si ambas condiciones son false, la cuenta ya está en estado bloqueado hasta que la ventana de observación pase. Una vez que se pasa la ventana de observación, se permite que el usuario se autentique. Tenga en cuenta que, en 2019, ADFS comprobará el límite de umbral adecuado en función de si la dirección IP coincide o no con una ubicación conocida.
 - **Inicio de sesión correcto**: Si el inicio de sesión se realiza correctamente, las direcciones IP de la solicitud se agregan a la lista de direcciones IP de ubicación conocida del usuario.
@@ -69,8 +69,8 @@ El valor "UnknownLockout" será igual a true cuando se bloquee la cuenta. Esto s
 
 Si no se produce ningún restablecimiento, a la cuenta se le permitirá un único intento de contraseña en AD para cada ventana de observación. La cuenta volverá al estado bloqueado después de ese intento y se reiniciará la ventana de observación. El valor badPwdCount solo se restablecerá automáticamente después de un inicio de sesión de contraseña correcto.
 
-### <a name="log-only-mode-versus-enforce-mode"></a>Modo de solo registro frente al modo "exigir"
-La tabla AccountActivity se rellena durante el modo ' solo registro ' y el modo ' exigir '. Si se omite el modo ' solo registro ' y ESL se mueve directamente al modo ' exigir ' sin el período de espera recomendado, ADFS no conocerá las direcciones IP conocidas de los usuarios. En este caso, ESL se comportaría como ' ADBadPasswordCounter ', lo que podría bloquear el tráfico de usuario legítimo si la cuenta de usuario se encuentra en un ataque por fuerza bruta activo. Si el modo "solo registro" se omite y el usuario entra en un estado bloqueado con "UnknownLockout" = TRUE e intenta iniciar sesión con una contraseña correcta desde una dirección IP que no está en la lista de direcciones IP "familiar", no podrá iniciar sesión. El modo de solo registro se recomienda durante 3-7 días para evitar este escenario. Si las cuentas se están realizando activamente ataques, se necesita un mínimo de 24 horas de modo de "solo registro" para evitar bloqueos en los usuarios legítimos.
+### <a name="log-only-mode-versus-enforce-mode"></a>Modo de Log-Only frente al modo "exigir"
+La tabla AccountActivity se rellena durante el modo ' solo registro ' y el modo ' exigir '. Si se omite el modo ' solo registro ' y ESL se mueve directamente al modo ' exigir ' sin el período de espera recomendado, ADFS no conocerá las direcciones IP conocidas de los usuarios. En este caso, ESL se comportaría como ' ADBadPasswordCounter ', lo que podría bloquear el tráfico de usuario legítimo si la cuenta de usuario se encuentra en un ataque por fuerza bruta activo. Si el modo "solo registro" se omite y el usuario entra en un estado bloqueado con "UnknownLockout" = TRUE e intenta iniciar sesión con una contraseña correcta desde una dirección IP que no está en la lista de direcciones IP "familiar", no podrá iniciar sesión. Se recomienda el modo de Log-Only durante 3-7 días para evitar este escenario. Si las cuentas se están realizando activamente ataques, se necesita un mínimo de 24 horas de modo de "solo registro" para evitar bloqueos en los usuarios legítimos.
 
 ## <a name="extranet-smart-lockout-configuration"></a>Configuración de bloqueo inteligente de extranet
 
@@ -142,7 +142,7 @@ La tabla AccountActivity se rellena durante el modo ' solo registro ' y el modo 
 Esta característica hace uso de los registros de auditoría de seguridad, por lo que la auditoría debe estar habilitada en AD FS, así como en la directiva local en todos los servidores de AD FS.
 
 ### <a name="configuration-instructions"></a>Instrucciones de configuración
-El bloqueo inteligente de extranet usa la propiedad **ExtranetLockoutEnabled**de ADFS. Esta propiedad se usaba previamente para controlar el "bloqueo flexible de extranet" en el servidor 2012R2. Si se ha habilitado el bloqueo automático de extranet, para ver la configuración de propiedades actual, ejecute ` Get-AdfsProperties` .
+El bloqueo inteligente de extranet usa la propiedad **ExtranetLockoutEnabled** de ADFS. Esta propiedad se usaba previamente para controlar el "bloqueo flexible de extranet" en el servidor 2012R2. Si se ha habilitado el bloqueo automático de extranet, para ver la configuración de propiedades actual, ejecute ` Get-AdfsProperties` .
 
 ### <a name="configuration-recommendations"></a>Recomendaciones para la configuración
 Al configurar el bloqueo inteligente de extranet, siga las prácticas recomendadas para establecer umbrales:
@@ -164,7 +164,7 @@ Para establecer esta propiedad, ejecute:
 ``` powershell
 Set-AdfsProperties -EnableExtranetLockout $true -ExtranetLockoutThreshold 15 -ExtranetObservationWindow (new-timespan -Minutes 30) -ExtranetLockoutRequirePDC $false
 ```
-### <a name="enable-log-only-mode"></a>Habilitar el modo de solo registro
+### <a name="enable-log-only-mode"></a>Habilitar el modo de Log-Only
 
 En el modo de solo registro, AD FS rellena la información de ubicación conocida de los usuarios y escribe los eventos de auditoría de seguridad, pero no bloquea las solicitudes. Este modo se usa para validar que se está ejecutando el bloqueo inteligente y para habilitar AD FS para "aprender" las ubicaciones conocidas de los usuarios antes de habilitar el modo "aplicar". Como AD FS aprende, almacena la actividad de inicio de sesión por usuario (ya sea en modo de solo registro o en modo de aplicación).
 Establezca el comportamiento de bloqueo en solo registro mediante la ejecución de los siguientes commandlet.
@@ -173,7 +173,7 @@ Establezca el comportamiento de bloqueo en solo registro mediante la ejecución 
 
 El modo de solo registro está pensado para ser un estado temporal, de modo que el sistema pueda conocer el comportamiento de inicio de sesión antes de introducir la aplicación de bloqueo con el comportamiento de bloqueo inteligente. La duración recomendada para el modo de solo registro es de 3-7 días. Si las cuentas están activamente en ataque, el modo de solo registro debe ejecutarse durante un período mínimo de 24 horas.
 
-En AD FS 2016, si está habilitado el comportamiento de "bloqueo automático de extranet" de 2012R2 antes de habilitar el bloqueo inteligente de extranet, el modo de solo registro deshabilitará el comportamiento de "bloqueo automático de extranet". AD FS el bloqueo inteligente no bloqueará a los usuarios en modo de solo registro. Sin embargo, AD local puede bloquear al usuario en función de la configuración de AD. Revise las directivas de bloqueo de AD para saber cómo AD local puede bloquear a los usuarios.
+En AD FS 2016, si está habilitado el comportamiento de "bloqueo automático de extranet" de 2012R2 antes de habilitar el bloqueo inteligente de extranet, Log-Only modo deshabilitará el comportamiento del "bloqueo de software de extranet". AD FS el bloqueo inteligente no bloqueará a los usuarios en modo de Log-Only. Sin embargo, AD local puede bloquear al usuario en función de la configuración de AD. Revise las directivas de bloqueo de AD para saber cómo AD local puede bloquear a los usuarios.
 
 En AD FS 2019, una ventaja adicional es poder habilitar el modo de solo registro para el bloqueo inteligente y, al mismo tiempo, seguir aplicando el comportamiento de bloqueo flexible anterior mediante el siguiente PowerShell.
 
@@ -224,7 +224,7 @@ Este comportamiento se puede invalidar pasando el parámetro-Server.
 
 `Set-ADFSAccountActivity user@contoso.com -AdditionalFamiliarIps “1.2.3.4”`
 
-- RESET-ADFSAccountLockout
+- Reset-ADFSAccountLockout
 
   Restablece el contador de bloqueo de una cuenta de usuario para cada ubicación familiar (badPwdCountFamiliar) o los contadores de ubicación desconocidos (badPwdCountUnfamiliar). Al restablecer un contador, el valor "FamiliarLockout" o "UnfamiliarLockout" se actualizará, ya que el contador de restablecimiento será menor que el umbral.
 
@@ -246,7 +246,7 @@ AD FS escribirá eventos de bloqueo de extranet en el registro de auditoría de 
 - Cuando se bloquea un usuario (alcanza el umbral de bloqueo para los intentos de inicio de sesión incorrectos)
 - Cuando AD FS recibe un intento de inicio de sesión para un usuario que ya está en el estado de bloqueo
 
-En el modo de solo registro, puede comprobar si hay eventos de bloqueo en el registro de auditoría de seguridad. En el caso de los eventos encontrados, puede comprobar el estado de usuario mediante el cmdlet Get-ADFSAccountActivity para determinar si el bloqueo se ha producido desde direcciones IP conocidas o desconocidas, y para doblar la lista de direcciones IP conocidas para ese usuario.
+En el modo de solo registro, puede comprobar si hay eventos de bloqueo en el registro de auditoría de seguridad. En el caso de los eventos encontrados, puede comprobar el estado de usuario mediante el cmdlet Get-ADFSAccountActivity para determinar si el bloqueo se ha producido desde direcciones IP conocidas o desconocidas, y para comprobar la lista de direcciones IP conocidas para ese usuario.
 
 
 |Id. de evento|Descripción|
@@ -291,6 +291,6 @@ R: con ESL habilitado, AD FS realiza un seguimiento de la actividad de la cuenta
 ## <a name="additional-references"></a>Referencias adicionales
 [Prácticas recomendadas para proteger Servicios de federación de Active Directory (AD FS)](../../ad-fs/deployment/best-practices-securing-ad-fs.md)
 
-[Set-AdfsProperties](/powershell/module/adfs/set-adfsproperties?view=win10-ps)
+[Set-AdfsProperties](/powershell/module/adfs/set-adfsproperties)
 
 [Operaciones de AD FS](../ad-fs-operations.md)

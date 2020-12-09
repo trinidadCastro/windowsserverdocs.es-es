@@ -5,12 +5,12 @@ ms.topic: article
 ms.author: asmahi
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: a7779b882fe6a704dcf12819ad91042c20381eba
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.openlocfilehash: 450bd8ea2b28491bdeb7adce271649b19665fa44
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90077222"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96864384"
 ---
 # <a name="hyper-v-configuration"></a>Configuración de Hyper-V
 
@@ -44,7 +44,7 @@ Las técnicas de administración de energía de servidor incluyen un costo, espe
 
 Windows Server usa la virtualización en una amplia variedad de escenarios. Desde un servidor IIS con poca carga hasta un SQL Server de disponibilidad moderada, a un host de nube con Hyper-V que ejecuta cientos de máquinas virtuales por servidor. Cada uno de estos escenarios puede tener requisitos de hardware, software y rendimiento únicos. De forma predeterminada, Windows Server usa y recomienda el plan de energía **equilibrado** , que permite la conservación de energía mediante el escalado del rendimiento del procesador en función del uso de la CPU.
 
-Con el plan de energía **equilibrado** , los Estados de energía más altos (y las latencias de respuesta más bajas en cargas de trabajo de inquilino) solo se aplican cuando el host físico está relativamente ocupado. Si tiene valor de respuesta determinista y de baja latencia para todas las cargas de trabajo de inquilinos, considere la posibilidad de cambiar del plan de energía **equilibrado** predeterminado al plan de energía de **alto rendimiento** . El plan de energía de **alto rendimiento** ejecutará los procesadores a toda velocidad todo el tiempo, deshabilitando eficazmente el cambio basado en demanda junto con otras técnicas de administración de energía y optimizará el rendimiento a través del ahorro de energía.
+Con el plan de energía **equilibrado** , los Estados de energía más altos (y las latencias de respuesta más bajas en cargas de trabajo de inquilino) solo se aplican cuando el host físico está relativamente ocupado. Si tiene valor de respuesta determinista y de baja latencia para todas las cargas de trabajo de inquilinos, considere la posibilidad de cambiar del plan de energía **equilibrado** predeterminado al plan de energía de **alto rendimiento** . El plan de energía de **alto rendimiento** ejecutará los procesadores a toda velocidad, deshabilitando eficazmente Demand-Based cambio junto con otras técnicas de administración de energía y optimizará el rendimiento a través del ahorro de energía.
 
 En el caso de los clientes, que están satisfechos con el ahorro de costos de reducir el número de servidores físicos y desean garantizar el máximo rendimiento de sus cargas de trabajo virtualizadas, considere la posibilidad de usar el plan de energía de **alto rendimiento** .
 
@@ -56,7 +56,7 @@ Para obtener recomendaciones adicionales y obtener información sobre cómo apro
 
 Windows Server 2016 incluyen la opción de instalación Server Core. Server Core ofrece un entorno mínimo para hospedar un conjunto seleccionado de roles de servidor, incluido Hyper-V. Presenta una superficie de disco más pequeña para el sistema operativo del host y un ataque y una superficie de servicio más pequeños. Por lo tanto, se recomienda encarecidamente que los servidores de virtualización de Hyper-V usen la opción de instalación Server Core.
 
-Una instalación Server Core solo ofrece una ventana de consola cuando el usuario ha iniciado sesión, pero Hyper-V expone características de administración remota, incluido [Windows PowerShell](/powershell/module/hyper-v/?view=win10-ps) para que los administradores puedan administrarla de forma remota.
+Una instalación Server Core solo ofrece una ventana de consola cuando el usuario ha iniciado sesión, pero Hyper-V expone características de administración remota, incluido [Windows PowerShell](/powershell/module/hyper-v/) para que los administradores puedan administrarla de forma remota.
 
 ## <a name="dedicated-server-role"></a>Rol de servidor dedicado
 
@@ -80,7 +80,7 @@ Siempre debe medir el uso de CPU del sistema físico mediante los contadores de 
 
 - **Procesador lógico de hipervisor de Hyper-V ( \* ) \\ % tiempo de ejecución del hipervisor** el tiempo empleado en ejecutarse dentro del hipervisor
 
-- El **procesador virtual raíz del hipervisor de Hyper-V ( \* ) \\ \\ *** mide el uso de CPU de la partición raíz
+- El **procesador virtual raíz del hipervisor de Hyper-V ( \* ) \\ \\*** mide el uso de CPU de la partición raíz
 
 - **Procesador virtual del hipervisor de Hyper- \* V \\ \\ ()*** mide el uso de CPU de las particiones de invitado
 

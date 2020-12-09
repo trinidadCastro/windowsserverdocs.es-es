@@ -5,12 +5,12 @@ ms.topic: article
 ms.author: phstee
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 8659a836d3ad3bd3e5e61f2849e2327e57536c76
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 99cdb71478b4cf607ddc8971bf376c7ff3de3087
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87992361"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96864365"
 ---
 # <a name="additional-performance-tuning-resources"></a>Recursos adicionales para ajustar el rendimiento
 
@@ -39,7 +39,7 @@ Use los vínculos de este tema para obtener más información sobre los concepto
 
 -   [Plataforma de filtrado de Windows](/windows-hardware/drivers/network/porting-packet-processing-drivers-and-apps-to-wfp)
 
--   [Guía de implementación de redes: implementación de características de red de alta velocidad](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/gg162681(v=ws.10))
+-   [Guía de implementación de redes: implementar High-Speed características de red](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/gg162681(v=ws.10))
 
 ## <a name="storage-subsystem-tuning-resources"></a>Recursos de ajuste del subsistema de almacenamiento
 
@@ -99,7 +99,7 @@ Use los vínculos de este tema para obtener más información sobre los concepto
 
 -   [Cómo asignar puertos TCP/IP a nodos NUMA](https://go.microsoft.com/fwlink/?LinkId=98293)
 
--   [ALTER SERVER CONFIGURATION (Transact-SQL)](/sql/t-sql/statements/alter-server-configuration-transact-sql?view=sql-server-ver15)
+-   [ALTER SERVER CONFIGURATION (Transact-SQL)](/sql/t-sql/statements/alter-server-configuration-transact-sql)
 
 
 ## <a name="server-tuning-tools"></a>Herramientas de optimización del servidor

@@ -1,19 +1,19 @@
 ---
-title: Usar la Directiva de DNS para DNS de cerebro dividido en Active Directory
+title: Usar la Directiva de DNS para Split-Brain DNS en Active Directory
 description: Puede usar este tema para aprovechar las capacidades de administración del tráfico de las directivas DNS para implementaciones de cerebro dividido con Active Directory zonas DNS integradas en Windows Server 2016.
 manager: brianlic
 ms.topic: article
 ms.assetid: f9533204-ad7e-4e49-81c1-559324a16aeb
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 4aa18e3f93cdb0a50cac3db697a10dd40c1f05e0
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 423debd6538e2de8de7e2919e18e7da39fe8c733
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996903"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96865334"
 ---
-# <a name="use-dns-policy-for-split-brain-dns-in-active-directory"></a>Usar la Directiva de DNS para DNS de cerebro dividido en Active Directory
+# <a name="use-dns-policy-for-split-brain-dns-in-active-directory"></a>Usar la Directiva de DNS para Split-Brain DNS en Active Directory
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
@@ -25,7 +25,7 @@ Anteriormente, este escenario requería que los administradores de DNS mantengan
 
 > [!NOTE]
 > - Las implementaciones de DNS se dividen \- en cerebro cuando hay dos versiones de una sola zona, una versión para los usuarios internos de la intranet de la organización y una versión para los usuarios externos, que suelen ser usuarios de Internet.
-> - En el tema [uso de la Directiva de DNS para la implementación de DNS de cerebro dividido](split-brain-DNS-deployment.md) se explica cómo puede usar las directivas de DNS y los ámbitos de zona para implementar un \- sistema DNS de cerebro dividido en un solo servidor DNS de Windows Server 2016.
+> - En el tema [uso de la Directiva de DNS para la implementación de Split-Brain DNS](split-brain-DNS-deployment.md) se explica cómo puede usar las directivas de DNS y los ámbitos de zona para implementar un \- sistema DNS de cerebro dividido en un solo servidor DNS de Windows Server 2016.
 
 ## <a name="example-split-brain-dns-in-active-directory"></a>Ejemplo \- de DNS de cerebro dividido en Active Directory
 
@@ -48,7 +48,7 @@ El administrador de DNS configura las interfaces de servidor DNS con las siguien
 
 En la ilustración siguiente se muestra este escenario.
 
-![Implementación de DNS integrada en AD de cerebro dividido](../../media/DNS-SB-AD/DNS-SB-AD.jpg)
+![Split-Brain la implementación de DNS integrada en AD](../../media/DNS-SB-AD/DNS-SB-AD.jpg)
 
 ## <a name="how-dns-policy-for-split-brain-dns-in-active-directory-works"></a>Cómo funciona la Directiva de DNS para la división \- de DNS de cerebro dividido en Active Directory
 
@@ -75,12 +75,12 @@ $policies |  Add-DnsServerQueryResolutionPolicy -ZoneName "contoso.com" -Compute
 
 Para obtener más información, vea los siguientes temas de referencia de Windows PowerShell.
 
-- [Get-DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/get-dnsserverqueryresolutionpolicy?view=win10-ps)
-- [Add-DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)
+- [Get-DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/get-dnsserverqueryresolutionpolicy)
+- [Add-DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy)
 
 ## <a name="how-to-configure-dns-policy-for-split-brain-dns-in-active-directory"></a>Configuración de la Directiva de DNS para el \- DNS de cerebro dividido en Active Directory
 
-Para configurar la implementación de un cerebro dividido en DNS mediante la Directiva DNS, debe usar las siguientes secciones, que proporcionan instrucciones de configuración detalladas.
+Para configurar DNS Split-Brain la implementación mediante la Directiva DNS, debe usar las siguientes secciones, que proporcionan instrucciones de configuración detalladas.
 
 ### <a name="add-the-active-directory-integrated-zone"></a>Agregar la Active Directory zona integrada
 
@@ -90,7 +90,7 @@ Puede usar el siguiente comando de ejemplo para agregar la Active Directory zona
 Add-DnsServerPrimaryZone -Name "contoso.com" -ReplicationScope "Domain" -PassThru
 ```
 
-Para obtener más información, consulte [Add-DnsServerPrimaryZone](/powershell/module/dnsserver/add-dnsserverprimaryzone?view=win10-ps).
+Para obtener más información, consulte [Add-DnsServerPrimaryZone](/powershell/module/dnsserver/add-dnsserverprimaryzone).
 
 ### <a name="create-the-scopes-of-the-zone"></a>Crear los ámbitos de la zona
 
@@ -108,7 +108,7 @@ Puede usar el siguiente comando de ejemplo para crear el ámbito de zona en el s
 Add-DnsServerZoneScope -ZoneName "contoso.com" -Name "external"
 ```
 
-Para obtener más información, consulte [Add-DnsServerZoneScope](/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps).
+Para obtener más información, consulte [Add-DnsServerZoneScope](/powershell/module/dnsserver/add-dnsserverzonescope).
 
 ### <a name="add-records-to-the-zone-scopes"></a>Agregar registros a los ámbitos de zona
 
@@ -116,7 +116,7 @@ El siguiente paso consiste en agregar los registros que representan el host del 
 
 En el ámbito de zona interna predeterminada, se agrega el registro www.career.contoso.com con la dirección IP 10.0.0.39, que es una dirección IP privada; y en el ámbito de la zona externa, se agrega el mismo registro \( www.Career.contoso.com \) con la dirección IP pública 65.55.39.10.
 
-Los registros \( en el ámbito de zona interna predeterminada y el ámbito de zona externa \) se replicarán automáticamente en el dominio con sus respectivos ámbitos de zona.
+Los registros \( en el ámbito de zona interna predeterminada y el ámbito de zona externa \)  se replicarán automáticamente en el dominio con sus respectivos ámbitos de zona.
 
 Puede usar el siguiente comando de ejemplo para agregar registros a los ámbitos de zona en el servidor DNS.
 
@@ -128,14 +128,14 @@ Add-DnsServerResourceRecord -ZoneName "contoso.com" -A -Name "www.career" -IPv4A
 > [!NOTE]
 > El parámetro **– ZoneScope** no se incluye cuando el registro se agrega al ámbito de la zona predeterminada. Esta acción es igual que agregar registros a una zona normal.
 
-Para obtener más información, consulte [Add-DnsServerResourceRecord](/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps).
+Para obtener más información, consulte [Add-DnsServerResourceRecord](/powershell/module/dnsserver/add-dnsserverresourcerecord).
 
 ### <a name="create-the-dns-policies"></a>Crear las directivas de DNS
 
 Una vez que haya identificado las interfaces de servidor para la red externa y la red interna y haya creado los ámbitos de zona, debe crear directivas DNS que conecten los ámbitos de zona externa y interna.
 
 > [!NOTE]
-> En este ejemplo se usa el \( parámetro-ServerInterface de la interfaz de servidor en el comando de ejemplo siguiente \) como criterio para diferenciar entre los clientes internos y externos. Otro método para diferenciar entre clientes externos e internos es mediante el uso de subredes de cliente como criterio. Si puede identificar las subredes a las que pertenecen los clientes internos, puede configurar la Directiva de DNS para diferenciar en función de la subred de cliente. Para obtener información sobre cómo configurar la administración del tráfico mediante los criterios de subred de cliente, consulte [uso de la Directiva de DNS para la administración del tráfico basado en la ubicación geográfica con los servidores principales](primary-geo-location.md).
+> En este ejemplo se usa el \( parámetro-ServerInterface de la interfaz de servidor en el comando de ejemplo siguiente \) como criterio para diferenciar entre los clientes internos y externos. Otro método para diferenciar entre clientes externos e internos es mediante el uso de subredes de cliente como criterio. Si puede identificar las subredes a las que pertenecen los clientes internos, puede configurar la Directiva de DNS para diferenciar en función de la subred de cliente. Para obtener información sobre cómo configurar la administración del tráfico mediante los criterios de subred de cliente, consulte [uso de la Directiva de DNS para la administración del tráfico basado en Geo-Location con servidores principales](primary-geo-location.md).
 
 Después de configurar las directivas, cuando se recibe una consulta DNS en la interfaz pública, se devuelve la respuesta del ámbito externo de la zona.
 
@@ -149,7 +149,7 @@ Add-DnsServerQueryResolutionPolicy -Name "SplitBrainZonePolicy" -Action ALLOW -S
 > [!NOTE]
 > 208.84.0.53 es la dirección IP de la interfaz de red pública.
 
-Para obtener más información, consulte [Add-DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps).
+Para obtener más información, consulte [Add-DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy).
 
 Ahora el servidor DNS está configurado con las directivas DNS necesarias para un servidor de nombres de cerebro dividido con una zona DNS integrada Active Directory.
 

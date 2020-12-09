@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: 3d6af6e6dea584485e2517d8e54c107c5cc2af90
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 0bf64e363226be582c24d644491dcbf4f85ac52e
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996267"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96863963"
 ---
 # <a name="shielded-vms---hosting-service-provider-sets-up-windows-azure-pack"></a>Máquinas virtuales blindadas: el proveedor de servicios de hosting configura Microsoft Azure Pack
 
@@ -25,7 +25,7 @@ Realizará las tareas siguientes para configurar Windows Azure Pack en su entorn
 
 1. Complete la configuración de System Center 2016-Virtual Machine Manager (VMM) para el tejido de hospedaje. Esto incluye la configuración de plantillas de máquina virtual y una nube de máquinas virtuales, que se expondrán a través de Windows Azure Pack:
 
-    [Escenario: Implementación de hosts protegidos y máquinas virtuales blindadas en VMM](/system-center/vmm/deploy-guarded-host-fabric?view=sc-vmm-2019)
+    [Escenario: Implementación de hosts protegidos y máquinas virtuales blindadas en VMM](/system-center/vmm/deploy-guarded-host-fabric)
 
 2. Instale y configure System Center 2016-Service Provider Foundation (SPF). Este software permite a Windows Azure Pack comunicarse con los servidores VMM:
 
@@ -48,7 +48,7 @@ Instale y configure Windows Azure Pack (WAP) en el equipo en el que desea hosped
 
 2.  Descargue e instale el [instalador de plataforma web](https://www.microsoft.com/web/downloads/platform.aspx). Si el equipo no está conectado a Internet, siga las [instrucciones de instalación sin conexión](https://www.iis.net/learn/install/web-platform-installer/web-platform-installer-v4-command-line-webpicmdexe-rtw-release).
 
-3.  Abra el instalador de plataforma web y busque **Windows Azure Pack: portal y API Express** en la pestaña **productos** . Haga clic en **Agregar**y luego en **instalar** en la parte inferior de la ventana.
+3.  Abra el instalador de plataforma web y busque **Windows Azure Pack: portal y API Express** en la pestaña **productos** . Haga clic en **Agregar** y, a continuación, en **instalar** en la parte inferior de la ventana.
 
 4.  Lleve a cabo la instalación. Una vez finalizada la instalación, se abre el sitio de configuración (*https:// &lt; wapserver &gt; : 30101/*) en el explorador Web. En este sitio web, proporcione información sobre su SQL Server y termine de configurar WAP.
 
@@ -61,7 +61,7 @@ Para obtener ayuda para la configuración de Windows Azure Pack, consulte [insta
 
 Antes de usar Windows Azure Pack, ya debe tener instalado y configurado para su infraestructura.
 
-1.  Vaya al portal de administración de Windows Azure Pack en *https:// &lt; wapserver &gt; : 30091*y, a continuación, inicie sesión con sus credenciales de administrador.
+1.  Vaya al portal de administración de Windows Azure Pack en *https:// &lt; wapserver &gt; : 30091* y, a continuación, inicie sesión con sus credenciales de administrador.
 
 2.  En el panel izquierdo, haga clic en **nubes de máquinas virtuales**.
 
@@ -97,7 +97,7 @@ Para permitir que los inquilinos creen máquinas virtuales en WAP, primero debe 
 
    ![Configuración de nubes de máquinas virtuales en Windows Azure Pack](../media/Guarded-Fabric-Shielded-VM/guarded-host-azure-pack-03-virtual-machine-clouds.png)
 
-10. Desplácese hacia abajo hasta la sección titulado **plantillas**y, a continuación, seleccione una o varias plantillas para su oferta a los inquilinos. Puede ofrecer plantillas blindadas y no blindadas a los inquilinos, pero se debe ofrecer una plantilla blindada para proporcionar a los inquilinos garantías completas sobre la integridad de la máquina virtual y sus secretos.
+10. Desplácese hacia abajo hasta la sección titulado **plantillas** y, a continuación, seleccione una o varias plantillas para su oferta a los inquilinos. Puede ofrecer plantillas blindadas y no blindadas a los inquilinos, pero se debe ofrecer una plantilla blindada para proporcionar a los inquilinos garantías completas sobre la integridad de la máquina virtual y sus secretos.
 
 11. En la sección **redes** , agregue una o más redes para los inquilinos.
 

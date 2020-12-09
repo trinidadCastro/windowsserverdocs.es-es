@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 1f2cdc1123595dae9c0c72bcdc77c2f55382c760
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: c5b82b490abb5564392be3a26db5c47a5a372f6e
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89629942"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96864285"
 ---
 # <a name="certreq"></a>certreq
 
@@ -63,7 +63,7 @@ Para enviar una solicitud de certificado simple:
 certreq –submit certrequest.req certnew.cer certnew.pfx
 ```
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - Este es el parámetro predeterminado certreq.exe. Si no se especifica ninguna opción en el símbolo de la línea de comandos, certreq.exe intenta enviar una solicitud de certificado a una entidad de certificación. Debe especificar un archivo de solicitud de certificado al utilizar la opción **– submit** . Si se omite este parámetro, aparece una ventana **Abrir archivo** común, que permite seleccionar el archivo de solicitud de certificado adecuado.
 
@@ -77,7 +77,7 @@ Para recuperar el identificador de certificado 20 y crear un archivo de certific
 certreq -retrieve 20 MyCertificate.cer
 ```
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - Use CertReq: Retrieve *RequestId* para recuperar el certificado después de que la entidad de certificación lo haya emitido. *RequestId* PKC puede ser un prefijo 0x o hexadecimal con 0x y puede ser un número de serie de certificado sin prefijo 0x. También puede utilizarlo para recuperar cualquier certificado emitido por la entidad de certificación, incluidos los certificados revocados o expirados, sin tener en cuenta si la solicitud del certificado estaba en el estado pendiente.
 
@@ -101,7 +101,7 @@ Esta área del archivo INF es obligatoria para todas las plantillas de solicitud
 
 | Clave<sup>1</sup> | Descripción | Valor<sup>2</sup> | Ejemplo |
 | --- | ---------- | ----- | ------- |
-| Firmante | Varias aplicaciones se basan en la información del firmante de un certificado. Se recomienda especificar un valor para esta clave. Si el asunto no se establece aquí, se recomienda incluir un nombre de sujeto como parte de la extensión de certificado de nombre alternativo del firmante. | Valores de cadena de nombre distintivo relativo | Subject = CN = Equipo1. contoso. com subject = CN = John Smith, CN = users, DC = Contoso, DC = com |
+| Asunto | Varias aplicaciones se basan en la información del firmante de un certificado. Se recomienda especificar un valor para esta clave. Si el asunto no se establece aquí, se recomienda incluir un nombre de sujeto como parte de la extensión de certificado de nombre alternativo del firmante. | Valores de cadena de nombre distintivo relativo | Subject = CN = Equipo1. contoso. com subject = CN = John Smith, CN = users, DC = Contoso, DC = com |
 | Exportable | Si se establece en TRUE, la clave privada se puede exportar con el certificado. Para garantizar un alto nivel de seguridad, las claves privadas no deben ser exportables; sin embargo, en algunos casos, podría ser necesario si varios equipos o usuarios deben compartir la misma clave privada. | `true | false` | `Exportable = TRUE`. Las claves CNG pueden distinguir entre este y el texto sin formato exportable. No se pueden CAPI1 claves. |
 | ExportableEncrypted | Especifica si la clave privada debe configurarse para ser exportable. | `true | false` | `ExportableEncrypted = true`<p>**Sugerencia:** No todos los tamaños y algoritmos de clave pública funcionarán con todos los algoritmos hash. El CSP especificado también debe admitir el algoritmo hash especificado. Para ver la lista de algoritmos hash admitidos, puede ejecutar el comando: `certutil -oid 1 | findstr pwszCNGAlgid | findstr /v CryptOIDInfo` |
 | HashAlgorithm | Algoritmo hash que se va a usar para esta solicitud. | `Sha256, sha384, sha512, sha1, md5, md4, md2` | `HashAlgorithm = sha1`. Para ver la lista de algoritmos hash admitidos, use: certutil-OID 1 | Findstr pwszCNGAlgid | Findstr/v CryptOIDInfo|
@@ -119,7 +119,7 @@ Esta área del archivo INF es obligatoria para todas las plantillas de solicitud
 | EncryptionLength | Longitud del algoritmo de cifrado que se va a usar. | Cualquier longitud permitida por el EncryptionAlgorithm especificado. | `EncryptionLength = 128` |
 | ProviderName | El nombre del proveedor es el nombre para mostrar del CSP. | Si no conoce el nombre del proveedor de CSP que está utilizando, ejecute `certutil –csplist` desde una línea de comandos. El comando mostrará los nombres de todos los CSP que están disponibles en el sistema local. | `ProviderName = Microsoft RSA SChannel Cryptographic Provider` |
 | ProviderType | El tipo de proveedor se usa para seleccionar proveedores específicos en función de la capacidad de un algoritmo concreto, como RSA Full. | Si no conoce el tipo de proveedor del CSP que está utilizando, ejecute `certutil –csplist` desde un símbolo de la línea de comandos. El comando mostrará el tipo de proveedor de todos los CSP que están disponibles en el sistema local. | `ProviderType = 1` |
-| RenewalCert | Si necesita renovar un certificado que existe en el sistema donde se genera la solicitud de certificado, debe especificar su hash de certificado como valor de esta clave. | El hash del certificado de cualquier certificado que esté disponible en el equipo donde se crea la solicitud de certificado. Si no conoce el hash del certificado, use el complemento MMC certificados y examine el certificado que se debe renovar. Abra las propiedades del certificado y vea el `Thumbprint` atributo del certificado. La renovación de certificados requiere un `PKCS#7` `CMC` formato de solicitud o. | `RenewalCert = 4EDF274BD2919C6E9EC6A522F0F3B153E9B1582D` |
+| RenewalCert | Si necesita renovar un certificado que existe en el sistema donde se genera la solicitud de certificado, debe especificar su hash de certificado como valor de esta clave. | El hash del certificado de cualquier certificado que esté disponible en el equipo donde se crea la solicitud de certificado. Si no conoce el hash del certificado, use el Snap-In de MMC certificados y examine el certificado que se debe renovar. Abra las propiedades del certificado y vea el `Thumbprint` atributo del certificado. La renovación de certificados requiere un `PKCS#7` `CMC` formato de solicitud o. | `RenewalCert = 4EDF274BD2919C6E9EC6A522F0F3B153E9B1582D` |
 | RequesterName | Realiza la solicitud de inscripción en nombre de otra solicitud de usuario. La solicitud también debe estar firmada con un certificado de agente de inscripción o la CA rechazará la solicitud. Use la `-cert` opción para especificar el certificado de agente de inscripción. Se puede especificar el nombre del solicitante para las solicitudes de certificado si `RequestType` se establece en `PKCS#7` o `CMC` . Si `RequestType` se establece en `PKCS#10` , se omitirá esta clave. `Requestername`Solo se puede establecer como parte de la solicitud. No se puede manipular `Requestername` en una solicitud pendiente. | `Domain\User` | `Requestername = Contoso\BSmith` |
 | RequestType | Determina el estándar que se usa para generar y enviar la solicitud de certificado. | <ul><li>`PKCS10 -- 1`</li><li>`PKCS7 -- 2`</li><li>`CMC -- 3`</li><li>`Cert -- 4`</li><li>`SCEP -- fd00 (64768)`</li></ul>**Sugerencia:** Esta opción indica que se trata de un certificado autofirmado o emitido por sí mismo. No genera una solicitud, sino un nuevo certificado y, a continuación, instala el certificado. Autofirmado es el valor predeterminado. Especifique un certificado de firma mediante la opción – CERT para crear un certificado emitido automáticamente que no sea autofirmado. | `RequestType = CMC` |
 | SecurityDescriptor | Contiene la información de seguridad asociada a los objetos protegibles. Para la mayoría de los objetos protegibles, puede especificar el descriptor de seguridad de un objeto en la llamada de función que crea el objeto. Cadenas basadas en el [lenguaje de definición de descriptores de seguridad](/windows/win32/secauthz/security-descriptor-definition-language).<p>**Sugerencia:** Esto solo es relevante para las claves de la tarjeta no inteligente de contexto del equipo. | `SecurityDescriptor = D:P(A;;GA;;;SY)(A;;GA;;;BA)` |
@@ -160,7 +160,7 @@ Esta sección es opcional.
 | *continue* | | `continue = 1.3.6.1.5.5.7` |
 | *continue* | | `continue = 1.3.6.1.5.5.7.3.1` |
 | 2.5.29.19 | | `{text}ca=0pathlength=3` |
-| Crítica | | `Critical=2.5.29.19` |
+| Crítico | | `Critical=2.5.29.19` |
 | Especificación | | <ul><li>`AT_NONE -- 0`</li><li>`AT_SIGNATURE -- 2`</li><li>`AT_KEYEXCHANGE -- 1`</ul></li> |
 | RequestType | | <ul><li>`PKCS10 -- 1`</li><li>`PKCS7 -- 2`</li><li>`CMC -- 3`</li><li>`Cert -- 4`</li><li>`SCEP -- fd00 (64768)`</li></ul> |
 | KeyUsage | | <ul><li>`CERT_DIGITAL_SIGNATURE_KEY_USAGE -- 80 (128)`</li><li>`CERT_NON_REPUDIATION_KEY_USAGE -- 40 (64)`</li><li>`CERT_KEY_ENCIPHERMENT_KEY_USAGE -- 20 (32)`</li><li>`CERT_DATA_ENCIPHERMENT_KEY_USAGE -- 10 (16)`</li><li>`CERT_KEY_AGREEMENT_KEY_USAGE -- 8`</li><li>`CERT_KEY_CERT_SIGN_KEY_USAGE -- 4`</li><li>`CERT_OFFLINE_CRL_SIGN_KEY_USAGE -- 2`</li><li>`CERT_CRL_SIGN_KEY_USAGE -- 2`</li><li>`CERT_ENCIPHER_ONLY_KEY_USAGE -- 1`</li><li>`CERT_DECIPHER_ONLY_KEY_USAGE -- 8000 (32768)`</li></ul> |
@@ -172,7 +172,7 @@ Esta sección es opcional.
 > [!NOTE]
 > `SubjectNameFlags` permite que el archivo INF especifique qué campos de extensión de **asunto** y **SubjectAltName** se deben rellenar automáticamente mediante CertReq en función del usuario actual o de las propiedades de la máquina actual: nombre DNS, UPN, etc. El uso de la plantilla literal significa que en su lugar se utilizan marcas de nombre de plantilla. Esto permite usar un único archivo INF en varios contextos para generar solicitudes con información de asunto específica del contexto.
 >
-> `X500NameFlags` especifica las marcas que se van a pasar directamente a `CertStrToName` la API cuando el `Subject INF keys` valor se convierte en un **nombre**distintivo con codificación ASN. 1.
+> `X500NameFlags` especifica las marcas que se van a pasar directamente a `CertStrToName` la API cuando el `Subject INF keys` valor se convierte en un **nombre** distintivo con codificación ASN. 1.
 
 #### <a name="example"></a>Ejemplo
 
@@ -258,7 +258,7 @@ certreq -sign myrequest.req myrequest.req
 certreq -submit myrequest_sign.req myrequest_cert.cer
 ```
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - Si usa `certreq -sign` sin ningún parámetro adicional, se abrirá una ventana de diálogo para que pueda seleccionar el archivo solicitado (req, CMC, txt, der, cer o CRT).
 
@@ -339,7 +339,7 @@ Los artículos siguientes contienen ejemplos de uso de CertReq:
 
 - [Creación manual de un certificado SSL de servidor Web](https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/how-to-create-a-web-server-ssl-certificate-manually/ba-p/1128529)
 
-- [Inscripción de certificados para el agente de System Center Operations Manager](/system-center/scom/plan-planning-agent-deployment?view=sc-om-2019)
+- [Inscripción de certificados para el agente de System Center Operations Manager](/system-center/scom/plan-planning-agent-deployment)
 
 - [Introducción a los Servicios de certificados de Active Directory](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11))
 

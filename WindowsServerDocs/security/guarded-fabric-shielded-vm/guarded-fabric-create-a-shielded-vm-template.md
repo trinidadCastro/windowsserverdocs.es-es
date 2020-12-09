@@ -6,19 +6,19 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 01/29/2019
-ms.openlocfilehash: 713f52a935f59ca1fea35ce386ab29adb4b64080
-ms.sourcegitcommit: 2365a7b23e2eccd13be350306c622d2ad9d36bc8
+ms.openlocfilehash: 43d03727195e942c68e5ec3a982ddc6b7f756dbc
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96788098"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96864434"
 ---
 # <a name="create-a-windows-shielded-vm-template-disk"></a>Creación de un disco de plantilla de máquina virtual blindada con Windows
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2019
 
 
-Al igual que con las máquinas virtuales normales, puede crear una plantilla de máquina virtual (por ejemplo, una [plantilla de máquina virtual en Virtual Machine Manager (VMM)](/system-center/vmm/library-vm-templates?view=sc-vmm-2019)) para facilitar a los inquilinos y administradores la implementación de nuevas máquinas virtuales en el tejido mediante un disco de plantilla. Dado que las máquinas virtuales blindadas son recursos sensibles a la seguridad, existen pasos adicionales para crear una plantilla de máquina virtual que admita el blindaje. En este tema se describen los pasos para crear un disco de plantilla blindada y una plantilla de máquina virtual en VMM.
+Al igual que con las máquinas virtuales normales, puede crear una plantilla de máquina virtual (por ejemplo, una [plantilla de máquina virtual en Virtual Machine Manager (VMM)](/system-center/vmm/library-vm-templates)) para facilitar a los inquilinos y administradores la implementación de nuevas máquinas virtuales en el tejido mediante un disco de plantilla. Dado que las máquinas virtuales blindadas son recursos sensibles a la seguridad, existen pasos adicionales para crear una plantilla de máquina virtual que admita el blindaje. En este tema se describen los pasos para crear un disco de plantilla blindada y una plantilla de máquina virtual en VMM.
 
 Para entender cómo se ajusta este tema en el proceso general de implementación de máquinas virtuales blindadas, consulte [los pasos de configuración de proveedor de servicio de hospedaje para hosts protegidos y máquinas virtuales blindadas](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md).
 
@@ -138,7 +138,7 @@ Una vez creada la plantilla, los inquilinos pueden usarla para crear nuevas máq
 
 ## <a name="prepare-and-protect-the-vhdx-using-powershell"></a>Preparación y protección del VHDX con PowerShell
 
-Como alternativa a la ejecución del Asistente para crear un disco de plantilla, puede copiar el disco de plantilla y el certificado en un equipo que ejecute RSAT y ejecutar [Protect-TemplateDisk](/powershell/module/shieldedvmtemplate/protect-templatedisk?view=win10-ps) para iniciar el proceso de firma.
+Como alternativa a la ejecución del Asistente para crear un disco de plantilla, puede copiar el disco de plantilla y el certificado en un equipo que ejecute RSAT y ejecutar [Protect-TemplateDisk](/powershell/module/shieldedvmtemplate/protect-templatedisk) para iniciar el proceso de firma.
 En el ejemplo siguiente se usa el nombre y la información de versión especificados por los parámetros _TemplateName_ y _version_ .
 El VHDX que proporcione al `-Path` parámetro se sobrescribirá con el disco de plantilla actualizado, por lo que debe asegurarse de realizar una copia antes de ejecutar el comando.
 

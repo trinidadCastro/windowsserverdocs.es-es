@@ -5,12 +5,12 @@ ms.topic: article
 ms.author: pavel
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 799598223812f5992db0354780424f7da13033ea
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.openlocfilehash: 31cc9f964ac7ea2d95d5240376ea2ce7fb46fcee
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90078012"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96864334"
 ---
 # <a name="cache-and-memory-manager-improvements"></a>Mejoras en el administrador de memoria y caché
 
@@ -18,7 +18,7 @@ En este tema se describen las mejoras en el administrador de caché y en el admi
 
 ## <a name="cache-manager-improvements-in-windows-server-2016"></a>Mejoras del administrador de caché en Windows Server 2016
 El administrador de caché también agregó compatibilidad con las lecturas asincrónicas en caché verdaderas.
-Esto podría mejorar el rendimiento de una aplicación si se basa en las lecturas asincrónicas almacenadas en caché.Aunque la mayoría de los sistemas de archivos integrados han admitido lecturas en caché asincrónica durante un tiempo, a menudo había limitaciones de rendimiento debido a diversas opciones de diseño relacionadas con el control de los grupos de subprocesos y las colas de trabajo internas de los sistemas de archivos.Con compatibilidad desde el kernel, el administrador de caché ahora oculta todas las complejidades de administración de colas de trabajos y grupos de subprocesos de los sistemas de archivos, lo que resulta más eficaz en el control de las lecturas asincrónicas almacenadas en caché. El administrador de caché tiene un conjunto de estructuras de control de memoria para cada uno de los niveles de anidamiento de VHD (máximo admitido por el sistema) para maximizar el paralelismo.
+Esto podría mejorar el rendimiento de una aplicación si se basa en las lecturas asincrónicas almacenadas en caché.  Aunque la mayoría de los sistemas de archivos integrados han admitido lecturas en caché asincrónica durante un tiempo, a menudo había limitaciones de rendimiento debido a diversas opciones de diseño relacionadas con el control de los grupos de subprocesos y las colas de trabajo internas de los sistemas de archivos.  Con compatibilidad desde el kernel, el administrador de caché ahora oculta todas las complejidades de administración de colas de trabajos y grupos de subprocesos de los sistemas de archivos, lo que resulta más eficaz en el control de las lecturas asincrónicas almacenadas en caché. El administrador de caché tiene un conjunto de estructuras de control de memoria para cada uno de los niveles de anidamiento de VHD (máximo admitido por el sistema) para maximizar el paralelismo.
 
 
 ## <a name="cache-manager-improvements-in-windows-server-2012"></a>Mejoras del administrador de caché en Windows Server 2012
@@ -33,4 +33,4 @@ Estos son algunos ejemplos de roles de servidor en los que no es probable que la
 
 -   Servidores de Microsoft SQL Server que están configurados para usar AWE o páginas grandes (la mayor parte de la memoria es privada pero no paginable)
 
-La combinación de páginas está deshabilitada de forma predeterminada, pero se puede habilitar mediante el cmdlet [enable-MMAgent de](/powershell/module/mmagent/enable-mmagent?view=win10-ps) Windows PowerShell. La combinación de páginas se agregó en Windows Server 2012.
+La combinación de páginas está deshabilitada de forma predeterminada, pero se puede habilitar mediante el cmdlet [enable-MMAgent de](/powershell/module/mmagent/enable-mmagent) Windows PowerShell. La combinación de páginas se agregó en Windows Server 2012.

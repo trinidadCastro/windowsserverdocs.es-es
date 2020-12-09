@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: a9ee7a56-f062-474f-a61c-9387ff260929
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 45bff2c65f0497216cb8c7e7dc9dd670c5387ba2
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 5c03f2257a60d2d3a5b566014568be1650b42b94
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996862"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96864014"
 ---
 # <a name="use-dns-policy-for-geo-location-based-traffic-management-with-primary-secondary-deployments"></a>Uso de directiva DNS para la administración del tráfico basada en la ubicación geográfica con implementaciones primarias-secundarias
 
@@ -19,14 +19,14 @@ ms.locfileid: "87996862"
 
 Puede usar este tema para obtener información sobre cómo crear una directiva DNS para la administración del tráfico basada en la ubicación geográfica cuando la implementación de DNS incluye servidores DNS principal y secundario.
 
-En el escenario anterior, se [usa la Directiva DNS para la administración del tráfico basada en la ubicación geográfica con los servidores principales](primary-geo-location.md), y se proporcionan instrucciones para configurar la Directiva de DNS para la administración del tráfico basada en la ubicación geográfica en un servidor DNS principal. En la infraestructura de Internet, sin embargo, los servidores DNS están ampliamente implementados en un modelo primario-secundario, donde la copia de escritura de una zona se almacena en servidores principales seleccionados y seguros, y las copias de solo lectura de la zona se mantienen en varios servidores secundarios.
+En el escenario anterior, se [usa la Directiva DNS para la administración del tráfico basada en Geo-Location con servidores principales](primary-geo-location.md), se proporcionan instrucciones para configurar la Directiva de DNS para la administración del tráfico basado en la ubicación geográfica en un servidor DNS principal. En la infraestructura de Internet, sin embargo, los servidores DNS están ampliamente implementados en un modelo primario-secundario, donde la copia de escritura de una zona se almacena en servidores principales seleccionados y seguros, y las copias de solo lectura de la zona se mantienen en varios servidores secundarios.
 
 Los servidores secundarios usan la transferencia autoritaria (AXFR) y la transferencia de zona incremental (IXFR) de protocolos de transferencia de zona para solicitar y recibir actualizaciones de zona que incluyen nuevos cambios en las zonas de los servidores DNS principales.
 
 > [!NOTE]
 > Para obtener más información sobre AXFR, consulte la solicitud del equipo de ingeniería de Internet Engineering (IETF) [para obtener comentarios 5936](https://tools.ietf.org/rfc/rfc5936.txt). Para obtener más información sobre IXFR, consulte la solicitud del equipo de ingeniería de Internet Engineering (IETF) [para obtener comentarios 1995](https://tools.ietf.org/html/rfc1995).
 
-## <a name="primary-secondary-geo-location-based-traffic-management-example"></a>Ejemplo de administración de tráfico basado en la ubicación geográfica principal-secundaria
+## <a name="primary-secondary-geo-location-based-traffic-management-example"></a>Primary-Secondary ejemplo de administración del tráfico basada en Geo-Location
 A continuación se ofrece un ejemplo de cómo se puede usar la Directiva DNS en una implementación principal-secundaria para lograr el redireccionamiento del tráfico en función de la ubicación física del cliente que realiza una consulta DNS.
 
 En este ejemplo se usan dos compañías ficticias: contoso Cloud Services, que proporciona soluciones de hospedaje web y de dominio. y Woodgrove Food Services, que proporciona servicios de entrega de alimentos en varias ciudades en todo el mundo y que tiene un sitio web denominado woodgrove.com.
@@ -41,9 +41,9 @@ Hay una copia de zona principal de escritura en **PrimaryServer** (dirección IP
 
 En la ilustración siguiente se muestra este escenario.
 
-![Ejemplo de administración de tráfico basado en la ubicación geográfica principal-secundaria](../../media/Dns-Policy_PS1/dns_policy_primarysecondary1.jpg)
+![Primary-Secondary ejemplo de administración del tráfico basada en Geo-Location](../../media/Dns-Policy_PS1/dns_policy_primarysecondary1.jpg)
 
-## <a name="how-the-dns-primary-secondary-system-works"></a>Cómo funciona el sistema principal-secundario de DNS
+## <a name="how-the-dns-primary-secondary-system-works"></a>Cómo funciona el sistema de Primary-Secondary DNS
 
 Cuando se implementa la administración de tráfico basada en la ubicación geográfica en una implementación de DNS principal-secundario, es importante comprender cómo se producen las transferencias de zona secundaria principal y secundaria antes de aprender sobre las transferencias de nivel de ámbito de zona. En las secciones siguientes se proporciona información sobre las transferencias de nivel de ámbito de zona y zona.
 
@@ -76,9 +76,9 @@ Después de este proceso, el servidor principal mantiene una lista de secundaria
 
 Para cualquier actualización adicional en un ámbito de zona, se envía una notificación IXFR a los servidores secundarios, con el mismo RR OPT. El ámbito de la zona que recibe esa notificación hace que la solicitud IXFR que contiene el RR OPT y el mismo proceso que se ha descrito anteriormente.
 
-## <a name="how-to-configure-dns-policy-for-primary-secondary-geo-location-based-traffic-management"></a>Configuración de la Directiva de DNS para la administración del tráfico basada en la ubicación geográfica principal y secundaria
+## <a name="how-to-configure-dns-policy-for-primary-secondary-geo-location-based-traffic-management"></a>Configuración de la Directiva de DNS para la administración del tráfico basada en Primary-Secondary Geo-Location
 
-Antes de comenzar, asegúrese de que ha completado todos los pasos del tema [uso de la Directiva de DNS para la administración del tráfico basado en la ubicación geográfica con los servidores principales](./primary-geo-location.md), y el servidor DNS principal se configura con zonas, ámbitos de zona, subredes de cliente DNS y la Directiva DNS.
+Antes de comenzar, asegúrese de que ha completado todos los pasos del tema [uso de la Directiva de DNS para la administración del tráfico basado en Geo-Location con servidores principales](./primary-geo-location.md), y el servidor DNS principal se configura con zonas, ámbitos de zona, subredes de cliente DNS y la Directiva DNS.
 
 > [!NOTE]
 > Las instrucciones de este tema para copiar las subredes de cliente DNS, los ámbitos de zona y las directivas de DNS de los servidores principales DNS a los servidores secundarios DNS son para la configuración inicial y la validación de DNS. En el futuro, es posible que desee cambiar las opciones de subredes de cliente DNS, ámbitos de zona y directivas en el servidor principal. En este caso, puede crear scripts de automatización para mantener sincronizados los servidores secundarios con el servidor principal.
@@ -111,7 +111,7 @@ Add-DnsServerSecondaryZone -Name "woodgrove.com" -ZoneFile "woodgrove.com.dns" -
 Add-DnsServerSecondaryZone -Name "woodgrove.com" -ZoneFile "woodgrove.com.dns" -MasterServers 10.0.0.1 -ComputerName SecondaryServer2
 ```
 
-Para obtener más información, consulte [Add-DnsServerSecondaryZone](/powershell/module/dnsserver/add-dnsserversecondaryzone?view=win10-ps).
+Para obtener más información, consulte [Add-DnsServerSecondaryZone](/powershell/module/dnsserver/add-dnsserversecondaryzone).
 
 ### <a name="configure-the-zone-transfer-settings-on-the-primary-zone"></a>Configuración de la transferencia de zona en la zona principal
 
@@ -129,7 +129,7 @@ Puede usar los siguientes comandos de Windows PowerShell para configurar las opc
 Set-DnsServerPrimaryZone -Name "woodgrove.com" -Notify Notify -SecondaryServers "10.0.0.2,10.0.0.3" -SecureSecondaries TransferToSecureServers -ComputerName PrimaryServer
 ```
 
-Para obtener más información, vea [set-DnsServerPrimaryZone](/powershell/module/dnsserver/set-dnsserverprimaryzone?view=win10-ps).
+Para obtener más información, vea [set-DnsServerPrimaryZone](/powershell/module/dnsserver/set-dnsserverprimaryzone).
 
 ### <a name="copy-the-dns-client-subnets"></a>Copiar las subredes de cliente DNS
 
@@ -142,7 +142,7 @@ Get-DnsServerClientSubnet -ComputerName PrimaryServer | Add-DnsServerClientSubne
 Get-DnsServerClientSubnet -ComputerName PrimaryServer | Add-DnsServerClientSubnet -ComputerName SecondaryServer2
 ```
 
-Para obtener más información, consulte [Add-DnsServerClientSubnet](/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps).
+Para obtener más información, consulte [Add-DnsServerClientSubnet](/powershell/module/dnsserver/add-dnsserverclientsubnet).
 
 ### <a name="create-the-zone-scopes-on-the-secondary-server"></a>Crear los ámbitos de zona en el servidor secundario
 
@@ -158,7 +158,7 @@ Get-DnsServerZoneScope -ZoneName "woodgrove.com" -ComputerName PrimaryServer|Add
 > [!NOTE]
 > En estos comandos de ejemplo, se incluye el parámetro **-ErrorAction ignore** , porque existe un ámbito de zona predeterminado en cada zona. No se puede crear o eliminar el ámbito de zona predeterminado. La canalización producirá un intento de crear ese ámbito y se producirá un error. Como alternativa, puede crear los ámbitos de zona no predeterminados en dos zonas secundarias.
 
-Para obtener más información, consulte [Add-DnsServerZoneScope](/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps).
+Para obtener más información, consulte [Add-DnsServerZoneScope](/powershell/module/dnsserver/add-dnsserverzonescope).
 
 ### <a name="configure-dns-policy"></a>Configuración de la Directiva de DNS
 
@@ -172,7 +172,7 @@ $policy | Add-DnsServerQueryResolutionPolicy -ZoneName "woodgrove.com" -Computer
 $policy | Add-DnsServerQueryResolutionPolicy -ZoneName "woodgrove.com" -ComputerName SecondaryServer2
 ```
 
-Para obtener más información, consulte [Add-DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps).
+Para obtener más información, consulte [Add-DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy).
 
 Ahora los servidores DNS secundarios se configuran con las directivas DNS necesarias para redirigir el tráfico en función de la ubicación geográfica.
 

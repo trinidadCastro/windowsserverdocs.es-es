@@ -5,12 +5,12 @@ ms.topic: article
 ms.author: benarm
 author: BenjaminArmstrong
 ms.date: 09/28/2016
-ms.openlocfilehash: 2e7eecbf68a8b08caae2851bce45673ebb09bcef
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 5a18aad091314543dece0c0270935be020f6810b
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90745930"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96864564"
 ---
 # <a name="plan-for-hyper-v-scalability-in-windows-server-2016-and-windows-server-2019"></a>Planear la escalabilidad de Hyper-V en Windows Server 2016 y Windows Server 2019
 
@@ -21,7 +21,7 @@ En este artículo se proporcionan detalles acerca de la configuración máxima d
 Los valores máximos para la memoria y los procesadores lógicos son los mayores aumentos de Windows Server 2012, en respuesta a las solicitudes para admitir escenarios más recientes, como el aprendizaje automático y el análisis de datos. El blog de Windows Server publicó recientemente los resultados de rendimiento de una máquina virtual con 5,5 terabytes de memoria y 128 procesadores virtuales con una base de datos en memoria de 4 TB. El rendimiento era superior al 95% del rendimiento de un servidor físico. Para obtener más información, consulte [rendimiento de máquinas virtuales de gran escala de Hyper-V de Windows Server 2016 para el procesamiento de transacciones en memoria](https://blogs.technet.microsoft.com/windowsserver/2016/09/28/windows-server-2016-hyper-v-large-scale-vm-performance-for-in-memory-transaction-processing/). Otros números son similares a los que se aplican a Windows Server 2012. \(Los máximos para Windows Server 2012 R2 eran los mismos que Windows Server 2012.\)
 
 > [!NOTE]
-> Para obtener más información acerca de System Center Virtual Machine Manager (VMM), consulte [Virtual Machine Manager](/system-center/vmm/overview?view=sc-vmm-2019). VMM es un producto de Microsoft que permite administrar centros de datos virtualizados que se venden por separado.
+> Para obtener más información acerca de System Center Virtual Machine Manager (VMM), consulte [Virtual Machine Manager](/system-center/vmm/overview). VMM es un producto de Microsoft que permite administrar centros de datos virtualizados que se venden por separado.
 
 ## <a name="maximums-for-virtual-machines"></a>Máximo de máquinas virtuales
 Estos valores máximos se aplican a cada máquina virtual. No todos los componentes están disponibles en ambas generaciones de máquinas virtuales. Para ver una comparación de las generaciones, consulte ¿ [debo crear una máquina virtual de generación 1 o 2 en Hyper-V?](should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v.md)
@@ -46,7 +46,7 @@ Estos valores máximos se aplican a cada host de Hyper-V.
 
 |Componente|Máxima|Notas|
 |-------------|-----------|---------|
-|Procesadores lógicos|512|Ambos deben estar habilitados en el firmware:<p>-Virtualización asistida por hardware<br />-Prevención de ejecución de datos (DEP) forzada por hardware<p>El sistema operativo del host (partición raíz) solo verá los procesadores lógicos 320 máximos|  
+|Procesadores lógicos|512|Ambos deben estar habilitados en el firmware:<p>-Virtualización asistida por hardware<br />-Prevención de ejecución de datos (DEP) forzada por hardware<p>El sistema operativo del host (partición raíz) solo verá los procesadores lógicos 320 máximos|  
 |Memoria|24 TB|Ninguno.|
 |Equipos de adaptadores de red (formación de equipos NIC)|Hyper-V no impone límites.|Para obtener más información, consulte [formación de equipos NIC](../../../networking/technologies/nic-teaming/NIC-Teaming.md).|
 |Adaptadores de red físicos|Hyper-V no impone límites.|Ninguno.|

@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: df9866682d96358c63b8ea708c05cdbd8216138a
-ms.sourcegitcommit: ccd38245f1b766be005d0c257962f756ff0c4e76
+ms.openlocfilehash: f130164415ead6ad480d95d7cba55d7c5017c6b4
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92175791"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96864244"
 ---
 # <a name="defrag"></a>defrag
 
@@ -137,4 +137,4 @@ El proceso de desfragmentación ejecuta la tarea programada como una tarea de ma
 
 - [fsutil dirty](fsutil-dirty.md)
 
-- [Optimizar el volumen de PowerShell](/powershell/module/storage/optimize-volume?view=win10-ps)
+- [Optimizar el volumen de PowerShell](/powershell/module/storage/optimize-volume)

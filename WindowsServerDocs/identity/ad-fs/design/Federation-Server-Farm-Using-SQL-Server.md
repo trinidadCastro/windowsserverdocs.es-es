@@ -6,12 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 2ae5c2f389c4fb32503dbd28ab4a3667a17f7466
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d283cc3ed8b848ba705a4e7773c1cd0861da1095
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87945511"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96864634"
 ---
 # <a name="legacy-ad-fs-federation-server-farm-using-sql-server"></a>Granja de servidores de Federación de AD FS heredada mediante SQL Server
 
@@ -74,7 +74,7 @@ En Windows Server 2012 R2, AD FS hay dos nuevas opciones para admitir la alta di
 En esta sección se describe cada una de estas opciones, qué problemas resuelven respectivamente y algunas consideraciones clave para decidir qué opciones implementar.
 
 > [!NOTE]
-> AD FS granjas que usan Windows Internal Database \( WID \) proporcionan redundancia de datos básica con \/ acceso de lectura y escritura en el nodo del servidor de Federación principal y \- acceso de solo lectura en nodos secundarios.Se puede usar en una topología geográficamente local o distribuida geográficamente.
+> AD FS granjas que usan Windows Internal Database \( WID \) proporcionan redundancia de datos básica con \/ acceso de lectura y escritura en el nodo del servidor de Federación principal y \- acceso de solo lectura en nodos secundarios.  Se puede usar en una topología geográficamente local o distribuida geográficamente.
 >
 > Al usar WID, tenga en cuenta las siguientes limitaciones:
 >
@@ -91,11 +91,11 @@ En la tabla siguiente se proporciona un resumen del uso de una granja de servido
 ### <a name="alwayson-availability-groups"></a>Grupos de disponibilidad AlwaysOn
 **Información general**
 
-Los grupos de disponibilidad AlwaysOn se introdujeron en SQL Server 2012 y proporcionan una nueva forma de crear una instancia de SQL Server de alta disponibilidad.Los grupos de disponibilidad AlwaysOn combinan elementos de agrupación en clústeres y creación de reflejo de base de datos para redundancia y conmutación por error en el nivel de instancia SQL y en el nivel de base de datos.A diferencia de las opciones de alta disponibilidad anteriores, los grupos de disponibilidad AlwaysOn no requieren una red de área de almacenamiento o almacenamiento común \( \) en el nivel de base de datos.
+Los grupos de disponibilidad AlwaysOn se introdujeron en SQL Server 2012 y proporcionan una nueva forma de crear una instancia de SQL Server de alta disponibilidad.  Los grupos de disponibilidad AlwaysOn combinan elementos de agrupación en clústeres y creación de reflejo de base de datos para redundancia y conmutación por error en el nivel de instancia SQL y en el nivel de base de datos.  A diferencia de las opciones de alta disponibilidad anteriores, los grupos de disponibilidad AlwaysOn no requieren una red de área de almacenamiento o almacenamiento común \( \) en el nivel de base de datos.
 
-Un grupo de disponibilidad consta de una réplica principal \( un conjunto de bases de \- datos principales de lectura \) y de una a cuatro \( conjuntos de réplicas de disponibilidad de las bases de datos secundarias correspondientes \) .El grupo de disponibilidad admite una sola \- escritura \( de lectura y copia la réplica principal \) y de una a cuatro \- réplicas de disponibilidad de solo lectura.Cada réplica de disponibilidad debe residir en otro nodo de un único clúster de WSFC de clústeres de conmutación por error de Windows Server \( \) .Para obtener más información sobre los grupos de disponibilidad AlwaysOn, consulte [información general de Grupos de disponibilidad AlwaysOn \( SQL Server \) ](/sql/database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server?view=sql-server-ver15).
+Un grupo de disponibilidad consta de una réplica principal \( un conjunto de bases de \- datos principales de lectura \) y de una a cuatro \( conjuntos de réplicas de disponibilidad de las bases de datos secundarias correspondientes \) .  El grupo de disponibilidad admite una sola \- escritura \( de lectura y copia la réplica principal \) y de una a cuatro \- réplicas de disponibilidad de solo lectura.  Cada réplica de disponibilidad debe residir en otro nodo de un único clúster de WSFC de clústeres de conmutación por error de Windows Server \( \) .  Para obtener más información sobre los grupos de disponibilidad AlwaysOn, consulte [información general de Grupos de disponibilidad AlwaysOn \( SQL Server \) ](/sql/database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server).
 
-Desde la perspectiva de los nodos de una AD FS SQL Server granja, el grupo de disponibilidad AlwaysOn reemplaza la instancia de SQL Server única como la \/ base de datos de artefactos de directiva.El agente de escucha del grupo de disponibilidad es el cliente que \( el servicio de token de seguridad de AD FS \) usa para conectarse a SQL.
+Desde la perspectiva de los nodos de una AD FS SQL Server granja, el grupo de disponibilidad AlwaysOn reemplaza la instancia de SQL Server única como la \/ base de datos de artefactos de directiva.  El agente de escucha del grupo de disponibilidad es el cliente que \( el servicio de token de seguridad de AD FS \) usa para conectarse a SQL.
 
 En el diagrama siguiente se muestra un AD FS granja de SQL Server con el grupo de disponibilidad AlwaysOn.
 
@@ -109,15 +109,15 @@ En el diagrama siguiente se muestra un AD FS granja de SQL Server con el grupo d
 
 **Consideraciones de implementación clave**
 
-Si tiene previsto usar grupos de disponibilidad AlwaysOn en combinación con SQL Server la replicación de mezcla, tome nota de los problemas descritos en la sección "consideraciones de implementación clave para usar AD FS con la replicación de mezcla de SQL Server".En concreto, cuando un grupo de disponibilidad AlwaysOn que contiene una base de datos que es un suscriptor de replicación conmuta por error, se produce un error en la suscripción de replicación. Para reanudar la replicación, un administrador de replicación debe configurar manualmente el suscriptor.Vea la descripción SQL Server de un problema específico en los [suscriptores de replicación y Grupos de disponibilidad AlwaysOn \( \) SQL Server](/sql/database-engine/availability-groups/windows/replication-subscribers-and-always-on-availability-groups-sql-server?view=sql-server-ver15) y las instrucciones de soporte general para los grupos de disponibilidad AlwaysOn con opciones de replicación en [replicación, Change Tracking, captura de datos modificados y \( \) ](/sql/database-engine/availability-groups/windows/replicate-track-change-data-capture-always-on-availability?view=sql-server-ver15)grupos de disponibilidad AlwaysOn SQL Server.
+Si tiene previsto usar grupos de disponibilidad AlwaysOn en combinación con SQL Server la replicación de mezcla, tome nota de los problemas descritos en la sección "consideraciones de implementación clave para usar AD FS con la replicación de mezcla de SQL Server".  En concreto, cuando un grupo de disponibilidad AlwaysOn que contiene una base de datos que es un suscriptor de replicación conmuta por error, se produce un error en la suscripción de replicación. Para reanudar la replicación, un administrador de replicación debe configurar manualmente el suscriptor.  Vea la descripción SQL Server de un problema específico en los [suscriptores de replicación y Grupos de disponibilidad AlwaysOn \( \) SQL Server](/sql/database-engine/availability-groups/windows/replication-subscribers-and-always-on-availability-groups-sql-server) y las instrucciones de soporte general para los grupos de disponibilidad AlwaysOn con opciones de replicación en [replicación, Change Tracking, captura de datos modificados y \( \) ](/sql/database-engine/availability-groups/windows/replicate-track-change-data-capture-always-on-availability)grupos de disponibilidad AlwaysOn SQL Server.
 
 **Configuración de AD FS para usar un grupo de disponibilidad AlwaysOn**
 
 La configuración de una granja de AD FS con grupos de disponibilidad AlwaysOn requiere una ligera modificación en el procedimiento de implementación de AD FS:
 
-1. Las bases de datos de las que desea realizar una copia de seguridad deben crearse antes de que se puedan configurar los grupos de disponibilidad AlwaysOn.AD FS crea sus bases de datos como parte de la configuración y la configuración inicial del primer nodo de servicio de Federación de una nueva granja de servidores de SQL Server de AD FS.Como parte de la configuración de AD FS, debe especificar una cadena de conexión SQL, por lo que tendrá que configurar el primer nodo de la granja de AD FS para conectarse a una instancia de SQL directamente, \( solo es temporal \) . Para obtener instrucciones específicas sobre la configuración de una granja de AD FS, incluida la configuración de un nodo de la granja de AD FS con una cadena de conexión de SQL Server, vea [configurar un servidor de Federación](../../ad-fs/deployment/Configure-a-Federation-Server.md).
+1. Las bases de datos de las que desea realizar una copia de seguridad deben crearse antes de que se puedan configurar los grupos de disponibilidad AlwaysOn.  AD FS crea sus bases de datos como parte de la configuración y la configuración inicial del primer nodo de servicio de Federación de una nueva granja de servidores de SQL Server de AD FS.  Como parte de la configuración de AD FS, debe especificar una cadena de conexión SQL, por lo que tendrá que configurar el primer nodo de la granja de AD FS para conectarse a una instancia de SQL directamente, \( solo es temporal \) .   Para obtener instrucciones específicas sobre la configuración de una granja de AD FS, incluida la configuración de un nodo de la granja de AD FS con una cadena de conexión de SQL Server, vea [configurar un servidor de Federación](../../ad-fs/deployment/Configure-a-Federation-Server.md).
 
-2. Una vez que se han creado las bases de datos de AD FS, asígnelas a grupos de disponibilidad AlwaysOn y cree el agente de escucha de TCPIP común con SQL Server herramientas y proceso en la [creación y configuración de grupos de disponibilidad \( SQL Server \) ](/sql/database-engine/availability-groups/windows/creation-and-configuration-of-availability-groups-sql-server?view=sql-server-ver15).
+2. Una vez que se han creado las bases de datos de AD FS, asígnelas a grupos de disponibilidad AlwaysOn y cree el agente de escucha de TCPIP común con SQL Server herramientas y proceso en la [creación y configuración de grupos de disponibilidad \( SQL Server \) ](/sql/database-engine/availability-groups/windows/creation-and-configuration-of-availability-groups-sql-server).
 
 3. Por último, use PowerShell para editar las propiedades de AD FS para actualizar la cadena de conexión de SQL para usar la dirección DNS del agente de escucha del grupo de disponibilidad AlwaysOn.
 
@@ -149,13 +149,13 @@ En el diagrama siguiente se muestra una AD FS redundante geográficamente SQL Se
 
 **Consideraciones de implementación clave para usar AD FS con SQL Server \( números de nota de replicación de mezcla en el diagrama anterior\)**
 
-- La base de datos del distribuidor no se admite para su uso con Grupos de disponibilidad AlwaysOn o la creación de reflejo de la base de datos.Consulte SQL Server instrucciones de compatibilidad para grupos de disponibilidad AlwaysOn con opciones de replicación en [replicación, Change Tracking, captura de datos modificados y Grupos de disponibilidad AlwaysOn \( SQL Server \) ](/sql/database-engine/availability-groups/windows/replicate-track-change-data-capture-always-on-availability?view=sql-server-ver15).
+- La base de datos del distribuidor no se admite para su uso con Grupos de disponibilidad AlwaysOn o la creación de reflejo de la base de datos.  Consulte SQL Server instrucciones de compatibilidad para grupos de disponibilidad AlwaysOn con opciones de replicación en [replicación, Change Tracking, captura de datos modificados y Grupos de disponibilidad AlwaysOn \( SQL Server \) ](/sql/database-engine/availability-groups/windows/replicate-track-change-data-capture-always-on-availability).
 
-- Cuando el grupo de disponibilidad AlwaysOn que contiene la base de datos que es un suscriptor de replicación realiza una conmutación por error, se produce un error en la suscripción de replicación. Para reanudar la replicación, un administrador de replicación debe configurar manualmente el suscriptor.Vea el SQL Server Descripción de un problema específico en los [suscriptores de replicación y Grupos de disponibilidad AlwaysOn \( \) SQL Server](/sql/database-engine/availability-groups/windows/replication-subscribers-and-always-on-availability-groups-sql-server?view=sql-server-ver15) y las instrucciones de soporte técnico generales para los grupos de disponibilidad AlwaysOn con las opciones de replicación [replicación, Change Tracking, captura de datos modificados y \( \) ](/sql/database-engine/availability-groups/windows/replicate-track-change-data-capture-always-on-availability?view=sql-server-ver15)grupos de disponibilidad AlwaysOn SQL Server.
+- Cuando el grupo de disponibilidad AlwaysOn que contiene la base de datos que es un suscriptor de replicación realiza una conmutación por error, se produce un error en la suscripción de replicación. Para reanudar la replicación, un administrador de replicación debe configurar manualmente el suscriptor.  Vea el SQL Server Descripción de un problema específico en los [suscriptores de replicación y Grupos de disponibilidad AlwaysOn \( \) SQL Server](/sql/database-engine/availability-groups/windows/replication-subscribers-and-always-on-availability-groups-sql-server) y las instrucciones de soporte técnico generales para los grupos de disponibilidad AlwaysOn con las opciones de replicación [replicación, Change Tracking, captura de datos modificados y \( \) ](/sql/database-engine/availability-groups/windows/replicate-track-change-data-capture-always-on-availability)grupos de disponibilidad AlwaysOn SQL Server.
 
 Para obtener instrucciones más detalladas sobre cómo configurar AD FS para usar una replicación de mezcla de SQL Server, consulte Configuración de la [redundancia geográfica con replicación de SQL Server](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn632406(v=ws.11)).
 
-## <a name="see-also"></a>Consulte también
+## <a name="see-also"></a>Vea también
 [Planeación de la topología](Plan-Your-AD-FS-Deployment-Topology.md) 
  de implementación de AD FS [Guía de diseño de AD FS en Windows Server 2012 R2](AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)
 

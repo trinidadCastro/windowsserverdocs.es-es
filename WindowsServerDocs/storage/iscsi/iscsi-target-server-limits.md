@@ -6,12 +6,12 @@ author: JasonGerend
 manager: dougkim
 ms.author: jgerend
 ms.date: 09/11/2018
-ms.openlocfilehash: 3be878629d19542629cc3cbb849ac46fe14de0bd
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: 14ef17f96138c23aeac8e38b93a50b562ca69bba
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766838"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96865174"
 ---
 # <a name="iscsi-target-server-scalability-limits"></a>Límites de escalabilidad del servidor de destino iSCSI
 
@@ -442,7 +442,7 @@ El proveedor de almacenamiento del destino iSCSI es un servicio de rol en Window
 
 Tenga en cuenta que si el servidor de destino iSCSI está hospedado en un servidor que ejecuta Windows Server 2012 R2 o una versión más reciente y desea usar VSS o VDS desde un servidor remoto, el servidor remoto también debe ejecutar la misma versión de Windows Server y tener instalado el servicio de rol proveedor de almacenamiento del destino iSCSI. Tenga en cuenta también que en todas las versiones de Windows debe instalar solo una versión del servicio de rol proveedor de almacenamiento del destino iSCSI.
 
-Para obtener más información sobre el proveedor de almacenamiento del destino iSCSI, consulte [proveedor de almacenamiento de destino iSCSI (VDS/VSS)](/powershell/module/iscsi/?view=win10-ps).
+Para obtener más información sobre el proveedor de almacenamiento del destino iSCSI, consulte [proveedor de almacenamiento de destino iSCSI (VDS/VSS)](/powershell/module/iscsi/).
 
 ## <a name="tested-compatibility-with-iscsi-initiators"></a>Compatibilidad probada con iniciadores iSCSI
 

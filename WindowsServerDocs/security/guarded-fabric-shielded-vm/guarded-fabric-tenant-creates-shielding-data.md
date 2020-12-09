@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 09/25/2019
-ms.openlocfilehash: c9d1237caeb5838d1e95d00ec9afab9eeb436fd4
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 20cb04f17aae3fb92394f0ddf4d67fb887e70714
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87995476"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96864144"
 ---
 # <a name="shielded-vms-for-tenants---creating-shielding-data-to-define-a-shielded-vm"></a>Máquinas virtuales blindadas para inquilinos: creación de datos de blindaje para definir una máquina virtual blindada
 
@@ -103,7 +103,7 @@ Al usar cadenas de sustitución, es importante asegurarse de que las cadenas se 
 Además, tenga en cuenta que las cadenas de sustitución relacionadas con redes hacia el final de la tabla solo se usan si está aprovechando grupos de direcciones IP estáticas de VMM. El proveedor de servicios de hosting debe ser capaz de indicarle si se requieren estas cadenas de sustitución. Para obtener más información acerca de las direcciones IP estáticas en las plantillas de VMM, consulte lo siguiente en la documentación de VMM:
 
 - [Directrices para grupos de direcciones IP](https://technet.microsoft.com/system-center-docs/vmm/plan/plan-network#guidelines-for-ip-address-pools)
-- [Configurar grupos de direcciones IP estáticas en el tejido de VMM](/system-center/vmm/network-pool?view=sc-vmm-2019)
+- [Configurar grupos de direcciones IP estáticas en el tejido de VMM](/system-center/vmm/network-pool)
 
 Por último, es importante tener en cuenta que el proceso de implementación de la máquina virtual blindada solo cifrará la unidad del sistema operativo. Si implementa una máquina virtual blindada con una o varias unidades de datos, se recomienda encarecidamente que agregue un comando de instalación desatendida o una configuración de directiva de grupo en el dominio del inquilino para cifrar automáticamente las unidades de datos.
 
@@ -198,7 +198,7 @@ Ejecute el Asistente para archivos de datos de blindaje para crear un archivo de
 
 6. En la página **valores de especialización** , haga clic en **examinar** para seleccionar el archivo de unattend.xml que se usará para especializar las máquinas virtuales.
 
-    Use el botón **Agregar** de la parte inferior para agregar cualquier archivo adicional al PDK que sea necesario durante el proceso de especialización. Por ejemplo, si el archivo de instalación desatendida está instalando un certificado RDP en la máquina virtual (como se describe en [generación de un archivo de respuesta mediante la función New-ShieldingDataAnswerFile](guarded-fabric-sample-unattend-xml-file.md)), debe agregar el archivo PFX del certificado RDP y el script RDPCertificateConfig.ps1 aquí. Tenga en cuenta que los archivos que especifique aquí se copiarán automáticamente a C: \\ temp \\ en la máquina virtual que se crea. El archivo de instalación desatendida debería esperar que los archivos estén en esa carpeta al hacer referencia a ellos mediante la ruta de acceso.
+    Use el botón **Agregar** de la parte inferior para agregar cualquier archivo adicional al PDK que sea necesario durante el proceso de especialización. Por ejemplo, si el archivo de instalación desatendida está instalando un certificado RDP en la máquina virtual (como se describe en [generación de un archivo de respuesta mediante la función New-ShieldingDataAnswerFile](guarded-fabric-sample-unattend-xml-file.md)), debe agregar el archivo PFX del certificado RDP y el script de RDPCertificateConfig.ps1 aquí. Tenga en cuenta que los archivos que especifique aquí se copiarán automáticamente a C: \\ temp \\ en la máquina virtual que se crea. El archivo de instalación desatendida debería esperar que los archivos estén en esa carpeta al hacer referencia a ellos mediante la ruta de acceso.
 
 7. Revise las selecciones en la página siguiente y, a continuación, haga clic en **generar**.
 
@@ -206,10 +206,10 @@ Ejecute el Asistente para archivos de datos de blindaje para crear un archivo de
 
 ## <a name="create-a-shielding-data-file-and-add-guardians-using-powershell"></a>Creación de un archivo de datos de blindaje y adición de guardianes mediante PowerShell
 
-Como alternativa al Asistente para archivos de datos de blindaje, puede ejecutar [New-ShieldingDataFile](/powershell/module/shieldedvmdatafile/new-shieldingdatafile?view=win10-ps) para crear un archivo de datos de blindaje.
+Como alternativa al Asistente para archivos de datos de blindaje, puede ejecutar [New-ShieldingDataFile](/powershell/module/shieldedvmdatafile/new-shieldingdatafile) para crear un archivo de datos de blindaje.
 
 Todos los archivos de datos de blindaje deben configurarse con los certificados de propietario y guardián correctos para autorizar que las máquinas virtuales blindadas se ejecuten en un tejido protegido.
-Puede comprobar si tiene algún tutor instalado localmente mediante la ejecución [de Get-HgsGuardian](/powershell/module/hgsclient/get-hgsguardian?view=win10-ps). Los guardianes de propietario tienen claves privadas, mientras que los guardianes de su centro de recursos normalmente no lo hacen.
+Puede comprobar si tiene algún tutor instalado localmente mediante la ejecución [de Get-HgsGuardian](/powershell/module/hgsclient/get-hgsguardian). Los guardianes de propietario tienen claves privadas, mientras que los guardianes de su centro de recursos normalmente no lo hacen.
 
 Si necesita crear un guardián de propietario, ejecute el siguiente comando:
 
@@ -228,7 +228,7 @@ Import-HgsGuardian -Name 'EAST-US Datacenter' -Path '.\EastUSGuardian.xml'
 ```
 
 > [!TIP]
-> Si ha usado certificados autofirmados o los certificados registrados con HGS han expirado, puede que tenga que usar las `-AllowUntrustedRoot` marcas y/o `-AllowExpired` con el comando IMPORT-HgsGuardian para omitir las comprobaciones de seguridad.
+> Si ha usado certificados autofirmados o los certificados registrados con HGS han expirado, puede que tenga que usar las `-AllowUntrustedRoot` marcas y/o `-AllowExpired` con el comando Import-HgsGuardian para omitir las comprobaciones de seguridad.
 
 También necesitará [obtener un catálogo de firmas de volumen](#get-the-volume-signature-catalog-file) para cada disco de plantilla que desee usar con este archivo de datos de blindaje y un [archivo de respuesta de datos de blindaje](#create-an-answer-file) para permitir que el sistema operativo complete automáticamente sus tareas de especialización.
 Por último, decida si desea que la máquina virtual esté completamente blindada o simplemente habilitada para vTPM.
@@ -242,7 +242,7 @@ New-ShieldingDataFile -ShieldingDataFilePath "C:\temp\Marketing-LBI.pdk" -Policy
 ```
 
 > [!TIP]
-> Si usa un certificado RDP personalizado, claves SSH u otros archivos que deben incluirse con el archivo de datos de blindaje, use el `-OtherFile` parámetro para incluirlos. Puede proporcionar una lista separada por comas de rutas de acceso de archivo, como`-OtherFile "C:\source\myRDPCert.pfx", "C:\source\RDPCertificateConfig.ps1"`
+> Si usa un certificado RDP personalizado, claves SSH u otros archivos que deben incluirse con el archivo de datos de blindaje, use el `-OtherFile` parámetro para incluirlos. Puede proporcionar una lista separada por comas de rutas de acceso de archivo, como `-OtherFile "C:\source\myRDPCert.pfx", "C:\source\RDPCertificateConfig.ps1"`
 
 En el comando anterior, el tutor denominado "Owner" (obtenido a través de Get-HgsGuardian) podrá cambiar la configuración de seguridad de la máquina virtual en el futuro, mientras que "EAST-US Datacenter" puede ejecutar la máquina virtual pero no cambiar su configuración.
 Si tiene más de un guardián, separe los nombres de los tutores con comas como `'EAST-US Datacenter', 'EMEA Datacenter'` .
@@ -251,7 +251,7 @@ El nombre del disco y el certificado de firma deben coincidir exactamente para q
 Puede confiar en más de un disco de plantilla proporcionando una lista separada por comas de calificadores de ID. de volumen para el `-VolumeIDQualifier` parámetro.
 Por último, si tiene otros archivos que deben acompañar el archivo de respuesta con la máquina virtual, use el `-OtherFile` parámetro y proporcione una lista separada por comas de rutas de acceso de archivo.
 
-Consulte la documentación del cmdlet para [New-ShieldingDataFile](/powershell/module/shieldedvmdatafile/new-shieldingdatafile?view=win10-ps) y [New-VolumeIDQualifier](/powershell/module/shieldedvmdatafile/New-VolumeIDQualifier?view=win10-ps) para obtener información sobre otras formas de configurar el archivo de datos de blindaje.
+Consulte la documentación del cmdlet para [New-ShieldingDataFile](/powershell/module/shieldedvmdatafile/new-shieldingdatafile) y [New-VolumeIDQualifier](/powershell/module/shieldedvmdatafile/New-VolumeIDQualifier) para obtener información sobre otras formas de configurar el archivo de datos de blindaje.
 
 ## <a name="additional-references"></a>Referencias adicionales
 

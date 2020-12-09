@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 09/25/2019
-ms.openlocfilehash: 43762e34e2987473954e3f9408ddd6e74b0de3cb
-ms.sourcegitcommit: 3181fcb69a368f38e0d66002e8bc6fd9628b1acc
+ms.openlocfilehash: c6f20ebdf2bedd74af98e075ccf6f6ff60f96767
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96330369"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96864164"
 ---
 # <a name="obtain-certificates-for-hgs"></a>Obtener certificados para HGS
 
@@ -91,7 +91,7 @@ Nombre de sujeto             | Dirección en la que los clientes HGS (es decir, 
 Nombre alternativo del firmante | Si va a usar un nombre DNS diferente para llegar al clúster de HGS (por ejemplo, si está detrás de un equilibrador de carga o si usa direcciones diferentes para un subconjunto de nodos en una topología compleja), asegúrese de incluir esos nombres DNS en el campo SAN de la solicitud de certificado. Tenga en cuenta que si se rellena la extensión SAN, se omite el nombre de sujeto y, por lo tanto, SAN debe incluir todos los valores, incluido el que normalmente se pondría en el nombre de sujeto.
 
 Las opciones para especificar este certificado al inicializar el servidor HGS se describen en [configuración del primer nodo HGS](guarded-fabric-initialize-hgs.md).
-También puede Agregar o cambiar el certificado SSL en otro momento con el cmdlet [set-HgsServer](/powershell/module/hgsserver/set-hgsserver?view=win10-ps) .
+También puede Agregar o cambiar el certificado SSL en otro momento con el cmdlet [set-HgsServer](/powershell/module/hgsserver/set-hgsserver) .
 
 ## <a name="next-step"></a>Paso siguiente
 

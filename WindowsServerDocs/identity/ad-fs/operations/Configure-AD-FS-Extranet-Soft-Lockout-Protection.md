@@ -6,12 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 02/01/2019
 ms.topic: article
-ms.openlocfilehash: 7a4541ca772576ba100c61130f4698cdcaf95778
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 0511063581fd633b56803999b761156c8217c967
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87962609"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96864504"
 ---
 # <a name="configure-ad-fs-extranet-lockout-protection"></a>Configurar AD FS protección de bloqueo de extranet
 
@@ -27,9 +27,9 @@ El bloqueo de extranet proporciona las siguientes ventajas clave:
 
 ## <a name="how-it-works"></a>Funcionamiento
 Hay 3 configuraciones en AD FS que se deben configurar para habilitar esta característica:
-- **EnableExtranetLockout &lt; Booleano &gt; ** establezca este valor booleano en true si desea habilitar el bloqueo de la extranet.
-- **ExtranetLockoutThreshold &lt; Entero &gt; ** : define el número máximo de intentos de contraseña incorrectos. Una vez alcanzado el umbral, AD FS rechazará inmediatamente las solicitudes de la extranet sin intentar ponerse en contacto con el controlador de dominio para la autenticación, independientemente de si la contraseña es correcta o no, hasta que se pase la ventana de observación de extranet. Esto significa que el valor del atributo **badPwdCount** de una cuenta de ad no aumentará mientras la cuenta esté bloqueada de forma temporal.
-- **ExtranetObservationWindow &lt; TimeSpan &gt; ** esto determina durante cuánto tiempo se bloqueará la cuenta de usuario. AD FS comenzará a realizar la autenticación de nombre de usuario y contraseña cuando se pase la ventana. AD FS usa el atributo de AD badPasswordTime como referencia para determinar si la ventana de observación de extranet se ha superado o no. La ventana ha pasado si la hora actual > badPasswordTime + ExtranetObservationWindow.
+- **EnableExtranetLockout &lt; Booleano &gt;** establezca este valor booleano en true si desea habilitar el bloqueo de la extranet.
+- **ExtranetLockoutThreshold &lt; Entero &gt;** : define el número máximo de intentos de contraseña incorrectos. Una vez alcanzado el umbral, AD FS rechazará inmediatamente las solicitudes de la extranet sin intentar ponerse en contacto con el controlador de dominio para la autenticación, independientemente de si la contraseña es correcta o no, hasta que se pase la ventana de observación de extranet. Esto significa que el valor del atributo **badPwdCount** de una cuenta de ad no aumentará mientras la cuenta esté bloqueada de forma temporal.
+- **ExtranetObservationWindow &lt; TimeSpan &gt;** esto determina durante cuánto tiempo se bloqueará la cuenta de usuario. AD FS comenzará a realizar la autenticación de nombre de usuario y contraseña cuando se pase la ventana. AD FS usa el atributo de AD badPasswordTime como referencia para determinar si la ventana de observación de extranet se ha superado o no. La ventana ha pasado si la hora actual > badPasswordTime + ExtranetObservationWindow.
 
 > [!NOTE]
 > AD FS el bloqueo de la extranet funciona de forma independiente de las directivas de bloqueo de AD. Sin embargo, se recomienda encarecidamente establecer el valor del parámetro **ExtranetLockoutThreshold** en un valor que sea menor que el umbral de bloqueo de cuenta de ad. Si no lo hace, AD FS no puede proteger las cuentas para que no se bloqueen en Active Directory.
@@ -47,7 +47,7 @@ Esta configuración se aplicará a todos los dominios que el servicio AD FS pued
 
 El servidor 2016 ofrece un parámetro adicional que permite a AD FS retroceder a otro controlador de dominio cuando el PDC no está disponible:
 
-- **ExtranetLockoutRequirePDC &lt; Booleano &gt; ** : cuando está habilitado: el bloqueo de extranet requiere un controlador de dominio principal (PDC). Cuando se deshabilita: el bloqueo de la extranet se reservará a otro controlador de dominio en caso de que el PDC no esté disponible.
+- **ExtranetLockoutRequirePDC &lt; Booleano &gt;** : cuando está habilitado: el bloqueo de extranet requiere un controlador de dominio principal (PDC). Cuando se deshabilita: el bloqueo de la extranet se reservará a otro controlador de dominio en caso de que el PDC no esté disponible.
 
 Puede usar el siguiente comando de Windows PowerShell para configurar el AD FS el bloqueo de la Extranet en el servidor 2016:
 
@@ -60,9 +60,9 @@ La característica de bloqueo de la extranet de AD FS funciona independientement
 Echemos un vistazo primero a la Directiva de bloqueo de AD. Hay tres opciones de configuración relacionadas con la Directiva de bloqueo en AD:
 - **Umbral de bloqueo de cuenta**: este valor es similar al valor de ExtranetLockoutThreshold en AD FS. Determina el número de intentos de inicio de sesión erróneos que harán que se bloquee una cuenta de usuario. Para proteger las cuentas de usuario de un ataque de bloqueo de cuenta malintencionado, desea establecer el valor de ExtranetLockoutThreshold en AD FS &lt; el valor de umbral de bloqueo de cuenta en ad
 - **Duración del bloqueo de cuenta**: esta opción determina durante cuánto tiempo se bloquea una cuenta de usuario. Esta configuración no es muy importante en esta conversación, ya que el bloqueo de extranet siempre debe realizarse antes de que se produzca el bloqueo de AD si se configura correctamente.
-- **Restablecer contador de bloqueo de cuenta después**de: esta opción determina cuánto tiempo debe transcurrir desde el último error de inicio de sesión del usuario antes de que **badPwdCount** se restablezca en 0. Para que la característica de bloqueo de la extranet de AD FS funcione correctamente con la Directiva de bloqueo de AD, debe asegurarse de que el valor de ExtranetObservationWindow en AD FS &gt; el contador de bloqueo de cuenta de restablecimiento después de valor en AD. En los ejemplos siguientes se explicará por qué.
+- **Restablecer contador de bloqueo de cuenta después** de: esta opción determina cuánto tiempo debe transcurrir desde el último error de inicio de sesión del usuario antes de que **badPwdCount** se restablezca en 0. Para que la característica de bloqueo de la extranet de AD FS funcione correctamente con la Directiva de bloqueo de AD, debe asegurarse de que el valor de ExtranetObservationWindow en AD FS &gt; el contador de bloqueo de cuenta de restablecimiento después de valor en AD. En los ejemplos siguientes se explicará por qué.
 
-Echemos un vistazo a dos ejemplos y veamos cómo **badPwdCount** cambia con el tiempo según la configuración y los Estados diferentes. Supongamos que en ambos ejemplos, **umbral de bloqueo de cuenta** = 4 y **ExtranetLockoutThreshold** = 2. La flecha **roja** representa un intento incorrecto de contraseña, la flecha **verde** representa un buen intento de contraseña. En el ejemplo #1, **ExtranetObservationWindow** &gt; **restablecer el contador de bloqueo de cuenta después**de. En el ejemplo #2, **ExtranetObservationWindow** &lt; **restablecer el contador de bloqueo de cuenta después**de.
+Echemos un vistazo a dos ejemplos y veamos cómo **badPwdCount** cambia con el tiempo según la configuración y los Estados diferentes. Supongamos que en ambos ejemplos, **umbral de bloqueo de cuenta** = 4 y **ExtranetLockoutThreshold** = 2. La flecha **roja** representa un intento incorrecto de contraseña, la flecha **verde** representa un buen intento de contraseña. En el ejemplo #1, **ExtranetObservationWindow** &gt; **restablecer el contador de bloqueo de cuenta después** de. En el ejemplo #2, **ExtranetObservationWindow** &lt; **restablecer el contador de bloqueo de cuenta después** de.
 
 ### <a name="example-1"></a>Ejemplo 1
 ![Example1](media/Configure-AD-FS-Extranet-Lockout-Protection/one.png)
@@ -85,13 +85,13 @@ Existe un problema conocido en el que la cuenta de usuario de AD no se puede aut
 - AD FS anteriores a 2016 producirán un error si no puede tener acceso al PDC. AD FS 2016 presentó mejoras que permitirán a AD FS revertir a otros controladores de dominio en caso de que el PDC no esté disponible.
 - AD FS permitirá las solicitudes de autenticación desde extranet si badPwdCount < ExtranetLockoutThreshold
 - Si **badPwdCount**  >=  **ExtranetLockoutThreshold** y **badPasswordTime**  +  **ExtranetObservationWindow** < hora actual, AD FS rechazará las solicitudes de autenticación de la extranet
-- Para evitar el bloqueo malintencionado de cuentas, debe asegurarse **ExtranetLockoutThreshold**de que el  <  **umbral de bloqueo de cuenta** de ExtranetLockoutThreshold y el contador de bloqueo de cuenta de **ExtranetObservationWindow**  >  **restablecido**
+- Para evitar el bloqueo malintencionado de cuentas, debe asegurarse **ExtranetLockoutThreshold** de que el  <  **umbral de bloqueo de cuenta** de ExtranetLockoutThreshold y el contador de bloqueo de cuenta de **ExtranetObservationWindow**  >  **restablecido**
 
 
 ## <a name="additional-references"></a>Referencias adicionales
 - [Prácticas recomendadas para proteger Servicios de federación de Active Directory (AD FS)](../../ad-fs/deployment/best-practices-securing-ad-fs.md)
 - [Delegar el acceso de Commandlet de Powershell de AD FS a los usuarios que no son administradores](delegate-ad-fs-pshell-access.md)
-- [Set-AdfsProperties](/powershell/module/adfs/set-adfsproperties?view=win10-ps)
+- [Set-AdfsProperties](/powershell/module/adfs/set-adfsproperties)
 
 [Operaciones de AD FS](../ad-fs-operations.md)
 

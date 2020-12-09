@@ -5,12 +5,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 7f3174e203aca130b06b410066ec714254a7f125
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 8b72ea800f63110904af80a178f96af232507344
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89627745"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96864354"
 ---
 # <a name="server-performance-advisor-pack-development-guide"></a>Guía de desarrollo de Server Performance Advisor Pack
 
@@ -201,7 +201,7 @@ Un conjunto de recopiladores de datos define los datos de rendimiento que debe r
 </advisorPack>
 ```
 
-El atributo **Duration** de ** &lt; dataCollectorSet/ &gt; ** en el ejemplo anterior define la duración de la recopilación de datos (la unidad de tiempo es segundos). **Duration** es un atributo requerido. Esta configuración controla la duración de la colección utilizada por los contadores de rendimiento y ETW.
+El atributo **Duration** de **&lt; dataCollectorSet/ &gt;** en el ejemplo anterior define la duración de la recopilación de datos (la unidad de tiempo es segundos). **Duration** es un atributo requerido. Esta configuración controla la duración de la colección utilizada por los contadores de rendimiento y ETW.
 
 ### <a name="collect-registry-data"></a>Recopilar datos del registro
 
@@ -257,7 +257,7 @@ Ejemplo 2: devuelve todos los pares clave-valor en esta ruta de acceso:
 <registryKey>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\User\PowerSchemes\\</registryKey>
 ```
 
-Todos los datos recopilados se importarán en una tabla temporal denominada ** \# registryKeys** antes de que se ejecute un script de informe de SQL. En la tabla siguiente se muestran los resultados del ejemplo 2:
+Todos los datos recopilados se importarán en una tabla temporal denominada **\# registryKeys** antes de que se ejecute un script de informe de SQL. En la tabla siguiente se muestran los resultados del ejemplo 2:
 
 KeyName | KeytypeId | Value
 ------ | ----- | -------
@@ -269,7 +269,7 @@ HKEY_LOCAL_MACHINE. ..\PowerSchemes | 1 | db310065-829b-4671-9647-2261c00e86ef
 
 El esquema de la tabla **#registryKeys** es el siguiente:
 
-Nombre de columna | Tipo de datos de SQL | Descripción
+Nombre de la columna | Tipo de datos de SQL | Descripción
 -------- | -------- | --------
 KeyName | Nvarchar (300) NOT NULL | Nombre de la ruta de acceso completa de la clave del registro
 KeytypeId | Smallint NOT NULL | Identificador de tipo interno
@@ -277,7 +277,7 @@ Value | Nvarchar (4000) NOT NULL | Todos los valores
 
 La columna **KeytypeID** puede tener uno de los siguientes tipos:
 
-ID | Tipo
+Id. | Tipo
 --- | ---
 1 | String
 2 | expandString
@@ -315,19 +315,19 @@ SequenceID | Espacio de nombres | ClassName | Dan | WmiqueryID
 
 **\#Tabla WmiObjectsProperties**
 
-ID | Query
+Id. | Query
 --- | ---
 1 | Root\Cimv2: SELECT * FROM Win32_PageFileUsage
 
 **\#Tabla WmiQueries**
 
-ID | Query
+Id. | Query
 --- | ---
 1 | Root\Cimv2: SELECT * FROM Win32_PageFileUsage
 
 **\#Esquema de la tabla WmiObjects**
 
-Nombre de columna | Tipo de datos de SQL | Descripción
+Nombre de la columna | Tipo de datos de SQL | Descripción
 --- | --- | ---
 SequenceId | Int NOT NULL | Correlacionar la fila y sus propiedades
 Espacio de nombres | Nvarchar (200) NOT NULL | Espacio de nombres WMI
@@ -337,7 +337,7 @@ WmiqueryId | Int NOT NULL | Correlacionar la clave de #WmiQueries
 
 **\#Esquema de la tabla WmiObjectProperties**
 
-Nombre de columna | Tipo de datos de SQL | Descripción
+Nombre de la columna | Tipo de datos de SQL | Descripción
 --- | --- | ---
 SequenceId | Int NOT NULL | Correlacionar la fila y sus propiedades
 Nombre | Nvarchar (1000) NOT NULL | Nombre de propiedad
@@ -345,7 +345,7 @@ Value | Nvarchar (4000) NULL | Valor de la propiedad actual.
 
 **\#Esquema de la tabla WmiQueries**
 
-Nombre de columna | Tipo de datos de SQL | Descripción
+Nombre de la columna | Tipo de datos de SQL | Descripción
 --- | --- | ---
 Identificador | Int NOT NULL | IDENTIFICADOR único de la consulta >
 Query | Nvarchar (4000) NOT NULL | Cadena de consulta original en los metadatos de aprovisionamiento
@@ -364,7 +364,7 @@ El atributo **Interval** es una configuración global necesaria para todos los c
 
 En el ejemplo anterior, el contador \\ DiscoFísico ( \* ) \\ AVG. Disk sec/Transfer se consultará cada segundo.
 
-Podría haber dos instancias: ** \_ total** y **0 C: D:**, y la salida podría ser la siguiente:
+Podría haber dos instancias: **\_ total** y **0 C: D:**, y la salida podría ser la siguiente:
 
 timestamp | nombreDeCategoría | CounterName | Valor de instancia de _Total | Valor de instancia de 0 C: D:
 ---- | ---- | ---- | ---- | ----
@@ -373,7 +373,7 @@ timestamp | nombreDeCategoría | CounterName | Valor de instancia de _Total | Va
 13:45:54.627 | Disco físico | Prom. Segundos de disco/transferencias | 0.00385999853230048 | 0.00385999853230048
 13:45:55.626 | Disco físico | Prom. Segundos de disco/transferencias | 0.000933297607934224 | 0.000933297607934224
 
-Para importar los datos en la base de datos, los datos se normalizarán en una tabla denominada ** \# PerformanceCounters**.
+Para importar los datos en la base de datos, los datos se normalizarán en una tabla denominada **\# PerformanceCounters**.
 
 CategoryDisplayName | InstanceName | CounterdisplayName | Value
 ---- | ---- | ---- | ----
@@ -388,9 +388,9 @@ Disco físico | 0 C: D: | Prom. Segundos de disco/transferencias | 0.00093329760
 
 **Nota:** Los nombres localizados, como **CategoryDisplayName** y **CounterdisplayName**, varían en función del idioma de visualización utilizado en el servidor de destino. Evite el uso de estos campos si desea crear un paquete de asesores independiente del lenguaje.
 
-Esquema de la tabla ** \# PerformanceCounters**
+Esquema de la tabla **\# PerformanceCounters**
 
-Nombre de columna | Tipo de datos de SQL | Descripción
+Nombre de la columna | Tipo de datos de SQL | Descripción
 ---- | ---- | ---- | ----
 timestamp | datetime2 (3) NOT NULL | Fecha y hora de recopilación en UNC
 nombreDeCategoría | Nvarchar (200) NOT NULL | Nombre de la categoría
@@ -412,21 +412,21 @@ Este es un ejemplo que consulta el archivo **applicationHost.config** :
 <path>%windir%\System32\inetsrv\config\applicationHost.config</path>
 ```
 
-Los resultados se pueden encontrar en una tabla denominada ** \# archivos**, por ejemplo:
+Los resultados se pueden encontrar en una tabla denominada **\# archivos**, por ejemplo:
 
-querypath | FullPath | Parentpath | FileName | Content
+querypath | FullPath | Parentpath | FileName | Contenido
 ----- | ----- | ----- | ----- | -----
 % WINDIR% \...\applicationHost.config |C:\Windows<br>\...\applicationHost.config | C:\Windows<br>\... \CONFIG | applicationHost. confi | 0x3C3F78
 
 **\#Esquema de tabla de archivos**
 
-Nombre de columna | Tipo de datos de SQL | Descripción
+Nombre de la columna | Tipo de datos de SQL | Descripción
 ---- | ---- | ----
 querypath | Nvarchar (300) NOT NULL | Instrucción de consulta original
 FullPath | Nvarchar (300) NOT NULL | Ruta de acceso de archivo absoluta y nombre de archivo
-Parentpath | Nvarchar (300) NOT NULL | Ruta de acceso del archivo
+Parentpath | Nvarchar (300) NOT NULL | Ruta del archivo
 FileName | Nvarchar (300) NOT NULL | Nombre de archivo
-Content | Varbinary (MAX) NULL | Contenido de archivo en binario
+Contenido | Varbinary (MAX) NULL | Contenido de archivo en binario
 
 ### <a name="defining-rules"></a>Definición de reglas
 
@@ -532,7 +532,7 @@ En un paquete de Advisor, podría haber muchas tablas (grupos de valores únicos
 
 En Resumen, hay tres tipos de elementos de la interfaz de usuario:
 
-* [Sección](#bkmk-ui-section)
+* [Secciones](#bkmk-ui-section)
 
 * [Grupos de valor único](#bkmk-ui-svg)
 
@@ -562,7 +562,7 @@ Este es un ejemplo que muestra los elementos de la interfaz de usuario:
 </advisorPack>
 ```
 
-### <a name="sections"></a><a href="" id="bkmk-ui-section"></a>Sección
+### <a name="sections"></a><a href="" id="bkmk-ui-section"></a>Secciones
 
 Una sección es exclusivamente para el diseño de la interfaz de usuario. No participa en los cálculos lógicos. Cada informe único contiene un conjunto de secciones de nivel superior que no tienen una sección principal. Las secciones de nivel superior se presentan como pestañas en el informe. Las secciones pueden tener subsecciones, con un máximo de 10 niveles. Todas las subsecciones de las secciones de nivel superior se muestran en áreas expansibles. Una sección puede contener varias subsecciones, grupos de valores únicos y tablas de valores de lista. Los grupos de valores únicos y las tablas de valores de lista se presentan como tablas.
 
@@ -574,13 +574,13 @@ Este es un ejemplo de la sección de nivel superior.
 
 Un nombre de sección debe ser único. Se usa como una clave que se puede vincular a otras secciones, grupos de valores únicos y tablas de valores de lista.
 
-El ejemplo siguiente tiene un atributo, un **elemento primario**y apunta a la sección CPU. CPUFacts es un elemento secundario de la sección denominada CPU. **Parent** debe hacer referencia a un nombre de sección anterior; de lo contrario, puede producir un bucle.
+El ejemplo siguiente tiene un atributo, un **elemento primario** y apunta a la sección CPU. CPUFacts es un elemento secundario de la sección denominada CPU. **Parent** debe hacer referencia a un nombre de sección anterior; de lo contrario, puede producir un bucle.
 
 ``` syntax
 <section name="CPUFacts" caption="Facts" parent="CPU"/>
 ```
 
-El siguiente grupo de valor único tiene un atributo, **sección**y puede apuntar a cualquier sección, en función del diseño de la interfaz de usuario.
+El siguiente grupo de valor único tiene un atributo, **sección** y puede apuntar a cualquier sección, en función del diseño de la interfaz de usuario.
 
 ``` syntax
 <singleValue name="CPUInformation" section="CPUFacts" caption="Physical CPU Information"> </singleValue>
@@ -590,7 +590,7 @@ El siguiente grupo de valor único tiene un atributo, **sección**y puede apunta
 
 Un grupo de valores único y una tabla de valores de lista contienen distintos tipos de datos, como String, int y Float. Dado que estos valores se almacenan en la base de datos SQL Server, puede definir un tipo de datos SQL para cada propiedad de datos. Sin embargo, la definición de un tipo de datos SQL es bastante complicada. Tiene que especificar la longitud o la precisión, que puede ser susceptible de cambiar.
 
-Para definir los tipos de datos lógicos, puede usar el primer elemento secundario de ** &lt; reportDefinition/ &gt; **, que es donde puede definir una asignación del tipo de datos SQL y el tipo lógico.
+Para definir los tipos de datos lógicos, puede usar el primer elemento secundario de **&lt; reportDefinition/ &gt;**, que es donde puede definir una asignación del tipo de datos SQL y el tipo lógico.
 
 En el ejemplo siguiente se definen dos tipos de datos. Una es una **cadena** y la otra es **companyCode**.
 
@@ -649,7 +649,7 @@ Un nombre de tipo de datos puede ser cualquier cadena válida. Esta es una lista
 
 * varchar
 
-Para obtener más información acerca de estos tipos de datos de SQL, vea [tipos de datos (Transact-SQL)](/sql/t-sql/data-types/data-types-transact-sql?view=sql-server-ver15).
+Para obtener más información acerca de estos tipos de datos de SQL, vea [tipos de datos (Transact-SQL)](/sql/t-sql/data-types/data-types-transact-sql).
 
 ### <a name="single-value-groups"></a><a href="" id="bkmk-ui-svg"></a>Grupos de valor único
 
@@ -663,13 +663,13 @@ Un grupo de valores único agrupa varios valores individuales para presentarlos 
 </singleValue>
 ```
 
-En el ejemplo anterior, hemos definido un solo grupo de valores. Es un nodo secundario de la sección **SystemoverviewSection**. Este grupo tiene valores únicos, que son **OsName**, **OSVersion**y **OsLocation**.
+En el ejemplo anterior, hemos definido un solo grupo de valores. Es un nodo secundario de la sección **SystemoverviewSection**. Este grupo tiene valores únicos, que son **OsName**, **OSVersion** y **OsLocation**.
 
 Un único valor debe tener un atributo de nombre único global. En este ejemplo, el atributo global Unique name es **Systemoverview**. El nombre único se usará para generar una vista correspondiente para el informe personalizado. Cada vista contiene el prefijo **VW**, como vwSystemoverview.
 
 Aunque puede definir varios grupos de valor único, dos nombres de valor único no pueden ser iguales, aunque estén en grupos diferentes. El informe de script de SQL usa el nombre del valor único para establecer el valor en consecuencia.
 
-Puede definir un tipo de datos para cada valor único. La entrada permitida para el **tipo** se define en ** &lt; DataType &gt; /**. El informe final podría ser similar al siguiente:
+Puede definir un tipo de datos para cada valor único. La entrada permitida para el **tipo** se define en **&lt; DataType &gt; /**. El informe final podría ser similar al siguiente:
 
 **Hechos**
 
@@ -679,7 +679,7 @@ Sistema operativo | &lt;_un valor se establecerá mediante el script de informe_
 Versión del SO | &lt;_un valor se establecerá mediante el script de informe_&gt;
 Ubicación del sistema operativo | &lt;_un valor se establecerá mediante el script de informe_&gt;
 
-El atributo **Caption** de ** &lt; Value/ &gt; ** se presenta en la primera columna. Los valores de la columna valor se establecen en el futuro mediante el informe de script a través de \[ DBO \] . \[ SetSingleValue \] . El atributo **Description** de ** &lt; Value &gt; /** se muestra en una información sobre herramientas. Normalmente, la información sobre herramientas muestra a los usuarios el origen de los datos. Para obtener más información sobre la información sobre herramientas, consulte la [información sobre herramientas](#bkmk-tooltips).
+El atributo **Caption** de **&lt; Value/ &gt;** se presenta en la primera columna. Los valores de la columna valor se establecen en el futuro mediante el informe de script a través de \[ DBO \] . \[ SetSingleValue \] . El atributo **Description** de **&lt; Value &gt; /** se muestra en una información sobre herramientas. Normalmente, la información sobre herramientas muestra a los usuarios el origen de los datos. Para obtener más información sobre la información sobre herramientas, consulte la [información sobre herramientas](#bkmk-tooltips).
 
 ### <a name="list-value-tables"></a><a href="" id="bkmk-ui-lvt"></a>tablas de valores de lista
 
@@ -750,7 +750,7 @@ por ejemplo, si necesitamos mostrar gráficos para el uso medio de la CPU de dis
 </listValue>
 ```
 
-Otro atributo, **columntype**, puede ser **key**, **Value**o **informativo**. El tipo de datos de la columna de **clave** debe ser Double o doubleable. En una columna de **clave** , no se pueden insertar las mismas claves en una tabla. Las columnas de **valor** o **informativas** no tienen esta limitación.
+Otro atributo, **columntype**, puede ser **key**, **Value** o **informativo**. El tipo de datos de la columna de **clave** debe ser Double o doubleable. En una columna de **clave** , no se pueden insertar las mismas claves en una tabla. Las columnas de **valor** o **informativas** no tienen esta limitación.
 
 Los valores de las estadísticas se almacenan en columnas de **valores** .
 
@@ -767,7 +767,7 @@ Al mismo tiempo, el marco de SPA genera dos claves de estadística. Uno es para 
 
 Como se indica en el ejemplo siguiente, se admiten varias columnas de **valor** con varias columnas de **clave** .
 
-CounterName | InstanceName | Media | Sum
+CounterName | InstanceName | Average | Sum
 --- | :---: | :---: | :---:
 % de tiempo de procesador | _Total | 10 | 20
 % de tiempo de procesador | CPU0 | 20 | 30 
@@ -802,7 +802,7 @@ en el ejemplo anterior, los administradores del sistema solo pueden interesarle 
 </listValue>
 ```
 
-** &lt; trendableKeyValues/ &gt; ** se puede definir en cualquier columna de clave. Si se ha configurado más de una columna de clave con un filtro de este tipo, se aplicará la lógica.
+**&lt; trendableKeyValues/ &gt;** se puede definir en cualquier columna de clave. Si se ha configurado más de una columna de clave con un filtro de este tipo, se aplicará la lógica.
 
 ### <a name="developing-report-scripts"></a>Desarrollo de scripts de informe
 
@@ -870,7 +870,7 @@ Todos los datos recopilados se importan en las siguientes tablas correspondiente
 
 * ETW
 
-    * \#Ceso
+    * \#Eventos
 
     * \#EventProperties
 
@@ -1049,7 +1049,7 @@ Si hay más información que desee comunicar con los administradores del sistema
 exec dbo.WriteSystemLog N'Any information you want to show to the system administrators , N Warning 
 ```
 
-El primer parámetro es el mensaje que desea mostrar en el registro. El segundo parámetro es el nivel de registro. La entrada válida para el segundo parámetro podría ser **informativa**, **ADVERTENCIA**o **error**.
+El primer parámetro es el mensaje que desea mostrar en el registro. El segundo parámetro es el nivel de registro. La entrada válida para el segundo parámetro podría ser **informativa**, **ADVERTENCIA** o **error**.
 
 ### <a name="debug"></a>Depurar
 
@@ -1080,7 +1080,7 @@ La consola de SPA puede ejecutarse en dos modos, depurar o liberar. El modo de l
 
     Por ejemplo, la salida podría ser:
 
-    Identificador | SessionId | AdvisoryPackageId | ReportStatusId | LastUpdatetime | ThresholdversionId
+    Id | SessionId | AdvisoryPackageId | ReportStatusId | LastUpdatetime | ThresholdversionId
     :---: | :---: | :---: | :---: | :---: | :---:
     12 | 17 | 1 | 2 | 2011-05-11 05:35:24.387 | 1
 
@@ -1110,7 +1110,7 @@ Ejecutar \[ DBO \] . \[ DebugReportScript \] devuelve varios conjuntos de result
 
 ### <a name="naming-convention-and-styles"></a>Estilos y Convención de nomenclatura
 
-|                                                                 Mayúsculas y minúsculas Pascal                                                                 |                       Grafía Camel                        |             Uppercase             |
+|                                                                 Mayúsculas y minúsculas Pascal                                                                 |                       Grafía Camel                        |             Mayúsculas             |
 |-----------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------|-----------------------------------|
 | <ul><li>Nombres en ProvisionMetadata.xml</li><li>Procedimientos almacenados</li><li>Functions</li><li>Nombres de vista</li><li>Nombres de tablas temporales</li></ul> | <ul><li>Nombres de parámetro:</li><li>Variables locales</li></ul> | Usar para todas las palabras clave reservadas de SQL |
 
@@ -1150,7 +1150,7 @@ El conjunto de recopiladores de datos de fusión es solo para recopilar el conta
 
    1. Tome el intervalo más pequeño como el nuevo intervalo.
 
-   2. Tome el superconjunto de los contadores de rendimiento. Por ejemplo, con **Process ( \* ) \\ % Processor Time** y **Process ( \* ) \\ \* , \\ Process ( \* ) \\ \\ *** devuelve más datos, por lo que se quitará **Process ( \* ) \\ % Processor Time** and **Process ( \* ) \\ \\ *** del conjunto de recopiladores de datos combinados.
+   2. Tome el superconjunto de los contadores de rendimiento. Por ejemplo, con **Process ( \* ) \\ % Processor Time** y **Process ( \* ) \\ \* , \\ Process ( \* ) \\ \\*** devuelve más datos, por lo que se quitará **Process ( \* ) \\ % Processor Time** and **Process ( \* ) \\ \\*** del conjunto de recopiladores de datos combinados.
 
 ### <a name="collect-dynamic-data"></a>Recopilar datos dinámicos
 
@@ -1173,7 +1173,7 @@ ROOT\*IPHTTPS\0000
 
 ```
 
-Para buscar el valor **FriendlyName** , abra el editor del registro y vaya a la configuración del registro combinando **HKEY \_ local \_ Machine \\ System \\ CurrentControlSet \\ enum \\ ** con cada línea del ejemplo anterior. , por ejemplo: **HKEY \_ local \_ Machine \\ System \\ CurrentControlSet \\ enum \\ root \\ \* IPHTTPS \\ 0000**.
+Para buscar el valor **FriendlyName** , abra el editor del registro y vaya a la configuración del registro combinando **HKEY \_ local \_ Machine \\ System \\ CurrentControlSet \\ enum \\** con cada línea del ejemplo anterior. , por ejemplo: **HKEY \_ local \_ Machine \\ System \\ CurrentControlSet \\ enum \\ root \\ \* IPHTTPS \\ 0000**.
 
 Para convertir los pasos anteriores en SPA aprovisionar metadatos, agregue el script en el ejemplo de código siguiente:
 
@@ -1189,7 +1189,7 @@ Para convertir los pasos anteriores en SPA aprovisionar metadatos, agregue el sc
 </managementpaths>
 ```
 
-En este ejemplo, primero se agrega una consulta WMI en managementpaths y se define el nombre de clave de **adaptador**de la aplicación. A continuación, agregue una clave del registro y haga referencia a la función de **adaptador** mediante la sintaxis **$ (adaptador de sistema. PNPDeviceID)**.
+En este ejemplo, primero se agrega una consulta WMI en managementpaths y se define el nombre de clave de **adaptador** de la aplicación. A continuación, agregue una clave del registro y haga referencia a la función de **adaptador** mediante la sintaxis **$ (adaptador de sistema. PNPDeviceID)**.
 
 En la tabla siguiente se define si un recopilador de datos de SPA admite datos dinámicos y si otros recopiladores de datos pueden hacer referencia a ellos:
 
@@ -1217,7 +1217,7 @@ Y un ejemplo de WMI:
 <path name="wmi">Root\Cimv2:select PNPDeviceID FROM Win32_NetworkAdapter</path>
 ```
 
-Para definir un recopilador de datos dependiente, se usa la sintaxis siguiente: $ (*{Name}*.* {Attribute}*).
+Para definir un recopilador de datos dependiente, se usa la sintaxis siguiente: $ (*{Name}*.*{Attribute}*).
 
 *{Name}* y *{Attribute}* son marcadores de posición.
 
@@ -1278,7 +1278,7 @@ Origen de datos | Formato | Ejemplo
 WMI | WMI: &lt; &gt; / &lt; campo WMIClass&gt; | WMI: Win32_OperatingSystem/Caption
 Contador de rendimiento | PerfCounter: &lt; NombreCategoría &gt; / &lt; nombreDeInstancia&gt; | PerfCounter: proceso/% de tiempo de procesador
 Registro | registro: &lt; registerKey&gt; | registro: Hklm\software\microsoft.<br>\\ASP.NET \\ Rootver
-Archivo de configuración | ConfigFile: &lt; filePath &gt; \[ ; XPath: &lt; XPath&gt;\]<br>**Nota**<br>XPath es opcional y solo es válido cuando el archivo es un archivo XML. | ConfigFile: WINDIR% \\ system32 \\ inetsrv\config \\applicationHost.config<br>XPath: Configuration &frasl; System. WebServer<br>&frasl;httpProtocol&frasl;@allowKeepAlive
+Archivo de configuración | ConfigFile: &lt; filePath &gt; \[ ; XPath: &lt; XPath&gt;\]<br>**Note**<br>XPath es opcional y solo es válido cuando el archivo es un archivo XML. | ConfigFile: WINDIR% \\ system32 \\ inetsrv\config \\applicationHost.config<br>XPath: Configuration &frasl; System. WebServer<br>&frasl;httpProtocol&frasl;@allowKeepAlive
 ETW | ETW: &lt; Provider/ &gt; (palabras clave) | ETW: seguimiento del kernel de Windows (proceso, neto)
 
 ### <a name="table-collation"></a>Intercalación de tabla
@@ -1315,7 +1315,7 @@ Los siguientes atributos de proveedor se pueden usar para recopilar ETW:
 Atributo | Tipo | Descripción
 --- | --- | ---
 guid | GUID | GUID de proveedor
-hora de sesión | string | Nombre de sesión de ETW (opcional, solo es necesario para eventos de kernel)
+hora de sesión | cadena | Nombre de sesión de ETW (opcional, solo es necesario para eventos de kernel)
 keywordsany | Hex | Cualquier palabra clave (opcional, sin prefijo 0x)
 keywordsAll | Hex | Todas las palabras clave (opcional)
 properties | Hex | Propiedades (opcional)
@@ -1329,7 +1329,7 @@ Hay dos tablas de salida, como se muestra aquí.
 
 **\#Esquema de la tabla Events**
 
-Nombre de columna | Tipo de datos de SQL | Descripción
+Nombre de la columna | Tipo de datos de SQL | Descripción
 --- | --- | ---
 SequenceID | Int NOT NULL | IDENTIFICADOR de secuencia de correlación
 EventtypeId | Int NOT NULL | IDENTIFICADOR de tipo de evento (consulte [dbo]. [ Eventtypes])
@@ -1341,7 +1341,7 @@ Usertime | BigInt no NULL | Tiempo de usuario
 
 **\#Esquema de la tabla EventProperties**
 
-Nombre de columna | Tipo de datos de SQL | Descripción
+Nombre de la columna | Tipo de datos de SQL | Descripción
 --- | --- | ---
 SequenceID | Int NOT NULL | IDENTIFICADOR de secuencia de correlación
 Nombre | Nvarchar (100) | Nombre de propiedad
@@ -1432,4 +1432,4 @@ Las reglas son combinaciones de lógica, umbrales y descripciones. Representan u
 
 **Notificaciones**
 
-Una notificación es la información que una regla muestra a los usuarios. Incluye el estado de la regla (**correcto**, **na**o **Warning**), el nombre de la regla y las posibles recomendaciones para solucionar los problemas de rendimiento.
+Una notificación es la información que una regla muestra a los usuarios. Incluye el estado de la regla (**correcto**, **na** o **Warning**), el nombre de la regla y las posibles recomendaciones para solucionar los problemas de rendimiento.

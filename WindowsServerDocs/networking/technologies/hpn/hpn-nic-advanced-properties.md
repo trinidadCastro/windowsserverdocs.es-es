@@ -7,16 +7,16 @@ manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 09/20/2018
-ms.openlocfilehash: ce9c4049ab701d647701029f41d2570b7fc8cd03
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: a08de5815a364dc39dd975a37ac3be594978ea88
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997662"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96864494"
 ---
 # <a name="nic-advanced-properties"></a>Propiedades avanzadas de NIC
 
-Puede administrar las NIC y todas las características a través de Windows PowerShell mediante el cmdlet [NetAdapter](/powershell/module/netadapter/?view=win10-ps&viewFallbackFrom=winserverr2-ps) .  También puede administrar las NIC y todas las características mediante el panel de control de red (ncpa.cpl).
+Puede administrar las NIC y todas las características a través de Windows PowerShell mediante el cmdlet [NetAdapter](/powershell/module/netadapter/) .  También puede administrar las NIC y todas las características mediante el panel de control de red (ncpa.cpl).
 
 1. En **Windows PowerShell**, ejecute el `Get‑NetAdapterAdvancedProperties` cmdlet con dos marca o modelo de NIC diferente.
 
