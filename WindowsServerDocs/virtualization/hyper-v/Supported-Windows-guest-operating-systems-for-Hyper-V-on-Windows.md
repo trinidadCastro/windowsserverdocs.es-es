@@ -5,17 +5,17 @@ ms.topic: article
 ms.assetid: 06b35897-2192-48b7-8c2d-125c520b0786
 ms.author: benarm
 author: BenjaminArmstrong
-ms.date: 01/08/2019
-ms.openlocfilehash: 2e5cf6c94d0127a283c640a48aaa2fced5472e9d
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.date: 12/09/2020
+ms.openlocfilehash: 3c00a81d2e93f6ba39b76f0bfc4612f6f26f15fc
+ms.sourcegitcommit: f95a991491ff09260d979078e248e2636bd2db54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746730"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "96997832"
 ---
 # <a name="supported-windows-guest-operating-systems-for-hyper-v-on-windows-server"></a>Sistemas operativos invitados de Windows admitidos para Hyper-V en Windows Server
 
->Se aplica a: Windows Server 2016 y Windows Server 2019
+>Se aplica a: Windows Server 2016, Windows Server 2019, Azure Stack HCl, versión 20H2
 
 Hyper-V admite varias versiones de distribuciones de Windows Server, Windows y Linux que se ejecutan en máquinas virtuales, como sistemas operativos invitados. En este artículo se describen los sistemas operativos invitados de Windows Server y Windows. Para distribuciones de Linux y FreeBSD, consulte [máquinas virtuales Linux y FreeBSD compatibles con Hyper-V en Windows](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md).
 

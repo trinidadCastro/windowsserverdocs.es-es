@@ -5,17 +5,17 @@ ms.topic: article
 ms.assetid: 990ff94a-30fb-434b-b4a2-3804a5245ba6
 ms.author: benarm
 author: BenjaminArmstrong
-ms.date: 10/03/2016
-ms.openlocfilehash: 891ad97d8ae5ef01c6dbfd0d59f7be6316c6e687
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.date: 12/09/2020
+ms.openlocfilehash: 1eeb5a80d0f08a158f0052fb1ba69d2adacf0b4d
+ms.sourcegitcommit: f95a991491ff09260d979078e248e2636bd2db54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746750"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "96997812"
 ---
 # <a name="supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows"></a>Máquinas virtuales Linux y FreeBSD compatibles con Hyper-V en Windows
 
->Se aplica a: Windows Server 2019, Windows Server 2016, Hyper-V Server 2016, Windows Server 2012 R2, Hyper-V Server 2012 R2, Windows Server 2012, Hyper-V Server 2012, Windows Server 2008 R2, Windows 10, Windows 8.1, Windows 8, Windows 7,1, Windows 7
+>Se aplica a: Azure Stack HCl, versión 20H2; Windows Server 2019, Windows Server 2016, Hyper-V Server 2016, Windows Server 2012 R2, Hyper-V Server 2012 R2, Windows Server 2012, Hyper-V Server 2012, Windows Server 2008 R2, Windows 10, Windows 8.1, Windows 8, Windows 7,1, Windows 7
 
 Hyper-V admite dispositivos emulados y específicos de Hyper-V para máquinas virtuales Linux y FreeBSD. Cuando se ejecuta con dispositivos emulados, no es necesario instalar ningún software adicional. Sin embargo, los dispositivos emulados no proporcionan un alto rendimiento y no pueden aprovechar la completa infraestructura de administración de máquinas virtuales que ofrece la tecnología Hyper-V. Para hacer un uso completo de todas las ventajas que ofrece Hyper-V, es mejor usar dispositivos específicos de Hyper-V para Linux y FreeBSD. La colección de controladores necesarios para ejecutar dispositivos específicos de Hyper-V se conoce como Linux Integration Services (LIS) o FreeBSD Integration Services (BIS).
 

@@ -5,15 +5,15 @@ ms.author: stevenek
 ms.topic: get-started-article
 ms.assetid: 20fee213-8ba5-4cd3-87a6-e77359e82bc0
 author: stevenek
-ms.date: 09/09/2020
+ms.date: 12/09/2020
 description: Instrucciones paso a paso para implementar el almacenamiento definido por software con Espacios de almacenamiento directo en Windows Server como infraestructura hiperconvergida o infraestructura convergente (también conocida como desagregada).
 ms.localizationpriority: medium
-ms.openlocfilehash: c7ff6b1cf017405d90ae7e27d1d5853286a78b89
-ms.sourcegitcommit: c56e74743e5ad24b28ae81668668113d598047c6
+ms.openlocfilehash: 649d9154e08dcde0752447d2b8a290dce9dc15d2
+ms.sourcegitcommit: f95a991491ff09260d979078e248e2636bd2db54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91987315"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "96997852"
 ---
 # <a name="deploy-storage-spaces-direct"></a>Implementar espacios de almacenamiento directo
 
@@ -22,12 +22,12 @@ ms.locfileid: "91987315"
 En este tema se proporcionan instrucciones paso a paso para implementar [espacios de almacenamiento directo](storage-spaces-direct-overview.md) en Windows Server. Para implementar Espacios de almacenamiento directo como parte de Azure Stack HCl, consulte [¿Qué es el proceso de implementación de Azure Stack HCl?](/azure-stack/hci/deploy/deployment-overview)
 
 > [!Tip]
-> ¿Desea adquirir una infraestructura hiperconvergida? Microsoft recomienda adquirir una solución de HCl Azure Stack software o hardware validada de nuestros asociados. Estas soluciones se diseñan, se ensamblan y se validan con nuestra arquitectura de referencia para garantizar la compatibilidad y la confiabilidad, de modo que pueda empezar a utilizarlas rápidamente. Para ver un catálogo de las soluciones de hardware y software que funcionan con Azure Stack HCl, consulte el [Catálogo de hcl Azure Stack](https://azure.microsoft.com/products/azure-stack/hci/catalog/).
+> ¿Desea adquirir una infraestructura hiperconvergida? Microsoft recomienda adquirir una solución de HCl Azure Stack software o hardware validada de nuestros asociados. Estas soluciones se diseñan, se ensamblan y se validan con nuestra arquitectura de referencia para garantizar la compatibilidad y la confiabilidad, de modo que pueda empezar a utilizarlas rápidamente. Para ver un catálogo de las soluciones de hardware y software que funcionan con Azure Stack HCl, consulte el [Catálogo de hcl Azure Stack](https://aka.ms/azurestackhcicatalog).
 
 > [!Tip]
 > Puede usar máquinas virtuales de Hyper-V, incluido en Microsoft Azure, para [evaluar espacios de almacenamiento directo sin hardware](storage-spaces-direct-in-vm.md). También puede revisar los útiles [scripts de implementación rápida de Windows Server](https://aka.ms/wslab), que se usan con fines de entrenamiento.
 
-## <a name="before-you-start"></a>Antes de comenzar
+## <a name="before-you-start"></a>Antes de empezar
 
 Revise los [requisitos de hardware de espacios de almacenamiento directo](Storage-Spaces-Direct-Hardware-Requirements.md) y consulte este documento para familiarizarse con el enfoque general y con las notas importantes asociadas a algunos pasos.
 
@@ -299,7 +299,7 @@ El siguiente paso para configurar los servicios de clúster para el servidor de 
 
 #### <a name="to-create-a-scale-out-file-server-role-by-using-server-manager"></a>Para crear un rol de servidor de archivos Scale-Out mediante Administrador del servidor
 
-1. En Administrador de clústeres de conmutación por error, seleccione el clúster, vaya a **roles**y, a continuación, haga clic en **configurar rol..**..<br>Aparece el Asistente para alta disponibilidad.
+1. En Administrador de clústeres de conmutación por error, seleccione el clúster, vaya a **roles** y, a continuación, haga clic en **configurar rol..**..<br>Aparece el Asistente para alta disponibilidad.
 2. En la página **Seleccionar rol** , haga clic en **servidor de archivos**.
 3. En la página **tipo de servidor de archivos** , haga clic en **servidor de archivos de escalabilidad horizontal para datos de aplicación**.
 4. En la página **punto de acceso de cliente** , escriba un nombre para el servidor de archivos Scale-Out.
