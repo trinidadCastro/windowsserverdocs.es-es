@@ -1,35 +1,35 @@
 ---
-title: Solución de problemas de AD FS-inicio de sesión iniciado por IDP
+title: Solución de problemas de AD FS de Idp-Initiated de inicio de sesión
 description: En este documento se describe cómo solucionar problemas de la página de inicio de sesión de AD FS.
 author: billmath
 ms.author: billmath
 manager: mtillman
 ms.date: 01/03/2017
 ms.topic: article
-ms.openlocfilehash: 4eb39b697b3dd31dc0a6e3581bdb33437b462197
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 8ab9497a2c6711c638010c66b9a7c7dd8066876f
+ms.sourcegitcommit: 03048411c07c1a1d0c8bb0b2a60c1c17c9987314
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969712"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96938975"
 ---
-# <a name="ad-fs-troubleshooting---idp-initiated-sign-on"></a>Solución de problemas de AD FS-inicio de sesión iniciado por IDP
+# <a name="ad-fs-troubleshooting---idp-initiated-sign-on"></a>Solución de problemas de AD FS de Idp-Initiated de inicio de sesión
 La página de inicio de sesión de AD FS se puede usar para comprobar si la autenticación está funcionando o no.  Para ello, vaya a la página e inicie sesión.  Además, podemos usar la página de inicio de sesión para comprobar que se muestran todos los usuarios de confianza de SAML 2,0.
 
-## <a name="enable-the-idp-initiated-sign-on-page"></a>Habilitación de la página de inicio de sesión iniciada por IDP
+## <a name="enable-the-idp-initiated-sign-on-page"></a>Habilitar la página de inicio de sesión de Idp-Initiated
 De forma predeterminada, AD FS en Windows 2016 no tiene habilitada la página de inicio de sesión.  Para habilitarlo, puede usar el comando de PowerShell Set-AdfsProperties.  Use el procedimiento siguiente para habilitar la página:
 
 1.  Abrir Windows PowerShell
-2.  Escriba: `Get-AdfsProperties` y presione Entrar.
+2.  Escriba:  `Get-AdfsProperties` y presione Entrar.
 3.  Compruebe que **EnableIdpInitiatedSignonPage** está establecido en false ![ false.](media/ad-fs-tshoot-initiatedsignon/idp2.png)
-4.  En PowerShell, escriba:`Set-AdfsProperties -EnableIdpInitiatedSignonPage $true`
-5.  No verá una confirmación, por lo que deberá escribir Get-AdfsProperties de nuevo y comprobar que **EnableIdpInitatedSignonPage** está establecido en true.
+4.  En PowerShell, escriba:  `Set-AdfsProperties -EnableIdpInitiatedSignonPage $true`
+5.  No verá una confirmación para que vuelva a escribir Get-AdfsProperties y compruebe que **EnableIdpInitatedSignonPage** está establecido en true.
 ![True](media/ad-fs-tshoot-initiatedsignon/idp4.png)
 
 ## <a name="test-authentication"></a>Probar autenticación
-Use el procedimiento siguiente para probar la autenticación de AD FS con la página de inicio de sesión iniciada por IDP.
+Utilice el siguiente procedimiento para probar la autenticación de AD FS con la página de inicio de sesión de Idp-Initiated.
 
-1.  Abra un explorador Web y vaya a la página de inicio de sesión de IDP.  Ejemplo: https://sts.contoso.com/adfs/ls/idpinitiatedsignon.htm
+1.  Abra un explorador Web y vaya a la página de inicio de sesión de IDP.  Ejemplo:  https://sts.contoso.com/adfs/ls/idpinitiatedsignon.aspx
 2.  Se le pedirá que inicie sesión.  Escriba sus credenciales.
 ![Inicio de sesión](media/ad-fs-tshoot-initiatedsignon/idp5.png)
 3.  Si esta operación se realizó correctamente, debe iniciar sesión.
@@ -45,10 +45,10 @@ Puede probar la experiencia de inicio de sesión sin problemas asegurándose de 
 2.  Escriba la dirección URL y haga clic en Agregar.  Haga clic en Cerrar.
 ![Agregar dirección URL](media/ad-fs-tshoot-initiatedsignon/idp9.png)
 1.  Haga clic en Aceptar.  Haga clic en Aceptar.  Esto debe cerrar las opciones de Internet.
-2.  Abra un explorador Web y vaya a la página de inicio de sesión de IDP.  Ejemplo: https://sts.contoso.com/adfs/ls/idpinitiatedsignon.htm
+2.  Abra un explorador Web y vaya a la página de inicio de sesión de IDP.  Ejemplo:  https://sts.contoso.com/adfs/ls/idpinitiatedsignon.aspx
 3.  Haga clic en el botón iniciar sesión.  Debe iniciar sesión automáticamente y no se le pedirán las credenciales.
 ![Sencilla](media/ad-fs-tshoot-initiatedsignon/idp6.png)
 
-## <a name="next-steps"></a>Pasos a seguir
+## <a name="next-steps"></a>Pasos siguientes
 
 - [Solución de problemas de AD FS](ad-fs-tshoot-overview.md)
