@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de la recuperación del bosque de AD: copia de seguridad de un servidor completo'
 title: 'Recuperación de bosque de AD: copia de seguridad de un servidor completo'
 ms.author: daveba
 author: iainfoulds
@@ -6,12 +7,12 @@ manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 398918dc-c8ab-41a6-a377-95681ec0b543
-ms.openlocfilehash: 93771bcac84680f07a39ce2791b67c2b35aff8dc
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 259b47909085f65225082a2480a2e621812bc9f7
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93067967"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97045793"
 ---
 # <a name="ad-forest-recovery---backing-up-a-full-server"></a>Recuperación de bosque de AD: copia de seguridad de un servidor completo
 
@@ -30,43 +31,43 @@ Para conocer los pasos para instalarlo en Windows Server 2008 y Windows Server 2
 
 ### <a name="to-install-windows-server-backup"></a>Para instalar Copias de seguridad de Windows Server
 
-1. Abra **Administrador del servidor** y haga clic en **Agregar roles y características** .
-2. En el **Asistente para agregar roles y características,** haga clic en **siguiente** .
-3. En la pantalla **tipo de instalación** , deje la instalación predeterminada basada en **características o en roles** y haga clic en **siguiente** .
-4. En la pantalla **selección de servidor** , haga clic en **siguiente** .
-5. En la pantalla **roles de servidor** , haga clic en **siguiente** .
+1. Abra **Administrador del servidor** y haga clic en **Agregar roles y características**.
+2. En el **Asistente para agregar roles y características,** haga clic en **siguiente**.
+3. En la pantalla **tipo de instalación** , deje la instalación predeterminada basada en **características o en roles** y haga clic en **siguiente**.
+4. En la pantalla **selección de servidor** , haga clic en **siguiente**.
+5. En la pantalla **roles de servidor** , haga clic en **siguiente**.
 6. En la pantalla **características** , seleccione **copias de seguridad de Windows Server** y haga clic en **siguiente** 
     ![ instalar copia de seguridad.](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup2.png)
-7. Haga clic en **Instalar** .
-8. Una vez completada la instalación, haga clic en **cerrar** .
+7. Haga clic en **Instalar**.
+8. Una vez completada la instalación, haga clic en **cerrar**.
 
 ### <a name="to-perform-a-backup-with-windows-server-backup"></a>Para realizar una copia de seguridad con Copias de seguridad de Windows Server
 
-1. Abra **Administrador del servidor** , haga clic en **herramientas** y, a continuación, haga clic en **copias de seguridad de Windows Server** .
-   - En Windows Server 2008 R2 y Windows Server 2008, haga clic en **Inicio** , seleccione **herramientas administrativas** y, a continuación, haga clic en **copias de seguridad de Windows Server** .
+1. Abra **Administrador del servidor**, haga clic en **herramientas** y, a continuación, haga clic en **copias de seguridad de Windows Server**.
+   - En Windows Server 2008 R2 y Windows Server 2008, haga clic en **Inicio**, seleccione **herramientas administrativas** y, a continuación, haga clic en **copias de seguridad de Windows Server**.
 
    ![Instalar copia de seguridad](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup1.png)
 
-2. Si se le solicita, en el cuadro de diálogo **control de cuentas de usuario** , proporcione credenciales de operador de copia de seguridad y, a continuación, haga clic en **Aceptar** .
-3. Haga clic en **copia de seguridad local** .
-4. En el menú **Acción** , haga clic en **Hacer copia de seguridad una vez** .
-5. En el Asistente para hacer copia de seguridad una vez, en la página **Opciones de copia de seguridad** , haga clic en **opciones diferentes** y, a continuación, en **siguiente** .
+2. Si se le solicita, en el cuadro de diálogo **control de cuentas de usuario** , proporcione credenciales de operador de copia de seguridad y, a continuación, haga clic en **Aceptar**.
+3. Haga clic en **copia de seguridad local**.
+4. En el menú **Acción**, haga clic en **Hacer copia de seguridad una vez**.
+5. En el Asistente para hacer copia de seguridad una vez, en la página **Opciones de copia de seguridad** , haga clic en **opciones diferentes** y, a continuación, en **siguiente**.
 
    ![Instalar copia de seguridad](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup3.png)
 
-6. En la página **seleccionar configuración de copia de seguridad** , haga clic en **servidor completo (recomendado)** y, a continuación, haga clic en **siguiente** .
-7. En la página **especificar tipo de destino** , haga clic en **unidades locales** o en **carpeta compartida remota** y, a continuación, haga clic en **siguiente** .
+6. En la página **seleccionar configuración de copia de seguridad** , haga clic en **servidor completo (recomendado)** y, a continuación, haga clic en **siguiente**.
+7. En la página **especificar tipo de destino** , haga clic en **unidades locales** o en **carpeta compartida remota** y, a continuación, haga clic en **siguiente**.
 8. En la página **Seleccionar destino** de la copia de seguridad, elija la ubicación de copia de seguridad.  Si seleccionó unidad local, elija una unidad local o, si seleccionó recurso compartido remoto, elija un recurso compartido de red.
-9. En la pantalla confirmación, haga clic en **copia de seguridad** .
+9. En la pantalla confirmación, haga clic en **copia de seguridad**.
 
    ![Instalar copia de seguridad](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup4.png)
 
-10. Una vez que se haya completado, haga clic en **cerrar** .
+10. Una vez que se haya completado, haga clic en **cerrar**.
 11. Cierre Copias de seguridad de Windows Server.
 
 >[!NOTE]
 >Si recibe un error que indica que no hay ninguna ubicación de almacenamiento de copia de seguridad disponible, tendrá que excluir uno de los volúmenes seleccionados o agregar un nuevo volumen o recurso compartido remoto.
->Si recibe una advertencia que indica que el volumen seleccionado también se incluye en la lista de elementos de la copia de seguridad, determine si desea quitarlo y haga clic en **Aceptar** .
+>Si recibe una advertencia que indica que el volumen seleccionado también se incluye en la lista de elementos de la copia de seguridad, determine si desea quitarlo y haga clic en **Aceptar**.
 
 ## <a name="using-wbadminexe-to-backup-a-windows-server"></a>Uso de Wbadmin.exe para hacer una copia de seguridad de Windows Server
 
