@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo colocar un servidor proxy de Federación
 ms.assetid: ec26705c-4446-4226-b9b4-b775b642f0f4
 title: Dónde colocar a un servidor proxy de federación
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: e2494da552877e4ee69120f4eaee52a96c65a472
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 734ac147176d7650c068e8920b4c704cdb936ab5
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87962679"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97042053"
 ---
 # <a name="where-to-place-a-federation-server-proxy"></a>Dónde colocar a un servidor proxy de federación
 

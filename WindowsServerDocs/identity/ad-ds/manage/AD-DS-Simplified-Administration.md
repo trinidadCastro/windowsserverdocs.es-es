@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: AD DS la administración simplificada'
 ms.assetid: f74eec9a-2485-4ee0-a0d8-cce01250a294
 title: Administración simplificada de AD DS
 ms.author: daveba
@@ -6,12 +7,12 @@ author: iainfoulds
 manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
-ms.openlocfilehash: 6390fcea3cf0b08cf36b9c8e73514b3af284122e
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 680664d1ef24e714b86661d5fb334b82250137f5
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93068137"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97043113"
 ---
 # <a name="ad-ds-simplified-administration"></a>Administración simplificada de AD DS
 
@@ -111,7 +112,7 @@ Para obtener más información sobre la replicación y la topología de sitio de
 
 Active Directory de Windows 2000 introdujo el maestro RID, que emite grupos de identificadores relativos para controladores de dominio, con el fin de crear identificadores de seguridad (SID) de elementos de confianza de seguridad, como usuarios, grupos y equipos.  De manera predeterminada, este espacio global de RID se limita a 2<sup>30</sup> (o 1.073.741.823) SID totales creados en un dominio. Los SID no pueden regresar al grupo o volver a emitirse. Con el paso del tiempo, los RID podrían empezar a escasear en un dominio grande, o podrían producirse accidentes que conllevaran la disminución innecesaria de los RID y su agotamiento final.
 
-Windows Server 2012 aborda una serie de problemas de emisión y administración de RID que descubrieron los clientes y el Servicio de soporte al cliente de Microsoft a medida que AD DS se iban desarrollando desde la creación de los primeros dominios de Active Directory en 1999. Se incluyen los siguientes:
+Windows Server 2012 aborda una serie de problemas de emisión y administración de RID que descubrieron los clientes y el Servicio de soporte al cliente de Microsoft a medida que AD DS se iban desarrollando desde la creación de los primeros dominios de Active Directory en 1999. Entre ellas se incluyen las siguientes:
 
 - Las advertencias de consumo de RID periódico se escriben en el registro de eventos
 - Los eventos se registran cuando un administrador invalida un grupo de RID
@@ -174,7 +175,7 @@ El código para la preparación de AD anteriormente almacenado en ADprep.exe se 
 
 El sistema de comprobación de requisitos previos integrado en el código administrado de ADDSDeployment de Windows PowerShell funciona de maneras diferentes, en función de la operación. Las tablas incluidas a continuación describen cada prueba, cuándo se utiliza y una explicación de cómo y qué comprueba. Estas tablas pueden resultar muy útiles si se produce algún problema cuando la comprobación es incorrecta y el error no es suficiente para encontrar una solución.
 
-Estas pruebas se registran en el canal de registro de eventos operativos **DirectoryServices-Deployment** en la categoría de tarea **Básica** , siempre con el identificador de evento  **103** .
+Estas pruebas se registran en el canal de registro de eventos operativos **DirectoryServices-Deployment** en la categoría de tarea **Básica**, siempre con el identificador de evento **103**.
 
 ### <a name="prerequisite-windows-powershell"></a>Windows PowerShell con requisitos previos
 

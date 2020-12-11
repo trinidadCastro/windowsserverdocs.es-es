@@ -1,4 +1,5 @@
 ---
+description: 'Más información sobre: secuencias de integridad de ReFS'
 title: Flujos de integridad de ReFS
 author: gawatu
 ms.author: jgerend
@@ -6,19 +7,19 @@ manager: dmoss
 ms.date: 10/16/2018
 ms.topic: article
 ms.assetid: 1f1215cd-404f-42f2-b55f-3888294d8a1f
-ms.openlocfilehash: 15c4b7942be949af33e70d2a5f299af426040e7b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: aed3de02a21f59102bcaa4d0efce2ef6e2816856
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87950509"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97041263"
 ---
 # <a name="refs-integrity-streams"></a>Flujos de integridad de ReFS
 >Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server (canal semianual), Windows 10
 
 Las secuencias de integridad son una característica opcional en ReFS que valida y mantiene la integridad de datos usando sumas de comprobación. Aunque ReFS siempre usa las sumas de comprobación para los metadatos, ReFS no genera ni valida de forma predeterminada las sumas de comprobación para los datos de archivo. Secuencias de integridad es una característica opcional que permite a los usuarios emplear sumas de comprobación para los datos de archivos. Cuando se habilitan los flujos de integridad, ReFS puede determinar claramente si los datos son válidos o están dañados. Además, los espacios de almacenamiento y ReFS pueden arreglar datos y metadatos dañados automáticamente y de manera conjunta.
 
-## <a name="how-it-works"></a>Funcionamiento
+## <a name="how-it-works"></a>Cómo funciona
 
 Las secuencias de integridad pueden habilitarse para archivos individuales, directorios o un volumen completo y la configuración de las secuencias de integridad puede cambiarse en cualquier momento. Además, la configuración de la secuencia de integridad de archivos y directorios se hereda de sus directorios principales.
 

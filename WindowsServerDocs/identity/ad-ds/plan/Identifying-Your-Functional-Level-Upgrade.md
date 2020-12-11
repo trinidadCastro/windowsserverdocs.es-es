@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: identificación de la actualización de nivel funcional'
 ms.assetid: 231158d8-5e81-4630-b8d5-93fee16e0cd3
 title: Identificación de la actualización de nivel funcional
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 3a3422b49c54894084d8a3442d1f805003076f8d
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 309a064dfd929bbbadc8312a5c67e0ad652d2c4d
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93068417"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97041136"
 ---
 # <a name="identifying-your-functional-level-upgrade"></a>Identificación de la actualización de nivel funcional
 

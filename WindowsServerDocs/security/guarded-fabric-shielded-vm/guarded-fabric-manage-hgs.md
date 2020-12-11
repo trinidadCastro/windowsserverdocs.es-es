@@ -1,16 +1,17 @@
 ---
+description: Más información acerca de cómo administrar el servicio de protección de host
 title: Administración del servicio de protección de host
 ms.topic: article
 ms.assetid: eecb002e-6ae5-4075-9a83-2bbcee2a891c
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.openlocfilehash: 4c6fe87cd407a41b3686d86a37308bb08ddd6793
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: 415e4980a718bac04925d349aa9bca0773f04a8b
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766748"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97044043"
 ---
 # <a name="managing-the-host-guardian-service"></a>Administración del servicio de protección de host
 
@@ -48,7 +49,7 @@ HGS se suministra con 2 roles de JEA preconfigurados:
 - **Revisores de HGS** que solo permiten a los usuarios realizar auditorías de las directivas existentes. No pueden realizar cambios en la configuración de HGS.
 
 Para usar JEA, primero debe crear un nuevo usuario estándar y convertirlos en miembros del grupo de administradores de HGS o de revisores de HGS.
-Si usó `Install-HgsServer` para configurar un nuevo bosque para HGS, estos grupos se denominarán "*ServiceName*Administrators" y "*ServiceName*revisores", respectivamente, donde *ServiceName* es el nombre de red del clúster de HGS.
+Si usó `Install-HgsServer` para configurar un nuevo bosque para HGS, estos grupos se denominarán "*ServiceName* Administrators" y "*ServiceName* revisores", respectivamente, donde *ServiceName* es el nombre de red del clúster de HGS.
 Si ha unido HGS a un dominio existente, debe hacer referencia a los nombres de grupo especificados en `Initialize-HgsServer` .
 
 **Crear usuarios estándar para los roles de administrador de HGS y revisor**
@@ -353,7 +354,7 @@ Hgs_BitLockerEnabled           | Requiere que BitLocker esté habilitado en el h
 Hgs_IommuEnabled               | Requiere que el host tenga un dispositivo IOMMU en uso para evitar ataques de acceso directo a la memoria. La deshabilitación de esta directiva y el uso de hosts sin un IOMMU habilitado pueden exponer secretos de máquina virtual de inquilino para ataques de memoria directos.
 Hgs_NoHibernation              | Requiere que se deshabilite la hibernación en el host de Hyper-V. La deshabilitación de esta directiva podría permitir que los hosts guardaran la memoria de la máquina virtual blindada en un archivo de hibernación sin cifrar.
 Hgs_NoDumps                    | Requiere que se deshabiliten los volcados de memoria en el host de Hyper-V. Si deshabilita esta Directiva, se recomienda que configure el cifrado de volcado para evitar que se guarde la memoria de la máquina virtual blindada en los archivos de volcado sin cifrar.
-Hgs_DumpEncryption             | Requiere volcados de memoria, si están habilitados en el host de Hyper-V, para cifrarse con una clave de cifrado que sea de confianza para HGS. Esta Directiva no se aplica si los volcados de memoria no están habilitados en el host. Si esta directiva y los archivos de * \_ volcado de HGS* están deshabilitados, la memoria de la máquina virtual blindada podría guardarse en un archivo de volcado sin cifrar.
+Hgs_DumpEncryption             | Requiere volcados de memoria, si están habilitados en el host de Hyper-V, para cifrarse con una clave de cifrado que sea de confianza para HGS. Esta Directiva no se aplica si los volcados de memoria no están habilitados en el host. Si esta directiva y los archivos de *\_ volcado de HGS* están deshabilitados, la memoria de la máquina virtual blindada podría guardarse en un archivo de volcado sin cifrar.
 Hgs_DumpEncryptionKey          | Directiva negativa para asegurarse de que los hosts configurados para permitir volcados de memoria usen una clave de cifrado de archivo de volcado definida por el administrador conocida para HGS. Esta Directiva no se aplica cuando se deshabilita *HGS \_ DumpEncryption* .
 
 ### <a name="authorizing-new-guarded-hosts"></a>Autorización de nuevos hosts protegidos

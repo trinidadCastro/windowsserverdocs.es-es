@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo asignar requisitos de diseño a modelos de diseño de bosque
 ms.assetid: c0d64566-5530-482e-a332-af029a5fb575
 title: Asignar los requisitos de diseño a los modelos de diseño de bosque
 ms.author: daveba
@@ -6,12 +7,12 @@ author: iainfoulds
 manager: daveba
 ms.date: 08/07/2018
 ms.topic: article
-ms.openlocfilehash: 4ca6eff6d069d1f86aed3952c24996b4dcd2a879
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 3426d184a8d81243f907426cf87f87114ca76497
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93071107"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97042773"
 ---
 # <a name="mapping-design-requirements-to-forest-design-models"></a>Asignar los requisitos de diseño a los modelos de diseño de bosque
 

@@ -1,17 +1,18 @@
 ---
+description: 'Más información sobre: escenario: cifrado de Classification-Based para documentos de Office'
 ms.assetid: 73542e1c-53ef-4ddb-89b1-bc563b2bfb49
-title: Cifrado basado en la clasificación de escenarios para documentos de Office
+title: Escenario Classification-Based el cifrado de documentos de Office
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 23709df02bc1a475573f2703db5e4ff9477cfc98
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 9f8588b5ff2ef9e895e05c45ba0a5d8607add281
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952712"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97044753"
 ---
 # <a name="scenario-classification-based-encryption-for-office-documents"></a>Escenario: Cifrado de documentos de Office basado en la clasificación
 

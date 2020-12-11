@@ -1,17 +1,18 @@
 ---
 ms.assetid: 7b22adfa-298d-413c-88d0-1231825b7d4d
 title: Introducción a los escenarios de control de acceso dinámico
+description: 'Más información acerca de: Access Control dinámico: información general del escenario'
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 74757b269ef0660de2c9a68a4c37a0c2fa8ffab4
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 32529f157f628429fd7b30a925a7f5fd805945a0
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96866104"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97040563"
 ---
 # <a name="dynamic-access-control-scenario-overview"></a>Control de acceso dinámico: Información general sobre el escenario
 
@@ -54,7 +55,7 @@ Este conjunto de contenido incluye los siguientes escenarios y orientación:
 > [!NOTE]
 > No se admite el control de acceso dinámico en ReFS (Sistema de archivos resistente).
 
-## <a name="see-also"></a>Consulte también
+## <a name="see-also"></a>Vea también
 
 |Tipo de contenido|Referencias|
 |----------------|--------------|

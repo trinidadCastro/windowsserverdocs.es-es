@@ -1,16 +1,17 @@
 ---
+description: 'Más información sobre: informes de Servicio de mantenimiento'
 title: Servicio de mantenimiento informes
 manager: eldenc
 ms.author: cosdar
 ms.topic: article
 author: cosmosdarwin
 ms.date: 10/05/2017
-ms.openlocfilehash: 1e6b11bc73ef34e5247ca43140d3e2122e77ab61
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: e453744524381240f8b870326275fae56eca1635
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990778"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97039503"
 ---
 # <a name="health-service-reports"></a>Servicio de mantenimiento informes
 
@@ -77,7 +78,7 @@ Se recomienda que construya la contraseña **SecureString** directamente a parti
 
 Con el **CimSession** establecido, puede consultar instrumental de administración de Windows (WMI) en el clúster.
 
-Antes de que pueda obtener errores o métricas, deberá obtener instancias de varios objetos pertinentes. En primer lugar, el ** \_ StorageSubSystem de msft** que representa espacios de almacenamiento directo en el clúster. Con esto, puede obtener todos los ** \_ StorageNode de msft** del clúster y todos los volúmenes **msft \_ **, los volúmenes de datos. Por último, también necesitará **el \_ StorageHealth de msft**, el propio servicio de mantenimiento.
+Antes de que pueda obtener errores o métricas, deberá obtener instancias de varios objetos pertinentes. En primer lugar, el **\_ StorageSubSystem de msft** que representa espacios de almacenamiento directo en el clúster. Con esto, puede obtener todos los **\_ StorageNode de msft** del clúster y todos los volúmenes **msft \_**, los volúmenes de datos. Por último, también necesitará **el \_ StorageHealth de msft**, el propio servicio de mantenimiento.
 
 ```
 CimInstance Cluster;
@@ -105,7 +106,7 @@ public void DiscoverObjects(CimSession Session)
 }
 ```
 
-Estos son los mismos objetos que se obtienen en PowerShell mediante cmdlets como **Get-StorageSubSystem**, **Get-StorageNode**y **Get-Volume**.
+Estos son los mismos objetos que se obtienen en PowerShell mediante cmdlets como **Get-StorageSubSystem**, **Get-StorageNode** y **Get-Volume**.
 
 Puede tener acceso a todas las mismas propiedades, documentadas en [clases de API de administración de almacenamiento](/previous-versions/windows/desktop/stormgmt/storage-management-api-classes).
 
@@ -209,9 +210,9 @@ En el esquema completo, inspeccione las clases **msft \_ StorageHealthReport** y
 
 Cada métrica tiene solo tres propiedades, por esta tabla.
 
-| **Property** | **Ejemplo**       |
+| **Propiedad** | **Ejemplo**       |
 | -------------|-------------------|
-| Nombre         | IOLatencyAverage  |
+| NOMBRE         | IOLatencyAverage  |
 | Valor        | 0,00021           |
 | Unidades        | 3                 |
 

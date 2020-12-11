@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: historial de rendimiento de los adaptadores de red'
 title: Historial de rendimiento de los adaptadores de red
 ms.author: cosdar
 manager: eldenc
@@ -6,12 +7,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 02/02/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ee8204d14ff1d54d3a4a5b1760055fecdc952d05
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c47b5f2ce60a952eb8c7773284d976e6b99d1477
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87957262"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97040093"
 ---
 # <a name="performance-history-for-network-adapters"></a>Historial de rendimiento de los adaptadores de red
 
@@ -55,16 +56,16 @@ Las `bytes.*` series se recopilan del `Network Adapter` contador de rendimiento 
 
 | Serie                           | Contador de origen           |
 |----------------------------------|--------------------------|
-| `netadapter.bandwidth.inbound`   | 8 ×`Bytes Received/sec` |
-| `netadapter.bandwidth.outbound`  | 8 ×`Bytes Sent/sec`     |
-| `netadapter.bandwidth.total`     | 8 ×`Bytes Total/sec`    |
+| `netadapter.bandwidth.inbound`   | 8 × `Bytes Received/sec` |
+| `netadapter.bandwidth.outbound`  | 8 × `Bytes Sent/sec`     |
+| `netadapter.bandwidth.total`     | 8 × `Bytes Total/sec`    |
 
 Las `rdma.*` series se recopilan del `RDMA Activity` contador de rendimiento establecido en el servidor donde está instalado el adaptador de red, una instancia por cada adaptador de red con RDMA habilitado.
 
 | Serie                               | Contador de origen           |
 |--------------------------------------|--------------------------|
-| `netadapter.bandwidth.rdma.inbound`  | 8 ×`Inbound bytes/sec`  |
-| `netadapter.bandwidth.rdma.outbound` | 8 ×`Outbound bytes/sec` |
+| `netadapter.bandwidth.rdma.inbound`  | 8 × `Inbound bytes/sec`  |
+| `netadapter.bandwidth.rdma.outbound` | 8 × `Outbound bytes/sec` |
 | `netadapter.bandwidth.rdma.total`    | 8 × *suma de lo anterior*   |
 
    > [!NOTE]

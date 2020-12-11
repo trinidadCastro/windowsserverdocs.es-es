@@ -1,17 +1,18 @@
 ---
 ms.assetid: 777aab65-c9c7-4dc9-a807-9ab73fac87b8
 title: Configurar la protección de bloqueo parcial de la Extranet de AD FS
+description: Más información acerca de cómo configurar la protección de bloqueo de extranet de AD FS
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 02/01/2019
 ms.topic: article
-ms.openlocfilehash: 0511063581fd633b56803999b761156c8217c967
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: d64e30e3d59cf47ad3a8eb448ad5f856d28f1bea
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96864504"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97040143"
 ---
 # <a name="configure-ad-fs-extranet-lockout-protection"></a>Configurar AD FS protección de bloqueo de extranet
 
@@ -85,7 +86,7 @@ Existe un problema conocido en el que la cuenta de usuario de AD no se puede aut
 - AD FS anteriores a 2016 producirán un error si no puede tener acceso al PDC. AD FS 2016 presentó mejoras que permitirán a AD FS revertir a otros controladores de dominio en caso de que el PDC no esté disponible.
 - AD FS permitirá las solicitudes de autenticación desde extranet si badPwdCount < ExtranetLockoutThreshold
 - Si **badPwdCount**  >=  **ExtranetLockoutThreshold** y **badPasswordTime**  +  **ExtranetObservationWindow** < hora actual, AD FS rechazará las solicitudes de autenticación de la extranet
-- Para evitar el bloqueo malintencionado de cuentas, debe asegurarse **ExtranetLockoutThreshold** de que el  <  **umbral de bloqueo de cuenta** de ExtranetLockoutThreshold y el contador de bloqueo de cuenta de **ExtranetObservationWindow**  >  **restablecido**
+- Para evitar el bloqueo malintencionado de cuentas, debe asegurarse de que el  <  **umbral de bloqueo de cuenta** de ExtranetLockoutThreshold y el contador de bloqueo de cuenta de **ExtranetObservationWindow**  >  **restablecido**
 
 
 ## <a name="additional-references"></a>Referencias adicionales
@@ -94,5 +95,3 @@ Existe un problema conocido en el que la cuenta de usuario de AD no se puede aut
 - [Set-AdfsProperties](/powershell/module/adfs/set-adfsproperties)
 
 [Operaciones de AD FS](../ad-fs-operations.md)
-
-

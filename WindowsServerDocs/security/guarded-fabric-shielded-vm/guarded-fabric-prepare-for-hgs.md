@@ -1,4 +1,5 @@
 ---
+description: 'Más información sobre: revisión de los requisitos previos para el servicio de protección de host'
 title: Revisar los requisitos previos de HGS
 ms.topic: article
 ms.assetid: f4b4d1a8-bf6d-4881-9150-ddeca8b48038
@@ -6,12 +7,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: a8a0f469e2fe0052a3894a2f8b59a4a3ab233a9e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a5c551718afc5578432f5a32c12b04ea12e4d051
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971302"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97043913"
 ---
 # <a name="review-prerequisites-for-the-host-guardian-service"></a>Revisar los requisitos previos para el servicio de protección de host
 
@@ -20,7 +21,7 @@ ms.locfileid: "87971302"
 
 En este tema se tratan los requisitos previos de HGS y los pasos iniciales para preparar la implementación de HGS.
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerrequisitos
 
 -   **Hardware**: HGS puede ejecutarse en máquinas físicas o virtuales, pero se recomiendan máquinas físicas.
 

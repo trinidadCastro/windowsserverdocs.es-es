@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de la resolución de nombres para clientes perimetrales y de Internet
 ms.assetid: 1a6740e6-5b6d-41f8-9ec4-32cdbee3e1bb
 title: Resolución de nombres para clientes perimetrales y de Internet
 author: billmath
@@ -6,12 +7,12 @@ manager: femila
 ms.date: 04/13/2020
 ms.topic: article
 ms.author: billmath
-ms.openlocfilehash: 050d1ddd8d04e288c6e480bed2d9e24146198020
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: dbbef945edefd9deea13468328e36df4247d3b3a
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87972132"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97043323"
 ---
 # <a name="name-resolution-for-perimeter-and-internet-clients"></a>Resolución de nombres para clientes perimetrales y de Internet
 
@@ -37,7 +38,7 @@ La pertenencia al grupo **administradores**, o equivalente, es lo mínimo necesa
 
 1.  En un servidor DNS para la zona DNS de Internet, abra el complemento DNS \- .
 
-2.  En el árbol de consola, \- haga clic con el botón secundario en la zona de búsqueda directa aplicable y, a continuación, haga clic en **nuevo host \( a o AAAA \) **.
+2.  En el árbol de consola, \- haga clic con el botón secundario en la zona de búsqueda directa aplicable y, a continuación, haga clic en **nuevo host \( a o AAAA \)**.
 
 3.  En **nombre**, escriba solo el nombre de equipo del servidor de Federación. Por ejemplo, para el nombre de dominio completo \( FQDN \) FS.fabrikam.com, escriba **FS**.
 
@@ -55,9 +56,9 @@ La pertenencia al grupo **administradores**, o equivalente, es lo mínimo necesa
 
 #### <a name="to-add-a-host-a-resource-record-to-the-perimeter-dns-zone-for-a-federation-server-proxy"></a>Para agregar un registro de recurso de host \( \) a a la zona DNS perimetral para un servidor proxy de Federación
 
-1.  En un servidor DNS para la red perimetral, abra el **complemento DNS \- **.
+1.  En un servidor DNS para la red perimetral, abra el **complemento DNS \-**.
 
-2.  En el árbol de consola, \- haga clic con el botón secundario en la zona de búsqueda directa aplicable y, a continuación, haga clic en **nuevo host \( a o AAAA \) **.
+2.  En el árbol de consola, \- haga clic con el botón secundario en la zona de búsqueda directa aplicable y, a continuación, haga clic en **nuevo host \( a o AAAA \)**.
 
 3.  En **nombre**, escriba solo el nombre de equipo del servidor de Federación. Por ejemplo, para el FQDN fs.fabrikam.com, escribe **fs**.
 

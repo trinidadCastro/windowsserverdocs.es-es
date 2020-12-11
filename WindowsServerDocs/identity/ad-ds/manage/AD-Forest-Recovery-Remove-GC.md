@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de la recuperación del bosque de AD: eliminación del catálogo global'
 title: 'Recuperación del bosque de AD: quitar el catálogo global'
 ms.author: daveba
 author: iainfoulds
@@ -6,12 +7,12 @@ manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 60087a62-11e6-4750-a70e-510f35315688
-ms.openlocfilehash: 0ec7af53bc43806f97edbd9174f2c2179641238b
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: e825b1fed5b9398991709f4c6175559b843b2e59
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93070857"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97041613"
 ---
 # <a name="ad-forest-recovery---removing-the-global-catalog"></a>Recuperación del bosque de AD: quitar el catálogo global
 
@@ -23,13 +24,13 @@ ms.locfileid: "93070857"
 
 ## <a name="to-remove-the-global-catalog-using-active-directory-sites-and-services"></a>Para quitar el catálogo global mediante Active Directory sitios y servicios
 
-1. Abra Administrador del servidor, haga clic en **herramientas** y haga clic en **sitios y servicios de Active Directory** .
+1. Abra Administrador del servidor, haga clic en **herramientas** y haga clic en **sitios y servicios de Active Directory**.
 2. En el árbol de consola, expanda el contenedor **sitios** y, a continuación, seleccione el sitio adecuado que contiene el servidor de destino.
 3. Expanda el contenedor **servidores** y, a continuación, expanda el objeto de *servidor* del controlador de dominio del que desea quitar el catálogo global.
-4. Haga clic con el botón secundario en **configuración NTDS** y, a continuación, haga clic en **propiedades** .
+4. Haga clic con el botón secundario en **configuración NTDS** y, a continuación, haga clic en **propiedades**.
 5. Desactive la casilla **catálogo global** .
    ![Quitar GC](media/AD-Forest-Recovery-Remove-GC/removegc1.png)
-6. Haga clic en **Aplicar** .
+6. Haga clic en **Aplicar**.
 
 ## <a name="to-remove-the-global-catalog-using-repadmin"></a>Para quitar el catálogo global mediante repadmin
 

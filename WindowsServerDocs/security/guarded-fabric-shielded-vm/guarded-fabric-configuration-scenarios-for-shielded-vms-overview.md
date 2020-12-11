@@ -1,4 +1,5 @@
 ---
+description: Más información sobre cómo implementar máquinas virtuales blindadas
 title: Implementar máquinas virtuales blindadas
 ms.topic: article
 ms.assetid: 5d1a06c9-24e1-4e14-9c9a-efb2adbfeddd
@@ -6,12 +7,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: 0eed5d3166410cd006469eaac97ff152dfc8304e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 015d1a5f4c2fd54a813cacff60fd65b6d8ca99cb
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971352"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97040383"
 ---
 # <a name="deploy-shielded-vms"></a>Implementar máquinas virtuales blindadas
 

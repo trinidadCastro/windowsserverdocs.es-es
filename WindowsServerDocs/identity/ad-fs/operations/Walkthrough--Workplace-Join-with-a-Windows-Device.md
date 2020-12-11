@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: Tutorial: Workplace Join con un dispositivo Windows'
 ms.assetid: c17d143b-86b4-47c0-b76e-1862dda8f0bd
 title: 'Tutorial: Workplace Join con un dispositivo Windows'
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 4f2e3dbf5754b4b33aec972e40a91cbe67c82220
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: f93745c09120311a9d1aa65a838f12beaa5dc03c
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87966982"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97039593"
 ---
 # <a name="walkthrough-workplace-join-with-a-windows-device"></a>Tutorial: unirse al área de trabajo con un dispositivo Windows
 
@@ -53,7 +54,7 @@ En este tutorial, accederás a una aplicación web antes de unir el dispositivo 
 
 4. En el cuadro **Escriba su userid para obtener acceso al área de trabajo o activar la administración de dispositivos** , escriba <strong>roberth@contoso.com</strong> y, a continuación, haga clic en **unirse**.
 
-5. Cuando se le pidan las credenciales, escriba <strong>roberth@contoso.com</strong> y la contraseña: <strong>P@ssword</strong> . Haga clic en **Aceptar**.
+5. Cuando se le pidan las credenciales, escriba <strong>roberth@contoso.com</strong> y la contraseña: <strong>P@ssword</strong> . Haga clic en **OK**.
 
 6. Ahora deberías ver el mensaje: "Este dispositivo se unió a la red de tu área de trabajo."
 

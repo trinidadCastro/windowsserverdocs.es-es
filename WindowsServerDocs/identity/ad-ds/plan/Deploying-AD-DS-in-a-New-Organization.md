@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo implementar AD DS en una nueva organización
 ms.assetid: a589dda6-e05b-4b44-ae3e-b15dd3877617
 title: Implementación de AD DS en una nueva organización
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: d342580b10e9c2a90bc0dad0736d14baa771da9d
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 6877b1a5499d10739cef5aa7f62589416464181f
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93069427"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97044113"
 ---
 # <a name="deploying-ad-ds-in-a-new-organization"></a>Implementación de AD DS en una nueva organización
 

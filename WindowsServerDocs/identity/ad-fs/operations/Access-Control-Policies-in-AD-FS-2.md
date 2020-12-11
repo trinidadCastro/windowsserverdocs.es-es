@@ -1,16 +1,17 @@
 ---
+description: 'Más información sobre: directivas de Access Control de cliente en AD FS 2,0'
 title: Directivas de Access Control de cliente en Servicios de federación de Active Directory (AD FS) 2,0
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 3cf37c1fad67c652f67f4e862780c740ae5ebe60
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b4402b2e8186f723c2c2a46ad10616f8986e21e5
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87947299"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97044353"
 ---
 # <a name="client-access-control-policies-in-ad-fs-20"></a>Directivas de Access Control de cliente en AD FS 2,0
 Las directivas de acceso de cliente en Servicios de federación de Active Directory (AD FS) 2,0 permiten restringir o conceder a los usuarios acceso a los recursos.  En este documento se describe cómo habilitar las directivas de acceso de cliente en AD FS 2,0 y cómo configurar los escenarios más comunes.
@@ -40,7 +41,7 @@ En la Active Directory confianza del proveedor de notificaciones, cree una nueva
 4. En la página Seleccionar plantilla de regla, en plantilla de regla de notificaciones, seleccione pasar o filtrar una notificaciones entrantes de la lista y, a continuación, haga clic en siguiente.
 5. En la página configurar regla, en nombre de la regla de notificaciones, escriba el nombre para mostrar de esta regla. en tipo de notificaciones entrantes, escriba la siguiente dirección URL de tipo de notificaciones y, después, seleccione pasar por todos los valores de notificaciones.</br>
         `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip`</br>
-6. Para comprobar la regla, selecciónela en la lista, haga clic en Editar regla y, a continuación, haga clic en ver lenguaje de reglas. El lenguaje de reglas de notificaciones debe aparecer de la siguiente manera:`c:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip"] => issue(claim = c);`
+6. Para comprobar la regla, selecciónela en la lista, haga clic en Editar regla y, a continuación, haga clic en ver lenguaje de reglas. El lenguaje de reglas de notificaciones debe aparecer de la siguiente manera: `c:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip"] => issue(claim = c);`
 7. Haga clic en Finish.
 8. En el cuadro de diálogo editar reglas de notificaciones, haga clic en Aceptar para guardar las reglas.
 9. Repita los pasos del 2 al 6 para crear una regla de notificaciones adicional para cada uno de los cuatro tipos de notificaciones restantes que se muestran a continuación hasta que se hayan creado las cinco reglas.
@@ -75,7 +76,7 @@ Este escenario de directiva de acceso de cliente permite el acceso desde todos l
 2. En el árbol de consola, en AD FS 2.0 \ relaciones de confianza, haga clic en confianzas para usuario autenticado, haga clic con el botón secundario en la Microsoft Office 365 Identity Platform Trust y, a continuación, haga clic en editar reglas de notificaciones.
 3. En el cuadro de diálogo editar reglas de notificaciones, seleccione la pestaña reglas de autorización de emisión y, a continuación, haga clic en Agregar regla para iniciar el Asistente para reglas de notificaciones.
 4. En la página Seleccionar plantilla de regla, en plantilla de regla de notificación, seleccione enviar notificaciones mediante una regla personalizada y, a continuación, haga clic en siguiente.
-5. En la página configurar regla, en nombre de la regla de notificaciones, escriba el nombre para mostrar de esta regla. En regla personalizada, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones:`exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
+5. En la página configurar regla, en nombre de la regla de notificaciones, escriba el nombre para mostrar de esta regla. En regla personalizada, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones: `exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip",
     Value=~"customer-provided public ip address regex"])
     => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "true");`
@@ -98,7 +99,7 @@ En el ejemplo siguiente se permite el acceso a todas las aplicaciones de Office 
 2. En el árbol de consola, en AD FS 2.0 \ relaciones de confianza, haga clic en confianzas para usuario autenticado, haga clic con el botón secundario en la Microsoft Office 365 Identity Platform Trust y, a continuación, haga clic en editar reglas de notificaciones.
 3. En el cuadro de diálogo editar reglas de notificaciones, seleccione la pestaña reglas de autorización de emisión y, a continuación, haga clic en Agregar regla para iniciar el Asistente para reglas de notificaciones.
 4. En la página Seleccionar plantilla de regla, en plantilla de regla de notificación, seleccione enviar notificaciones mediante una regla personalizada y, a continuación, haga clic en siguiente.
-5. En la página configurar regla, en nombre de la regla de notificaciones, escriba el nombre para mostrar de esta regla. En regla personalizada, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones:`exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
+5. En la página configurar regla, en nombre de la regla de notificaciones, escriba el nombre para mostrar de esta regla. En regla personalizada, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones: `exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application",
     Value=="Microsoft.Exchange.Autodiscover"]) &&
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application",
@@ -127,7 +128,7 @@ El conjunto de reglas se basa en la regla de autorización de emisión predeterm
 2. En el árbol de consola, en AD FS 2.0 \ relaciones de confianza, haga clic en confianzas para usuario autenticado, haga clic con el botón secundario en la Microsoft Office 365 Identity Platform Trust y, a continuación, haga clic en editar reglas de notificaciones.
 3. En el cuadro de diálogo editar reglas de notificaciones, seleccione la pestaña reglas de autorización de emisión y, a continuación, haga clic en Agregar regla para iniciar el Asistente para reglas de notificaciones.
 4. En la página Seleccionar plantilla de regla, en plantilla de regla de notificación, seleccione enviar notificaciones mediante una regla personalizada y, a continuación, haga clic en siguiente.
-5. En la página configurar regla, en nombre de la regla de notificaciones, escriba el nombre para mostrar de esta regla. En regla personalizada, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones:`exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
+5. En la página configurar regla, en nombre de la regla de notificaciones, escriba el nombre para mostrar de esta regla. En regla personalizada, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones: `exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip",
     Value=~"customer-provided public ip address regex"]) &&
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path", Value == "/adfs/ls/"])
@@ -147,7 +148,7 @@ En el ejemplo siguiente se habilita el acceso desde clientes internos basados en
 2. En el árbol de consola, en AD FS 2.0 \ relaciones de confianza, haga clic en confianzas para usuario autenticado, haga clic con el botón secundario en la Microsoft Office 365 Identity Platform Trust y, a continuación, haga clic en editar reglas de notificaciones.
 3. En el cuadro de diálogo editar reglas de notificaciones, seleccione la pestaña reglas de autorización de emisión y, a continuación, haga clic en Agregar regla para iniciar el Asistente para reglas de notificaciones.
 4. En la página Seleccionar plantilla de regla, en plantilla de regla de notificación, seleccione enviar notificaciones mediante una regla personalizada y, a continuación, haga clic en siguiente.
-5. En la página configurar regla, en nombre de la regla de notificaciones, escriba el nombre para mostrar de esta regla. En regla personalizada, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones:`exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
+5. En la página configurar regla, en nombre de la regla de notificaciones, escriba el nombre para mostrar de esta regla. En regla personalizada, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones: `exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
     exists([Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid", Value =~ "Group SID value of allowed AD group"]) &&
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip",
     Value=~"customer-provided public ip address regex"])

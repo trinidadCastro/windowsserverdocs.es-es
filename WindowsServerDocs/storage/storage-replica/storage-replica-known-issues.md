@@ -1,4 +1,5 @@
 ---
+description: 'Más información sobre: problemas conocidos de réplica de almacenamiento'
 title: Problemas conocidos de Réplica de almacenamiento
 manager: siroy
 ms.author: nedpyle
@@ -6,12 +7,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 06/25/2019
 ms.assetid: ceddb0fa-e800-42b6-b4c6-c06eb1d4bc55
-ms.openlocfilehash: ed566e5db46cb147925799b055e8bde8ead57b25
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 2609d52cfa4ccc84125617567dbe4c44f16b6bfb
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87961179"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97043233"
 ---
 # <a name="known-issues-with-storage-replica"></a>Problemas conocidos de Réplica de almacenamiento
 
@@ -53,7 +54,7 @@ Es posible que el servidor tenga que reiniciarse después de limpiar la base de 
 
 ## <a name="during-initial-sync-see-event-log-4004-warnings"></a>Durante la sincronización inicial, consulte las advertencias 4004 del registro de eventos.
 
-En Windows Server 2016, al configurar la replicación, tanto el servidor de origen como el de destino pueden mostrar varias advertencias del registro de eventos de*StorageReplica\Admin*4004 cada vez durante la sincronización inicial, con el estado "insuficientes recursos del sistema para completar la API". Es probable que vea también errores 5014. Estos indican que los servidores no tienen suficiente memoria disponible (RAM) para realizar la sincronización inicial y ejecutar cargas de trabajo. Agregue RAM o reduzca la cantidad de RAM usada en características y aplicaciones que no sean de Réplica de almacenamiento.
+En Windows Server 2016, al configurar la replicación, tanto el servidor de origen como el de destino pueden mostrar varias advertencias del registro de eventos de *StorageReplica\Admin* 4004 cada vez durante la sincronización inicial, con el estado "insuficientes recursos del sistema para completar la API". Es probable que vea también errores 5014. Estos indican que los servidores no tienen suficiente memoria disponible (RAM) para realizar la sincronización inicial y ejecutar cargas de trabajo. Agregue RAM o reduzca la cantidad de RAM usada en características y aplicaciones que no sean de Réplica de almacenamiento.
 
 ## <a name="when-using-guest-clusters-with-shared-vhdx-and-a-host-without-a-csv-virtual-machines-stop-responding-after-configuring-replication"></a>Al usar clústeres invitados con VHDX compartidos y un host sin CSV, las máquinas virtuales dejan de responder tras configurar la replicación.
 
@@ -328,7 +329,7 @@ A process has requested access to an object, but has not been granted those acce
 Guidance: Possible causes include network failures, share creation failures for the remote replication group, or firewall settings. Make sure SMB traffic is allowed and there are no connectivity issues between the local computer and the remote computer. You should expect this event when suspending replication or removing a replication partnership.
 ```
 
-Tenga en cuenta el `Status: "{Access Denied}"` y el mensaje `A process has requested access to an object, but has not been granted those access rights.` este es un problema conocido dentro de la réplica de almacenamiento y se corrigió en la actualización de la calidad 12 de septiembre de 2017: KB4038782 (compilación del sistema operativo 14393,1715)https://support.microsoft.com/help/4038782/windows-10-update-kb4038782
+Tenga en cuenta el `Status: "{Access Denied}"` y el mensaje `A process has requested access to an object, but has not been granted those access rights.` este es un problema conocido dentro de la réplica de almacenamiento y se corrigió en la actualización de la calidad 12 de septiembre de 2017: KB4038782 (compilación del sistema operativo 14393,1715) https://support.microsoft.com/help/4038782/windows-10-update-kb4038782
 
 ## <a name="error-failed-to-bring-the-resource-cluster-disk-x-online-with-a-stretch-cluster"></a>Error "no se pudo conectar el recurso ' disco de clúster x ' en línea." con un clúster extendido
 
@@ -354,7 +355,7 @@ Error Code: 0x8007138d
 A cluster node is not available for this operation
 ```
 
-Este problema se debe a que uno o varios discos no inicializados están conectados a uno o varios nodos del clúster. Para resolver el problema, inicialice todos los almacenamientos asociados mediante DiskMgmt. msc, DISKPART.EXE o el cmdlet de PowerShell Initialize-Disk.
+Este problema se debe a que uno o varios discos no inicializados están conectados a uno o varios nodos del clúster. Para resolver el problema, inicialice todos los almacenamientos asociados mediante DiskMgmt. msc, DISKPART.EXE o el cmdlet de PowerShell de Initialize-Disk.
 
 Estamos trabajando para proporcionar una actualización que resuelva permanentemente este problema. Si está interesado en ayudarnos y tiene un contrato de Microsoft soporte técnico Premier, envíe un mensaje de correo electrónico SRFEED@microsoft.com para que podamos trabajar con usted en el envío de una solicitud de reenvío.
 
@@ -432,9 +433,9 @@ Cuando se usa Espacios de almacenamiento directo con HDD, no se puede deshabilit
 
 Esta solución alternativa no es idónea y es posible que algunos clientes no puedan usarla. El equipo de réplica de almacenamiento está trabajando en optimizaciones y un mecanismo de registro actualizado para el futuro con el fin de reducir estos cuellos de botella artificiales. Este registro v 1.1 comenzó a estar disponible en Windows Server 2019 y su rendimiento mejorado se describe en el [blog de almacenamiento del servidor](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB).
 
-## <a name="error-could-not-find-file-when-running-test-srtopology-between-two-clusters"></a>Error "no se pudo encontrar el archivo" al ejecutar test-SRTopology entre dos clústeres
+## <a name="error-could-not-find-file-when-running-test-srtopology-between-two-clusters"></a>Error "no se pudo encontrar el archivo" al ejecutar Test-SRTopology entre dos clústeres
 
-Al ejecutar test-SRTopology entre dos clústeres y sus rutas de CSV, se produce el error:
+Al ejecutar Test-SRTopology entre dos clústeres y sus rutas de CSV, se produce el error:
 
 ```powershell
 PS C:\Windows\system32> Test-SRTopology -SourceComputerName NedClusterA -SourceVolumeName C:\ClusterStorage\Volume1 -SourceLogVolumeName L: -DestinationComputerName NedClusterB -DestinationVolumeName C:\ClusterStorage\Volume1 -DestinationLogVolumeName L: -DurationInMinutes 1 -ResultPath C:\Temp
@@ -455,9 +456,9 @@ At line:1 char:1
 
 Esto se debe a un defecto de código conocido en Windows Server 2016. Este problema se corrigió por primera vez en Windows Server, versión 1709 y las herramientas de RSAT asociadas. Para una resolución de nivel inferior, póngase en contacto con Soporte técnico de Microsoft y solicite una actualización del puerto. No hay ninguna solución alternativa.
 
-## <a name="error-specified-volume-could-not-be-found-when-running-test-srtopology-between-two-clusters"></a>Error "no se pudo encontrar el volumen especificado" al ejecutar test-SRTopology entre dos clústeres
+## <a name="error-specified-volume-could-not-be-found-when-running-test-srtopology-between-two-clusters"></a>Error "no se pudo encontrar el volumen especificado" al ejecutar Test-SRTopology entre dos clústeres
 
-Al ejecutar test-SRTopology entre dos clústeres y sus rutas de CSV, se produce el error:
+Al ejecutar Test-SRTopology entre dos clústeres y sus rutas de CSV, se produce el error:
 
 ```
 PS C:\> Test-SRTopology -SourceComputerName RRN44-14-09 -SourceVolumeName C:\ClusterStorage\Volume1 -SourceLogVolumeName L: -DestinationComputerName RRN44-14-13 -DestinationVolumeName C:\ClusterStorage\Volume1 -DestinationLogVolumeName L: -DurationInMinutes 30 -ResultPath c:\report

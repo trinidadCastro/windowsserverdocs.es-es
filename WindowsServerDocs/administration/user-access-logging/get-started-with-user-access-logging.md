@@ -1,18 +1,18 @@
 ---
 title: Introducción al registro de acceso de usuarios
-desctription: Describes the User Access Logging feature and how to start using it.
+description: Describe la característica de registro de acceso de usuarios y cómo empezar a usarla.
 ms.topic: article
 ms.assetid: 5c395b8b-3b35-4042-b9cc-07e438f86d50
 author: brentfor
 ms.author: brentf
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 24471aca151a59306e8bf51119232f08dacdc606
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 8664adc42b2d749dc353e34c66c999537032fc07
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89628158"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97041053"
 ---
 # <a name="get-started-with-user-access-logging"></a>Introducción al registro de acceso de usuarios
 
@@ -42,7 +42,7 @@ Además, los desarrolladores de software pueden instrumentar eventos de UAL que 
 
 UAL admite los siguientes roles de servidor y servicios:
 
--   Servicios de certificados de Active Directory (AD CS)
+-   Active Directory Certificate Services (AD CS)
 
 -   Active Directory Rights Management Services (AD RMS)
 
@@ -89,7 +89,7 @@ UAL admite los siguientes roles de servidor y servicios:
 ## <a name="important-functionality"></a><a name="BKMK_NEW"></a>Funcionalidad importante
 En la tabla siguiente se describen las funciones clave de UAL y sus valores posibles.
 
-|Funcionalidad|Value|
+|Funcionalidad|Valor|
 |-----------------|---------|
 |Recopilar y agregar los datos de eventos de solicitud de cliente prácticamente en tiempo real.|Se pueden guardar hasta tres años de datos. **Importante:** Los administradores necesitan exigir el cumplimiento de los datos recopilados y los períodos de retención de datos con la Directiva de privacidad de la organización y la normativa local.|
 |Consulte UAL mediante interfaces WMI o Windows PowerShell para recuperar datos de solicitud de cliente en un servidor local o remoto.|UAL permite una sola vista de datos de uso continuo. Los administradores de servidor y de organización pueden recuperar estos datos y coordinarse con los administradores empresariales para optimizar el uso de sus licencias por volumen de software.|

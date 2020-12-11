@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo crear un archivo de respuesta de especialización de SO
 title: Crear el archivo de respuesta de especialización del sistema operativo
 ms.topic: article
 ms.assetid: 299aa38e-28d2-4cbe-af16-5b8c533eba1f
@@ -6,12 +7,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: 7ae16c6a923b8d9bb9cd0c8b345be0fc1655c9ca
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 3bc7149bd8129c5fcac7d683b8327cfa5959791b
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971312"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97043933"
 ---
 # <a name="create-os-specialization-answer-file"></a>Crear el archivo de respuesta de especialización del sistema operativo
 
@@ -21,7 +22,7 @@ Como preparación para la implementación de máquinas virtuales blindadas, pued
 
 Para obtener instrucciones generales sobre los archivos de instalación desatendida para las máquinas virtuales blindadas, consulte [crear un archivo de respuesta](guarded-fabric-tenant-creates-shielding-data.md#create-an-answer-file).
 
-## <a name="downloading-the-new-shieldingdataanswerfile-function"></a>Descarga de la función New-ShieldingDataAnswerFile
+## <a name="downloading-the-new-shieldingdataanswerfile-function"></a>Descargar la función New-ShieldingDataAnswerFile
 
 Puede obtener la función **New-ShieldingDataAnswerFile** de la [Galería de PowerShell](https://aka.ms/gftools). Si el equipo tiene conectividad a Internet, puede instalarlo desde PowerShell con el siguiente comando:
 
@@ -90,7 +91,7 @@ Debe configurar el adaptador de red para la máquina virtual. En la captura de p
 
 ![Configurar el hardware para usar la dirección IP estática](../media/Guarded-Fabric-Shielded-VM/guarded-host-unattend-static-ip-address-pool-network-adapter-settings.png)
 
-Después, puede usar el `-StaticIPPool` parámetro para incluir los elementos IP estáticos en el archivo de respuesta. Los parámetros `@IPAddr-1@` , `@NextHop-1-1@` y `@DNSAddr-1-1@` en el archivo de respuesta se reemplazarán por los valores reales especificados en Virtual Machine Manager en el momento de la implementación.
+Después, puede usar el  `-StaticIPPool` parámetro para incluir los elementos IP estáticos en el archivo de respuesta. Los parámetros `@IPAddr-1@` , `@NextHop-1-1@` y `@DNSAddr-1-1@` en el archivo de respuesta se reemplazarán por los valores reales especificados en Virtual Machine Manager en el momento de la implementación.
 
 ```powershell
 $adminCred = Get-Credential -Message "Local administrator account"

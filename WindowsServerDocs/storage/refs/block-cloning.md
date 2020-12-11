@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: bloquear la clonación en ReFS'
 ms.assetid: fd427da3-3869-428f-bf2a-56c4b7d99b40
 title: Bloquear la clonación en ReFS
 author: gawatu
@@ -6,12 +7,12 @@ ms.author: gawatu
 manager: gawatu
 ms.date: 10/17/2018
 ms.topic: article
-ms.openlocfilehash: 01177b24646f7f1213378f08c930cdaae8f591de
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c73f6bde78011e2244ce857b52ed3cbe97abe8ff
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87939440"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97041274"
 ---
 # <a name="block-cloning-on-refs"></a>Bloquear la clonación en ReFS
 
@@ -21,7 +22,7 @@ La clonación de bloques da la orden al sistema de archivos para que copie un in
 
 La clonación de bloques en ReFS, sin embargo, realiza copias de metadatos con una operación de bajo coste en lugar de leer y escribir los datos de los archivos. Ya que ReFS permite que varios archivos compartan los mismos clústeres lógicos (ubicaciones físicas en un volumen), las operaciones de copia solo necesitan volver a asignar una región de un archivo a una ubicación física independiente, convirtiendo así una costosa operación física en una operación rápida y lógica. Esto permite que las copias se realicen más rápido y se generen menos E/S en el almacenamiento subyacente. Esta mejora también beneficia a la virtualización de las cargas de trabajo, como las operaciones de fusión de punto de control .vhdx, que se aceleran considerablemente al usar las operaciones de clonación de bloques. Además, ya que varios archivos pueden compartir los mismos clústeres lógicos, los datos idénticos no se almacenarán físicamente varias veces y se mejorará la capacidad de almacenamiento.
 
-## <a name="how-it-works"></a>Funcionamiento
+## <a name="how-it-works"></a>Cómo funciona
 
 La clonación de bloques en ReFS convierte una operación de archivo de datos en una operación de metadatos. Para llevar a cabo esta optimización, ReFS presenta recuentos de referencia en los metadatos para las regiones que se han copiado. Este recuento de referencias registra el número de las distintas regiones de archivo que hacen referencia a las mismas regiones físicas. Esto permite a varios archivos compartir los mismos datos físicos:
 

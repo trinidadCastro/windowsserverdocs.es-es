@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo crear un servidor de Federación de Stand-Alone
 ms.assetid: ab97948a-c434-48f2-8313-c1a7a518e5f7
 title: Crear un servidor de federación independiente
 author: billmath
@@ -6,12 +7,12 @@ manager: femila
 ms.date: 05/31/2017
 ms.topic: article
 ms.author: billmath
-ms.openlocfilehash: 498b2f1c87181ee2675bf7a312c73ba90d0b0421
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 55fb54ec669730795d6db6d44b57cbad0dc46e8f
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87962969"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97044153"
 ---
 # <a name="create-a-stand-alone-federation-server"></a>Crear un servidor de federación independiente
 
@@ -32,7 +33,7 @@ La pertenencia al grupo **Administradores** o equivalente en el equipo local es 
 
 2.  En la **Página principal**, comprueba que la opción **Crear un nuevo servicio de federación** esté seleccionada y, después, haz clic en **Siguiente**.
 
-3.  En la página **seleccionar \- implementación independiente o de granja** , haga clic en servidor de ** \- Federación**independiente y, a continuación, haga clic en **siguiente**.
+3.  En la página **seleccionar \- implementación independiente o de granja** , haga clic en servidor de **\- Federación** independiente y, a continuación, haga clic en **siguiente**.
 
     > [!IMPORTANT]
     > Al seleccionar la \- opción servidor de Federación independiente en el Asistente para la configuración del servidor de Federación de AD FS, la cuenta de servicio asociada a este servicio de Federación se asignará automáticamente a la cuenta servicio de red. El uso de NETWORK SERVICE como cuenta de servicio solo se recomienda en situaciones en las que se está evaluando AD FS en un entorno de laboratorio de pruebas. Si piensa utilizar la \- opción de servidor de Federación independiente para implementar un servidor de Federación en un entorno de producción, es importante que cambie esta cuenta de servicio a una cuenta de servicio más adecuada que pueda estar dedicada a atender las solicitudes de esta nueva servicio de Federación. El cambio de la cuenta de servicio a una cuenta que no sea servicio de red mitigará posibles vectores de ataque que, de otro modo, harían que el servidor de Federación fuera vulnerable a ataques malintencionados.
@@ -44,7 +45,7 @@ La pertenencia al grupo **Administradores** o equivalente en el equipo local es 
     > [!NOTE]
     > El asistente no te permitirá invalidar el certificado si hay un certificado SSL configurado para IIS. Esto garantiza que se conserve cualquier configuración IIS anterior prevista para los certificados SSL. Para evitar esta restricción, puede quitar el certificado o volver a configurarlo manualmente con la consola de administración de IIS.
 
-5.  Si la base de datos de AD FS que seleccionó ya existe, aparece la página **Se detectó una base de datos de configuración de AD FS existente**. Si ocurre eso, haga clic en **Eliminar base de datos** y luego en **Siguiente**.
+5.  Si el AD FS base de datos que seleccionó ya existe, aparecerá la página **base de datos de configuración de AD FS existente detectada** . Si ocurre eso, haga clic en **Eliminar base de datos** y luego en **Siguiente**.
 
     > [!CAUTION]
     > Seleccione esta opción solo cuando esté seguro de que los datos en esta base de datos de AD FS no son importantes o no se usan en una granja de servidores de federación de producción.

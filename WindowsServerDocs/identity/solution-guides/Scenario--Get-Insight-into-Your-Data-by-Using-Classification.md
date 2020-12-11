@@ -1,4 +1,5 @@
 ---
+description: 'Más información sobre: escenario: obtener información sobre los datos mediante la clasificación'
 ms.assetid: ad3f0480-99f7-428a-ab33-6d165a440840
 title: Escenario obtenga información sobre los datos mediante la clasificación
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 7c06cc4bbca7e21ffa5ef58ec6e33fc43b3f9e49
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 386f3a1f40cb3f93fb9ece34b667f51057f5347a
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87940248"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97044553"
 ---
 # <a name="scenario-get-insight-into-your-data-by-using-classification"></a>Escenario: Comprender los datos mediante la clasificación
 

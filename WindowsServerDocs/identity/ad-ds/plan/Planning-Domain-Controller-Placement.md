@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo planear la ubicación del controlador de dominio
 ms.assetid: 692bd2af-deee-44cf-9af9-f364677e267f
 title: Planear la ubicación del controlador de dominio
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: ea98ff3dd41e7280acec36432010b6b73156621c
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 4be572833e946ae472b4d3c2aa7a6c5ba7491d97
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93071087"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97042763"
 ---
 # <a name="planning-domain-controller-placement"></a>Planear la ubicación del controlador de dominio
 

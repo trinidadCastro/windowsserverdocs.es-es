@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: Introducción a réplica de almacenamiento'
 title: Información general sobre Réplica de almacenamiento
 manager: siroy
 ms.author: nedpyle
@@ -6,12 +7,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 4/26/2019
 ms.assetid: e9b18e14-e692-458a-a39f-d5b569ae76c5
-ms.openlocfilehash: 1d8997edf1354a49b9b67e417906eeaa307fdee6
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 9761117c4fe12450d658297edd411094546d883e
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87961229"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97043273"
 ---
 # <a name="storage-replica-overview"></a>Información general sobre Réplica de almacenamiento
 
@@ -59,7 +60,7 @@ Puede implementar réplica de almacenamiento en un clúster extendido, entre un 
 > [!NOTE]
 > También puede configurar la replicación de servidor al propio dispositivo, usando cuatro volúmenes independientes en un equipo. Sin embargo, esta guía no incluye este escenario.
 
-## <a name="storage-replica-features"></a><a name="BKMK_SR2"> </a> Características de réplica de almacenamiento
+## <a name="storage-replica-features"></a><a name="BKMK_SR2"></a> Características de réplica de almacenamiento
 
 * **Cero pérdida de datos, replicación a nivel de bloque**. Con replicación sincrónica, no hay ninguna posibilidad de pérdida de datos. Con la replicación a nivel de bloque, no hay ninguna posibilidad de bloqueo de archivos.
 
@@ -86,28 +87,28 @@ La réplica de almacenamiento incluye las siguientes características:
 | Característica | Detalles |
 | ----------- | ----------- |
 | Tipo | Base en host |
-| Sincrónico | Sí |
-| Asincrónica | Sí |
-| Independiente del hardware de almacenamiento | Sí |
+| Sincrónica | Yes |
+| Asincrónica | Yes |
+| Independiente del hardware de almacenamiento | Yes |
 | Unidad de replicación | Volumen (partición) |
-| Creación de clústeres de stretch de Windows Server | Sí |
-| Replicación de servidor a servidor | Sí |
+| Creación de clústeres de stretch de Windows Server | Yes |
+| Replicación de servidor a servidor | Yes |
 | Replicación de clúster a clúster | Sí |
 | Transporte | SMB3 |
 | Red | TCP/IP o RDMA |
-| Compatibilidad con restricción de red | Sí |
+| Compatibilidad con restricción de red | Yes |
 | RDMA* | iWARP, InfiniBand, RoCE v2 |
 | Requisitos de firewall de puertos de red de replicación | Puerto único de IANA (TCP 445 o 5445) |
 | Múltiples rutas o multicanal | Sí (SMB3) |
 | Compatibilidad con Kerberos | Sí (SMB3) |
 | Cifrado y firma por cable|Sí (SMB3) |
-| Conmutaciones por error permitidas por cada volumen | Sí |
-| Compatibilidad con almacenamiento de aprovisionamiento fino | Sí |
+| Conmutaciones por error permitidas por cada volumen | Yes |
+| Compatibilidad con almacenamiento de aprovisionamiento fino | Yes |
 | Interfaz de usuario de administración incluida | PowerShell, Administrador de clústeres de conmutación por error |
 
 *Puede requerir equipos y cableado adicionales de largo alcance.
 
-## <a name="storage-replica-prerequisites"></a><a name="BKMK_SR3"></a>Requisitos previos de réplica de almacenamiento
+## <a name="storage-replica-prerequisites"></a><a name="BKMK_SR3"></a> Requisitos previos de réplica de almacenamiento
 
 * Bosque de Active Directory Domain Services.
 * Espacios de almacenamiento con JBOD SAS, Espacios de almacenamiento directo, SAN de canal de fibra, VHDX compartido, destino iSCSI o almacenamiento SAS/SCSI/SATA local. SSD o más rápido recomendado para las unidades de registro de replicación. Microsoft recomienda que el almacenamiento de registros sea más rápido que el almacenamiento de datos. Los volúmenes de registro nunca deben usarse para otras cargas de trabajo.
@@ -120,7 +121,7 @@ La réplica de almacenamiento incluye las siguientes características:
   * Réplica de almacenamiento replica un volumen único en lugar de un número ilimitado de volúmenes.
   * Los volúmenes pueden tener un tamaño de hasta 2 TB en lugar de un tamaño ilimitado.
 
-##  <a name="background"></a><a name="BKMK_SR4"> </a> Información general
+##  <a name="background"></a><a name="BKMK_SR4"></a> Información general
 
 Esta sección incluye información sobre los términos de la industria de alto nivel, la replicación sincrónica y asincrónica y los comportamientos principales.
 
@@ -136,9 +137,9 @@ La replicación sincrónica garantiza que la aplicación escribe los datos en do
 
 Cuando se producen escrituras de la aplicación en la copia de datos de origen, el almacenamiento que se origina no reconoce inmediatamente la operación de E/S. En su lugar, estos cambios de datos se replican en la copia de destino remota y devuelven una confirmación. Solo entonces la aplicación recibe la confirmación de E/S. Esto garantiza la sincronización constante del sitio remoto con el sitio de origen, ampliando de hecho la E/S de almacenamiento a través de la red. En caso de error del sitio de origen, las aplicaciones pueden conmutar por error al sitio remoto y reanudar sus operaciones con la garantía de cero pérdida de datos.
 
-| Modo | Diagrama | Pasos |
+| Mode | Diagrama | Pasos |
 | -------- | ----------- | --------- |
-| **Sincrónico**<p>Cero pérdida de datos<p>RPO | ![Diagrama que muestra cómo la Réplica de almacenamiento escribe datos en la replicación sincrónica](./media/Storage-Replica-Overview/Storage_SR_SynchronousV2.png) | 1.  La aplicación escribe los datos.<br />2.  Se escriben los datos de registro y estos se replican en el sitio remoto.<br />3.  Se escriben los datos de registro en el sitio remoto.<br />4.  Confirmación del sitio remoto.<br />5.  Confirmación de escritura en la aplicación.<p>t y t1: Datos vaciados en el volumen, los registros siempre se escriben |
+| **Sincrónica**<p>Cero pérdida de datos<p>RPO | ![Diagrama que muestra cómo la Réplica de almacenamiento escribe datos en la replicación sincrónica](./media/Storage-Replica-Overview/Storage_SR_SynchronousV2.png) | 1.  La aplicación escribe los datos.<br />2.  Se escriben los datos de registro y estos se replican en el sitio remoto.<br />3.  Se escriben los datos de registro en el sitio remoto.<br />4.  Confirmación del sitio remoto.<br />5.  Confirmación de escritura en la aplicación.<p>t y t1: Datos vaciados en el volumen, los registros siempre se escriben |
 
 ### <a name="asynchronous-replication"></a>Replicación asincrónica
 
@@ -148,7 +149,7 @@ Cuando la aplicación escribe los datos, el motor de replicación captura la esc
 
 Con su RPO mayor que cero, la replicación asincrónica es menos apropiada para soluciones de alta disponibilidad como clústeres de conmutación por error, ya que están diseñadas para un funcionamiento continuo con redundancia y sin pérdida de datos.
 
-| Modo | Diagrama | Pasos |
+| Mode | Diagrama | Pasos |
 | -------- | ----------- | --------- |
 | **Asincrónica**<p>Pérdida de datos de casi cero<p>(depende de varios factores)<p>RPO | ![Diagrama que muestra cómo la Réplica de almacenamiento escribe datos en la replicación asincrónica](./media/Storage-Replica-Overview/Storage_SR_AsynchronousV2.png)|1.  La aplicación escribe los datos.<br />2.  Datos de registro escritos.<br />3.  Confirmación de escritura en la aplicación.<br />4.  Datos replicados en el sitio remoto.<br />5.  Datos de registro escritos en el sitio remoto.<br />6.  Confirmación del sitio remoto.<p>t y t1: Datos vaciados en el volumen, los registros siempre se escriben |
 

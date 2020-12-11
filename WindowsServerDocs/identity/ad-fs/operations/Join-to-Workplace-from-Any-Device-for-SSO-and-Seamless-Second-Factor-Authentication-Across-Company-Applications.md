@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: unirse al área de trabajo desde cualquier dispositivo para SSO y autenticación de segundo factor sin problemas en las aplicaciones de la empresa'
 ms.assetid: e22d84a5-113d-4bec-b484-036ed29f0c28
 title: unirse a un área de trabajo desde cualquier dispositivo para SSO y autenticación de segundo factor sin problemas en todas las aplicaciones de la compañía
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 12/05/2017
 ms.topic: article
-ms.openlocfilehash: 584088900bea8acb83da076311d29ed5f45ea71e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 3f681ba75ea55245948b1ed9acfd84830b3f3909
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87954241"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97039803"
 ---
 # <a name="join-to-workplace-from-any-device-for-sso-and-seamless-second-factor-authentication-across-company-applications"></a>unirse a un área de trabajo desde cualquier dispositivo para SSO y autenticación de segundo factor sin problemas en todas las aplicaciones de la compañía
 

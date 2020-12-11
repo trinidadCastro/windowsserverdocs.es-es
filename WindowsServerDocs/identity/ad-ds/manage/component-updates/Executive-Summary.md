@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: Resumen Ejecutivo'
 ms.assetid: 85ca191c-0cc7-4453-a72c-42060ddf2ea2
 title: Resumen ejecutivo
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/08/2018
 ms.topic: article
-ms.openlocfilehash: 6259883f5aaba6869c6643b30995a51f1e9df422
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 7f795a162d69c1aa9f055dfb5edf8e2311019f93
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93070697"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97042843"
 ---
 # <a name="executive-summary"></a>Resumen ejecutivo
 

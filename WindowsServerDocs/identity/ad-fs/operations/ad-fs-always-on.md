@@ -1,16 +1,17 @@
 ---
 title: Configuración de una implementación de AD FS con Grupos de disponibilidad AlwaysOn
+description: Más información acerca de cómo configurar una implementación de AD FS con Grupos de disponibilidad AlwaysOn
 author: billmath
 ms.author: billmath
 manager: daveba
 ms.date: 01/20/2020
 ms.topic: article
-ms.openlocfilehash: fac086cdcc08cb8941eba1dda9f4c41058d1b5d2
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 3d1ad6745eb7051857bc27b4fc60400f40b01731
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865074"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97039431"
 ---
 # <a name="setting-up-an-ad-fs-deployment-with-alwayson-availability-groups"></a>Configuración de una implementación de AD FS con Grupos de disponibilidad AlwaysOn
 Una topología de distribución geográfica de alta disponibilidad proporciona:

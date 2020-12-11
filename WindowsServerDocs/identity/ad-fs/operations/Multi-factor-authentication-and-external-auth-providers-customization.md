@@ -1,4 +1,5 @@
 ---
+description: 'Más información sobre: autenticación multifactor y personalización de proveedores de autenticación externa'
 title: Personalización de proveedores de autenticación multifactor y autenticación externa
 author: billmath
 ms.author: billmath
@@ -6,12 +7,12 @@ manager: femila
 ms.date: 05/31/2017
 ms.topic: article
 ms.assetid: 08724d45-9be4-4c56-a5f1-2cf40864e136
-ms.openlocfilehash: 47a03b43d8ac1a52453741974d4243f8aafc391c
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 55ae8f4630c21ceb5cde91982970ff52c10047da
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87949789"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97039743"
 ---
 # <a name="multi-factor-authentication-and-external-authentication-providers-customization"></a>Personalización de proveedores de autenticación multifactor y autenticación externa
 
@@ -20,7 +21,7 @@ En AD FS, la compatibilidad con la autenticación multifactor se proporciona \- 
 Se recomienda que un proveedor de autenticación externo utilice las clases definidas en el archivo. CSS que AD FS proporciona para crear la interfaz de usuario de autenticación. Puedes usar el siguiente cmdlet para exportar el tema web predeterminado e inspeccionar los elementos y las clases de la interfaz de usuario definidos en el archivo .css. El archivo. CSS se puede usar en el desarrollo de la interfaz de usuario de inicio de sesión \- de un proveedor de autenticación externo.
 
 ```powershell
-Export-AdfsWebTheme -Name default -DirectoryPath C:\theme
+Export-AdfsWebTheme -Name default -DirectoryPath C:\theme
 ```
 
 El siguiente es un ejemplo de la interfaz de usuario de inicio de sesión \- , que está resaltada en rojo, por un proveedor de autenticación externo. La interfaz de usuario utiliza las clases de interfaz de usuario en el archivo AD FS. CSS.

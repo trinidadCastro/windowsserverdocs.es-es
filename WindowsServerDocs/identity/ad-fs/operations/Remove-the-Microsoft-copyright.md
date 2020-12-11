@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo quitar el copyright de Microsoft
 ms.assetid: c89a977c-b09f-44ec-be42-41e76a6cf3ad
 title: Quitar el copyright de Microsoft
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: ec7d9cb02508fc046ce3e8f0378e63c82eecca8d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a5b377989315462789b9b33faf5267211c93bf8c
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87949779"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97039733"
 ---
 # <a name="remove-the-microsoft-copyright"></a>Quitar el copyright de Microsoft
 
@@ -35,7 +36,7 @@ De forma predeterminada, las páginas AD FS contienen el copyright de Microsoft.
    Export-AdfsWebTheme -Name custom -DirectoryPath C:\CustomWebTheme
    ```
 
-3. Busque el `Style.css` archivo que se encuentra en la carpeta de salida. Con el ejemplo anterior, la ruta de acceso sería`C:\CustomWebTheme\Css\Style.css.`
+3. Busque el `Style.css` archivo que se encuentra en la carpeta de salida. Con el ejemplo anterior, la ruta de acceso sería `C:\CustomWebTheme\Css\Style.css.`
 
 4. Abra el `Style.css` archivo con un editor como, por ejemplo, el Bloc de notas.
 

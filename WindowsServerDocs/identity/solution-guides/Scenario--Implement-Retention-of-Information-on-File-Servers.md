@@ -1,4 +1,5 @@
 ---
+description: 'Más información sobre: escenario: implementar la retención de información en servidores de archivos'
 ms.assetid: 81c55015-82e5-4ba1-b15e-cc7b49af28fc
 title: Escenario de implementación de la retención de información en servidores de archivos
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 479aaaf96eab094f3ba7556c0c0416c9915f4620
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 497703300b87ac07f06741fa6bd5274975f2d711
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87940217"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97044563"
 ---
 # <a name="scenario-implement-retention-of-information-on-file-servers"></a>Escenario: Implementar la retención de información en servidores de archivos
 

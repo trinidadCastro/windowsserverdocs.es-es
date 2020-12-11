@@ -1,17 +1,18 @@
 ---
 ms.assetid: 5fd4063d-34dc-4b15-9a88-cc6c1fff455a
 title: 'Guía de tutorial: administración de riesgos con Multi-Factor Authentication adicionales para aplicaciones confidenciales'
+description: 'Más información acerca de: Guía de tutorial: administración de riesgos con Multi-Factor Authentication adicionales para aplicaciones confidenciales'
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 1dc0b0c278577e7318ead6b4e3ebba04b21c8a9c
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 15e2355dfa04bc53ac232b9f20bd7d26ea3535f6
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96866293"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97039543"
 ---
 # <a name="walkthrough-guide-manage-risk-with-additional-multi-factor-authentication-for-sensitive-applications"></a>Guía de tutorial: administración de riesgos con la autenticación multifactor adicional para aplicaciones confidenciales
 
@@ -244,6 +245,6 @@ En este paso comprobará la funcionalidad de MFA que configuró en el paso anter
 
     Si configura la autenticación multifactor de Windows Azure como método de autenticación adicional, el texto del mensaje predeterminado será **Se realizará una llamada a su teléfono para completar la autenticación.** Para obtener más información acerca del inicio de sesión con Autenticación multifactor de Windows Azure y con distintas opciones para el método de comprobación preferido, consulte [Introducción a la autenticación multifactor de Windows Azure](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn280950(v=ws.11)).
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 [Administración de riesgos con multi-factor Authentication adicionales para aplicaciones](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md) 
  confidenciales [Configurar el entorno de laboratorio para AD FS en Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)

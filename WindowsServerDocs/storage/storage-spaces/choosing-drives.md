@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo elegir unidades para Espacios de almacenamiento directo
 ms.assetid: 1368bc83-9121-477a-af09-4ae73ac16789
 title: Selección de unidades para Espacios de almacenamiento directo
 ms.author: cosdar
@@ -7,12 +8,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 07/01/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e01966d268968a5bdec3d704d32bcc84b2638b27
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 7de0e6017a532d6ceefc5791450d144aabfdbaa1
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87961038"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97041293"
 ---
 # <a name="choosing-drives-for-storage-spaces-direct"></a>Selección de unidades para Espacios de almacenamiento directo
 

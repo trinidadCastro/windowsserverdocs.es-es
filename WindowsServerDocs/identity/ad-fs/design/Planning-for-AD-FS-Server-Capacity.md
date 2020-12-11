@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo planear la capacidad de AD FS Server
 ms.assetid: ef91f1d8-2991-4d90-b687-5fa189737c88
 title: Planear la capacidad de los servidores de AD FS
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 29881c667d52ef4e61edf0e76fc5bda3237d0235
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: f396f86ad3ddf410dbb3adf69ab77afdf3d4bbed
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87938194"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97044653"
 ---
 # <a name="planning-for-ad-fs-server-capacity"></a>Planear la capacidad de los servidores de AD FS
 

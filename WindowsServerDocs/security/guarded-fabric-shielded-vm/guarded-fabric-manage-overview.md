@@ -1,16 +1,17 @@
 ---
+description: Más información acerca de cómo administrar un tejido protegido
 title: Administración de un tejido protegido
 ms.topic: article
 ms.assetid: aee13964-d1d9-471a-bef3-3c76280b9a15
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.openlocfilehash: e1bd00c985811d35b4fcca2d8b76a020eedb67a0
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c027b4bd0ced1d4c61a642c15667c2ea3610f805
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87968872"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97044013"
 ---
 # <a name="managing-a-guarded-fabric"></a>Administración de un tejido protegido
 

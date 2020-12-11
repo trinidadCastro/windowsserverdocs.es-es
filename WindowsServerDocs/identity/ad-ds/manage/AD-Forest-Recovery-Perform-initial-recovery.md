@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo realizar la recuperación inicial
 title: 'Recuperación de bosque de AD: realizar la recuperación inicial'
 ms.author: daveba
 author: iainfoulds
@@ -6,12 +7,12 @@ manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
-ms.openlocfilehash: 8b0498b30966c22ec8dca267988e109d976f6b69
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: d0a260b248b18286861e92cc6f3a2f1c914cc36c
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93067747"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97040023"
 ---
 # <a name="perform-initial-recovery"></a>Realizar la recuperación inicial
 
@@ -50,7 +51,7 @@ Después, lleve a cabo los siguiente pasos. Los procedimientos para realizar det
 
       **HKLM\System\CurrentControlSet\Services\NTDS\Parameters\Repl realizar sincronizaciones iniciales**
 
-      Cree la entrada con el tipo de datos **REG_DWORD** y un valor de **0** . Después de que el bosque se recupere por completo, puede restablecer el valor de esta entrada en **1** , que requiere un controlador de dominio que se reinicie y conserve que los roles de maestro de operaciones tengan éxito AD DS la replicación entrante y saliente con sus asociados de réplica conocidos antes de que se anuncie como controlador de dominio y empiece a proporcionar servicios a los clientes. Para obtener más información sobre los requisitos de sincronización inicial, consulte el artículo de KB [305476](https://support.microsoft.com/kb/305476).
+      Cree la entrada con el tipo de datos **REG_DWORD** y un valor de **0**. Después de que el bosque se recupere por completo, puede restablecer el valor de esta entrada en **1**, que requiere un controlador de dominio que se reinicie y conserve que los roles de maestro de operaciones tengan éxito AD DS la replicación entrante y saliente con sus asociados de réplica conocidos antes de que se anuncie como controlador de dominio y empiece a proporcionar servicios a los clientes. Para obtener más información sobre los requisitos de sincronización inicial, consulte el artículo de KB [305476](https://support.microsoft.com/kb/305476).
 
       Continúe con los pasos siguientes solo después de restaurar y comprobar los datos y antes de unir este equipo a la red de producción.
 

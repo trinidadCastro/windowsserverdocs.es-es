@@ -6,12 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 01/16/2019
 ms.topic: article
-ms.openlocfilehash: dd0fa97024f286d90f096da9fa132f40c1a78aae
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 296d3e310818dcaee8443810b922ce6bf0389537
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87956672"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97040263"
 ---
 # <a name="advanced-customization-of-ad-fs-sign-in-pages"></a>Personalización avanzada de páginas de inicio de sesión de AD FS
 
@@ -101,7 +101,7 @@ if (loginMessage)
 ```
 
 ### <a name="example-2-accept-sam-account-name-as-a-login-format-on-an-ad-fs-form-based-sign-in-page"></a>Ejemplo 2: aceptar \- el nombre de cuenta SAM como formato de inicio de sesión en una AD FS \- Página de inicio de sesión basada en formularios \-
-La \- Página de inicio de sesión basada en formularios AD FS predeterminada \- admite el formato de inicio de sesión de los nombres principales de usuario \( UPN \) \( , <strong>johndoe@contoso.com</strong> \) o nombres de cuenta SAM calificados de dominio \- \( **contoso \\ ** contoso.com o ** \\ ** \) . En caso de que todos los usuarios provengan del mismo dominio y solo sepan acerca de los nombres de cuenta SAM, puede que \- desee admitir el escenario en el que los usuarios pueden iniciar sesión usando \- solo los nombres de cuenta SAM. Puede Agregar el código siguiente a onload.js para admitir este escenario, simplemente reemplace el dominio "contoso.com" en el ejemplo siguiente por el dominio que desea usar.
+La \- Página de inicio de sesión basada en formularios AD FS predeterminada \- admite el formato de inicio de sesión de los nombres principales de usuario \( UPN \) \( , <strong>johndoe@contoso.com</strong> \) o nombres de cuenta SAM calificados de dominio \- \( **contoso \\** contoso.com o **\\** \) . En caso de que todos los usuarios provengan del mismo dominio y solo sepan acerca de los nombres de cuenta SAM, puede que \- desee admitir el escenario en el que los usuarios pueden iniciar sesión usando \- solo los nombres de cuenta SAM. Puede Agregar el código siguiente a onload.js para admitir este escenario, simplemente reemplace el dominio "contoso.com" en el ejemplo siguiente por el dominio que desea usar.
 
 ```
 if (typeof Login != 'undefined'){

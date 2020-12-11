@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: equilibrio de carga de máquinas virtuales en profundidad'
 ms.assetid: 5b5bab7a-727b-47ce-8efa-1d37a9639cba
 title: Análisis en profundidad de equilibrio de carga de máquinas virtuales
 ms.topic: article
@@ -6,12 +7,12 @@ manager: eldenc
 ms.author: johnmar
 author: JasonGerend
 ms.date: 09/19/2016
-ms.openlocfilehash: 7fc9b449b11b5faf05ac279628f093053e292e8c
-ms.sourcegitcommit: 7a8a608df059b4278a974c52ed7b865421a83aa6
+ms.openlocfilehash: 719aad65d5b4683e7c3a4472ae29098522c89f2e
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91833313"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97040543"
 ---
 # <a name="virtual-machine-load-balancing-deep-dive"></a>Análisis en profundidad de equilibrio de carga de máquinas virtuales
 
@@ -21,7 +22,7 @@ La [característica de equilibrio de carga de la máquina virtual](vm-load-balan
 
 ## <a name="heuristics-for-balancing"></a><a id="heuristics-for-balancing"></a>Heurística de equilibrio
 El equilibrio de carga de máquinas virtuales evalúa la carga de un nodo en función de la heurística siguiente:
-1. **Presión de memoria**actual: la memoria es la restricción de recursos más común en un host de Hyper-V
+1. **Presión de memoria** actual: la memoria es la restricción de recursos más común en un host de Hyper-V
 2. **Uso** de CPU del nodo en promedio en un período de 5 minutos: mitiga un nodo en el clúster que se está sobrecargando
 
 ## <a name="controlling-the-aggressiveness-of-balancing"></a><a id="controlling-aggressiveness-of-balancing"></a>Controlar la agresividad del equilibrio

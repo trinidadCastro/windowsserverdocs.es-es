@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo planear el acceso condicional basado en dispositivos de forma local
 ms.assetid: c5eb3fa0-550c-4a2f-a0bc-698b690c4199
 title: Planeación del acceso condicional basado en dispositivos a nivel local
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 7f331aac7b58cc22f696130647a7f5e95ea808c9
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 8301cb1396785d56d81e08e2ad3d52ee4d66d887
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87945481"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97043313"
 ---
 # <a name="plan-device-based-conditional-access-on-premises"></a>Planeación del acceso condicional basado en dispositivos a nivel local
 
@@ -61,7 +62,7 @@ Estas reglas se pueden combinar con otros factores, como la ubicación de acceso
 
 - requerir multi-factor Authentication para dispositivos no registrados que acceden desde fuera de la red corporativa, excepto para los miembros de un grupo o grupos determinados
 
-Con AD FS 2016, estas directivas se pueden configurar específicamente para requerir un nivel de confianza de dispositivo determinado también: **autenticado**, **administrado**o **compatible**.
+Con AD FS 2016, estas directivas se pueden configurar específicamente para requerir un nivel de confianza de dispositivo determinado también: **autenticado**, **administrado** o **compatible**.
 
 Para obtener más información sobre cómo configurar las directivas de control de acceso de AD FS, consulte [directivas de control de acceso en AD FS](../../ad-fs/operations/Access-Control-Policies-in-AD-FS.md).
 

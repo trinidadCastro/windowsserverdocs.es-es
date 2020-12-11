@@ -1,4 +1,5 @@
 ---
+description: 'Más información sobre: interoperabilidad de desduplicación de datos'
 ms.assetid: 60fca6b2-f1c0-451f-858f-2f6ab350d220
 title: Interoperabilidad de Desduplicación de datos
 ms.topic: article
@@ -6,12 +7,12 @@ author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 09/16/2016
-ms.openlocfilehash: 7f99b4d12821e505a229ac02d0198a9ac2ed31fa
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 0acd0b05dcf4bf0d98cd14d9b5e1991d40feadea
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87936310"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97039192"
 ---
 # <a name="data-deduplication-interoperability"></a>Interoperabilidad de Desduplicación de datos
 

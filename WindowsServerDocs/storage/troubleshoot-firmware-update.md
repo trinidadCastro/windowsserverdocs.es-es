@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo solucionar problemas de actualizaciones de firmware de unidad
 ms.assetid: 13210461-1e92-48a1-91a2-c251957ba256
 title: Solución de problemas de actualizaciones de firmware de unidad
 ms.author: toklima
@@ -6,12 +7,12 @@ manager: masriniv
 ms.topic: article
 author: toklima
 ms.date: 04/18/2017
-ms.openlocfilehash: b63df280585c4e1d5de88bc8a2ab08cce74c06d7
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: f1fed8ce79fc9918b4b11bb002bd7ba352e337fc
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87946228"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97039193"
 ---
 # <a name="troubleshooting-drive-firmware-updates"></a>Solución de problemas de actualizaciones de firmware de unidad
 
@@ -61,7 +62,7 @@ El campo SupportsUpdate, al menos para dispositivos SATA y NVMe, indicará si la
 El campo SupportsUpdate siempre notificará "true" para los dispositivos conectados a SAS, ya que la consulta de la compatibilidad de comando adecuada no es posible con los comandos estándar del sector.
 
 Para validar si un dispositivo SAS admite el conjunto de comandos necesario, existen dos opciones:
-1.  Pruébelo mediante el cmdlet Update-StorageFirmware con una imagen de firmware adecuada.
+1.  Pruébelo a través del cmdlet Update-StorageFirmware con una imagen de firmware adecuada, o bien
 2.  Consulte el catálogo de Windows Server para identificar qué dispositivos SAS han conseguido correctamente la actualización de FW AQ (https://www.windowsservercatalog.com/)
 
 ### <a name="remediation-options"></a>Opciones de corrección

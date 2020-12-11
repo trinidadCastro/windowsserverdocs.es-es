@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo inscribir un certificado SSL para AD FS
 ms.assetid: 3095e6a7-b562-4c6a-bf29-13b32c133cac
 title: Inscribir un certificado SSL de AD FS
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 2d24e5593af2d12359d4e2acd5fc93df334730b8
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 398be855788314ca54b634db445338e45cd0f84d
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87962829"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97044093"
 ---
 # <a name="enroll-an-ssl-certificate-for-ad-fs"></a>Inscribir un certificado SSL de AD FS
 

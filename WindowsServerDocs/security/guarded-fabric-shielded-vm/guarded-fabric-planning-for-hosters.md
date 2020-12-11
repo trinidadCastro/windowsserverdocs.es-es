@@ -1,4 +1,5 @@
 ---
+description: 'Más información sobre: tejido protegido y guía de planificación de máquinas virtuales blindadas para proveedores de hospedaje'
 title: Guía de planificación de máquinas virtuales blindadas y tejido protegido para proveedores de hospedaje
 ms.topic: article
 ms.assetid: 854defc8-99f8-4573-82c0-f484e0785859
@@ -6,12 +7,12 @@ manager: dongill
 author: nirb-ms
 ms.author: nirb
 ms.date: 08/29/2018
-ms.openlocfilehash: c603f946132e3c8811279f94c585de4ec9eb0509
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 58d29de19959bad617c9db3e07c12b316624056c
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989141"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97043953"
 ---
 # <a name="guarded-fabric-and-shielded-vm-planning-guide-for-hosters"></a>Guía de planificación de máquinas virtuales blindadas y tejido protegido para proveedores de hospedaje
 
@@ -19,7 +20,7 @@ ms.locfileid: "87989141"
 
 En este tema se tratan las decisiones de planeación que deben realizarse para permitir que las máquinas virtuales blindadas se ejecuten en el tejido. Tanto si actualiza un tejido de Hyper-V existente como si crea un nuevo tejido, la ejecución de máquinas virtuales blindadas consta de dos componentes principales:
 
-- El servicio de protección de host (HGS) proporciona atestación y protección de claves para que pueda asegurarse de que las máquinas virtuales blindadas se ejecutarán solo en hosts de Hyper-V aprobados y en buen estado. 
+- El servicio de protección de host (HGS) proporciona atestación y protección de claves para que pueda asegurarse de que las máquinas virtuales blindadas se ejecutarán solo en hosts de Hyper-V aprobados y en buen estado. 
 - Hosts de Hyper-V aprobados y en buen estado en los que se pueden ejecutar máquinas virtuales blindadas (y máquinas virtuales normales): estos se conocen como hosts protegidos.
 
 ![HGS y un host protegido](../media/Guarded-Fabric-Shielded-VM/guarded-host-hgs-plus-host-diagram-basic.png)

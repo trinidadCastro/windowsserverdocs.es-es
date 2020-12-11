@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: historial de rendimiento de los discos duros virtuales'
 title: Historial de rendimiento de los discos duros virtuales
 ms.author: cosdar
 manager: eldenc
@@ -6,12 +7,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 02/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 458c9578e541d67135836557af7789c671ed001d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: ff9990ce720330e63679b89ed63cbcc01fc2c57f
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87935684"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97040063"
 ---
 # <a name="performance-history-for-virtual-hard-disks"></a>Historial de rendimiento de los discos duros virtuales
 

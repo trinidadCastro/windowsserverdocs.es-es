@@ -1,4 +1,5 @@
 ---
+description: 'Más información sobre: máquinas virtuales blindadas para inquilinos: implementación de una máquina virtual blindada mediante Windows Azure Pack'
 title: 'Máquinas virtuales blindadas para inquilinos: implementación de una máquina virtual blindada mediante Windows Azure Pack'
 ms.topic: article
 ms.assetid: 095315e4-c4a7-4b80-91d8-528119b62c4c
@@ -6,12 +7,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: 613082bcc5cfefa0c7abb0011762c3d283ea98aa
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 7eb7078c9df81d4623c0f9655edc11ac991e1844
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989990"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97043833"
 ---
 # <a name="shielded-vms--for-tenants---deploying-a-shielded-vm-by-using-windows-azure-pack"></a>Máquinas virtuales blindadas para inquilinos: implementación de una máquina virtual blindada mediante Windows Azure Pack
 
@@ -19,7 +20,7 @@ ms.locfileid: "87989990"
 
 Si su proveedor de servicios de hosting es compatible, puede usar Windows Azure Pack para implementar una máquina virtual blindada.
 
-Complete los pasos siguientes:
+Siga los pasos siguientes:
 
 1. Suscríbase a uno o varios planes ofrecidos en Windows Azure Pack.
 

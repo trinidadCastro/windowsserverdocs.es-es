@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo configurar un entorno de laboratorio AD FS
 ms.assetid: 276a7f7d-5faa-4c00-a51c-3fa511fe52f9
 title: Configuración de un entorno de laboratorio de AD FS
 author: billmath
@@ -6,12 +7,12 @@ manager: femila
 ms.date: 05/31/2017
 ms.topic: article
 ms.author: billmath
-ms.openlocfilehash: d9625992d7098a1f5cd510901be07187702b3771
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 0b7c4c40ea37c9d8f7f2e7dd5639245a98a25aab
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87967092"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97039693"
 ---
 # <a name="set-up-an-ad-fs-lab-environment"></a>Configuración de un entorno de laboratorio de AD FS
 
@@ -48,7 +49,7 @@ Cuando tu controlador de dominio esté operativo, puedes crear un grupo de prueb
 
 Crea las cuentas siguientes:
 
-- Usuario: **Robert Hatley** con las siguientes credenciales: nombre de usuario: **RobertH** y contraseña:<strong>P@ssword</strong>
+- Usuario: **Robert Hatley** con las siguientes credenciales: nombre de usuario: **RobertH** y contraseña: <strong>P@ssword</strong>
 
 - Grupo: **Finance**
 
@@ -303,11 +304,11 @@ Debes llevar a cabo los siguientes pasos para configurar un servidor web con est
 
     1.  Ejecute FedUtil.exe, que se encuentra en **C:Program Files (x86) Windows Identity Foundation sdkv 3.5**.
 
-    2.  Establezca la ubicación de configuración de la aplicación en **C:inetputclaimappweb.config** y establezca el URI de la aplicación en la dirección URL del sitio, ** https://webserv1.contoso.com /claimapp/**. Haga clic en **Next**.
+    2.  Establezca la ubicación de configuración de la aplicación en **C:inetputclaimappweb.config** y establezca el URI de la aplicación en la dirección URL del sitio, **https://webserv1.contoso.com /claimapp/**. Haga clic en **Next**.
 
     3.  Seleccione **usar un STS existente** y vaya a la dirección URL de metadatos del servidor de AD FS **https://adfs1.contoso.com/federationmetadata/2007-06/federationmetadata.xml** . Haga clic en **Next**.
 
-    4.  Selecciona **Deshabilitar la validación de la cadena de certificados ** y haz clic en **Siguiente**.
+    4.  Selecciona **Deshabilitar la validación de la cadena de certificados** y haz clic en **Siguiente**.
 
     5.  Selecciona **Sin cifrado** y haz clic en **Siguiente**. En la página **Notificaciones ofrecidas**, haga clic en **Siguiente**.
 
@@ -353,9 +354,9 @@ El cliente DEBE confiar en el certificado SSL que se usó para el servidor de fe
 Asimismo, debes configurar y utilizar una cuenta Microsoft para iniciar sesión en Client1.
 
 ## <a name="see-also"></a>Consulte también
-[Servicios de Federación de Active Directory (AD FS) serie de vídeos de procedimientos: instalación de una granja](https://channel9.msdn.com/Search?term=Active%20Directory%20Federation%20Services#pubDate=year&ch9Search) 
- de servidores de AD FS [Servicios de Federación de Active Directory (AD FS) serie de vídeos de procedimientos: actualizar certificados](https://channel9.msdn.com/Search?term=Active%20Directory%20Federation%20Services#pubDate=year&ch9Search) 
- [Servicios de Federación de Active Directory (AD FS) serie de vídeos de procedimientos: agregar una relación de confianza](https://channel9.msdn.com/Search?term=Active%20Directory%20Federation%20Services#pubDate=year&ch9Search) 
- para usuario autenticado [Servicios de Federación de Active Directory (AD FS) serie de vídeos de procedimientos: habilitar el servicio](https://channel9.msdn.com/) 
- de registro de dispositivos [Servicios de Federación de Active Directory (AD FS) serie de vídeos de procedimientos: instalar el proxy de aplicación web](https://channel9.msdn.com/Search?term=Active%20Directory%20Federation%20Services#pubDate=year&ch9Search)
+[Servicios de federación de Active Directory (AD FS) How-To serie de vídeos: instalación de una granja](https://channel9.msdn.com/Search?term=Active%20Directory%20Federation%20Services#pubDate=year&ch9Search) 
+ de servidores de AD FS [Servicios de federación de Active Directory (AD FS) How-To serie de vídeos: actualizar certificados](https://channel9.msdn.com/Search?term=Active%20Directory%20Federation%20Services#pubDate=year&ch9Search) 
+ [Servicios de federación de Active Directory (AD FS) How-To serie de vídeos: agregar una relación de confianza](https://channel9.msdn.com/Search?term=Active%20Directory%20Federation%20Services#pubDate=year&ch9Search) 
+ para usuario autenticado [Servicios de federación de Active Directory (AD FS) How-To serie de vídeos: habilitar el servicio](https://channel9.msdn.com/) 
+ de registro de dispositivos [Servicios de federación de Active Directory (AD FS) How-To serie de vídeos: instalar el proxy de aplicación web](https://channel9.msdn.com/Search?term=Active%20Directory%20Federation%20Services#pubDate=year&ch9Search)
 

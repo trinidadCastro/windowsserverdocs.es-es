@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: crear una regla para enviar una demanda de método de autenticación'
 ms.assetid: 96b9f4e6-f01c-4517-8299-017d187d447e
 title: Crear una regla para enviar una notificación de método de autenticación
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 1ea0c352036a3e7a8070fa9f1f1ddca2a7dff3dd
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: dc55613e8060eda42f5f4d47a59fc20246e1684f
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87956662"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97040133"
 ---
 # <a name="create-a-rule-to-send-an-authentication-method-claim"></a>Crear una regla para enviar una notificación de método de autenticación
 
@@ -48,7 +49,7 @@ En función de los requisitos de su organización, use uno de los procedimientos
 
 8.  En **tipo de notificaciones salientes**, seleccione **método de autenticación** en la lista.
 
-9. En **valor de notificaciones salientes**, escriba uno de los valores predeterminados del URI del identificador uniforme \( \) de recursos en la tabla siguiente, según el método de autenticación preferido, haga clic en **Finalizar**y, a continuación, haga clic en **Aceptar** para guardar la regla.
+9. En **valor de notificaciones salientes**, escriba uno de los valores predeterminados del URI del identificador uniforme \( \) de recursos en la tabla siguiente, según el método de autenticación preferido, haga clic en **Finalizar** y, a continuación, haga clic en **Aceptar** para guardar la regla.
 
 |                            Método de autenticación real                             |                                URI correspondiente                                 |
 |-------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
@@ -81,7 +82,7 @@ En función de los requisitos de su organización, use uno de los procedimientos
 
 8.  En **tipo de notificaciones salientes**, seleccione **método de autenticación** en la lista.
 
-9. En **valor de notificaciones salientes**, escriba uno de los valores predeterminados del URI del identificador uniforme \( \) de recursos en la tabla siguiente, según el método de autenticación preferido, haga clic en **Finalizar**y, a continuación, haga clic en **Aceptar** para guardar la regla.
+9. En **valor de notificaciones salientes**, escriba uno de los valores predeterminados del URI del identificador uniforme \( \) de recursos en la tabla siguiente, según el método de autenticación preferido, haga clic en **Finalizar** y, a continuación, haga clic en **Aceptar** para guardar la regla.
 
 |                            Método de autenticación real                             |                                URI correspondiente                                 |
 |-------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
@@ -115,11 +116,11 @@ En función de los requisitos de su organización, use uno de los procedimientos
 
 8.  En **tipo de notificaciones salientes**, seleccione **método de autenticación** en la lista.
 
-9. Seleccione **reemplazar un valor de notificaciones entrantes por otro valor de notificaciones salientes**y, a continuación, haga lo siguiente:
+9. Seleccione **reemplazar un valor de notificaciones entrantes por otro valor de notificaciones salientes** y, a continuación, haga lo siguiente:
 
-    1.  En **valor de notificaciones entrantes**, escriba uno de los siguientes valores de URI basados en el URI del método de autenticación real que se usó originalmente, haga clic en **Finalizar**y, a continuación, haga clic en **Aceptar** para guardar la regla.
+    1.  En **valor de notificaciones entrantes**, escriba uno de los siguientes valores de URI basados en el URI del método de autenticación real que se usó originalmente, haga clic en **Finalizar** y, a continuación, haga clic en **Aceptar** para guardar la regla.
 
-    2.  En **valor de notificaciones salientes**, escriba uno de los valores de URI predeterminados en la tabla siguiente, que depende de la opción nuevo método de autenticación preferido, haga clic en **Finalizar**y, a continuación, haga clic en **Aceptar** para guardar la regla.
+    2.  En **valor de notificaciones salientes**, escriba uno de los valores de URI predeterminados en la tabla siguiente, que depende de la opción nuevo método de autenticación preferido, haga clic en **Finalizar** y, a continuación, haga clic en **Aceptar** para guardar la regla.
 
 |              Método de autenticación real              |                                URI correspondiente                                 |
 |--------------------------------------------------------|----------------------------------------------------------------------------------|
@@ -155,11 +156,11 @@ En función de los requisitos de su organización, use uno de los procedimientos
 
 8.  En **tipo de notificaciones salientes**, seleccione **método de autenticación** en la lista.
 
-9. Seleccione **reemplazar un valor de notificaciones entrantes por otro valor de notificaciones salientes**y, a continuación, haga lo siguiente:
+9. Seleccione **reemplazar un valor de notificaciones entrantes por otro valor de notificaciones salientes** y, a continuación, haga lo siguiente:
 
-    1.  En **valor de notificaciones entrantes**, escriba uno de los siguientes valores de URI basados en el URI del método de autenticación real que se usó originalmente, haga clic en **Finalizar**y, a continuación, haga clic en **Aceptar** para guardar la regla.
+    1.  En **valor de notificaciones entrantes**, escriba uno de los siguientes valores de URI basados en el URI del método de autenticación real que se usó originalmente, haga clic en **Finalizar** y, a continuación, haga clic en **Aceptar** para guardar la regla.
 
-    2.  En **valor de notificaciones salientes**, escriba uno de los valores de URI predeterminados en la tabla siguiente, que depende de la opción nuevo método de autenticación preferido, haga clic en **Finalizar**y, a continuación, haga clic en **Aceptar** para guardar la regla.
+    2.  En **valor de notificaciones salientes**, escriba uno de los valores de URI predeterminados en la tabla siguiente, que depende de la opción nuevo método de autenticación preferido, haga clic en **Finalizar** y, a continuación, haga clic en **Aceptar** para guardar la regla.
 
 |              Método de autenticación real              |                                URI correspondiente                                 |
 |--------------------------------------------------------|----------------------------------------------------------------------------------|
@@ -196,7 +197,7 @@ En función de los requisitos de su organización, use uno de los procedimientos
 
 1.  En el Administrador del servidor, haga clic en **Herramientas** y, luego, seleccione **Administración de AD FS**.
 
-2.  En el árbol de consola, en **AD FS \\ relaciones de confianza**, haga clic en **confianzas de proveedor de notificaciones** o en **confianzas**de usuario de confianza y, a continuación, haga clic en una confianza específica en la lista en la que desea crear esta regla.
+2.  En el árbol de consola, en **AD FS \\ relaciones de confianza**, haga clic en **confianzas de proveedor de notificaciones** o en **confianzas** de usuario de confianza y, a continuación, haga clic en una confianza específica en la lista en la que desea crear esta regla.
 
 3.  Haga clic con el botón secundario \- en la confianza seleccionada y, a continuación, haga clic en **editar reglas de notificaciones**.
 ![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)
@@ -221,7 +222,7 @@ En función de los requisitos de su organización, use uno de los procedimientos
 
 8.  En **tipo de notificaciones salientes**, seleccione **método de autenticación** en la lista.
 
-9. En **valor de notificaciones salientes**, escriba uno de los valores predeterminados del URI del identificador uniforme \( \) de recursos en la tabla siguiente, según el método de autenticación preferido, haga clic en **Finalizar**y, a continuación, haga clic en **Aceptar** para guardar la regla.
+9. En **valor de notificaciones salientes**, escriba uno de los valores predeterminados del URI del identificador uniforme \( \) de recursos en la tabla siguiente, según el método de autenticación preferido, haga clic en **Finalizar** y, a continuación, haga clic en **Aceptar** para guardar la regla.
 
 |                            Método de autenticación real                             |                                URI correspondiente                                 |
 |-------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
@@ -239,9 +240,9 @@ En función de los requisitos de su organización, use uno de los procedimientos
 
 
 
-1.  En Administrador del servidor, haga clic en **herramientas**y, a continuación, haga clic en **Administración de AD FS**.
+1.  En Administrador del servidor, haga clic en **herramientas** y, a continuación, haga clic en **Administración de AD FS**.
 
-2.  En el árbol de consola, en **AD FS \\ relaciones de confianza**, haga clic en **confianzas de proveedor de notificaciones** o en **confianzas**de usuario de confianza y, a continuación, haga clic en una confianza específica en la lista en la que desea crear esta regla.
+2.  En el árbol de consola, en **AD FS \\ relaciones de confianza**, haga clic en **confianzas de proveedor de notificaciones** o en **confianzas** de usuario de confianza y, a continuación, haga clic en una confianza específica en la lista en la que desea crear esta regla.
 
 3.  Haga clic con el botón secundario \- en la confianza seleccionada y, a continuación, haga clic en **editar reglas de notificaciones**.
 ![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)
@@ -266,11 +267,11 @@ En función de los requisitos de su organización, use uno de los procedimientos
 
 8.  En **tipo de notificaciones salientes**, seleccione **método de autenticación** en la lista.
 
-9. Seleccione **reemplazar un valor de notificaciones entrantes por otro valor de notificaciones salientes**y, a continuación, haga lo siguiente:
+9. Seleccione **reemplazar un valor de notificaciones entrantes por otro valor de notificaciones salientes** y, a continuación, haga lo siguiente:
 
-    1.  En **valor de notificaciones entrantes**, escriba uno de los siguientes valores de URI basados en el URI del método de autenticación real que se usó originalmente, haga clic en **Finalizar**y, a continuación, haga clic en **Aceptar** para guardar la regla.
+    1.  En **valor de notificaciones entrantes**, escriba uno de los siguientes valores de URI basados en el URI del método de autenticación real que se usó originalmente, haga clic en **Finalizar** y, a continuación, haga clic en **Aceptar** para guardar la regla.
 
-    2.  En **valor de notificaciones salientes**, escriba uno de los valores de URI predeterminados en la tabla siguiente, que depende de la opción nuevo método de autenticación preferido, haga clic en **Finalizar**y, a continuación, haga clic en **Aceptar** para guardar la regla.
+    2.  En **valor de notificaciones salientes**, escriba uno de los valores de URI predeterminados en la tabla siguiente, que depende de la opción nuevo método de autenticación preferido, haga clic en **Finalizar** y, a continuación, haga clic en **Aceptar** para guardar la regla.
 
 |              Método de autenticación real              |                                URI correspondiente                                 |
 |--------------------------------------------------------|----------------------------------------------------------------------------------|

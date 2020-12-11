@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo implementar una directiva de acceso central (pasos de demostración)
 ms.assetid: 8738c03d-6ae8-49a7-8b0c-bef7eab81057
 title: Implementar una directiva de acceso central (pasos de demostración)
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 406674f26039f80cbca5ed3ba96e041bc8624729
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 8f61fd4e483ef28e6887b8f530bc311b09b8d563
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952796"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97040583"
 ---
 # <a name="deploy-a-central-access-policy-demonstration-steps"></a>Implementar una directiva de acceso central (pasos de demostración)
 
@@ -36,7 +37,7 @@ En esta sección encontrarás series de pasos de alto nivel que te ayudarán a p
 
 |Núm. de paso | Paso | Ejemplo |
 |--|--|--|
-| 1.1 | Una empresa determina que necesita una directiva de acceso central | Para proteger la información financiera almacenada en los servidores de archivos, las operaciones de seguridad del Departamento Financiero trabajan con seguridad de la información central para especificar la necesidad de una directiva de acceso central. |  |
+| 1,1 | Una empresa determina que necesita una directiva de acceso central | Para proteger la información financiera almacenada en los servidores de archivos, las operaciones de seguridad del Departamento Financiero trabajan con seguridad de la información central para especificar la necesidad de una directiva de acceso central. |  |
 | 1.2 | Expresión de la directiva de acceso | Los documentos financieros solo deben leerlos los miembros del Departamento Financiero. Los miembros del Departamento Financiero solo deben tener acceso a los documentos de su propio país. Solo los administradores de finanzas deben tener acceso de escritura. Se permite una excepción para los miembros del grupo FinanceException. Este grupo tendrá acceso de lectura. |  |
 | 1.3 | Expresar la Directiva de acceso en construcciones de Windows Server 2012 | Destinatarios:<p>-Resource. Department contiene Finance<p>Reglas de acceso:<p>-Permitir leer usuario. país = recurso. país y usuario. Departamento = recurso. Departamento<br />-Permitir control total User. memberOf (FinanceAdmin)<p>Excepción:<p>Allow read memberOf(FinanceException) |  |
 | 1.4 | Determinar las propiedades del archivo necesarias para la directiva | Etiquetar archivos con:<p>-Departamento<br />-País |  |
@@ -70,7 +71,7 @@ En el procedimiento siguiente, creará dos tipos de notificaciones: país y depa
    > [!TIP]
    > También puedes abrir la ventana **Crear tipo de notificación** en el panel **Tareas**. En el panel **Tareas**, haz clic en **Nueva** y después en **Tipo de notificación**.
 
-4. En la lista **Atributo de origen**, desplázate por la lista de atributos y haz clic en **departamento**. Esto rellenará el campo **Nombre para mostrar** con **departamento**. Haga clic en **Aceptar**.
+4. En la lista **Atributo de origen**, desplázate por la lista de atributos y haz clic en **departamento**. Esto rellenará el campo **Nombre para mostrar** con **departamento**. Haga clic en **OK**.
 
 5. En el panel **Tareas**, haz clic en **Nueva** y después en **Tipo de notificación**.
 
@@ -82,7 +83,7 @@ En el procedimiento siguiente, creará dos tipos de notificaciones: país y depa
 
 9. Repite el paso anterior. En el cuadro de diálogo **Agregar un valor sugerido**, escribe **JP** en los campos **Valor** y **Nombre para mostrar**, y haz clic en **Aceptar**.
 
-![guías de soluciones](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***
+![guías de soluciones ](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif) * *_<em>comandos equivalentes de Windows PowerShell</em>_* _
 
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.
 
@@ -98,7 +99,7 @@ El paso siguiente es crear propiedades de recursos. En el procedimiento siguient
 
 #### <a name="to-create-and-enable-pre-created-resource-properties"></a>Para crear y habilitar propiedades de recursos predefinidas
 
-1.  En el panel izquierdo del Centro de administración de Active Directory, haz clic en **Vista de árbol**. Expande **Control de acceso dinámico** y selecciona **Propiedades de recursos**.
+1.  En el panel izquierdo de Centro de administración de Active Directory, haga clic en _ * vista de árbol * *. Expande **Control de acceso dinámico** y selecciona **Propiedades de recursos**.
 
 2.  Haz clic con el botón secundario en **Propiedades de recursos**, haz clic en **Nueva** y, después, en **Propiedad de recurso de referencia**.
 
@@ -113,11 +114,11 @@ El paso siguiente es crear propiedades de recursos. En el procedimiento siguient
 
 6.  En la lista **Propiedades de recursos**, en el panel de navegación del Centro de administración de Active Directory, ahora verás que hay dos propiedades de recursos habilitadas:
 
-    -   Country
+    -   País
 
-    -   department
+    -   Departamento
 
-![guías de soluciones](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***
+![guías de soluciones ](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif) * *_<em>comandos equivalentes de Windows PowerShell</em>_* _
 
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.
 
@@ -154,7 +155,7 @@ Reglas de acceso:
 
 #### <a name="to-create-a-central-access-rule"></a>Para crear una regla de acceso central
 
-1. En el panel izquierdo del Centro de administración de Active Directory, haz clic en **Vista de árbol**, selecciona **Control de acceso dinámico** y haz clic en **Reglas de acceso central**.
+1. En el panel izquierdo del Centro de administración de Active Directory, haga clic en _ * vista de árbol * *, seleccione **Access control dinámico** y, a continuación, haga clic en **reglas de acceso central**.
 
 2. Haz clic con el botón secundario en **Reglas de acceso central**, haz clic en **Nueva** y después en **Regla de acceso central**.
 
@@ -169,7 +170,7 @@ Reglas de acceso:
 
 6. En el cuadro de diálogo **Entrada de permiso para permisos**, haz clic en **Seleccionar una entidad de seguridad**, escribe **Usuarios autenticados** y haz clic en **Aceptar**.
 
-7. En el cuadro de diálogo **entrada de permiso para permisos** , haga clic en **Agregar una condición**y agregue las condiciones siguientes: [**usuario**] [**país**] [**cualquiera de**] [**recurso**] [**país**] haga clic en **Agregar una condición**.
+7. En el cuadro de diálogo **entrada de permiso para permisos** , haga clic en **Agregar una condición** y agregue las condiciones siguientes: [**usuario**] [**país**] [**cualquiera de**] [**recurso**] [**país**] haga clic en **Agregar una condición**.
     [**Y**] Haz clic en [**Usuario**] [**Departamento**] [**Cualquiera de**] [**Recursos**] [**Departamento**]. Establece los **permisos** en **lectura**.
 
 8. Haz clic en **Aceptar** y después en **Agregar**. Haz clic en **Seleccionar una entidad de seguridad**, escribe **FinanceAdmin** y haz clic en **Aceptar**.
@@ -180,7 +181,7 @@ Reglas de acceso:
 
 11. Haz clic en **Aceptar** tres veces para terminar y volver al Centro de administración de Active Directory.
 
-![guías de soluciones](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***
+![guías de soluciones ](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif) * *_<em>comandos equivalentes de Windows PowerShell</em>_* _
 
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.
 
@@ -201,7 +202,7 @@ Ahora verás una regla de acceso central que permite a los usuarios acceder a do
 
 #### <a name="to-add-a-central-access-rule-to-a-central-access-policy"></a>Para agregar una regla de acceso central a una directiva de acceso central
 
-1. En el panel izquierdo del Centro de administración de Active Directory, haz clic en **Control de acceso dinámico** y, después, en **Directivas de acceso central**.
+1. En el panel izquierdo del Centro de administración de Active Directory, haga clic en _ * Dynamic Access Control * * y, a continuación, haga clic en **directivas de acceso central**.
 
 2. En el panel **Tareas**, haz clic en **Nueva** y, después, en **Directiva de acceso central**.
 
@@ -213,7 +214,7 @@ Ahora verás una regla de acceso central que permite a los usuarios acceder a do
 
 6. Haz clic en **Aceptar** para finalizar. Ahora deberías tener una directiva de acceso central llamada Directiva de finanzas.
 
-![guías de soluciones](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***
+![guías de soluciones ](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif) * *_<em>comandos equivalentes de Windows PowerShell</em>_* _
 
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.
 
@@ -225,7 +226,7 @@ New-ADCentralAccessPolicy "Finance Policy" Add-ADCentralAccessPolicyMember
 
 #### <a name="to-apply-the-central-access-policy-across-file-servers-by-using-group-policy"></a>Para aplicar la directiva de acceso central en servidores de archivos que usen la directiva de grupo
 
-1.  En la pantalla **Inicio**, en el cuadro **Buscar**, escribe **Administración de directivas de grupo**. Haz doble clic en **Administración de directivas de grupo**.
+1.  En la pantalla _ *iniciar**, en el cuadro de **búsqueda** , escriba **Directiva de grupo Management**. Haz doble clic en **Administración de directivas de grupo**.
 
     > [!TIP]
     > Si la opción **Mostrar herramientas administrativas** está deshabilitada, no aparecerá la carpeta **Herramientas administrativas** ni su contenido en los resultados de **Configuración**.
@@ -316,7 +317,7 @@ En el paso siguiente, comprueba que el acceso esté configurado correctamente.  
 
 2.  Haz clic en la pestaña **Seguridad**, haz clic en **Avanzadas** y, después, en la pestaña **Acceso efectivo**.
 
-3.  Para examinar los permisos de un usuario, haga clic en **seleccionar un usuario**, escriba el nombre del usuario y, a continuación, haga clic en **Ver acceso efectivo** para ver los derechos de acceso efectivos. Por ejemplo:
+3.  Para examinar los permisos de un usuario, haga clic en **seleccionar un usuario**, escriba el nombre del usuario y, a continuación, haga clic en  **Ver acceso efectivo** para ver los derechos de acceso efectivos. Por ejemplo:
 
     -   Myriam Delesalle (MDelesalle) pertenece al Departamento Financiero y debe tener acceso de lectura a la carpeta.
 
@@ -353,7 +354,7 @@ En el paso siguiente, comprueba que el acceso esté configurado correctamente.  
 
 3. Haz clic en **Vista de árbol**, expande **Control de acceso dinámico**, haz doble clic en **Tipos de notificaciones** y, después, haz doble clic en la notificación de **país**.
 
-4. En **Las notificaciones de este tipo pueden ser emitidas por las siguientes clases**, selecciona la casilla **Equipo**. Haga clic en **Aceptar**.
+4. En **Las notificaciones de este tipo pueden ser emitidas por las siguientes clases**, selecciona la casilla **Equipo**. Haga clic en **OK**.
    Deben estar seleccionadas las dos casillas, **Usuario** y **Equipo**. Ahora puede usarse la notificación de país con dispositivos, además de los usuarios.
 
 El paso siguiente es crear una regla de directivas de almacenamiento provisional. Las directivas de almacenamiento provisional se pueden usar para supervisar los efectos de una nueva entrada de directiva antes de habilitarla. En el paso siguiente crearás una entrada de directiva de almacenamiento provisional y comprobarás los efectos en la carpeta compartida.
@@ -385,7 +386,7 @@ El paso siguiente es crear una regla de directivas de almacenamiento provisional
 
 12. Haz clic en **Aceptar** dos veces para finalizar.
 
-![guías de soluciones](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***
+![guías de soluciones ](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif) * *_<em>comandos equivalentes de Windows PowerShell</em>_* _
 
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.
 
@@ -407,13 +408,13 @@ En el procedimiento siguiente verificarás los resultados de la directiva de alm
 
 1. Conéctese al servidor de archivos ARCHIVO1 en el administrador de Hyper-V e inicie sesión como Contoso\Administrador con la contraseña <strong>pass@word1</strong> .
 
-2. Abre una ventana del símbolo del sistema y escribe **gpupdate /force**. Esto garantiza que los cambios que realices en la directiva de grupo se apliquen en el servidor.
+2. Abra una ventana del símbolo del sistema y escriba _ * gpupdate/force * *. Esto garantiza que los cambios que realices en la directiva de grupo se apliquen en el servidor.
 
 3. En el Administrador de Hyper-V, conéctate al servidor CLIENT1. Cierra la sesión del usuario que haya iniciado sesión actualmente. Reinicia la máquina virtual, CLIENT1. A continuación, inicie sesión en el equipo mediante contoso\EValle pass@word1 .
 
 4. Haga doble clic en el acceso directo del escritorio a \\ \FILE1\Finance Documents. EValle debería seguir teniendo acceso a los archivos. Cambia a FILE1.
 
-5. Abre el **Visor de eventos** mediante el acceso directo en el escritorio. Expande **Registros de Windows** y selecciona **Seguridad**. Abra las entradas con el **ID. de evento 4818**en la categoría de tareas **almacenamiento provisional de directivas de acceso central** . Verás que EValle tiene acceso permitido; pero, según la directiva de almacenamiento provisional, el usuario no debería tener acceso.
+5. Abre el **Visor de eventos** mediante el acceso directo en el escritorio. Expande **Registros de Windows** y selecciona **Seguridad**. Abra las entradas con el **ID. de evento 4818** en la categoría de tareas **almacenamiento provisional de directivas de acceso central** . Verás que EValle tiene acceso permitido; pero, según la directiva de almacenamiento provisional, el usuario no debería tener acceso.
 
-## <a name="next-steps"></a>Pasos a seguir
+## <a name="next-steps"></a>Pasos siguientes
 Si tienes un sistema de administración del servidor central como System Center Operations Manager, también puedes configurar la supervisión de eventos. Esto permite a los administradores supervisar los efectos de directivas de acceso central antes de aplicarlas.

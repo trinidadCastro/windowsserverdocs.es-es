@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo planear la ubicación del servidor de catálogo global
 ms.assetid: 407d5e81-c04c-4275-9ae9-35f65b4a371a
 title: Planear la ubicación del servidor de catálogo global
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 3da69538eb18bb7c55f6d18f55d9020e501036f3
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 026fd92a0c6ecdf6fffb7a266a0fc60301c039c6
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93071077"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97042713"
 ---
 # <a name="planning-global-catalog-server-placement"></a>Planear la ubicación del servidor de catálogo global
 

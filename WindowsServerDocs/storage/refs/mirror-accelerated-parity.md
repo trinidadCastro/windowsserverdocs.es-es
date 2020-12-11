@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de la paridad de reflejo acelerado
 title: Paridad acelerada por reflejo
 ms.author: gawatu
 manager: masriniv
@@ -6,12 +7,12 @@ ms.topic: article
 author: gawatu
 ms.date: 10/17/2018
 ms.assetid: ''
-ms.openlocfilehash: f54eb8db2a71fe8576913d7d2123e822661b0732
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b39e3d518b3721bffce7b111655406cd982ccc0b
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87942174"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97043603"
 ---
 # <a name="mirror-accelerated-parity"></a>Paridad acelerada por reflejo
 
@@ -118,8 +119,8 @@ ReFS comienza a rotar los datos una vez que el reflejo ha alcanzado un umbral de
 -   Los valores más altos de este umbral de rotación hacen que las referencias retengan los datos en el nivel de reflejo más tiempo. La salida de los datos activos en el nivel de reflejo es óptima para el rendimiento, pero ReFS no podrá atender eficazmente grandes cantidades de e/s entrantes.
 -   Los valores inferiores permiten a ReFS desorganizar los datos de forma proactiva y mejorar la ingesta de entrada y salida. Esto se aplica a cargas de trabajo con una gran cantidad de ingesta, como el almacenamiento de archivo. Sin embargo, los valores inferiores podrían degradar el rendimiento de las cargas de trabajo de uso general. La rotación innecesaria de datos fuera del nivel de reflejo conlleva una reducción del rendimiento.
 
-ReFS introduce un parámetro ajustable para ajustar este umbral, que se puede configurar mediante una clave del registro. Esta clave del registro debe configurarse en **cada nodo de una implementación de espacios de almacenamiento directo**y se requiere un reinicio para que los cambios surtan efecto.
--   **Clave:** HKEY_LOCAL_MACHINE \System\CurrentControlSet\Policies
+ReFS introduce un parámetro ajustable para ajustar este umbral, que se puede configurar mediante una clave del registro. Esta clave del registro debe configurarse en **cada nodo de una implementación de espacios de almacenamiento directo** y se requiere un reinicio para que los cambios surtan efecto.
+-   **Clave:** HKEY_LOCAL_MACHINE\System\CurrentControlSet\Policies
 -   **ValueName (DWORD):** DataDestageSsdFillRatioThreshold
 -   **ValueType:** Proporción
 

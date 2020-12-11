@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de la ejecución de la desduplicación de datos
 ms.assetid: f15c02d7-1cbd-4eba-a571-0ea34ab93ef4
 title: Ejecución de desduplicación de datos
 ms.topic: article
@@ -6,12 +7,12 @@ author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 09/15/2016
-ms.openlocfilehash: f382d229458f27795c09e0377e0f0b23ef7b395b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 55d5d3ee542ed0c16f66d9e882ae5d6dafd1af99
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87936236"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97040353"
 ---
 # <a name="running-data-deduplication"></a>Ejecución de desduplicación de datos
 
@@ -48,9 +49,9 @@ Como la desduplicación de datos emplea un modelo de posprocesamiento, es import
 Un indicador de error del [trabajo de Optimización](understand.md#job-info-optimization) es una tasa de optimización con tendencia a la baja que puede indicar que los trabajos de Optimización no se mantienen actualizados con la tasa de cambios, o renovación. Puede comprobar la tasa de optimización mediante el [`Get-DedupStatus`](/previous-versions/system-center/system-center-2012-R2/hh758173(v=sc.12)) cmdlet de PowerShell.
 
 > [!Important]
-> `Get-DedupStatus`tiene dos campos que son relevantes para la tasa de optimización: `OptimizedFilesSavingsRate` y `SavingsRate` . Ambos son valores importantes que hay que supervisar, pero cada uno tiene un significado único.
-> - `OptimizedFilesSavingsRate`solo se aplica a los archivos que están en la Directiva para la optimización ( `space used by optimized files after optimization / logical size of optimized files` ).
-> - `SavingsRate`se aplica a todo el volumen ( `space used by optimized files after optimization / total logical size of the optimization` ).
+> `Get-DedupStatus` tiene dos campos que son relevantes para la tasa de optimización: `OptimizedFilesSavingsRate` y `SavingsRate` . Ambos son valores importantes que hay que supervisar, pero cada uno tiene un significado único.
+> - `OptimizedFilesSavingsRate` solo se aplica a los archivos que están en la Directiva para la optimización ( `space used by optimized files after optimization / logical size of optimized files` ).
+> - `SavingsRate` se aplica a todo el volumen ( `space used by optimized files after optimization / total logical size of the optimization` ).
 
 ## <a name="disabling-data-deduplication"></a><a id="disabling-dedup"></a>Deshabilitación de la desduplicación de datos
 Para desactivar la Desduplicación de datos, ejecute el [trabajo de Desoptimización](understand.md#job-info-unoptimization). Para deshacer la optimización del volumen, ejecute el siguiente comando:

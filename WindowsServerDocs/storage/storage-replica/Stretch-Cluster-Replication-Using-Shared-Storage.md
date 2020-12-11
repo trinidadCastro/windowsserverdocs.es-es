@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de la replicación de clústeres de stretch mediante almacenamiento compartido
 title: Replicación de clúster extendido con almacenamiento compartido
 manager: eldenc
 ms.author: nedpyle
@@ -6,12 +7,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 04/26/2019
 ms.assetid: 6c5b9431-ede3-4438-8cf5-a0091a8633b0
-ms.openlocfilehash: efc2727c913ac2bab5ea619101ebef12f40a69b2
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 096d1258cd74dec51e93b4b26266478206742beb
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991506"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97043763"
 ---
 # <a name="stretch-cluster-replication-using-shared-storage"></a>Replicación de clúster extendido con almacenamiento compartido
 
@@ -36,7 +37,7 @@ En este tutorial se utiliza como ejemplo el siguiente entorno:
 
 **ILUSTRACIÓN 1: replicación de almacenamiento en un clúster extendido**
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerrequisitos
 -   Bosque de Active Directory Domain Services (no es necesario ejecutar Windows Server 2016).
 -   2-64 servidores que ejecutan Windows Server 2019 o Windows Server 2016, Datacenter Edition. Si está ejecutando Windows Server 2019, en su lugar, puede usar la edición Standard si es correcto replicando un solo volumen de hasta 2 TB de tamaño.
 -   Dos conjuntos de almacenamiento compartido, con JBOD de SAS (como con espacios de almacenamiento), Canal de fibra SAN, VHDX compartido o destino iSCSI. El almacenamiento debe contener una combinación de medios de HDD y SSD y debe ser compatible con la reserva persistente. Pondrá cada conjunto de almacenamiento a disposición de solo dos de los servidores (modo asimétrico).
@@ -132,7 +133,7 @@ Después de configurar los nodos del servidor, el siguiente paso es crear uno de
 *  [Clúster de conmutación por error de Hyper-V](#BKMK_HyperV)
 *  [Servidor de archivos para clúster de uso general](#BKMK_FileServer)
 
-### <a name="configure-a-hyper-v-failover-cluster"></a><a name="BKMK_HyperV"></a>Configurar un clúster de conmutación por error de Hyper-V
+### <a name="configure-a-hyper-v-failover-cluster"></a><a name="BKMK_HyperV"></a> Configurar un clúster de conmutación por error de Hyper-V
 
 >[!NOTE]
 > Omita esta sección y vaya a [Configuración de un servidor de archivos para clúster de uso general](#BKMK_FileServer) si desea crear un clúster de servidor de archivos y no un clúster de Hyper-V.
@@ -189,7 +190,7 @@ Ahora creará un clúster de conmutación por error normal. Después de la confi
         ```
 
       > [!IMPORTANT]
-      > Al usar un servidor de prueba sin carga de E/S de escritura en el volumen de origen especificado durante el período de evaluación, considere la posibilidad de agregar una carga de trabajo o Test-SRTopology no generará un informe útil. Pruebe con cargas de trabajo del estilo de producción para ver números reales y tamaños de registro recomendados. Otra alternativa es copiar algunos archivos en el volumen de origen durante la prueba o descargar y ejecutar DISKSPD para generar E/S de escritura. Por ejemplo, una muestra con una carga de trabajo de e/s de escritura baja durante diez minutos en el volumen D:`Diskspd.exe -c1g -d600 -W5 -C5 -b4k -t2 -o2 -r -w5 -i100 d:\test.dat`
+      > Al usar un servidor de prueba sin carga de E/S de escritura en el volumen de origen especificado durante el período de evaluación, considere la posibilidad de agregar una carga de trabajo o Test-SRTopology no generará un informe útil. Pruebe con cargas de trabajo del estilo de producción para ver números reales y tamaños de registro recomendados. Otra alternativa es copiar algunos archivos en el volumen de origen durante la prueba o descargar y ejecutar DISKSPD para generar E/S de escritura. Por ejemplo, una muestra con una carga de trabajo de e/s de escritura baja durante diez minutos en el volumen D: `Diskspd.exe -c1g -d600 -W5 -C5 -b4k -t2 -o2 -r -w5 -i100 d:\test.dat`
 
 1.  Examine el informe **TestSrTopologyReport-< date >.html** para asegurarse de que cumple los requisitos de Réplica de almacenamiento y observe la predicción de tiempo de sincronización inicial y las recomendaciones de registro.
 
@@ -299,7 +300,7 @@ Ahora creará un clúster de conmutación por error normal. Después de la confi
 
 
 
-### <a name="configure-a-file-server-for-general-use-cluster"></a><a name="BKMK_FileServer"></a>Configuración de un servidor de archivos para clúster de uso general
+### <a name="configure-a-file-server-for-general-use-cluster"></a><a name="BKMK_FileServer"></a> Configuración de un servidor de archivos para clúster de uso general
 
 >[!NOTE]
 > Omita esta sección si ya ha configurado un clúster de conmutación por error de Hyper-V como se describe en [Configuración de un clúster de conmutación por error de Hyper-V](#BKMK_HyperV).

@@ -1,16 +1,17 @@
 ---
+description: 'Más información acerca de: resistencia anidada para Espacios de almacenamiento directo'
 title: Resistencia anidada para Espacios de almacenamiento directo
 ms.author: jgerend
 manager: dansimpspaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/15/2019
-ms.openlocfilehash: 91d8cce64088855d2e8a0c89c1084077a252e26a
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: e433539eced1a9f7a52bbaf9bc45e8a6586586ff
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87935961"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97039403"
 ---
 # <a name="nested-resiliency-for-storage-spaces-direct"></a>Resistencia anidada para Espacios de almacenamiento directo
 
@@ -18,7 +19,7 @@ ms.locfileid: "87935961"
 
 La resistencia anidada es una nueva capacidad de [espacios de almacenamiento directo](storage-spaces-direct-overview.md) en Windows Server 2019 que permite que un clúster de dos servidores resista varios errores de hardware al mismo tiempo sin pérdida de disponibilidad de almacenamiento, por lo que los usuarios, las aplicaciones y las máquinas virtuales continúan ejecutándose sin interrupciones. En este tema se explica cómo funciona, se proporcionan instrucciones paso a paso para comenzar y se responde a las preguntas más frecuentes.
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerrequisitos
 
 ### <a name="green-checkmark-icon-consider-nested-resiliency-if"></a>![Icono de marca de verificación verde.](media/nested-resiliency/supported.png) Considere la resistencia anidada si:
 
@@ -38,7 +39,7 @@ Los volúmenes que usan resistencia anidada pueden **permanecer en línea y ser 
 
 La desventaja es que la resistencia anidada tiene **menos eficiencia de la capacidad que la creación de reflejo bidireccional clásica**, lo que significa que se obtiene un espacio ligeramente menos utilizable. Para obtener más información, consulte la sección eficiencia de la [capacidad](#capacity-efficiency) más adelante.
 
-## <a name="how-it-works"></a>Funcionamiento
+## <a name="how-it-works"></a>Cómo funciona
 
 ### <a name="inspiration-raid-51"></a>Inspiración: RAID 5 + 1
 
@@ -145,7 +146,7 @@ Una vez que se establece en **true**, el comportamiento de la memoria caché es:
 
 | Situación                       | Comportamiento de la caché                           | ¿Puede tolerar la pérdida de la unidad de caché? |
 |---------------------------------|------------------------------------------|--------------------------------|
-| Ambos servidores en vertical                 | Lecturas y escrituras en caché, rendimiento completo | Sí                            |
+| Ambos servidores en vertical                 | Lecturas y escrituras en caché, rendimiento completo | Yes                            |
 | Servidor inactivo, primeros 30 minutos   | Lecturas y escrituras en caché, rendimiento completo | No (temporalmente)               |
 | Después de los primeros 30 minutos          | Solo lecturas de caché, impacto en el rendimiento   | Sí (después de que la memoria caché se haya escrito en unidades de capacidad)                           |
 

@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo planear la capacidad del servidor de Federación
 ms.assetid: 7013fc21-9ced-4f9d-9588-cb04d6d60924
 title: Planificación de la capacidad de los servidores de federación
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 63bc6291ea837e96660d6aba8f37374ef4e06b8a
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c81c589feb940fb686aa865c8368f126ab20562d
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87947506"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97044643"
 ---
 # <a name="planning-for-federation-server-capacity"></a>Planificación de la capacidad de los servidores de federación
 
@@ -53,7 +54,7 @@ En un esfuerzo por simplificar el proceso de planeación de hardware para los se
 ### <a name="using-the-ad-fs-capacity-planning-sizing-spreadsheet"></a>Usar la hoja de cálculo de tamaño de planeamiento de la capacidad de AD FS
 Cuando use esta hoja de cálculo, deberá seleccionar un valor del \( **40%**, **60%** o del **80%** \) que mejor represente el porcentaje del total de usuarios que espera enviará solicitudes de autenticación a los servidores de Federación durante períodos de uso máximo.
 
-A continuación, deberá seleccionar un valor \( de **1 minuto**, **15 minutos**o **1 hora** \) que mejor represente la cantidad de tiempo que espera que dure el período de uso máximo.Por ejemplo, puede calcular el 40% como el valor del número total de usuarios que iniciarán sesión en un período de 15 minutos o que el 60% de los usuarios iniciará sesión en un período de 1 hora.Juntos, estos valores definen el perfil de carga máxima por el que se calculará la recomendación de ajuste de tamaño.
+A continuación, deberá seleccionar un valor \( de **1 minuto**, **15 minutos** o **1 hora** \) que mejor represente la cantidad de tiempo que espera que dure el período de uso máximo. Por ejemplo, puede calcular el 40% como el valor del número total de usuarios que iniciarán sesión en un período de 15 minutos o que el 60% de los usuarios iniciará sesión en un período de 1 hora. Juntos, estos valores definen el perfil de carga máxima por el que se calculará la recomendación de ajuste de tamaño.
 
 A continuación, deberá especificar el número total de usuarios que requerirán \- acceso de inicio de sesión único a la aplicación con reconocimiento de notificaciones de destino \- , en función de si los usuarios son:
 
@@ -72,7 +73,7 @@ Puede usar los pasos siguientes para cada instancia de granja de servidores de F
 
 2.  En la celda situada a la derecha de **durante el período de uso máximo del sistema, espero que este porcentaje de la autenticación de los usuarios** sea la celda, haga clic en la celda y, a continuación, use las flechas desplegables \- para seleccionar el nivel de uso del sistema estimado, ya sea **40%**, **60%** o **80%** para la implementación.
 
-3.  En la celda situada a la derecha de la celda en **el siguiente período de tiempo** , haga clic en la celda y, a continuación, use las flechas desplegables \- para seleccionar **1 minuto**, **15 minutos**o **1 hora** para seleccionar la duración de la carga máxima.
+3.  En la celda situada a la derecha de la celda en **el siguiente período de tiempo** , haga clic en la celda y, a continuación, use las flechas desplegables \- para seleccionar **1 minuto**, **15 minutos** o **1 hora** para seleccionar la duración de la carga máxima.
 
 4.  En la celda situada a la derecha de la celda **Escriba el número estimado de aplicaciones internas \( como SharePoint \( 2007 o 2010 \) o de aplicaciones \) web para notificaciones** , escriba el número de aplicaciones internas que usará en su organización.
 

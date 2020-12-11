@@ -1,4 +1,5 @@
 ---
+description: 'Más información sobre: Agregar vínculo de inicio'
 ms.assetid: da035189-e87f-4597-9933-49bf391a8d5d
 title: Adición del vínculo a la página principal
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 4bd64d19f5e203086c4a5576f331fde9d1b33cf7
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 5f684ae3e68459721678a50c91cc04d58c89d81c
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87954291"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97039353"
 ---
 # <a name="add-home-link"></a>Adición del vínculo a la página principal
 

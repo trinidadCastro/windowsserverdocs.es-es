@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: historial de rendimiento de las unidades'
 title: Historial de rendimiento de las unidades
 ms.author: cosdar
 manager: eldenc
@@ -6,12 +7,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 02/02/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d344db75539e4455c11c02f336edc9275d3c813
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c3bb438f64bcb0ddd42abcc1f8b5fa22b5a16848
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87965972"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97041903"
 ---
 # <a name="performance-history-for-drives"></a>Historial de rendimiento de las unidades
 

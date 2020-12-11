@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo crear un diseño de sitio
 ms.assetid: 83f746e5-81db-4610-9977-1d5c57699f50
 title: Crear un diseño de sitio
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: b3f489f564c475a0619f55f4fa690c320292671e
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: a6670f1dd0e9773c952c40d93eb9407103cc0395
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93068857"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97042043"
 ---
 # <a name="creating-a-site-design"></a>Crear un diseño de sitio
 

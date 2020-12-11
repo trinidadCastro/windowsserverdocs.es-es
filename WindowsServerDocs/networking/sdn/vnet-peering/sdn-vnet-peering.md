@@ -1,16 +1,17 @@
 ---
+description: 'Más información acerca de: emparejamiento de redes virtuales'
 title: Emparejamiento de redes virtuales de Azure
 manager: grcusanz
 ms.topic: get-started-article
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/08/2018
-ms.openlocfilehash: d0d9f149a95c00fdac02cbdd383fb950e56b845a
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 8d7f88c4887a5d571722e2137d32f1088d7a1ace
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990047"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97043613"
 ---
 # <a name="virtual-network-peering"></a>Emparejamiento de redes virtuales de Azure
 
@@ -65,7 +66,7 @@ Puede configurar rutas definidas por el usuario que apunten a máquinas virtuale
 
 Puede implementar redes de concentrador y radio, donde la red virtual de concentrador puede hospedar componentes de infraestructura, como una aplicación virtual de red. Todas las redes virtuales de radios del mismo nivel que la red virtual del concentrador. El tráfico puede fluir a través de aplicaciones virtuales de red en la red virtual del concentrador.
 
-El emparejamiento de redes virtuales permite que el próximo salto en una ruta definida por el usuario sea la dirección IP de una máquina virtual en la red virtual emparejada. Para obtener más información sobre las rutas definidas por el usuario, consulte [uso de aplicaciones virtuales de red en un Virtual Network](../manage/use-network-virtual-appliances-on-a-vn.md).
+El emparejamiento de red virtual permite que el próximo salto de una ruta definida por el usuario sea la dirección IP de una máquina virtual de la red virtual emparejada. Para más información acerca de las rutas definidas por el usuario, consulte [Uso de aplicaciones virtuales de red en una red virtual](../manage/use-network-virtual-appliances-on-a-vn.md).
 
 ## <a name="gateways-and-on-premises-connectivity"></a>Puertas de enlace y conectividad local
 

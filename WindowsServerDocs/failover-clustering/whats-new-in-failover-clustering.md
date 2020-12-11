@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de las novedades de los clústeres de conmutación por error
 ms.assetid: 350aa5a3-5938-4921-93dc-289660f26bad
 title: Novedades de los clústeres de conmutación por error en Windows Server
 ms.topic: get-started-article
@@ -6,12 +7,12 @@ manager: lizross
 author: JasonGerend
 ms.author: jgerend
 ms.date: 10/18/2018
-ms.openlocfilehash: 2376a96d762f2ae10a5353a621dd80be2aaf0d3d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 5ffe286cecc8500d70df00289a9694847e7d0994
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87957022"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97040474"
 ---
 # <a name="whats-new-in-failover-clustering"></a>What's new in Failover Clustering (Novedades de los clústeres de conmutación por error)
 
@@ -70,11 +71,11 @@ En este tema se explica la funcionalidad nueva y modificada de los clústeres de
 
 ### <a name="cluster-operating-system-rolling-upgrade"></a><a name="BKMK_RollingUpgrade"></a>Actualización gradual del sistema operativo del clúster
 
-La actualización gradual del sistema operativo de clústeres permite a un administrador actualizar el sistema operativo de los nodos del clúster de Windows Server 2012 R2 a una versión más reciente sin detener las cargas de trabajo de Hyper-V o Servidor de archivos de escalabilidad horizontal. Con esta característica, se pueden evitar las penalizaciones de tiempo de inactividad en los acuerdos de nivel de servicio (SLA).
+La actualización gradual del sistema operativo de clústeres permite a un administrador actualizar el sistema operativo de los nodos del clúster de Windows Server 2012 R2 a una versión más reciente sin detener las cargas de trabajo de Hyper-V o del servidor de archivos Scale-Out. Con esta característica, se pueden evitar las penalizaciones de tiempo de inactividad en los acuerdos de nivel de servicio (SLA).
 
 **¿Qué valor aporta este cambio?**
 
-La actualización de un clúster de Hyper-V o Servidor de archivos de escalabilidad horizontal de Windows Server 2012 R2 a Windows Server 2016 ya no requiere tiempo de inactividad. El clúster seguirá funcionando en el nivel de Windows Server 2012 R2 hasta que todos los nodos del clúster ejecuten Windows Server 2016. El nivel funcional del clúster se actualiza a Windows Server 2016 mediante el cmdlt de Windows PowerShell `Update-ClusterFunctionalLevel` .
+La actualización de un clúster de servidores de archivos de Scale-Out de Hyper-V de Windows Server 2012 R2 a Windows Server 2016 ya no requiere tiempo de inactividad. El clúster seguirá funcionando en el nivel de Windows Server 2012 R2 hasta que todos los nodos del clúster ejecuten Windows Server 2016. El nivel funcional del clúster se actualiza a Windows Server 2016 mediante el cmdlt de Windows PowerShell `Update-ClusterFunctionalLevel` .
 
 > [!WARNING]
 > - Después de actualizar el nivel funcional del clúster, no puede volver a un nivel funcional del clúster de Windows Server 2012 R2.
@@ -83,7 +84,7 @@ La actualización de un clúster de Hyper-V o Servidor de archivos de escalabili
 
 **¿Qué funciona de manera diferente?**
 
-Ahora se puede actualizar fácilmente un clúster de conmutación por error de Hyper-V o Servidor de archivos de escalabilidad horizontal sin necesidad de tiempo de inactividad o de crear un nuevo clúster con los nodos que ejecutan el sistema operativo Windows Server 2016. La migración de clústeres a Windows Server 2012 R2 implica desconectar el clúster existente y reinstalar el nuevo sistema operativo para cada nodo y, a continuación, volver a poner el clúster en línea. El proceso anterior era engorroso y el tiempo de inactividad era necesario. Sin embargo, en Windows Server 2016, el clúster no tiene que desconectarse en ningún momento.
+Ahora se puede actualizar fácilmente un clúster de conmutación por error de Hyper-V o un servidor de archivos de Scale-Out, sin que sea necesario crear un nuevo clúster con los nodos que ejecutan el sistema operativo Windows Server 2016. La migración de clústeres a Windows Server 2012 R2 implica desconectar el clúster existente y reinstalar el nuevo sistema operativo para cada nodo y, a continuación, volver a poner el clúster en línea. El proceso anterior era engorroso y el tiempo de inactividad era necesario. Sin embargo, en Windows Server 2016, el clúster no tiene que desconectarse en ningún momento.
 
 Los sistemas operativos de clúster para la actualización en fases son los siguientes para cada nodo de un clúster:
 -   El nodo se pausa y se purga de todas las máquinas virtuales que se ejecutan en él.
@@ -110,7 +111,7 @@ Réplica de almacenamiento permite hacer lo siguiente:
 
 -   Extender los clústeres de conmutación por error de Windows a distancias metropolitanas.
 
--   Use software de Microsoft de extremo a extremo para almacenamiento y agrupación en clústeres, como Hyper-V, réplica de almacenamiento, espacios de almacenamiento, clúster, Servidor de archivos de escalabilidad horizontal, SMB3, desduplicación de datos y ReFS/NTFS.
+-   Use software de Microsoft de extremo a extremo para almacenamiento y agrupación en clústeres, como Hyper-V, réplica de almacenamiento, espacios de almacenamiento, clúster, servidor de archivos de Scale-Out, SMB3, desduplicación de datos y ReFS/NTFS.
 
 -   Ayudar a reducir el costo y la complejidad como sigue:
 
@@ -202,7 +203,7 @@ El equilibrio de carga de máquinas virtuales es una característica nueva de lo
 
 El orden de inicio de la máquina virtual es una característica nueva de los clústeres de conmutación por error que presenta la orquestación de inicio de las máquinas virtuales (y todos los grupos) de un clúster. Las máquinas virtuales ahora se pueden agrupar en niveles y las dependencias de orden de inicio se pueden crear entre diferentes niveles. Esto garantiza que las máquinas virtuales más importantes (como los controladores de dominio o las máquinas virtuales de la utilidad) se inician en primer lugar. Las máquinas virtuales no se inician hasta que también se inician las máquinas virtuales en las que tienen una dependencia.
 
-### <a name="simplified-smb-multichannel-and-multi-nic-cluster-networks"></a><a name="BKMK_SMBMultiChannel"></a>Redes de clústeres de varias NIC y de SMB multicanal simplificado
+### <a name="simplified-smb-multichannel-and-multi-nic-cluster-networks"></a><a name="BKMK_SMBMultiChannel"></a> Redes de clústeres de varias NIC y de SMB multicanal simplificado
 
 Las redes de clústeres de conmutación por error ya no se limitan a una única NIC por subred o red. Con las redes de clústeres de varias NIC y de SMB simplificado, la configuración de red es automática y todas las NIC de la subred se pueden usar para el tráfico de clústeres y cargas de trabajo. Esta mejora permite a los clientes maximizar el rendimiento de la red de Hyper-V, SQL Server instancia de clúster de conmutación por error y otras cargas de trabajo de SMB.
 

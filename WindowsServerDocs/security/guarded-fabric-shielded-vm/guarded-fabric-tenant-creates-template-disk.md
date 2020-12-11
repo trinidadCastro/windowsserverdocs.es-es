@@ -1,4 +1,5 @@
 ---
+description: 'Más información sobre: máquinas virtuales blindadas para inquilinos: creación de un disco de plantilla (opcional)'
 title: 'Máquinas virtuales blindadas para inquilinos: creación de un disco de plantilla: opcional'
 ms.topic: article
 ms.assetid: c1992f8b-6f88-4dbc-b4a5-08368bba2787
@@ -6,12 +7,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: 95d8e64367d036cc81aeca0aeafe9b51862954af
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 610b0a8d91564249ca03f57e8957bbe85770b74d
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87936715"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97043795"
 ---
 # <a name="shielded-vms-for-tenants---creating-a-template-disk-optional"></a>Máquinas virtuales blindadas para inquilinos: creación de un disco de plantilla (opcional)
 

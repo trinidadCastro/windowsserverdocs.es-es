@@ -1,15 +1,16 @@
 ---
+description: Más información acerca de cómo configurar cuentas de clúster en Active Directory
 title: Configuración de cuentas de clúster en Active Directory
 ms.date: 11/12/2012
 author: JasonGerend
 manager: lizross
 ms.author: jgerend
-ms.openlocfilehash: a07b6971b342f41ce51b83e52ab7fa310f48cc2a
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: e6b7c2a3af136fa7c3970de4550609f4eaa9fa8d
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87950179"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97041073"
 ---
 # <a name="configuring-cluster-accounts-in-active-directory"></a>Configuración de cuentas de clúster en Active Directory
 
@@ -153,7 +154,7 @@ La pertenencia a grupos mínima necesaria para completar el procedimiento siguie
 
    5.  Haga clic en **Agregar**, escriba el nombre de la cuenta que se creó u obtuvo en el paso 1 y, a continuación, haga clic en **Aceptar**.
 
-   6.  En el cuadro de diálogo **contenedor de entrada de permiso para * * ** , busque los permisos **crear objetos de equipo** y **leer todas las propiedades** y asegúrese de que la casilla **permitir** está activada para cada uno.
+   6.  En el cuadro de diálogo **Entrada de permiso para**_contenedor_, busque los permisos **Crear objetos de equipo** y **Leer todas las propiedades**, y asegúrese de que la casilla **Permitir** esté activada para cada uno.
 
        ![Entrada de permiso (cuadro de diálogo)](media/configure-ad-accounts/Cc731002.0a863ac5-2024-4f9f-8a4d-a419aff32fa0(WS.10).gif)
 

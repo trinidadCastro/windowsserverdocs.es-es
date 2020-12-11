@@ -1,16 +1,17 @@
 ---
+description: 'Más información acerca de: rendimiento de puerta de enlace de Windows Server 2019'
 title: Rendimiento de puerta de enlace de Windows Server 2019
 manager: grcusanz
 ms.topic: get-started-article
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/22/2018
-ms.openlocfilehash: d7ca57b9cb1013d1e6c1081bdf7c5c50fa6a918d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d6e20febf5730d1b0f249e0979037de298157e56
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969542"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97044363"
 ---
 # <a name="windows-server-2019-gateway-performance"></a>Rendimiento de puerta de enlace de Windows Server 2019
 
@@ -28,7 +29,7 @@ En el caso de **las conexiones GRE**, una vez que implemente o actualice a Windo
 En el caso de **las conexiones IPSec**, de forma predeterminada, cuando se crea la conexión para las redes virtuales, se obtiene la ruta de datos y los números de rendimiento de Windows Server 2016. Para habilitar la ruta de datos de Windows Server 2019, haga lo siguiente:
 
    1. En una máquina virtual de puerta de enlace de SDN, vaya a la consola de **servicios** (Services. msc).
-   2. Busque el servicio denominado **servicio de puerta de enlace de Azure**y establezca el tipo de inicio en **automático**.
+   2. Busque el servicio denominado **servicio de puerta de enlace de Azure** y establezca el tipo de inicio en **automático**.
    3. Reinicie la máquina virtual de puerta de enlace.
       Las conexiones activas en esta puerta de enlace conmutan por error a una máquina virtual de puerta de enlace redundante.
    4. Repita los pasos anteriores para el resto de las máquinas virtuales de puerta de enlace.

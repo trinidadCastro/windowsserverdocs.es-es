@@ -1,4 +1,5 @@
 ---
+description: 'Más información sobre: Agregar vínculo de privacidad'
 ms.assetid: 1ca6f87f-7272-4767-b609-3e295ac7d32f
 title: Adición del vínculo de la privacidad
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: c0e65053529999b8463223f7654b357464b90642
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c15491ed9540c68c76e9a6ddfbcdf830690c9dc1
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87954281"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97044313"
 ---
 # <a name="add-privacy-link"></a>Adición del vínculo de la privacidad
 

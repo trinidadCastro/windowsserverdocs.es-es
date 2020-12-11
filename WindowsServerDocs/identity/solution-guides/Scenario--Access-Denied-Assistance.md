@@ -1,17 +1,18 @@
 ---
+description: 'Más información sobre: escenario: asistencia Access-Denied'
 ms.assetid: aae907eb-11cf-4a87-a046-8680872ed0b1
-title: Escenario de asistencia para acceso denegado
+title: Escenario Access-Denied asistencia
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: fe269b92e8c8fcd9fc58c82307ea8b180231a87a
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: dbe440b7fc5ddc95767ec9af303cbd86cc879fd2
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952743"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97044433"
 ---
 # <a name="scenario-access-denied-assistance"></a>Escenario: Asistencia de acceso denegado
 
@@ -38,7 +39,7 @@ La asistencia para acceso denegado en Windows Server 2012 proporciona a los admi
 
 Encontrarás información sobre planeación para configurar la asistencia para acceso denegado en [Planificar la asistencia para acceso denegado](assetId:///b169f0a4-8b97-4da8-ae4a-c8f1986d19e1).
 
-Puede encontrar pasos sobre la configuración de la asistencia para acceso denegado en [implementar la asistencia para acceso Denegado &#40;pasos de la demostración&#41;](Deploy-Access-Denied-Assistance--Demonstration-Steps-.md).
+Puede encontrar pasos sobre la configuración de la asistencia para acceso denegado en [implementar Access-Denied ayuda &#40;los pasos de la demostración&#41;](Deploy-Access-Denied-Assistance--Demonstration-Steps-.md).
 
 ## <a name="in-this-scenario"></a>En este escenario
 Este escenario forma parte del escenario de control de acceso dinámico. Para obtener más información sobre el control de acceso dinámico, consulta:

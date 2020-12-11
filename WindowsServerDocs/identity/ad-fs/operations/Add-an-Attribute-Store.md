@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo agregar un almacén de atributos
 ms.assetid: c60227a8-7b44-40f8-b807-a6532851a4a6
 title: Adición de un almacén de atributos
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: e092cab5a1911c2e710e6f3a9677bf9df987609b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 3672d80b89738b10bcd0e0ef186b33592d6b53e2
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87942697"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97044283"
 ---
 # <a name="add-an-attribute-store"></a>Adición de un almacén de atributos
 
@@ -34,7 +35,7 @@ La pertenencia al grupo **Administradores** o equivalente en el equipo local es 
 
    -   En **nombre para mostrar**, escriba el nombre que desea usar para identificar el almacén de atributos.
 
-   -   En **tipo de almacén de atributos**, seleccione un tipo de almacén de atributos admitido, ya sea **Active Directory**, **LDAP**o **SQL**.
+   -   En **tipo de almacén de atributos**, seleccione un tipo de almacén de atributos admitido, ya sea **Active Directory**, **LDAP** o **SQL**.
 
    -   En **cadena de conexión**, si ha seleccionado un almacén LDAP de Protocolo ligero de acceso a directorios \( \) o un lenguaje de consulta estructurado \( \) almacén SQL, escriba la cadena que usó para establecer una conexión con el almacén de atributos. En el caso de Active Directory almacenes de atributos, no se necesita ninguna cadena de conexión; por lo tanto, este campo está deshabilitado.
 
@@ -43,7 +44,7 @@ La pertenencia al grupo **Administradores** o equivalente en el equipo local es 
 
 ![Agregar almacén de atributos](media/Add-an-Attribute-Store/addstore2.PNG)
 
-4. Haga clic en **Aceptar**.
+4. Haga clic en **OK**.
 
 ## <a name="additional-references"></a>Referencias adicionales
 

@@ -1,4 +1,5 @@
 ---
+description: 'Más información sobre: soluciones y guías de escenarios'
 ms.assetid: bdb9ad4b-139c-4031-8f26-827432779829
 title: Guías de soluciones y situaciones
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 6ed6f196d75797d25b6015d885d87a20868b9daa
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 3a3ed5a096b1d78f793895d7811cd1571806bd87
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87940187"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97044533"
 ---
 # <a name="solutions-and-scenario-guides"></a>Guías de soluciones y situaciones
 

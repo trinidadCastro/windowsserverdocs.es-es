@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo agregar una descripción de notificaciones
 ms.assetid: 7d230527-f4fe-4572-8838-0b354ee0b06b
 title: Agregar una descripción de notificación
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 31c04f557900cee661c2283957f590caf370bbe5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: bdf57eddd1ad76c5bf9217e9aab97cfef9332b61
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87942739"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97044303"
 ---
 # <a name="add-a-claim-description"></a>Agregar una descripción de notificación
 
@@ -47,7 +48,7 @@ La pertenencia al grupo **Administradores** o equivalente en el equipo local es 
 - To publish this claim to make partners aware that this server can issue this claim, click **Publish this claim in federation metadata as a claim type that this Federation Service can send**.
 ~~~
 
-8. Haga clic en **Aceptar**.
+8. Haga clic en **OK**.
 
 ![Agregar Descripción de notificaciones](media/Add-a-Claim-Description/claimdesc2.png)
 

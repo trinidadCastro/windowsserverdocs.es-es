@@ -1,4 +1,5 @@
 ---
+description: 'Más información sobre: administración de riesgos con Access Control condicional'
 ms.assetid: a0f7bb11-47a5-47ff-a70c-9e6353382b39
 title: Administración de riesgos con control de acceso condicional
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 97466c5f7d0a6c89980195d7b71e6697748db334
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 2bfc8fa387ba98be10c9849b2e777f95179deb46
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87954221"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97039703"
 ---
 # <a name="manage-risk-with-conditional-access-control"></a>Administración de riesgos con control de acceso condicional
 
@@ -55,13 +56,13 @@ En la tabla siguiente se incluyen todos los tipos de notificaciones disponibles 
 |--------------|---------------|
 |Dirección de correo electrónico|La dirección de correo electrónico del usuario.|
 |Nombre propio|Nombre propio del usuario|
-|Nombre|Nombre del usuario|
+|NOMBRE|Nombre del usuario|
 |UPN|El nombre principal de usuario (UPN) del usuario.|
 |Nombre común|Nombre común del usuario|
 |Dirección de correo electrónico para AD FS 1|Dirección de correo electrónico del usuario al interoperar con AD FS 1.1 o AD FS 1.0|
 |Grupo|Grupo al que pertenece el usuario|
 |UPN para AD FS 1|UPN del usuario al interoperar con AD FS 1.1 o AD FS 1.0|
-|Role|Rol que tiene el usuario|
+|Rol|Rol que tiene el usuario|
 |Surname|Apellido del usuario|
 |PPID|Identificador privado del usuario|
 |Identificador de nombre|Identificador de nombre SAML del usuario|

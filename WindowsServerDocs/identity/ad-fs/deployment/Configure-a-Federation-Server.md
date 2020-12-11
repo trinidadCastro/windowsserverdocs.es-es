@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo configurar un servidor de Federación
 ms.assetid: 434fd617-373a-405e-bae4-da324ea83efc
 title: Configurar un servidor de Federación para Windows Server 2012 R2 AD FS
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 9df3c42f47c81190bee0420c46bcdf6b7ef34160
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 28a9ad04e1457ac7916cd0092eb53d80a2b57e6f
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87963106"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97044253"
 ---
 # <a name="configure-a-federation-server"></a>Configurar un servidor de federación
 
@@ -39,7 +40,7 @@ Después de instalar el \( \) servicio de rol de servicios de Federación de Act
 
 4.  En la página **Especificar propiedades del servicio**, haz lo que se explica a continuación y, después, haz clic en **Siguiente**:
 
-    -   Importe el archivo. pfx que contiene el certificado SSL de capa de sockets seguros \( \) y la clave que ha obtenido anteriormente. En el [paso 2: inscribir un certificado SSL para AD FS](../../ad-fs/deployment/Enroll-an-SSL-Certificate-for-AD-FS.md), ha obtenido este certificado y lo ha copiado en el equipo que desea configurar como servidor de Federación. Para importar el archivo. pfx a través del asistente, haga clic en **importar**y, a continuación, vaya a la ubicación del archivo. Escriba la contraseña del archivo. pfx cuando se le solicite.
+    -   Importe el archivo. pfx que contiene el certificado SSL de capa de sockets seguros \( \) y la clave que ha obtenido anteriormente. En el [paso 2: inscribir un certificado SSL para AD FS](../../ad-fs/deployment/Enroll-an-SSL-Certificate-for-AD-FS.md), ha obtenido este certificado y lo ha copiado en el equipo que desea configurar como servidor de Federación. Para importar el archivo. pfx a través del asistente, haga clic en **importar** y, a continuación, vaya a la ubicación del archivo. Escriba la contraseña del archivo. pfx cuando se le solicite.
 
     -   Escribe un nombre para el servicio de federación. Por ejemplo, **fs.contoso.com**. Este nombre debe coincidir con uno de los nombres de sujeto o nombres alternativos de sujeto del certificado.
 
@@ -53,7 +54,7 @@ Después de instalar el \( \) servicio de rol de servicios de Federación de Act
     > [!WARNING]
     > Si desea usar una cuenta de gMSA, debe tener al menos un controlador de dominio en el entorno que ejecute el sistema operativo Windows Server 2012.
     >
-    > Si la opción gMSA está deshabilitada y ve un mensaje de error, como **las cuentas de servicio administradas de grupo no están disponibles porque no se ha establecido la clave raíz KDS**, puede habilitar gMSA en el dominio mediante la ejecución del siguiente comando de Windows PowerShell en un controlador de dominio que ejecute windows Server 2012 o posterior, en el dominio Active Directory: `Add-KdsRootKey –EffectiveTime (Get-Date).AddHours(-10)` . A continuación, vuelva al asistente, haga clic en **anterior**y, a continuación, haga clic en **siguiente** para volver a \- escribir la página **especificar cuenta de servicio** . Ahora debe estar habilitada la opción gMSA. Puede seleccionarlo y escribir un nombre de cuenta de gMSA que quiera usar.
+    > Si la opción gMSA está deshabilitada y ve un mensaje de error, como **las cuentas de servicio administradas de grupo no están disponibles porque no se ha establecido la clave raíz KDS**, puede habilitar gMSA en el dominio mediante la ejecución del siguiente comando de Windows PowerShell en un controlador de dominio que ejecute windows Server 2012 o posterior, en el dominio Active Directory: `Add-KdsRootKey –EffectiveTime (Get-Date).AddHours(-10)` . A continuación, vuelva al asistente, haga clic en **anterior** y, a continuación, haga clic en **siguiente** para volver a \- escribir la página **especificar cuenta de servicio** . Ahora debe estar habilitada la opción gMSA. Puede seleccionarlo y escribir un nombre de cuenta de gMSA que quiera usar.
 
 6.  En la página **especificar base de datos de configuración** , especifique una base de datos de configuración de AD FS y, a continuación, haga clic en **siguiente**. Puede crear una base de datos en este equipo mediante el uso de Windows Internal Database \( WID \) , o puede especificar la ubicación y el nombre de instancia de Microsoft SQL Server.
 
@@ -76,7 +77,7 @@ Puede crear una nueva granja de servidores de Federación mediante una cuenta gM
     > [!IMPORTANT]
     > Debes tener permisos de administrador de dominio para crear el primer servidor de federación en una nueva granja de servidores de federación.
 
-    1.  En el equipo que deseas configurar como servidor de Federación, asegúrate de que el certificado SSL necesario se ha importado en el directorio ** \\ My Store del equipo local** . Para comprobar si el certificado SSL se ha importado, ejecute el siguiente comando en la ventana de comandos de Windows PowerShell: `dir Cert:\LocalMachine\My` . El certificado se muestra por su huella digital en el directorio ** \\ My Store del equipo local** .
+    1.  En el equipo que deseas configurar como servidor de Federación, asegúrate de que el certificado SSL necesario se ha importado en el directorio **\\ My Store del equipo local** . Para comprobar si el certificado SSL se ha importado, ejecute el siguiente comando en la ventana de comandos de Windows PowerShell: `dir Cert:\LocalMachine\My` . El certificado se muestra por su huella digital en el directorio **\\ My Store del equipo local** .
 
     2.  En el controlador de dominio, abra la ventana de comandos de Windows PowerShell y ejecute el siguiente comando para comprobar si se ha creado la clave raíz KDS en su dominio: `Get-KdsRootKey –EffectiveTime (Get-Date).AddHours(-10)` . Si no se ha creado para que la salida no muestre ninguna información, ejecute el siguiente comando para crear la clave: `Add-KdsRootKey –EffectiveTime (Get-Date).AddHours(-10)` .
 
@@ -104,7 +105,7 @@ Puede crear una nueva granja de servidores de Federación mediante una cuenta gM
 
 -   **Si desea crear un nuevo servidor de Federación mediante una cuenta de usuario de dominio existente, haga lo siguiente:**
 
-    1.  En el equipo que deseas configurar como servidor de Federación, asegúrate de que el certificado SSL necesario se ha importado en el directorio ** \\ My Store del equipo local** . Para comprobar si el certificado SSL se ha importado, ejecute el siguiente comando en la ventana de comandos de Windows PowerShell: `dir Cert:\LocalMachine\My` . El certificado se muestra por su huella digital en el directorio ** \\ My Store del equipo local** .
+    1.  En el equipo que deseas configurar como servidor de Federación, asegúrate de que el certificado SSL necesario se ha importado en el directorio **\\ My Store del equipo local** . Para comprobar si el certificado SSL se ha importado, ejecute el siguiente comando en la ventana de comandos de Windows PowerShell: `dir Cert:\LocalMachine\My` . El certificado se muestra por su huella digital en el directorio **\\ My Store del equipo local** .
 
     2.  En el equipo que deseas configurar como servidor de Federación, abre la ventana de comandos de Windows PowerShell y, después, ejecuta el siguiente comando: `$fscred = Get-Credential` . Escriba las credenciales de la cuenta de usuario de dominio que desea usar para la cuenta de servicio de Federación con el formato nombre de usuario de dominio \\ .
 
@@ -122,7 +123,7 @@ Puede crear una nueva granja de servidores de Federación mediante una cuenta gM
         > [!NOTE]
         > El comando anterior crea una granja WID. Si desea crear una granja de SQL Server, debe tener la instancia de SQL Server ya instalada y operativa.
         >
-        > Puede usar el siguiente comando para crear el primer servidor de Federación en una nueva granja de servidores que utiliza una instancia de SQL Server: `Install-AdfsFarm -CertificateThumbprint <certificate_thumbprint> -FederationServiceName <federation_service_name> -ServiceAccountCredential $fscredential -SQLConnectionString "Data Source=<SQL_Host_Name>\<SQL_instance_ name>;Integrated Security=True"` donde ** \_ \_ nombre de host de SQL** es el nombre del servidor en el que se ejecuta SQL Server, y ** \_ \_ nombre de instancia de sql** es el nombre de la instancia de SQL Server. Si usa la instancia predeterminada de SQL Server, use un valor **SQLConnectionString** de "**origen de datos \=<nombre de host de SQL \_ \_>; seguridad integrada \= true**".
+        > Puede usar el siguiente comando para crear el primer servidor de Federación en una nueva granja de servidores que utiliza una instancia de SQL Server: `Install-AdfsFarm -CertificateThumbprint <certificate_thumbprint> -FederationServiceName <federation_service_name> -ServiceAccountCredential $fscredential -SQLConnectionString "Data Source=<SQL_Host_Name>\<SQL_instance_ name>;Integrated Security=True"` donde **\_ \_ nombre de host de SQL** es el nombre del servidor en el que se ejecuta SQL Server, y **\_ \_ nombre de instancia de sql** es el nombre de la instancia de SQL Server. Si usa la instancia predeterminada de SQL Server, use un valor **SQLConnectionString** de "**origen de datos \=<nombre de host de SQL \_ \_>; seguridad integrada \= true**".
 
         > [!IMPORTANT]
         > Si desea crear una granja de AD FS y usar SQL Server para almacenar los datos de configuración, puede usar SQL Server 2008 y versiones más recientes, incluidas SQL Server 2012 y SQL Server 2014.
@@ -141,7 +142,7 @@ Puede crear una nueva granja de servidores de Federación mediante una cuenta gM
 
     Se abre el **Asistente para configuración de Servicios de federación de Active Directory**.
 
-2.  En la página de **bienvenida** , seleccione **Agregar un servidor de Federación a una granja de servidores de Federación**y, a continuación, haga clic en **siguiente**.
+2.  En la página de **bienvenida** , seleccione **Agregar un servidor de Federación a una granja de servidores de Federación** y, a continuación, haga clic en **siguiente**.
 
 3.  En la página **conectar con AD DS** , especifique una cuenta con permisos de administrador de dominio para el dominio de ad al que está unido este equipo y, a continuación, haga clic en **siguiente**.
 
@@ -171,7 +172,7 @@ Puede Agregar un servidor de Federación a una granja existente mediante una cue
 
 -   Si desea unir un servidor de Federación a una granja mediante una cuenta de gMSA existente, haga lo siguiente:
 
-    1.  En el equipo que deseas configurar como servidor de Federación, asegúrate de que el certificado SSL necesario se ha importado en el directorio ** \\ My Store del equipo local** . Para comprobar si el certificado SSL se ha importado, ejecute el siguiente comando en la ventana de comandos de Windows PowerShell: `dir Cert:\LocalMachine\My` . El certificado se muestra por su huella digital en el directorio ** \\ My Store del equipo local** .
+    1.  En el equipo que deseas configurar como servidor de Federación, asegúrate de que el certificado SSL necesario se ha importado en el directorio **\\ My Store del equipo local** . Para comprobar si el certificado SSL se ha importado, ejecute el siguiente comando en la ventana de comandos de Windows PowerShell: `dir Cert:\LocalMachine\My` . El certificado se muestra por su huella digital en el directorio **\\ My Store del equipo local** .
 
     2.  En el equipo que deseas configurar como servidor de Federación, abre la ventana de comandos de Windows PowerShell y ejecuta el siguiente comando.
 
@@ -179,7 +180,7 @@ Puede Agregar un servidor de Federación a una granja existente mediante una cue
         Add-AdfsFarmNode -GroupServiceAccountIdentifier <domain>\<GMSA_name>$ -PrimaryComputerName <first_federation_server_hostname> -CertificateThumbprint <certificate_thumbprint>
         ```
 
-        `<domain>\<GMSA_name>`es el dominio de AD y el nombre de la cuenta de gMSA en ese dominio. `<first_federation_server_hostname>`es el nombre de host del servidor de Federación principal de esta granja de servidores existente.
+        `<domain>\<GMSA_name>` es el dominio de AD y el nombre de la cuenta de gMSA en ese dominio. `<first_federation_server_hostname>` es el nombre de host del servidor de Federación principal de esta granja de servidores existente.
 
         Puede obtener el valor de `<certificate_thumbprint>` ejecutando `dir Cert:\LocalMachine\My` en el paso anterior.
 
@@ -189,7 +190,7 @@ Puede Agregar un servidor de Federación a una granja existente mediante una cue
         > [!NOTE]
         > El comando anterior crea un nodo de la granja WID. Si desea crear un nodo de granja de servidores de equipos que ejecutan SQL Server, debe tener la instancia de SQL Server ya instalada y operativa.
         >
-        > Puede usar el siguiente comando para agregar un servidor de Federación a una granja existente que use una instancia de SQL Server: `Add-AdfsFarmNode -GroupServiceAccountIdentifier <domain>\<GMSA_name>$ -SQLConnectionString "Data Source=<SQL_Host_Name>\<SQL_instance_ name>;Integrated Security=True"` donde **nombre de \_ host \_ SQL** es el nombre del servidor en el que se ejecuta SQL Server, y ** \_ \_ nombre de instancia de sql** es el nombre de la instancia de SQL Server. Si usa la instancia predeterminada de SQL Server, use un valor **SQLConnectionString** de "**origen de datos \=<nombre de host de SQL \_ \_>; seguridad integrada \= true**".
+        > Puede usar el siguiente comando para agregar un servidor de Federación a una granja existente que use una instancia de SQL Server: `Add-AdfsFarmNode -GroupServiceAccountIdentifier <domain>\<GMSA_name>$ -SQLConnectionString "Data Source=<SQL_Host_Name>\<SQL_instance_ name>;Integrated Security=True"` donde **nombre de \_ host \_ SQL** es el nombre del servidor en el que se ejecuta SQL Server, y **\_ \_ nombre de instancia de sql** es el nombre de la instancia de SQL Server. Si usa la instancia predeterminada de SQL Server, use un valor **SQLConnectionString** de "**origen de datos \=<nombre de host de SQL \_ \_>; seguridad integrada \= true**".
 
         > [!IMPORTANT]
         > Si desea crear una granja de AD FS y usar SQL Server para almacenar los datos de configuración, puede usar SQL Server 2008 y versiones más recientes, incluidas SQL Server 2012 y SQL Server 2014.
@@ -198,7 +199,7 @@ Puede Agregar un servidor de Federación a una granja existente mediante una cue
 
     1.  En el equipo que desea configurar como servidor de Federación, abra la ventana de Windows PowerShellcommand y, a continuación, ejecute el siguiente comando: `$fscred = get-credential` . Escriba las credenciales de la cuenta de usuario de dominio que desea usar para la cuenta de servicio de Federación con el formato nombre de usuario de dominio \\ .
 
-    2.  En el equipo que deseas configurar como servidor de Federación, asegúrate de que el certificado SSL necesario se ha importado en el directorio ** \\ My Store del equipo local** . Para comprobar si el certificado SSL se ha importado, ejecute el siguiente comando en la ventana de Windows PowerShellcommand: `dir Cert:\LocalMachine\My` . El certificado se muestra por su huella digital en el directorio ** \\ My Store del equipo local** .
+    2.  En el equipo que deseas configurar como servidor de Federación, asegúrate de que el certificado SSL necesario se ha importado en el directorio **\\ My Store del equipo local** . Para comprobar si el certificado SSL se ha importado, ejecute el siguiente comando en la ventana de Windows PowerShellcommand: `dir Cert:\LocalMachine\My` . El certificado se muestra por su huella digital en el directorio **\\ My Store del equipo local** .
 
     3.  En la misma ventana de comandos de Windows PowerShell, ejecute el siguiente comando.
 
@@ -210,7 +211,7 @@ Puede Agregar un servidor de Federación a una granja existente mediante una cue
         > Si no es la primera vez que ejecuta este comando, agregue el `OverwriteConfiguration` parámetro.
 
         > [!NOTE]
-        > El comando anterior crea un nodo de la granja WID. Si desea crear un nodo de granja de servidores de equipos que ejecutan SQL Server, debe tener la instancia de SQL Server ya instalada y operativa. Puede usar el siguiente comando para agregar un servidor de Federación a una granja existente mediante una instancia de SQL Server: `Add-AdfsFarmNode -ServiceAccountCredential $fscred -SQLConnectionString "Data Source=<SQL_Host_Name>\<SQL_instance_ name>;Integrated Security=True"` donde **nombre de \_ host \_ de SQL** es el nombre del servidor en el que se ejecuta la instancia de SQL Server, y el nombre de ** \_ instancia \_ de sql** es el nombre de la instancia de SQL Server. Si usa la instancia predeterminada de SQL Server, use un valor **SQLConnectionString** de "**origen de datos \=<nombre de host de SQL \_ \_>; seguridad integrada \= true**".
+        > El comando anterior crea un nodo de la granja WID. Si desea crear un nodo de granja de servidores de equipos que ejecutan SQL Server, debe tener la instancia de SQL Server ya instalada y operativa. Puede usar el siguiente comando para agregar un servidor de Federación a una granja existente mediante una instancia de SQL Server: `Add-AdfsFarmNode -ServiceAccountCredential $fscred -SQLConnectionString "Data Source=<SQL_Host_Name>\<SQL_instance_ name>;Integrated Security=True"` donde **nombre de \_ host \_ de SQL** es el nombre del servidor en el que se ejecuta la instancia de SQL Server, y el nombre de **\_ instancia \_ de sql** es el nombre de la instancia de SQL Server. Si usa la instancia predeterminada de SQL Server, use un valor **SQLConnectionString** de "**origen de datos \=<nombre de host de SQL \_ \_>; seguridad integrada \= true**".
 
         > [!IMPORTANT]
         > Si desea crear una granja de AD FS y usar SQL Server para almacenar los datos de configuración, puede usar SQL Server 2008 y versiones más recientes, incluidas SQL Server 2012 y SQL Server 2014.
@@ -239,7 +240,7 @@ Después de instalar el \( \) servicio de rol de servicios de Federación de Act
 
 4.  En la página **Especificar propiedades del servicio**, haz lo que se explica a continuación y, después, haz clic en **Siguiente**:
 
-    -   Importe el archivo. pfx que contiene el certificado SSL de capa de sockets seguros \( \) y la clave que ha obtenido anteriormente. En el [paso 2: inscribir un certificado SSL para AD FS](../../ad-fs/deployment/Enroll-an-SSL-Certificate-for-AD-FS.md), ha obtenido este certificado y lo ha copiado en el equipo que desea configurar como servidor de Federación. Para importar el archivo. pfx a través del asistente, haga clic en **importar**y, a continuación, vaya a la ubicación del archivo. Escriba la contraseña del archivo. pfx cuando se le solicite.
+    -   Importe el archivo. pfx que contiene el certificado SSL de capa de sockets seguros \( \) y la clave que ha obtenido anteriormente. En el [paso 2: inscribir un certificado SSL para AD FS](../../ad-fs/deployment/Enroll-an-SSL-Certificate-for-AD-FS.md), ha obtenido este certificado y lo ha copiado en el equipo que desea configurar como servidor de Federación. Para importar el archivo. pfx a través del asistente, haga clic en **importar** y, a continuación, vaya a la ubicación del archivo. Escriba la contraseña del archivo. pfx cuando se le solicite.
 
     -   Escribe un nombre para el servicio de federación. Por ejemplo, **fs.contoso.com**. Este nombre debe coincidir con uno de los nombres de sujeto o nombres alternativos de sujeto del certificado.
 
@@ -253,7 +254,7 @@ Después de instalar el \( \) servicio de rol de servicios de Federación de Act
     > [!WARNING]
     > Si desea usar una cuenta de gMSA, debe tener al menos un controlador de dominio en el entorno que ejecute el sistema operativo Windows Server 2012.
     >
-    > Si la opción gMSA está deshabilitada y ve un mensaje de error, como **las cuentas de servicio administradas de grupo no están disponibles porque no se ha establecido la clave raíz KDS**, puede habilitar gMSA en el dominio mediante la ejecución del siguiente comando de Windows PowerShell en un controlador de dominio que ejecute windows Server 2012 o posterior, en el dominio Active Directory: `Add-KdsRootKey –EffectiveTime (Get-Date).AddHours(-10)` . A continuación, vuelva al asistente, haga clic en **anterior**y, a continuación, haga clic en **siguiente** para volver a \- escribir la página **especificar cuenta de servicio** . Ahora debe estar habilitada la opción gMSA. Puede seleccionarlo y escribir un nombre de cuenta de gMSA que quiera usar.
+    > Si la opción gMSA está deshabilitada y ve un mensaje de error, como **las cuentas de servicio administradas de grupo no están disponibles porque no se ha establecido la clave raíz KDS**, puede habilitar gMSA en el dominio mediante la ejecución del siguiente comando de Windows PowerShell en un controlador de dominio que ejecute windows Server 2012 o posterior, en el dominio Active Directory: `Add-KdsRootKey –EffectiveTime (Get-Date).AddHours(-10)` . A continuación, vuelva al asistente, haga clic en **anterior** y, a continuación, haga clic en **siguiente** para volver a \- escribir la página **especificar cuenta de servicio** . Ahora debe estar habilitada la opción gMSA. Puede seleccionarlo y escribir un nombre de cuenta de gMSA que quiera usar.
 
 6.  En la página **especificar base de datos de configuración** , especifique una base de datos de configuración de AD FS y, a continuación, haga clic en **siguiente**. Puede crear una base de datos en este equipo mediante el uso de Windows Internal Database \( WID \) , o puede especificar la ubicación y el nombre de instancia de Microsoft SQL Server.
 
@@ -276,7 +277,7 @@ Puede crear una nueva granja de servidores de Federación mediante una cuenta gM
     > [!IMPORTANT]
     > Debes tener permisos de administrador de dominio para crear el primer servidor de federación en una nueva granja de servidores de federación.
 
-    1.  En el equipo que deseas configurar como servidor de Federación, asegúrate de que el certificado SSL necesario se ha importado en el directorio ** \\ My Store del equipo local** . Para comprobar si el certificado SSL se ha importado, ejecute el siguiente comando en la ventana de comandos de Windows PowerShell: `dir Cert:\LocalMachine\My` . El certificado se muestra por su huella digital en el directorio ** \\ My Store del equipo local** .
+    1.  En el equipo que deseas configurar como servidor de Federación, asegúrate de que el certificado SSL necesario se ha importado en el directorio **\\ My Store del equipo local** . Para comprobar si el certificado SSL se ha importado, ejecute el siguiente comando en la ventana de comandos de Windows PowerShell: `dir Cert:\LocalMachine\My` . El certificado se muestra por su huella digital en el directorio **\\ My Store del equipo local** .
 
     2.  En el controlador de dominio, abra la ventana de comandos de Windows PowerShell y ejecute el siguiente comando para comprobar si se ha creado la clave raíz KDS en su dominio: `Get-KdsRootKey –EffectiveTime (Get-Date).AddHours(-10)` . Si no se ha creado para que la salida no muestre ninguna información, ejecute el siguiente comando para crear la clave: `Add-KdsRootKey –EffectiveTime (Get-Date).AddHours(-10)` .
 
@@ -304,7 +305,7 @@ Puede crear una nueva granja de servidores de Federación mediante una cuenta gM
 
 -   **Si desea crear un nuevo servidor de Federación mediante una cuenta de usuario de dominio existente, haga lo siguiente:**
 
-    1.  En el equipo que deseas configurar como servidor de Federación, asegúrate de que el certificado SSL necesario se ha importado en el directorio ** \\ My Store del equipo local** . Para comprobar si el certificado SSL se ha importado, ejecute el siguiente comando en la ventana de comandos de Windows PowerShell: `dir Cert:\LocalMachine\My` . El certificado se muestra por su huella digital en el directorio ** \\ My Store del equipo local** .
+    1.  En el equipo que deseas configurar como servidor de Federación, asegúrate de que el certificado SSL necesario se ha importado en el directorio **\\ My Store del equipo local** . Para comprobar si el certificado SSL se ha importado, ejecute el siguiente comando en la ventana de comandos de Windows PowerShell: `dir Cert:\LocalMachine\My` . El certificado se muestra por su huella digital en el directorio **\\ My Store del equipo local** .
 
     2.  En el equipo que deseas configurar como servidor de Federación, abre la ventana de comandos de Windows PowerShell y, después, ejecuta el siguiente comando: `$fscred = Get-Credential` . Escriba las credenciales de la cuenta de usuario de dominio que desea usar para la cuenta de servicio de Federación con el formato nombre de usuario de dominio \\ .
 
@@ -322,7 +323,7 @@ Puede crear una nueva granja de servidores de Federación mediante una cuenta gM
         > [!NOTE]
         > El comando anterior crea una granja WID. Si desea crear una granja de SQL Server, debe tener la instancia de SQL Server ya instalada y operativa.
         >
-        > Puede usar el siguiente comando para crear el primer servidor de Federación en una nueva granja de servidores que utiliza una instancia de SQL Server: `Install-AdfsFarm -CertificateThumbprint <certificate_thumbprint> -FederationServiceName <federation_service_name> -ServiceAccountCredential $fscredential -SQLConnectionString "Data Source=<SQL_Host_Name>\<SQL_instance_ name>;Integrated Security=True"` donde ** \_ \_ nombre de host de SQL** es el nombre del servidor en el que se ejecuta SQL Server, y ** \_ \_ nombre de instancia de sql** es el nombre de la instancia de SQL Server. Si usa la instancia predeterminada de SQL Server, use un valor **SQLConnectionString** de "**origen de datos \=<nombre de host de SQL \_ \_>; seguridad integrada \= true**".
+        > Puede usar el siguiente comando para crear el primer servidor de Federación en una nueva granja de servidores que utiliza una instancia de SQL Server: `Install-AdfsFarm -CertificateThumbprint <certificate_thumbprint> -FederationServiceName <federation_service_name> -ServiceAccountCredential $fscredential -SQLConnectionString "Data Source=<SQL_Host_Name>\<SQL_instance_ name>;Integrated Security=True"` donde **\_ \_ nombre de host de SQL** es el nombre del servidor en el que se ejecuta SQL Server, y **\_ \_ nombre de instancia de sql** es el nombre de la instancia de SQL Server. Si usa la instancia predeterminada de SQL Server, use un valor **SQLConnectionString** de "**origen de datos \=<nombre de host de SQL \_ \_>; seguridad integrada \= true**".
 
         > [!IMPORTANT]
         > Si desea crear una granja de AD FS y usar SQL Server para almacenar los datos de configuración, puede usar SQL Server 2008 y versiones más recientes, incluidas SQL Server 2012 y SQL Server 2014.
@@ -341,7 +342,7 @@ Puede crear una nueva granja de servidores de Federación mediante una cuenta gM
 
     Se abre el **Asistente para configuración de Servicios de federación de Active Directory**.
 
-2.  En la página de **bienvenida** , seleccione **Agregar un servidor de Federación a una granja de servidores de Federación**y, a continuación, haga clic en **siguiente**.
+2.  En la página de **bienvenida** , seleccione **Agregar un servidor de Federación a una granja de servidores de Federación** y, a continuación, haga clic en **siguiente**.
 
 3.  En la página **conectar con AD DS** , especifique una cuenta con permisos de administrador de dominio para el dominio de ad al que está unido este equipo y, a continuación, haga clic en **siguiente**.
 
@@ -371,7 +372,7 @@ Puede Agregar un servidor de Federación a una granja existente mediante una cue
 
 -   Si desea unir un servidor de Federación a una granja mediante una cuenta de gMSA existente, haga lo siguiente:
 
-    1.  En el equipo que deseas configurar como servidor de Federación, asegúrate de que el certificado SSL necesario se ha importado en el directorio ** \\ My Store del equipo local** . Para comprobar si el certificado SSL se ha importado, ejecute el siguiente comando en la ventana de comandos de Windows PowerShell: `dir Cert:\LocalMachine\My` . El certificado se muestra por su huella digital en el directorio ** \\ My Store del equipo local** .
+    1.  En el equipo que deseas configurar como servidor de Federación, asegúrate de que el certificado SSL necesario se ha importado en el directorio **\\ My Store del equipo local** . Para comprobar si el certificado SSL se ha importado, ejecute el siguiente comando en la ventana de comandos de Windows PowerShell: `dir Cert:\LocalMachine\My` . El certificado se muestra por su huella digital en el directorio **\\ My Store del equipo local** .
 
     2.  En el equipo que deseas configurar como servidor de Federación, abre la ventana de comandos de Windows PowerShell y ejecuta el siguiente comando.
 
@@ -379,7 +380,7 @@ Puede Agregar un servidor de Federación a una granja existente mediante una cue
         Add-AdfsFarmNode -GroupServiceAccountIdentifier <domain>\<GMSA_name>$ -PrimaryComputerName <first_federation_server_hostname> -CertificateThumbprint <certificate_thumbprint>
         ```
 
-        `<domain>\<GMSA_name>`es el dominio de AD y el nombre de la cuenta de gMSA en ese dominio. `<first_federation_server_hostname>`es el nombre de host del servidor de Federación principal de esta granja de servidores existente.
+        `<domain>\<GMSA_name>` es el dominio de AD y el nombre de la cuenta de gMSA en ese dominio. `<first_federation_server_hostname>` es el nombre de host del servidor de Federación principal de esta granja de servidores existente.
 
         Puede obtener el valor de `<certificate_thumbprint>` ejecutando `dir Cert:\LocalMachine\My` en el paso anterior.
 
@@ -389,7 +390,7 @@ Puede Agregar un servidor de Federación a una granja existente mediante una cue
         > [!NOTE]
         > El comando anterior crea un nodo de la granja WID. Si desea crear un nodo de granja de servidores de equipos que ejecutan SQL Server, debe tener la instancia de SQL Server ya instalada y operativa.
         >
-        > Puede usar el siguiente comando para agregar un servidor de Federación a una granja existente que use una instancia de SQL Server: `Add-AdfsFarmNode -GroupServiceAccountIdentifier <domain>\<GMSA_name>$ -SQLConnectionString "Data Source=<SQL_Host_Name>\<SQL_instance_ name>;Integrated Security=True"` donde **nombre de \_ host \_ SQL** es el nombre del servidor en el que se ejecuta SQL Server, y ** \_ \_ nombre de instancia de sql** es el nombre de la instancia de SQL Server. Si usa la instancia predeterminada de SQL Server, use un valor **SQLConnectionString** de "**origen de datos \=<nombre de host de SQL \_ \_>; seguridad integrada \= true**".
+        > Puede usar el siguiente comando para agregar un servidor de Federación a una granja existente que use una instancia de SQL Server: `Add-AdfsFarmNode -GroupServiceAccountIdentifier <domain>\<GMSA_name>$ -SQLConnectionString "Data Source=<SQL_Host_Name>\<SQL_instance_ name>;Integrated Security=True"` donde **nombre de \_ host \_ SQL** es el nombre del servidor en el que se ejecuta SQL Server, y **\_ \_ nombre de instancia de sql** es el nombre de la instancia de SQL Server. Si usa la instancia predeterminada de SQL Server, use un valor **SQLConnectionString** de "**origen de datos \=<nombre de host de SQL \_ \_>; seguridad integrada \= true**".
 
         > [!IMPORTANT]
         > Si desea crear una granja de AD FS y usar SQL Server para almacenar los datos de configuración, puede usar SQL Server 2008 y versiones más recientes, incluidas SQL Server 2012 y SQL Server 2014.
@@ -398,7 +399,7 @@ Puede Agregar un servidor de Federación a una granja existente mediante una cue
 
     1.  En el equipo que desea configurar como servidor de Federación, abra la ventana de Windows PowerShellcommand y, a continuación, ejecute el siguiente comando: `$fscred = get-credential` . Escriba las credenciales de la cuenta de usuario de dominio que desea usar para la cuenta de servicio de Federación con el formato nombre de usuario de dominio \\ .
 
-    2.  En el equipo que deseas configurar como servidor de Federación, asegúrate de que el certificado SSL necesario se ha importado en el directorio ** \\ My Store del equipo local** . Para comprobar si el certificado SSL se ha importado, ejecute el siguiente comando en la ventana de Windows PowerShellcommand: `dir Cert:\LocalMachine\My` . El certificado se muestra por su huella digital en el directorio ** \\ My Store del equipo local** .
+    2.  En el equipo que deseas configurar como servidor de Federación, asegúrate de que el certificado SSL necesario se ha importado en el directorio **\\ My Store del equipo local** . Para comprobar si el certificado SSL se ha importado, ejecute el siguiente comando en la ventana de Windows PowerShellcommand: `dir Cert:\LocalMachine\My` . El certificado se muestra por su huella digital en el directorio **\\ My Store del equipo local** .
 
     3.  En la misma ventana de comandos de Windows PowerShell, ejecute el siguiente comando.
 
@@ -410,7 +411,7 @@ Puede Agregar un servidor de Federación a una granja existente mediante una cue
         > Si no es la primera vez que ejecuta este comando, agregue el `OverwriteConfiguration` parámetro.
 
         > [!NOTE]
-        > El comando anterior crea un nodo de la granja WID. Si desea crear un nodo de granja de servidores de equipos que ejecutan SQL Server, debe tener la instancia de SQL Server ya instalada y operativa. Puede usar el siguiente comando para agregar un servidor de Federación a una granja existente mediante una instancia de SQL Server: `Add-AdfsFarmNode -ServiceAccountCredential $fscred -SQLConnectionString "Data Source=<SQL_Host_Name>\<SQL_instance_ name>;Integrated Security=True"` donde **nombre de \_ host \_ de SQL** es el nombre del servidor en el que se ejecuta la instancia de SQL Server, y el nombre de ** \_ instancia \_ de sql** es el nombre de la instancia de SQL Server. Si usa la instancia predeterminada de SQL Server, use un valor **SQLConnectionString** de "**origen de datos \=<nombre de host de SQL \_ \_>; seguridad integrada \= true**".
+        > El comando anterior crea un nodo de la granja WID. Si desea crear un nodo de granja de servidores de equipos que ejecutan SQL Server, debe tener la instancia de SQL Server ya instalada y operativa. Puede usar el siguiente comando para agregar un servidor de Federación a una granja existente mediante una instancia de SQL Server: `Add-AdfsFarmNode -ServiceAccountCredential $fscred -SQLConnectionString "Data Source=<SQL_Host_Name>\<SQL_instance_ name>;Integrated Security=True"` donde **nombre de \_ host \_ de SQL** es el nombre del servidor en el que se ejecuta la instancia de SQL Server, y el nombre de **\_ instancia \_ de sql** es el nombre de la instancia de SQL Server. Si usa la instancia predeterminada de SQL Server, use un valor **SQLConnectionString** de "**origen de datos \=<nombre de host de SQL \_ \_>; seguridad integrada \= true**".
 
         > [!IMPORTANT]
         > Si desea crear una granja de AD FS y usar SQL Server para almacenar los datos de configuración, puede usar SQL Server 2008 y versiones más recientes, incluidas SQL Server 2012 y SQL Server 2014.

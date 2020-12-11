@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de la delegación de la administración de contenedores predeterminados y unidades organizativas
 ms.assetid: ac6604b0-7459-4ff3-af1c-4936897f5d14
 title: Delegar la administración de unidades organizativas y contenedores predeterminados
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 8f52ca20cce86c869f66ea9d0e2e795956a0c75f
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 4056c01ec9d940a6c7c405b57b270a4f3a749f02
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93069417"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97039294"
 ---
 # <a name="delegating-administration-of-default-containers-and-ous"></a>Delegar la administración de unidades organizativas y contenedores predeterminados
 
@@ -49,7 +50,7 @@ De forma predeterminada, se crean varios usuarios y grupos conocidos y cuentas i
 
 |Usuarios y grupos conocidos|Cuentas integradas|
 |--------------------------------|----------------------|
-|Publicadores de certificados<p>Controladores de dominio<p>Propietarios del creador de directivas de grupo<p>KRBTGT<p>Invitados del dominio<p>Administrador<p>Administradores de dominio<p>Administradores de esquema (solo dominio raíz del bosque)<p>Administradores de organización (solo dominio raíz del bosque)<p>Usuarios del dominio|Administrador<p>Invitado<p>Invitados<p>Operadores de cuentas<p>Administradores<p>Operadores de copias de seguridad<p>Creadores de confianza de bosque de entrada<p>Opers. de impresión<p>Acceso compatible con versiones anteriores de Windows 2000<p>Operadores de servidores<p>Usuarios|
+|Publicadores de certificados<p>Controladores de dominio<p>Propietarios del creador de directivas de grupo<p>KRBTGT<p>Invitados del dominio<p>Administrador<p>Administradores de dominio<p>Administradores de esquema (solo dominio raíz del bosque)<p>Administradores de organización (solo dominio raíz del bosque)<p>Usuarios del dominio|Administrador<p>Invitado<p>Invitados<p>Operadores de cuentas<p>Administradores<p>Operadores de copias de seguridad<p>Creadores de confianza de bosque de entrada<p>Operadores de impresión<p>Acceso compatible con versiones anteriores de Windows 2000<p>Operadores de servidores<p>Usuarios|
 
 ## <a name="domain-controller-ou"></a>Unidad organizativa del controlador de dominio
 Cuando se agregan controladores de dominio al dominio, sus objetos de equipo se agregan automáticamente a la unidad organizativa del controlador de dominio. Esta unidad organizativa tiene un conjunto predeterminado de directivas aplicadas. Para asegurarse de que estas directivas se aplican uniformemente a todos los controladores de dominio, se recomienda no trasladar los objetos de equipo de los controladores de dominio de esta unidad organizativa. Si no se aplican las directivas predeterminadas, es posible que un controlador de dominio no funcione correctamente.

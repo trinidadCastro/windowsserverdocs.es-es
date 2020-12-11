@@ -1,17 +1,18 @@
 ---
 ms.assetid: 01c8cece-66ce-4a83-a81e-aa6cc98e51fc
 title: Configuración avanzada de Desduplicación de datos
+description: 'Más información sobre: configuración avanzada de desduplicación de datos'
 ms.topic: article
 author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 09/15/2016
-ms.openlocfilehash: 84d90e8c1de81498cbc832c8cf068e2ac339ac97
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: aa5f34f1c1fdc2b2a706cb0dfe1b7cf5a30456eb
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96866204"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97039203"
 ---
 # <a name="advanced-data-deduplication-settings"></a>Configuración avanzada de Desduplicación de datos
 
@@ -86,7 +87,7 @@ Puede alternar la siguiente configuración para los trabajos de Desduplicación 
             <td>Este valor es necesario porque es el tipo de trabajo que quiere programar. No se puede cambiar este valor después una vez programada la tarea.</td>
         </tr>
         <tr>
-            <td>Prioridad</td>
+            <td>Priority</td>
             <td>La prioridad del trabajo programado del sistema</td>
             <td>
                 <ul>
@@ -124,7 +125,7 @@ Puede alternar la siguiente configuración para los trabajos de Desduplicación 
             <td>Para evitar que un trabajo se ejecute en una carga de trabajo&#39;s horas de inactividad</td>
         </tr>
         <tr>
-            <td>habilitado</td>
+            <td>Habilitado</td>
             <td>Si el trabajo se ejecuta</td>
             <td>Verdadero o falso</td>
             <td>Para deshabilitar un trabajo sin quitarlo</td>
@@ -148,7 +149,7 @@ Puede alternar la siguiente configuración para los trabajos de Desduplicación 
             <td>Para controlar qué nivel de impacto tendrá un trabajo en los recursos de memoria del sistema</td>
         </tr>
         <tr>
-            <td>Nombre</td>
+            <td>NOMBRE</td>
             <td>Nombre del trabajo programado</td>
             <td>String</td>
             <td>Un trabajo debe tener un nombre identificable de forma única.</td>

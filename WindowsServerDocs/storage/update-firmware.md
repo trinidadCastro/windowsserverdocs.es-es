@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo actualizar el firmware de la unidad
 ms.assetid: e5945bae-4a33-487c-a019-92a69db8cf6c
 title: Actualización del firmware de la unidad
 ms.author: toklima
@@ -6,12 +7,12 @@ manager: dmoss
 ms.topic: article
 author: toklima
 ms.date: 10/04/2016
-ms.openlocfilehash: 15e0d6dedc6bb81c0b511479ee342dbd463654e2
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 2393afa82b61d432a4191753771b27db22e1691c
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87946218"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97039173"
 ---
 # <a name="updating-drive-firmware"></a>Actualización del firmware de la unidad
 >Se aplica a: Windows Server 2019, Windows Server 2016 y Windows 10
@@ -162,7 +163,7 @@ $NewDoc = Get-Content <Path> | Out-String
 $SpacesDirect | Set-StorageHealthSetting -Name "System.Storage.SupportedComponents.Document" -Value $NewDoc
 ```
 
-Si desea ver el Servicio de mantenimiento en acción y obtener más información sobre su mecanismo de implementación, consulte este vídeo:https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct
+Si desea ver el Servicio de mantenimiento en acción y obtener más información sobre su mecanismo de implementación, consulte este vídeo: https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct
 
 ## <a name="frequently-asked-questions"></a>Preguntas más frecuentes
 

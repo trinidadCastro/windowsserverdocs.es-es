@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo planear la ubicación de roles de maestro de operaciones
 ms.assetid: bd64a766-5362-4f29-b963-5465c2bb79e7
 title: Planear la ubicación del rol de maestro de operaciones
 ms.author: daveba
@@ -6,12 +7,12 @@ author: iainfoulds
 manager: daveba
 ms.date: 08/08/2018
 ms.topic: article
-ms.openlocfilehash: 158209ca281fdd3839747e936d1f439951cc644f
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: a36e9e0ced25f0162d1329e1c5789d273aca22c3
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93069157"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97042673"
 ---
 # <a name="planning-operations-master-role-placement"></a>Planear la ubicación del rol de maestro de operaciones
 

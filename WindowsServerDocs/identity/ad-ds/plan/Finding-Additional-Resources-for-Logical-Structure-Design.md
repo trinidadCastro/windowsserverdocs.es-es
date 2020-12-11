@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo buscar recursos adicionales para el diseño de la estructura lógica
 ms.assetid: 8b900c2b-35b1-4c95-a73d-e5f2e9cf0adb
 title: Búsqueda de recursos adicionales para el diseño de la estructura lógica
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: c2b445661fb10e03a3d764611a1a3e213613b69e
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: bb6459ff5f5a48865762451b0dbd94a8f41ca767
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93068577"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97041223"
 ---
 # <a name="finding-additional-resources-for-logical-structure-design"></a>Búsqueda de recursos adicionales para el diseño de la estructura lógica
 

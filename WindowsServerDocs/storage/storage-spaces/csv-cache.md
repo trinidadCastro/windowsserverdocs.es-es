@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo usar Espacios de almacenamiento directo con la memoria caché de lectura en memoria de CSV
 title: Espacios de almacenamiento directo caché de lectura en memoria
 ms.author: eldenc
 manager: siroy
@@ -6,12 +7,12 @@ ms.topic: article
 author: eldenchristensen
 ms.date: 09/21/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 94f541b38e0084ae3284dc0e56b2643f23b15bfe
-ms.sourcegitcommit: 8a826e992f28a70e75137f876a5d5e61238a24e4
+ms.openlocfilehash: abda5d2bfeb5bcf65c66609c1e89ab2371089330
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91365338"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97040533"
 ---
 # <a name="using-storage-spaces-direct-with-the-csv-in-memory-read-cache"></a>Uso de Espacios de almacenamiento directo con la memoria caché de lectura en memoria de CSV
 
@@ -30,7 +31,7 @@ La caché de lectura en memoria es más eficaz con cargas de trabajo de lectura 
 Puede usar hasta el 80 % de la memoria física total para la caché de lectura en memoria de Volumen compartido de clúster.
 
   > [!TIP]
-  > En el caso de las implementaciones hiperconvergidas, en las que el proceso y el almacenamiento se ejecutan en los mismos servidores, tenga cuidado de dejar suficiente memoria para las máquinas virtuales. En el caso de las implementaciones de Servidor de archivos de escalabilidad horizontal convergente (SoFS), con menos contención de memoria, esto no se aplica.
+  > En el caso de las implementaciones hiperconvergidas, en las que el proceso y el almacenamiento se ejecutan en los mismos servidores, tenga cuidado de dejar suficiente memoria para las máquinas virtuales. En el caso de las implementaciones de servidor de archivos Scale-Out convergente (SoFS), con menos contención de memoria, esto no se aplica.
 
   > [!NOTE]
   > Ciertas herramientas de microrealización de pruebas comparativas, como DISKSPD y [VM Fleet](https://github.com/Microsoft/diskspd/tree/master/Frameworks/VMFleet) pueden obtener peores resultados con la caché de lectura en memoria de Volumen compartido de clúster habilitada que sin ella. De forma predeterminada, la flota de VM crea 1 10 Gibibyte (GiB) VHDX por máquina virtual, aproximadamente un total de 1 TiB para máquinas virtuales de 100 y, a continuación, realiza lecturas y escrituras *aleatorias de forma uniforme* . A diferencia de las cargas de trabajo reales, las lecturas no siguen ningún patrón predecible o repetitivo, por lo que la caché en memoria no es efectiva y solo produce sobrecarga.

@@ -1,16 +1,17 @@
 ---
+description: Más información acerca de cómo configurar cuentas protegidas
 title: Cómo configurar cuentas protegidas
 ms.topic: article
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: f50e5494210c349a1438570140d6733dce17dcb9
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: c9f5e16d6dc6ccdc8233ad6daac1d917d47fdec8
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89639031"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97039583"
 ---
 # <a name="how-to-configure-protected-accounts"></a>Cómo configurar cuentas protegidas
 
@@ -227,7 +228,7 @@ El dominio de la cuenta del usuario debe estar en el nivel funcional del dominio
 
 4.  Para configurar una vigencia de TGT para cuentas de usuario, activa la casilla **Especifique la duración de un vale de concesión de vales para las cuentas de usuario** y especifica el tiempo en minutos.
 
-    ![Especificar la duración de un vale de concesión de vales para las cuentas de usuario](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_TGTLifetime.gif)
+    ![Especificar la duración de un vale Ticket-Granting para las cuentas de usuario](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_TGTLifetime.gif)
 
     Por ejemplo, si quieres una vigencia máxima de TGT de 10 horas, especifica **600** tal y como se indica. Si no hay configurada una vigencia de TGT, si la cuenta es miembro del grupo **Protected Users**, la vigencia y la renovación del TGT es de 4 horas. De lo contrario, la vigencia y la renovación del TGT se basan en la directiva de dominio tal y como se observa en la siguiente ventana del Editor de administración de directivas de grupo para un dominio con configuración predeterminada.
 
@@ -330,7 +331,7 @@ La sección de cuentas de la directiva de autenticación muestra las cuentas a l
 ![Captura de pantalla de la sección cuentas de la Directiva de autenticación que muestra las cuentas que han aplicado directamente la Directiva](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_AccountsAssigned.gif)
 
 #### <a name="use-the-authentication-policy-failures---domain-controller-administrative-log"></a>Usar el registro administrativo errores de directiva de autenticación-controlador de dominio
-Un nuevo registro administrativo **errores de directiva de autenticación-controlador de dominio** en **registros de aplicaciones y servicios**se ha creado la autenticación de  >  **Microsoft**  >  **Windows**  >  **Authentication** para facilitar la detección de errores debidos a las directivas de autenticación. El registro está deshabilitado de forma predeterminada. Para habilitarlo, haz clic con el botón derecho en el nombre del registro y haz clic en **Habilitar registro**. El contenido de los nuevos eventos es muy similar al de los eventos de auditoría de TGT y de vales de servicio de Kerberos existentes. Para obtener más información acerca de estos eventos, consulte [Directivas de autenticación y silos de directivas de autenticación](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn486813(v=ws.11)).
+Un nuevo registro administrativo **errores de directiva de autenticación-controlador de dominio** en **registros de aplicaciones y servicios** se ha creado la autenticación de  >  **Microsoft**  >  **Windows**  >   para facilitar la detección de errores debidos a las directivas de autenticación. El registro está deshabilitado de forma predeterminada. Para habilitarlo, haz clic con el botón derecho en el nombre del registro y haz clic en **Habilitar registro**. El contenido de los nuevos eventos es muy similar al de los eventos de auditoría de TGT y de vales de servicio de Kerberos existentes. Para obtener más información acerca de estos eventos, consulte [Directivas de autenticación y silos de directivas de autenticación](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn486813(v=ws.11)).
 
 ### <a name="manage-authentication-policies-by-using-windows-powershell"></a>Administrar directivas de autenticación mediante Windows PowerShell
 Este comando crea una directiva de autenticación llamada **TestAuthenticationPolicy**. El parámetro **UserAllowedToAuthenticateFrom** especifica los dispositivos desde los que los usuarios pueden autenticarse mediante una cadena SDDL en el archivo someFile.txt.

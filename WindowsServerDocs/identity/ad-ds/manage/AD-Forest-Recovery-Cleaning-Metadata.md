@@ -1,4 +1,5 @@
 ---
+description: Obtener más información acerca de la recuperación de bosques de AD-limpieza de metadatos de controladores de dominio de escritura eliminados
 title: 'Recuperación de bosques de AD: limpieza de metadatos de controladores de DC quitados'
 ms.author: daveba
 author: iainfoulds
@@ -6,12 +7,12 @@ manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: e7543381-4081-407f-adad-a9de792c6616
-ms.openlocfilehash: 6ae65803abc9120c781ad7131d30072b9d70131b
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 09ca688497e067ec6d41d43a5e4cdb80ef647acb
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93067947"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97043023"
 ---
 # <a name="ad-forest-recovery---cleaning-metadata-of-removed-writable-domain-controllers"></a>Recuperación de bosques de AD: limpiar metadatos de controladores de dominio de escritura quitados
 
@@ -35,11 +36,11 @@ El siguiente procedimiento es el mismo para los controladores de DC que ejecutan
 
 ### <a name="to-delete-a-domain-controller-object-using-active-directory-users-and-computers-in-rsat"></a>Para eliminar un objeto de controlador de dominio mediante usuarios y equipos de Active Directory en RSAT
 
-1. Haga clic en **Inicio** , luego en **Herramientas administrativas** y, a continuación, haga clic en **Usuarios y equipos de Active Directory** .
+1. Haga clic en **Inicio**, luego en **Herramientas administrativas** y, a continuación, haga clic en **Usuarios y equipos de Active Directory**.
 2. En el árbol de consola, haga doble clic en el contenedor de dominio y, a continuación, haga doble clic en la unidad organizativa (OU) **controladores de dominio** .
-3. En el panel de detalles, haga clic con el botón secundario en el controlador de dominio que desea eliminar y, a continuación, haga clic en **eliminar** .
+3. En el panel de detalles, haga clic con el botón secundario en el controlador de dominio que desea eliminar y, a continuación, haga clic en **eliminar**.
    ![Eliminar](media/AD-Forest-Recovery-Cleaning-Metadata/delete1.png)
-4. Haga clic en **Sí** para confirmar la eliminación. Seleccione **este controlador de dominio está permanentemente sin conexión y ya no se puede disminuir de nivel con la casilla Asistente para instalación de Active Directory Domain Services (Dcpromo)** y haga clic en **eliminar** .
+4. Haga clic en **Sí** para confirmar la eliminación. Seleccione **este controlador de dominio está permanentemente sin conexión y ya no se puede disminuir de nivel con la casilla Asistente para instalación de Active Directory Domain Services (Dcpromo)** y haga clic en **eliminar**.
 5. Si el controlador de dominio era un servidor de catálogo global, haga clic en **sí** confirmar la eliminación.
 
 ## <a name="next-steps"></a>Pasos siguientes

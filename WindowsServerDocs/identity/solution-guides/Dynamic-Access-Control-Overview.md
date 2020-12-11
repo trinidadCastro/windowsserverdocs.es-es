@@ -1,4 +1,5 @@
 ---
+description: 'Más información sobre: información general sobre el Access Control dinámico'
 ms.assetid: 9ee8a6cb-7550-46e2-9c11-78d0545c3a97
 title: Introducción al control de acceso dinámico
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: ef1c5686bb692f2fbe18e2f4bf7b2d0bd6efe52d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: fb0099b730e21e9dd9208bd1ba12c35c487bdd86
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952765"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97044483"
 ---
 # <a name="dynamic-access-control-overview"></a>Introducción al control de acceso dinámico
 
@@ -122,7 +123,7 @@ Si los clientes no reconocen el control de acceso dinámico, debe existir una re
 
 Si las notificaciones se transforman cuando abandonan un bosque, todos los controladores de dominio de la raíz del bosque del usuario deben establecerse en el nivel funcional de Windows Server 2012 o superior.
 
-Un servidor de archivos que ejecuta Windows Server 2012 o Windows Server 2012 R2 debe tener una configuración de directiva de grupo que especifica si es necesario obtener notificaciones de usuario para los tokens de usuario que no transportan notificaciones. Esta configuración está establecida de forma predeterminada en **Automática**, lo que hace que esta configuración de directiva de grupo se **active** si hay una directiva central que contiene notificaciones de usuario o dispositivo para dicho servidor de archivos. Si el servidor de archivos contiene ACL discrecionales que incluyen notificaciones de usuario, deberá**** activar esta directiva de grupo para que el servidor de archivos sepa que tiene que solicitar notificaciones en nombre de los usuarios que no proporcionen notificaciones cuando obtengan acceso al servidor.
+Un servidor de archivos que ejecuta Windows Server 2012 o Windows Server 2012 R2 debe tener una configuración de directiva de grupo que especifica si es necesario obtener notificaciones de usuario para los tokens de usuario que no transportan notificaciones. Esta configuración está establecida de forma predeterminada en **Automática**, lo que hace que esta configuración de directiva de grupo se **active** si hay una directiva central que contiene notificaciones de usuario o dispositivo para dicho servidor de archivos. Si el servidor de archivos contiene ACL discrecionales que incluyen notificaciones de usuario, deberáactivar esta directiva de grupo para que el servidor de archivos sepa que tiene que solicitar notificaciones en nombre de los usuarios que no proporcionen notificaciones cuando obtengan acceso al servidor.
 
 ## <a name="additional-resource"></a>Recurso adicional
 Para obtener información sobre la implementación de soluciones basadas en esta tecnología, vea [Access Control dinámica: información general sobre el escenario](Dynamic-Access-Control--Scenario-Overview.md).
