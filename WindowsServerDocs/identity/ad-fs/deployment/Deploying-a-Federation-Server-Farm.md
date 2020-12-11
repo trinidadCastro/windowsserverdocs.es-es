@@ -1,17 +1,18 @@
 ---
 ms.assetid: bbb5b68f-00ad-4715-8176-0c2769b706c4
 title: Implementar una granja de servidores de Federación para Windows Server 2012 R2 AD FS
+description: Más información acerca de cómo implementar una granja de servidores de Federación
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 2f7602e99e550e993b916e603dad33724b3b0570
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: ae1a7f99a466d3a3a24c803d0dacf5537143b324
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865044"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048863"
 ---
 # <a name="deploying-a-federation-server-farm"></a>Implementación de una granja de servidores de federación
 
@@ -32,8 +33,7 @@ Para implementar una granja de servidores de federación, completa las tareas de
 |Comprueba que esté operativo un servidor de federación.|![implementación](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[de una granja de servidores federados comprobación de que un servidor de Federación está operativo](Verify-That-a-Federation-Server-Is-Operational.md)|
 
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 [Implementación de AD FS](../../ad-fs/AD-FS-Deployment.md)
 
 [Guía de implementación de AD FS en Windows Server 2012 R2](../../ad-fs/deployment/Windows-Server-2012-R2-AD-FS-Deployment-Guide.md)
-

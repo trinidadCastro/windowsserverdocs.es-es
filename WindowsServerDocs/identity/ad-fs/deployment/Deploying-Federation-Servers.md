@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo implementar servidores de Federación
 ms.assetid: c4d83dd3-2846-4658-8b9c-93901ee69766
 title: Implementación de servidores de federación
 author: billmath
@@ -6,12 +7,12 @@ manager: femila
 ms.date: 05/31/2017
 ms.topic: article
 ms.author: billmath
-ms.openlocfilehash: e648f77593f90e976389601d8db5504f6693ce0d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d8342fe7e884c856bf687a0deda6b174b94355b9
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87962849"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97044943"
 ---
 # <a name="deploying-federation-servers"></a>Implementación de servidores de federación
 

@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo determinar la topología de implementación de AD FS
 ms.assetid: f67b0bc9-e5af-4891-9da0-d9be539af42d
 title: Determinar la topología de la implementación de AD FS
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: dfb863cf85f9e9bffadbe10ca017491341596dad
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 1c5bd925318a6f18513fa7267c2dfe2ab5381281
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87972122"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97047703"
 ---
 # <a name="determine-your-ad-fs-deployment-topology"></a>Determinar la topología de la implementación de AD FS
 

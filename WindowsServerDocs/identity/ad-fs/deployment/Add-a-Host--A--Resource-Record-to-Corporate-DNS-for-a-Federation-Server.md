@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo agregar un registro de recursos de host (A) al DNS corporativo para un servidor de Federación
 ms.assetid: 026747c7-4c34-41c7-b7ea-27f9a7f64a35
 title: Agregar un registro de recursos de host (A) al DNS corporativo para un servidor de federación
 author: billmath
@@ -6,12 +7,12 @@ manager: femila
 ms.date: 05/31/2017
 ms.topic: article
 ms.author: billmath
-ms.openlocfilehash: dea774dbacb195ede158137eb6c888408fd1084f
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 00e2366de66eced2ad0cbe3a731f5f6afceb18f6
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87947662"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97047923"
 ---
 # <a name="add-a-host-a-resource-record-to-corporate-dns-for-a-federation-server"></a>Agregar un registro de recursos de host (A) al DNS corporativo para un servidor de federación
 
@@ -25,7 +26,7 @@ La pertenencia al grupo **administradores**, o equivalente, es lo mínimo necesa
 
 1.  En un servidor DNS de la red corporativa, abra el complemento DNS \- .
 
-2.  En el árbol de consola, \- haga clic con el botón secundario en la zona de búsqueda directa aplicable y, a continuación, haga clic en **nuevo host \( a o AAAA \) **.
+2.  En el árbol de consola, \- haga clic con el botón secundario en la zona de búsqueda directa aplicable y, a continuación, haga clic en **nuevo host \( a o AAAA \)**.
 
 3.  En **nombre**, escriba solo el nombre de equipo del servidor de Federación o del clúster de servidores de Federación; por ejemplo, para el nombre de dominio completo \( FQDN \) FS.fabrikam.com, escriba **FS**.
 

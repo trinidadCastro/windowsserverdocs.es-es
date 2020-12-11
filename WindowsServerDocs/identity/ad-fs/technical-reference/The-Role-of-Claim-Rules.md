@@ -1,4 +1,5 @@
 ---
+description: 'Más información sobre: el rol de las reglas de notificaciones'
 ms.assetid: 65e474b5-3076-4ba3-809d-a09160f7c2bd
 title: El papel de las reglas de notificaciones
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 410e9ce5fbde7d84cbb4efbbde3515d0af537180
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 738d15fa7303610ddbb8c3297bc056f9db61ca2d
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87937892"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97045333"
 ---
 # <a name="the-role-of-claim-rules"></a>El papel de las reglas de notificaciones
 La función global del Servicio de federación en Servicios de federación de Active Directory (AD FS) \( AD FS \) es emitir un token que contenga un conjunto de notificaciones. La decisión con respecto a las notificaciones que AD FS acepta y luego emite se rige por las reglas de notificación.
@@ -80,7 +81,7 @@ Para obtener más información que describe cada una de estas plantillas de regl
 #### <a name="using-the-claim-rule-language"></a>Uso del lenguaje de las reglas de notificación
 Para las reglas de negocio que escapan del ámbito de las plantillas de reglas de notificación estándares, puede usar una plantilla de reglas personalizada para expresar una serie de condiciones lógicas complejas con el lenguaje de reglas de notificación. Para obtener más información sobre el uso de una regla personalizada, consulte [Cuándo usar una regla de notificaciones personalizadas](When-to-Use-a-Custom-Claim-Rule.md).
 
-#### <a name="using-windowspowershell"></a>Uso de Windows PowerShell
+#### <a name="using-windows-powershell"></a>Uso de Windows PowerShell
 También puede usar el objeto de cmdlet ADFSClaimRuleSet con Windows PowerShell para crear o administrar reglas en AD FS. Para más información sobre cómo puede usar Windows PowerShell con este cmdlet, consulte [Administración de AD FS con Windows PowerShell](https://go.microsoft.com/fwlink/?LinkID=179634).
 
 ## <a name="what-is-a-claim-rule-set"></a>¿Qué es un conjunto de reglas de notificación?

@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo comprender la caché en Espacios de almacenamiento directo
 title: Descripción de la memoria caché de Espacios de almacenamiento directo
 ms.assetid: 69b1adc0-ee64-4eed-9732-0fb216777992
 ms.author: cosdar
@@ -7,12 +8,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 09/21/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 502b04676fcb9a9c7342e701e71be473890f9668
-ms.sourcegitcommit: 8a826e992f28a70e75137f876a5d5e61238a24e4
+ms.openlocfilehash: a6ab48a2079513e69538eb2673be4cf7d656b94f
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91365358"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97047763"
 ---
 # <a name="understanding-the-cache-in-storage-spaces-direct"></a>Descripción de la memoria caché de Espacios de almacenamiento directo
 
@@ -201,7 +202,7 @@ La configuración manual habilita las siguientes posibilidades de implementació
 
 Es posible reemplazar el comportamiento predeterminado de la memoria caché. Por ejemplo, puede establecerlo en lecturas de caché en una implementación con todo flash. No es recomendable que modifique el comportamiento a menos que esté seguro de que el predeterminado no es adecuado para su carga de trabajo.
 
-Para reemplazar el comportamiento, use el cmdlet **Set-ClusterStorageSpacesDirect**y sus parámetros **-CacheModeSSD** y **-CacheModeHDD**. El parámetro **CacheModeSSD** establece el comportamiento de la caché al almacenar en caché para las unidades de estado sólido. El parámetro **CacheModeHDD** establece el comportamiento de la caché al almacenar en caché para las unidades de disco duro. Esto se puede realizar en cualquier momento una vez que se haya habilitado Espacios de almacenamiento directo.
+Para reemplazar el comportamiento, use el cmdlet **Set-ClusterStorageSpacesDirect** y sus parámetros **-CacheModeSSD** y **-CacheModeHDD**. El parámetro **CacheModeSSD** establece el comportamiento de la caché al almacenar en caché para las unidades de estado sólido. El parámetro **CacheModeHDD** establece el comportamiento de la caché al almacenar en caché para las unidades de disco duro. Esto se puede realizar en cualquier momento una vez que se haya habilitado Espacios de almacenamiento directo.
 
 Puede usar **Get-ClusterStorageSpacesDirect** para comprobar que se ha establecido el comportamiento.
 

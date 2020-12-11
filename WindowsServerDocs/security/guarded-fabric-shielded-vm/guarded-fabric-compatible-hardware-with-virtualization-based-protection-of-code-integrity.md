@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: hardware compatible con la protección basada en la virtualización de Windows Server de la integridad de código'
 title: Hardware compatible con la protección basada en la virtualización de Windows Server de la integridad del código
 ms.topic: article
 ms.assetid: 15ded82c-f70f-4efb-9e26-2731127931af
@@ -6,12 +7,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: 616718b2b2a5ce3c30655d3fef37da5ee2ea25e5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 3437aadb68af98ac97e072b97a979c4f7a885869
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971362"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97047463"
 ---
 # <a name="compatible-hardware-with-windows-server-virtualization-based-protection-of-code-integrity"></a>Hardware compatible con la protección basada en la virtualización de Windows Server de la integridad del código
 

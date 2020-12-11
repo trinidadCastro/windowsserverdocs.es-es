@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: crear una regla para permitir a todos los usuarios'
 ms.assetid: 8c179884-f0d9-4c7a-973d-820119cf3c38
 title: Crear una regla para permitir a todos los usuarios
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 6fa3500cc0343a7c341b2e94b011ce69f6bfbc04
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: af24036b55ed695765c1c3424f180db718732cee
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87967252"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048123"
 ---
 # <a name="create-a-rule-to-permit-all-users"></a>Crear una regla para permitir a todos los usuarios
 

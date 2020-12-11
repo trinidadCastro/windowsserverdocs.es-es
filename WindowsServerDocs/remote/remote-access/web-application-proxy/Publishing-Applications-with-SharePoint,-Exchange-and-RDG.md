@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo publicar aplicaciones con SharePoint, Exchange y RDG
 ms.assetid: 61ed00fd-51c7-4728-91fa-8501de9d8f28
 title: Publicación de aplicaciones con SharePoint, Exchange y RDG
 author: billmath
@@ -6,12 +7,12 @@ manager: mtillman
 ms.author: billmath
 ms.date: 04/30/2018
 ms.topic: article
-ms.openlocfilehash: 115a55ab9ddfde42027a991d172f92c3d62c4613
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 3d496d5b5c4e0ff3b06c9fa99c1ee871db0bf55a
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87939796"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97044883"
 ---
 # <a name="publishing-applications-with-sharepoint-exchange-and-rdg"></a>Publicación de aplicaciones con SharePoint, Exchange y RDG
 
@@ -159,7 +160,7 @@ Si quiere restringir el acceso a la puerta de enlace de acceso remoto y agregar 
 
             Para obtener más información sobre RDP, consulte [configuración del escenario de OTP de puerta de enlace de TS](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc731249(v=ws.10)).
 
-## <a name="see-also"></a><a name="BKMK_Links"></a>Vea también
+## <a name="see-also"></a><a name="BKMK_Links"></a>Otras referencias
 
 - [Planeamiento de publicación de aplicaciones mediante el Proxy de aplicación web](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn383650(v=ws.11))
 

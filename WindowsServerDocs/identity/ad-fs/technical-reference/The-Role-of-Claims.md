@@ -1,4 +1,5 @@
 ---
+description: 'Más información sobre: el rol de las notificaciones'
 ms.assetid: 22f53391-8c6a-4873-a1f4-08b4760ea621
 title: El papel de las notificaciones
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: eb41b8168024a231282716e5edd0bc59554d7da6
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 853689a601f8729fb79091cb1bd7c7c45652f480
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87937828"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97045293"
 ---
 # <a name="the-role-of-claims"></a>El papel de las notificaciones
 
@@ -25,7 +26,7 @@ En su forma más sencilla, las notificaciones son simplemente *instrucciones* , 
 
 El Servicio de federación en Servicios de federación de Active Directory (AD FS) \( AD FS \) define qué notificaciones se intercambian entre los asociados federados. Para hacerlo, sin embargo, antes tiene que rellenar o generar la notificación con un valor recuperado o calculado. Cada valor de notificación representa un valor de un usuario, grupo o entidad, y se puede generar de dos formas:
 
-1.  Cuando el valor de que consta la notificación se recupera de un almacén de atributos, por ejemplo, cuando un valor de atributo del departamento de ventas se obtiene de las propiedades de una cuenta de usuario de Active Directory. Para obtener más información, consulta [El papel de los almacenes de atributos](The-Role-of-Attribute-Stores.md).
+1.  Cuando el valor de que consta la notificación se recupera de un almacén de atributos, por ejemplo, cuando un valor de atributo del departamento de ventas se obtiene de las propiedades de una cuenta de usuario de Active Directory. Para obtener más información, consulta [El papel de los almacenes de atributos](The-Role-of-Attribute-Stores.md).
 
 2.  Cuando el valor de una notificación entrante se transforma en otro valor de acuerdo con la lógica expresada en una regla. Por ejemplo, cuando una notificación entrante con el valor de Admins. del dominio se transforma en un nuevo valor de Administradores antes de enviarse como notificación saliente. Para obtener más información, consulta [El papel de las reglas de notificaciones](The-Role-of-Claim-Rules.md).
 
@@ -53,17 +54,17 @@ Al escribir reglas de notificaciones, el origen de las notificaciones entrantes 
 
 Un tipo de notificación ofrece contexto para el valor de la notificación Normalmente, se expresa como un identificador uniforme de recursos \( URI \) . AD FS puede admitir cualquier tipo de notificaciones y se configura con los tipos de notificaciones de la siguiente tabla de forma predeterminada.
 
-|Nombre|Descripción|Identificador URI|
+|NOMBRE|Descripción|Identificador URI|
 |--------|---------------|-------|
 |\-Dirección de correo electrónico|La \- dirección de correo electrónico del usuario|http: \/ \/schemas.xmlsoap.org \/ WS \/ 2005 \/ 05 \/ \/ notificaciones de identidad \/ EmailAddress|
 |Nombre propio|Nombre propio del usuario|http: \/ \/schemas.xmlsoap.org \/ WS \/ 2005 \/ 05 \/ \/ notificaciones de identidad \/ givenName|
-|Nombre|Nombre único del usuario|http: \/ \/schemas.xmlsoap.org \/ WS \/ 2005 \/ 05 \/ \/ nombre de notificaciones de identidad \/|
+|NOMBRE|Nombre único del usuario|http: \/ \/schemas.xmlsoap.org \/ WS \/ 2005 \/ 05 \/ \/ nombre de notificaciones de identidad \/|
 |UPN|El \( UPN del nombre principal \) de usuario del usuario|http: \/ \/schemas.xmlsoap.org \/ WS \/ 2005 \/ 05 \/ identidad \/ UPN de notificaciones \/|
 |Nombre común|Nombre común del usuario|http: \/ \/schemas.xmlSOAP.org \/ notificaciones de \/ CommonName|
 |Dirección de correo electrónico de AD FS 1. x \-|La \- dirección de correo electrónico del usuario al interoperar con AD FS 1,1 o ADFS 1,0|http: \/ \/schemas.xmlSOAP.org \/ Claims \/ EmailAddress|
 |Grupo|Grupo al que pertenece el usuario|http: \/ \/schemas.xmlSOAP.org \/ grupo de notificaciones \/|
-|UPN para AD FS 1.x|UPN del usuario al interoperar con AD FS 1.1 o AD FS 1.0|http: \/ \/schemas.xml\/ UPN de notificaciones de SOAP.org \/|
-|Role|Rol que tiene el usuario|http: \/ \/ schemas.microsoft.com \/ WS \/ 2008 \/ 06 \/ \/ rol de notificaciones de identidad \/|
+|UPN para AD FS 1.x|UPN del usuario al interoperar con AD FS 1.1 o AD FS 1.0|http: \/ \/schemas.xml\/ UPN de notificaciones de SOAP.org \/|
+|Rol|Rol que tiene el usuario|http: \/ \/ schemas.microsoft.com \/ WS \/ 2008 \/ 06 \/ \/ rol de notificaciones de identidad \/|
 |Surname|Apellido del usuario|http: \/ \/schemas.xmlsoap.org \/ WS \/ 2005 \/ 05 \/ \/ notificaciones de identidad \/ apellidos|
 |PPID|Identificador privado del usuario|http: \/ \/schemas.xmlsoap.org \/ WS \/ 2005 \/ 05 \/ \/ notificaciones de identidad \/ privatepersonalidentifier|
 |Identificador de nombre|Identificador de nombre SAML del usuario|http: \/ \/schemas.xmlsoap.org \/ WS \/ 2005 \/ 05 \/ \/ notificaciones de identidad \/ nameidentifier|
@@ -74,13 +75,13 @@ Un tipo de notificación ofrece contexto para el valor de la notificación Norma
 |SID de grupo|SID de grupo del usuario|http: \/ \/ schemas.microsoft.com \/ WS \/ 2008 \/ 06 \/ \/ indices de identidad \/ GroupSID|
 |SID de grupo principal|SID de grupo principal del usuario|http: \/ \/ schemas.microsoft.com \/ WS \/ 2008 \/ 06 \/ \/ indices de identidad \/ primarygroupsid|
 |SID principal|SID principal del usuario|http: \/ \/ schemas.microsoft.com \/ WS \/ 2008 \/ 06 \/ \/ indices de identidad \/ primarysid|
-|Nombre de cuenta de Windows|El nombre de la cuenta de dominio del usuario en forma de\<domain\>\\\<user\>|http: \/ \/ schemas.microsoft.com \/ WS \/ 2008 \/ 06 \/ \/ indices de identidad \/ atributos windowsaccountname|
+|Nombre de cuenta de Windows|El nombre de la cuenta de dominio del usuario en forma de \<domain\>\\\<user\>|http: \/ \/ schemas.microsoft.com \/ WS \/ 2008 \/ 06 \/ \/ indices de identidad \/ atributos windowsaccountname|
 
 ## <a name="what-are-claim-descriptions"></a>¿Qué son las descripciones de notificaciones?
 
 Las descripciones de notificaciones representan una lista de tipos de notificaciones que AD FS admite y que se pueden publicar en metadatos de Federación. Los tipos de notificación mencionados en la tabla anterior se configuran como descripciones de notificaciones en el complemento de administración \- de AD FS en.
 
-La colección de descripciones de notificaciones que se va a publicar en los metadatos de federación se almacena en la base de datos de configuración de AD FS. Estas descripciones están disponibles para su uso por parte de varios componentes del Servicio de federación.
+La colección de descripciones de notificaciones que se va a publicar en los metadatos de federación se almacena en la base de datos de configuración de AD FS. Estas descripciones están disponibles para su uso por parte de varios componentes del Servicio de federación.
 
 De igual modo, cada descripción incluye un URI, un nombre, un estado de publicación y una descripción del tipo de notificación en cuestión. Puede administrar la colección de descripciones de notificaciones mediante el nodo **descripciones de notificaciones** del complemento \- de administración de AD FS en. Puede modificar el estado de publicación de una descripción de notificaciones mediante el complemento \- . Las siguientes configuraciones están disponibles:
 

@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de la implementación de AD FS heredadas en la organización del asociado de cuenta
 ms.assetid: 8c3536b7-d091-4ee6-ad04-24713f070862
 title: Implementación de AD FS heredadas en la organización del asociado de cuenta
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 84b741dbc99cf30ea20744ba3a7c48bc95391213
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 4310fd72068516403b8090389de86d885d672956
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87942961"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97044733"
 ---
 # <a name="deploying-legacy-ad-fs-in-the-account-partner-organization"></a>Implementación de AD FS heredadas en la organización del asociado de cuenta
 

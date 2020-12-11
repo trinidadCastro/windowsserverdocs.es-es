@@ -1,4 +1,5 @@
 ---
+description: 'Más información sobre: creación de una regla para permitir o denegar a los usuarios en función de una demanda entrante'
 ms.assetid: 3d770385-9834-4ebe-b66c-b684e0245971
 title: Crear una regla para permitir o denegar usuarios según una notificación entrante
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: c6d0d1b2d91b4b0983dbe8169e094403bb2c732a
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 5c88f4ae94002f436cedae74fa32211f701e270e
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87967292"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048203"
 ---
 # <a name="create-a-rule-to-permit-or-deny-users-based-on-an-incoming-claim"></a>Crear una regla para permitir o denegar usuarios según una notificación entrante
 
@@ -40,7 +41,7 @@ La pertenencia al grupo **Administradores** o equivalente en el equipo local es 
 5. En el **Editor de reglas**, en usuarios, coloque una inserción en **el repositorio con notificaciones específicas en la solicitud** y haga clic en el subrayado **específico** en la parte inferior.
 ![crear regla](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny6.PNG)
 
-6. En la pantalla **seleccionar notificaciones** , haga clic en el botón de opción **notificaciones** , seleccione el **tipo de notificación**, el **operador**y el **valor de notificación** y, a continuación, haga clic en **Aceptar**.
+6. En la pantalla **seleccionar notificaciones** , haga clic en el botón de opción **notificaciones** , seleccione el **tipo de notificación**, el **operador** y el **valor de notificación** y, a continuación, haga clic en **Aceptar**.
 ![crear regla](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny7.PNG)
 
 7.  En el **Editor de reglas** , haga clic en **Aceptar**.  En la pantalla **Agregar Directiva de Access Control** , haga clic en **Aceptar**.
@@ -70,7 +71,7 @@ La pertenencia al grupo **Administradores** o equivalente en el equipo local es 
 5. En el **Editor de reglas**, asegúrese de que todos los usuarios están seleccionados y, en **excepto** , coloque una inserción en **el repositorio con notificaciones específicas en la solicitud** y haga clic en el subrayado **específico** en la parte inferior.
 ![crear regla](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny10.PNG)
 
-6. En la pantalla **seleccionar notificaciones** , haga clic en el botón de opción **notificaciones** , seleccione el **tipo de notificación**, el **operador**y el **valor de notificación** y, a continuación, haga clic en **Aceptar**.
+6. En la pantalla **seleccionar notificaciones** , haga clic en el botón de opción **notificaciones** , seleccione el **tipo de notificación**, el **operador** y el **valor de notificación** y, a continuación, haga clic en **Aceptar**.
 ![crear regla](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny11.PNG)
 
 7.  En el **Editor de reglas** , haga clic en **Aceptar**.  En la pantalla **Agregar Directiva de Access Control** , haga clic en **Aceptar**.

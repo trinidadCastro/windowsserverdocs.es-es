@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo instalar el servicio de rol de AD FS
 ms.assetid: c28a1b8b-5bec-4eed-8c95-a1a29cfc957c
 title: Instalar el servicio de rol de AD FS
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 435634e7b6edfc110c7bd208d727b974804eb236
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 9891d87e6e2388885e16bdd05883958710c1b2ff
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87972182"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048403"
 ---
 # <a name="install-the-ad-fs-role-service"></a>Instalar el servicio de rol de AD FS
 
@@ -25,7 +26,7 @@ La pertenencia al grupo **administradores**, o equivalente, en el equipo local e
 
 2.  En la página **Antes de comenzar** , haga clic en **Siguiente**.
 
-3.  En la página **Seleccionar tipo de instalación** , haga clic en instalación basada en ** \- características o \- en roles**y, a continuación, haga clic en **siguiente**.
+3.  En la página **Seleccionar tipo de instalación** , haga clic en instalación basada en **\- características o \- en roles** y, a continuación, haga clic en **siguiente**.
 
 4.  En la página **Seleccionar servidor de destino**, haz clic en **Seleccionar un servidor del grupo de servidores**, comprueba que está seleccionado el equipo de destino y haz clic en **Siguiente**.
 
@@ -33,7 +34,7 @@ La pertenencia al grupo **administradores**, o equivalente, en el equipo local e
 
 6.  En la página **Seleccionar características**, haz clic en **Siguiente**. Los requisitos previos necesarios están preseleccionados automáticamente. No tiene que seleccionar otras características.
 
-7.  En la página ** \( AD FS \) de servicio de Federación de Active Directory** , haga clic en **siguiente**.
+7.  En la página **\( AD FS \) de servicio de Federación de Active Directory** , haga clic en **siguiente**.
 
 8.  Después de comprobar la información de la página **Confirmar selecciones de instalación**, haz clic en **Instalar**.
 

@@ -1,16 +1,17 @@
 ---
+description: Más información acerca de cómo publicar aplicaciones mediante la autenticación previa de AD FS
 ms.assetid: 5f733510-c96e-4d3a-85d2-4407de95926e
 title: Publicación de aplicaciones con autenticación previa de AD FS
 ms.author: kgremban
 author: eross-msft
 ms.date: 07/13/2016
 ms.topic: article
-ms.openlocfilehash: e90b1995e5322bb0e1632df6b5947da0fc1b0244
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 774e621d1cc6a6449c758673a6bb1424ae3f2f17
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87939826"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97044933"
 ---
 # <a name="publishing-applications-using-ad-fs-preauthentication"></a>Publicación de aplicaciones con autenticación previa de AD FS
 
@@ -96,7 +97,7 @@ En este procedimiento se describe cómo publicar una aplicación basada en notif
 
 ### <a name="to-publish-a-claims-based-application"></a>Para publicar una aplicación basada en notificaciones
 
-1.  En el servidor proxy de aplicación Web, en la consola de administración de acceso remoto, en el panel de **navegación** , haga clic en **proxy de aplicación web**y, a continuación, en el panel **tareas** , haga clic en **publicar**.
+1.  En el servidor proxy de aplicación Web, en la consola de administración de acceso remoto, en el panel de **navegación** , haga clic en **proxy de aplicación web** y, a continuación, en el panel **tareas** , haga clic en **publicar**.
 
 2.  En el **Asistente para publicar nuevas aplicaciones**, en el cuadro de diálogo **Página principal**, haga clic en **Siguiente**.
 
@@ -176,7 +177,7 @@ En este procedimiento se describe cómo publicar una aplicación que usa la aute
 
 #### <a name="to-publish-a-non-claims-based-application"></a>Para publicar una aplicación que no esté basada en notificaciones
 
-1.  En el servidor proxy de aplicación Web, en la consola de administración de acceso remoto, en el panel de **navegación** , haga clic en **proxy de aplicación web**y, a continuación, en el panel **tareas** , haga clic en **publicar**.
+1.  En el servidor proxy de aplicación Web, en la consola de administración de acceso remoto, en el panel de **navegación** , haga clic en **proxy de aplicación web** y, a continuación, en el panel **tareas** , haga clic en **publicar**.
 
 2.  En el **Asistente para publicar nuevas aplicaciones**, en el cuadro de diálogo **Página principal**, haga clic en **Siguiente**.
 
@@ -279,7 +280,7 @@ En el procedimiento siguiente se explica cómo publicar aplicaciones HTTP Basic.
 
 #### <a name="to-publish-an-http-basic-application"></a>Para publicar una aplicación HTTP Basic
 
-1.  En el servidor proxy de aplicación Web, en la consola de administración de acceso remoto, en el panel de **navegación** , haga clic en **proxy de aplicación web**y, a continuación, en el panel **tareas** , haga clic en **publicar**.
+1.  En el servidor proxy de aplicación Web, en la consola de administración de acceso remoto, en el panel de **navegación** , haga clic en **proxy de aplicación web** y, a continuación, en el panel **tareas** , haga clic en **publicar**.
 
 2.  En el **Asistente para publicar nuevas aplicaciones**, en el cuadro de diálogo **Página principal**, haga clic en **Siguiente**.
 
@@ -384,7 +385,7 @@ En este procedimiento se explica cómo publicar una aplicación para OAuth2. Est
 
 #### <a name="to-publish-an-oauth2-app"></a>Para publicar una aplicación OAuth2
 
-1.  En el servidor proxy de aplicación Web, en la consola de administración de acceso remoto, en el panel de **navegación** , haga clic en **proxy de aplicación web**y, a continuación, en el panel **tareas** , haga clic en **publicar**.
+1.  En el servidor proxy de aplicación Web, en la consola de administración de acceso remoto, en el panel de **navegación** , haga clic en **proxy de aplicación web** y, a continuación, en el panel **tareas** , haga clic en **publicar**.
 
 2.  En el **Asistente para publicar nuevas aplicaciones**, en el cuadro de diálogo **Página principal**, haga clic en **Siguiente**.
 
@@ -436,7 +437,7 @@ Add-WebApplicationProxyApplication
     -UseOAuthAuthentication
 ```
 
-## <a name="see-also"></a><a name="BKMK_Links"></a>Vea también
+## <a name="see-also"></a><a name="BKMK_Links"></a>Otras referencias
 
 -   [Solución de problemas del Proxy de aplicación web](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn770156(v=ws.11))
 

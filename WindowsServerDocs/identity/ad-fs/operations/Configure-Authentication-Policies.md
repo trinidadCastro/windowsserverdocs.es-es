@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo configurar directivas de autenticación
 ms.assetid: 8e7015bc-c489-4ec7-8b6e-3ece90f72317
 title: Configuración de directivas de autenticación
 author: billmath
@@ -6,12 +7,12 @@ manager: femila
 ms.date: 05/31/2017
 ms.topic: article
 ms.author: billmath
-ms.openlocfilehash: 25a20cc55d6add3ed36561d6034ad90c428ea065
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 4b3564afacf23096b3e76e528015b0e1f155a324
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964832"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97045503"
 ---
 # <a name="configure-authentication-policies"></a>Configuración de directivas de autenticación
 
@@ -37,7 +38,7 @@ En AD FS, en Windows Server 2012 R2, puede especificar una directiva de autentic
 
 2.  En AD FS complemento \- , haga clic en **directivas de autenticación**.
 
-3.  En la sección **autenticación principal** , haga clic en **Editar** junto a **configuración global**. También puede hacer clic con el botón derecho \- en **directivas de autenticación**y seleccionar **Editar autenticación principal global**, o bien, en el panel **acciones** , seleccione **Editar autenticación principal global**.
+3.  En la sección **autenticación principal** , haga clic en **Editar** junto a **configuración global**. También puede hacer clic con el botón derecho \- en **directivas de autenticación** y seleccionar **Editar autenticación principal global**, o bien, en el panel **acciones** , seleccione **Editar autenticación principal global**.
 ![directivas de autenticación](media/Configure-Authentication-Policies/authpolicy1.png)
 
 4.  En la ventana **Editar Directiva de autenticación global** , en la pestaña **principal** , puede configurar las siguientes opciones como parte de la Directiva de autenticación global:
@@ -51,9 +52,9 @@ En AD FS, en Windows Server 2012 R2, puede especificar una directiva de autentic
 
 1.  En el Administrador del servidor, haga clic en **Herramientas** y, luego, seleccione **Administración de AD FS**.
 
-2.  En AD FS complemento \- , haga clic en **directivas de autenticación** \\ **por relación de confianza para usuario autenticado**y, a continuación, haga clic en la relación de usuario de confianza para la que desea configurar las directivas de autenticación.
+2.  En AD FS complemento \- , haga clic en **directivas de autenticación** \\ **por relación de confianza para usuario autenticado** y, a continuación, haga clic en la relación de usuario de confianza para la que desea configurar las directivas de autenticación.
 
-3.  Haga clic con el botón derecho \- en la relación de usuario de confianza para la que desea configurar las directivas de autenticación y, después, seleccione **Editar autenticación principal personalizada**o, en el panel **acciones** , seleccione **Editar autenticación principal personalizada**.
+3.  Haga clic con el botón derecho \- en la relación de usuario de confianza para la que desea configurar las directivas de autenticación y, después, seleccione **Editar autenticación principal personalizada** o, en el panel **acciones** , seleccione **Editar autenticación principal personalizada**.
 ![directivas de autenticación](media/Configure-Authentication-Policies/authpolicy5.png)
 
 4.  En la ventana **Editar Directiva de autenticación para <nombre de la relación de confianza para usuario autenticado \_ \_ \_>** , en la pestaña **principal** , puede configurar la siguiente opción como parte de la Directiva de autenticación **por relación de confianza para usuario autenticado** :
@@ -67,12 +68,12 @@ En AD FS, en Windows Server 2012 R2, puede especificar una directiva de autentic
 
 2.  En AD FS complemento \- , haga clic en **directivas de autenticación**.
 
-3.  En la sección **multi- \- factor Authentication** , haga clic en **Editar** junto a **configuración global**. También puede hacer clic con el botón derecho \- en **directivas de autenticación**y seleccionar **Editar \- autenticación multifactor global**, o bien, en el panel **acciones** , seleccione **Editar \- autenticación multifactor global**.
+3.  En la sección **multi- \- factor Authentication** , haga clic en **Editar** junto a **configuración global**. También puede hacer clic con el botón derecho \- en **directivas de autenticación** y seleccionar **Editar \- autenticación multifactor global**, o bien, en el panel **acciones** , seleccione **Editar \- autenticación multifactor global**.
 ![directivas de autenticación](media/Configure-Authentication-Policies/authpolicy8.png)
 
 4.  En la ventana **Editar Directiva de autenticación global** , en la pestaña **multi- \- factor** , puede configurar las siguientes opciones como parte de la \- Directiva de autenticación multifactor global:
 
-    -   Configuración o condiciones para MFA a través de las opciones disponibles en las secciones ** \/ grupos de usuarios**, **dispositivos**y **ubicaciones** .
+    -   Configuración o condiciones para MFA a través de las opciones disponibles en las secciones **\/ grupos de usuarios**, **dispositivos** y **ubicaciones** .
 
     -   Para habilitar MFA para cualquiera de estas opciones, debe seleccionar al menos un método de autenticación adicional. La **autenticación de certificado** es la opción disponible de forma predeterminada. También puede configurar otros métodos de autenticación adicionales personalizados, por ejemplo, la autenticación activa de Windows Azure. Para obtener más información, consulte [Guía de tutorial: administración de riesgos con multi-factor Authentication adicionales para aplicaciones confidenciales](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md).
 
@@ -84,13 +85,13 @@ En AD FS, en Windows Server 2012 R2, puede especificar una directiva de autentic
 
 1.  En el Administrador del servidor, haga clic en **Herramientas** y, luego, seleccione **Administración de AD FS**.
 
-2.  En AD FS complemento \- , haga clic en **directivas de autenticación** \\ **por relación de confianza para usuario autenticado**y, a continuación, haga clic en la relación de usuario de confianza para la que desea configurar MFA.
+2.  En AD FS complemento \- , haga clic en **directivas de autenticación** \\ **por relación de confianza para usuario autenticado** y, a continuación, haga clic en la relación de usuario de confianza para la que desea configurar MFA.
 
 3.  Haga clic con el botón derecho \- en la relación de confianza para la que desea configurar MFA y, después, seleccione **Editar \- autenticación multifactor personalizada**, o bien, en el panel **acciones** , seleccione **Editar \- autenticación multifactor personalizada**.
 
-4.  En la ventana **Editar Directiva de autenticación para <nombre de la relación de confianza para usuario autenticado \_ \_ \_>** , en la pestaña ** \- multifactor** , puede configurar las siguientes opciones como parte de la Directiva de autenticación por relación de confianza para usuario \- autenticado:
+4.  En la ventana **Editar Directiva de autenticación para <nombre de la relación de confianza para usuario autenticado \_ \_ \_>** , en la pestaña **\- multifactor** , puede configurar las siguientes opciones como parte de la Directiva de autenticación por relación de confianza para usuario \- autenticado:
 
-    -   Configuración o condiciones para MFA a través de las opciones disponibles en las secciones ** \/ grupos de usuarios**, **dispositivos**y **ubicaciones** .
+    -   Configuración o condiciones para MFA a través de las opciones disponibles en las secciones **\/ grupos de usuarios**, **dispositivos** y **ubicaciones** .
 
 ## <a name="configure-authentication-policies-via-windows-powershell"></a>Configurar directivas de autenticación mediante Windows PowerShell
 Windows PowerShell ofrece una mayor flexibilidad a la hora de usar varios factores de control de acceso y el mecanismo de autenticación que están disponibles en AD FS en Windows Server 2012 R2 para configurar directivas de autenticación y reglas de autorización que son necesarias para implementar un verdadero acceso condicional para los \- recursos protegidos AD FS.

@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de las novedades de la desduplicación de datos
 ms.assetid: d11acbc2-40c6-4ab2-9514-2bc3ad81499a
 title: Novedades de Desduplicación de datos
 ms.topic: article
@@ -6,12 +7,12 @@ author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 04/17/2019
-ms.openlocfilehash: 4db55ece9edbd261bad05d94f6bcca288c54109f
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a33a248c8fce180b6ffe3de335fa876829ae05a9
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87957873"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048473"
 ---
 # <a name="whats-new-in-data-deduplication"></a>Novedades de Desduplicación de datos
 

@@ -1,4 +1,5 @@
 ---
+description: 'Más información sobre: cómo se usan los URI en AD FS'
 ms.assetid: 53ee93e2-09ea-4f8b-adb7-c24c59f055ea
 title: Uso de URI en AD FS
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 25f017da1d450484110dd43b3bc8cb25cbe06afb
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 236f75152c64cf841ce1196415d6f95e92a252ca
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87937952"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97045343"
 ---
 # <a name="how-uris-are-used-in-ad-fs"></a>Uso de URI en AD FS
 Un identificador uniforme de recursos \( URI \) es una cadena de caracteres que se utiliza como identificador único.  En AD FS, los URI se usan para identificar las direcciones de red de asociados y los objetos de configuración.  Cuando se usa para identificar las direcciones de red de asociados, el URI es siempre una dirección URL.  Cuando se usa para identificar los objetos de configuración, el URI puede ser un nombre de recursos uniforme (URN) o una dirección URL.  Para obtener información general sobre los URI, consulte [RFC 2396](https://go.microsoft.com/fwlink/?LinkId=48289) y [RFC 3986](https://go.microsoft.com/fwlink/?LinkId=90453).
@@ -36,7 +37,7 @@ En la tabla siguiente se describen los identificadores que administran con más 
 |Tipo de notificación|Este identificador se usa para definir el tipo de notificación.  Lo usan este Servicio de federación, los proveedores de notificaciones y los usuarios de confianza al enviar y recibir notificaciones.|Cuando el Servicio de federación recibe notificaciones de un proveedor de notificaciones, las reglas de notificaciones asociadas a la relación de confianza para proveedor de notificaciones correspondiente permiten al administrador comparar tipos de notificaciones y procesar notificaciones.  Las reglas de notificaciones asociadas a una relación de confianza para usuario autenticado también permiten al administrador comparar tipos de notificaciones a partir de las notificaciones que salen de las reglas de relación de confianza para proveedor de notificaciones y decidir qué notificaciones emitirá.|
 
 ## <a name="uri-prefix-matching-for-relying-party-identifiers"></a>Coincidencia de prefijos URI para los identificadores de usuario de confianza
-La sintaxis de la ruta de acceso de un URI está organizada jerárquicamente y está delimitada por todos los \/ caracteres "" o todos los caracteres ":".Por lo tanto, puede que la ruta de acceso se divida en secciones de ruta de acceso según el carácter delimitador.Cuando la coincidencia de prefijos, cada sección debe ser una coincidencia completa según las reglas de coincidencia, \( estas reglas rigen el uso de mayúsculas y minúsculas en las coincidencias \) . Para obtener más información acerca de las reglas de coincidencia, consulte las RFC mencionadas anteriormente.
+La sintaxis de la ruta de acceso de un URI está organizada jerárquicamente y está delimitada por todos los \/ caracteres "" o todos los caracteres ":".  Por lo tanto, puede que la ruta de acceso se divida en secciones de ruta de acceso según el carácter delimitador.  Cuando la coincidencia de prefijos, cada sección debe ser una coincidencia completa según las reglas de coincidencia, \( estas reglas rigen el uso de mayúsculas y minúsculas en las coincidencias \) . Para obtener más información acerca de las reglas de coincidencia, consulte las RFC mencionadas anteriormente.
 
 Cuando un usuario de confianza se identifica en una solicitud al Servicio de federación, AD FS usa la lógica de coincidencia de prefijos para determinar si hay una relación de confianza para usuario autenticado coincidente en la base de datos de configuración de AD FS.
 
@@ -61,16 +62,16 @@ La tabla siguiente incluye ejemplos adicionales.
 
 |Identificador de usuario de confianza en la base de datos de configuración de AD FS|Identificador de usuario de confianza en el mensaje de las solicitudes|¿El identificador de la solicitud coincide con el identificador de configuración?|Motivo|
 |------------------------------------------------------------|-----------------------------------------------|------------------------------------------------------------|----------|
-|http: \/ \/ contoso.com|http: \/ \/ contoso.com|TRUE|Coincidencia exacta|
-|http: \/ \/ contoso.com\/|http: \/ \/ contoso.com|TRUE|Se ignoran las barras diagonales finales|
-|http: \/ \/ contoso.com|http: \/ \/ contoso.com\/|TRUE|Se ignoran las barras diagonales finales|
-|http: \/ \/ contoso.com|http: \/ \/ contoso.com \/ HR|TRUE|URI1 no tiene ninguna ruta de acceso y coincide con el esquema y la autoridad para URI2|
-|http: \/ \/ contoso.com \/ HR|http: \/ \/ contoso.com \/ HR \/ Web|TRUE|Las primeras secciones de la ruta de acceso coinciden, URI1 no tiene una segunda sección de ruta de acceso.|
-|http: \/ \/ contoso.com \/ HR\/|http: \/ \/ contoso.com \/ HRW \/ Main|FALSE|La sección 1 de la ruta de acceso de URI1 no coincide con la sección 1 de la ruta de acceso de URI2|
-|http: \/ \/ contoso.com \/ HR|http: \/ \/ contoso.com|FALSE|URI1 tiene más secciones de ruta de acceso que URI2.|
-|http: \/ \/ contoso.com \/ HR|http: \/ \/ contoso.com \/ HRWeb|FALSE|Las primeras secciones de la ruta de acceso no coinciden.|
-|https: \/ \/ contoso.com|http: \/ \/ contoso.com|FALSE|Las partes del esquema no coinciden.|
-|http: \/ \/ STS.contoso.com|http: \/ \/ contoso.com|FALSE|Las partes de la autoridad no coinciden.|
-|http: \/ \/ contoso.com|http: \/ \/ STS.contoso.com|FALSE|Las partes de la autoridad no coinciden.|
+|http: \/ \/ contoso.com|http: \/ \/ contoso.com|true|Coincidencia exacta|
+|http: \/ \/ contoso.com\/|http: \/ \/ contoso.com|true|Se ignoran las barras diagonales finales|
+|http: \/ \/ contoso.com|http: \/ \/ contoso.com\/|true|Se ignoran las barras diagonales finales|
+|http: \/ \/ contoso.com|http: \/ \/ contoso.com \/ HR|true|URI1 no tiene ninguna ruta de acceso y coincide con el esquema y la autoridad para URI2|
+|http: \/ \/ contoso.com \/ HR|http: \/ \/ contoso.com \/ HR \/ Web|true|Las primeras secciones de la ruta de acceso coinciden, URI1 no tiene una segunda sección de ruta de acceso.|
+|http: \/ \/ contoso.com \/ HR\/|http: \/ \/ contoso.com \/ HRW \/ Main|false|La sección 1 de la ruta de acceso de URI1 no coincide con la sección 1 de la ruta de acceso de URI2|
+|http: \/ \/ contoso.com \/ HR|http: \/ \/ contoso.com|false|URI1 tiene más secciones de ruta de acceso que URI2.|
+|http: \/ \/ contoso.com \/ HR|http: \/ \/ contoso.com \/ HRWeb|false|Las primeras secciones de la ruta de acceso no coinciden.|
+|https: \/ \/ contoso.com|http: \/ \/ contoso.com|false|Las partes del esquema no coinciden.|
+|http: \/ \/ STS.contoso.com|http: \/ \/ contoso.com|false|Las partes de la autoridad no coinciden.|
+|http: \/ \/ contoso.com|http: \/ \/ STS.contoso.com|false|Las partes de la autoridad no coinciden.|
 
 

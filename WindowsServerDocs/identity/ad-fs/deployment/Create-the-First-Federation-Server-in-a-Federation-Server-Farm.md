@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo crear el primer servidor de Federación en una granja de servidores de Federación
 ms.assetid: 5e334c4e-75a7-453c-83e8-5ab4243cc685
 title: Crear el primer servidor de federación en una granja de servidores de federación
 author: billmath
@@ -6,12 +7,12 @@ manager: femila
 ms.date: 05/31/2017
 ms.topic: article
 ms.author: billmath
-ms.openlocfilehash: 8c487bbb3e696be5a0817a2c19646c392e479636
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b58db4c771a4fe40a44f972521a8664f2c876e5d
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87962939"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97044983"
 ---
 # <a name="create-the-first-federation-server-in-a-federation-server-farm"></a>Crear el primer servidor de federación en una granja de servidores de federación
 
@@ -34,7 +35,7 @@ Para completar este procedimiento, lo mínimo que se necesita es pertenecer a Ad
 
 2.  En la **Página principal**, comprueba que la opción **Crear un nuevo servicio de federación** esté seleccionada y, después, haz clic en **Siguiente**.
 
-3.  En la página **seleccionar \- implementación independiente o de granja** , haga clic en **nueva granja**de servidores de Federación y, a continuación, haga clic en **siguiente**.
+3.  En la página **seleccionar \- implementación independiente o de granja** , haga clic en **nueva granja** de servidores de Federación y, a continuación, haga clic en **siguiente**.
 
 4.  En la página **Especificar el nombre del Servicio de federación**, comprueba que el **Certificado SSL** que se muestra es correcto. Si no es el certificado correcto, selecciona el adecuado en la lista **Certificado SSL**.
 
@@ -43,7 +44,7 @@ Para completar este procedimiento, lo mínimo que se necesita es pertenecer a Ad
     > [!NOTE]
     > El asistente no te permitirá invalidar el certificado si hay un certificado SSL configurado para IIS. Esto garantiza que se conserve cualquier configuración IIS anterior prevista para los certificados SSL. Para solucionar esta restricción, puedes quitar el certificado o reconfigurarlo manualmente con la consola de administración IIS.
 
-5.  Si la base de datos de AD FS que seleccionó ya existe, aparece la página **Se detectó una base de datos de configuración de AD FS existente**. Si aparece dicha página, haz clic en **Eliminar base de datos** y, después, en **Siguiente**.
+5.  Si el AD FS base de datos que seleccionó ya existe, aparecerá la página **base de datos de configuración de AD FS existente detectada** . Si aparece dicha página, haz clic en **Eliminar base de datos** y, después, en **Siguiente**.
 
     > [!CAUTION]
     > Seleccione esta opción solo cuando esté seguro de que los datos en esta base de datos de AD FS no son importantes o no se usan en una granja de servidores de federación de producción.

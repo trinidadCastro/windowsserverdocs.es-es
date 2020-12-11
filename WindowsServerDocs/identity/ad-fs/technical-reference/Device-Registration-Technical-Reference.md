@@ -1,4 +1,5 @@
 ---
+description: 'Más información sobre: referencia técnica del registro de dispositivos'
 ms.assetid: 69ec592a-5499-4249-8ba0-afa356a8ff75
 title: Referencia técnica del registro de dispositivos
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: fc42813829116cf3755d7807bec4e5fb00094c8e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: abe97d43e75bee50374334e33ffb8a29787ae688
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87937984"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048073"
 ---
 # <a name="device-registration-technical-reference"></a>Referencia técnica del registro de dispositivos
 El servicio de registro de dispositivos \( DRS \) es un nuevo servicio de Windows que se incluye con el rol de Servicio de federación de Active Directory en Windows Server 2012 R2.  El DRS debe estar instalado y configurado en todos los servidores de federación en la granja de AD FS.  Para obtener información sobre la implementación de DRS, consulte [Configuración de un servidor de federación con el servicio de registro de dispositivos](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn486831(v=ws.11)).
@@ -20,7 +21,7 @@ El servicio de registro de dispositivos \( DRS \) es un nuevo servicio de Window
 Los siguientes objetos de Active Directory se crean como parte del servicio de registro de dispositivos.
 
 ### <a name="device-registration-configuration"></a>Configuración del registro de dispositivos
-La configuración del registro del dispositivos se almacena en el contexto de nomenclatura de configuración del bosque de Active Directory. \(Por ejemplo, ** \= configuración del registro de dispositivos CN, servicios cn \= , <contexto de nomenclatura de configuración \- \->** \) . Este objeto se crea cuando se inicia el bosque de Active Directory para el registro de dispositivos.
+La configuración del registro del dispositivos se almacena en el contexto de nomenclatura de configuración del bosque de Active Directory. \(Por ejemplo, **\= configuración del registro de dispositivos CN, servicios cn \= , <contexto de nomenclatura de configuración \- \->** \) . Este objeto se crea cuando se inicia el bosque de Active Directory para el registro de dispositivos.
 
 La configuración del registro del dispositivo incluye los siguientes elementos:
 
@@ -58,7 +59,7 @@ Los dispositivos registrados incluyen los siguientes elementos:
 
     Tipo de sistema operativo del dispositivo.
 
--   **Versión de SO**
+-   **Versión del SO.**
 
     La versión del sistema operativo en el dispositivo.
 

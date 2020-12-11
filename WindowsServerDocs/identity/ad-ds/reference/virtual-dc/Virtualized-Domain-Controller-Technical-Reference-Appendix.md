@@ -1,4 +1,5 @@
 ---
+description: 'Más información sobre: Apéndice de referencia técnica del controlador de dominio virtualizado'
 ms.assetid: 73a4deba-7da6-4eae-8fdd-2a4d369f9cbb
 title: Apéndice de la referencia técnica de controladores de dominio virtualizados
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: f387fd0e87887ea8e69732efa405299fb18fe800
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 3f59760b5519d636ad879e11e692ddcbdc6c3129
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93070907"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97045023"
 ---
 # <a name="virtualized-domain-controller-technical-reference-appendix"></a>Apéndice de la referencia técnica de controladores de dominio virtualizados
 
@@ -33,7 +34,7 @@ En este tema se explica:
 
 -   **Disco de diferenciación** : una copia de una máquina virtual que comparte discos virtuales con la máquina virtual principal de manera continua. Normalmente, esto ahorra espacio en disco y permite que varias máquinas virtuales usen la misma instalación de software.
 
--   **Copia de máquina virtual** : una copia del sistema de archivos de todos los archivos y carpetas relacionados de una máquina virtual.
+-   **Copia de máquina virtual**: una copia del sistema de archivos de todos los archivos y carpetas relacionados de una máquina virtual.
 
 -   **Copia de archivo VHD** : una copia del VHD de una máquina virtual
 

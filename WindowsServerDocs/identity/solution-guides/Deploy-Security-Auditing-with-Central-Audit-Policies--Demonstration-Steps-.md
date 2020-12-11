@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo implementar la auditoría de seguridad con directivas de auditoría central (pasos de demostración)
 ms.assetid: 22347a94-aeea-44b4-85fb-af2c968f432a
 title: Implementar la auditoría de seguridad con directivas de auditoría central (pasos de demostración)
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 9fed82f80c03c0d8490dc88b1ec7c7d7c48a4c06
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 6d55fc8b1d7a1f1c7f94b09c773a079f3488862c
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87956082"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97046503"
 ---
 # <a name="deploy-security-auditing-with-central-audit-policies-demonstration-steps"></a>Implementar la auditoría de seguridad con directivas de auditoría central (pasos de demostración)
 
@@ -87,7 +88,7 @@ Una vez aplicada la configuración de directiva de grupo, puede comprobar si la 
 > [!IMPORTANT]
 > Se genera un nuevo evento de inicio de sesión en el equipo donde se encuentra el recurso, en nombre del usuario para el cual se está comprobando el acceso efectivo. Al analizar los registros de auditoría de seguridad de la actividad de inicio de sesión de los usuarios para diferenciar entre los eventos de inicio de sesión que se generan debido al acceso efectivo y aquellos que se generan debido al inicio de sesión de usuario interactivo en una red, se incluye información de Nivel de suplantación. Cuando se genera el evento de inicio de sesión debido a un acceso efectivo, el Nivel de suplantación será Identidad. Un inicio de sesión de usuario interactivo en la red suele generar un evento de inicio de sesión con Nivel de suplantación = Suplantación o Delegación.
 
-## <a name="see-also"></a><a name="BKMK_Links"></a>Vea también
+## <a name="see-also"></a><a name="BKMK_Links"></a>Otras referencias
 
 -   [Escenario: Auditoría de acceso a archivos](Scenario--File-Access-Auditing.md)
 

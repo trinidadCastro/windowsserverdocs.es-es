@@ -1,4 +1,5 @@
 ---
+description: 'Más información sobre: Introducción a las mejoras de Centro de administración de Active Directory (nivel 100)'
 ms.assetid: 074e63e9-976c-49da-8cba-9ae0b3325e34
 title: Introduction to Active Directory Administrative Center Enhancements (Level 100)
 ms.author: daveba
@@ -6,12 +7,12 @@ author: iainfoulds
 manager: daveba
 ms.date: 08/07/2018
 ms.topic: article
-ms.openlocfilehash: 4cb57ded79f77041b49f58a8779ba213840a253b
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 884710e1cf327940937d627fbbbc124bb99baca9
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93071017"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97045833"
 ---
 # <a name="introduction-to-active-directory-administrative-center-enhancements-level-100"></a>Introduction to Active Directory Administrative Center Enhancements (Level 100)
 
@@ -68,9 +69,9 @@ En este paso, elevará el nivel funcional del bosque. Primero debe elevar el niv
 
 1. Haga clic con el botón derecho en el icono de Windows PowerShell, haga clic en **Ejecutar como administrador** y escriba **dsac.exe** para abrir ADAC.
 
-2. Haga clic en **Administrar** , en **Agregar nodos de navegación** y seleccione el dominio de destino apropiado en el cuadro de diálogo **Agregar nodos de navegación** y, a continuación, haga clic en **Aceptar** .
+2. Haga clic en **Administrar**, en **Agregar nodos de navegación** y seleccione el dominio de destino apropiado en el cuadro de diálogo **Agregar nodos de navegación** y, a continuación, haga clic en **Aceptar**.
 
-3. Haga clic en el dominio de destino en el panel de navegación izquierdo, y en el panel de **tareas** , haga clic en **Elevar el nivel funcional del bosque** . Seleccione un nivel funcional del bosque que sea como mínimo Windows Server 2008 R2 o posterior y, a continuación, haga clic en **Aceptar** .
+3. Haga clic en el dominio de destino en el panel de navegación izquierdo, y en el panel de **tareas**, haga clic en **Elevar el nivel funcional del bosque**. Seleccione un nivel funcional del bosque que sea como mínimo Windows Server 2008 R2 o posterior y, a continuación, haga clic en **Aceptar**.
 
 ![Introducción al centro de administración de ad ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>comandos equivalentes de Windows PowerShell</em>_* _
 
@@ -80,7 +81,7 @@ Los siguientes cmdlets de Windows PowerShell realizan la misma función que el p
 Set-ADForestMode -Identity contoso.com -ForestMode Windows2008R2Forest -Confirm:$false
 ```
 
-En el caso del argumento _ *-Identity* *, especifique el nombre de dominio DNS completo.
+En el caso del argumento _ *-Identity**, especifique el nombre de dominio DNS completo.
 
 ### <a name="step-2-enable-recycle-bin"></a><a name="bkmk_enable_recycle_bin"></a>Paso 2: Enable Recycle Bin
 
@@ -90,9 +91,9 @@ En este paso, permitirá que la papelera de reciclaje restaure los objetos elimi
 
 1. Haga clic con el botón derecho en el icono de Windows PowerShell, haga clic en **Ejecutar como administrador** y escriba **dsac.exe** para abrir ADAC.
 
-2. Haga clic en **Administrar** , en **Agregar nodos de navegación** y seleccione el dominio de destino apropiado en el cuadro de diálogo **Agregar nodos de navegación** y, a continuación, haga clic en **Aceptar** .
+2. Haga clic en **Administrar**, en **Agregar nodos de navegación** y seleccione el dominio de destino apropiado en el cuadro de diálogo **Agregar nodos de navegación** y, a continuación, haga clic en **Aceptar**.
 
-3. En el panel **Tareas** , haga clic en **Habilitar papelera de reciclaje...** en el panel **Tareas** , haga clic en **Aceptar** en el cuadro de mensaje de advertencia y después en **Aceptar** para actualizar el mensaje de ADAC.
+3. En el panel **Tareas**, haga clic en **Habilitar papelera de reciclaje...** en el panel **Tareas**, haga clic en **Aceptar** en el cuadro de mensaje de advertencia y después en **Aceptar** para actualizar el mensaje de ADAC.
 
 4. Presione F5 para actualizar ADAC.
 
@@ -110,11 +111,11 @@ En los siguientes procedimientos, creará dos usuarios de prueba. Después crear
 
 #### <a name="to-create-test-users"></a>Para crear usuarios de prueba
 
-1. Haga clic con el botón derecho en el icono de Windows PowerShell, haga clic en _ *Ejecutar como administrador* * y escriba **dsac.exe** para abrir ADAC.
+1. Haga clic con el botón derecho en el icono de Windows PowerShell, haga clic en _ *Ejecutar como administrador** y escriba **dsac.exe** para abrir ADAC.
 
-2. Haga clic en **Administrar** , en **Agregar nodos de navegación** y seleccione el dominio de destino apropiado en el cuadro de diálogo **Agregar nodos de navegación** y, a continuación, haga clic en **Aceptar** .
+2. Haga clic en **Administrar**, en **Agregar nodos de navegación** y seleccione el dominio de destino apropiado en el cuadro de diálogo **Agregar nodos de navegación** y, a continuación, haga clic en **Aceptar**.
 
-3. En el panel de **tareas** , haga clic en **Nuevo** y, a continuación, en **Usuario** .
+3. En el panel de **tareas**, haga clic en **Nuevo** y, a continuación, en **Usuario**.
 
     ![Introducción al centro de administración de AD](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/ADDS_ADACNewUser.gif)
 
@@ -130,14 +131,14 @@ En los siguientes procedimientos, creará dos usuarios de prueba. Después crear
 #### <a name="to-create-a-test-group-and-add-users-to-the-group"></a>Para crear un grupo de prueba y agregarle usuarios
 
 1. Haga clic con el botón derecho en el icono de Windows PowerShell, haga clic en **Ejecutar como administrador** y escriba **dsac.exe** para abrir ADAC.
-2. Haga clic en **Administrar** , en **Agregar nodos de navegación** y seleccione el dominio de destino apropiado en el cuadro de diálogo **Agregar nodos de navegación** y, a continuación, haga clic en **Aceptar** .
-3. En el panel de **tareas** , haga clic en **Nuevo** y, a continuación, haga clic en **Grupo** .
-4. Escriba la siguiente información en **Grupo** y haga clic en **Aceptar** :
+2. Haga clic en **Administrar**, en **Agregar nodos de navegación** y seleccione el dominio de destino apropiado en el cuadro de diálogo **Agregar nodos de navegación** y, a continuación, haga clic en **Aceptar**.
+3. En el panel de **tareas**, haga clic en **Nuevo** y, a continuación, haga clic en **Grupo**.
+4. Escriba la siguiente información en **Grupo** y haga clic en **Aceptar**:
 
     -   **Nombre de Grupo: Grupo1**
 
-5. Haga clic en **group1** y después en el panel **Tareas** , haga clic en **Propiedades** .
-6. Haga clic en **Miembros** , en **Agregar** , escriba **test1;test2** y, a continuación, haga clic en **Aceptar** .
+5. Haga clic en **group1** y después en el panel **Tareas**, haga clic en **Propiedades**.
+6. Haga clic en **Miembros**, en **Agregar**, escriba **test1;test2** y, a continuación, haga clic en **Aceptar**.
 
 ![Introducción al centro de administración de ad ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>comandos equivalentes de Windows PowerShell</em>_* _
 
@@ -149,10 +150,10 @@ Add-ADGroupMember -Identity group1 -Member test1
 
 #### <a name="to-create-an-organizational-unit"></a>Para crear una unidad organizativa
 
-1. Haga clic con el botón derecho en el icono de Windows PowerShell, haga clic en _ *Ejecutar como administrador* * y escriba **dsac.exe** para abrir ADAC.
-2. Haga clic en **administrar** , en **agregar nodos de navegación** y seleccione el dominio de destino adecuado en el cuadro de diálogo **agregar nodos de navegación** y, a continuación, haga clic en * * Aceptar.
-3. En el panel de **tareas** , haga clic en **Nuevo** y, a continuación, haga clic en **Unidad organizativa** .
-4. Escriba la siguiente información en **Unidad organizativa** y haga clic en **Aceptar** :
+1. Haga clic con el botón derecho en el icono de Windows PowerShell, haga clic en _ *Ejecutar como administrador** y escriba **dsac.exe** para abrir ADAC.
+2. Haga clic en **administrar**, en **agregar nodos de navegación** y seleccione el dominio de destino adecuado en el cuadro de diálogo **agregar nodos de navegación** y, a continuación, haga clic en * * Aceptar.
+3. En el panel de **tareas**, haga clic en **Nuevo** y, a continuación, haga clic en **Unidad organizativa**.
+4. Escriba la siguiente información en **Unidad organizativa** y haga clic en **Aceptar**:
 
    - **NameOU1**
 
@@ -168,15 +169,15 @@ New-ADOrganizationalUnit -Name OU1 -Path "DC=fabrikam,DC=com"
 
 ### <a name="step-4-restore-deleted-objects"></a><a name="bkmk_restore_del_obj"></a>Paso 4: Restaurar objetos eliminados
 
-En los procedimientos siguientes, restaurará los objetos eliminados del contenedor _ *Deleted Objects* * a su ubicación original y a otra ubicación.
+En los procedimientos siguientes, restaurará los objetos eliminados del contenedor _ *Deleted Objects** a su ubicación original y a otra ubicación.
 
 #### <a name="to-restore-deleted-objects-to-their-original-location"></a>Para restaurar los objetos eliminados a su ubicación original
 
 1. Haga clic con el botón derecho en el icono de Windows PowerShell, haga clic en **Ejecutar como administrador** y escriba **dsac.exe** para abrir ADAC.
 
-2. Haga clic en **Administrar** , en **Agregar nodos de navegación** y seleccione el dominio de destino apropiado en el cuadro de diálogo **Agregar nodos de navegación** y, a continuación, haga clic en **Aceptar** .
+2. Haga clic en **Administrar**, en **Agregar nodos de navegación** y seleccione el dominio de destino apropiado en el cuadro de diálogo **Agregar nodos de navegación** y, a continuación, haga clic en **Aceptar**.
 
-3. Seleccione los usuarios **test1** y **test2** , haga clic en **Eliminar** en el panel **Tareas** y después haga clic en **Sí** para confirmar la eliminación.
+3. Seleccione los usuarios **test1** y **test2**, haga clic en **Eliminar** en el panel **Tareas** y después haga clic en **Sí** para confirmar la eliminación.
 
     ![Introducción al centro de administración de ad ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>comandos equivalentes de Windows PowerShell</em>_* _
 
@@ -186,12 +187,12 @@ En los procedimientos siguientes, restaurará los objetos eliminados del contene
     Get-ADUser -Filter 'Name -Like "_test*"'|Remove-ADUser -Confirm:$false
     ```
 
-4. Navegue al contenedor **Deleted Objects** , seleccione **test2** y **test1** , y después haga clic en **Restaurar** en el panel de **tareas** .
+4. Navegue al contenedor **Deleted Objects**, seleccione **test2** y **test1**, y después haga clic en **Restaurar** en el panel de **tareas**.
 
 5. Para confirmar que los objetos se restauraron a su ubicación original, navegue al dominio de destino y compruebe que se enumeren las cuentas de usuario.
 
     > [!NOTE]
-    > Si navega a las **propiedades** de las cuentas de usuario **test1** y **test2** , y después hace clic en **Miembro de** , verá que su pertenencia al grupo también se restauró.
+    > Si navega a las **propiedades** de las cuentas de usuario **test1** y **test2**, y después hace clic en **Miembro de**, verá que su pertenencia al grupo también se restauró.
 
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.
 
@@ -205,15 +206,15 @@ Get-ADObject -Filter 'Name -Like "_test*"' -IncludeDeletedObjects | Restore-ADOb
 
 1. Haga clic con el botón derecho en el icono de Windows PowerShell, haga clic en **Ejecutar como administrador** y escriba **dsac.exe** para abrir ADAC.
 
-2. Haga clic en **Administrar** , en **Agregar nodos de navegación** y seleccione el dominio de destino apropiado en el cuadro de diálogo **Agregar nodos de navegación** y, a continuación, haga clic en **Aceptar** .
+2. Haga clic en **Administrar**, en **Agregar nodos de navegación** y seleccione el dominio de destino apropiado en el cuadro de diálogo **Agregar nodos de navegación** y, a continuación, haga clic en **Aceptar**.
 
-3. Seleccione los usuarios **test1** y **test2** , haga clic en **Eliminar** en el panel **Tareas** y después haga clic en **Sí** para confirmar la eliminación.
+3. Seleccione los usuarios **test1** y **test2**, haga clic en **Eliminar** en el panel **Tareas** y después haga clic en **Sí** para confirmar la eliminación.
 
-4. Navegue al contenedor **Deleted Objects** , seleccione **test2** y **test1** , y después haga clic en **Restaurar** en el panel de **tareas** .
+4. Navegue al contenedor **Deleted Objects**, seleccione **test2** y **test1**, y después haga clic en **Restaurar** en el panel de **tareas**.
 
-5. Seleccione **OU1** y haga clic en **Aceptar** .
+5. Seleccione **OU1** y haga clic en **Aceptar**.
 
-6. Para confirmar que los objetos se restauraron a **OU1** , navegue al dominio de destino, haga doble clic en **OU1** y compruebe que las cuentas de usuario estén enumeradas.
+6. Para confirmar que los objetos se restauraron a **OU1**, navegue al dominio de destino, haga doble clic en **OU1** y compruebe que las cuentas de usuario estén enumeradas.
 
 ![Introducción al centro de administración de ad ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>comandos equivalentes de Windows PowerShell</em>_* _
 
@@ -266,9 +267,9 @@ En el siguiente procedimiento, elevará el nivel funcional del dominio de destin
 
 1. Haga clic con el botón derecho en el icono de Windows PowerShell, haga clic en **Ejecutar como administrador** y escriba **dsac.exe** para abrir ADAC.
 
-2. Haga clic en **Administrar** , en **Agregar nodos de navegación** y seleccione el dominio de destino apropiado en el cuadro de diálogo **Agregar nodos de navegación** y, a continuación, haga clic en **Aceptar** .
+2. Haga clic en **Administrar**, en **Agregar nodos de navegación** y seleccione el dominio de destino apropiado en el cuadro de diálogo **Agregar nodos de navegación** y, a continuación, haga clic en **Aceptar**.
 
-3. Haga clic en el dominio de destino en el panel de navegación izquierdo, y en el panel  **Tareas** , haga clic en **Elevar el nivel funcional del dominio** . Seleccione un nivel funcional del bosque que sea como mínimo Windows Server 2008 o posterior y, a continuación, haga clic en **Aceptar** .
+3. Haga clic en el dominio de destino en el panel de navegación izquierdo, y en el panel  **Tareas**, haga clic en **Elevar el nivel funcional del dominio**. Seleccione un nivel funcional del bosque que sea como mínimo Windows Server 2008 o posterior y, a continuación, haga clic en **Aceptar**.
 
 ![Introducción al centro de administración de ad ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>comandos equivalentes de Windows PowerShell</em>_* _
 
@@ -288,19 +289,19 @@ En el siguiente procedimiento, creará una directiva de contraseña específica 
 
 ##### <a name="to-create-a-new-fine-grained-password-policy"></a>Para crear una directiva de contraseña específica nueva
 
-1. Haga clic con el botón derecho en el icono de Windows PowerShell, haga clic en _ *Ejecutar como administrador* * y escriba **dsac.exe** para abrir ADAC.
+1. Haga clic con el botón derecho en el icono de Windows PowerShell, haga clic en _ *Ejecutar como administrador** y escriba **dsac.exe** para abrir ADAC.
 
-2. Haga clic en **Administrar** , en **Agregar nodos de navegación** y seleccione el dominio de destino apropiado en el cuadro de diálogo **Agregar nodos de navegación** y, a continuación, haga clic en **Aceptar** .
+2. Haga clic en **Administrar**, en **Agregar nodos de navegación** y seleccione el dominio de destino apropiado en el cuadro de diálogo **Agregar nodos de navegación** y, a continuación, haga clic en **Aceptar**.
 
-3. En el panel de navegación de ADAC, abra el contenedor **System** y, a continuación, haga clic en **Password Settings Container** .
+3. En el panel de navegación de ADAC, abra el contenedor **System** y, a continuación, haga clic en **Password Settings Container**.
 
-4. En el panel **Tareas** , haga clic en **Nuevo** y, a continuación, haga clic en **Configuración de contraseña** .
+4. En el panel **Tareas**, haga clic en **Nuevo** y, a continuación, haga clic en **Configuración de contraseña**.
 
-    Complete o edite los campos dentro de la página de propiedades para crear un nuevo objeto de **Configuración de contraseña** . Los campos **Nombre** y **Precedencia** son necesarios.
+    Complete o edite los campos dentro de la página de propiedades para crear un nuevo objeto de **Configuración de contraseña**. Los campos **Nombre** y **Precedencia** son necesarios.
 
     ![Introducción al centro de administración de AD](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/ADDS_ADACNewFGPP.gif)
 
-5. En **Se aplica directamente a** , en **Agregar** , escriba **grupo1** y, a continuación, haga clic en **Aceptar** .
+5. En **Se aplica directamente a**, en **Agregar**, escriba **grupo1** y, a continuación, haga clic en **Aceptar**.
 
     Así se asocia el objeto de directiva de contraseña con los miembros del grupo global que creó para el entorno de prueba.
 
@@ -321,15 +322,15 @@ En el siguiente procedimiento, verá la configuración de contraseña resultante
 
 ##### <a name="to-view-a-resultant-set-of-policies-for-a-user"></a>Para ver un conjunto de directivas resultante para un usuario
 
-1. Haga clic con el botón derecho en el icono de Windows PowerShell, haga clic en _ *Ejecutar como administrador* * y escriba **dsac.exe** para abrir ADAC.
+1. Haga clic con el botón derecho en el icono de Windows PowerShell, haga clic en _ *Ejecutar como administrador** y escriba **dsac.exe** para abrir ADAC.
 
-2. Haga clic en **Administrar** , en **Agregar nodos de navegación** y seleccione el dominio de destino apropiado en el cuadro de diálogo **Agregar nodos de navegación** y, a continuación, haga clic en **Aceptar** .
+2. Haga clic en **Administrar**, en **Agregar nodos de navegación** y seleccione el dominio de destino apropiado en el cuadro de diálogo **Agregar nodos de navegación** y, a continuación, haga clic en **Aceptar**.
 
 3. Seleccione un usuario, **test1** que pertenezca al grupo **group1** con el que asoció una directiva de contraseña específica en el [Paso 3: Crear una directiva de contraseña específica](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_create_fgpp).
 
-4. Haga clic en **Ver configuración de contraseña resultante** en el panel **Tareas** .
+4. Haga clic en **Ver configuración de contraseña resultante** en el panel **Tareas**.
 
-5. Examine la directiva de configuración de contraseñas y haga clic en **Cancelar** .
+5. Examine la directiva de configuración de contraseñas y haga clic en **Cancelar**.
 
 ![Introducción al centro de administración de ad ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>comandos equivalentes de Windows PowerShell</em>_* _
 
@@ -345,17 +346,17 @@ En el siguiente procedimiento, editará la directiva de contraseña específica 
 
 ##### <a name="to-edit-a-fine-grained-password-policy"></a>Para editar una directiva de contraseña específica
 
-1. Haga clic con el botón derecho en el icono de Windows PowerShell, haga clic en _ *Ejecutar como administrador* * y escriba **dsac.exe** para abrir ADAC.
+1. Haga clic con el botón derecho en el icono de Windows PowerShell, haga clic en _ *Ejecutar como administrador** y escriba **dsac.exe** para abrir ADAC.
 
-2. Haga clic en **Administrar** , en **Agregar nodos de navegación** y seleccione el dominio de destino apropiado en el cuadro de diálogo **Agregar nodos de navegación** y, a continuación, haga clic en **Aceptar** .
+2. Haga clic en **Administrar**, en **Agregar nodos de navegación** y seleccione el dominio de destino apropiado en el cuadro de diálogo **Agregar nodos de navegación** y, a continuación, haga clic en **Aceptar**.
 
-3. En el **panel de navegación** del ADAC, expanda **Sistema** y haga clic en **Contenedor de configuraciones de contraseña** .
+3. En el **panel de navegación** del ADAC, expanda **Sistema** y haga clic en **Contenedor de configuraciones de contraseña**.
 
-4. Seleccione la directiva de contraseña específica que creó en el [Paso 3: Crear una directiva de contraseña específica](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_create_fgpp) y haga clic en **Propiedades** en el panel de **tareas** .
+4. Seleccione la directiva de contraseña específica que creó en el [Paso 3: Crear una directiva de contraseña específica](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_create_fgpp) y haga clic en **Propiedades** en el panel de **tareas**.
 
-5. En **Exigir historial de contraseñas** , cambie el valor de **Número de contraseñas recordadas** a **30** .
+5. En **Exigir historial de contraseñas**, cambie el valor de **Número de contraseñas recordadas** a **30**.
 
-6. Haga clic en **Aceptar** .
+6. Haga clic en **OK**.
 
 ![Introducción al centro de administración de ad ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>comandos equivalentes de Windows PowerShell</em>_* _
 
@@ -369,17 +370,17 @@ Set-ADFineGrainedPasswordPolicy TestPswd -PasswordHistoryCount:"30"
 
 ##### <a name="to-delete-a-fine-grained-password-policy"></a>Para eliminar una directiva de contraseña específica
 
-1. Haga clic con el botón derecho en el icono de Windows PowerShell, haga clic en _ *Ejecutar como administrador* * y escriba **dsac.exe** para abrir ADAC.
+1. Haga clic con el botón derecho en el icono de Windows PowerShell, haga clic en _ *Ejecutar como administrador** y escriba **dsac.exe** para abrir ADAC.
 
-2. Haga clic en **Administrar** , en **Agregar nodos de navegación** y seleccione el dominio de destino apropiado en el cuadro de diálogo **Agregar nodos de navegación** y, a continuación, haga clic en **Aceptar** .
+2. Haga clic en **Administrar**, en **Agregar nodos de navegación** y seleccione el dominio de destino apropiado en el cuadro de diálogo **Agregar nodos de navegación** y, a continuación, haga clic en **Aceptar**.
 
-3. En el panel de navegación del ADAC, expanda **Sistema** y haga clic en **Contenedor de configuraciones de contraseña** .
+3. En el panel de navegación del ADAC, expanda **Sistema** y haga clic en **Contenedor de configuraciones de contraseña**.
 
-4. Seleccione la directiva de contraseña específica que creó en el [Paso 3: Crear una directiva de contraseña específica](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_create_fgpp) y haga clic en **Propiedades** en el panel de **tareas** .
+4. Seleccione la directiva de contraseña específica que creó en el [Paso 3: Crear una directiva de contraseña específica](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_create_fgpp) y haga clic en **Propiedades** en el panel de **tareas**.
 
-5. Desactive la casilla **Proteger contra eliminación accidental** y haga clic en **Aceptar** .
+5. Desactive la casilla **Proteger contra eliminación accidental** y haga clic en **Aceptar**.
 
-6. Seleccione la directiva de contraseña específica y, en el panel de **tarea** , haga clic en **Eliminar** .
+6. Seleccione la directiva de contraseña específica y, en el panel de **tarea**, haga clic en **Eliminar**.
 
 7. Haga clic en **Aceptar** en el cuadro de diálogo de confirmación.
 
@@ -401,7 +402,7 @@ Cuando use el visor del historial de Windows PowerShell en Windows Server 2012 o
 - Para usar el visor de scripts de Windows PowerShell, debe usar Windows Server 2012 o una versión más reciente de ADAC
 
     > [!NOTE]
-    > Puede usar _ *Administrador del servidor* * para instalar herramientas de administración remota del servidor (RSAT) con el fin de usar la versión correcta de centro de administración de Active Directory para administrar la papelera de reciclaje a través de una interfaz de usuario.
+    > Puede usar _ *Administrador del servidor** para instalar herramientas de administración remota del servidor (RSAT) con el fin de usar la versión correcta de centro de administración de Active Directory para administrar la papelera de reciclaje a través de una interfaz de usuario.
     >
     > Para obtener información sobre cómo instalar RSAT, consulte el artículo [herramientas de administración remota del servidor](../../../../remote/remote-server-administration-tools.md).
 
@@ -409,17 +410,17 @@ Cuando use el visor del historial de Windows PowerShell en Windows Server 2012 o
 
 ### <a name="windows-powershell-history-viewer-step-by-step"></a>Procedimiento paso a paso para el Visor del historial de Windows PowerShell
 
-En el siguiente procedimiento, usará el Visor del historial de Windows PowerShell en el ADAC para crear un script de Windows PowerShell.  Antes de comenzar, quite el usuario **test1** del grupo **group1** .
+En el siguiente procedimiento, usará el Visor del historial de Windows PowerShell en el ADAC para crear un script de Windows PowerShell.  Antes de comenzar, quite el usuario **test1** del grupo **group1**.
 
 #### <a name="to-construct-a-script-using-powershell-history-viewer"></a>Para crear un script mediante el uso del Visor del historial de PowerShell
 
 1. Haga clic con el botón derecho en el icono de Windows PowerShell, haga clic en **Ejecutar como administrador** y escriba **dsac.exe** para abrir ADAC.
 
-2. Haga clic en **Administrar** , en **Agregar nodos de navegación** y seleccione el dominio de destino apropiado en el cuadro de diálogo **Agregar nodos de navegación** y, a continuación, haga clic en **Aceptar** .
+2. Haga clic en **Administrar**, en **Agregar nodos de navegación** y seleccione el dominio de destino apropiado en el cuadro de diálogo **Agregar nodos de navegación** y, a continuación, haga clic en **Aceptar**.
 
 3. Expanda el panel **Historial de Windows PowerShell** en la parte inferior de la pantalla del ADAC.
 
-4. Seleccione el usuario **test1** .
+4. Seleccione el usuario **test1**.
 
 5. Haga clic en **Agregar al grupo...** en el panel **tareas** .
 

@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo agregar un certificado de Token-Decrypting
 ms.assetid: 27e1e299-0beb-4e86-8143-1ba031dc3502
 title: Agregar un certificado de descifrado de tokens
 author: billmath
@@ -6,12 +7,12 @@ manager: femila
 ms.date: 05/31/2017
 ms.topic: article
 ms.author: billmath
-ms.openlocfilehash: 0c6e2fc3913a6a483d71441a5e2aa1f0aabb7cbb
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 86f45f534567b88ad07c1334c0536ebcfe05524e
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87947636"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97047893"
 ---
 # <a name="add-a-token-decrypting-certificate"></a>Agregar un certificado de descifrado de tokens
 
@@ -26,9 +27,9 @@ La pertenencia al grupo **Administradores** o equivalente en el equipo local es 
 
 ### <a name="to-add-a-token-decrypting-certificate"></a>Para agregar un \- certificado de descifrado de tokens
 
-1.  En la pantalla **Inicio** , escriba**AD FS Management**y, a continuación, presione Entrar.
+1.  En la pantalla **Inicio** , escriba **AD FS Management** y, a continuación, presione Entrar.
 
-2.  En el árbol de consola, haga doble \- clic en **servicio**y, a continuación, haga clic en **certificados**.
+2.  En el árbol de consola, haga doble \- clic en **servicio** y, a continuación, haga clic en **certificados**.
 
 3.  En el panel **acciones** , haga clic en el vínculo **Agregar certificado de \- descifrado de tokens** .
 

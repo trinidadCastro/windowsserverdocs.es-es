@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: lenguaje de reglas de transformación de notificaciones'
 ms.assetid: e831f781-3c45-4d44-b411-160d121d1324
 title: Lenguaje de reglas de transformación de notificaciones
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: c4b35c738e275456929b7f90fec9be605876a4e6
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: af3387464cb2fc0d923a22b9dfac211b6c499c6b
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952908"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048363"
 ---
 # <a name="claims-transformation-rules-language"></a>Lenguaje de reglas de transformación de notificaciones
 
@@ -150,7 +151,7 @@ A continuación se muestran una sintaxis especial para las reglas:
     C1:[] => Issule (claim = C1);
     ```
 
-## <a name="security-considerations"></a>Consideraciones de seguridad
+## <a name="security-considerations"></a>Consideraciones sobre la seguridad
 **Notificaciones que entran en un bosque**
 
 Las notificaciones presentadas por entidades de seguridad que son de entrada a un bosque deben inspeccionarse minuciosamente para asegurarse de que se permiten o se emiten solo las notificaciones correctas. Las notificaciones inadecuadas pueden poner en peligro la seguridad del bosque y esto debe ser una consideración importante a la hora de crear directivas de transformación para las notificaciones que entran en un bosque.
@@ -308,7 +309,7 @@ En la tabla siguiente se muestra el conjunto completo de cadenas de terminal y l
 |"=~"|REGEXP_MATCH|
 |"!~"|REGEXP_NOT_MATCH|
 |"="|QUITAR|
-|"&&"|AND|
+|"&&"|y|
 |publicación|PROBLEMA|
 |automáticamente|TYPE|
 |valor|VALOR|

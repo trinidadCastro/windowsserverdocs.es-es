@@ -1,17 +1,18 @@
 ---
 ms.assetid: e4c31187-f15f-410b-bb79-8d63e2f2b421
 title: Actualizar controladores de dominio a Windows Server 2012 R2 y Windows Server 2012
+description: Más información sobre cómo actualizar controladores de dominio a Windows Server 2012 R2 y Windows Server 2012
 ms.author: daveba
 author: iainfoulds
 manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
-ms.openlocfilehash: be94260946c696eed060b9b2d85f5042ed737a1f
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: d60a4073d39cae39bea53ea57a93424f6573ba12
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96866354"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97045963"
 ---
 # <a name="upgrade-domain-controllers-to-windows-server-2012-r2-and-windows-server-2012"></a>Actualizar controladores de dominio a Windows Server 2012 R2 y Windows Server 2012
 
@@ -157,17 +158,17 @@ A partir de Windows Server 2008, los controladores de dominio también tienen la
 |--|--|--|--|
 | AllowNT4Crypto | Disabled | Disabled | Los clientes de Bloque de mensajes del servidor (SMB) de terceros pueden no ser compatibles con la configuración predeterminada de seguridad en los controladores de dominio. En todos los casos, esta configuración se puede relajar para permitir la interoperabilidad, pero solamente a costa de la seguridad. Para obtener más información, vea el [artículo 942564](https://go.microsoft.com/fwlink/?LinkId=164558) de Microsoft Knowledge base ( https://go.microsoft.com/fwlink/?LinkId=164558) . |
 | DES | habilitado | Disabled | [Artículo 977321](https://go.microsoft.com/fwlink/?LinkId=177717) de Microsoft Knowledge base (https://go.microsoft.com/fwlink/?LinkId=177717) |
-| Protección extendida/CBT para autenticación integrada | N/D | habilitado | Vea el [aviso de seguridad de Microsoft (937811)](https://go.microsoft.com/fwlink/?LinkId=164559) ( https://go.microsoft.com/fwlink/?LinkId=164559) y el [artículo 976918](https://go.microsoft.com/fwlink/?LinkId=178251) de Microsoft Knowledge base () https://go.microsoft.com/fwlink/?LinkId=178251) .<p>Revise e instale la revisión del [artículo 977073](https://go.microsoft.com/fwlink/?LinkId=186394) ( https://go.microsoft.com/fwlink/?LinkId=186394) en Microsoft Knowledge base según sea necesario). |
+| Protección extendida/CBT para autenticación integrada | N/D | Habilitado | Vea el [aviso de seguridad de Microsoft (937811)](https://go.microsoft.com/fwlink/?LinkId=164559) ( https://go.microsoft.com/fwlink/?LinkId=164559) y el [artículo 976918](https://go.microsoft.com/fwlink/?LinkId=178251) de Microsoft Knowledge base () https://go.microsoft.com/fwlink/?LinkId=178251) .<p>Revise e instale la revisión del [artículo 977073](https://go.microsoft.com/fwlink/?LinkId=186394) ( https://go.microsoft.com/fwlink/?LinkId=186394) en Microsoft Knowledge base según sea necesario). |
 | LMv2 | habilitado | Disabled | [Artículo 976918](https://go.microsoft.com/fwlink/?LinkId=178251) de Microsoft Knowledge base (https://go.microsoft.com/fwlink/?LinkId=178251) |
 
 ## <a name="operating-system-requirements"></a><a name="BKMK_SysReqs"></a>Requisitos de sistema operativo
 
 En la tabla siguiente se enumeran los requisitos mínimos del sistema para Windows Server 2012. Para obtener más información sobre los requisitos de sistema, así como información de instalación previa, consulte [Instalar Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134246(v=ws.11)). No hay requisitos de sistema adicionales para instalar un nuevo bosque de Active Directory, si bien deberá agregar memoria suficiente para almacenar en caché el contenido de la base de datos de Active Directory, ya que de este modo obtendrá un mejor rendimiento de los controladores de dominio, las solicitudes de cliente LDAP y las aplicaciones habilitadas para Active Directory. Si estás actualizando un controlador de dominio existente o agregando un nuevo controlador de dominio a otro bosque, revisa la sección siguiente para asegurarte de que el servidor cumpla con los requisitos de espacio en disco.
 
-| Requisito | Value |
+| Requisito | Valor |
 | ---------- | ----- |
 | Procesador | Procesador de 64 bits a 1,4 GHz |
-| MEMORIA RAM | 512 MB |
+| RAM | 512 MB |
 | Requisitos de espacio libre en disco | 32 GB |
 | Resolución de pantalla | 800x600 o superior |
 | Varios | Unidad de DVD, teclado y acceso a Internet |
@@ -289,7 +290,7 @@ En la siguiente tabla se recogen las aplicaciones de Microsoft comunes que se in
 |Windows Server Update Services 3.0|El artículo [2734608](https://support.microsoft.com/kb/2734608) de Knowledge base permite que los servidores que ejecutan Windows Server Update Services (WSUS) 3,0 SP2 proporcionen actualizaciones a los equipos que ejecutan Windows 8 o windows Server 2012: **Nota:** los clientes con entornos independientes de WSUS 3,0 SP2 o Configuration Manager 2007 entornos de Service Pack 2 con WSUS 3,0 SP2 requieren que [2734608](https://support.microsoft.com/kb/2734608) administre correctamente equipos basados en Windows 8 o Windows Server 2012 como clientes.|
 |[Exchange 2013](/Exchange/plan-and-deploy/prerequisites)|Windows Server 2012 Standard y Datacenter son compatibles para los siguientes roles: maestro de esquema, servidor de catálogo global, controlador de dominio, buzón y servidor de acceso de cliente.<p>Nivel funcional de bosque: Windows Server 2003 o superior<p>Origen: Requisitos del sistema para Exchange 2013|
 |Exchange 2010|[Origen: Exchange 2010 Service Pack 3](https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange)<p>Exchange 2010 con Service Pack 3 se puede instalar en servidores miembro de Windows Server 2012.<p>En[Requisitos del sistema para Exchange 2010](/previous-versions/office/exchange-server-2010/aa996719(v=exchg.141)) se indican el maestro de esquema, catálogo global y controlador de dominio más recientes como Windows Server 2008 R2.<p>Nivel funcional de bosque: Windows Server 2003 o superior|
-|SQL Server 2012|Origen: KB [2681562](https://support.microsoft.com/kb/2681562)<p>Windows Server 2012 admite SQL Server 2012 RTM.|
+|SQL Server 2012|Origen: KB [2681562](https://support.microsoft.com/kb/2681562)<p>Windows Server 2012 admite SQL Server 2012 RTM.|
 |SQL Server 2008 R2|Origen: KB [2681562](https://support.microsoft.com/kb/2681562)<p>Se necesita SQL Server 2008 R2 con Service Pack 1 o posterior para instalar en Windows Server 2012.|
 |SQL Server 2008|Origen: KB [2681562](https://support.microsoft.com/kb/2681562)<p>Se necesita SQL Server 2008 con Service Pack 3 o posterior para instalar en Windows Server 2012.|
 |SQL Server 2005|Origen: KB [2681562](https://support.microsoft.com/kb/2681562)<p>No se puede instalar en Windows Server 2012.|
@@ -334,7 +335,7 @@ En la tabla siguiente se enumeran los problemas conocidos relacionados con la in
 | [2747974](https://support.microsoft.com/kb/2747974): el evento 2224 de clonación del controlador de dominio proporciona instrucciones incorrectas | Clonación de controladores de dominio virtuales | El identificador de evento 2224 indica erróneamente que las cuentas de servicio administradas se deben quitar antes de proceder a la clonación. Las cuentas de servicio administradas independientes se deben eliminar, pero las de grupo no impiden la clonación. |
 | [2748266](https://support.microsoft.com/kb/2748266): tras actualizar a Windows 8, no se puede desbloquear una unidad cifrada con BitLocker | BitLocker | Recibirá un error de "aplicación no encontrada" al intentar desbloquear una unidad en un equipo que se ha actualizado desde Windows 7. |
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 
 Recursos de evaluación de [Windows Server 2012](https://www.microsoft.com/en-us/evalcenter/) 
  Guía de evaluación de [Windows Server 2012](https://download.microsoft.com/download/5/B/2/5B254183-FA53-4317-B577-7561058CEF42/WS%202012%20Evaluation%20Guide.pdf) 

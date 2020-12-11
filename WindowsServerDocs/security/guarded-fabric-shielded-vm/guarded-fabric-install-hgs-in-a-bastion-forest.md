@@ -1,16 +1,17 @@
 ---
 title: Instalación de HGS en un bosque bastión existente
+description: Más información acerca de cómo instalar HGS en un bosque bastión existente
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: 34aa075b088e556695ea1697e578682e6c801bbb
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 1d25127b974c6b379e4fd52433ea74252801c166
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96866324"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97047283"
 ---
 # <a name="install-hgs-in-an-existing-bastion-forest"></a>Instalación de HGS en un bosque bastión existente
 

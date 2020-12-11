@@ -1,4 +1,5 @@
 ---
+description: 'Más información sobre: compilar una aplicación del lado servidor con clientes confidenciales de OAuth con AD FS 2016 o posterior'
 ms.assetid: 5a64e790-6725-4099-aa08-8067d57c3168
 title: Compilar una aplicación del lado servidor con clientes confidenciales de OAuth con AD FS 2016 o posterior
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 02/22/2018
 ms.topic: article
-ms.openlocfilehash: 7abae35671e29b5229c5c1bf5a36ee865100bd88
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 5c256d63bf08d6e9c3aa91e5aa7099822c507b81
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943044"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97046463"
 ---
 # <a name="build-a-server-side-application-using-oauth-confidential-clients-with-ad-fs-2016-or-later"></a>Compilar una aplicación del lado servidor con clientes confidenciales de OAuth con AD FS 2016 o posterior
 
@@ -115,26 +116,26 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi
 9.  Ahora, abra el archivo Web.config y reemplace el valor que se encuentra en connectionString por el valor que copió anteriormente.  Guarde el archivo Web.config.
 
     > [!NOTE]
-    > Los pasos anteriores son necesarios para que podamos obtener la nueva connectionString.  De lo contrario, cuando ejecute UPDATE-Database debajo, se producirá un error.
+    > Los pasos anteriores son necesarios para que podamos obtener la nueva connectionString.  De lo contrario, cuando ejecutemos Update-Database siguiente, se producirá un error.
 
     ![AD FS OAuth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_19.PNG)
 
-10. En la parte superior de Visual Studio, seleccione **Ver**  ->  **otra**  ->  **consola del administrador de paquetes**de Windows.
+10. En la parte superior de Visual Studio, seleccione **Ver**  ->  **otra**  ->  **consola del administrador de paquetes** de Windows.
 
     ![AD FS OAuth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_20.PNG)
 
-11. En la parte inferior, en la consola del administrador de paquetes, escriba: `Enable-Migrations` y presione Entrar.
+11. En la parte inferior, en la consola del administrador de paquetes, escriba:  `Enable-Migrations` y presione Entrar.
 
     > [!NOTE]
-    > Si recibe un error que indica que enable-Migrations no se reconoce como cmdlet, escriba Install-Package EntityFramework para actualizar el EntityFramework.
+    > Si recibe un error que indica Enable-Migrations no se reconoce como un cmdlet, escriba Install-Package EntityFramework para actualizar el EntityFramework.
 
     ![AD FS OAuth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_21.PNG)
 
-12. En la parte inferior, en la consola del administrador de paquetes, escriba: `Add-Migration <anynamehere>` y presione Entrar.
+12. En la parte inferior, en la consola del administrador de paquetes, escriba:  `Add-Migration <anynamehere>` y presione Entrar.
 
     ![AD FS OAuth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_22.PNG)
 
-13. En la parte inferior, en la consola del administrador de paquetes, escriba: `Update-Database` y presione Entrar.
+13. En la parte inferior, en la consola del administrador de paquetes, escriba:  `Update-Database` y presione Entrar.
 
     ![AD FS OAuth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_23.PNG)
 
@@ -243,5 +244,5 @@ En esta sección se probará la solución de cliente confidencial.  Use el proce
 
    ![AD FS OAuth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_35.PNG)
 
-## <a name="next-steps"></a>Pasos a seguir
+## <a name="next-steps"></a>Pasos siguientes
 [Desarrollo de AD FS](../../ad-fs/AD-FS-Development.md)

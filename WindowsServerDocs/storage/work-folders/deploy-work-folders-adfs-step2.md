@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de cómo implementar carpetas de trabajo con AD FS y proxy de aplicación web: paso 2 AD FS trabajo posterior a la configuración'
 title: 'Implementar carpetas de trabajo con AD FS y proxy de aplicación web: paso 2 AD FS trabajo posterior a la configuración'
 ms.topic: article
 manager: klaasl
@@ -6,12 +7,12 @@ ms.author: jeffpatt
 author: JeffPatt24
 ms.date: 06/06/2019
 ms.assetid: 0a48852e-48cc-4047-ae58-99f11c273942
-ms.openlocfilehash: 84ff335514b4b9251ffa1518b613120f3b3e2869
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a830297b0adc8eb3ea0badb605570593933be918
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87946198"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97045373"
 ---
 # <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-2-ad-fs-post-configuration-work"></a>Implementar carpetas de trabajo con AD FS y proxy de aplicación web: paso 2 AD FS trabajo posterior a la configuración
 
@@ -73,7 +74,7 @@ Para crear registros de y CNAME para AD FS, siga estos pasos:
 
 6.  En la ventana **nuevo registro de recursos** , agregue el nombre de alias **enterpriseregistration** y escriba el FQDN del servidor de AD FS. Este alias se usa para la Unión de dispositivos y se debe llamar **enterpriseregistration**.
 
-7.  Haga clic en **Aceptar**.
+7.  Haga clic en **OK**.
 
 Para realizar los pasos equivalentes a través de Windows PowerShell, use el siguiente comando. El comando debe ejecutarse en el controlador de dominio.
 
@@ -94,9 +95,9 @@ Para configurar la relación de confianza para usuario autenticado:
 
 3.  En la página de **bienvenida** , seleccione **reconocimiento de notificaciones** y haga clic en **iniciar**.
 
-4.  En la página **Seleccionar origen de datos** , seleccione **escribir manualmente los datos sobre el usuario de confianza**y, a continuación, haga clic en **siguiente**.
+4.  En la página **Seleccionar origen de datos** , seleccione **escribir manualmente los datos sobre el usuario de confianza** y, a continuación, haga clic en **siguiente**.
 
-5.  En el campo **nombre para mostrar** , escriba **WorkFolders**y, a continuación, haga clic en **siguiente**.
+5.  En el campo **nombre para mostrar** , escriba **WorkFolders** y, a continuación, haga clic en **siguiente**.
 
 6.  En la página **configurar certificado** , haga clic en **siguiente**. Los certificados de cifrado de tokens son opcionales y no son necesarios para la configuración de prueba.
 
@@ -104,7 +105,7 @@ Para configurar la relación de confianza para usuario autenticado:
 
 8. En la página **configurar identificadores** , agregue el siguiente identificador: `https://windows-server-work-folders/V1` . Este identificador es un valor codificado de forma rígida que usan las carpetas de trabajo y lo envía el servicio carpetas de trabajo cuando se comunica con AD FS. Haga clic en **Next**.
 
-9. En la página elegir Directiva de Access Control, seleccione **permitir todos**y, a continuación, haga clic en **siguiente**.
+9. En la página elegir Directiva de Access Control, seleccione **permitir todos** y, a continuación, haga clic en **siguiente**.
 
 10. En la página **Listo para agregar confianza**, haz clic en **Siguiente**.
 
@@ -114,7 +115,7 @@ Para configurar la relación de confianza para usuario autenticado:
 
 13. Se abre la ventana **Editar Directiva de emisión de notificaciones para WorkFolders** . Haga clic en **Agregar regla**.
 
-14. En la lista desplegable **plantilla de regla de notificación** , seleccione **Enviar atributos LDAP como notificaciones**y haga clic en **siguiente**.
+14. En la lista desplegable **plantilla de regla de notificación** , seleccione **Enviar atributos LDAP como notificaciones** y haga clic en **siguiente**.
 
 15. En la página **configurar regla de notificaciones** , en el campo **nombre de regla de notificaciones** , escriba **WorkFolders**.
 
@@ -149,10 +150,10 @@ Una vez configurada la relación de confianza para usuario autenticado para AD F
 Para establecer estas opciones, use los comandos siguientes:
 
 ```powershell
-Set-ADFSRelyingPartyTrust -TargetIdentifier "https://windows-server-work-folders/V1" -EnableJWT $true
-Set-ADFSRelyingPartyTrust -TargetIdentifier "https://windows-server-work-folders/V1" -Encryptclaims $false
+Set-ADFSRelyingPartyTrust -TargetIdentifier "https://windows-server-work-folders/V1" -EnableJWT $true
+Set-ADFSRelyingPartyTrust -TargetIdentifier "https://windows-server-work-folders/V1" -Encryptclaims $false
 Set-ADFSRelyingPartyTrust -TargetIdentifier "https://windows-server-work-folders/V1" -AutoupdateEnabled $true
-Set-ADFSRelyingPartyTrust -TargetIdentifier "https://windows-server-work-folders/V1" -IssueOAuthRefreshTokensTo AllDevices
+Set-ADFSRelyingPartyTrust -TargetIdentifier "https://windows-server-work-folders/V1" -IssueOAuthRefreshTokensTo AllDevices
 Grant-AdfsApplicationPermission -ServerRoleIdentifier "https://windows-server-work-folders/V1" -AllowAllRegisteredClients -ScopeNames openid,profile
 ```
 
@@ -182,23 +183,23 @@ A continuación, exporte el \- certificado de AD FS autofirmado para que se pued
 
 Para exportar el certificado, siga estos pasos:
 
-1.  Haga clic en **Inicio**y, a continuación, haga clic en **Ejecutar**.
+1.  Haga clic en **Inicio** y, a continuación, haga clic en **Ejecutar**.
 
 2.  Escriba **MMC**.
 
 3.  En el menú **Archivo** , haga clic en **Agregar o quitar complemento**.
 
-4.  En la lista **complementos disponibles** , seleccione **certificados**y, a continuación, haga clic en **Agregar**. Se inicia el Asistente para complementos de certificados.
+4.  En la lista **complementos disponibles** , seleccione **certificados** y, a continuación, haga clic en **Agregar**. Se inicia el Asistente para complementos de certificados.
 
 5.  Seleccione **Cuenta de equipo** y, a continuación, haga clic en **Siguiente**.
 
 6.  Seleccione **equipo local: (el equipo en el que se está ejecutando esta consola)** y, a continuación, haga clic en **Finalizar**.
 
-7.  Haga clic en **Aceptar**.
+7.  Haga clic en **OK**.
 
 8.  Expanda la **consola de carpeta Root\Certificates \( equipo local) \personal\certificados**.
 
-9.  Haga clic con el botón secundario en el **certificado AD FS**, haga clic en **todas las tareas**y, a continuación, haga clic en **exportar..**..
+9.  Haga clic con el botón secundario en el **certificado AD FS**, haga clic en **todas las tareas** y, a continuación, haga clic en **exportar..**..
 
 10. Se abre el Asistente para exportar certificados. Selecciona **Sí, exportar la clave privada**.
 
@@ -214,33 +215,33 @@ La instalación del certificado se trata más adelante en el procedimiento de im
 
 Debe conceder permiso a la cuenta de servicio de AD FS para tener acceso a la clave privada del nuevo certificado. Tendrá que conceder este permiso de nuevo cuando reemplace el certificado de comunicación después de que expire. Para conceder permiso, siga estos pasos:
 
-1.  Haga clic en **Inicio**y, a continuación, haga clic en **Ejecutar**.
+1.  Haga clic en **Inicio** y, a continuación, haga clic en **Ejecutar**.
 
 2.  Escriba **MMC**.
 
 3.  En el menú **Archivo** , haga clic en **Agregar o quitar complemento**.
 
-4.  En la lista **complementos disponibles** , seleccione **certificados**y, a continuación, haga clic en **Agregar**. Se inicia el Asistente para complementos de certificados.
+4.  En la lista **complementos disponibles** , seleccione **certificados** y, a continuación, haga clic en **Agregar**. Se inicia el Asistente para complementos de certificados.
 
 5.  Seleccione **Cuenta de equipo** y, a continuación, haga clic en **Siguiente**.
 
 6.  Seleccione **equipo local: (el equipo en el que se está ejecutando esta consola)** y, a continuación, haga clic en **Finalizar**.
 
-7.  Haga clic en **Aceptar**.
+7.  Haga clic en **OK**.
 
 8.  Expanda la **consola de carpeta Root\Certificates \( equipo local) \personal\certificados**.
 
-9.  Haga clic con el botón secundario en el **certificado AD FS**, haga clic en **todas las tareas**y, a continuación, haga clic en **administrar claves privadas**.
+9.  Haga clic con el botón secundario en el **certificado AD FS**, haga clic en **todas las tareas** y, a continuación, haga clic en **administrar claves privadas**.
 
 10. En la ventana **permisos** , haga clic en **Agregar**.
 
-11. En la ventana **tipos de objeto** , seleccione cuentas de **servicio**y, a continuación, haga clic en **Aceptar**.
+11. En la ventana **tipos de objeto** , seleccione cuentas de **servicio** y, a continuación, haga clic en **Aceptar**.
 
-12. Escriba el nombre de la cuenta que ejecuta AD FS. En el ejemplo de prueba, es ADFSService. Haga clic en **Aceptar**.
+12. Escriba el nombre de la cuenta que ejecuta AD FS. En el ejemplo de prueba, es ADFSService. Haga clic en **OK**.
 
 13. En la ventana **permisos** , asigne a la cuenta como mínimo permisos de lectura y haga clic en **Aceptar**.
 
-Si no tiene la opción de administrar claves privadas, puede que tenga que ejecutar el siguiente comando:`certutil -repairstore my *`
+Si no tiene la opción de administrar claves privadas, puede que tenga que ejecutar el siguiente comando: `certutil -repairstore my *`
 
 ## <a name="verify-that-ad-fs-is-operational"></a>Comprobar que AD FS está operativo
 

@@ -1,4 +1,5 @@
 ---
+description: 'Más información sobre: consideraciones sobre la topología de implementación de AD FS'
 ms.assetid: 4ef052f0-61a9-4912-b780-5c96187c850f
 title: Consideraciones sobre la topología de implementación de AD FS
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 8e433083ce7f1bdcfa0d950b86692662044dd1ea
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 3ac3c7c06b1e32140f782c2af645d9b6c686c8a1
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87940442"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97046013"
 ---
 # <a name="ad-fs-deployment-topology-considerations"></a>Consideraciones sobre la topología de implementación de AD FS
 

@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: Apéndice A: revisión de los requisitos de AD FS'
 ms.assetid: 39ecc468-77c5-4938-827e-48ce498a25ad
 title: 'Apéndice A: revisión de los requisitos de AD FS'
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: ad3184dbe43cfa108aa1b178421102880b3ef4d7
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: e59d13f4a7df9f8ed829ac76cb8675e74f7d7938
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87994992"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97047873"
 ---
 # <a name="appendix-a-reviewing-ad-fs-requirements"></a>Apéndice A: Revisión de los requisitos de AD FS
 
@@ -25,9 +26,9 @@ Los siguientes requisitos de hardware mínimos y recomendados se aplican a los e
 
 |Requisito de hardware|Requisito mínimo|Requisito recomendado|
 |------------------------|-----------------------|---------------------------|
-|Velocidad de CPU|Procesador de un núcleo, 1 GHz|Cuatro núcleos, 2 GHz|
-|RAM|1 GB|4 GB|
-|Espacio en disco|50 MB|100 MB|
+|Velocidad de CPU|Procesador de un núcleo, 1 GHz|Cuatro núcleos, 2 GHz|
+|RAM|1 GB|4 GB|
+|Espacio en disco|50 MB|100 MB|
 
 ## <a name="software-requirements"></a>Requisitos de software
 AD FS se basa en la funcionalidad de servidor integrada en el &reg; sistema operativo Windows server 2012.
@@ -63,16 +64,16 @@ Los servidores proxy de federación necesitan los certificados de la siguiente t
 Para obtener más información sobre los certificados que utilizan los servidores proxy de federación, consulta [Requisitos de los certificados para servidores proxy de federación](Certificate-Requirements-for-Federation-Server-Proxies.md).
 
 ## <a name="browser-requirements"></a>Requisitos del explorador
-Aunque todos los exploradores web actuales con funcionalidad JavaScript pueden funcionar como cliente AD FS, las páginas web que se proporcionan de manera predeterminada solo se han probado con Internet Explorer versión 7.0, 8.0 y 9.0, Mozilla Firefox 3.0 y Safari 3.1 en Windows. JavaScript debe estar habilitado y las cookies deben estar habilitadas para que el inicio y cierre de sesión basado en el explorador funcione correctamente.
+Aunque todos los exploradores web actuales con funcionalidad JavaScript pueden funcionar como cliente AD FS, las páginas web que se proporcionan de manera predeterminada solo se han probado con Internet Explorer versión 7.0, 8.0 y 9.0, Mozilla Firefox 3.0 y Safari 3.1 en Windows. JavaScript debe estar habilitado y las cookies deben estar habilitadas para que el inicio y cierre de sesión basado en el explorador funcione correctamente.
 
 El equipo de AD FS producto de Microsoft probó correctamente las configuraciones del explorador y del sistema operativo en la tabla siguiente.
 
 |Browser|Windows 7|Windows Vista|
 |-----------|-------------|-----------------|
-|Internet Explorer 7.0|X|X|
-|Internet Explorer 8.0|X|X|
-|Internet Explorer 9.0|X|No probado|
-|Firefox 3.0|X|X|
+|Internet Explorer 7.0|X|X|
+|Internet Explorer 8.0|X|X|
+|Internet Explorer 9.0|X|No probado|
+|Firefox 3.0|X|X|
 |Safari 3.1|X|X|
 
 > [!NOTE]
@@ -108,14 +109,14 @@ El proceso de configuración de DNS para admitir AD FS varía en función de si:
 AD FS requiere que se use al menos un almacén de atributos para autenticar a los usuarios y extraer notificaciones de seguridad para esos usuarios. Para ver una lista de los almacenes de atributos compatibles con AD FS, consulta [La función de los almacenes de atributos](../../ad-fs/technical-reference/The-Role-of-Attribute-Stores.md) en la guía de diseño de AD FS.
 
 > [!NOTE]
-> AD FS crea automáticamente un almacén de atributos de Active Directory de manera predeterminada.
+> AD FS crea automáticamente un almacén de atributos de Active Directory de manera predeterminada.
 
 Los requisitos de los almacenes de atributos dependen de si la organización actúa como asociado de cuenta (hospeda a los usuarios federados) o como asociado de recurso (hospeda la aplicación federada).
 
-### <a name="adds"></a>AD DS
+### <a name="ad-ds"></a>AD DS
 Para que AD FS funcione correctamente, los controladores de dominio de la organización del asociado de cuenta o de la organización del asociado de recurso deben ejecutar Windows Server 2003 SP1, Windows Server 2003 R2, Windows Server 2008 o Windows Server 2012.
 
-Si AD FS está instalado y configurado en un equipo unido a un dominio, el almacén de la cuenta de usuario de Active Directory de dicho dominio está disponible como almacén de atributos seleccionable.
+Si AD FS está instalado y configurado en un equipo unido a un dominio, el almacén de la cuenta de usuario de Active Directory de dicho dominio está disponible como almacén de atributos seleccionable.
 
 > [!IMPORTANT]
 > Como AD FS requiere la instalación de Internet Information Services (IIS), se recomienda no instalar el software AD FS en un controlador de dominio en un entorno de producción por motivos de seguridad. Sin embargo, esta configuración es compatible con el servicio de soporte y atención al cliente de Microsoft.
@@ -127,12 +128,12 @@ AD FS no requiere ningún cambio de esquema ni modificaciones en el nivel funci
 La mayoría de las características de AD FS no requieren modificaciones de niveles funcionales de AD DS para funcionar correctamente. Sin embargo, se requiere un nivel funcional de dominio de Windows Server 2008 o superior para que la autenticación del certificado de cliente funcione correctamente, si dicho certificado está asignado explícitamente a una cuenta de usuario en AD DS.
 
 #### <a name="service-account-requirements"></a>Requisitos de cuentas de servicio
-Si estás creando una granja de servidores de federación, primero debes crear una cuenta de servicio específica basada en dominio en AD DS que pueda utilizar el servicio de federación. Más adelante, configurarás cada servidor de federación de la granja para que use dicha cuenta. Para obtener más información sobre cómo hacerlo, consulta [Configurar manualmente una cuenta de servicio para una granja de servidores de federación](../../ad-fs/deployment/Manually-Configure-a-Service-Account-for-a-Federation-Server-Farm.md) en la guía de implementación de AD FS.
+Si estás creando una granja de servidores de federación, primero debes crear una cuenta de servicio específica basada en dominio en AD DS que pueda utilizar el servicio de federación. Más adelante, configurarás cada servidor de federación de la granja para que use dicha cuenta. Para obtener más información sobre cómo hacerlo, consulta [Configurar manualmente una cuenta de servicio para una granja de servidores de federación](../../ad-fs/deployment/Manually-Configure-a-Service-Account-for-a-Federation-Server-Farm.md) en la guía de implementación de AD FS.
 
 ### <a name="ldap"></a>LDAP
-Cuando trabajes con otros almacenes de atributos basados en el Protocolo ligero de acceso a directorios (LDAP), debes conectarte a un servidor LDAP que sea compatible con la autenticación integrada de Windows. Además, la cadena de conexión de LDAP debe estar escrita con el formato de una dirección URL de LDAP, tal y como se describe en RFC 2255.
+Cuando trabajes con otros almacenes de atributos basados en el Protocolo ligero de acceso a directorios (LDAP), debes conectarte a un servidor LDAP que sea compatible con la autenticación integrada de Windows. Además, la cadena de conexión de LDAP debe estar escrita con el formato de una dirección URL de LDAP, tal y como se describe en RFC 2255.
 
-### <a name="sql-server"></a>SQL Server
+### <a name="sql-server"></a>SQL Server
 Para que AD FS funcione correctamente, los equipos que hospedan el almacén de atributos de Lenguaje de consulta estructurado (SQL) Server deben ejecutar Microsoft SQL Server 2005 o SQL Server 2008. Si trabajas con almacenes de atributos basados en SQL, también debes configurar una cadena de conexión.
 
 ### <a name="custom-attribute-stores"></a>Almacenes de atributos personalizados
@@ -168,11 +169,11 @@ La autenticación mediante tarjeta inteligente usa el protocolo Kerberos para au
 
 -   El certificado de la tarjeta inteligente debe encadenarse a una raíz de confianza en el servidor de Federación de la cuenta y el servidor proxy de Federación de la cuenta.
 
--   El certificado debe asignarse a la cuenta de usuario de AD DS mediante uno de los siguientes métodos:
+-   El certificado debe asignarse a la cuenta de usuario de AD DS mediante uno de los siguientes métodos:
 
-    -   El nombre del firmante del certificado se corresponde con el nombre distintivo de LDAP de una cuenta de usuario en AD DS.
+    -   El nombre del firmante del certificado se corresponde con el nombre distintivo de LDAP de una cuenta de usuario en AD DS.
 
-    -   La extensión NombreAlt del firmante del certificado tiene el nombre principal de usuario (UPN) de una cuenta de usuario en AD DS.
+    -   La extensión NombreAlt del firmante del certificado tiene el nombre principal de usuario (UPN) de una cuenta de usuario en AD DS.
 
 Para que sea compatible con ciertos requisitos de seguridad de autenticación en determinados casos, es posible configurar AD FS para crear una notificación que indique cómo se ha autenticado el usuario. Un usuario autenticado puede utilizar dicha notificación para decidir si permite la autorización.
 

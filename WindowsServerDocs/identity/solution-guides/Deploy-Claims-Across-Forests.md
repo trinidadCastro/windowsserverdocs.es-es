@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo implementar notificaciones entre bosques
 ms.assetid: ceb9ce18-5a94-4166-9edd-2685b81fc15f
 title: Implementar notificaciones en bosques
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 66d88467a455b7650be8bb01980a6cc4aaf0e047
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: fc08ac95a584e665a95958f88f3c572ac7a943b6
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952920"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048483"
 ---
 # <a name="deploy-claims-across-forests"></a>Implementar notificaciones en bosques
 

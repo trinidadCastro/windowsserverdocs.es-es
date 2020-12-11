@@ -1,4 +1,5 @@
 ---
+description: 'Más información sobre: historial de rendimiento para Espacios de almacenamiento directo'
 title: Historial de rendimiento de Espacios de almacenamiento directo
 ms.author: cosdar
 manager: eldenc
@@ -6,12 +7,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 09/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f3c0babfad0ebecdac40262a783ecf683d6dc1e8
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b90f010d45dc9e9013c2bc661232fb444247b661
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87968792"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048923"
 ---
 # <a name="performance-history-for-storage-spaces-direct"></a>Historial de rendimiento de Espacios de almacenamiento directo
 
@@ -22,7 +23,7 @@ El historial de rendimiento es una nueva característica que proporciona a los a
    > [!IMPORTANT]
    > Esta característica es nueva en Windows Server 2019. No está disponible en Windows Server 2016.
 
-## <a name="get-started"></a>Primeros pasos
+## <a name="get-started"></a>Introducción
 
 El historial de rendimiento se recopila de forma predeterminada con Espacios de almacenamiento directo en Windows Server 2019. No es necesario instalar, configurar ni iniciar nada. No se requiere una conexión a Internet, System Center no es necesario y no se necesita una base de datos externa.
 
@@ -141,7 +142,7 @@ Puede especificar el período de tiempo del historial que desee con el `-TimeFra
 
 Si no especifica, `MostRecent` se devuelve la medida.
 
-## <a name="how-it-works"></a>Funcionamiento
+## <a name="how-it-works"></a>Cómo funciona
 
 ### <a name="performance-history-storage"></a>Almacenamiento del historial de rendimiento
 

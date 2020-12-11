@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: Guía de diseño de AD FS en Windows Server'
 ms.assetid: a8558c9d-0606-4881-93b2-f2d2716b18e7
 title: Guía de diseño de AD FS en Windows Server 2012 R2
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 6ec9826ce2015197d96a182864807646a6b8115d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 0fb36e6a2a19ef5e946aaa1125a85850bf670c4f
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87940411"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048453"
 ---
 # <a name="ad-fs-design-guide-in-windows-server"></a>Guía de diseño de AD FS en Windows Server
 

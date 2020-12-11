@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo determinar el intervalo
 ms.assetid: 96a6749c-6c9f-4f2f-ad0a-51272d282ace
 title: Determinar el intervalo
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 0ad2e92bb0d1264d6e651ae5f5a676a210ad8811
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: d4a9095e82c878de8338b9926f5c2da606c859f0
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93069187"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048193"
 ---
 # <a name="determining-the-interval"></a>Determinar el intervalo
 
@@ -54,9 +55,9 @@ Con una estrategia de replicación de almacenamiento y reenvío, es difícil det
     |Sitios|Seattle|Boston|Los Angeles|Nueva York|Washington, D.C.|
     |---------|-----------|----------|---------------|------------|--------------------|
     |Seattle|0,25|4 + 3|24,00|3.00|4 + 3|
-    |Boston||0,25|4 + 3 + 24|4,00|4,00|
+    |Boston||0,25|4 + 3 + 24|4.00|4.00|
     |Los Angeles|||0,25|24 + 3|24 + 3 + 4|
-    |Nueva York||||0,25|4,00|
+    |Nueva York||||0,25|4.00|
     |Washington, D.C.|||||0,25|
 
 

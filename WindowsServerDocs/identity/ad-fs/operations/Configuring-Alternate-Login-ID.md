@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo configurar el identificador de inicio de sesión alternativo
 ms.assetid: f0cbdd78-f5ae-47ff-b5d3-96faf4940f4a
 title: Configuración de identificador de inicio de sesión alternativo
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 11/14/2018
 ms.topic: article
-ms.openlocfilehash: 549ba062a30ce3b2d1a9f06d60357c0199766d84
-ms.sourcegitcommit: c6e2e545100bbbc4864088fd0d103bafc147fcbb
+ms.openlocfilehash: 93bca831222700f12cccd2ae6aef60ca189197b9
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88785067"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048853"
 ---
 # <a name="configuring-alternate-login-id"></a>Configuración de identificador de inicio de sesión alternativo
 
@@ -111,7 +112,7 @@ Con la siguiente configuración adicional, la experiencia del usuario se ha mejo
 ##### <a name="step-1-update-to-required-office-version"></a>Paso 1. Actualizar a la versión de Office requerida
 La versión 1712 de Office (compilación no 8827,2148) y versiones posteriores han actualizado la lógica de autenticación para controlar el escenario de identificador alternativo. Con el fin de aprovechar la nueva lógica, los equipos cliente deben actualizarse a la versión 1712 de Office (compilación no 8827,2148) y versiones posteriores.
 
-##### <a name="step-2-update-to-required-windows-version"></a>Paso 2. Actualizar a la versión de Windows necesaria
+##### <a name="step-2-update-to-required-windows-version"></a>Paso 2. Actualizar a la versión de Windows necesaria
 La versión 1709 y posteriores de Windows han actualizado la lógica de autenticación para controlar el escenario de identificador alternativo. Con el fin de aprovechar la nueva lógica, los equipos cliente deben actualizarse a la versión 1709 y posteriores de Windows.
 
 ##### <a name="step-3-configure-registry-for-impacted-users-using-group-policy"></a>Paso 3. Configurar el registro para los usuarios afectados mediante la Directiva de grupo
@@ -119,9 +120,9 @@ Las aplicaciones de Office se basan en la información insertada por el administ
 
 |RegKey que se va a agregar|Nombre, tipo y valor de datos RegKey|Windows 7/8|Windows 10|Descripción|
 |-----|-----|-----|-----|-----|
-|HKEY_CURRENT_USER \Software\Microsoft\AuthN|DomainHint</br>REG_SZ</br>contoso.com|Obligatorio|Obligatorio|El valor de esta RegKey es un nombre de dominio personalizado comprobado en el inquilino de la organización. Por ejemplo, Contoso Corp puede proporcionar un valor de Contoso.com en esta RegKey si Contoso.com es uno de los nombres de dominio personalizados comprobados en el inquilino Contoso.onmicrosoft.com.|
-HKEY_CURRENT_USER \Software\Microsoft\Office\16.0\Common\Identity|EnableAlternateIdSupport</br>REG_DWORD</br>1|Necesario para Outlook 2016 ProPlus|Necesario para Outlook 2016 ProPlus|El valor de esta RegKey puede ser 1/0 para indicar a la aplicación de Outlook si debe interactuar con la lógica de autenticación alternativa mejorada.|
-HKEY_CURRENT_USER \Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\contoso.com\sts|&#42;</br>REG_DWORD</br>1|Obligatorio|Obligatorio|Esta clave de instalación se puede usar para establecer el STS como una zona de confianza en la configuración de Internet. La implementación de ADFS estándar recomienda agregar el espacio de nombres de ADFS a la zona de Intranet local para Internet Explorer|
+|HKEY_CURRENT_USER\Software\Microsoft\AuthN|DomainHint</br>REG_SZ</br>contoso.com|Obligatorio|Obligatorio|El valor de esta RegKey es un nombre de dominio personalizado comprobado en el inquilino de la organización. Por ejemplo, Contoso Corp puede proporcionar un valor de Contoso.com en esta RegKey si Contoso.com es uno de los nombres de dominio personalizados comprobados en el inquilino Contoso.onmicrosoft.com.|
+HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Common\Identity|EnableAlternateIdSupport</br>REG_DWORD</br>1|Necesario para Outlook 2016 ProPlus|Necesario para Outlook 2016 ProPlus|El valor de esta RegKey puede ser 1/0 para indicar a la aplicación de Outlook si debe interactuar con la lógica de autenticación alternativa mejorada.|
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\contoso.com\sts|&#42;</br>REG_DWORD</br>1|Obligatorio|Obligatorio|Esta clave de instalación se puede usar para establecer el STS como una zona de confianza en la configuración de Internet. La implementación de ADFS estándar recomienda agregar el espacio de nombres de ADFS a la zona de Intranet local para Internet Explorer|
 
 ## <a name="new-authentication-flow-after-additional-configuration"></a>Nuevo flujo de autenticación después de la configuración adicional
 
@@ -138,23 +139,23 @@ HKEY_CURRENT_USER \Software\Microsoft\Windows\CurrentVersion\Internet Settings\Z
 
 ### <a name="non-exchange-and-skype-for-business-clients"></a>Clientes que no son de Exchange y Skype empresarial
 
-|Cliente|Declaración de compatibilidad|Observaciones|
+|Cliente|Declaración de compatibilidad|Comentarios|
 | ----- | -----|-----|
-|Equipos de Microsoft|Compatible.|<li>Microsoft Teams admite AD FS (SAML-P, WS-FED, WS-Trust y OAuth) y la autenticación moderna.</li><li> Los principales equipos de Microsoft, como las funcionalidades de canales, chats y archivos, funcionan con un identificador de inicio de sesión alternativo.</li><li>el cliente debe investigar por separado la primera y las aplicaciones de terceros. Esto se debe a que cada aplicación tiene sus propios protocolos de autenticación.</li>|
+|Equipos de Microsoft|Compatible|<li>Microsoft Teams admite AD FS (SAML-P, WS-FED, WS-Trust y OAuth) y la autenticación moderna.</li><li> Los principales equipos de Microsoft, como las funcionalidades de canales, chats y archivos, funcionan con un identificador de inicio de sesión alternativo.</li><li>el cliente debe investigar por separado la primera y las aplicaciones de terceros. Esto se debe a que cada aplicación tiene sus propios protocolos de autenticación.</li>|
 |OneDrive para la Empresa|Compatible: se recomienda la clave del registro del lado cliente |Con el identificador alternativo configurado, verá que el UPN local se rellena previamente en el campo de comprobación. Esto debe cambiarse a la identidad alternativa que se está usando. Se recomienda usar la clave del registro del lado cliente que se indica en este artículo: Office 2013 y Lync 2013 solicitan periódicamente las credenciales a SharePoint Online, OneDrive y Lync Online.|
-|Cliente móvil de OneDrive para la empresa|Compatible.||
+|Cliente móvil de OneDrive para la empresa|Compatible||
 |Página de activación de Office 365 Pro Plus|Compatible: se recomienda la clave del registro del lado cliente|Con el identificador alternativo configurado, verá que el UPN local se rellena previamente en el campo de comprobación. Esto debe cambiarse a la identidad alternativa que se está usando. Se recomienda usar la clave del registro del lado cliente que se indica en este artículo: Office 2013 y Lync 2013 solicitan periódicamente las credenciales a SharePoint Online, OneDrive y Lync Online.|
 
 ### <a name="exchange-and-skype-for-business-clients"></a>Clientes de Exchange y Skype empresarial
 
 |Cliente|Declaración de soporte: con HMA|Instrucción de soporte técnico: sin HMA|
 | ----- |----- | ----- |
-|Outlook|Compatible, sin mensajes adicionales|Compatible.</br></br>Con **autenticación moderna** para Exchange Online: compatible</br></br>Con **autenticación normal** para Exchange Online: se admite con las siguientes advertencias:</br><li>Debe estar en un equipo unido a un dominio y estar conectado a la red corporativa </li><li>Solo se puede usar un identificador alternativo en entornos que no permiten el acceso externo a los usuarios de buzones. Esto significa que los usuarios solo pueden autenticarse en su buzón de una manera compatible cuando están conectados y Unidos a la red corporativa, en una VPN o conectados a través de máquinas de acceso directo, pero obtiene un par de mensajes adicionales al configurar el perfil de Outlook.|
+|Outlook|Compatible, sin mensajes adicionales|Compatible</br></br>Con **autenticación moderna** para Exchange Online: compatible</br></br>Con **autenticación normal** para Exchange Online: se admite con las siguientes advertencias:</br><li>Debe estar en un equipo unido a un dominio y estar conectado a la red corporativa </li><li>Solo se puede usar un identificador alternativo en entornos que no permiten el acceso externo a los usuarios de buzones. Esto significa que los usuarios solo pueden autenticarse en su buzón de una manera compatible cuando están conectados y Unidos a la red corporativa, en una VPN o conectados a través de máquinas de acceso directo, pero obtiene un par de mensajes adicionales al configurar el perfil de Outlook.|
 |Carpetas públicas híbridas|Compatible, no hay ningún mensaje adicional.|Con **autenticación moderna** para Exchange Online: compatible</br></br>Con **autenticación normal** para Exchange Online: no compatible</br></br><li>Las carpetas públicas híbridas no pueden expandirse si se usan IDENTIFICADOres alternativos y, por lo tanto, no deben usarse actualmente con métodos de autenticación normales.|
 |Delegación entre locales|Consulte [configuración de Exchange para admitir permisos de buzón delegados en una implementación híbrida](/exchange/hybrid-deployment/set-up-delegated-mailbox-permissions)|Consulte [configuración de Exchange para admitir permisos de buzón delegados en una implementación híbrida](/exchange/hybrid-deployment/set-up-delegated-mailbox-permissions)|
 |Acceso al buzón de archivo (buzón local: archivar en la nube)|Compatible, sin mensajes adicionales|Compatible: los usuarios obtienen una solicitud adicional de credenciales al acceder al archivo, por lo que deben proporcionar su identificador alternativo cuando se le solicite.|
-|Outlook Web Access|Compatible.|Compatible.|
-|Mobile Apps de Outlook para Android, IOS y Windows Phone|Compatible.|Compatible.|
+|Outlook Web Access|Compatible|Compatible|
+|Mobile Apps de Outlook para Android, IOS y Windows Phone|Compatible|Compatible|
 |Skype empresarial/Lync|Compatible, sin mensajes adicionales|Compatible (a menos que se indique), pero existe una posibilidad de confusión del usuario.</br></br>En los clientes móviles, el identificador alternativo solo se admite si la dirección SIP = dirección de correo electrónico = identificador alternativo.</br></br> Es posible que los usuarios tengan que iniciar sesión dos veces en el cliente de escritorio de Skype empresarial, usando primero el UPN local y, a continuación, usando el identificador alternativo. (Tenga en cuenta que la "dirección de inicio de sesión" es realmente la dirección SIP, que puede no ser la misma que el "nombre de usuario", aunque a menudo es). Cuando se solicita un nombre de usuario por primera vez, el usuario debe escribir el UPN, incluso si se ha rellenado previamente con el identificador alternativo o la dirección SIP. Después de que el usuario haga clic en el inicio de sesión con el UPN, volverá a aparecer el mensaje de nombre de usuario, esta vez rellenado con el UPN. Esta vez, el usuario debe reemplazarlo por el identificador alternativo y hacer clic en iniciar sesión para completar el proceso de inicio de sesión. En los clientes móviles, los usuarios deben escribir el ID. de usuario local en la página avanzadas, con el formato de estilo SAM (dominio\nombre de usuario), no el formato UPN.</br></br>Después del inicio de sesión correcto, si Skype empresarial o Lync dice "Exchange necesita sus credenciales", debe proporcionar las credenciales válidas para el lugar donde se encuentra el buzón. Si el buzón está en la nube, debe proporcionar el identificador alternativo. Si el buzón de correo es local, debe proporcionar el UPN local.|
 
 ## <a name="additional-details--considerations"></a>Detalles adicionales & consideraciones

@@ -1,4 +1,5 @@
 ---
+description: 'Más información sobre: creación de una regla para enviar atributos LDAP como notificaciones'
 ms.assetid: 66664b80-2590-46c0-bfca-82402088e42c
 title: Crear una regla para enviar atributos LDAP como notificaciones
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 938e82f5318bc374fd3f89bf5354c2fc447a9723
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 6b6cddaa5df89e16f77022b41400be75c2bd67d5
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87967212"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048083"
 ---
 # <a name="create-a-rule-to-send-ldap-attributes-as-claims"></a>Crear una regla para enviar atributos LDAP como notificaciones
 
@@ -38,7 +39,7 @@ La pertenencia al grupo **Administradores** o equivalente en el equipo local es 
 5.  En la **página Seleccionar plantilla de regla** , en **plantilla de regla de notificación**, seleccione **Enviar atributos LDAP como notificaciones** en la lista y, a continuación, haga clic en **siguiente**.
 ![crear regla](media/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims/ldap1.PNG)
 
-6.  En la página **configurar regla** , en nombre de la **regla de notificaciones** , escriba el nombre para mostrar de esta regla, seleccione el **almacén de atributos**y, a continuación, seleccione el atributo LDAP y asígnelo al tipo de notificaciones salientes.
+6.  En la página **configurar regla** , en nombre de la **regla de notificaciones** , escriba el nombre para mostrar de esta regla, seleccione el **almacén de atributos** y, a continuación, seleccione el atributo LDAP y asígnelo al tipo de notificaciones salientes.
 ![crear regla](media/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims/ldap2.PNG)
 
 7.  Haga clic en el botón **Finalizar**.
@@ -61,7 +62,7 @@ La pertenencia al grupo **Administradores** o equivalente en el equipo local es 
 5.  En la **página Seleccionar plantilla de regla** , en **plantilla de regla de notificación**, seleccione **Enviar atributos LDAP como notificaciones** en la lista y, a continuación, haga clic en **siguiente**.
 ![crear regla](media/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims/ldap1.PNG)
 
-6.  En la página **configurar regla** , en nombre de la **regla de notificaciones** , escriba el nombre para mostrar de esta regla, seleccione el **almacén de atributos**y, a continuación, seleccione el atributo LDAP y asígnelo al tipo de notificaciones salientes.
+6.  En la página **configurar regla** , en nombre de la **regla de notificaciones** , escriba el nombre para mostrar de esta regla, seleccione el **almacén de atributos** y, a continuación, seleccione el atributo LDAP y asígnelo al tipo de notificaciones salientes.
 ![crear regla](media/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims/ldap2.PNG)
 
 7.  Haga clic en el botón **Finalizar**.
@@ -74,7 +75,7 @@ La pertenencia al grupo **Administradores** o equivalente en el equipo local es 
 
 1.  En el Administrador del servidor, haga clic en **Herramientas** y, luego, seleccione **Administración de AD FS**.
 
-2.  En el árbol de consola, en **relaciones de \\ confianza de ad FSAD FS**, haga clic en **confianzas de proveedor de notificaciones** o en **confianzas para usuario autenticado**y, a continuación, haga clic en una confianza específica en la lista en la que desea crear esta regla.
+2.  En el árbol de consola, en **relaciones de \\ confianza de ad FSAD FS**, haga clic en **confianzas de proveedor de notificaciones** o en **confianzas para usuario autenticado** y, a continuación, haga clic en una confianza específica en la lista en la que desea crear esta regla.
 
 3.  Haga clic con el botón secundario \- en la confianza seleccionada y, a continuación, haga clic en **editar reglas de notificaciones**.
 ![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)
@@ -93,7 +94,7 @@ La pertenencia al grupo **Administradores** o equivalente en el equipo local es 
 5.  En la **página Seleccionar plantilla de regla** , en **plantilla de regla de notificación**, seleccione **Enviar atributos LDAP como notificaciones** en la lista y, a continuación, haga clic en **siguiente**.
 ![crear regla](media/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims/ldap3.PNG)
 
-6.  En la página **configurar regla** , en nombre de la **regla de notificaciones** , escriba el nombre para mostrar de esta regla, en **almacén de atributos** , seleccione **Active Directory**y, en **asignación de atributos LDAP a tipos de notificaciones salientes** , seleccione el **atributo LDAP** deseado y los tipos de **tipo de notificaciones salientes** correspondientes en las listas desplegables \- .
+6.  En la página **configurar regla** , en nombre de la **regla de notificaciones** , escriba el nombre para mostrar de esta regla, en **almacén de atributos** , seleccione **Active Directory** y, en **asignación de atributos LDAP a tipos de notificaciones salientes** , seleccione el **atributo LDAP** deseado y los tipos de **tipo de notificaciones salientes** correspondientes en las listas desplegables \- .
 
     Tiene que seleccionar un nuevo atributo LDAP y un par de tipos de notificaciones salientes en una fila diferente para cada Active Directory atributo para el que desea emitir una demanda como parte de esta regla.
 ![crear regla](media/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims/ldap4.PNG)

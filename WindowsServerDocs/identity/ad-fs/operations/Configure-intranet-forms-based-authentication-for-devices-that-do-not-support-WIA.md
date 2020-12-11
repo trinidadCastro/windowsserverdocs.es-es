@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo configurar la autenticación basada en formularios de intranet para dispositivos que no admiten WIA
 ms.assetid: d562ef46-f240-48be-bbd4-fd88fc6bbbdc
 title: Configuración de la autenticación basada en formularios de la intranet para dispositivos que no admiten WIA
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: c64fad4357055ca0cef5d06279f244a92815d473
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 1c3058663c01a7e90f4c67241a927923d659512a
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87967542"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048803"
 ---
 # <a name="configuring-intranet-forms-based-authentication-for-devices-that-do-not-support-wia"></a>Configuración de la autenticación basada en formularios de la intranet para dispositivos que no admiten WIA
 

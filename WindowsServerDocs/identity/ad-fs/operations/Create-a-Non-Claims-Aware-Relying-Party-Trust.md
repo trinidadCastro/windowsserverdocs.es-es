@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo crear una relación de confianza para usuario autenticado no compatible con notificaciones
 ms.assetid: 7b7ae389-5032-44f7-9c0a-94398c3e4d88
 title: Creación de una relación de confianza para usuario autenticado que no sea para notificaciones
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: d8a3c8e34c9b1ca655447b52152eb9d34c466c38
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 5238f93656c1d918122fc9cbb3a6b73232fce548
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87967305"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048873"
 ---
 # <a name="create-a-non-claims-aware-relying-party-trust"></a>Crear una relación de confianza para usuario autenticado no compatible con notificaciones
 

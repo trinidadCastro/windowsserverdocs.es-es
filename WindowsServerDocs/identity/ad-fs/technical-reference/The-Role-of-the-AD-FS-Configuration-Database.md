@@ -1,21 +1,22 @@
 ---
+description: 'Más información sobre: el rol de la base de datos de configuración de AD FS'
 ms.assetid: 68db7f26-d6e3-4e67-859b-80f352e6ab6a
 title: Papel de la base de datos de configuración de AD FS
-description: Obtenga información sobre el rol de la base de datos de configuración para almacenar todos los datos de configuración que representan una sola instancia de AD FS.
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 7adcd3a62ff85167172fcd856a3214fb51d9bd0b
-ms.sourcegitcommit: f95a991491ff09260d979078e248e2636bd2db54
+ms.openlocfilehash: 19b11885e28c23f789031e4b0c619cd660bd22e3
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 12/10/2020
-ms.locfileid: "96997842"
+ms.locfileid: "97045283"
 ---
 # <a name="the-role-of-the-ad-fs-configuration-database"></a>Papel de la base de datos de configuración de AD FS
-La base de datos de configuración de AD FS almacena todos los datos de configuración que representan una sola instancia de Servicios de federación de Active Directory (AD FS) \( AD FS \) \( es decir, el servicio de Federación \) . La base de datos de configuración de AD FS define el conjunto de parámetros que un servicio de federación necesita para identificar asociados, certificados, almacenes de atributos, notificaciones y diversos datos sobre estas entidades asociadas. Puede almacenar estos datos de configuración en una base de datos Microsoft SQL Server &reg; o en la característica WID de Windows Internal Database \( \) que se incluye con Windows Server 2012 o posterior.
+
+La base de datos de configuración de AD FS almacena todos los datos de configuración que representan una sola instancia de Servicios de federación de Active Directory (AD FS) \( AD FS \) \( es decir, el servicio de Federación \) . La base de datos de configuración de AD FS define el conjunto de parámetros que un servicio de federación necesita para identificar asociados, certificados, almacenes de atributos, notificaciones y diversos datos sobre estas entidades asociadas. Puede almacenar estos datos de configuración en una base de datos Microsoft SQL Server &reg; o en la característica WID de Windows Internal Database \( \) que se incluye con Windows Server &reg; 2008, Windows Server 2008 R2 y Windows Server &reg; 2012.
 
 > [!NOTE]
 > El contenido completo de la base de datos de configuración de AD FS se puede almacenar en una instancia de WID o en una instancia de la base de datos de SQL, pero no en ambas. Eso significa que no puedes hacer que unos servidores de federación usen WID y otros usen una base de datos de SQL Server para la misma instancia de la base de datos de configuración de AD FS.
@@ -46,11 +47,13 @@ Si seleccionas la opción de agregar un servidor de federación, WID se configur
 En esta sección se describen conceptos importantes que explican cómo la granja de servidores de federación WID replica los datos entre un servidor de federación principal y los servidores de federación secundarios. .
 
 #### <a name="primary-federation-server"></a>Servidor de federación principal
-Un servidor de Federación principal es un equipo que ejecuta Windows Server 2012 o posterior que se ha configurado con el rol de servidor de Federación mediante el Asistente para configuración de servidor de Federación de AD FS y que tiene una copia de lectura/escritura de la base de datos de configuración de AD FS. El servidor de Federación principal siempre se crea cuando se usa el Asistente para configuración de servidor de Federación de AD FS y se selecciona la opción para crear un Servicio de federación nuevo y hacer que ese equipo sea el primer servidor de Federación de la granja. Todos los demás servidores de federación de la granja, también conocidos como servidores de federación secundarios, deben sincronizar los cambios que se realicen en el servidor de federación principal con la copia de la base de datos de configuración de AD FS que está almacenada localmente.
+Un servidor de Federación principal es un equipo que ejecuta Windows Server 2008, Windows Server 2008 R2 o Windows Server &reg; 2012 que se ha configurado en el rol de servidor de Federación con el Asistente para configuración de servidor de Federación de AD FS y que tiene una copia de lectura/escritura de la base de datos de configuración de AD FS. El servidor de Federación principal siempre se crea cuando se usa el Asistente para configuración de servidor de Federación de AD FS y se selecciona la opción para crear un Servicio de federación nuevo y hacer que ese equipo sea el primer servidor de Federación de la granja. Todos los demás servidores de federación de la granja, también conocidos como servidores de federación secundarios, deben sincronizar los cambios que se realicen en el servidor de federación principal con la copia de la base de datos de configuración de AD FS que está almacenada localmente.
 
 #### <a name="secondary-federation-servers"></a>Servidores de federación secundarios
 Los servidores de Federación secundarios almacenan una copia de la AD FS base de datos de configuración del servidor de Federación principal, pero estas copias son de \- solo lectura. Los servidores de federación secundarios se conectan con los datos del servidor de federación principal de la granja y sincronizan los datos sondeándolo a intervalos regulares para comprobar si los datos han cambiado. Los servidores de Federación secundarios existen para proporcionar tolerancia a errores para el servidor de Federación principal mientras se actúa para equilibrar la carga de \- las solicitudes de acceso que se realizan en sitios diferentes en todo el entorno de red.
 
+> [!NOTE]
+> Si un servidor de federación principal se bloquea y se desconecta, todos los servidores de federación secundarios continuarán procesando las solicitudes normalmente. Sin embargo, no se pueden realizar cambios el servicio de federación hasta que el servidor de federación principal se vuelva a poner en línea. También puedes designar un servidor de federación secundario como servidor de federación principal mediante Windows PowerShell. Para más información, vea [Administración de AD FS con Windows PowerShell](https://go.microsoft.com/fwlink/?LinkID=179634).
 
 #### <a name="how-the-ad-fs-configuration-database-is-synchronized"></a>Sincronización de la base de datos de configuración de AD FS
 Debido al importante rol que se reproduce en la base de datos de configuración de AD FS, está disponible en todos los servidores de Federación de la red para proporcionar capacidades de tolerancia a errores y equilibrio de carga \- al procesar las solicitudes \( cuando \- se usan equilibradores de carga de red \) . Sin embargo, para que los servidores de federación secundarios cumplan esta función, la base de datos de configuración de AD FS que está almacenada en el servidor de federación principal se debe sincronizar.
@@ -65,49 +68,6 @@ El proceso de sincronización de WID también admite transferencias incrementale
 
 > [!NOTE]
 > Se permite migrar una base de datos de configuración de AD FS desde WID a una instancia de SQL Server. Para obtener más información sobre cómo hacerlo, vea [AD FS: migrar la base de datos de configuración de AD FS a SQL Server](https://go.microsoft.com/fwlink/?LinkId=192232) en el sitio wiki de TechNet.
-
-### <a name="how-to-managed-the-ad-fs-synchronization-properties"></a>Cómo administrar las propiedades de sincronización de AD FS
-En esta sección se describe cómo ver y editar el las propiedades de sincronización de la base de datos de configuración de AD FS.
-.
-
-El cmdlet **Get-ADFSSyncProperties** obtiene las propiedades de sincronización de la base de datos de configuración de Servicios de federación de Active Directory (AD FS) (AD FS).
-
-```
-PS C:\> Get-ADFSSyncProperties
-```
-En el servidor de AD FS principal, este cmdlet solo mostrará que el rol es el equipo principal. En un miembro secundario, mostrará el resto de la configuración, incluido el nombre de dominio completo de la última sincronización del equipo principal, el estado y la hora de la última sincronización, la duración del sondeo, el nombre de equipo principal configurado actualmente, el puerto del equipo principal y el rol del equipo secundario.
-
-El cmdlet **set-ADFSSyncProperties** modifica la frecuencia de sincronización de la base de datos de configuración de Servicios de federación de Active Directory (AD FS) (AD FS).
-El cmdlet también especifica qué servidor de Federación es el servidor principal de la granja de servidores de Federación.
-
-> [!NOTE]
-> Si un servidor de federación principal se bloquea y se desconecta, todos los servidores de federación secundarios continuarán procesando las solicitudes normalmente. Sin embargo, no se pueden realizar cambios el servicio de federación hasta que el servidor de federación principal se vuelva a poner en línea. También puedes designar un servidor de federación secundario como servidor de federación principal mediante Windows PowerShell. Si designa un nuevo servidor principal, los servidores que siguen deben modificarse para reflejar el nuevo servidor principal. Tener 2 primarios con una granja WID afectará a la estabilidad de la granja y tendrá el passibility de perder datos.
-
-#### <a name="modify-the-poll-duration-for-a-farm"></a>Modificar la duración del sondeo para una granja
-```
-PS C:\> Set-AdfsSyncProperties -PollDuration 3600 -PrimaryComputerName "FederationServerPrimary"
-```
-
-Este comando modifica la sincronización de la base de datos a 3600 segundos.
-El comando realiza el cambio en el servidor de Federación principal.
-
-####  <a name="change-a-server-from-secondary-to-primary"></a>Cambiar un servidor de secundario a principal
-```
-PS C:\> Set-AdfsSyncProperties -Role "PrimaryComputer"
-```
-
-Este comando cambia un servidor de AD FS en una granja WID de secundario a principal.
-
-#### <a name="change-a-primary-server-to-a-secondary-server"></a>Cambiar un servidor principal a un servidor secundario
-```
-PS C:\> Set-AdfsSyncProperties -Role "SecondaryComputer" -PrimaryComputerName "<FQDN of primary server>"
-```
-
-Este comando cambia un servidor de AD FS principal de una granja WID a un servidor secundario. Debe especificar el nombre de dominio completo del servidor principal. Si no lo hace, es posible que no todos los AD FS servidor secundario se sincronicen correctamente.
-Nota: el servidor principal debe ser accesible a través de HTTP en el puerto 80 desde el servidor secundario.
-
-Para obtener más información, vea: [set-AdfsSyncProperties](https://docs.microsoft.com/powershell/module/adfs/set-adfssyncproperties?view=win10-ps)
-
 
 ## <a name="using-sql-server-to-store-the-ad-fs-configuration-database"></a>Usar SQL Server para almacenar la base de datos de configuración de AD FS
 Puede crear la base de datos de configuración de AD FS mediante una única instancia de base de datos de SQL Server como almacén mediante la herramienta de línea de comandos Fsconfig.exe \- . Usar una base de datos de SQL Server como base de datos de configuración de AD FS tiene algunas ventajas respecto a WID:

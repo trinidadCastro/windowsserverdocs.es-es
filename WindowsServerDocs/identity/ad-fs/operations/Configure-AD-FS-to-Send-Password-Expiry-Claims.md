@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo configurar AD FS para enviar notificaciones de expiración de contraseñas
 ms.assetid: 03c82f43-ae2d-4038-b286-ae3858aed35a
 title: Configuración de AD FS para enviar notificaciones de expiración de contraseña
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: e53c33f1fef30570db46cf658bd1481343e846cd
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d043f86486d0f3370a310ec12cf1d0dfd937795b
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87962549"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97046713"
 ---
 # <a name="configure-ad-fs-to-send-password-expiry-claims"></a>Configuración de AD FS para enviar notificaciones de expiración de contraseña
 

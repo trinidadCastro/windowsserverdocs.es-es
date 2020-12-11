@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: identidad y acceso en Windows Server 2016'
 ms.assetid: c248b41f-0de3-4247-9a25-b4b08e50ebf0
 title: Identidad y acceso
 author: billmath
@@ -7,12 +8,12 @@ manager: femila
 ms.date: 03/16/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 92584ba048791df5de3e525ee7d5456e1a44f3e7
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 331298197e0495017b0993bd8ffb7d7b1d5548a3
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87965182"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97047153"
 ---
 # <a name="identity-and-access-in-windows-server-2016"></a>Identidad y acceso en Windows Server 2016
 

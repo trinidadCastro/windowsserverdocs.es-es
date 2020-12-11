@@ -6,12 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 29748fec16abe8aaad5331ccfe13c66d9a64e62f
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 0add6e50ec7f2efd0d8dce380a11164c3bd9796d
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87967362"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048903"
 ---
 # <a name="create-a-relying-party-trust"></a>Creación de una relación de confianza para usuario autenticado
 
@@ -41,11 +41,11 @@ La pertenencia al grupo **Administradores** o equivalente en el equipo local es 
 6. En la página **configurar certificado** , si tiene un certificado de cifrado de tokens opcional, haga clic en **examinar** para buscar un archivo de certificado y, a continuación, haga clic en **siguiente**.
 ![usuario de confianza](media/Create-a-Relying-Party-Trust/addtrust5.PNG)
 
-7.  En la página **configurar dirección URL** , realice una de las siguientes acciones o las dos, haga clic en **siguiente**y, a continuación, vaya al paso 8:
+7.  En la página **configurar dirección URL** , realice una de las siguientes acciones o las dos, haga clic en **siguiente** y, a continuación, vaya al paso 8:
 
-    -   Active la casilla **Habilitar la compatibilidad con el \- Protocolo pasivo de WS Federation** . En ** \- dirección URL del protocolo pasivo de Federación de WS**del usuario de confianza, escriba la dirección URL de esta relación de confianza para usuario autenticado y, a continuación, haga clic en **siguiente**.
+    -   Active la casilla **Habilitar la compatibilidad con el \- Protocolo pasivo de WS Federation** . En **\- dirección URL del protocolo pasivo de Federación de WS** del usuario de confianza, escriba la dirección URL de esta relación de confianza para usuario autenticado y, a continuación, haga clic en **siguiente**.
 
-    -   Activa la casilla **Habilitar compatibilidad con el protocolo SAML 2.0 WebSSO**. En **dirección URL del servicio SSO de saml 2,0 de usuario de confianza**, escriba la \( \) dirección URL del punto de conexión del servicio SAML de lenguaje de marcado de aserción de seguridad para esta relación de confianza para usuario autenticado y, a continuación, haga clic en **siguiente**.
+    -   Active la casilla **Habilitar compatibilidad con el protocolo SAML 2.0 WebSSO** . En **dirección URL del servicio SSO de saml 2,0 de usuario de confianza**, escriba la \( \) dirección URL del punto de conexión del servicio SAML de lenguaje de marcado de aserción de seguridad para esta relación de confianza para usuario autenticado y, a continuación, haga clic en **siguiente**.
 ![usuario de confianza](media/Create-a-Relying-Party-Trust/addtrust6.PNG)
 
 8. En la página **Configurar identificadores**, especifica uno o varios identificadores para este usuario de confianza, haz clic en **Agregar** para agregarlos a la lista y haz clic en **Siguiente**.
@@ -82,7 +82,7 @@ La pertenencia al grupo **Administradores** o equivalente en el equipo local es 
 
 5. En la página especificar nombre para mostrar, escriba un nombre en **nombre para mostrar**, en notas escriba una descripción para esta relación de confianza para usuario autenticado y, a continuación, haga clic en **siguiente**.
 
-6. En la página Elegir reglas de autorización de emisión , selecciona **Permitir a todos los usuarios el acceso a este usuario de confianza** o **Denegar a todos los usuarios el acceso a este usuario de confianza**y haz clic en **Siguiente**.
+6. En la página Elegir reglas de autorización de emisión , selecciona **Permitir a todos los usuarios el acceso a este usuario de confianza** o **Denegar a todos los usuarios el acceso a este usuario de confianza** y haz clic en **Siguiente**.
 
 7. En la página Ready to Add Trust (Listo para agregar confianza), revise la configuración y luego haga clic en **Siguiente** para guardar la información de la relación de confianza para usuario autenticado.
 

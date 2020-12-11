@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: Servicio de mantenimiento en Windows Server'
 title: Servicio de mantenimiento en Windows Server
 manager: eldenc
 ms.author: cosdar
@@ -6,12 +7,12 @@ ms.topic: article
 ms.assetid: 5bc71e71-920e-454f-8195-afebd2a23725
 author: cosmosdarwin
 ms.date: 02/09/2018
-ms.openlocfilehash: 69bf8d66fdd3e7fac4066791d0521173484a894f
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 486234923a9eff0c185249701b4f9ee28c752e24
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953421"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97047733"
 ---
 # <a name="health-service-in-windows-server"></a>Servicio de mantenimiento en Windows Server
 
@@ -19,7 +20,7 @@ ms.locfileid: "87953421"
 
 El Servicio de mantenimiento es una nueva característica de Windows Server 2016 que mejora la supervisión cotidiana y la experiencia operativa de los clústeres que ejecutan Espacios de almacenamiento directo.
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerrequisitos
 
 Servicio de mantenimiento está habilitado de forma predeterminada con Espacios de almacenamiento directo. No se requiere ninguna acción adicional para instalarlo o iniciarlo. Para obtener más información acerca de Espacios de almacenamiento directo, consulte [espacios de almacenamiento directo en Windows Server 2016](../storage/storage-spaces/storage-spaces-direct-overview.md).
 
@@ -35,7 +36,7 @@ Vea [errores de servicio de mantenimiento](health-service-faults.md).
 
 Consulte [servicio de mantenimiento acciones](health-service-actions.md).
 
-## <a name="automation"></a>automatización
+## <a name="automation"></a>Automatización
 
 En esta sección se describen los flujos de trabajo que se automatizan mediante el servicio de mantenimiento en el ciclo de vida del disco.
 

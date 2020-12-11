@@ -1,16 +1,17 @@
 ---
+description: Más información acerca de cómo crear una máquina virtual blindada mediante PowerShell
 title: Creación de una máquina virtual blindada mediante PowerShell
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 09/25/2019
-ms.openlocfilehash: 3272f1dd75f3e8df506341d49c1c32346bb5dbce
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 51a91559c808792d0be71a5a96573c96799822f7
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971332"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97047423"
 ---
 # <a name="create-a-shielded-vm-using-powershell"></a>Creación de una máquina virtual blindada mediante PowerShell
 

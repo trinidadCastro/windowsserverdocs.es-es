@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: Apéndice B: configurar el entorno de prueba'
 ms.assetid: 82918181-525d-4e93-af96-957dac6aedb6
 title: Apéndice B configurar el entorno de prueba
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: fee963cf2a39ded3a17c75032c684b32ad43c5a0
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: e15a3ccb7da0f2418d7b9c64f2534cd2165584a6
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952930"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048413"
 ---
 # <a name="appendix-b-setting-up-the-test-environment"></a>Apéndice B: Configuración del entorno de pruebas
 
@@ -19,7 +20,7 @@ ms.locfileid: "87952930"
 
 En este tema se describen los pasos para crear un laboratorio práctico para probar el control de acceso dinámico. Las instrucciones deben seguirse secuencialmente porque hay muchos componentes que tienen dependencias.
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerrequisitos
 **Requisitos de hardware y de software para SharePoint 2013**
 
 Requisitos para configurar el laboratorio de pruebas:
@@ -48,11 +49,11 @@ Necesitas crear las siguientes máquinas virtuales para probar los escenarios de
 
 Las contraseñas para las máquinas virtuales deben ser las siguientes:
 
--   BUILTIN\Administratorpass@word1
+-   BUILTIN\Administrator pass@word1
 
--   Contoso\administradorpass@word1
+-   Contoso\administrador pass@word1
 
--   Todas las demás cuentas:pass@word1
+-   Todas las demás cuentas: pass@word1
 
 ## <a name="build-the-test-lab-virtual-machines"></a>Crear las máquinas virtuales del laboratorio de pruebas
 
@@ -161,13 +162,13 @@ Crea los siguientes usuarios con el Centro de administración de Active Director
 4. Crea los siguientes usuarios con los atributos indicados:
 
 
-   |       Usuario       |  Nombre de usuario  |     Dirección de correo electrónico      | department |      Grupo       | País/región |
+   |       Usuario       |  Nombre de usuario  |     Dirección de correo electrónico      | Departamento |      Grupo       | País/región |
    |------------------|------------|------------------------|------------|------------------|----------------|
-   | Myriam Delesalle | MDelesalle | MDelesalle@contoso.com |  Finance   |                  |       EE. UU.       |
-   |    Miles Reid    |   MReid    |   MReid@contoso.com    |  Finance   |   FinanceAdmin   |       EE. UU.       |
-   |   Esther Valle   |   EValle   |   EValle@contoso.com   | Operaciones | FinanceException |       EE. UU.       |
-   |   Maira Wenzel   |  MWenzel   |  MWenzel@contoso.com   |     HR     |                  |       EE. UU.       |
-   |     Jeff Low     |    JLow    |    JLow@contoso.com    |     HR     |                  |       EE. UU.       |
+   | Myriam Delesalle | MDelesalle | MDelesalle@contoso.com |  Finance   |                  |       US       |
+   |    Miles Reid    |   MReid    |   MReid@contoso.com    |  Finance   |   FinanceAdmin   |       US       |
+   |   Esther Valle   |   EValle   |   EValle@contoso.com   | Operations | FinanceException |       US       |
+   |   Maira Wenzel   |  MWenzel   |  MWenzel@contoso.com   |     HR     |                  |       US       |
+   |     Jeff Low     |    JLow    |    JLow@contoso.com    |     HR     |                  |       US       |
    |    Servidor RMS    |    rms     |    rms@contoso.com     |            |                  |                |
 
    Para obtener más información sobre cómo crear grupos de seguridad, consulte [Crear un nuevo grupo](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd861305(v=ws.11)) en el sitio web de Windows Server.
@@ -325,7 +326,7 @@ Agrega Active Directory Rights Management Services (AD RMS) y todas las caracter
     > [!NOTE]
     > Se recomienda usar Windows Internal Database solo en entornos de prueba porque no admite más de un servidor en el clúster de AD RMS. Las implementaciones de producción usan un servidor de base de datos diferente.
 
-19. En la pantalla **cuenta de servicio** , en cuenta de usuario de **dominio**, haga clic en **especificar** y, a continuación, especifique el nombre de usuario (**contoso\rms**) y la contraseña ( <strong>pass@word1</strong> ), haga clic en **Aceptar**y, a continuación, haga clic en **siguiente**.
+19. En la pantalla **cuenta de servicio** , en cuenta de usuario de **dominio**, haga clic en **especificar** y, a continuación, especifique el nombre de usuario (**contoso\rms**) y la contraseña ( <strong>pass@word1</strong> ), haga clic en **Aceptar** y, a continuación, haga clic en **siguiente**.
 
 20. En la pantalla **Modo criptográfico**, haz clic en **Modo criptográfico 2**.
 
@@ -744,11 +745,11 @@ Cree el usuario Jeff Low con la contraseña <strong>pass@word1</strong> y asigne
 
 5. En el cuadro de diálogo **Entrada de permiso para permisos**, haga clic en **Agregar una condición** y especifique las condiciones siguientes:  [**Usuario**] [**Empresa**] [**Igual**] [**Valor**] [**Adatum**]. Los permisos deben ser **Modificar, Leer y ejecutar, Leer, Escribir**.
 
-6. Haga clic en **Aceptar**.
+6. Haga clic en **OK**.
 
 7. Haz clic en **Aceptar** tres veces para terminar y volver al Centro de administración de Active Directory.
 
-   ![guías de soluciones](media/Appendix-B--Setting-Up-the-Test-Environment/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***
+   ![guías de soluciones ](media/Appendix-B--Setting-Up-the-Test-Environment/PowerShellLogoSmall.gif) * *_<em>comandos equivalentes de Windows PowerShell</em>_* _
 
    Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.
 
@@ -779,7 +780,7 @@ Cree el usuario Jeff Low con la contraseña <strong>pass@word1</strong> y asigne
 
 ##### <a name="to-apply-the-central-access-policy-across-file-servers-through-group-policy"></a>Para aplicar la directiva de acceso central a todos los servidores de archivos mediante directiva de grupo
 
-1.  En la pantalla **Inicio**, escribe **Herramientas administrativas** y, en la barra **Buscar**, haz clic en **Configuración**. En los resultados de **Configuración**, haz clic en **Herramientas administrativas**. Abre la Consola de administración de directivas de grupo de la carpeta **Herramientas administrativas**.
+1.  En la pantalla _ *iniciar**, escriba **herramientas administrativas** y, en la barra de **búsqueda** , haga clic en **configuración**. En los resultados de **Configuración**, haz clic en **Herramientas administrativas**. Abre la Consola de administración de directivas de grupo de la carpeta **Herramientas administrativas**.
 
     > [!TIP]
     > Si la opción **Mostrar herramientas administrativas** está deshabilitada, no aparecerá la carpeta Herramientas administrativas ni su contenido en los resultados de **Configuración**.
@@ -825,10 +826,10 @@ Crea un nuevo volumen NTFS en FILE1 y crea la siguiente carpeta: D:\Earnings.
 
 4. Abre el Explorador de Windows y ve a D:\EARNINGS. Haz clic con el botón derecho en la carpeta **Earnings** y haz clic en **Propiedades**.
 
-5. Haga clic en la pestaña **clasificación** . Seleccione **Company**y, después, seleccione **Adatum** en el campo **valor** .
+5. Haga clic en la pestaña **clasificación** . Seleccione **Company** y, después, seleccione **Adatum** en el campo **valor** .
 
 6. Haz clic en **Cambiar**, selecciona **Adatum Only Access Policy** en el menú desplegable y, después, haz clic en **Aplicar**.
 
-7. Haga clic en la pestaña **seguridad** , haga clic en **Opciones avanzadas**y, a continuación, haga clic en la pestaña **directiva central** . Debería ver la lista **AdatumEmployeeAccessRule** . Puedes expandir el elemento para ver todos los permisos que estableciste cuando creaste la regla en Active Directory.
+7. Haga clic en la pestaña **seguridad** , haga clic en **Opciones avanzadas** y, a continuación, haga clic en la pestaña **directiva central** . Debería ver la lista **AdatumEmployeeAccessRule** . Puedes expandir el elemento para ver todos los permisos que estableciste cuando creaste la regla en Active Directory.
 
 8. Haz clic en **Aceptar** para volver al Explorador de Windows.

@@ -1,17 +1,18 @@
 ---
 title: Límites de escalabilidad del servidor de destino iSCSI
 TOCTitle: iSCSI Target Server Scalability Limits
+description: 'Más información sobre: límites de escalabilidad del servidor de destino iSCSI'
 ms.topic: article
 author: JasonGerend
 manager: dougkim
 ms.author: jgerend
 ms.date: 09/11/2018
-ms.openlocfilehash: 14ef17f96138c23aeac8e38b93a50b562ca69bba
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 657dfea08aba671883d0cca01f53854f48871544
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865174"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048733"
 ---
 # <a name="iscsi-target-server-scalability-limits"></a>Límites de escalabilidad del servidor de destino iSCSI
 
@@ -52,19 +53,19 @@ En este tema se proporcionan los límites admitidos y probados del servidor de d
 <tr class="odd">
 <td><p>unidades de disco virtual o UGM iSCSI por instancia de destino iSCSI</p></td>
 <td><p>256 (128 en Windows Server 2012)</p></td>
-<td><p>Sí</p></td>
+<td><p>Yes</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>Sesiones que pueden conectarse simultáneamente a una instancia de destino iSCSI</p></td>
 <td><p>544 (512 en Windows Server 2012)</p></td>
-<td><p>Sí</p></td>
+<td><p>Yes</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>Instantáneas por LU</p></td>
 <td><p>512</p></td>
-<td><p>Sí</p></td>
+<td><p>Yes</p></td>
 <td><p>Hay un límite de 512 instantáneas por volumen de aplicación iSCSI independiente.</p></td>
 </tr>
 <tr class="even">
@@ -262,28 +263,28 @@ En este tema se proporcionan los límites admitidos y probados del servidor de d
 <td><p>Tamaño de formato mínimo de VHD</p></td>
 <td><p>. vhdx: 3 MB</p>
 <p>. vhd: 8 MB</p></td>
-<td><p>Sí</p></td>
+<td><p>Yes</p></td>
 <td><p>Se aplica a todos los tipos de VHD compatibles: primario, diferenciado y fijo.</p></td>
 </tr>
 <tr class="even">
 <td><p>Tamaño máximo de VHD primario</p></td>
 <td><p>. vhdx: 64 TB</p>
 <p>. vhd: 2 TB</p></td>
-<td><p>Sí</p></td>
+<td><p>Yes</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>Tamaño máximo de VHD fijo</p></td>
 <td><p>. vhdx: 64 TB</p>
 <p>. vhd: 16 TB</p></td>
-<td><p>Sí</p></td>
+<td><p>Yes</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>Tamaño máximo de VHD de diferenciación</p></td>
 <td><p>. vhdx: 64 TB</p>
 <p>. vhd: 2 TB</p></td>
-<td><p>Sí</p></td>
+<td><p>Yes</p></td>
 <td></td>
 </tr>
 <tr class="odd">
@@ -308,7 +309,7 @@ En este tema se proporcionan los límites admitidos y probados del servidor de d
 <td><p>Formato dinámico de VHD</p></td>
 <td><p>. vhdx: sí</p>
 <p>. vhd: sí (no en Windows Server 2012)</p></td>
-<td><p>Sí</p></td>
+<td><p>Yes</p></td>
 <td><p>No se puede desasignar el&#39;t.</p></td>
 </tr>
 <tr class="odd">

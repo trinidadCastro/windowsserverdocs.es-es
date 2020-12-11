@@ -1,16 +1,17 @@
 ---
 title: Compilación de complementos con el modelo de evaluación de riesgos 2019 de AD FS
+description: 'Más información sobre: compilar complementos con AD FS modelo de evaluación de riesgos de 2019'
 author: billmath
 ms.author: billmath
 manager: mtillman
 ms.date: 05/05/2020
 ms.topic: article
-ms.openlocfilehash: ece40ea47c78c1d45cf55ff9daec551d940276e1
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 2c1d05450869d558d1991da2f95b72bcaeca7462
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865154"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97047823"
 ---
 # <a name="build-plug-ins-with-ad-fs-2019-risk-assessment-model"></a>Compilación de complementos con el modelo de evaluación de riesgos 2019 de AD FS
 
@@ -316,6 +317,6 @@ El método devuelve la [puntuación de riesgo](/dotnet/api/microsoft.identityser
 **¿Qué otros complementos de ejemplo están disponibles?**</br>
 **R:** Están disponibles los siguientes complementos de ejemplo:
 
-|Nombre|Descripción|
+|NOMBRE|Descripción|
 |-----|-----|
 |[Complemento de usuario de riesgo](https://github.com/microsoft/adfs-sample-block-user-on-adfs-marked-risky-by-AzureAD-IdentityProtection)|Complemento de ejemplo que bloquea la autenticación o aplica MFA en función del nivel de riesgo del usuario determinado por Azure AD Identity Protection.|

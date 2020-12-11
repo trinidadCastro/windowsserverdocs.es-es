@@ -1,4 +1,5 @@
 ---
+description: 'Más información sobre: creación de una regla para enviar una afirmación compatible con AD FS 1. x'
 ms.assetid: 0039fbbb-b981-4526-a550-f3456ff27635
 title: Creación de una regla para enviar una afirmación compatible con AD FS 1. x
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 4f46130129617113b8877b764bf081d0fb585e4a
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: ee00149fca0a78c8faa4338b3aa5ba0060909703
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87967232"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97045663"
 ---
 # <a name="create-a-rule-to-send-an-ad-fs-1x-compatible-claim"></a>Creación de una regla para enviar una afirmación compatible con AD FS 1. x
 
@@ -29,18 +30,18 @@ En situaciones en las que usa Servicios de federación de Active Directory (AD F
 
     -   Grupo
 
-    -   Cualquier otro tipo de notificaciones que comience por https://schemas.xmlsoap.org/claims/ , comohttps://schemas.xmlsoap.org/claims/EmployeeID
+    -   Cualquier otro tipo de notificaciones que comience por https://schemas.xmlsoap.org/claims/ , como https://schemas.xmlsoap.org/claims/EmployeeID
 
 En función de las necesidades de su organización, use uno de los procedimientos siguientes para crear un AD FS 1. notificación NameID compatible *x* :
 
 -   Cree esta regla para emitir una demanda de ID. de nombre de AD FS 1. x mediante la **plantilla de reglas pasar a través o filtrar una notificaciones entrantes** .
 
--   Cree esta regla para emitir una claim de identificador de nombre de AD FS 1. x mediante la **plantilla de regla transformar una notificaciones entrantes**. Puede usar esta plantilla de reglas en situaciones en las que desee cambiar el tipo de notificaciones existente a un nuevo tipo de demanda que funcionará con AD FS 1. notificaciones  *x* .
+-   Cree esta regla para emitir una claim de identificador de nombre de AD FS 1. x mediante la **plantilla de regla transformar una notificaciones entrantes**. Puede usar esta plantilla de reglas en situaciones en las que desee cambiar el tipo de notificaciones existente a un nuevo tipo de demanda que funcionará con AD FS 1. notificaciones *x* .
 
 > [!NOTE]
 > Para que esta regla funcione según lo previsto, asegúrese de que la relación de confianza para usuario autenticado o proveedor de notificaciones en la que va a crear esta regla se haya configurado para usar el **perfil AD FS 1,0 y 1,1**.
 
-## <a name="to-create-a-rule-to-issue-an-adfs1x-name-id-claim-using-the-pass-through-or-filter-an-incoming-claim-rule-template-on-a-relying-party-trust-in-windows-server-2016"></a>Para crear una regla para emitir un AD FS 1. *x* notificaciones de identificador de nombre mediante la plantilla de reglas pasar a través o filtrar una notificaciones entrantes en una relación de confianza para usuario autenticado en Windows Server 2016
+## <a name="to-create-a-rule-to-issue-an-ad-fs-1x-name-id-claim-using-the-pass-through-or-filter-an-incoming-claim-rule-template-on-a-relying-party-trust-in-windows-server-2016"></a>Para crear una regla para emitir un AD FS 1. *x* notificaciones de identificador de nombre mediante la plantilla de reglas pasar a través o filtrar una notificaciones entrantes en una relación de confianza para usuario autenticado en Windows Server 2016
 
 1.  En el Administrador del servidor, haga clic en **Herramientas** y, luego, seleccione **Administración de AD FS**.
 
@@ -79,10 +80,10 @@ En función de las necesidades de su organización, use uno de los procedimiento
     -   **Pasar solo los valores de notificaciones que empiezan con un valor específico** 
  ![ crear regla](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs3.PNG)
 
-10. Haga clic en **Finalizar**y, a continuación, haga clic en **Aceptar** para guardar la regla.
+10. Haga clic en **Finalizar** y, a continuación, haga clic en **Aceptar** para guardar la regla.
 
 
-## <a name="to-create-a-rule-to-issue-an-adfs1x-name-id-claim-using-the-pass-through-or-filter-an-incoming-claim-rule-template-on-a-claims-provider-trust-in-windows-server-2016"></a>Para crear una regla para emitir un AD FS 1. notificación de ID. de nombre *x* uso de la plantilla de reglas pasar a través o filtrar una notificación entrante en una confianza de proveedor de notificaciones en Windows Server 2016
+## <a name="to-create-a-rule-to-issue-an-ad-fs-1x-name-id-claim-using-the-pass-through-or-filter-an-incoming-claim-rule-template-on-a-claims-provider-trust-in-windows-server-2016"></a>Para crear una regla para emitir un AD FS 1. notificación de ID. de nombre *x* uso de la plantilla de reglas pasar a través o filtrar una notificación entrante en una confianza de proveedor de notificaciones en Windows Server 2016
 
 1.  En el Administrador del servidor, haga clic en **Herramientas** y, luego, seleccione **Administración de AD FS**.
 
@@ -121,7 +122,7 @@ En función de las necesidades de su organización, use uno de los procedimiento
     -   **Pasar solo los valores de notificaciones que empiezan con un valor específico** 
  ![ crear regla](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs3.PNG)
 
-10. Haga clic en **Finalizar**y, a continuación, haga clic en **Aceptar** para guardar la regla.
+10. Haga clic en **Finalizar** y, a continuación, haga clic en **Aceptar** para guardar la regla.
 
 
 ## <a name="to-create-a-rule-to-transform-an-incoming-claim-on-a-relying-party-trust-in-windows-server-2016"></a>Para crear una regla para transformar una demanda entrante en una relación de confianza para usuario autenticado en Windows Server 2016
@@ -163,7 +164,7 @@ En función de las necesidades de su organización, use uno de los procedimiento
     -   **Reemplazar las \- notificaciones de sufijo de correo electrónico entrante por una nueva regla de creación de sufijo de \- correo electrónico** 
  ![](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs4.PNG)
 
-11. Haga clic en **Finalizar**y, a continuación, haga clic en **Aceptar** para guardar la regla.
+11. Haga clic en **Finalizar** y, a continuación, haga clic en **Aceptar** para guardar la regla.
 
 
 
@@ -207,7 +208,7 @@ En función de las necesidades de su organización, use uno de los procedimiento
     -   **Reemplazar las \- notificaciones de sufijo de correo electrónico entrante por una nueva regla de creación de sufijo de \- correo electrónico** 
  ![](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs4.PNG)
 
-11. Haga clic en **Finalizar**y, a continuación, haga clic en **Aceptar** para guardar la regla.
+11. Haga clic en **Finalizar** y, a continuación, haga clic en **Aceptar** para guardar la regla.
 
 
 
@@ -222,11 +223,11 @@ En función de las necesidades de su organización, use uno de los procedimiento
 
 
 
-## <a name="to-create-a-rule-to-issue-an-adfs1x-name-id-claim-using-the-pass-through-or-filter-an-incoming-claim-rule-template-on-windows-server-2012-r2"></a>Para crear una regla para emitir un AD FS 1. *x* notificaciones de identificador de nombre mediante la plantilla de reglas pasar a través o filtrar una notificaciones entrantes en Windows Server 2012 R2
+## <a name="to-create-a-rule-to-issue-an-ad-fs-1x-name-id-claim-using-the-pass-through-or-filter-an-incoming-claim-rule-template-on-windows-server-2012-r2"></a>Para crear una regla para emitir un AD FS 1. *x* notificaciones de identificador de nombre mediante la plantilla de reglas pasar a través o filtrar una notificaciones entrantes en Windows Server 2012 R2
 
-1.  En Administrador del servidor, haga clic en **herramientas**y, a continuación, haga clic en **Administración de AD FS**.
+1.  En Administrador del servidor, haga clic en **herramientas** y, a continuación, haga clic en **Administración de AD FS**.
 
-2.  En el árbol de consola, en **AD FS \\ relaciones de confianza**, haga clic en **confianzas de proveedor de notificaciones** o en **confianzas**de usuario de confianza y, a continuación, haga clic en una confianza específica en la lista en la que desea crear esta regla.
+2.  En el árbol de consola, en **AD FS \\ relaciones de confianza**, haga clic en **confianzas de proveedor de notificaciones** o en **confianzas** de usuario de confianza y, a continuación, haga clic en una confianza específica en la lista en la que desea crear esta regla.
 
 3.  Haga clic con el botón secundario \- en la confianza seleccionada y, a continuación, haga clic en **editar reglas de notificaciones**.
 ![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)
@@ -268,14 +269,14 @@ En función de las necesidades de su organización, use uno de los procedimiento
     -   **Pasar solo los valores de notificaciones que empiezan con un valor específico** 
  ![ crear regla](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs1.PNG)
 
-10. Haga clic en **Finalizar**y, a continuación, haga clic en **Aceptar** para guardar la regla.
+10. Haga clic en **Finalizar** y, a continuación, haga clic en **Aceptar** para guardar la regla.
 
 
-## <a name="to-create-a-rule-to-issue-an-adfs1x-name-id-claim-using-the-transform-an-incoming-claim-rule-template-in-windows-server-2012-r2"></a>Para crear una regla para emitir un AD FS 1. *x* notificaciones de identificador de nombre mediante la plantilla de regla transformar una notificaciones entrantes en Windows Server 2012 R2
+## <a name="to-create-a-rule-to-issue-an-ad-fs-1x-name-id-claim-using-the-transform-an-incoming-claim-rule-template-in-windows-server-2012-r2"></a>Para crear una regla para emitir un AD FS 1. *x* notificaciones de identificador de nombre mediante la plantilla de regla transformar una notificaciones entrantes en Windows Server 2012 R2
 
-1.  En Administrador del servidor, haga clic en **herramientas**y, a continuación, haga clic en **Administración de AD FS**.
+1.  En Administrador del servidor, haga clic en **herramientas** y, a continuación, haga clic en **Administración de AD FS**.
 
-2.  En el árbol de consola, en **AD FS \\ relaciones de confianza**, haga clic en **confianzas de proveedor de notificaciones** o en **confianzas**de usuario de confianza y, a continuación, haga clic en una confianza específica en la lista en la que desea crear esta regla.
+2.  En el árbol de consola, en **AD FS \\ relaciones de confianza**, haga clic en **confianzas de proveedor de notificaciones** o en **confianzas** de usuario de confianza y, a continuación, haga clic en una confianza específica en la lista en la que desea crear esta regla.
 
 3.  Haga clic con el botón secundario \- en la confianza seleccionada y, a continuación, haga clic en **editar reglas de notificaciones**.
 ![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)
@@ -317,7 +318,7 @@ En función de las necesidades de su organización, use uno de los procedimiento
     -   **Reemplazar las \- notificaciones de sufijo de correo electrónico entrante por una nueva regla de creación de sufijo de \- correo electrónico** 
  ![](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs2.PNG)
 
-11. Haga clic en **Finalizar**y, a continuación, haga clic en **Aceptar** para guardar la regla.
+11. Haga clic en **Finalizar** y, a continuación, haga clic en **Aceptar** para guardar la regla.
 
 ## <a name="additional-references"></a>Referencias adicionales
 [Configuración de regla de notificación](Configure-Claim-Rules.md)

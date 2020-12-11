@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo planear volúmenes en Espacios de almacenamiento directo
 ms.assetid: 342173ca-4e10-44f4-b2c9-02a6c26f7a4a
 title: Planeación de volúmenes en Espacios de almacenamiento directo
 ms.author: cosdar
@@ -7,12 +8,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 06/28/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: dcc98fba7194da322f9fc97b67eb43d481f50133
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d1f975299593db29da20c35a621ea870e436d8be
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971152"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048943"
 ---
 # <a name="planning-volumes-in-storage-spaces-direct"></a>Planeación de volúmenes en Espacios de almacenamiento directo
 

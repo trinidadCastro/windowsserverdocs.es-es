@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de los requisitos de resolución de nombres para servidores proxy de Federación
 ms.assetid: c28c60ff-693d-49ee-a75b-58f24866217b
 title: Requisitos de resolución de nombres para servidores proxy de federación
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 2122f2a6a3372650d321b456791d33147c4d1f85
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: ed871b8fb0f904fee246714a852ab5934c4a6e1c
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87945213"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97046533"
 ---
 # <a name="name-resolution-requirements-for-federation-server-proxies"></a>Requisitos de resolución de nombres para servidores proxy de federación
 

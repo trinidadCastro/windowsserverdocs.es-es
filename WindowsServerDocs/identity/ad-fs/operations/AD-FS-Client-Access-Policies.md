@@ -1,16 +1,17 @@
 ---
+description: Más información acerca de cómo controlar el acceso a los datos de la organización con Servicios de federación de Active Directory (AD FS)
 title: Directivas de Access Control de cliente en AD FS
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 4d7d45b91e866b9df927620f2e214ced248b3361
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 669069b905dcd73a184abf51905894d6f5236afb
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87947491"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97046643"
 ---
 # <a name="controlling-access-to-organizational-data-with-active-directory-federation-services"></a>Controlar el acceso a los datos de la organización con Servicios de federación de Active Directory (AD FS)
 
@@ -50,8 +51,8 @@ Para obtener más información sobre Azure AD el acceso condicional, consulte [a
 
 Un cambio de clave que habilita estos escenarios es la [autenticación moderna](https://blogs.office.com/2015/11/19/updated-office-365-modern-authentication-public-preview/), una nueva forma de autenticar a los usuarios y dispositivos que funcionan de la misma manera entre los clientes de Office, Skype, Outlook y exploradores.
 
-## <a name="next-steps"></a>Pasos a seguir
+## <a name="next-steps"></a>Pasos siguientes
 Para obtener más información sobre cómo controlar el acceso a través de la nube y de forma local, vea:
 
-- [Acceso condicional en Azure Active Directory](/azure/active-directory/active-directory-conditional-access)
+- [Acceso condicional en Azure Active Directory](/azure/active-directory/active-directory-conditional-access)
 - [Access Control directivas en AD FS 2016](Access-Control-Policies-in-AD-FS.md)

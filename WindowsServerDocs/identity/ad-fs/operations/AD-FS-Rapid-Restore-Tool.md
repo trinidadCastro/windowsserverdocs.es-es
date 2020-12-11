@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: AD FS herramienta de restauración rápida'
 ms.assetid: 4deff06a-d0ef-4e5a-9701-5911ba667201
 title: Herramienta de restauración rápida de AD FS
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 04/24/2019
 ms.topic: article
-ms.openlocfilehash: cb95a3eb85132ee5d5f3b40536364ebd0f58b40a
-ms.sourcegitcommit: 3181fcb69a368f38e0d66002e8bc6fd9628b1acc
+ms.openlocfilehash: 4d8313d5a086f2a64ea840da49faa9ca22e46466
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96330467"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97046623"
 ---
 # <a name="ad-fs-rapid-restore-tool"></a>Herramienta de restauración rápida de AD FS
 

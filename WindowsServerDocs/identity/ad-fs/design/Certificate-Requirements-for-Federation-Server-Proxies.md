@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de los requisitos de certificado para servidores proxy de Federación
 ms.assetid: dc24adb7-385d-4a92-ab81-78ba73df0118
 title: Requisitos de certificado para servidores proxy de federación
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 51eb0e72f52fafdb2f1b8bbb3f9a2850602c3f75
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 90907b37c9a048f7529f78e0685cb15521aa27fd
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87954341"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97044793"
 ---
 # <a name="certificate-requirements-for-federation-server-proxies"></a>Requisitos de certificado para servidores proxy de federación
 
@@ -21,7 +22,7 @@ Los servidores proxy de Federación suelen estar expuestos a equipos de Internet
 
 Si tiene una granja de servidores proxy de Federación, todos los equipos de servidor proxy de Federación deben usar el mismo certificado de autenticación de servidor. Para obtener más información, consulte [When to Create a Federation Server Proxy Farm](When-to-Create-a-Federation-Server-Proxy-Farm.md).
 
-Es importante comprobar que el nombre de sujeto del certificado de autenticación de servidor coincide con el valor de nombre de Servicio de federación especificado en el complemento de administración \- de AD FS. Para buscar este valor, abra el complemento \- , haga clic con el botón secundario \- en **servicio**, haga clic en **Editar servicio de Federación propiedades**y, a continuación, busque el valor en servicio de Federación cuadro de texto **nombre** .
+Es importante comprobar que el nombre de sujeto del certificado de autenticación de servidor coincide con el valor de nombre de Servicio de federación especificado en el complemento de administración \- de AD FS. Para buscar este valor, abra el complemento \- , haga clic con el botón secundario \- en **servicio**, haga clic en **Editar servicio de Federación propiedades** y, a continuación, busque el valor en servicio de Federación cuadro de texto **nombre** .
 
 Para obtener información general sobre el uso de certificados SSL, consulte Configuración de Capa de sockets seguros en IIS 7,0 \( [http: \/ \/ Go.Microsoft.com \/ fwlink \/ ? LinkID \= 108544](https://go.microsoft.com/fwlink/?LinkID=108544) \) y configuración de certificados de servidor en IIS 7,0 \( [http: \/ \/ Go.Microsoft.com \/ fwlink \/ ? LinkID \= 108545](https://go.microsoft.com/fwlink/?LinkID=108545) \) .
 

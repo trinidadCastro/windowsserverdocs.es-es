@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo implementar AD FS en la organización del asociado de cuenta
 ms.assetid: 9aaca9c5-ce44-495c-aad6-61aede87a83f
 title: Implementación de AD FS en la organización del asociado de cuenta
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: db72dd69a44d90a89a255b7d974f0cf1816bd722
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: e9617b737c929c029a103bbd6054c0dbc33d9eb4
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87954331"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97044743"
 ---
 # <a name="deploying-ad-fs-in-the-account-partner-organization"></a>Implementación de AD FS en la organización del asociado de cuenta
 

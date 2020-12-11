@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: Guía de tutorial: administración de riesgos con Access Control condicional'
 ms.assetid: 3a840b63-78b7-4e62-af7b-497026bfdb93
 title: 'Guía de tutorial: administración de riesgos con Access Control condicional'
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 5523f882d64f0c43456bd86aa9a60f95db033094
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 8993aff4e89df0b01780703791070d9dc0664308
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87956280"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048833"
 ---
 # <a name="walkthrough-guide-manage-risk-with-conditional-access-control"></a>Guía de tutorial: Administración de riesgos con control de acceso condicional
 
@@ -113,7 +114,7 @@ Set-AdfsRelyingPartyTrust -TargetRelyingParty $rp -IssuanceAuthorizationRules $G
 ## <a name="step-4-verify-conditional-access-control-mechanism"></a><a name="BKMK_4"></a>Paso 4: comprobar el mecanismo de control de acceso condicional
 En este paso comprobará la directiva de control de acceso condicional que configuró en el paso anterior. Puede usar el siguiente procedimiento para comprobar que el usuario de AD **Robert Hatley** puede tener acceso a la aplicación de ejemplo porque pertenece al grupo **Finance** y que los usuarios de AD que no pertenecen al grupo **Finance** no pueden tener acceso a la aplicación de ejemplo.
 
-1.  En el equipo cliente, abra una ventana del explorador y vaya a la aplicación de ejemplo:**https://webserv1.contoso.com/claimapp**
+1.  En el equipo cliente, abra una ventana del explorador y vaya a la aplicación de ejemplo: **https://webserv1.contoso.com/claimapp**
 
     Esta acción redirige automáticamente la solicitud al servidor de federación y se le solicita que inicie sesión con un nombre de usuario y una contraseña.
 

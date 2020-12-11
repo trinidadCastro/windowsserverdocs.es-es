@@ -1,18 +1,19 @@
 ---
 ms.assetid: 2bab6bf6-90e7-46a7-b917-14a7a8f55366
 title: Administración de estado de la memoria de clase de almacenamiento (NVDIMM-N) en Windows
+description: 'Más información sobre: administración del estado de la memoria de clase de almacenamiento (NVDIMM-N) en Windows'
 ms.author: jgerend
 manager: dongill
 ms.topic: article
 author: JasonGerend
 ms.date: 06/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: b97263c0cc1fefd71eebd6eb4d7b66ca66741a04
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 290ae790f64b5142118e16b2aca206569b16a549
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865934"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97047673"
 ---
 # <a name="storage-class-memory-nvdimm-n-health-management-in-windows"></a>Administración de estado de la memoria de clase de almacenamiento (NVDIMM-N) en Windows
 
@@ -55,7 +56,7 @@ Al hacerlo, se obtiene este resultado de ejemplo:
 | 802c-01-1602-117cb64f | Advertencia | Error predictivo | {Umbral superado,Error NVDIMM\_N} |
 
 > [!NOTE]
-> Para buscar la ubicación física de un dispositivo NVDIMM-N especificado en un evento, en la pestaña **detalles** del evento en visor de eventos, vaya a ubicación de **EventData**  >  **Location**. Tenga en cuenta que Windows Server 2016 enumera los dispositivos de ubicación NVDIMM-N incorrectos, pero esto se corrigió en Windows Server, versión 1709.
+> Para buscar la ubicación física de un dispositivo NVDIMM-N especificado en un evento, en la pestaña **detalles** del evento en visor de eventos, vaya a ubicación de **EventData**  >  . Tenga en cuenta que Windows Server 2016 enumera los dispositivos de ubicación NVDIMM-N incorrectos, pero esto se corrigió en Windows Server, versión 1709.
 
 Para obtener ayuda sobre las distintas condiciones de estado, vea las secciones siguientes.
 

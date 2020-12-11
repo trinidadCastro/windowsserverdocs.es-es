@@ -1,4 +1,5 @@
 ---
+description: 'Obtener más información acerca de la recuperación del bosque de AD: Asunción de una función de maestro de operaciones'
 title: 'Recuperación de bosque de AD: Asunción de un rol de maestro de operaciones'
 ms.author: daveba
 author: iainfoulds
@@ -6,12 +7,12 @@ manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 7e6bb370-f840-4416-b5e2-86b0ba715f4f
-ms.openlocfilehash: 76e32be8db1647a209f94b49484898cf88333040
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: d621f6382b927ddb555fa84571f8407f9b905246
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93070807"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97047133"
 ---
 # <a name="ad-forest-recovery---seizing-an-operations-master-role"></a>Recuperación de bosque de AD: Asunción de un rol de maestro de operaciones
 
@@ -45,7 +46,7 @@ Utilice el procedimiento siguiente para asumir un rol de maestro de operaciones 
    Connect to server ServerFQDN
    ```
 
-   Donde *ServerFQDN* es el nombre de dominio completo (FQDN) de este DC, por ejemplo: **connect to Server nycdc01.example.com** .
+   Donde *ServerFQDN* es el nombre de dominio completo (FQDN) de este DC, por ejemplo: **connect to Server nycdc01.example.com**.
 
    Si *ServerFQDN* no se ejecuta correctamente, utilice el nombre NetBIOS del controlador de dominio.
 
@@ -57,7 +58,7 @@ Utilice el procedimiento siguiente para asumir un rol de maestro de operaciones 
 
 6. En función del rol que desee asumir, en el símbolo del sistema **FSMO Maintenance:** , escriba el comando adecuado como se describe en la tabla siguiente y, a continuación, presione Entrar.
 
-|Rol|Credenciales|Get-Help|
+|Rol|Credenciales|Comando|
 |----------|-----------------|-------------|
 |Maestro de nomenclatura de dominios|Administradores de empresas|**Asunción del maestro de nomenclatura**|
 |Maestro de esquema|Administradores de esquema|**Asumir el maestro de esquema**|
@@ -68,7 +69,7 @@ Utilice el procedimiento siguiente para asumir un rol de maestro de operaciones 
 Después de confirmar la solicitud, Active Directory o AD DS intenta transferir el rol. Cuando se produce un error en la transferencia, aparece cierta información de error y Active Directory o AD DS continúa con el embargo. Una vez completada la Asunción, se muestra una lista de los roles y el nombre del Protocolo ligero de acceso a directorios (LDAP) del servidor que tiene actualmente cada rol. También puede ejecutar **netdom query fsmo** en un símbolo del sistema con privilegios elevados para comprobar los titulares de la función actual.
 
 > [!NOTE]
-> Si este equipo no era un maestro de RID antes del error e intenta asumir el rol de maestro de RID, el equipo intentará sincronizar con un asociado de replicación antes de aceptar este rol. Sin embargo, dado que este paso se realiza cuando el equipo está aislado, no se realizará correctamente la sincronización con un socio. Por lo tanto, aparece un cuadro de diálogo que le pregunta si desea continuar con la operación a pesar de que este equipo no se puede sincronizar con un socio comercial. Haga clic en **Sí** .
+> Si este equipo no era un maestro de RID antes del error e intenta asumir el rol de maestro de RID, el equipo intentará sincronizar con un asociado de replicación antes de aceptar este rol. Sin embargo, dado que este paso se realiza cuando el equipo está aislado, no se realizará correctamente la sincronización con un socio. Por lo tanto, aparece un cuadro de diálogo que le pregunta si desea continuar con la operación a pesar de que este equipo no se puede sincronizar con un socio comercial. Haga clic en **Sí**.
 
 ## <a name="next-steps"></a>Pasos siguientes
 

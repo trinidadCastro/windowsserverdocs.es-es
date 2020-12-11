@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo configurar reglas de notificaciones en AD FS para Windows Server
 ms.assetid: 9cafa3e1-8118-4a75-a7c2-1dbe40b1a444
 title: Configuración de reglas de notificaciones
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 7a85044010c95f64fe1167d7bf186f265fe4beb9
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: edf9e7c2bdcb93e3f838addf3149d06a3c632fc1
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964772"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97045443"
 ---
 # <a name="configure-claim-rules-in-ad-fs-for-windows-server"></a>Configuración de reglas de notificaciones en AD FS para Windows Server
 

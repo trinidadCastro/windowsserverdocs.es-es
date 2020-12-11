@@ -1,4 +1,5 @@
 ---
+description: 'Más información sobre: Guía de pruebas de clonación de controladores de dominio virtualizados para proveedores de aplicaciones'
 ms.assetid: fde99b44-cb9f-49bf-b888-edaeabe6b88d
 title: Guía de pruebas de clonación de controladores de dominio virtualizados para proveedores de aplicaciones
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 03272c7dc3afaccac9fb48d591f4f17d84bcccd4
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 328bef8456a5b6d4955bf03463bb4a6fecf2201e
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93070917"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97045083"
 ---
 # <a name="virtualized-domain-controller-cloning-test-guidance-for-application-vendors"></a>Guía de pruebas de clonación de controladores de dominio virtualizados para proveedores de aplicaciones
 
@@ -45,7 +46,7 @@ No se puede clonar un controlador de dominio que ejecute su aplicación o servic
 
 -   Agregado al archivo CustomDCCloneAllowList.xml mediante el cmdlet de Windows PowerShell Get-ADDCCloningExcludedApplicationList
 
--O bien-
+O bien
 
 -   Quitado del controlador de dominio
 

@@ -1,17 +1,18 @@
 ---
 ms.assetid: 4ddb927d-d65e-491d-840a-16049c083d13
 title: El papel de los almacenes de atributos
+description: 'Más información sobre: el rol de almacenes de atributos'
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: b15eef56a071aea1b2af6ad2f17f7b97a86c9f88
-ms.sourcegitcommit: 853382db13aed60344a075fdd054ef42e09c34c9
+ms.openlocfilehash: dc23e15893672633c7e175d2b0313771d327fccc
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96932790"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97045313"
 ---
 # <a name="the-role-of-attribute-stores"></a>El papel de los almacenes de atributos
 Servicios de federación de Active Directory (AD FS) usa el término "almacenes de atributos" para hacer referencia a directorios o bases de datos que usa una organización para almacenar sus cuentas de usuario y sus valores de atributo asociados. Una vez configurado en una organización del proveedor de identidades, AD FS recupera estos valores de atributo del almacén y crea notificaciones basadas en esa información para que una aplicación web o un servicio hospedado en una organización de usuario de confianza pueda tomar las decisiones de autorización adecuadas cada vez que un usuario federado \( un usuario cuya cuenta esté almacenada en la organización del proveedor de identidades \) intente obtener acceso a la aplicación o
@@ -37,4 +38,3 @@ AD FS admite una amplia gama de almacenes de directorios y bases de datos que pu
 -   Todas las ediciones de Microsoft SQL Server 2005, SQL Server 2008, SQL Server 2012, SQL Server 2014 y SQL Server 2016 y versiones más recientes;
 
 -   Almacenes de atributos personalizados
-

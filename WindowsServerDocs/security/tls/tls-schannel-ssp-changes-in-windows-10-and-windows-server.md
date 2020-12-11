@@ -1,16 +1,17 @@
 ---
+description: Más información acerca de los cambios de TLS (Schannel SSP) en Windows 10 y Windows Server 2016
 title: TLS (Schannel SSP)
 ms.topic: article
 ms.assetid: ebd3c40c-b4c0-4f6d-a00c-f90eda4691df
 author: justinha
 ms.author: Justinha
 ms.date: 05/16/2018
-ms.openlocfilehash: 389a5a009320f7a19f5cbf942fe7c86f08f573ac
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.openlocfilehash: 28774f9be853a133bfc69f5ca86fc25c4b1fd88f
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90078532"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97045483"
 ---
 # <a name="tls-schannel-ssp-changes-in-windows-10-and-windows-server-2016"></a>Cambios de TLS (Schannel SSP) en Windows 10 y Windows Server 2016
 
@@ -45,11 +46,11 @@ Windows 10, versión 1507 y Windows Server 2016 agregar opciones de configuraci�
 
 Para obtener más información, consulte [KeyExchangeAlgorithm-Client RSA Key sizes](tls-registry-settings.md#keyexchangealgorithm---client-rsa-key-sizes).
 
-### <a name="diffie-hellman-key-changes"></a>Cambios en las claves Diffie-Hellman
+### <a name="diffie-hellman-key-changes"></a>Diffie-Hellman cambios clave
 
-Windows 10, versión 1507 y Windows Server 2016 agregan opciones de configuración del registro para tamaños de clave Diffie-Hellman.
+Windows 10, versión 1507 y Windows Server 2016 agregan opciones de configuración del registro para los tamaños de clave de Diffie-Hellman.
 
-Para obtener más información, consulte [KeyExchangeAlgorithm-Diffie-Hellman clave sizes](tls-registry-settings.md#keyexchangealgorithm---diffie-hellman-key-sizes).
+Para obtener más información, consulte [KeyExchangeAlgorithm: tamaños de clave de Diffie-Hellman](tls-registry-settings.md#keyexchangealgorithm---diffie-hellman-key-sizes).
 
 ### <a name="sch_use_strong_crypto-option-changes"></a>SCH_USE_STRONG_CRYPTO cambios en las opciones
 
@@ -105,7 +106,7 @@ Compatibilidad agregada para los siguientes conjuntos de cifrado de PSK:
 - TLS_PSK_WITH_AES_128_GCM_SHA256 (RFC 5487) en Windows 10, versión 1607 y Windows Server 2016
 - TLS_PSK_WITH_AES_256_GCM_SHA384 (RFC 5487) en Windows 10, versión 1607 y Windows Server 2016
 
-## <a name="session-resumption-without-server-side-state-server-side-performance-improvements"></a>Reanudación de la sesión sin mejoras en el rendimiento del servidor de estado del servidor
+## <a name="session-resumption-without-server-side-state-server-side-performance-improvements"></a>Reanudación de la sesión sin Server-Side estado mejoras de rendimiento del servidor
 
 Windows 10, versión 1507 y Windows Server 2016 proporcionan un 30% más de reanudaciones de sesión por segundo con vales de sesión en comparación con Windows Server 2012.
 

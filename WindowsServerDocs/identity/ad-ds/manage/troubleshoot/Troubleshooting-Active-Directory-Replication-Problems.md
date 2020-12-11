@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo solucionar problemas de replicación Active Directory
 ms.assetid: b11f7a65-ec7b-4c11-8dc4-d7cabb54cd94
 title: Solución de problemas de replicación de Active Directory
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: aef89bb1d57aff57b90f0eaeed67832f8778ba8c
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 7b095dc75d18af2a03f7d6a95d4865bc6e975097
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93068967"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97046333"
 ---
 # <a name="troubleshooting-active-directory-replication-problems"></a>Solución de problemas de replicación de Active Directory
 
@@ -116,7 +117,7 @@ Puede usar el siguiente procedimiento para recuperar el estado de replicación d
 
 Requisitos
 
-La pertenencia a **Administradores de empresa** , o equivalente, es lo mínimo necesario para completar este procedimiento.
+La pertenencia a **Administradores de empresa**, o equivalente, es lo mínimo necesario para completar este procedimiento.
 
 Herramientas:
 

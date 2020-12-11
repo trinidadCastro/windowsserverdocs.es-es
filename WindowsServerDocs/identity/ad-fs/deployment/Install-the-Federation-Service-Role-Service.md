@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo instalar el servicio de rol de Servicio de federación
 ms.assetid: e33673ff-ea1c-4476-a549-3bf5899a47dd
 title: Instalar el servicio de rol Servicio de federación
 author: billmath
@@ -6,12 +7,12 @@ manager: femila
 ms.date: 05/31/2017
 ms.topic: article
 ms.author: billmath
-ms.openlocfilehash: 5aee90e28ae233cf7c96013537d82cc77bc9ba2e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 9189a5b21cd1a88226759755e4078256fabbe367
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87972162"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048883"
 ---
 # <a name="install-the-federation-service-role-service"></a>Instalar el servicio de rol Servicio de federación
 
@@ -22,14 +23,14 @@ Ahora que ha configurado correctamente un equipo con los certificados y las apli
 
 Puede usar el siguiente procedimiento para instalar el servicio de rol de Servicio de federación de AD FS en un equipo que se convertirá en el primer servidor de Federación o en un equipo que se convertirá en un servidor de Federación para una granja de servidores de Federación existente.
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerrequisitos
 Compruebe que ya se ha instalado o importado un certificado SSL con la clave privada en el almacén de certificados local (almacén personal) antes de iniciar este procedimiento. Si va a utilizar un certificado de firma de tokens emitido por una entidad de certificación (CA), compruebe que ya se ha instalado o importado un certificado de firma de tokens con la clave privada en el almacén de certificados local (almacén personal) antes de iniciar este procedimiento. Como alternativa, puede crear un certificado de firma de tokens autofirmado mediante el Asistente para agregar funciones, como se describe en este procedimiento. Para obtener más información acerca de los certificados de firma de tokens, consulte [requisitos de certificado para servidores de Federación](../design/certificate-requirements-for-federation-servers.md).
 
 La pertenencia al grupo **Administradores** o equivalente en el equipo local es el requisito mínimo necesario para completar este procedimiento. Revise los detalles sobre el uso de las cuentas y pertenencias a grupos adecuadas en [grupos predeterminados locales y de dominio](https://go.microsoft.com/fwlink/?LinkId=83477).
 
 #### <a name="to-install-the-federation-service-role-service"></a>Cómo instalar el servicio de rol de servicio de federación
 
-1. En la pantalla **Inicio** , escriba**Administrador del servidor**y, a continuación, presione Entrar.
+1. En la pantalla **Inicio** , escriba **Administrador del servidor** y, a continuación, presione Entrar.
 
 2. Haga clic en **Administrar** y luego haga clic en **Agregar roles y características** para iniciar el Asistente para agregar roles y características.
 

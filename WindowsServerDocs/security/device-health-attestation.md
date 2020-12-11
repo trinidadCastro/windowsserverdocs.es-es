@@ -1,16 +1,17 @@
 ---
+description: 'Más información acerca de: Atestación de estado de dispositivo'
 title: Atestación de estado de dispositivo
 ms.topic: article
 ms.assetid: 8e7b77a4-1c6a-4c21-8844-0df89b63f68d
 author: brianlic-msft
 ms.author: brianlic
 ms.date: 10/12/2016
-ms.openlocfilehash: fc5b0a3e3b3da3b329baec37888fd04c9f3adc0e
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 6caff885e936809c649564a950d78a99e8fa49ce
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87995726"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97047553"
 ---
 # <a name="device-health-attestation"></a>Atestación de estado de dispositivo
 
@@ -26,7 +27,7 @@ Introducido en Windows 10, versión 1507, Atestación de estado de dispositivo (
 
 A partir de Windows Server 2016, ahora puede ejecutar el servicio DHA como un rol de servidor dentro de su organización. Este tema aprenderá a instalar y configurar el rol de servidor de Atestación de estado de dispositivo.
 
-## <a name="overview"></a>Introducción
+## <a name="overview"></a>Información general
 
 Puede usar DHA para evaluar el estado de dispositivo para:
 
@@ -40,7 +41,7 @@ El servicio DHA valida los registros de TPM y PCR para un dispositivo y, a despu
 
 - **Servicio en la nube DHA**: un servicio DHA administrado por Microsoft que es gratuito, de carga equilibrada geográfica y optimizado para el acceso desde distintas regiones del mundo.
 
-- **Servicio local DHA **: un nuevo rol de servidor incluido en Windows Server 2016. Está disponible de manera gratuita para los clientes con una licencia de Windows Server 2016.
+- **Servicio local DHA**: un nuevo rol de servidor incluido en Windows Server 2016. Está disponible de manera gratuita para los clientes con una licencia de Windows Server 2016.
 
 - **Servicio en la nube DHA de Azure**: un host virtual en Microsoft Azure. Para ello, necesita un host virtual y licencias para el servicio local DHA.
 
@@ -103,7 +104,7 @@ El modo de validación AIKCert está optimizado para entornos operativos que tie
 
 Utilice las siguientes secciones para instalar y configurar DHA en Windows Server 2016.
 
-### <a name="prerequisites"></a>Requisitos previos
+### <a name="prerequisites"></a>Prerrequisitos
 
 Para configurar y comprobar un servicio local DHA, necesita:
 

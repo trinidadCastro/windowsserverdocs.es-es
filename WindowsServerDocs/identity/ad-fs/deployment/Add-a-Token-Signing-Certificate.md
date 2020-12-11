@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo agregar un certificado de Token-Signing
 ms.assetid: bbb84ea6-7e31-4442-85ab-a9447e7c19e8
 title: Agregar un certificado de firma de tokens
 author: billmath
@@ -6,12 +7,12 @@ manager: femila
 ms.date: 05/31/2017
 ms.topic: article
 ms.author: billmath
-ms.openlocfilehash: 31a624b85d68611be0661d6efcc8f33d24efdc54
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 16db3238d8d3dcac55f228a5a9cca80ccf3ca132
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87947626"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048143"
 ---
 # <a name="add-a-token-signing-certificate"></a>Agregar un certificado de firma de tokens
 
@@ -27,9 +28,9 @@ La pertenencia al grupo **Administradores** o equivalente en el equipo local es 
 
 ### <a name="to-add-a-token-signing-certificate"></a>Para agregar un certificado de firma de tokens \-
 
-1.  En la pantalla **Inicio** , escriba**AD FS Management**y, a continuación, presione Entrar.
+1.  En la pantalla **Inicio** , escriba **AD FS Management** y, a continuación, presione Entrar.
 
-2.  En el árbol de consola, haga doble \- clic en **servicio**y, a continuación, haga clic en **certificados**.
+2.  En el árbol de consola, haga doble \- clic en **servicio** y, a continuación, haga clic en **certificados**.
 
 3.  En el panel **acciones** , haga clic en el vínculo **Agregar certificado de \- firma de tokens** .
 
