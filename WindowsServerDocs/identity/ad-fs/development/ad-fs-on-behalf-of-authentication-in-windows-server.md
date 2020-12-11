@@ -1,17 +1,18 @@
 ---
 ms.assetid: 5052f13c-ff35-471d-bff5-00b5dd24f8aa
 title: Compilar una aplicación de varios niveles mediante "en nombre de" (OBO) mediante OAuth con AD FS 2016 o posterior.
+description: Más información acerca de cómo compilar una aplicación de varios niveles con on-behalf-of (OBO) mediante OAuth con AD FS 2016 o posterior
 author: billmath
 ms.author: billmath
 manager: mtillman
 ms.date: 02/22/2018
 ms.topic: article
-ms.openlocfilehash: b080f45d36d26ed566eacc5ae1ad84d98dd45d48
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 24dcb859c35d82ab81460ccaea2ceb1dba5e502c
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96864764"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97040883"
 ---
 # <a name="build-a-multi-tiered-application-using-on-behalf-of-obo-using-oauth-with-ad-fs-2016-or-later"></a>Compilar una aplicación de varios niveles mediante "en nombre de" (OBO) mediante OAuth con AD FS 2016 o posterior.
 
@@ -279,7 +280,7 @@ Continúe con el resto del asistente, igual que cuando se configuró ToDoListSer
 * Abrir el archivo de Web.config
 * Modificar las claves siguientes
 
-| Clave | Value |
+| Clave | Valor |
 |:-|:-|
 | ida: audiencia | IDENTIFICADOR de ToDoListService tal como se indica en AD FS al configurar ToDoListService WebAPI, por ejemplo, https://localhost:44321/ |
 | ida: ClientID | IDENTIFICADOR de ToDoListService tal como se indica en AD FS al configurar ToDoListService WebAPI, por ejemplo, <https://localhost:44321/> </br>**Es muy importante que ida: Audience y ida: ClientID coincidan entre sí.** |

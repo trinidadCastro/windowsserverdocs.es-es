@@ -1,16 +1,17 @@
 ---
 title: Configuración del Servicio web de inscripción de certificados para la renovación basada en claves de certificados en un puerto personalizado
+description: Más información sobre la configuración de Servicio web de inscripción de certificados para la renovación basada en claves de certificado en un puerto personalizado.
 author: Deland-Han
 ms.author: delhan
 manager: dcscontentpm
 ms.date: 11/12/2019
 ms.topic: article
-ms.openlocfilehash: 9f9930cc59badf19036c598f11f2a5b423711c94
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 55ac25e37f7c7621426db031ba1ad148d3a02a98
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96866074"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97042403"
 ---
 # <a name="configuring-certificate-enrollment-web-service-for-certificate-key-based-renewal-on-a-custom-port"></a>Configuración del Servicio web de inscripción de certificados para la renovación basada en claves de certificados en un puerto personalizado
 
@@ -312,7 +313,7 @@ Una vez finalizada la prueba, revierta la configuración de tiempo al valor orig
 
 [Install-AdcsEnrollmentWebService](/powershell/module/adcsdeployment/install-adcsenrollmentwebservice)
 
-Consulte también
+Vea también
 
 [Foro de seguridad de Windows Server](https://aka.ms/adcsforum)
 

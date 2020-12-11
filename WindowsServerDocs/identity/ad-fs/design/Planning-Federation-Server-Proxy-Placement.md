@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo planear la selección de ubicación del servidor proxy de Federación
 ms.assetid: d3cf4cb9-9b9e-4dcf-b6c6-8c6c42ec5f3e
 title: Planear la ubicación del servidor proxy de federación
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 51b8d628ec5b29ae4ddf68e01f2c255fabcae646
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 3d89a55a992afcdb008fe535c6bffc6e400f05be
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87954311"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97040923"
 ---
 # <a name="planning-federation-server-proxy-placement"></a>Planear la ubicación del servidor proxy de federación
 

@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo revisar los modelos de dominio
 ms.assetid: e727a33d-133b-43c9-b6a4-7c00f9cb6000
 title: Revisar los modelos de dominio
 ms.author: daveba
@@ -6,12 +7,12 @@ author: iainfoulds
 manager: daveba
 ms.date: 08/08/2018
 ms.topic: article
-ms.openlocfilehash: 9f5cc2b73a06ed8e08820c4eb342484db84d55d0
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: c7a934c4d5e9ca8d60c555bd665a76984bc2f9e7
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93070247"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97042563"
 ---
 # <a name="reviewing-the-domain-models"></a>Revisar los modelos de dominio
 
@@ -27,7 +28,7 @@ El diseño de dominio más sencillo es un dominio único. En un diseño de domin
 
 Es mejor minimizar el número de dominios que se implementan en el bosque. Esto reduce la complejidad general de la implementación y, como resultado, reduce el costo total de propiedad. En la tabla siguiente se enumeran los costos administrativos asociados con la adición de dominios regionales.
 
-| Coste     | Implicaciones     |
+| Costo     | Implicaciones     |
 | -------- | ---------------- |
 | Administración de varios grupos de administradores de servicios|Cada dominio tiene sus propios grupos de administradores de servicios que deben administrarse de forma independiente. La pertenencia de estos grupos de administradores de servicios debe controlarse cuidadosamente.|
 | Mantener la coherencia entre los valores de directiva de grupo que son comunes a varios dominios | Directiva de grupo Opciones de configuración que deben aplicarse en todo el bosque deben aplicarse por separado a cada dominio individual del bosque. |

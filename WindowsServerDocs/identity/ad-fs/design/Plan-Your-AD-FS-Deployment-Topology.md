@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo planear la topología de implementación de AD FS
 ms.assetid: 5c8c6cc0-0d22-4f27-a111-0aa90db7d6c8
 title: Planear la topología de la implementación de AD FS
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 156a7c451038fc40cf22037138bbcf446c93de1e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: aaa2810b132bf9fb63b82850c91e8541f218b7a2
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87972112"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97041013"
 ---
 # <a name="plan-your-ad-fs-deployment-topology"></a>Planear la topología de la implementación de AD FS
 
@@ -24,7 +25,7 @@ Hay dos tipos de bases de datos que puede usar para almacenar AD FS datos de con
 > [!IMPORTANT]
 > Para implementar redundancia básica, equilibrio de la carga y la opción de escalar el Servicio de federación (si fuera necesario), te recomendamos que implementes al menos dos servidores de federación por cada granja de servidores de federación para todos los entornos de producción, independientemente del tipo de base de datos que vayas a usar.
 
-## <a name="determining-which-type-of-adfs-configuration-database-to-use"></a>Cómo determinar qué tipo de base de datos de configuración de AD FS utilizar
+## <a name="determining-which-type-of-ad-fs-configuration-database-to-use"></a>Cómo determinar qué tipo de base de datos de configuración de AD FS utilizar
 AD FS utiliza una base de datos para almacenar la configuración y, en algunos casos, los datos transaccionales relacionados con el Servicio de federación. Puede usar el software de AD FS para seleccionar la Windows Internal Database (WID) integrada o Microsoft SQL Server 2008 o una versión más reciente para almacenar los datos en el Servicio de federación.
 
 Para la mayoría de los objetivos, los dos tipos de bases de datos son relativamente equivalentes. Sin embargo, hay algunas diferencias que debe tener en cuenta antes de empezar a leer más sobre las distintas topologías de implementación que puede usar con AD FS. La siguiente tabla describe las diferencias que existen entre las características de una base de datos de WID y una base de datos de SQL Server.

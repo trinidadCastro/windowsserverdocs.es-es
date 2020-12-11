@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo implementar Least-Privilege modelos administrativos
 ms.assetid: 7a7ab95c-9cb3-4a7b-985a-3fc08334cf4f
 title: Implementación de modelos administrativos de menor privilegio
 ms.author: daveba
@@ -6,12 +7,12 @@ author: iainfoulds
 manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
-ms.openlocfilehash: 95f8158f5565c57904b7423456eb7189f9e58a2a
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 02ce80d936caff5ef77a78585a2e0f35e0b12ca5
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93069669"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97040723"
 ---
 # <a name="implementing-least-privilege-administrative-models"></a>Implementación de modelos administrativos de menor privilegio
 
@@ -148,7 +149,7 @@ En uno o más GPO creados y vinculados a las unidades organizativas de estacione
 
 ##### <a name="configuring-gpos-to-restrict-administrator-accounts-on-domain-controllers"></a>Configuración de GPO para restringir cuentas de administrador en controladores de dominio
 
-En cada dominio del bosque, se debe modificar la directiva predeterminada de controladores de dominio o una directiva vinculada a la unidad organizativa controladores de dominio para agregar la cuenta de administrador de cada dominio a los siguientes derechos de usuario en el equipo: \ configuración de seguridad\Directivas locales **\ asignaciones de derechos** :
+En cada dominio del bosque, se debe modificar la directiva predeterminada de controladores de dominio o una directiva vinculada a la unidad organizativa controladores de dominio para agregar la cuenta de administrador de cada dominio a los siguientes derechos de usuario en el equipo: \ configuración de seguridad\Directivas locales **\ asignaciones de derechos**:
 
 - Denegar el acceso desde la red a este equipo
 - Denegar el inicio de sesión como trabajo por lotes

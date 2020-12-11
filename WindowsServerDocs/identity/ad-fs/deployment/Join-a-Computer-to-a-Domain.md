@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: unir un equipo a un dominio'
 ms.assetid: 10d6723e-c857-43da-9d2d-acb5641d3da8
 title: Unir un equipo a un dominio
 author: billmath
@@ -6,12 +7,12 @@ manager: femila
 ms.date: 05/31/2017
 ms.topic: article
 ms.author: billmath
-ms.openlocfilehash: edb02a623998f2bac3621f201267e76fdcf3e1dd
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 20c7971ff64792deadbb453edd4a76f02b14bd98
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969752"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97042132"
 ---
 # <a name="join-a-computer-to-a-domain"></a>Unir un equipo a un dominio
 
@@ -23,9 +24,9 @@ La pertenencia al grupo **Administradores** o equivalente en el equipo local es 
 
 ### <a name="to-join-a-computer-to-a-domain"></a>Para unir un equipo a un dominio
 
-1.  En la pantalla **Inicio** , escriba **Panel de control**y, a continuación, presione Entrar.
+1.  En la pantalla **Inicio** , escriba **Panel de control** y, a continuación, presione Entrar.
 
-2.  Vaya a **sistema y seguridad**y, a continuación, haga clic en **sistema**.
+2.  Vaya a **sistema y seguridad** y, a continuación, haga clic en **sistema**.
 
 3.  En **Configuración de nombre, dominio y grupo de trabajo del equipo**, haga clic en **Cambiar la configuración**.
 

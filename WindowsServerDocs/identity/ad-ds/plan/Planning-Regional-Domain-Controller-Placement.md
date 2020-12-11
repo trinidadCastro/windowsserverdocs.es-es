@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo planear la selección de ubicación del controlador de dominio regional
 ms.assetid: eb600904-24b8-4488-a278-c1c971dc2f2d
 title: Planeación de la ubicación del controlador de dominio regional
 ms.author: daveba
@@ -6,12 +7,12 @@ author: iainfoulds
 manager: daveba
 ms.date: 08/08/2018
 ms.topic: article
-ms.openlocfilehash: 6c8cc9b66b197075a1f2fa09d54236e21f26ff54
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 4226ea2eabcfceb9cbddf11919fc8067f172992f
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93071137"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97042663"
 ---
 # <a name="planning-regional-domain-controller-placement"></a>Planeación de la ubicación del controlador de dominio regional
 

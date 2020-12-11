@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de la configuración de AD FS para la autenticación de certificados de usuario
 ms.assetid: 1ea2e1be-874f-4df3-bc9a-eb215002da91
 title: Configurar la compatibilidad de AD FS para la autenticación de certificados de usuario
 author: jenfieldmsft
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: samueld
 ms.date: 01/18/2018
 ms.topic: article
-ms.openlocfilehash: 6321b3e68b71f004a030dfba8a8f1ca7b56d4f78
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 02d1d3e6e0b1d8aac739f59c2a6ef60ce8a8088a
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87967522"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97042273"
 ---
 # <a name="configuring-ad-fs-for-user-certificate-authentication"></a>Configuración de AD FS para la autenticación de certificados de usuario
 
@@ -20,7 +21,7 @@ La autenticación de certificados de usuario se usa principalmente en dos casos 
 * Los usuarios usan certificados aprovisionados para dispositivos móviles
 
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerrequisitos
 1) Determine el modo de AD FS autenticación de certificado de usuario que desea habilitar mediante uno de los modos descritos en [este artículo](ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication.md) .
 2) Asegúrese de que la cadena de confianza de certificados de usuario está instalada & de confianza para todos los servidores AD FS y WAP, incluidas las entidades de certificación intermedias. Normalmente, esto se hace a través de un GPO en servidores AD FS/WAP.
 3)  Asegúrese de que el certificado raíz de la cadena de confianza para los certificados de usuario se encuentra en el almacén NTAuth en Active Directory
@@ -45,7 +46,7 @@ Además, hay algunos aspectos opcionales.
 - Puede que desee considerar la posibilidad de modificar las páginas de inicio de sesión para que se adapten a las necesidades de los usuarios finales al realizar la autenticación de certificados. Los casos comunes son para (a) cambiar el "Inicio de sesión con el certificado X509" por algo más descriptivo para el usuario final
 
 ## <a name="configure-seamless-certificate-authentication-for-chrome-browser-on-windows-desktops"></a>Configurar la autenticación de certificados sin problemas para el explorador Chrome en escritorios de Windows
-Cuando hay varios certificados de usuario (como certificados de Wi-Fi) en el equipo que cumplen los objetivos de la autenticación del cliente, el explorador Chrome del escritorio de Windows le pedirá al usuario que seleccione el certificado adecuado. Esto puede resultar confuso para el usuario final. Para optimizar esta experiencia, puede establecer una directiva para que Chrome seleccione automáticamente el certificado adecuado para mejorar la experiencia del usuario. Esta Directiva se puede establecer manualmente si se realiza un cambio en el registro o se configura automáticamente a través de GPO (para establecer las claves del registro). Esto requiere que los certificados de cliente de usuario para la autenticación en AD FS tengan emisores distintos de otros casos de uso.
+Cuando hay varios certificados de usuario (como Wi-Fi certificados) en el equipo que cumplen los objetivos de la autenticación del cliente, el explorador Chrome del escritorio de Windows le pedirá al usuario que seleccione el certificado adecuado. Esto puede resultar confuso para el usuario final. Para optimizar esta experiencia, puede establecer una directiva para que Chrome seleccione automáticamente el certificado adecuado para mejorar la experiencia del usuario. Esta Directiva se puede establecer manualmente si se realiza un cambio en el registro o se configura automáticamente a través de GPO (para establecer las claves del registro). Esto requiere que los certificados de cliente de usuario para la autenticación en AD FS tengan emisores distintos de otros casos de uso.
 
 Para obtener más información sobre cómo configurar esto para Chrome, consulte este [vínculo](http://www.chromium.org/administrators/policy-list-3#AutoSelectCertificateForUrls).
 
@@ -78,15 +79,14 @@ Cada AD FS y el servidor WAP deberán alcanzar el punto de conexión de CRL para
 2)  En cada servidor AD FS/WAP, asegúrese de que los extremos de CRL son accesibles a través del protocolo usado (normalmente HTTPS o HTTP).
 3)  Para la validación avanzada, [habilite el registro de eventos CAPI2](/archive/blogs/benjaminperkins/enable-capi2-event-logging-to-troubleshoot-pki-and-ssl-certificate-issues) en cada servidor AD FS/WAP.
 4) Busque el ID. de evento 41 (comprobar la revocación) en los registros operativos de CAPI2
-5) Comprobar`‘\<Result value="80092013"\>The revocation function was unable to check revocation because the revocation server was offline.\</Result\>'`
+5) Comprobar `‘\<Result value="80092013"\>The revocation function was unable to check revocation because the revocation server was offline.\</Result\>'`
 
-***Sugerencia***: puede tener como destino un solo servidor AD FS o WAP para facilitar la solución de problemas mediante la configuración de la resolución de DNS (archivo de host en Windows) para que apunte a un servidor específico. Esto le permite habilitar el seguimiento dirigido a un servidor.
+***Sugerencia**: puede tener como destino un solo servidor AD FS o WAP para facilitar la solución de problemas mediante la configuración de la resolución de DNS (archivo de host en Windows) para que apunte a un servidor específico. Esto le permite habilitar el seguimiento dirigido a un servidor.
 
 ### <a name="check-if-this-is-a-server-name-indication-sni-issue"></a>Compruebe si se trata de un problema de Indicación de nombre de servidor (SNI)
 AD FS requiere que el dispositivo cliente (o los exploradores) y los equilibradores de carga admitan SNI. Es posible que algunos dispositivos cliente (normalmente versiones anteriores de Android) no admitan SNI. Además, es posible que los equilibradores de carga no admitan SNI o no estén configurados para SNI. En estos casos, es probable que vea errores de certificación de usuario.
 1)  Trabaje con su ingeniero de red para asegurarse de que la Load Balancer para AD FS/WAP admita SNI
-2)  En caso de que no se admita SNI AD FS tiene una solución alternativa mediante los pasos siguientes:
-    *   Abra una ventana de símbolo del sistema con privilegios elevados en el servidor de AD FS principal
+2)  En caso de que no se pueda admitir SNI AD FS tiene una solución alternativa siguiendo los pasos que se indican a continuación _ abrir una ventana de símbolo del sistema con privilegios elevados en el servidor de AD FS principal
     *   Tipo en ```Netsh http show sslcert```
     *   Copiar el "GUID de aplicación" y el "hash de certificado" del servicio de Federación
     *   Tipo en `netsh http add sslcert ipport=0.0.0.0:{your_certauth_port} certhash={your_certhash} appid={your_applicaitonGUID}`
@@ -112,7 +112,7 @@ Para obtener más información, consulte [este vínculo](ad-fs-prompt-login.md).
 
 ### <a name="additional-troubleshooting"></a>Más soluciones de problemas
 Se trata de casos poco frecuentes
-1)  Si las listas de CRL son muy largas, puede agotar el tiempo de espera al intentar la descarga. En ese caso, debe actualizar "MaxFieldLength" y "MaxRequestByte" segúnhttps://support.microsoft.com/help/820129/http-sys-registry-settings-for-windows
+1)  Si las listas de CRL son muy largas, puede agotar el tiempo de espera al intentar la descarga. En ese caso, debe actualizar "MaxFieldLength" y "MaxRequestByte" según https://support.microsoft.com/help/820129/http-sys-registry-settings-for-windows
 
 
 

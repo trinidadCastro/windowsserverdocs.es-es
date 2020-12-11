@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: error de replicación 1396 error de inicio de sesión el nombre de la cuenta de destino es incorrecto'
 ms.assetid: 399a8bbe-3375-4bb0-b55b-5f46e7050028
 title: 'Error de replicación 1396: error de inicio de sesión; el nombre de la cuenta de destino es incorrecto'
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 41b995f8212b25c7a80753a3bd91503db57895ee
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: a21d4f2a5e9772393d3e84a2adb497406c693f63
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93070087"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97042593"
 ---
 # <a name="replication-error-1396-logon-failure-the-target-account-name-is-incorrect"></a>Error de replicación 1396: error de inicio de sesión; el nombre de la cuenta de destino es incorrecto
 

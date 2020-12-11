@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo reducir la superficie expuesta a ataques de Active Directory
 ms.assetid: 864ad4bc-8428-4a8b-8671-cb93b68b0c03
 title: Reducción de la superficie de ataque de Active Directory
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 8802091de7746844176a97acf5e958d55b0b1f92
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 0486f62f2c53c427a196cd6e68a8b879c63df2ab
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93069517"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97040633"
 ---
 # <a name="reducing-the-active-directory-attack-surface"></a>Reducción de la superficie de ataque de Active Directory
 
@@ -72,13 +73,13 @@ En la tabla siguiente se enumeran las cuentas y los grupos protegidos predetermi
 |Administradores|Operadores de cuentas|Operadores de cuentas|Operadores de cuentas|
 ||Administrador|Administrador|Administrador|
 ||Administradores|Administradores|Administradores|
-|Administradores de dominio|Operadores de copias de seguridad|Operadores de copias de seguridad|Operadores de copias de seguridad|
+|Administradores de dominio|Operadores de copia de seguridad|Operadores de copia de seguridad|Operadores de copia de seguridad|
 ||Publicadores de certificados|||
 ||Administradores de dominio|Administradores de dominio|Administradores de dominio|
 |Administradores de empresas|Controladores de dominio|Controladores de dominio|Controladores de dominio|
 ||Administradores de empresas|Administradores de empresas|Administradores de empresas|
 ||Krbtgt|Krbtgt|Krbtgt|
-||Opers. de impresión|Opers. de impresión|Opers. de impresión|
+||Operadores de impresión|Operadores de impresión|Operadores de impresión|
 ||||Controladores de dominio de solo lectura|
 ||Duplicadores|Duplicadores|Duplicadores|
 |Administradores de esquema|Administradores de esquema||Administradores de esquema|

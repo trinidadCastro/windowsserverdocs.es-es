@@ -1,4 +1,5 @@
 ---
+description: 'Más información sobre: determinar el tipo de plantilla de regla de notificaciones que se va a usar'
 ms.assetid: 696a29b2-d627-4c9a-a384-9c8aaf50bd23
 title: Establecer qué tipo de plantilla de regla de notificación usar
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: bbc73c48fa3c1dd4bb743d5c088fdd94d722d5a1
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a3609ee6676f2db2ad3007509bbd81f70d68014a
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87938026"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97042393"
 ---
 # <a name="determine-the-type-of-claim-rule-template-to-use"></a>Establecer qué tipo de plantilla de regla de notificación usar
 
@@ -41,7 +42,7 @@ En la sección siguiente se da información sobre qué tipo de plantillas de reg
 ## <a name="claim-rule-template-types"></a>Tipos de plantilla de regla de notificación
 En la tabla siguiente se describen todos los tipos de plantillas de reglas de notificaciones que puede usar para crear reglas mediante el complemento \- de administración de AD FS en y las ventajas de usar un tipo de plantilla sobre otro.
 
-|Tipo de plantilla de notificación|Descripción|Ventajas|Desventajas|
+|Tipo de plantilla de notificación|Descripción|Ventajas|Inconvenientes|
 |----------------------|---------------|--------------|-----------------|
 |Pasar o filtrar una notificación entrante|Se usa para crear una regla que pasará a través todos los valores de notificación para un tipo de notificación determinado o notificaciones de filtros basadas en los valores de notificación para que solo ciertos valores de notificación para un tipo de notificación determinado pasen a través.<p>Para obtener más información, consulte [When to Use a Pass Through or Filter Claim Rule](When-to-Use-a-Pass-Through-or-Filter-Claim-Rule.md).|-Se puede usar para seleccionar notificaciones determinadas para que se acepten o se emitan sin cambios|-No se puede cambiar el tipo y el valor de notificaciones|
 |Transformar una notificación entrante|Se usa para crear una regla que pueda seleccionar una notificación entrante y asignarla a un tipo de notificación diferente o asignar su valor de notificación a un nuevo valor de notificación.<p>Para obtener más información, consulte [When to Use a Transform Claim Rule](When-to-Use-a-Transform-Claim-Rule.md).|-Se puede usar para normalizar los valores o tipos de notificaciones<br />-Puede reemplazar un \- sufijo de correo electrónico de una demanda entrante|-Las sustituciones de cadenas más complejas requieren una regla personalizada|

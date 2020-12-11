@@ -1,16 +1,17 @@
 ---
+description: Más información acerca de cómo actualizar AD RMS a Windows Server 2016
 ms.assetid: e6fa9069-ec9c-4615-b266-957194b49e11
 title: Actualización de AD RMS a Windows Server 2016
 author: msmbaldwin
 ms.author: esaggese
 ms.date: 05/30/2019
 ms.topic: article
-ms.openlocfilehash: 8a2d0ec94619f74260f1fbc934e8e3328201ffa9
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 65fe374c33c56beb5270d29bc432481dc2a0a960
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87947215"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97042383"
 ---
 # <a name="upgrading-ad-rms-to-windows-server-2016"></a>Actualización de AD RMS a Windows Server 2016
 
@@ -79,11 +80,11 @@ La base de datos de servicios de directorio no es crítica para AD RMS funcional
 
 1.  Inicie sesión en el servidor de base de datos de AD RMS de Windows Server 2012 R2 con SQL 2012.
 
-2.  Haga clic en **Inicio**, en **todos los programas**, en **Microsoft SQL Server**y, a continuación, en **SQL Server Management Studio**.
+2.  Haga clic en **Inicio**, en **todos los programas**, en **Microsoft SQL Server** y, a continuación, en **SQL Server Management Studio**.
 
 3.  En la ventana **conectar con el servidor** , confirme que el servidor que hospeda las bases de datos de AD RMS está en el cuadro **nombre del servidor** y haga clic en **conectar**.
 
-4.  Expanda **Bases de datos**. Haga clic con el botón derecho en la base de datos adecuada (**DRM** y **ADFS**), seleccione **tareas**y haga clic en **copia de seguridad**.
+4.  Expanda **Bases de datos**. Haga clic con el botón derecho en la base de datos adecuada (**DRM** y **ADFS**), seleccione **tareas** y haga clic en **copia de seguridad**.
 
 5.  Repita el paso 4 para las bases de datos restantes.
 
@@ -99,7 +100,7 @@ En los pasos siguientes se muestra cómo agregar las distintas cuentas de servic
 
 1.  Inicie sesión en el servidor con SQL Server 2016 como cuenta de administrador local.
 
-2.  Haga clic en **Inicio**, en **todos los programas**, en **Microsoft SQL Server**y, a continuación, en **SQL Server Management Studio**.
+2.  Haga clic en **Inicio**, en **todos los programas**, en **Microsoft SQL Server** y, a continuación, en **SQL Server Management Studio**.
 
 3.  En la ventana **conectar con el servidor** , confirme que el servidor que hospeda las bases de datos de AD RMS está en el cuadro **nombre del servidor** y, para autenticación, haga clic en el menú desplegable y seleccione autenticación de **SQL Server**.
 
@@ -179,7 +180,7 @@ Cuando se implementa un servidor de ADFs que supera el nivel de entorno actual, 
 
 2.  Abra una sesión de PowerShell de administración.
 
-3.  Escriba el siguiente comando: ** \$ CRED = Get-Credential**
+3.  Escriba el siguiente comando: **\$ CRED = Get-Credential**
 
 4.  Aparecerá una ventana en la que se solicitan las credenciales, escriba en las credenciales de administrador de dominio.
 
@@ -199,7 +200,7 @@ La extensión de dispositivo móvil puede registrar las solicitudes que recibe d
 
 2.  Escriba el siguiente comando y presione **entrar**: **Import-Module AdRmsAdmin**
 
-3.  Escriba el siguiente comando y presione **entrar**: **New-PSDrive-Name AdrmsCluster-PsProvider AdRmsAdmin-root https://localhost ** .
+3.  Escriba el siguiente comando y presione **entrar**: **New-PSDrive-Name AdrmsCluster-PsProvider AdRmsAdmin-root https://localhost** .
 
 4.  Escriba el siguiente comando y presione **entrar**: **set-ItemProperty-path AdrmsCluster: \\ -Name IsLoggingEnabled-Value \$ true** .
 
@@ -211,7 +212,7 @@ Si usa el registro MDE para la solución de problemas, se recomienda deshabilita
 
 2.  Escriba el siguiente comando y presione **entrar**: **Import-Module AdRmsAdmin**
 
-3.  Escriba el siguiente comando y presione **entrar**: **New-PSDrive-Name AdrmsCluster-PsProvider AdRmsAdmin-root https://localhost ** .
+3.  Escriba el siguiente comando y presione **entrar**: **New-PSDrive-Name AdrmsCluster-PsProvider AdRmsAdmin-root https://localhost** .
 
 4.  Escriba el siguiente comando y presione **entrar**: **set-ItemProperty-path AdrmsCluster: \\ -Name IsLoggingEnabled-Value \$ false**
 
@@ -241,7 +242,7 @@ Si el clúster de AD RMS usa un módulo de seguridad de hardware en lugar de una
 
 5.  Haga clic en **lista** en la segunda línea y seleccione el **DefaultInstance** en el menú desplegable.
 
-6.  En **nombre**de la base de datos de configuración, seleccione el menú desplegable y elija la configuración de DRM que aparece. A continuación, haga clic en **Siguiente**.
+6.  En **nombre** de la base de datos de configuración, seleccione el menú desplegable y elija la configuración de DRM que aparece. A continuación, haga clic en **Siguiente**.
 
 7.  En la página **información de base de datos** , escriba la contraseña de la clave de clúster en el campo proporcionado. Después, haga clic en **siguiente**.
 
@@ -274,15 +275,15 @@ Puede implementar servidores proxy de aplicación web adicionales para admitir l
 
 2.  En el **Asistente para agregar roles y características**, haga clic en **siguiente** hasta llegar a la pantalla de selección de rol de servidor.
 
-3.  En la pantalla Seleccionar roles de servidor, seleccione **acceso remoto**y, a continuación, haga clic en **siguiente** hasta que vuelva a la pantalla Seleccionar roles de servidor.
+3.  En la pantalla Seleccionar roles de servidor, seleccione **acceso remoto** y, a continuación, haga clic en **siguiente** hasta que vuelva a la pantalla Seleccionar roles de servidor.
 
-4.  En la pantalla Seleccionar roles de servidor, seleccione **proxy de aplicación web**, haga clic en **Agregar características**y, a continuación, haga clic en **siguiente**.
+4.  En la pantalla Seleccionar roles de servidor, seleccione **proxy de aplicación web**, haga clic en **Agregar características** y, a continuación, haga clic en **siguiente**.
 
 5.  En la pantalla Confirmar selecciones de instalación , haz clic en **Instalar**.
 
 6.  Una vez finalizada la instalación, haga clic en **cerrar**.
 
-7.  Ahora es el momento de configurar el servidor. Para ello, abra la consola de administración de acceso remoto en el servidor proxy de aplicación Web. Abra el menú **Inicio** , escriba **RAMgmtUI.exe**y, a continuación, seleccione la aplicación.
+7.  Ahora es el momento de configurar el servidor. Para ello, abra la consola de administración de acceso remoto en el servidor proxy de aplicación Web. Abra el menú **Inicio** , escriba **RAMgmtUI.exe** y, a continuación, seleccione la aplicación.
 
 8.  En el panel de navegación, haz clic en **Proxy de aplicación web**.
 
@@ -352,7 +353,7 @@ Puede implementar más servidores de AD RMS para configurar la alta disponibilid
 
 5.  Haga clic en **lista** en la segunda línea y seleccione el **DefaultInstance** en el menú desplegable.
 
-6.  En **nombre**de la base de datos de configuración, seleccione el menú desplegable y elija la configuración de DRM que aparece. A continuación, haga clic en **Siguiente**.
+6.  En **nombre** de la base de datos de configuración, seleccione el menú desplegable y elija la configuración de DRM que aparece. A continuación, haga clic en **Siguiente**.
 
 7.  En la página **información de base de datos** , escriba la contraseña de la clave de clúster en el campo proporcionado. Después, haga clic en **siguiente**.
 
@@ -406,15 +407,15 @@ Puede implementar servidores WAP adicionales para configurar la alta disponibili
 
 2.  En el **Asistente para agregar roles y características**, haga clic en **siguiente** hasta llegar a la pantalla de selección de rol de servidor.
 
-3.  En la pantalla Seleccionar roles de servidor, seleccione **acceso remoto**y, a continuación, haga clic en **siguiente** hasta que vuelva a la pantalla Seleccionar roles de servidor.
+3.  En la pantalla Seleccionar roles de servidor, seleccione **acceso remoto** y, a continuación, haga clic en **siguiente** hasta que vuelva a la pantalla Seleccionar roles de servidor.
 
-4.  En la pantalla Seleccionar roles de servidor, seleccione **proxy de aplicación web**, haga clic en **Agregar características**y, a continuación, haga clic en **siguiente**.
+4.  En la pantalla Seleccionar roles de servidor, seleccione **proxy de aplicación web**, haga clic en **Agregar características** y, a continuación, haga clic en **siguiente**.
 
 5.  En la pantalla Confirmar selecciones de instalación , haz clic en **Instalar**.
 
 6.  Una vez finalizada la instalación, haga clic en **cerrar**.
 
-7.  Ahora es el momento de configurar el servidor. Para ello, abra la consola de administración de acceso remoto en el servidor proxy de aplicación Web. Abra el menú **Inicio** , escriba **RAMgmtUI.exe**y, a continuación, seleccione la aplicación.
+7.  Ahora es el momento de configurar el servidor. Para ello, abra la consola de administración de acceso remoto en el servidor proxy de aplicación Web. Abra el menú **Inicio** , escriba **RAMgmtUI.exe** y, a continuación, seleccione la aplicación.
 
 8.  En el panel de navegación, haz clic en **Proxy de aplicación web**.
 
@@ -478,7 +479,7 @@ Puede implementar más servidores SQL Server para configurar Always On alta disp
 
 21. Haga clic con el botón secundario en el nombre del SQL Server y seleccione **propiedades**.
 
-22. En el cuadro de diálogo Propiedades, seleccione la pestaña **alta disponibilidad de AlwaysOn** . Active la casilla **Habilitar grupos de disponibilidad AlwaysOn** . Haga clic en **Aceptar**. **Nota: haga esto en ambos servidores SQL Server 2016.**
+22. En el cuadro de diálogo Propiedades, seleccione la pestaña **alta disponibilidad de AlwaysOn** . Active la casilla **habilitar grupos de disponibilidad AlwaysOn** . Haga clic en **OK**. **Nota: haga esto en ambos servidores SQL Server 2016.**
 
 23. Después, reinicie el servicio SQL Server.
 
