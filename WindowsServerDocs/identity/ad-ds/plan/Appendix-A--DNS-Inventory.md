@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: Apéndice A: inventario de DNS'
 ms.assetid: f3506489-f695-4d7d-b27a-ec714843c002
 title: 'Apéndice A: inventario de DNS'
 ms.author: daveba
@@ -6,12 +7,12 @@ author: iainfoulds
 manager: daveba
 ms.date: 08/07/2018
 ms.topic: article
-ms.openlocfilehash: c1b00c0d6b97e6bda15bd9fe123408824dc92b2e
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 9fa79a2a80848753f34e81bd55ea5503754c354e
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93071207"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97050113"
 ---
 # <a name="appendix-a-dns-inventory"></a>Anexo A: inventario de DNS
 
@@ -21,12 +22,12 @@ Puede usar las tablas siguientes como ayuda para documentar el método de resolu
 
 ## <a name="root-hints"></a>Sugerencias de raíz
 
-|Name|Dirección IPv4|Dirección IPv6|
+|NOMBRE|Dirección IPv4|Dirección IPv6|
 |--------|----------------|----------------|
 ||||
 
 ## <a name="forwarding"></a>Reenvío
 
-|Name|Dirección IPv4|Dirección IPv6|Ubicación física|
+|NOMBRE|Dirección IPv4|Dirección IPv6|Ubicación física|
 |--------|----------------|----------------|---------------------|
 |||||

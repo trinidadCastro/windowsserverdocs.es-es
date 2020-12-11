@@ -1,4 +1,5 @@
 ---
+description: 'Más información sobre: el rol del motor de notificaciones'
 ms.assetid: 8b15d44e-e4e6-4510-aa91-cc7ec7161b0a
 title: El papel del motor de notificaciones
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: f7f33dc2931856aaf0e430aa3a65d03d30038325
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 1be762cefabdc40050e7656ec29033778b92bbf6
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87937870"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97050493"
 ---
 # <a name="the-role-of-the-claims-engine"></a>El papel del motor de notificaciones
 En su nivel más alto, el motor de notificaciones en Servicios de federación de Active Directory (AD FS) \( AD FS \) es un \- motor basado en reglas que se dedica a atender y procesar solicitudes de notificación para el servicio de Federación. El motor de notificaciones es la única entidad dentro del Servicio de federación que se encarga de ejecutar cada uno de los conjuntos de reglas en todas las relaciones de confianza federadas que ha configurado y de entregar el resultado de salida a la canalización de notificaciones.

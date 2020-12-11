@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: Cuándo usar una regla de notificaciones de autorización'
 ms.assetid: b734cbcb-342c-4a28-8ab5-b9cd990bb1c2
 title: Cuándo usar una regla de notificación de autorización
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 690ae558f625ca3a4c5878be229d950902f7f5e2
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 5e576fb3ef1122eade6b1cbe5c201a0d43d5dece
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87958703"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97050383"
 ---
 # <a name="when-to-use-an-authorization-claim-rule"></a>Cuándo usar una regla de notificación de autorización
 Puede usar esta regla en Servicios de federación de Active Directory (AD FS) \( AD FS \) cuando necesite tomar un tipo de demanda entrante y después aplicar una acción que determinará si se permitirá o denegará el acceso a un usuario en función del valor que especifique en la regla. Cuando usas esta regla, transformas o pasas por las notificaciones que coinciden con la lógica de la regla siguiente, según cualquiera de las opciones de que configuración de la regla:
@@ -118,7 +119,7 @@ Si quieres especificar qué usuario o usuarios pueden crear una confianza de pro
 
 3.  Si por algún motivo no puedes usar cualquiera de estos métodos, también puedes crear una regla de autorización para este propósito. Aunque no es lo recomendado (debido a posibles complicaciones que pueden producirse si no se escribe correctamente esta regla), puedes usar una regla de autorización personalizada para delegar qué cuentas de usuario de dominio de Active Directory también pueden crear o incluso eliminar las confianzas entre todos los servidores proxy de federación que estén asociados a un Servicio de federación determinado.
 
-    Si eliges el método 3, puedes usar la siguiente sintaxis de regla para emitir una demanda de autorización que permita a un usuario especificado \( en este caso, contoso \\ frankm \) crear confianzas para uno o más servidores proxy de federación en el servicio de Federación. Debe aplicar esta regla mediante el conjunto de comandos de Windows PowerShell ** \- ADFSProperties AddProxyAuthorizationRules**.
+    Si eliges el método 3, puedes usar la siguiente sintaxis de regla para emitir una demanda de autorización que permita a un usuario especificado \( en este caso, contoso \\ frankm \) crear confianzas para uno o más servidores proxy de federación en el servicio de Federación. Debe aplicar esta regla mediante el conjunto de comandos de Windows PowerShell **\- ADFSProperties AddProxyAuthorizationRules**.
 
     ```
     c:[Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname", issuer=~"^AD AUTHORITY$" value == "contoso\frankm" ] => issue(Type = "https://schemas.microsoft.com/authorization/claims/permit", Value = "true")
@@ -131,7 +132,7 @@ Si quieres especificar qué usuario o usuarios pueden crear una confianza de pro
     c:[Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/proxytrustid", Issuer =~ "^SELF AUTHORITY$" ] => issue(store="_ProxyCredentialStore",types=("https://schemas.microsoft.com/authorization/claims/permit"),query="isProxyTrustProvisioned({0})", param=c.Value );
     ```
 
-    Más adelante, si quieres eliminar el usuario para que no pueda crear confianzas de proxy, puedes volver a la regla de autorización de confianza de proxy predeterminada para eliminar el derecho del usuario a crear confianzas de proxy para el Servicio de federación. También debe aplicar esta regla mediante el conjunto de comandos de Windows PowerShell ** \- ADFSProperties AddProxyAuthorizationRules**.
+    Más adelante, si quieres eliminar el usuario para que no pueda crear confianzas de proxy, puedes volver a la regla de autorización de confianza de proxy predeterminada para eliminar el derecho del usuario a crear confianzas de proxy para el Servicio de federación. También debe aplicar esta regla mediante el conjunto de comandos de Windows PowerShell **\- ADFSProperties AddProxyAuthorizationRules**.
 
     ```
     exists([Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid", Value == "S-1-5-32-544", Issuer =~ "^AD AUTHORITY$"])

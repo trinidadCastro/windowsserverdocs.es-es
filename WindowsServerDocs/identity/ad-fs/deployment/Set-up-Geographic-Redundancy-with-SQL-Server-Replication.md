@@ -1,17 +1,18 @@
 ---
 title: Configuración de la redundancia geográfica con Replicación de SQL Server
+description: Más información acerca de cómo configurar la redundancia geográfica con Replicación de SQL Server
 author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
 ms.author: billmath
 ms.assetId: 7b9f9a4f-888c-4358-bacd-3237661b1935
-ms.openlocfilehash: 574171b8e5569b2041492a95ebfe146cfd487523
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: dd666023e7b53af72f63edf1750321317e08f527
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865794"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049243"
 ---
 # <a name="setup-geographic-redundancy-with-sql-server-replication"></a>Configuración de la redundancia geográfica con Replicación de SQL Server
 
@@ -21,8 +22,8 @@ ms.locfileid: "96865794"
 
 Si usa SQL Server como su AD FS base de datos de configuración, puede configurar \- la redundancia geográfica para la granja de AD FS mediante la replicación de SQL Server. La \- redundancia geográfica replica los datos entre dos sitios alejados geográficamente para que las aplicaciones puedan cambiar de un sitio a otro. De este modo, en caso de que se produzca un error en un sitio, todavía puede tener todos los datos de configuración disponibles en el segundo sitio. Para obtener más información, consulte la sección "SQL Server redundancia geográfica" en [granja de servidores de Federación con SQL Server](../design/Federation-Server-Farm-Using-SQL-Server.md).
 
-## <a name="prerequisites"></a>Requisitos previos
-Instalar y configurar una granja de servidores de SQL Server. Para más información, consulte [https://technet.microsoft.com/evalcenter/hh225126.aspx](https://www.microsoft.com/en-us/evalcenter/). En el SQL Server inicial, asegúrese de que el servicio de Agente SQL Server está en ejecución y establecido en Inicio automático.
+## <a name="prerequisites"></a>Prerrequisitos
+Instalar y configurar una granja de servidores de SQL Server. Para obtener más información, vea [https://technet.microsoft.com/evalcenter/hh225126.aspx](https://www.microsoft.com/en-us/evalcenter/). En el SQL Server inicial, asegúrese de que el servicio de Agente SQL Server está en ejecución y establecido en Inicio automático.
 
 ## <a name="create-the-second-replica-sql-server-for-geo-redundancy"></a>Crear la segunda \( réplica \) SQL Server para la \- redundancia geográfica
 
@@ -86,7 +87,7 @@ Instalar y configurar una granja de servidores de SQL Server. Para más informac
     ![Configuración de redundancia geográfica](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql18.png) </br>
     Es posible que tenga que crear una cuenta de dominio para el Agente SQL. Siga los pasos descritos en [configurar el inicio de sesión de SQL para la cuenta de dominio contoso \\ SQLAgent](Set-up-Geographic-Redundancy-with-SQL-Server-Replication.md#sqlagent) para crear el inicio de sesión de SQL para este nuevo usuario de AD y asignar permisos específicos.
 
-13. En la página **seguridad del agente** , haga clic en configuración de **seguridad** y escriba la \/ contraseña del nombre de usuario de una cuenta de dominio que \( no sea un GMSA \) creado para el Agente SQL y haga clic en **Aceptar**.  Haga clic en **Siguiente**.
+13. En la página **seguridad del agente** , haga clic en configuración de **seguridad** y escriba la \/ contraseña del nombre de usuario de una cuenta de dominio que \( no sea un GMSA \) creado para el Agente SQL y haga clic en **Aceptar**.  Haga clic en **Next**.
     ![Configuración de redundancia geográfica](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql19.png) </br>
 
 14. En la página **acciones del asistente** , haga clic en **siguiente**.

@@ -1,16 +1,17 @@
 ---
+description: Más información acerca de cómo inicializar HGS mediante la atestación de confianza de administrador
 title: Inicializar HGS mediante la atestación de confianza de administrador
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: a3015c6af72b8a574ed1152198212b42618bb0fa
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 65ba0bd90d42ac038eeb8eb304def80ce7093ff1
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953471"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049763"
 ---
 # <a name="initialize-hgs-using-admin-trusted-attestation"></a>Inicializar HGS mediante la atestación de confianza de administrador
 
@@ -24,7 +25,7 @@ Estos pasos varían en función de si está inicializando HGS en un bosque nuevo
 
 1. [Inicializar el clúster de HGS en un nuevo bosque (valor predeterminado)](guarded-fabric-initialize-hgs-ad-mode-default.md)
 
-   -O bien-
+   O bien
 
    [Inicializar el clúster de HGS en un bosque bastión existente](guarded-fabric-initialize-hgs-ad-mode-bastion.md)
 

@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: Cuándo usar una regla de petición de paso a través o filtrar'
 ms.assetid: 606df285-259c-4c6b-8583-9aca1d614c43
 title: Cuándo usar una regla de Pasar a través o filtrar una notificación
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 897fa2962d4192b5eb22d87c6d59e5fe51704b38
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: f7b33c485e4bf640dbf2f158ee25f54ddc62dbb9
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87956312"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97050453"
 ---
 # <a name="when-to-use-a-pass-through-or-filter-claim-rule"></a>Cuándo usar una regla de Pasar a través o filtrar una notificación
 Puede usar esta regla en Servicios de federación de Active Directory (AD FS) \( AD FS \) cuando necesite tomar un tipo de notificaciones entrante específico y, a continuación, aplicar una acción que determinará qué salida se debe producir en función de los valores de la solicitud entrante. Cuando usas esta regla, pasas a través o filtras cualquier notificación que coincide con la lógica de la regla de la tabla siguiente, según cualquiera de las opciones que configures en la regla.
@@ -85,7 +86,7 @@ Una regla de filtrado sencilla podría filtrar notificaciones basadas en una de 
 c:[type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress"]  => issue(claim  = c);
 ```
 
-Los filtros pueden ser lógicamente y \- Ed juntos. Por ejemplo, la siguiente regla aceptará todas las \- notificaciones de correo electrónico con valorjohndoe@fabrikam.com:
+Los filtros pueden ser lógicamente y \- Ed juntos. Por ejemplo, la siguiente regla aceptará todas las \- notificaciones de correo electrónico con valor johndoe@fabrikam.com:
 
 ```
 c:[type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress", value == "johndoe@fabrikam.com "]  => issue(claim  = c);
@@ -97,9 +98,9 @@ En los ejemplos anteriores, los filtros siempre usan un operador de igualdad. El
 
 -   \!\=\-no es igual a \( distinguir mayúsculas de minúsculas \-\)
 
--   \=~\-coincidencia de expresión regular
+-   \=~\- coincidencia de expresión regular
 
--   \!~ \-expresión regular no \- coincidente
+-   \!~ \- expresión regular no \- coincidente
 
 Por ejemplo, la siguiente regla aceptará todas las \- notificaciones de correo electrónico no emitidas por el servidor de Federación local que tienen un sufijo de Boeing.com:
 

@@ -1,17 +1,18 @@
 ---
 ms.assetid: 134840f3-c416-4a10-ad73-ef7855b206f7
 title: Información general de arranque de destino iSCSI
+description: 'Más información acerca de: Introducción al arranque de destino iSCSI'
 ms.topic: article
 author: JasonGerend
 manager: dougkim
 ms.author: jgerend
 ms.date: 09/11/2018
-ms.openlocfilehash: 04a62aa74d6e645bd2e66c2265b94a6026900fec
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 88e73db108351d68968dec88e28aec624e059cb9
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865964"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049593"
 ---
 # <a name="iscsi-target-boot-overview"></a>Información general de arranque de destino iSCSI
 

@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: Cuándo usar una regla de notificaciones de transformación'
 ms.assetid: 77aa61bf-9c04-4889-a5d2-6f45bc1b8bd2
 title: Cuándo usar una regla de notificaciones de transformación
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 3d39a4763eebe3e2fa28252c785a3b4d87e60143
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 81ee02105f2369caa6dd10835eb9856a92d79b8f
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87958743"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97050423"
 ---
 # <a name="when-to-use-a-transform-claim-rule"></a>Cuándo usar una regla de notificaciones de transformación
 Puedes usar esta regla en Servicios de federación de Active Directory (AD FS) \( AD FS \) cuando necesites asignar un tipo de notificaciones entrantes a un tipo de notificaciones salientes y después aplicar una acción que determine qué resultado se debe producir en función de los valores que se originaron en la demanda entrante. Cuando usas esta regla, pasas a través o transformas notificaciones que coinciden con la lógica de la regla siguiente, según cualquiera de las opciones que configures en la regla, como se describe en la tabla siguiente.

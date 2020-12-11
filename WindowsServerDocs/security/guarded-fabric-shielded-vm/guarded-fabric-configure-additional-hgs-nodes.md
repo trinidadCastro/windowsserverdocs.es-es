@@ -1,17 +1,18 @@
 ---
 title: Configuración de nodos de HGS adicionales
+description: Más información acerca de cómo configurar nodos de HGS adicionales
 ms.topic: article
 ms.assetid: 227f723b-acb2-42a7-bbe3-44e82f930e35
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 01/14/2020
-ms.openlocfilehash: 97e3860d96fe87414fba9d4965bfde62208c01be
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 6bb3db6df690c56b6062134d735da70f026aed7b
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96864824"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049933"
 ---
 # <a name="configure-additional-hgs-nodes"></a>Configuración de nodos de HGS adicionales
 
@@ -26,7 +27,7 @@ Use uno de estos métodos para agregar nodos HGS, como mejor se adapte a su ento
 | Nuevo bosque de HGS | [Uso de archivos PFX](#dedicated-hgs-forest-with-pfx-certificates) | [Usar huellas digitales de certificado](#dedicated-hgs-forest-with-certificate-thumbprints) |
 | Bosque bastión existente | [Uso de archivos PFX](#existing-bastion-forest-with-pfx-certificates) | [Usar huellas digitales de certificado](#existing-bastion-forest-with-certificate-thumbprints) |
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerrequisitos
 
 Asegúrese de que cada nodo adicional:
 - Tiene la misma configuración de hardware y software que el nodo principal

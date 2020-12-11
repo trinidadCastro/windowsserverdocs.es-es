@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo configurar el DNS de tejido para hosts protegidos (AD)
 title: Configuración del DNS de tejido para hosts protegidos (AD)
 ms.topic: article
 ms.assetid: 074b6d09-f16e-49bf-b88a-377139d35067
@@ -6,12 +7,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: 1875477934dad739a7231fd08f72cef7193e0eee
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 29ec5a824ca16b45bc4445a7d838c71985ca6457
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87966152"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049873"
 ---
 # <a name="configure-the-fabric-dns-for-guarded-hosts-ad"></a>Configuración del DNS de tejido para hosts protegidos (AD)
 

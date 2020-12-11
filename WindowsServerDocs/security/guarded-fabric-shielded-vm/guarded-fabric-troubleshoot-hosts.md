@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo solucionar problemas de hosts protegidos
 title: Solución de problemas de hosts protegidos
 ms.topic: article
 ms.assetid: 80ea38f4-4de6-4f85-8188-33a63bb1cf81
@@ -6,12 +7,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 09/25/2019
-ms.openlocfilehash: d226f4fdc9b34b97b24b970b3198bd4164b3a309
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 4a9d38e2e702610bb1a6905cdc198d3b4e708d6e
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87995280"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049253"
 ---
 # <a name="troubleshooting-guarded-hosts"></a>Solución de problemas de hosts protegidos
 

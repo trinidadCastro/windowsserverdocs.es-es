@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo establecer un certificado de comunicaciones de servicio
 ms.assetid: 638c89bd-87e6-484b-9d2e-8ae2a74227e5
 title: Establecer un certificado de comunicaciones de servicio
 author: billmath
@@ -6,12 +7,12 @@ manager: femila
 ms.date: 05/31/2017
 ms.topic: article
 ms.author: billmath
-ms.openlocfilehash: b3e9f22ede5c8ae8757b80137b2a8175b906e7de
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 4d5991240e33d6775f7b7744775bfc4608a15f9b
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87938280"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049083"
 ---
 # <a name="set-a-service-communications-certificate"></a>Establecer un certificado de comunicaciones de servicio
 
@@ -31,9 +32,9 @@ La pertenencia al grupo **Administradores** o equivalente en el equipo local es 
 
 ### <a name="to-set-a-service-communications-certificate"></a>Para establecer un certificado de comunicaciones de servicio
 
-1.  En la pantalla **Inicio** , escriba**AD FS Management**y, a continuación, presione Entrar.
+1.  En la pantalla **Inicio** , escriba **AD FS Management** y, a continuación, presione Entrar.
 
-2.  En el árbol de consola, haga doble \- clic en **servicio**y, a continuación, haga clic en **certificados**.
+2.  En el árbol de consola, haga doble \- clic en **servicio** y, a continuación, haga clic en **certificados**.
 
 3.  En el panel **acciones** , haga clic en el vínculo **establecer certificado de comunicaciones de servicio** .
 

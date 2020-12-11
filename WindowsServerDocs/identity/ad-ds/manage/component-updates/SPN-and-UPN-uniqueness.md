@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: SPN y singularidad de UPN'
 ms.assetid: 40bc24b1-2e7d-4e77-bd0f-794743250888
 title: Unicidad de SPN y UPN
 author: iainfoulds
@@ -6,18 +7,18 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: c41b532b6be241a937500485aca723e391ff9210
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 304533d7f6b810a8db338b09a5959e987a922baa
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93070727"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049353"
 ---
 # <a name="spn-and-upn-uniqueness"></a>Unicidad de SPN y UPN
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-**Autor** : Diego Turner, Ingeniero de soporte técnico de nivel superior con el grupo de Windows
+**Autor**: Diego Turner, Ingeniero de soporte técnico de nivel superior con el grupo de Windows
 
 > [!NOTE]
 > Este contenido está escrito por un ingeniero de asistencia al cliente de Microsoft y está destinado a los arquitectos de sistemas y administradores con experiencia que están buscando explicaciones técnicas más detalladas de características y soluciones de Windows Server 2012 R2 que los temas que se suelen proporcionar en TechNet. Sin embargo, no ha experimentado los mismos pasos de edición, por lo que parte del lenguaje puede parecer menos perfeccionado de lo que se encuentra normalmente en TechNet.
@@ -179,9 +180,9 @@ DN: CN=Dianne Hunt2\0ADEL:dd3ab8a4-3005-4f2f-814f-d6fc54a1a1c0,CN=Deleted Object
 
 -   Seleccione el botón de radio **convertir en LDAP**
 
--   Tipo **(userPrincipalName = *ConflictingUPN* )**
+-   Tipo **(userPrincipalName =*ConflictingUPN*)**
 
-    -   Reemplace * *_ConflictingUPN_* _ por el UPN real que está en conflicto.
+    -   Reemplace **_ConflictingUPN_* _ por el UPN real que está en conflicto.
 
 -   Seleccionar _ *aplicar**
 
@@ -209,7 +210,7 @@ Para anular el atributo UserPrincipalName mediante Windows PowerShell:
 
 **Figura SEQ figura el \\ \* mensaje de error árabe 8 mostrado en ADSIEdit cuando se ha bloqueado la adición del SPN duplicado**
 
-Registrado en el registro de eventos de servicios de directorio es un **ACTIVEDIRECTORY_DOMAINSERVICE** ID. de evento **2974** .
+Registrado en el registro de eventos de servicios de directorio es un **ACTIVEDIRECTORY_DOMAINSERVICE** ID. de evento **2974**.
 
 ```
 Operation failed. Error code: 0x21c7
@@ -320,10 +321,10 @@ Cuando se vuelven a animar los objetos eliminados, se comprueba la unicidad de l
 Si alguno de los nuevos valores de SPN es un duplicado, se producirá un error en la modificación. En la lista anterior, los atributos importantes son ATT_DNS_HOST_NAME (nombre del equipo) y ATT_SAM_ACCOUNT_NAME (nombre de cuenta SAM).
 
 ### <a name="try-this-exploring-spn-and-upn-uniqueness"></a>Pruebe lo siguiente: explorar la unicidad de SPN y UPN
-Esta es la primera de varias actividades " **pruebe esto** " en el módulo.  No hay ninguna guía de laboratorio independiente para este módulo.  La **prueba de estas** actividades es esencialmente actividades de forma libre que le permiten explorar el material de la lección en el entorno de laboratorio.  Tiene la opción de seguir el símbolo del sistema o salir del script y obtener su propia actividad.
+Esta es la primera de varias actividades "**pruebe esto**" en el módulo.  No hay ninguna guía de laboratorio independiente para este módulo.  La **prueba de estas** actividades es esencialmente actividades de forma libre que le permiten explorar el material de la lección en el entorno de laboratorio.  Tiene la opción de seguir el símbolo del sistema o salir del script y obtener su propia actividad.
 
 > [!NOTE]
-> -   Esta es la primera de varias actividades " **pruebe esto** ".
+> -   Esta es la primera de varias actividades "**pruebe esto**".
 > -   No hay ninguna guía de laboratorio independiente para este módulo.
 > -   La **prueba de estas** actividades es esencialmente actividades de forma libre que le permiten explorar el material de la lección en el entorno de laboratorio.
 > -   Tiene la opción de seguir el símbolo del sistema o salir del script y obtener su propia actividad.

@@ -1,17 +1,18 @@
 ---
 ms.assetid: 24c4b9bb-928a-4118-acf1-5eb06c6b08e5
 title: Configuración de AD FS 2016 y Azure MFA
+description: Más información acerca de cómo configurar Azure MFA como proveedor de autenticación con AD FS
 ms.author: billmath
 author: billmath
 manager: mtillman
 ms.date: 01/28/2019
 ms.topic: article
-ms.openlocfilehash: dc2ab294e0e42bf640b5fb9b0159314a0373fe0d
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: c61b8555cb875403a9c5c28e9d370fa87eee753e
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96864924"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97050273"
 ---
 # <a name="configure-azure-mfa-as-authentication-provider-with-ad-fs"></a>Configuración de Azure MFA como proveedor de autenticación con AD FS
 

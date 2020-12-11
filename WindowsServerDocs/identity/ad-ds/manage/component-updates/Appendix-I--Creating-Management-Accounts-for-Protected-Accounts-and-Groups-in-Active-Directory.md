@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: Apéndice I: crear cuentas de administración para cuentas y grupos protegidos en Active Directory'
 ms.assetid: 13fe87d9-75cf-45bc-a954-ef75d4423839
 title: 'Apéndice I: crear cuentas de administración para cuentas y grupos protegidos en Active Directory'
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 85c738a34f70f1912ff97b853166e720b1b0d435
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 40088473ead7b594e832b68d80d01cef876011b2
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93070887"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049613"
 ---
 # <a name="appendix-i-creating-management-accounts-for-protected-accounts-and-groups-in-active-directory"></a>Anexo I: creación de cuentas de administración para cuentas protegidas y grupos en Active Directory
 
@@ -49,7 +50,7 @@ Las cuentas de administración deben restablecer sus contraseñas en cada uso y 
 
 Para crear un grupo con el fin de habilitar y deshabilitar cuentas de administración, realice los pasos siguientes:
 
-1.  En la estructura de la unidad organizativa en la que va a alojar las cuentas de administración, haga clic con el botón secundario en la unidad organizativa en la que desea crear el grupo, haga clic en **nuevo** y en **Grupo** .
+1.  En la estructura de la unidad organizativa en la que va a alojar las cuentas de administración, haga clic con el botón secundario en la unidad organizativa en la que desea crear el grupo, haga clic en **nuevo** y en **Grupo**.
 
     ![creación de cuentas de administración](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_115.png)
 
@@ -57,7 +58,7 @@ Para crear un grupo con el fin de habilitar y deshabilitar cuentas de administra
 
     ![creación de cuentas de administración](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_116.png)
 
-3.  Haga clic con el botón secundario en el grupo que acaba de crear, haga clic en **propiedades** y, a continuación, haga clic en la pestaña **objeto** . En el cuadro de diálogo **propiedad de objeto** del grupo, seleccione **proteger objeto contra eliminación accidental** , que no solo impedirá que los usuarios autorizados en caso contrario eliminen el grupo, sino que también lo muevan a otra unidad organizativa, a menos que se anule la selección del atributo por primera vez.
+3.  Haga clic con el botón secundario en el grupo que acaba de crear, haga clic en **propiedades** y, a continuación, haga clic en la pestaña **objeto** . En el cuadro de diálogo **propiedad de objeto** del grupo, seleccione **proteger objeto contra eliminación accidental**, que no solo impedirá que los usuarios autorizados en caso contrario eliminen el grupo, sino que también lo muevan a otra unidad organizativa, a menos que se anule la selección del atributo por primera vez.
 
     ![creación de cuentas de administración](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_117.png)
 
@@ -68,11 +69,11 @@ Para crear un grupo con el fin de habilitar y deshabilitar cuentas de administra
 
     ![creación de cuentas de administración](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_118.png)
 
-5.  Si todavía no lo ha hecho, en la consola de **Active Directory usuarios y equipos** , haga clic en **Ver** y seleccione **características avanzadas** . Haga clic con el botón secundario en el grupo que acaba de crear, haga clic en **propiedades** y, a continuación, haga clic en la pestaña **seguridad** . En la pestaña **seguridad** , haga clic en **Opciones avanzadas** .
+5.  Si todavía no lo ha hecho, en la consola de **Active Directory usuarios y equipos** , haga clic en **Ver** y seleccione **características avanzadas**. Haga clic con el botón secundario en el grupo que acaba de crear, haga clic en **propiedades** y, a continuación, haga clic en la pestaña **seguridad** . En la pestaña **seguridad** , haga clic en **Opciones avanzadas**.
 
     ![creación de cuentas de administración](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_119.png)
 
-6.  En el cuadro de diálogo **configuración de seguridad avanzada para [Grupo]** , haga clic en **deshabilitar herencia** . Cuando se le solicite, haga clic en **convertir permisos heredados en permisos explícitos en este objeto** y haga clic en **Aceptar** para volver al cuadro de diálogo **seguridad** del grupo.
+6.  En el cuadro de diálogo **configuración de seguridad avanzada para [Grupo]** , haga clic en **deshabilitar herencia**. Cuando se le solicite, haga clic en **convertir permisos heredados en permisos explícitos en este objeto** y haga clic en **Aceptar** para volver al cuadro de diálogo **seguridad** del grupo.
 
     ![creación de cuentas de administración](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_120.png)
 
@@ -116,23 +117,23 @@ Para crear las cuentas de administración, realice los pasos siguientes:
 
 2. Inicie **Active Directory usuarios y equipos** y navegue hasta la unidad organizativa donde va a crear la cuenta de administración.
 
-3. Haga clic con el botón secundario en la unidad organizativa y haga clic en **nuevo** y en **usuario** .
+3. Haga clic con el botón secundario en la unidad organizativa y haga clic en **nuevo** y en **usuario**.
 
-4. En el cuadro de diálogo **nuevo objeto-usuario** , escriba la información de nomenclatura deseada para la cuenta y haga clic en **siguiente** .
+4. En el cuadro de diálogo **nuevo objeto-usuario** , escriba la información de nomenclatura deseada para la cuenta y haga clic en **siguiente**.
 
    ![creación de cuentas de administración](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_122.png)
 
-5. Proporcione una contraseña inicial para la cuenta de usuario, desactive el **usuario debe cambiar la contraseña en el siguiente inicio de sesión** , seleccione el **usuario no puede cambiar la contraseña** y la **cuenta está deshabilitada** y haga clic en **siguiente** .
+5. Proporcione una contraseña inicial para la cuenta de usuario, desactive el **usuario debe cambiar la contraseña en el siguiente inicio de sesión**, seleccione el **usuario no puede cambiar la contraseña** y la **cuenta está deshabilitada** y haga clic en **siguiente**.
 
    ![creación de cuentas de administración](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_123.png)
 
-6. Compruebe que los detalles de la cuenta sean correctos y haga clic en **Finalizar** .
+6. Compruebe que los detalles de la cuenta sean correctos y haga clic en **Finalizar**.
 
-7. Haga clic con el botón secundario en el objeto de usuario que acaba de crear y haga clic en **propiedades** .
+7. Haga clic con el botón secundario en el objeto de usuario que acaba de crear y haga clic en **propiedades**.
 
 8. Haga clic en la pestaña **Account** (Cuenta).
 
-9. En el campo **Opciones de cuenta** , seleccione la marca la **cuenta es importante y no se puede delegar** , seleccione la marca de cifrado la **cuenta compatible con Kerberos AES 128 bits** y/o **esta cuenta es compatible con Kerberos AES 256** y haga clic en **Aceptar** .
+9. En el campo **Opciones de cuenta** , seleccione la marca la **cuenta es importante y no se puede delegar** , seleccione la marca de cifrado la **cuenta compatible con Kerberos AES 128 bits** y/o **esta cuenta es compatible con Kerberos AES 256** y haga clic en **Aceptar**.
 
    ![creación de cuentas de administración](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_124.png)
 
@@ -145,7 +146,7 @@ Para crear las cuentas de administración, realice los pasos siguientes:
    >
    > Esta configuración solo se admite en equipos que ejecutan Windows Server 2012, Windows Server 2008 R2, Windows 8 o Windows 7.
 
-10. En la pestaña **objeto** , seleccione **proteger objeto contra eliminación accidental** . Esto no solo impedirá que se elimine el objeto (incluso los usuarios autorizados), pero impedirá que se mueva a otra unidad organizativa de la jerarquía de AD DS, a menos que un usuario con permiso para cambiar el atributo desactive primero la casilla.
+10. En la pestaña **objeto** , seleccione **proteger objeto contra eliminación accidental**. Esto no solo impedirá que se elimine el objeto (incluso los usuarios autorizados), pero impedirá que se mueva a otra unidad organizativa de la jerarquía de AD DS, a menos que un usuario con permiso para cambiar el atributo desactive primero la casilla.
 
     ![creación de cuentas de administración](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_125.png)
 
@@ -168,7 +169,7 @@ Para crear las cuentas de administración, realice los pasos siguientes:
 
 15. Haga clic en la pestaña **marcado** .
 
-16. En el campo **permiso de acceso a la red** , seleccione **denegar acceso** . Esta cuenta nunca debe tener que conectarse a través de una conexión remota.
+16. En el campo **permiso de acceso a la red** , seleccione **denegar acceso**. Esta cuenta nunca debe tener que conectarse a través de una conexión remota.
 
     ![creación de cuentas de administración](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_128.png)
 
@@ -177,19 +178,19 @@ Para crear las cuentas de administración, realice los pasos siguientes:
     >
     > Aunque la contraseña de la cuenta debe restablecerse después de cada uso y la cuenta debe estar deshabilitada, la implementación de esta configuración no tiene un efecto perjudicial en la cuenta y puede ayudar en situaciones en las que un administrador olvida restablecer la contraseña de la cuenta y deshabilitarla.
 
-17. Haga clic en la ficha **Miembro de** .
+17. Haga clic en la ficha **Miembro de**.
 
-18. Haga clic en **Agregar** .
+18. Haga clic en **Agregar**.
 
-19. Escriba **denegado grupo de replicación de contraseña RODC** en el cuadro de diálogo **Seleccionar usuarios, contactos, equipos** y haga clic en **Comprobar nombres** . Cuando el nombre del grupo esté subrayado en el selector de objetos, haga clic en **Aceptar** y compruebe que la cuenta es ahora miembro de los dos grupos mostrados en la captura de pantalla siguiente. No agregue la cuenta a ninguno de los grupos protegidos.
+19. Escriba **denegado grupo de replicación de contraseña RODC** en el cuadro de diálogo **Seleccionar usuarios, contactos, equipos** y haga clic en **Comprobar nombres**. Cuando el nombre del grupo esté subrayado en el selector de objetos, haga clic en **Aceptar** y compruebe que la cuenta es ahora miembro de los dos grupos mostrados en la captura de pantalla siguiente. No agregue la cuenta a ninguno de los grupos protegidos.
 
-20. Haga clic en **Aceptar** .
+20. Haga clic en **OK**.
 
     ![creación de cuentas de administración](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_129.png)
 
-21. Haga clic en la pestaña **seguridad** y haga clic en **avanzadas** .
+21. Haga clic en la pestaña **seguridad** y haga clic en **avanzadas**.
 
-22. En el cuadro de diálogo **configuración de seguridad avanzada** , haga clic en **deshabilitar herencia** y copie los permisos heredados como permisos explícitos y haga clic en **Agregar** .
+22. En el cuadro de diálogo **configuración de seguridad avanzada** , haga clic en **deshabilitar herencia** y copie los permisos heredados como permisos explícitos y haga clic en **Agregar**.
 
     ![creación de cuentas de administración](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_130.png)
 
@@ -197,13 +198,13 @@ Para crear las cuentas de administración, realice los pasos siguientes:
 
     ![creación de cuentas de administración](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_131.png)
 
-24. Desplácese a la parte superior del cuadro de diálogo **entrada de permiso** . Asegúrese de que la lista desplegable **tipo** esté establecida en **permitir** y, en la lista desplegable **se aplica a** , seleccione **solo este objeto** .
+24. Desplácese a la parte superior del cuadro de diálogo **entrada de permiso** . Asegúrese de que la lista desplegable **tipo** esté establecida en **permitir** y, en la lista desplegable **se aplica a** , seleccione **solo este objeto**.
 
-25. En el campo **permisos** , seleccione **leer todas las propiedades** , **permisos de lectura** y **Restablecer contraseña** .
+25. En el campo **permisos** , seleccione **leer todas las propiedades**, **permisos de lectura** y **Restablecer contraseña**.
 
     ![creación de cuentas de administración](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_132.png)
 
-26. En el campo **propiedades** , seleccione **lectura** y **escritura de UserAccountControl** .
+26. En el campo **propiedades** , seleccione **lectura** y **escritura de UserAccountControl**.
 
 27. Haga clic en **Aceptar** y en **Aceptar** de nuevo en el cuadro de diálogo **configuración de seguridad avanzada** .
 
@@ -252,18 +253,18 @@ En este caso, va a conceder las cuentas de administración que acaba de crear pa
 
    ![creación de cuentas de administración](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_136.png)
 
-2. Abra un símbolo del sistema con privilegios elevados haciendo clic con el botón secundario en **símbolo del sistema** y haga clic en **Ejecutar como administrador** .
+2. Abra un símbolo del sistema con privilegios elevados haciendo clic con el botón secundario en **símbolo del sistema** y haga clic en **Ejecutar como administrador**.
 
    ![creación de cuentas de administración](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_137.gif)
 
-3. Cuando se le pida que apruebe la elevación, haga clic en **sí** .
+3. Cuando se le pida que apruebe la elevación, haga clic en **sí**.
 
    ![creación de cuentas de administración](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_138.gif)
 
    > [!NOTE]
    > Para obtener más información acerca de la elevación y el control de cuentas de usuario (UAC) en Windows, consulte [procesos e interacciones de UAC](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd835561(v=ws.10)) en el sitio web de TechNet.
 
-4. En el símbolo del sistema, escriba (sustituyendo la información específica del dominio) **DSACLS [nombre distintivo del objeto AdminSDHolder en el dominio]/g [nombre de la cuenta de administración UPN]: RPWP; miembro** .
+4. En el símbolo del sistema, escriba (sustituyendo la información específica del dominio) **DSACLS [nombre distintivo del objeto AdminSDHolder en el dominio]/g [nombre de la cuenta de administración UPN]: RPWP; miembro**.
 
    ![creación de cuentas de administración](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_139.gif)
 
@@ -281,19 +282,19 @@ En este caso, va a conceder las cuentas de administración que acaba de crear pa
 
    - Miembro es el nombre de la propiedad (atributo) en la que se establecerán los permisos.
 
-   Para obtener más información acerca del uso de **DSACLS** , escriba DSACLS sin ningún parámetro en el símbolo del sistema.
+   Para obtener más información acerca del uso de **DSACLS**, escriba DSACLS sin ningún parámetro en el símbolo del sistema.
 
    Si ha creado varias cuentas de administración para el dominio, debe ejecutar el comando DSACLS para cada cuenta. Cuando haya completado la configuración de ACL en el objeto AdminSDHolder, debe forzar la ejecución de SDProp o esperar a que se complete la ejecución programada. Para obtener información sobre cómo forzar la ejecución de SDProp, vea "ejecutar SDProp manualmente" en el [Apéndice C: cuentas y grupos protegidos en Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory.md).
 
    Cuando se ejecuta SDProp, puede comprobar que los cambios realizados en el objeto AdminSDHolder se han aplicado a los grupos protegidos del dominio. No puede comprobarlo mediante la visualización de la ACL en el objeto AdminSDHolder por las razones descritas anteriormente, pero puede comprobar que los permisos se han aplicado mediante la visualización de las ACL en los grupos protegidos.
 
-5. En **Active Directory usuarios y equipos** , compruebe que ha habilitado **las características avanzadas** . Para ello, haga clic en **Ver** , busque el grupo **Admins** . del dominio, haga clic con el botón secundario en el grupo y haga clic en **propiedades** .
+5. En **Active Directory usuarios y equipos**, compruebe que ha habilitado **las características avanzadas**. Para ello, haga clic en **Ver**, busque el grupo **Admins** . del dominio, haga clic con el botón secundario en el grupo y haga clic en **propiedades**.
 
 6. Haga clic en la pestaña **seguridad** y haga clic en **avanzadas** para abrir el cuadro **de diálogo Configuración de seguridad avanzada para administradores del dominio** .
 
    ![creación de cuentas de administración](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_140.gif)
 
-7. Seleccione **permitir ACE para la cuenta de administración** y haga clic en **Editar** . Compruebe que la cuenta solo tiene permisos de **lectura de miembros** y de **escritura** en el grupo de da y haga clic en **Aceptar** .
+7. Seleccione **permitir ACE para la cuenta de administración** y haga clic en **Editar**. Compruebe que la cuenta solo tiene permisos de **lectura de miembros** y de **escritura** en el grupo de da y haga clic en **Aceptar**.
 
 8. Haga clic en **Aceptar** en el cuadro de diálogo **configuración de seguridad avanzada** y haga clic en **Aceptar** de nuevo para cerrar el cuadro de diálogo de propiedades del grupo de da.
 
@@ -318,7 +319,7 @@ Ahora que ha creado y configurado cuentas de administración que pueden modifica
 
     ![creación de cuentas de administración](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_142.gif)
 
-2.  Abra **Active Directory usuarios y equipos** , haga clic con el botón secundario en la cuenta de administración y haga clic en **Habilitar cuenta** .
+2.  Abra **Active Directory usuarios y equipos**, haga clic con el botón secundario en la cuenta de administración y haga clic en **Habilitar cuenta**.
 
     ![creación de cuentas de administración](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_143.gif)
 
@@ -326,11 +327,11 @@ Ahora que ha creado y configurado cuentas de administración que pueden modifica
 
     ![creación de cuentas de administración](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_144.gif)
 
-4.  Después, restablezca la contraseña en la cuenta de administración. Para ello, vuelva a hacer clic con el botón secundario en la cuenta y haga clic en **Restablecer contraseña** .
+4.  Después, restablezca la contraseña en la cuenta de administración. Para ello, vuelva a hacer clic con el botón secundario en la cuenta y haga clic en **Restablecer contraseña**.
 
     ![creación de cuentas de administración](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_145.gif)
 
-5.  Escriba una nueva contraseña para la cuenta en los campos **nueva contraseña** y **Confirmar contraseña** y haga clic en **Aceptar** .
+5.  Escriba una nueva contraseña para la cuenta en los campos **nueva contraseña** y **Confirmar contraseña** y haga clic en **Aceptar**.
 
     ![creación de cuentas de administración](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_146.gif)
 
@@ -340,7 +341,7 @@ Ahora que ha creado y configurado cuentas de administración que pueden modifica
 
 7.  Ahora intente modificar las propiedades adicionales de la cuenta de administración. Haga clic con el botón secundario en la cuenta y haga clic en **propiedades** y en la pestaña **control remoto** .
 
-8.  Seleccione **Habilitar control remoto** y haga clic en **aplicar** . Se debe producir un error en la operación y se debe mostrar un mensaje de error de **acceso denegado** .
+8.  Seleccione **Habilitar control remoto** y haga clic en **aplicar**. Se debe producir un error en la operación y se debe mostrar un mensaje de error de **acceso denegado** .
 
     ![creación de cuentas de administración](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_148.gif)
 
@@ -348,7 +349,7 @@ Ahora que ha creado y configurado cuentas de administración que pueden modifica
 
     ![creación de cuentas de administración](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_149.gif)
 
-10. Intente agregar el grupo de administración a un grupo protegido, como el grupo de DA. Al hacer clic en **Aceptar** , debe aparecer un mensaje que le informa de que no tiene permisos para modificar el grupo.
+10. Intente agregar el grupo de administración a un grupo protegido, como el grupo de DA. Al hacer clic en **Aceptar**, debe aparecer un mensaje que le informa de que no tiene permisos para modificar el grupo.
 
     ![creación de cuentas de administración](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_150.gif)
 
@@ -365,17 +366,17 @@ Ahora que ha habilitado una o varias cuentas que pueden cambiar la pertenencia d
 
     ![creación de cuentas de administración](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_151.gif)
 
-2.  Inicie **Active Directory usuarios y equipos** y busque el **grupo Admins** . del dominio.
+2.  Inicie **Active Directory usuarios y equipos** y busque el **grupo Admins**. del dominio.
 
-3.  Haga clic con el botón secundario en el grupo **Admins** . del dominio y haga clic en **propiedades** .
+3.  Haga clic con el botón secundario en el grupo **Admins** . del dominio y haga clic en **propiedades**.
 
     ![creación de cuentas de administración](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_152.gif)
 
-4.  En las **propiedades Admins** . del dominio, haga clic en la pestaña **miembros** y **haga clic en** agregar. Escriba el nombre de una cuenta a la que se concederán privilegios temporales de Admins. del dominio y haga clic en **Comprobar nombres** . Cuando el nombre de la cuenta esté subrayado, haga clic en **Aceptar** para volver a la pestaña **miembros** .
+4.  En las **propiedades Admins**. del dominio, haga clic en la pestaña **miembros** y **haga clic en** agregar. Escriba el nombre de una cuenta a la que se concederán privilegios temporales de Admins. del dominio y haga clic en **Comprobar nombres**. Cuando el nombre de la cuenta esté subrayado, haga clic en **Aceptar** para volver a la pestaña **miembros** .
 
     ![creación de cuentas de administración](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_153.gif)
 
-5.  En la pestaña **miembros** del cuadro de diálogo **propiedades de Admins** . del dominio, haga clic en **aplicar** . Después de hacer clic en **aplicar** , la cuenta debe permanecer en un miembro del grupo de da y no recibirá ningún mensaje de error.
+5.  En la pestaña **miembros** del cuadro de diálogo **propiedades de Admins** . del dominio, haga clic en **aplicar**. Después de hacer clic en **aplicar**, la cuenta debe permanecer en un miembro del grupo de da y no recibirá ningún mensaje de error.
 
     ![creación de cuentas de administración](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_154.gif)
 

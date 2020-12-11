@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: Cuándo usar una regla de envío de atributos LDAP como notificaciones'
 ms.assetid: 606f4196-b579-4806-a462-3abd4d93e87c
 title: Cuándo usar una regla de envío de atributos LDAP como notificaciones
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 4ba491f9fa0bee4a92cba8667ff0cf28cf7e8e52
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a82d308647dedcad531f7437fe6af568651e3bc0
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87958723"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97050413"
 ---
 # <a name="when-to-use-a-send-ldap-attributes-as-claims-rule"></a>Cuándo usar una regla de envío de atributos LDAP como notificaciones
 Puede usar esta regla en Servicios de federación de Active Directory (AD FS) \( AD FS \) cuando desee emitir notificaciones salientes que contengan \( valores reales de atributo LDAP del Protocolo ligero de acceso a directorios \) que existan en un almacén de atributos y, a continuación, asociar un tipo de notificación a cada uno de los atributos LDAP. Para obtener más información sobre los almacenes de atributos, vea [el rol de almacenes de atributos](The-Role-of-Attribute-Stores.md).
@@ -60,7 +61,7 @@ Si la consulta que se va a Active Directory, AD DS o Active Directory Lightweigh
 
 Los ejemplos siguientes se proporcionan para ayudarle a comprender algunas de las distintas formas de que crear una regla personalizada mediante el lenguaje de reglas de notificación para la consulta y extracción de datos en un almacén de atributos.
 
-### <a name="example-how-to-query-an-adlds-attribute-store-and-return-a-specified-value"></a>Ejemplo: Cómo consultar un almacén de atributos de AD LDS y devolver un valor especificado
+### <a name="example-how-to-query-an-ad-lds-attribute-store-and-return-a-specified-value"></a>Ejemplo: Cómo consultar un almacén de atributos de AD LDS y devolver un valor especificado
 Los parámetros deben estar separados por un punto y coma. El primer parámetro es el filtro LDAP. Los parámetros siguientes son los atributos para devolver en cualquier objeto coincidente.
 
 En el ejemplo siguiente se muestra cómo buscar un usuario por el atributo **samAccountName** y emitir una \- claim de dirección de correo electrónico con el valor del atributo de correo del usuario:
@@ -85,7 +86,7 @@ c1:[Type == " http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress
 => issue(store = "AD LDS ", types = ("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/displayname"), query = "(&(mail={0})(title={1}));displayname", param = c1.Value, param = c2.Value);
 ```
 
-### <a name="example-how-to-query-an-activedirectory-attribute-store-and-return-a-specified-value"></a>Ejemplo: Cómo consultar un almacén de atributos de Active Directory y devolver un valor especificado
+### <a name="example-how-to-query-an-active-directory-attribute-store-and-return-a-specified-value"></a>Ejemplo: Cómo consultar un almacén de atributos de Active Directory y devolver un valor especificado
 La consulta Active Directory debe incluir el nombre del usuario \( con el nombre de dominio \) como el parámetro final para que el almacén de atributos Active Directory pueda consultar el dominio correcto. De lo contrario, se admitirá la misma sintaxis.
 
 En el ejemplo siguiente se muestra cómo buscar un usuario por el atributo **sAMAccountName** en su dominio y, luego, devolver el atributo **mail**:
@@ -95,7 +96,7 @@ c:[Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/windowsacco
 => issue(store = "Active Directory", types = ("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress"), query = "sAMAccountName={0};mail;{1}", param = regexreplace(c.Value, "(?<domain>[^\\]+)\\(?<user>.+)", "${user}"), param = c.Value);
 ```
 
-### <a name="example-how-to-query-an-activedirectory-attribute-store-based-on-the-value-of-an-incoming-claim"></a>Ejemplo: Cómo consultar un almacén de atributos de Active Directory según el valor de una notificación entrante
+### <a name="example-how-to-query-an-active-directory-attribute-store-based-on-the-value-of-an-incoming-claim"></a>Ejemplo: Cómo consultar un almacén de atributos de Active Directory según el valor de una notificación entrante
 
 ```
 c:[Type == "http://test/name"]
@@ -118,7 +119,7 @@ La consulta anterior se compone de las tres partes siguientes:
 
 -   Dominio de Active Directory: especifique la última parte de la consulta solo si el almacén de atributos es Active Directory. \(No es necesario al consultar otros almacenes de atributos. \) Esta parte de la consulta se usa para especificar la cuenta de usuario con el formato \\ nombre de dominio. El almacén de atributos de Active Directory usa la parte del dominio para determinar el controlador de dominio adecuado para conectarse a la consulta y ejecutarla, así como para solicitar los atributos.
 
-### <a name="example-how-to-use-two-custom-rules-to-extract-the-manager-e-mail-from-an-attribute-in-activedirectory"></a>Ejemplo: Cómo usar dos reglas personalizadas para extraer el correo electrónico del administrador \- de un atributo en Active Directory
+### <a name="example-how-to-use-two-custom-rules-to-extract-the-manager-e-mail-from-an-attribute-in-active-directory"></a>Ejemplo: Cómo usar dos reglas personalizadas para extraer el correo electrónico del administrador \- de un atributo en Active Directory
 Las dos reglas personalizadas siguientes, cuando se usan juntas en el orden que se muestra a continuación, consultan Active Directory para el atributo **Manager** de la regla 1 de la cuenta de usuario \( \) y, a continuación, usan ese atributo para consultar la cuenta de usuario del administrador para el atributo de **correo** \( regla 2 \) . Por último, el atributo **mail** se emite como una demanda "ManagerEmail". En Resumen, la regla 1 consulta Active Directory y pasa el resultado de la consulta a la regla 2, que luego extrae los valores de correo electrónico del administrador \- .
 
 Por ejemplo, cuando estas reglas terminan de ejecutarse, se emite una demanda que contiene la dirección de correo electrónico del administrador \- para un usuario del dominio Corp.fabrikam.com.

@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: error de replicación 1753 no hay más puntos de conexión disponibles desde el asignador de extremos'
 ms.assetid: 0f21951c-b1bf-43bb-a329-bbb40c58c876
 title: 'Error de replicación 1753: no hay más puntos de conexión disponibles desde el asignador de puntos de conexión'
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 94e63d439217c21c1634e7f1b685267ad98178b4
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 359e5c39667f29deb03b8587e94e777a23232c5c
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93067677"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049493"
 ---
 # <a name="replication-error-1753-there-are-no-more-endpoints-available-from-the-endpoint-mapper"></a>Error de replicación 1753: no hay más puntos de conexión disponibles desde el asignador de puntos de conexión
 
@@ -284,9 +285,9 @@ F# SRC    DEST    Operation
 11 x.x.1.2 x.x.1.1 EPM:Response: ept_map: 0x16C9A0D6 - EP_S_NOT_REGISTERED
 ```
 
-En el marco **10** , el controlador de dominio de destino consulta el asignador de punto de conexión de DC de origen a través del Puerto 135 para el Active Directory UUID de clase del servicio de replicación de E351...
+En el marco **10**, el controlador de dominio de destino consulta el asignador de punto de conexión de DC de origen a través del Puerto 135 para el Active Directory UUID de clase del servicio de replicación de E351...
 
-En el marco **11** , el controlador de dominio de origen, en este caso un equipo miembro que todavía no hospeda el rol de controlador de dominio y, por tanto, no ha registrado el E351... El UUID del servicio de replicación con su EPM local responde con el error simbólico EP_S_NOT_REGISTERED que se asigna al error decimal 1753, 0x6d9 de error hexadecimal y error descriptivo "no hay más extremos disponibles desde el asignador de extremos".
+En el marco **11**, el controlador de dominio de origen, en este caso un equipo miembro que todavía no hospeda el rol de controlador de dominio y, por tanto, no ha registrado el E351... El UUID del servicio de replicación con su EPM local responde con el error simbólico EP_S_NOT_REGISTERED que se asigna al error decimal 1753, 0x6d9 de error hexadecimal y error descriptivo "no hay más extremos disponibles desde el asignador de extremos".
 
 Más adelante, el equipo miembro con la dirección IP x. x. 1.2 se promociona como una réplica "MayberryDC" en el dominio contoso.com. Una vez más, el comando **Replicar ahora** se usa para desencadenar la replicación pero se produce un error en la pantalla "el nombre de la entidad de seguridad de destino es incorrecto". El equipo a cuyo adaptador de red se asigna la dirección IP x. x. 1.2 es un controlador de dominio que se está iniciando en el modo normal y ha registrado el E351... UUID del servicio de replicación con su EPM local pero no posee el nombre o la identidad de seguridad de DC2 y no puede descifrar la solicitud de Kerberos de DC1, por lo que la solicitud ahora produce el error "el nombre principal de destino es incorrecto". El error se asigna al error decimal-2146893022/0x80090322 de error hexadecimal.
 

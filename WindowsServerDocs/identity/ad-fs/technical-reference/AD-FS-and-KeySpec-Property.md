@@ -1,4 +1,5 @@
 ---
+description: 'Más información sobre: AD FS y la especificación de la especificación de certificados'
 title: Información de la propiedad de especificación de clave de certificado y Servicios de federación de Active Directory (AD FS)
 author: billmath
 manager: femila
@@ -6,12 +7,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.assetid: a5307da5-02ff-4c31-80f0-47cb17a87272
 ms.author: billmath
-ms.openlocfilehash: a78f989230450bcf59f86add66bdcfe91fa23c77
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 6a514fccb3ba75311fbb278018884b0de1c1c08b
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87938123"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97050243"
 ---
 # <a name="ad-fs-and-certificate-keyspec-property-information"></a>Información de la propiedad de AD FS e especificación de certificados
 La especificación de clave ("especificación") es una propiedad asociada a un certificado y una clave. Especifica si se puede usar una clave privada asociada a un certificado para la firma, el cifrado o ambos.
@@ -41,7 +42,7 @@ Ignore corrupted SSO cookie.
 ## <a name="what-causes-the-problem"></a>Lo que causa el problema
 La propiedad especificación de clave identifica el modo en que se puede usar una clave generada o recuperada por Microsoft CryptoAPI (CAPI) de un proveedor de almacenamiento criptográfico (CSP) heredado de Microsoft.
 
-Para la firma y el cifrado se puede utilizar un valor de especificación de especificación de **1**o **AT_KEYEXCHANGE**.  Un valor de **2**, o **AT_SIGNATURE**, solo se usa para firmar.
+Para la firma y el cifrado se puede utilizar un valor de especificación de especificación de **1** o **AT_KEYEXCHANGE**.  Un valor de **2**, o **AT_SIGNATURE**, solo se usa para firmar.
 
 La configuración de la especificación de tipos más común es el uso de un valor de 2 para un certificado que no sea el certificado de firma de tokens.
 

@@ -1,4 +1,5 @@
 ---
+description: 'Más información sobre: el rol del lenguaje de reglas de notificaciones'
 title: El papel del lenguaje de reglas de notificaciones
 author: billmath
 ms.author: billmath
@@ -6,12 +7,12 @@ manager: femila
 ms.date: 07/07/2017
 ms.topic: article
 ms.assetid: dda9d148-d72f-4bff-aa2a-f2249fa47e4c
-ms.openlocfilehash: c54319c67a879645975d6aeac21078c25160c2c4
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 41b5950994de588c1697334ffc72474a618c6a1b
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87937804"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97050483"
 ---
 # <a name="the-role-of-the-claim-rule-language"></a>El papel del lenguaje de reglas de notificaciones
 El lenguaje de reglas de notificación de Servicios de federación de Active Directory (AD FS) (AD FS) actúa como el bloque de creación administrativo para el comportamiento de las notificaciones entrantes y salientes, mientras que el motor de notificaciones actúa como motor de procesamiento de la lógica en el lenguaje de reglas de notificación que define la regla personalizada. Para obtener más información sobre el modo en que el motor de notificaciones procesa todas las reglas, consulte [The role of the Claims Engine](The-Role-of-the-Claims-Engine.md).
@@ -141,7 +142,7 @@ Las siguientes propiedades de notificación están disponibles para acceder a el
 
 -   Claim.ValueType
 
--   Nombre de la propiedad Claim. Properties \[ \_ \] (esta propiedad devuelve una cadena vacía si no se encuentra la propiedad _name en la colección de propiedades de la demanda. )
+-   Nombre de la propiedad Claim. Properties \[ \_ \]  (esta propiedad devuelve una cadena vacía si no se encuentra la propiedad _name en la colección de propiedades de la demanda. )
 
 Puede usar la función RegexReplace llamar a dentro de una expresión. Esta función toma una expresión de entrada y la hace coincidir con el modelo especificado. Si el patrón coincide, el resultado de la coincidencia se reemplaza por el valor de la sustitución.
 

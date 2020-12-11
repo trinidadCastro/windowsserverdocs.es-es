@@ -1,4 +1,5 @@
 ---
+description: 'Más información sobre: el rol de la canalización de notificaciones'
 ms.assetid: ffb9d63c-ba7c-4ad1-b814-6db67f98c943
 title: El papel de la canalización de notificaciones
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 81398a65fdfc510f8d4d3c125b77cc76fa6a8787
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 3925351c6b625a52ace096f71f790e7056beb3c2
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87937764"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97050473"
 ---
 # <a name="the-role-of-the-claims-pipeline"></a>El papel de la canalización de notificaciones
 La canalización de notificaciones en Servicios de federación de Active Directory (AD FS) \( AD FS \) representa la ruta de acceso que deben seguir las notificaciones a través del servicio de Federación antes de que se puedan emitir. El Servicio de federación administra todo el \- proceso de un extremo a otro para el \- flujo de notificaciones a través de las distintas fases de la canalización de notificaciones, que también incluye el procesamiento de reglas de notificación por parte del motor de reglas de notificación.

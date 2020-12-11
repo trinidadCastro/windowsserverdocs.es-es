@@ -1,17 +1,18 @@
 ---
 title: Creación de un disco de plantilla de máquina virtual blindada Linux
+description: Más información acerca de cómo crear un disco de plantilla de máquina virtual blindada Linux
 ms.topic: article
 ms.assetid: d0e1d4fb-97fc-4389-9421-c869ba532944
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: 46afeba5e8e00c6c37935d9e123d8ddaab5e835d
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: f17753cc423be342f1b732a66e2a1e7ffd40d782
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96864414"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049823"
 ---
 # <a name="create-a-linux-shielded-vm-template-disk"></a>Creación de un disco de plantilla de máquina virtual blindada Linux
 
@@ -19,7 +20,7 @@ ms.locfileid: "96864414"
 
 En este tema se explica cómo preparar un disco de plantilla para máquinas virtuales blindadas de Linux que se pueden usar para crear instancias de una o varias máquinas virtuales de inquilino.
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerrequisitos
 
 Para preparar y probar una máquina virtual blindada Linux, necesitará los siguientes recursos disponibles:
 

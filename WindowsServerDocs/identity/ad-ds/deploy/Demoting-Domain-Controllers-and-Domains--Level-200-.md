@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo degradar controladores de dominio y dominios
 ms.assetid: 65ed5956-6140-4e06-8d99-8771553637d1
 title: Degradación de controladores de dominio y dominios (Nivel 200)
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 11/14/2018
 ms.topic: article
-ms.openlocfilehash: 4e6bc1bd6b2a2db9267ad76da13c5ff26efed506
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 6ebbeed0ab8f06ba4f3189af31396d5c30b3427f
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93068337"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049223"
 ---
 # <a name="demoting-domain-controllers-and-domains"></a>Degradar controladores de dominio y dominios
 
@@ -32,7 +33,7 @@ En este tema se explica cómo quitar AD DS usando el Administrador del servidor 
 
 | Cmdlets ADDSDeployment y ServerManager | Argumentos (los argumentos en **negrita** son obligatorios. Los argumentos en *cursiva* se pueden especificar con Windows PowerShell o con el Asistente para configuración de AD DS). |
 |--|--|
-| Uninstall-ADDSDomainController | -SkipPreChecks<p>*-LocalAdministratorPassword*<p>-Confirm<p>***-Credential**_<p> -DemoteOperationMasterRole <p>_ -DNSDelegationRemovalCredential *<p> -Force <p>* -ForceRemoval *<p>* -IgnoreLastDCInDomainMismatch *<p>* -IgnoreLastDNSServerForZone *<p>* -LastDomainControllerInDomain *<p> -Norebootoncompletion <p>* -RemoveApplicationPartitions *<p>* -RemoveDNSDelegation *<p>-RetainDCMetadata |
+| Uninstall-ADDSDomainController | -SkipPreChecks<p>*-LocalAdministratorPassword*<p>-Confirm<p>***-Credential**_<p> -DemoteOperationMasterRole <p>_-DNSDelegationRemovalCredential *<p> -Force <p>*-ForceRemoval *<p>* -IgnoreLastDCInDomainMismatch *<p>* -IgnoreLastDNSServerForZone *<p>* -LastDomainControllerInDomain *<p> -Norebootoncompletion <p>*-RemoveApplicationPartitions *<p>* -RemoveDNSDelegation *<p>-RetainDCMetadata |
 | Uninstall-WindowsFeature/Remove-WindowsFeature | ***-Nombre** _<p>_ *_-IncludeManagementTools_* _<p>_ Volver<p>-Remove<p>-Force<p>-ComputerName<p>-Credential<p>-LogPath<p>-Vhd |
 
 > [!NOTE]
@@ -48,7 +49,7 @@ El Administrador del servidor ofrece dos interfaces para quitar el rol de Servic
 
    ![Administrador del servidor: quitar roles y características](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_Manage.png)
 
-* Haz clic en **AD DS** o en **Todos los servidores** en el panel de navegación. Desplázate hacia abajo hasta llegar a la sección **Roles y características** . Haz clic con el botón secundario en **Servicios de dominio de Active Directory** en la lista **Roles y características** y haz clic en **Quitar rol o característica** . Esta interfaz omite la página **Selección de servidor** .
+* Haz clic en **AD DS** o en **Todos los servidores** en el panel de navegación. Desplázate hacia abajo hasta llegar a la sección **Roles y características**. Haz clic con el botón secundario en **Servicios de dominio de Active Directory** en la lista **Roles y características** y haz clic en **Quitar rol o característica**. Esta interfaz omite la página **Selección de servidor**.
 
    ![Administrador del servidor de todos los servidores: eliminación de roles y características](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_ServerSelection.png)
 
@@ -64,7 +65,7 @@ El diálogo **Selección de servidor** te permite elegir uno de los servidores a
 
 ![Asistente para quitar roles y características: seleccionar roles para quitar](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_ServerRoles.png)
 
-Desactiva la casilla **Active Directory Domain Services** para disminuir un controlador de dominio de nivel; si el servidor es un controlador de dominio actualmente, esto no hace que se elimine el rol de AD DS, sino que se pasa al cuadro de diálogo **Resultados de la validación** , donde se propone la disminución de nivel. De lo contrario, quita los binarios como cualquier otra característica de rol.
+Desactiva la casilla **Active Directory Domain Services** para disminuir un controlador de dominio de nivel; si el servidor es un controlador de dominio actualmente, esto no hace que se elimine el rol de AD DS, sino que se pasa al cuadro de diálogo **Resultados de la validación**, donde se propone la disminución de nivel. De lo contrario, quita los binarios como cualquier otra característica de rol.
 
 * No quites ningún otro rol o característica relacionada con AD DS (como DNS, GPMC o las herramientas RSAT) si vas a volver a promover el controlador de dominio. Quitar más roles y características hace que aumente el tiempo que debas invertir en promoverlo, dado que el Administrador del servidor reinstala estas características cuando el rol se reinstala.
 * Quita los roles y características de AD DS que no necesites según tus propios criterios si vas a disminuir el controlador de dominio de nivel permanentemente. Para ello, tienes que desactivar todas las casillas correspondientes a esos roles y características.
@@ -93,7 +94,7 @@ Uninstall-windowsfeature
 
 ![Asistente para configuración de Active Directory Domain Services: selección de credenciales](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_Credentials.png)
 
-Las opciones de degradación se configuran en la página **Credenciales** . Proporcione las credenciales necesarias para realizar la degradación de la siguiente lista:
+Las opciones de degradación se configuran en la página **Credenciales**. Proporcione las credenciales necesarias para realizar la degradación de la siguiente lista:
 
 * La degradación de un controlador de dominio adicional requiere credenciales de Administrador de dominio. Al seleccionar **forzar la eliminación de este controlador de dominio, se** degrada el controlador de dominio sin quitar los metadatos del objeto de controlador de dominio de Active Directory.
 
@@ -118,10 +119,10 @@ Los argumentos equivalentes en el módulo ADDSDeployment de Windows PowerShell s
 
 ![Asistente para configuración de Active Directory Domain Services: impacto de las funciones FSMO de credenciales](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_Warnings.png)
 
-En la página **Advertencias** verás alertas de las posibles consecuencias que conlleva eliminar este controlador de dominio. Para proseguir, debes seleccionar **Continuar con la eliminación** .
+En la página **Advertencias** verás alertas de las posibles consecuencias que conlleva eliminar este controlador de dominio. Para proseguir, debes seleccionar **Continuar con la eliminación**.
 
 > [!WARNING]
-> Si activaste antes **Forzar la eliminación de este controlador de dominio** en la página **Credenciales** , la página **Advertencias** mostrará todos los roles de Operaciones de maestro único flexible que este controlador de dominio hospeda. *Debes* asumir los roles de otro controlador de dominio *de inmediato* tras disminuir este servidor de nivel. Para obtener más información sobre cómo asumir roles de FSMO, consulta [Asumir el rol de maestro de operaciones](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc816779(v=ws.10)).
+> Si activaste antes **Forzar la eliminación de este controlador de dominio** en la página **Credenciales**, la página **Advertencias** mostrará todos los roles de Operaciones de maestro único flexible que este controlador de dominio hospeda. *Debes* asumir los roles de otro controlador de dominio *de inmediato* tras disminuir este servidor de nivel. Para obtener más información sobre cómo asumir roles de FSMO, consulta [Asumir el rol de maestro de operaciones](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc816779(v=ws.10)).
 
 Esta página carece de argumento equivalente en Windows PowerShell para ADDSDeployment.
 
@@ -129,7 +130,7 @@ Esta página carece de argumento equivalente en Windows PowerShell para ADDSDepl
 
 ![Asistente para configuración de Active Directory Domain Services: credenciales quitar DNS y particiones de aplicación](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_ReviewOptions.png)
 
-La página **Opciones de eliminación** se muestra en función de si antes se ha seleccionado **Último controlador de dominio en el dominio** en la página **Credenciales** . En esta página podrás configurar más opciones de eliminación. Seleccione **omitir último servidor DNS para la zona** , **quitar particiones de aplicación** y **quitar delegación DNS** para habilitar el botón **siguiente** .
+La página **Opciones de eliminación** se muestra en función de si antes se ha seleccionado **Último controlador de dominio en el dominio** en la página **Credenciales**. En esta página podrás configurar más opciones de eliminación. Seleccione **omitir último servidor DNS para la zona**, **quitar particiones de aplicación** y **quitar delegación DNS** para habilitar el botón **siguiente** .
 
 Las opciones solo aparecen si procede en el caso de este controlador de dominio. Por ejemplo, si no hay delegación DNS para este servidor, la casilla correspondiente no se mostrará.
 
@@ -155,7 +156,7 @@ Si no se especifican, el cmdlet **Uninstall-ADDSDomainController** y sus argumen
 El argumento **LocalAdministratorPassword** es especial:
 
 * Si *no se especifica* como argumento, el cmdlet te pedirá que escribas y confirmes una contraseña enmascarada. Este es el uso preferido cuando se ejecuta el cmdlet en forma interactiva.
-* Si se especifica *con un valor* , debe ser una cadena segura. Este no es el uso preferido cuando se ejecuta el cmdlet en forma interactiva.
+* Si se especifica *con un valor*, debe ser una cadena segura. Este no es el uso preferido cuando se ejecuta el cmdlet en forma interactiva.
 
 Por ejemplo, puede solicitar manualmente una contraseña mediante el cmdlet **Read-host** para pedir al usuario una cadena segura.
 
@@ -193,7 +194,7 @@ Por ejemplo:
 
 ![Ejemplo de Uninstall-ADDSDomainController de PowerShell](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_PSUninstall.png)
 
-El mensaje para reiniciar es tu última oportunidad de cancelar esta operación cuando uses ADDSDeployment de Windows PowerShell. Para invalidar ese mensaje, usa los argumentos **-force** o **confirm:$false** .
+El mensaje para reiniciar es tu última oportunidad de cancelar esta operación cuando uses ADDSDeployment de Windows PowerShell. Para invalidar ese mensaje, usa los argumentos **-force** o **confirm:$false**.
 
 ### <a name="demotion"></a>Degradación
 
@@ -210,18 +211,18 @@ Como **Uninstall-ADDSDomainController** y **Uninstall-WindowsFeature** solo tien
 
 ![Ejemplo de Uninstall-WindowsFeature de PowerShell](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_PSUninstallWindowsFeature.png)
 
-Para aceptar el aviso de reinicio de forma automática, utiliza los argumentos **-force** o **-confirm:$false** con cualquier cmdlet de ADDSDeployment de Windows PowerShell. Para evitar que el servidor se reinicie automáticamente al final de la promoción, usa el argumento **-norebootoncompletion:$false** .
+Para aceptar el aviso de reinicio de forma automática, utiliza los argumentos **-force** o **-confirm:$false** con cualquier cmdlet de ADDSDeployment de Windows PowerShell. Para evitar que el servidor se reinicie automáticamente al final de la promoción, usa el argumento **-norebootoncompletion:$false**.
 
 > [!WARNING]
 > No se recomienda invalidar el reinicio. El servidor miembro debe reiniciarse para funcionar correctamente.
 
 ![Ejemplo de Uninstall-ADDSDomainController de PowerShell](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_PSUninstallFinished.png)
 
-Aquí se presenta un ejemplo de degradación forzada con los argumentos mínimos requeridos de **-forceremoval** y **-demoteoperationmasterrole** . El argumento **-credential** no es necesario porque el usuario inició sesión como miembro del grupo Administradores de empresas:
+Aquí se presenta un ejemplo de degradación forzada con los argumentos mínimos requeridos de **-forceremoval** y **-demoteoperationmasterrole**. El argumento **-credential** no es necesario porque el usuario inició sesión como miembro del grupo Administradores de empresas:
 
 ![Ejemplo de Uninstall-ADDSDomainController de PowerShell](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_PSUninstallExampleForce.png)
 
-Aquí te mostramos un ejemplo de eliminación del último controlador de dominio en un dominio con los argumentos mínimos requeridos **-lastdomaincontrollerindomain** y **-removeapplicationpartitions** :
+Aquí te mostramos un ejemplo de eliminación del último controlador de dominio en un dominio con los argumentos mínimos requeridos **-lastdomaincontrollerindomain** y **-removeapplicationpartitions**:
 
 ![Ejemplo de Uninstall-ADDSDomainController de PowerShell: LastDomainControllerInDomain](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_PSUninstallExampleLastDC.png)
 

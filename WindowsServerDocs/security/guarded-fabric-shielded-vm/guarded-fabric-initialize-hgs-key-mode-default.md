@@ -1,16 +1,17 @@
 ---
+description: Más información acerca de cómo inicializar el clúster de HGS mediante el modo de clave en un nuevo bosque dedicado (valor predeterminado)
 title: Inicializar el clúster de HGS mediante el modo de clave en un nuevo bosque dedicado (valor predeterminado)
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: 9098c339207464df3bf2eefa0e18250d2356a072
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b42535dbaa58b53e40aee555f1fdb47a24e94355
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87950910"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049773"
 ---
 # <a name="initialize-the-hgs-cluster-using-key-mode-in-a-new-dedicated-forest-default"></a>Inicializar el clúster de HGS mediante el modo de clave en un nuevo bosque dedicado (valor predeterminado)
 

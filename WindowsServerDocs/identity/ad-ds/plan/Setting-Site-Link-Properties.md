@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo establecer propiedades de vínculo de sitio
 ms.assetid: de054ac2-a386-43ec-a537-c0de21549741
 title: Establecer las propiedades de vínculo de sitio
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: c35b4b59fdebc186357d57e6bf566f66b0f34a74
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 135af3ae1d910ec0a8315eeb168fd03d2e4e1a71
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93070167"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049323"
 ---
 # <a name="setting-site-link-properties"></a>Establecer las propiedades de vínculo de sitio
 

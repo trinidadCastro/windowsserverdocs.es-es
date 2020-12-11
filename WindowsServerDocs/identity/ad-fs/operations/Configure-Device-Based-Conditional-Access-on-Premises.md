@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo configurar el acceso condicional local mediante dispositivos registrados
 ms.assetid: 35de490f-c506-4b73-840c-b239b72decc2
 title: Configuración del acceso condicional basado en dispositivos a nivel local
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 08/11/2017
 ms.topic: article
-ms.openlocfilehash: 2306c5ad57b7714c10076a5bb11f6cae5bb7f92d
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: 5b840243a7f17dc65db5d3c0605c3e5a321352f2
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766888"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049723"
 ---
 # <a name="configure-on-premises-conditional-access-using-registered-devices"></a>Configuración del acceso condicional local mediante dispositivos registrados
 

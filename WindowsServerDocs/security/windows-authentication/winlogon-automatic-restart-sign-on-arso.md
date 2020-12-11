@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: Sign-On de reinicio automático de Winlogon (ARSO)'
 title: Inicio de sesión con reinicio automático de Winlogon (ARSO)
 ms.topic: article
 ms.assetid: 15cddcfa-8a8e-45e4-bb76-b8e1a14ceac0
@@ -6,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 450c57fae13dc4a970c047cceb356a8fab227066
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 4a9aec72bd91bc28975dea1c9ba6c28cbb512c6c
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89638735"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97050223"
 ---
 # <a name="winlogon-automatic-restart-sign-on-arso"></a>Inicio de sesión con reinicio automático de Winlogon (ARSO)
 
@@ -140,4 +141,4 @@ Las horas de inicio de sesión y los controles parentales pueden prohibir la cre
 
 |Término|Definición|
 |----|-------|
-|Autologon|El inicio de sesión automático es una característica que está presente en Windows para varias versiones.  Se trata de una característica documentada de Windows que incluso tiene herramientas como el inicio de sesión automático para Windows v 3.01 * [http:/technet. Microsoft. com/Sysinternals/bb963905. aspx.](/sysinternals/downloads/autologon)*<p>Permite a un solo usuario del dispositivo iniciar sesión automáticamente sin escribir credenciales. Las credenciales se configuran y almacenan en el registro como secreto de LSA cifrado.|
+|Autologon|El inicio de sesión automático es una característica que está presente en Windows para varias versiones.  Se trata de una característica documentada de Windows que incluso tiene herramientas como el inicio de sesión automático para Windows v 3.01 *[http:/technet. Microsoft. com/Sysinternals/bb963905. aspx.](/sysinternals/downloads/autologon)*<p>Permite a un solo usuario del dispositivo iniciar sesión automáticamente sin escribir credenciales. Las credenciales se configuran y almacenan en el registro como secreto de LSA cifrado.|

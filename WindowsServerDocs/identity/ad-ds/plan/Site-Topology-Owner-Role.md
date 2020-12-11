@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: rol de propietario de la topología de sitio'
 ms.assetid: af76ddbe-83a2-4a62-9989-873e3bb1c772
 title: Rol de propietario de topología de sitio
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 162256df7b35b1d0d7033036bbfc097187670762
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 4cac0905993b1e1b750cdbc9e0a64d17c2637cd6
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93070137"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049263"
 ---
 # <a name="site-topology-owner-role"></a>Rol de propietario de topología de sitio
 

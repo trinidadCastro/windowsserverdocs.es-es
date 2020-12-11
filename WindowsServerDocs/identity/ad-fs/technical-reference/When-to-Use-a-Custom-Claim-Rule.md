@@ -1,4 +1,5 @@
 ---
+description: 'Más información sobre: Cuándo usar una regla de notificaciones personalizadas'
 ms.assetid: 20d183f0-ef94-44bb-9dfc-ed93799dd1a6
 title: Cuándo usar una regla de notificación personalizada
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: d98898f67ff51045e2bdd4bbaea58af8a438f9b1
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 589944065bd713524be6d503eaa07e62f72bddb0
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87937644"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97050443"
 ---
 # <a name="when-to-use-a-custom-claim-rule"></a>Cuándo usar una regla de notificación personalizada
 Escribe una regla de notificación personalizada en Servicios de federación de Active Directory (AD FS) \( AD FS \) mediante el lenguaje de reglas de notificación, que es el marco que usa el motor de emisión de notificaciones para generar, transformar, pasar a través y filtrar notificaciones mediante programación. Mediante el uso de una regla personalizada, puedes crear reglas con una lógica más compleja que una plantilla de regla estándar. Considera el uso de una regla personalizada cuando quieras:

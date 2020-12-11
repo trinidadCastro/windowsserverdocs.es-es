@@ -1,4 +1,5 @@
 ---
+description: 'Más información sobre: diseño y planeamiento de AD DS'
 ms.assetid: a91339ef-6ad4-445f-8ecc-a95fbcc04296
 title: Planeación y diseño de AD DS
 ms.author: daveba
@@ -6,12 +7,12 @@ author: iainfoulds
 manager: daveba
 ms.date: 08/07/2018
 ms.topic: article
-ms.openlocfilehash: 49885113f6ec30efcb912a230c3f419e922b9ff1
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 92ab8a4e3225c62fd526902c312aa889ee6831d1
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93071227"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97050143"
 ---
 # <a name="ad-ds-design-and-planning"></a>Planeación y diseño de AD DS
 

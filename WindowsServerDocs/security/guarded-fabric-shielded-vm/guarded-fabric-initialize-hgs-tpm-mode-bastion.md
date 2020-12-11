@@ -1,16 +1,17 @@
 ---
+description: Más información acerca de cómo inicializar el clúster de HGS mediante el modo TPM en un bosque bastión existente
 title: Inicializar el clúster de HGS mediante el modo TPM en un bosque bastión
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: 8f35ab031fe29a7266d9fa1124d7098d8bafb018
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: de96fa3a0ad8ce4b76bd4b3c0d484bc448906ae6
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87965992"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049753"
 ---
 # <a name="initialize-the-hgs-cluster-using-tpm-mode-in-an-existing-bastion-forest"></a>Inicializar el clúster de HGS mediante el modo TPM en un bosque bastión existente
 

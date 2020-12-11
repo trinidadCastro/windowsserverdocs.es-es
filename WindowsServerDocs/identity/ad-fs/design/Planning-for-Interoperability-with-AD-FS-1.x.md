@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo planear la interoperabilidad con AD FS 1. x
 ms.assetid: 04b63d9f-e924-4146-9b1d-785ed8b4239c
 title: Planificación para la interoperabilidad con AD FS 1.x
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 94313fc185a4f326ad00a95e4c594fd3e696f61a
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: e956d66dd528ed73e4adcdfb8d9d04f4cab1666d
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87967612"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049703"
 ---
 # <a name="planning-for-interoperability-with-ad-fs-1x"></a>Planificación para la interoperabilidad con AD FS 1.x
 

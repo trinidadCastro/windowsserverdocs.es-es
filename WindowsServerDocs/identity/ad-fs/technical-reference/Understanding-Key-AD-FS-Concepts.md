@@ -1,4 +1,5 @@
 ---
+description: 'Más información sobre: Descripción de los conceptos de AD FS clave'
 ms.assetid: 204f5fe9-3611-4da0-b057-a386004b4598
 title: Descripción de los conceptos de Servicios de federación de Active Directory (AD FS) clave
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: c75f2109f7ef67cb9c83ddd05f95030904413e23
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 0e31dfea3521fbbaac11f6fe5c1ae3666637118a
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996576"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97050463"
 ---
 # <a name="understanding-key-ad-fs-concepts"></a>Understanding Key AD FS Concepts
 Se recomienda que conozca los conceptos importantes de Servicios de federación de Active Directory (AD FS) y familiarícese con el conjunto de características.

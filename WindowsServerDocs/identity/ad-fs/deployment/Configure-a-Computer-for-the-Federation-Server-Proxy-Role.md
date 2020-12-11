@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: configurar un equipo para el rol de servidor proxy de Federación'
 ms.assetid: a2f23877-30a7-439f-817d-387da9e00e86
 title: Configurar un equipo para el rol de servidor proxy de federación
 author: billmath
@@ -6,12 +7,12 @@ manager: femila
 ms.date: 05/31/2017
 ms.topic: article
 ms.author: billmath
-ms.openlocfilehash: 06bccb135963d5b5bc754e895843a4d75153c120
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 0643f976ae7556c6a5c99e7cd117108a1b143b67
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87963126"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97050253"
 ---
 # <a name="configure-a-computer-for-the-federation-server-proxy-role"></a>Configurar un equipo para el rol de servidor proxy de federación
 
@@ -28,7 +29,7 @@ La pertenencia al grupo **Administradores** o equivalente en el equipo local es 
 
 1.  Hay dos maneras de iniciar el Asistente para la configuración del servidor de federación de AD FS. Para iniciar el asistente, realiza una de las acciones siguientes:
 
-    -   En la pantalla **Inicio** , escriba**AD FS Asistente para configuración de servidor proxy de Federación**y, a continuación, presione Entrar.
+    -   En la pantalla **Inicio** , escriba **AD FS Asistente para configuración de servidor proxy de Federación** y, a continuación, presione Entrar.
 
     -   En cualquier momento después de completar el Asistente para la instalación, abra el explorador de Windows, vaya a la carpeta **C: \\ Windows \\ ADFS** y, a continuación, \- haga doble clic en **FspConfigWizard.exe**.
 
@@ -49,7 +50,7 @@ La pertenencia al grupo **Administradores** o equivalente en el equipo local es 
     No hay ningún complemento MMC de Microsoft Management Console \( \) \- que usar para administrar los servidores proxy de Federación. Para configurar los valores de cada uno de los servidores proxy de Federación de su organización, use los cmdlets de Windows PowerShell.
 
 ## <a name="configuring-an-alternate-tcpip-port-for-proxy-operations"></a>Configuración de un puerto TCP/ \/ IP alternativo para operaciones de proxy
-De forma predeterminada, el servicio de servidor proxy de Federación está configurado para usar el puerto TCP 443 para el tráfico HTTPS y el puerto 80 para el tráfico HTTP para la comunicación con el servidor de Federación. Si deseas configurar puertos diferentes, como el puerto TCP 444 para HTTPS y el puerto 81 para HTTP, debes llevar a cabo las siguientes tareas.
+De forma predeterminada, el servicio de servidor proxy de Federación está configurado para usar el puerto TCP 443 para el tráfico HTTPS y el puerto 80 para el tráfico HTTP para la comunicación con el servidor de Federación. Si deseas configurar puertos diferentes, como el puerto TCP 444 para HTTPS y el puerto 81 para HTTP, debes llevar a cabo las siguientes tareas.
 
 > [!NOTE]
 > Si piensa implementar AD FS para que funcione en puertos TCP/ \/ IP alternativos, primero debe modificar los puertos de los enlaces de protocolo IIS para http y https tanto en el servidor de Federación como en los equipos de servidor proxy de Federación. Esto debe ocurrir antes de ejecutar el Asistente para configuración de AD FS para la configuración inicial. Si configura Internet Information Services \( IIS \) en primer lugar, la configuración del puerto TCP/ \/ IP alternativo se detecta cuando la configuración basada en el asistente \- se produce en AD FS y el procedimiento siguiente no es necesario. Si deseas cambiar más adelante la configuración del puerto, actualiza primero los enlaces de protocolo IIS y utiliza el siguiente procedimiento para actualizar correctamente la configuración del puerto. Para obtener más información acerca de la edición de enlaces de IIS, vea el [artículo 149605](https://go.microsoft.com/fwlink/?LinkId=190275) en Microsoft Knowledge base.
@@ -81,7 +82,7 @@ De forma predeterminada, el servicio de servidor proxy de Federación está conf
 
     ```
     <securityTokenService samlProtocolEndpoint="https://sts1.contoso.com:444/adfs/services/trust/samlprotocol/proxycertificatetransport"
-          wsTrustEndpoint="https://sts1.contoso.com:444/adfs/services/trust/proxycertificatetransport" />
+          wsTrustEndpoint="https://sts1.contoso.com:444/adfs/services/trust/proxycertificatetransport" />
     ```
 
 4.  Agregue la cuenta de usuario del servicio de servidor proxy de Federación a la \( ACL \) de la lista de control de acceso para las direcciones URL de extremo relacionadas. Por ejemplo, si el número de puerto es 1234 y la cuenta de usuario que se usa para ejecutar el servicio de proxy de servidor de AD FSfederation en es la \- cuenta de servicio de red integrada, escriba el siguiente comando en un símbolo del sistema:

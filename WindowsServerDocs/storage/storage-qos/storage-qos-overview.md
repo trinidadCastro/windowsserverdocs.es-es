@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de la calidad de servicio de almacenamiento
 title: Calidad de servicio de almacenamiento
 manager: dongill
 ms.author: JGerend
@@ -6,12 +7,12 @@ ms.topic: get-started-article
 ms.assetid: 8dcb8cf9-0e08-4fdd-9d7e-ec577ce8d8a0
 author: kumudd
 ms.date: 10/10/2016
-ms.openlocfilehash: ced2fe051f0595e8333aa2704889cc88ec1304ac
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: f4cb836cd76933b400e472d10adfeda47b717c0b
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87994727"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97050393"
 ---
 # <a name="storage-quality-of-service"></a>Calidad de servicio de almacenamiento
 
@@ -384,7 +385,7 @@ IsDeleted                     : False
 ```
 
 ### <a name="query-for-storage-qos-policies"></a>Consulta de directivas de calidad de servicio de almacenamiento
-`Get-StorageQosPolicy`muestra todas las directivas configuradas y su estado en un Servidor de archivos de escalabilidad horizontal.
+`Get-StorageQosPolicy` muestra todas las directivas configuradas y su estado en un servidor de archivos Scale-Out.
 
 ```PowerShell
 PS C:\> Get-StorageQosPolicy

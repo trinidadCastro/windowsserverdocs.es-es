@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo configurar el DNS corporativo para el Servicio de federación y el DRS
 ms.assetid: aca4a4fa-b12c-4eed-a499-f9aedb7d2fd6
 title: Configurar el DNS corporativo para los servicios de federación y DRS
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: de0313a65234c637018b0c7b2d7a7c9212464077
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: fab24c7abfc589ce68e8989f3ea4f4b601a173e5
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87938433"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97050293"
 ---
 # <a name="configure-corporate-dns-for-the-federation-service-and-drs"></a>Configurar el DNS corporativo para los servicios de federación y DRS
 
@@ -31,17 +32,17 @@ La pertenencia al grupo **administradores**, o equivalente, es el requisito mín
 
 1.  En el controlador de dominio, en Administrador del servidor, en el menú **herramientas** , haga clic en **DNS** para abrir el complemento DNS \- .
 
-2.  En el árbol de consola, expanda el nodo ** \_ \_ nombre del controlador de dominio** , expanda zonas de **búsqueda directa**, haga clic con el botón secundario \- en ** \_ nombre de dominio**y, a continuación, haga clic en **nuevo host \( a o AAAA \) **.
+2.  En el árbol de consola, expanda el nodo **\_ \_ nombre del controlador de dominio** , expanda zonas de **búsqueda directa**, haga clic con el botón secundario \- en **\_ nombre de dominio** y, a continuación, haga clic en **nuevo host \( a o AAAA \)**.
 
 3.  En el cuadro **nombre** , escriba el nombre que se usará para la granja de AD FS.
 
 4.  En el cuadro **dirección IP** , escriba la dirección IP del servidor de Federación. Haz clic en **Agregar host**.
 
-5.  \-Haga clic con el botón secundario en el nodo ** \_ nombre de dominio** y, a continuación, haga clic en **nuevo alias \( CNAME \) **.
+5.  \-Haga clic con el botón secundario en el nodo **\_ nombre de dominio** y, a continuación, haga clic en **nuevo alias \( CNAME \)**.
 
 6.  En el cuadro de diálogo **Nuevo registro de recursos**, escribe **enterpriseregistration** en el cuadro **Nombre de alias**.
 
-7.  En el cuadro de texto nombre \( de dominio completo FQDN \) del host de destino, escriba nombre de la **granja de servidores de federación \_ \_ \_ . dominio \_ Name.com**y, a continuación, haga clic en **Aceptar**.
+7.  En el cuadro de texto nombre \( de dominio completo FQDN \) del host de destino, escriba nombre de la **granja de servidores de federación \_ \_ \_ . dominio \_ Name.com** y, a continuación, haga clic en **Aceptar**.
 
     > [!IMPORTANT]
     > En una implementación real, si su empresa tiene varios sufijos UPN de nombre principal de usuario \( \) , debe crear varios registros CNAME para cada uno de esos sufijos UPN en DNS.

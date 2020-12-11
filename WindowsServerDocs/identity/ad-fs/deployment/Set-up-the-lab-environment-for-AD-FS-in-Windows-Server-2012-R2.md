@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo configurar el entorno de laboratorio para AD FS en Windows Server 2012 R2
 ms.assetid: 6b38480e-5b1c-49f0-9d46-8cf22f70f0d2
 title: Configurar el entorno de laboratorio para AD FS en Windows Server 2012 R2
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 276c4d22c3df64debd696ae07fff996fdbf4ceea
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 7a2135773a4d257604cc36335d1778cdba4e70bb
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87994275"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049073"
 ---
 # <a name="set-up-the-lab-environment-for-ad-fs-in-windows-server-2012-r2"></a>Configurar el entorno de laboratorio para AD FS en Windows Server 2012 R2
 
@@ -50,7 +51,7 @@ Cuando tu controlador de dominio esté operativo, puedes crear un grupo de prueb
 
 Crea las cuentas siguientes:
 
-- Usuario: **Robert Hatley** con las siguientes credenciales: nombre de usuario: **RobertH** y contraseña:<strong>P@ssword</strong>
+- Usuario: **Robert Hatley** con las siguientes credenciales: nombre de usuario: **RobertH** y contraseña: <strong>P@ssword</strong>
 
 - Grupo: **Finance**
 
@@ -305,11 +306,11 @@ Debes llevar a cabo los siguientes pasos para configurar un servidor web con est
 
     1.  Ejecuta FedUtil.exe, que está ubicado en **C:\Program Files (x86)\Windows Identity Foundation SDK\v3.5**.
 
-    2.  Establezca la ubicación de configuración de la aplicación en **C:\inetput\claimapp\web.config** y establezca el URI de la aplicación en la dirección URL del sitio, ** https://webserv1.contoso.com /claimapp/**. Haga clic en **Next**.
+    2.  Establezca la ubicación de configuración de la aplicación en **C:\inetput\claimapp\web.config** y establezca el URI de la aplicación en la dirección URL del sitio, **https://webserv1.contoso.com /claimapp/**. Haga clic en **Next**.
 
     3.  Seleccione **usar un STS existente** y vaya a la dirección URL de metadatos del servidor de AD FS **https://adfs1.contoso.com/federationmetadata/2007-06/federationmetadata.xml** . Haga clic en **Next**.
 
-    4.  Selecciona **Deshabilitar la validación de la cadena de certificados ** y haz clic en **Siguiente**.
+    4.  Selecciona **Deshabilitar la validación de la cadena de certificados** y haz clic en **Siguiente**.
 
     5.  Selecciona **Sin cifrado** y haz clic en **Siguiente**. En la página **Notificaciones ofrecidas**, haga clic en **Siguiente**.
 
@@ -358,7 +359,7 @@ Asimismo, debes configurar y utilizar una cuenta Microsoft para iniciar sesión 
 
 
 - [Serie de vídeos prácticos sobre los Servicios de federación de Active Directory: instalar una granja de servidores de AD FS](https://channel9.msdn.com/Search?term=Active%20Directory%20Federation%20Services#pubDate=year&ch9Search)
-- [Servicios de federación de Active Directory (AD FS) serie de vídeos de procedimientos: actualizar certificados](https://channel9.msdn.com/Search?term=Active%20Directory%20Federation%20Services#pubDate=year&ch9Search)
+- [Servicios de federación de Active Directory (AD FS) How-To serie de vídeos: actualizar certificados](https://channel9.msdn.com/Search?term=Active%20Directory%20Federation%20Services#pubDate=year&ch9Search)
 - [Serie de vídeos prácticos sobre los Servicios de federación de Active Directory: agregar una relación de confianza para usuario autenticado](https://channel9.msdn.com/Search?term=Active%20Directory%20Federation%20Services#pubDate=year&ch9Search)
 - [Serie de vídeos prácticos sobre los Servicios de federación de Active Directory: habilitar el Servicio de registro de dispositivos](https://channel9.msdn.com/)
 - [Serie de vídeos prácticos sobre los Servicios de federación de Active Directory: instalar el servidor proxy de la aplicación web](https://channel9.msdn.com/Search?term=Active%20Directory%20Federation%20Services#pubDate=year&ch9Search)

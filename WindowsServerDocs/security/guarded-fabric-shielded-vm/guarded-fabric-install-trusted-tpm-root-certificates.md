@@ -1,16 +1,17 @@
 ---
+description: Más información acerca de cómo instalar certificados raíz de TPM de confianza
 title: Instalar certificados raíz de TPM de confianza
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 06/27/2019
-ms.openlocfilehash: 04beb3f517df090393690a871a12015cf0bed163
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 8efc08856c234d55f6cc9b87bade9f5c81bf4332
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971322"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049713"
 ---
 # <a name="install-trusted-tpm-root-certificates"></a>Instalar certificados raíz de TPM de confianza
 

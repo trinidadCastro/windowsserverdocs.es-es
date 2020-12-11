@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: Windows Server 2012 AD FS guía de implementación'
 ms.assetid: e2ad9e80-a036-4bac-a4fb-afa83756aa1f
 title: Guía de implementación de AD FS en Windows Server 2012
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: a995cf956a6416a01f40c468b4e5d339609a6fb7
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a31e2225574ec43b3a5328963de36833a4b85c67
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87940859"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049023"
 ---
 # <a name="windows-server-2012-ad-fs-deployment-guide"></a>Guía de implementación de AD FS en Windows Server 2012
 

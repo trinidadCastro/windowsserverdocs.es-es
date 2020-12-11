@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo configurar la supervisión de rendimiento
 ms.assetid: 67d8a8d7-2fbd-4ed7-bb41-75769f942024
 title: Configurar la supervisión de rendimiento
 author: billmath
@@ -6,12 +7,12 @@ manager: femila
 ms.date: 05/31/2017
 ms.topic: article
 ms.author: billmath
-ms.openlocfilehash: bf6038fe5aec1bda815921c074b0c89d69732999
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 46b842b367e38b37c895f7c384e92155887547ed
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87938411"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97050263"
 ---
 # <a name="configure-performance-monitoring"></a>Configurar la supervisión de rendimiento
 
@@ -20,15 +21,15 @@ AD FS incluye sus propios contadores de rendimiento específicos para ayudarle a
 
 #### <a name="to-configure-performance-monitoring-for-ad-fs-using-performance-monitor"></a>Para configurar la supervisión de rendimiento para AD FS mediante el monitor de rendimiento
 
-1. En la pantalla **Inicio** , escriba **monitor de rendimiento**y, a continuación, presione Entrar.
+1. En la pantalla **Inicio** , escriba **monitor de rendimiento** y, a continuación, presione Entrar.
 
-2. En el árbol de consola, expanda **conjuntos de recopiladores de datos**, haga clic con el botón secundario \- en **definido por el usuario**, seleccione **nuevo**y haga clic en **conjunto de recopiladores de datos**.
+2. En el árbol de consola, expanda **conjuntos de recopiladores de datos**, haga clic con el botón secundario \- en **definido por el usuario**, seleccione **nuevo** y haga clic en **conjunto de recopiladores de datos**.
 
    Aparecerá el Asistente para crear nuevo conjunto de recopiladores de datos.
 
-3. En **crear nuevo conjunto de recopiladores de datos**, en **nombre** , escriba un nombre para el nuevo conjunto de recopiladores de datos, como \( "AD FS rendimiento" \) , haga clic en **crear manualmente \( Opciones avanzadas \) **y, a continuación, haga clic en **siguiente**.
+3. En **crear nuevo conjunto de recopiladores de datos**, en **nombre** , escriba un nombre para el nuevo conjunto de recopiladores de datos, como \( "AD FS rendimiento" \) , haga clic en **crear manualmente \( Opciones avanzadas \)** y, a continuación, haga clic en **siguiente**.
 
-4. Para el tipo de datos que se va a incluir, compruebe que la opción **crear registros de datos** está seleccionada y, a continuación, haga clic en las casillas de los siguientes tipos de datos: **contador de rendimiento**, datos de **seguimiento de eventos**e **información de configuración del sistema**.
+4. Para el tipo de datos que se va a incluir, compruebe que la opción **crear registros de datos** está seleccionada y, a continuación, haga clic en las casillas de los siguientes tipos de datos: **contador de rendimiento**, datos de **seguimiento de eventos** e **información de configuración del sistema**.
 
 5. Para los contadores de rendimiento, expanda **AD FS** en la lista **contadores disponibles** y, a continuación, haga clic en **Agregar**.
 
@@ -40,7 +41,7 @@ AD FS incluye sus propios contadores de rendimiento específicos para ayudarle a
 
 8. Cuando se le pida que especifique la ubicación para guardar los datos de rendimiento, puede aceptar la ubicación predeterminada \( **% SystemDrive% \\ perflogss \\ \\ admin** _<\_ conjunto de recopiladores de datos \_>_ y, a continuación, haga clic en **siguiente**.
 
-9. Cuando se le pregunte si desea crear el conjunto de recopiladores de datos, seleccione **Guardar y cerrar**y, a continuación, haga clic en **Finalizar**.
+9. Cuando se le pregunte si desea crear el conjunto de recopiladores de datos, seleccione **Guardar y cerrar** y, a continuación, haga clic en **Finalizar**.
 
     El nuevo conjunto de recopiladores de datos aparece en el árbol de consola, en el nodo **definido por el usuario** .
 

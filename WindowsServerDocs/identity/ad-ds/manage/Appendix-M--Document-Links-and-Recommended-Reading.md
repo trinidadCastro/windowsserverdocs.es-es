@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: Apéndice M: vínculos de documentos y lecturas recomendadas'
 ms.assetid: 6785de86-4f7d-4ed1-9055-8de0871d59b5
 title: 'Apéndice M: vínculos de documentos y lecturas recomendadas'
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 3840f99023320629968aa3fc18ffbfa807853fea
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 5c9deb86238b64c9d2e6c0d689b725fac0cb0c91
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93068998"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049533"
 ---
 # <a name="appendix-m-document-links-and-recommended-reading"></a>Anexo M: vínculos a documentos y lecturas recomendadas
 
@@ -22,7 +23,7 @@ ms.locfileid: "93068998"
 ### <a name="document-links"></a>Vínculos de documentos
 La tabla siguiente contiene una lista de vínculos a documentos externos y sus direcciones URL para que los lectores de copias impresas de este documento puedan tener acceso a esta información. Los vínculos se muestran en el orden en que aparecen en el documento.
 
-| Vínculos | Direcciones URL |
+| Vínculos | URLs |
 |--|--|
 | [10 leyes inmutables de administración de seguridad](/previous-versions/cc722488(v=technet.10)) | [https://technet.microsoft.com/library/cc722488.aspx](/previous-versions/cc722488(v=technet.10)) |
 | [Administrador de cumplimiento de seguridad de Microsoft](/previous-versions/tn-archive/cc677002(v=technet.10)) | [https://technet.microsoft.com/library/cc677002.aspx](/previous-versions/tn-archive/cc677002(v=technet.10)) |
@@ -167,7 +168,7 @@ La tabla siguiente contiene una lista de vínculos a documentos externos y sus d
 ### <a name="recommended-reading"></a>Lecturas recomendadas
 La tabla siguiente contiene una lista de lecturas recomendadas que le ayudarán a mejorar la seguridad de los sistemas de Active Directory.
 
-| **Lecturas recomendadas** |
+| **Lectura recomendada** |
 |--|
 | [Nuevas amenazas de Cyber Tech en el informe de 2014](http://www.gtsecuritysummit.com/2014Report.pdf) |
 | [Informe de inteligencia de seguridad de Microsoft](https://www.microsoft.com/security/sir/default.aspx) |

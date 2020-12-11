@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: lista de comprobación: configuración de un servidor proxy de Federación'
 ms.assetid: 38c9bcd3-c6f8-4153-8e42-5fd31568c65a
 title: 'Lista de comprobación: configuración de un servidor proxy de Federación'
 author: billmath
@@ -6,12 +7,12 @@ manager: femila
 ms.date: 05/31/2017
 ms.topic: article
 ms.author: billmath
-ms.openlocfilehash: 1c204288bb826dc87330a5471e5988284105635e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 5b82bc326fbe73e192f51bb48b4f4aba1d8c03fe
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87972252"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97050323"
 ---
 # <a name="checklist-setting-up-a-federation-server-proxy"></a>Lista de comprobación: configurar un servidor proxy de federación
 

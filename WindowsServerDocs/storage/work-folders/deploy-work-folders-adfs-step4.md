@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de cómo implementar carpetas de trabajo con AD FS y proxy de aplicación web: paso 4: configurar el proxy de aplicación Web'
 title: 'Implementar carpetas de trabajo con AD FS y proxy de aplicación web: paso 4, configurar el proxy de aplicación Web'
 ms.topic: article
 manager: klaasl
@@ -6,12 +7,12 @@ ms.author: jeffpatt
 author: JeffPatt24
 ms.date: 06/24/2017
 ms.assetid: 4a11ede0-b000-4188-8190-790971504e17
-ms.openlocfilehash: 0b7748332d8760db24010a04d0ecf3a5094bcda6
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 8a44359e257024b9ba74ee16684a1e4226891594
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87965832"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049153"
 ---
 # <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-4-set-up-web-application-proxy"></a>Implementar carpetas de trabajo con AD FS y proxy de aplicación web: paso 4: configurar el proxy de aplicación Web
 
@@ -41,23 +42,23 @@ Dado que está instalando certificados autofirmados de los que no se puede reali
 
 Para instalar los certificados, siga estos pasos:
 
-1.  Haga clic en **Inicio**y, a continuación, haga clic en **Ejecutar**.
+1.  Haga clic en **Inicio** y, a continuación, haga clic en **Ejecutar**.
 
 2.  Escriba **MMC**.
 
 3.  En el menú **Archivo** , haga clic en **Agregar o quitar complemento**.
 
-4.  En la lista **complementos disponibles** , seleccione **certificados**y, a continuación, haga clic en **Agregar**. Se inicia el Asistente para complementos de certificados.
+4.  En la lista **complementos disponibles** , seleccione **certificados** y, a continuación, haga clic en **Agregar**. Se inicia el Asistente para complementos de certificados.
 
 5.  Seleccione **Cuenta de equipo** y, a continuación, haga clic en **Siguiente**.
 
 6.  Seleccione **equipo local: (el equipo en el que se está ejecutando esta consola)** y, a continuación, haga clic en **Finalizar**.
 
-7.  Haga clic en **Aceptar**.
+7.  Haga clic en **OK**.
 
 8.  Expanda la **consola de carpeta Root\Certificates \( equipo local) \personal\certificados**.
 
-9. Haga clic con el botón secundario en **certificados**, seleccione **todas las tareas**y haga clic en **importar**.
+9. Haga clic con el botón secundario en **certificados**, seleccione **todas las tareas** y haga clic en **importar**.
 
 10. Vaya a la carpeta que contiene el certificado AD FS y siga las instrucciones del Asistente para importar el archivo y colocarlo en el almacén de certificados.
 
@@ -65,7 +66,7 @@ Para instalar los certificados, siga estos pasos:
 
 12. Expanda la **consola de carpeta Root\Certificates \( equipo local) \Trusted raíz confianza\certificados**.
 
-13. Haga clic con el botón secundario en **certificados**, seleccione **todas las tareas**y haga clic en **importar**.
+13. Haga clic con el botón secundario en **certificados**, seleccione **todas las tareas** y haga clic en **importar**.
 
 14. Vaya a la carpeta que contiene el certificado de AD FS y siga las instrucciones del Asistente para importar el archivo y colocarlo en el almacén de entidades de certificación raíz de confianza.
 
@@ -84,7 +85,7 @@ Para instalar el proxy de aplicación Web, siga estos pasos:
 
 5.  En la página características y acceso remoto, haga clic en **siguiente**.
 
-6.  En la página **servicios de rol** , seleccione proxy de **aplicación web**, haga clic en **Agregar características**y, a continuación, haga clic en **siguiente**.
+6.  En la página **servicios de rol** , seleccione proxy de **aplicación web**, haga clic en **Agregar características** y, a continuación, haga clic en **siguiente**.
 
 7.  En la página **Confirmar selecciones de instalación**, haga clic en **Instalar**.
 
@@ -106,7 +107,7 @@ Para configurar el proxy de aplicación Web, siga estos pasos:
 ## <a name="publish-the-work-folders-web-application"></a>Publicar la aplicación Web de carpetas de trabajo
 El siguiente paso es publicar una aplicación web que pondrá las carpetas de trabajo a disposición de los clientes. Para publicar la aplicación Web de carpetas de trabajo, siga estos pasos:
 
-1. Abra **Administrador del servidor**y, en el menú **herramientas** , haga clic en **Administración de acceso remoto** para abrir la consola de administración de acceso remoto.
+1. Abra **Administrador del servidor** y, en el menú **herramientas** , haga clic en **Administración de acceso remoto** para abrir la consola de administración de acceso remoto.
 
 2. En **configuración**, haga clic en **proxy de aplicación web**.
 
@@ -116,9 +117,9 @@ El siguiente paso es publicar una aplicación web que pondrá las carpetas de tr
 
 5. En la página **autenticación previa** , seleccione **servicios de Federación de Active Directory (AD FS) (AD FS)** y haga clic en **siguiente**.
 
-6. En la página **clientes de soporte técnico** , seleccione **OAuth2**y haga clic en **siguiente**.
+6. En la página **clientes de soporte técnico** , seleccione **OAuth2** y haga clic en **siguiente**.
 
-7. En la página **usuario de confianza** , seleccione **carpetas de trabajo**y, a continuación, haga clic en **siguiente**. Esta lista se publica en el proxy de aplicación web desde AD FS.
+7. En la página **usuario de confianza** , seleccione **carpetas de trabajo** y, a continuación, haga clic en **siguiente**. Esta lista se publica en el proxy de aplicación web desde AD FS.
 
 8. En la página **configuración de publicación** , escriba lo siguiente y, a continuación, haga clic en **siguiente**:
 
@@ -136,11 +137,11 @@ El siguiente paso es publicar una aplicación web que pondrá las carpetas de tr
 
    Nombre: **WorkFolders**
 
-   Dirección URL externa:**https://workfolders.contoso.com**
+   Dirección URL externa: **https://workfolders.contoso.com**
 
    Certificado externo: **el certificado de carpetas de trabajo que instaló anteriormente**
 
-   Dirección URL del servidor back-end:**https://workfolders.contoso.com**
+   Dirección URL del servidor back-end: **https://workfolders.contoso.com**
 
 9. La página Confirmación muestra el comando de Windows PowerShell que se ejecutará para publicar la aplicación. Haga clic en **Publicar**.
 

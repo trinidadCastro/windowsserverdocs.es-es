@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de cómo implementar carpetas de trabajo con AD FS y el proxy de aplicación web: paso 3, configuración de carpetas de trabajo'
 title: 'Implementar carpetas de trabajo con AD FS y proxy de aplicación web: paso 3, configurar carpetas de trabajo'
 ms.topic: article
 manager: klaasl
@@ -6,12 +7,12 @@ ms.author: jeffpatt
 author: JeffPatt24
 ms.date: 4/5/2017
 ms.assetid: 5a43b104-4d02-4d73-a385-da1cfb67e341
-ms.openlocfilehash: 784b4467fccaefc2911c501d49ac4c1cd9196c67
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 2c85e0fc34fcbd735a79c8c768dbee70ff5e2e8d
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970082"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049163"
 ---
 # <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-3-set-up-work-folders"></a>Implementar carpetas de trabajo con AD FS y proxy de aplicación web: paso 3, configurar carpetas de trabajo
 
@@ -55,7 +56,7 @@ Para crear el registro CNAME para carpetas de trabajo, siga estos pasos:
 
 5.  En el campo **nombre de dominio completo para host de destino** , escriba el FQDN del servidor de carpetas de trabajo. En el ejemplo de prueba, es **2016-WF.contoso.com**.
 
-6.  Haga clic en **Aceptar**.
+6.  Haga clic en **OK**.
 
 Para realizar los pasos equivalentes a través de Windows PowerShell, use el siguiente comando. El comando debe ejecutarse en el controlador de dominio.
 
@@ -66,29 +67,29 @@ Add-DnsServerResourceRecord  -ZoneName "contoso.com" -Name workfolders -CName  -
 ### <a name="install-the-ad-fs-certificate"></a>Instalación del certificado AD FS
 Instale el certificado de AD FS que se creó durante la instalación de AD FS en el almacén de certificados del equipo local, siguiendo estos pasos:
 
-1.  Haga clic en **Inicio**y, a continuación, haga clic en **Ejecutar**.
+1.  Haga clic en **Inicio** y, a continuación, haga clic en **Ejecutar**.
 
 2.  Escriba **MMC**.
 
 3.  En el menú **Archivo** , haga clic en **Agregar o quitar complemento**.
 
-4.  En la lista **complementos disponibles** , seleccione **certificados**y, a continuación, haga clic en **Agregar**. Se inicia el Asistente para complementos de certificados.
+4.  En la lista **complementos disponibles** , seleccione **certificados** y, a continuación, haga clic en **Agregar**. Se inicia el Asistente para complementos de certificados.
 
 5.  Seleccione **Cuenta de equipo** y, a continuación, haga clic en **Siguiente**.
 
 6.  Seleccione **equipo local: (el equipo en el que se está ejecutando esta consola)** y, a continuación, haga clic en **Finalizar**.
 
-7.  Haga clic en **Aceptar**.
+7.  Haga clic en **OK**.
 
 8.  Expanda la **consola de carpeta Root\Certificates \( equipo local) \personal\certificados**.
 
-9. Haga clic con el botón secundario en **certificados**, seleccione **todas las tareas**y haga clic en **importar**.
+9. Haga clic con el botón secundario en **certificados**, seleccione **todas las tareas** y haga clic en **importar**.
 
 10. Vaya a la carpeta que contiene el certificado AD FS y siga las instrucciones del Asistente para importar el archivo y colocarlo en el almacén de certificados.
 
 11. Expanda la **consola de carpeta Root\Certificates \( equipo local) \Trusted raíz confianza\certificados**.
 
-12. Haga clic con el botón secundario en **certificados**, seleccione **todas las tareas**y haga clic en **importar**.
+12. Haga clic con el botón secundario en **certificados**, seleccione **todas las tareas** y haga clic en **importar**.
 
 13. Vaya a la carpeta que contiene el certificado de AD FS y siga las instrucciones del Asistente para importar el archivo y colocarlo en el almacén de entidades de certificación raíz de confianza.
 
@@ -117,7 +118,7 @@ Para crear el certificado autofirmado de carpetas de trabajo, siga estos pasos:
 
 7.  Cuando se le pida que escriba los nombres de nombre alternativo del firmante (SAN), presione Y y, a continuación, escriba los nombres de SAN, de uno en uno.
 
-    En este ejemplo, escriba **workfolders.contoso.com**y presione Entrar. A continuación, escriba **2016-WF.contoso.com** y presione Entrar.
+    En este ejemplo, escriba **workfolders.contoso.com** y presione Entrar. A continuación, escriba **2016-WF.contoso.com** y presione Entrar.
 
     Una vez especificados todos los nombres de SAN, presione Entrar en una línea vacía.
 
@@ -138,15 +139,15 @@ En el ejemplo de prueba, los valores son:
 ## <a name="install-work-folders"></a>Instalar carpetas de trabajo
 Para instalar el rol carpetas de trabajo, siga estos pasos:
 
-1.  Abra **Administrador del servidor**, haga clic en **Agregar roles y características**y, a continuación, haga clic en **siguiente**.
+1.  Abra **Administrador del servidor**, haga clic en **Agregar roles y características** y, a continuación, haga clic en **siguiente**.
 
-2.  En la página **tipo de instalación** , seleccione Instalación basada en **características o en roles**y haga clic en **siguiente**.
+2.  En la página **tipo de instalación** , seleccione Instalación basada en **características o en roles** y haga clic en **siguiente**.
 
 3.  En la página **selección de servidor** , seleccione el servidor actual y haga clic en **siguiente**.
 
-4.  En la **Página roles de servidor** , expanda servicios de **archivos y almacenamiento**, expanda **servicios de archivos e iSCSI**y, a continuación, seleccione **carpetas de trabajo**.
+4.  En la **Página roles de servidor** , expanda servicios de **archivos y almacenamiento**, expanda **servicios de archivos e iSCSI** y, a continuación, seleccione **carpetas de trabajo**.
 
-5.  En la página **Asistente para agregar roles y características** , haga clic en **Agregar características**y, a continuación, en **siguiente**.
+5.  En la página **Asistente para agregar roles y características** , haga clic en **Agregar características** y, a continuación, en **siguiente**.
 
 6.  En la página **características** , haga clic en **siguiente**.
 
@@ -157,15 +158,15 @@ Para configurar carpetas de trabajo, siga estos pasos:
 
 1.  Abra el **Administrador del servidor**.
 
-2.  Seleccione **servicios de archivos y almacenamiento**y, a continuación, seleccione **carpetas de trabajo**.
+2.  Seleccione **servicios de archivos y almacenamiento** y, a continuación, seleccione **carpetas de trabajo**.
 
-3.  En la página **carpetas de trabajo** , inicie el **Asistente para nuevo recurso compartido de sincronización**y haga clic en **siguiente**.
+3.  En la página **carpetas de trabajo** , inicie el **Asistente para nuevo recurso compartido de sincronización** y haga clic en **siguiente**.
 
 4.  En la página **servidor y ruta de acceso** , seleccione el servidor en el que se creará el recurso compartido de sincronización, escriba una ruta de acceso local donde se almacenarán los datos de carpetas de trabajo y haga clic en **siguiente**.
 
-    Si la ruta de acceso no existe, se le pedirá que la cree. Haga clic en **Aceptar**.
+    Si la ruta de acceso no existe, se le pedirá que la cree. Haga clic en **OK**.
 
-5.  En la página **estructura de carpetas de usuario** , seleccione alias de **usuario**y, a continuación, haga clic en **siguiente**.
+5.  En la página **estructura de carpetas de usuario** , seleccione alias de **usuario** y, a continuación, haga clic en **siguiente**.
 
 6.  En la página **nombre del recurso compartido de sincronización** , escriba el nombre del recurso compartido de sincronización. En el ejemplo de prueba, es **WorkFolders**. Haga clic en **Next**.
 
@@ -197,7 +198,7 @@ $subject = "workfolders.contoso.com"
 Try
 {
 #In case there are multiple certificates with the same subject, get the latest version
-$cert = Get-ChildItem CERT:\LocalMachine\My |where {$_.Subject -match $subject} | sort $_.NotAfter -Descending | select -first 1 
+$cert = Get-ChildItem CERT:\LocalMachine\My |where {$_.Subject -match $subject} | sort $_.NotAfter -Descending | select -first 1 
 $thumbprint = $cert.Thumbprint
 $Command = "http add sslcert ipport=0.0.0.0:443 certhash=$thumbprint appid={CE66697B-3AA0-49D1-BDBD-A25C8359FD5D} certstorename=MY"
 $Command | netsh
@@ -213,9 +214,9 @@ Exit
 También puede enlazar el certificado al puerto mediante cmdlets de administración de IIS, que están disponibles si instaló las herramientas y los scripts de administración de IIS.
 
 > [!NOTE]
-> La instalación de las herramientas de administración de IIS no habilita la versión completa de Internet Information Services (IIS) en el equipo carpetas de trabajo; solo habilita los cmdlets de administración. Hay algunas ventajas posibles para esta configuración. Por ejemplo, si está buscando cmdlets para proporcionar la funcionalidad que obtiene de Netsh. Cuando el certificado se enlaza al puerto a través del cmdlet New-webbinding, el enlace no depende de IIS de ningún modo. Después de realizar el enlace, puede incluso quitar la característica web-MGMT-Console y el certificado se seguirá enlazando al puerto. Puede comprobar el enlace a través de Netsh escribiendo **netsh http show sslcert**.
+> La instalación de las herramientas de administración de IIS no habilita la versión completa de Internet Information Services (IIS) en el equipo carpetas de trabajo; solo habilita los cmdlets de administración. Hay algunas ventajas posibles para esta configuración. Por ejemplo, si está buscando cmdlets para proporcionar la funcionalidad que obtiene de Netsh. Cuando el certificado se enlaza al puerto a través del cmdlet New-WebBinding, el enlace no depende de IIS de ningún modo. Después de realizar el enlace, puede incluso quitar la característica web-MGMT-Console y el certificado se seguirá enlazando al puerto. Puede comprobar el enlace a través de Netsh escribiendo **netsh http show sslcert**.
 
-En el ejemplo siguiente se usa el cmdlet New-webbinding para buscar el certificado con el asunto **workfolders.contoso.com** y enlazarlo al puerto 443:
+En el ejemplo siguiente se usa el cmdlet New-WebBinding para buscar el certificado con el asunto **workfolders.contoso.com** y enlazarlo al puerto 443:
 
 ```powershell
 $subject = "workfolders.contoso.com"
@@ -242,7 +243,7 @@ Para configurar carpetas de trabajo para utilizar AD FS para la autenticación, 
 
 1.  Abra el **Administrador del servidor**.
 
-2.  Haga clic en **servidores**y, a continuación, seleccione el servidor de carpetas de trabajo en la lista.
+2.  Haga clic en **servidores** y, a continuación, seleccione el servidor de carpetas de trabajo en la lista.
 
 3.  Haga clic con el botón secundario en el nombre del servidor y haga clic en **configuración de carpetas de trabajo**.
 

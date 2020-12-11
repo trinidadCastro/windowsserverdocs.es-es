@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: Cuándo crear un servidor de Federación'
 ms.assetid: 824005ae-c3c1-459b-9baa-1660158918ab
 title: Cuándo se debe crear un servidor de federación
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 908a3ced3934ce078e4be424ec9ba33210905066
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d3ced02154d3945b8022d565d8fa834164d2d229
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87962719"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049003"
 ---
 # <a name="when-to-create-a-federation-server"></a>Cuándo se debe crear un servidor de federación
 
@@ -52,14 +53,14 @@ A continuación se indican las operaciones que solo puede realizar un servidor d
 -   Los servidores de Federación admiten el uso de la autenticación integrada de Windows para los clientes de la red corporativa; los servidores proxy de Federación no lo hacen. Para obtener más información acerca del uso de la autenticación integrada de Windows con el servidor de Federación, consulte [Cuándo crear una granja de servidores de Federación](When-to-Create-a-Federation-Server-Farm.md).
 
 > [!CAUTION]
-> La integridad y confidencialidad de la comunicación entre los servidores de federación y las bases de datos de configuración de SQL Server, los almacenes de atributos de SQL Server, los controladores de dominio y las instancias de AD LDS no está protegida de forma predeterminada.Para mitigar esto, considere la posibilidad de proteger el canal de comunicación entre estos servidores mediante IPSEC o con una conexión segura físicamente entre todos estos servidores.Para la comunicación entre los servidores de federación y SQL, considere la posibilidad de usar la protección de SSL en la cadena de conexión.Para las conexiones entre los servidores de federación y los controladores de dominio, considere la posibilidad de activar la firma y el cifrado de Kerberos.Para LDAP, LDAP \/ S no es compatible con AD LDS \/ AD DS.
+> La integridad y confidencialidad de la comunicación entre los servidores de federación y las bases de datos de configuración de SQL Server, los almacenes de atributos de SQL Server, los controladores de dominio y las instancias de AD LDS no está protegida de forma predeterminada. Para mitigar esto, considere la posibilidad de proteger el canal de comunicación entre estos servidores mediante IPSEC o con una conexión segura físicamente entre todos estos servidores. Para la comunicación entre los servidores de federación y SQL, considere la posibilidad de usar la protección de SSL en la cadena de conexión. Para las conexiones entre los servidores de federación y los controladores de dominio, considere la posibilidad de activar la firma y el cifrado de Kerberos. Para LDAP, LDAP \/ S no es compatible con AD LDS \/ AD DS.
 
 ## <a name="how-to-create-a-federation-server"></a>Cómo se crea un servidor de federación
 Puede crear un servidor de Federación mediante el Asistente para la configuración del servidor de Federación de AD FS o la herramienta de línea de comandos Fsconfig.exe \- . Cualquiera de estas herramientas permite elegir las siguientes opciones para crear un servidor de federación.
 
 -   Crear un \- servidor de Federación independiente
 
-    Para obtener más información acerca de cómo configurar un \- servidor de Federación independiente, consulte [crear un servidor de Federación](../../ad-fs/deployment/Create-a-Stand-Alone-Federation-Server.md)independiente.
+    Para obtener más información acerca de cómo configurar un \- servidor de Federación independiente, consulte [crear un servidor de federación de Stand-Alone](../../ad-fs/deployment/Create-a-Stand-Alone-Federation-Server.md).
 
 -   Crear el primer servidor de federación en una granja de servidores de federación
 

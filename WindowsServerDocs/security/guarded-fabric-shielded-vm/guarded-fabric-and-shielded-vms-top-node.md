@@ -1,17 +1,18 @@
 ---
 title: Máquinas virtuales blindadas y tejido protegido
+description: 'Más información sobre: tejido protegido y máquinas virtuales blindadas'
 ms.topic: article
 ms.assetid: 5c7ada81-2d97-41d4-87cf-1a7ccf06cd20
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: 001e0fe38c27e6331a5b2b38d76cd193bfb184f1
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: fb1aa8062b39e43b82083cabe791eb728b0dedba
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96864854"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049913"
 ---
 # <a name="guarded-fabric-and-shielded-vms"></a>Máquinas virtuales blindadas y tejido protegido
 

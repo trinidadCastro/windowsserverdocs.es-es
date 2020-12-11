@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: Cuándo usar una pertenencia a un grupo de envío como una regla de notificaciones'
 ms.assetid: af16e847-47c2-461e-9df1-cc352a322043
 title: Cuando usar la pertenencia a un grupo de envío como una regla de notificación
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 2a56b3547535123dfdff66fe764485fc53f3e908
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 912ebf3fe8c3db96de2d615d3bda6ea3c7f3f7a4
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87956242"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97050433"
 ---
 # <a name="when-to-use-a-send-group-membership-as-a-claim-rule"></a>Cuando usar la pertenencia a un grupo de envío como una regla de notificación
 Puede usar esta regla en Servicios de federación de Active Directory (AD FS) \( AD FS \) cuando quiera emitir un nuevo valor de notificaciones salientes solo para los usuarios que son miembros de un grupo de seguridad de Active Directory especificado. Cuando usa esta regla, emitirá una notificación única solo para el grupo que especifique y que coincida con la lógica de la regla, como se describe en la tabla siguiente.

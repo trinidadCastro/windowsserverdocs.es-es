@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de cómo implementar carpetas de trabajo con AD FS y el proxy de aplicación web: paso 5, configurar clientes'
 title: 'Implementar carpetas de trabajo con AD FS y proxy de aplicación web: paso 5, configurar clientes'
 ms.topic: article
 manager: klaasl
@@ -6,12 +7,12 @@ ms.author: jeffpatt
 author: JeffPatt24
 ms.date: 4/5/2017
 ms.assetid: f168292b-0dbc-44b9-965f-d480e5134a0c
-ms.openlocfilehash: fd8015b1a72477c00fda0c3483bbdd6504ff86b8
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 904d5868c4f242ff00b86d0824fa9e58692db621
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87965822"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049143"
 ---
 # <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-5-set-up-clients"></a>Implementar carpetas de trabajo con AD FS y proxy de aplicación web: paso 5, configurar clientes
 
@@ -40,23 +41,23 @@ Dado que está instalando certificados autofirmados de los que no se puede reali
 
 Para instalar los certificados, siga estos pasos:
 
-1.  Haga clic en **Inicio**y, a continuación, haga clic en **Ejecutar**.
+1.  Haga clic en **Inicio** y, a continuación, haga clic en **Ejecutar**.
 
 2.  Escriba **MMC**.
 
 3.  En el menú **Archivo** , haga clic en **Agregar o quitar complemento**.
 
-4.  En la lista **complementos disponibles** , seleccione **certificados**y, a continuación, haga clic en **Agregar**. \-Se inicia el Asistente para el complemento de certificados.
+4.  En la lista **complementos disponibles** , seleccione **certificados** y, a continuación, haga clic en **Agregar**. \-Se inicia el Asistente para el complemento de certificados.
 
 5.  Seleccione **Cuenta de equipo** y, a continuación, haga clic en **Siguiente**.
 
 6.  Seleccione **equipo local: (el equipo en el que se está ejecutando esta consola)** y, a continuación, haga clic en **Finalizar**.
 
-7.  Haga clic en **Aceptar**.
+7.  Haga clic en **OK**.
 
 8.  Expanda la consola de carpeta Root\Certificates \( equipo local) \Personal\Certificates.
 
-9. Haga clic con el botón secundario en **certificados**, seleccione **todas las tareas**y haga clic en **importar**.
+9. Haga clic con el botón secundario en **certificados**, seleccione **todas las tareas** y haga clic en **importar**.
 
 10. Vaya a la carpeta que contiene el certificado AD FS y siga las instrucciones del Asistente para importar el archivo y colocarlo en el almacén de certificados.
 
@@ -64,7 +65,7 @@ Para instalar los certificados, siga estos pasos:
 
 12. Expanda la consola de carpeta Root\Certificates \( equipo local) \Trusted raíz Authorities\Certificates.
 
-13. Haga clic con el botón secundario en **certificados**, seleccione **todas las tareas**y haga clic en **importar**.
+13. Haga clic con el botón secundario en **certificados**, seleccione **todas las tareas** y haga clic en **importar**.
 
 14. Vaya a la carpeta que contiene el certificado de AD FS y siga las instrucciones del Asistente para importar el archivo y colocarlo en el almacén de entidades de certificación raíz de confianza.
 

@@ -1,16 +1,17 @@
 ---
+description: 'Más información acerca de: elija si desea instalar HGS en su propio bosque dedicado o en un bosque bastión existente.'
 title: Elija si desea instalar HGS en su propio bosque nuevo o en un bosque bastión existente.
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: e1b4c015aa9b4f504d4cdf79bb2f38686588cfdd
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: cceea24bb4f843df06854e893742c79d25034021
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989534"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049903"
 ---
 # <a name="choose-whether-to-install-hgs-in-its-own-dedicated-forest-or-in-an-existing-bastion-forest"></a>Elija si desea instalar HGS en su propio bosque dedicado o en un bosque bastión existente.
 

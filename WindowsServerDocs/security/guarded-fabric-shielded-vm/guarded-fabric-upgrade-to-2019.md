@@ -1,16 +1,17 @@
 ---
+description: 'Más información sobre: actualización de un tejido protegido a Windows Server 2019'
 title: Actualizar un tejido protegido a Windows Server 2019
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 11/21/2018
-ms.openlocfilehash: 53b0610e32f8cd3c6b7e3d086690ef4b72612ed6
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: bc7cedb2c232a61593dcce630e365b375c9d4744
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996134"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049103"
 ---
 # <a name="upgrade-a-guarded-fabric-to-windows-server-2019"></a>Actualizar un tejido protegido a Windows Server 2019
 

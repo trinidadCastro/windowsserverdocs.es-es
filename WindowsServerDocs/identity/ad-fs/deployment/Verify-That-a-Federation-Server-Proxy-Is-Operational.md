@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: comprobar que un servidor proxy de Federación está operativo'
 ms.assetid: d555041a-709e-42c7-920a-8dfd2c7e0488
 title: Comprobar que un servidor proxy de federación está operativo
 author: billmath
@@ -6,12 +7,12 @@ manager: femila
 ms.date: 05/31/2017
 ms.topic: article
 ms.author: billmath
-ms.openlocfilehash: 4550934c56b4406ea7aff9b90509a205014dd95d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 80671525bd403e003460437a30c96e1e44efe174
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87940964"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049033"
 ---
 # <a name="verify-that-a-federation-server-proxy-is-operational"></a>Comprobar que un servidor proxy de federación está operativo
 
@@ -27,11 +28,11 @@ La pertenencia al grupo **Administradores** o equivalente en el equipo local es 
 
 1.  Inicie sesión en el servidor proxy de Federación como administrador.
 
-2.  En la pantalla **Inicio** , escriba**visor de eventos**y, a continuación, presione Entrar.
+2.  En la pantalla **Inicio** , escriba **visor de eventos** y, a continuación, presione Entrar.
 
-3.  En el panel de detalles, \- haga doble clic en **registros de aplicaciones y servicios**, haga doble \- clic en **AD FS Eventing**y, a continuación, haga clic en **admin**.
+3.  En el panel de detalles, \- haga doble clic en **registros de aplicaciones y servicios**, haga doble \- clic en **AD FS Eventing** y, a continuación, haga clic en **admin**.
 
-4.  En la columna **Id. del evento**, busca el id. de evento 198.
+4.  En la columna **Id. del evento**, busque el id. de evento 198.
 
     Si el servidor proxy de Federación está configurado correctamente, verá un nuevo evento en el registro de aplicaciones de Visor de eventos, con el ID. de evento 198. Este evento comprueba que el servicio de servidor proxy de Federación se inició correctamente y ahora está en línea.
 
