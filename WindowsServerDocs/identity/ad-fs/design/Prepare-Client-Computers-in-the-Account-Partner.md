@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo preparar los equipos cliente en el asociado de cuenta
 ms.assetid: cea6011d-3753-4b95-aaa5-38d4e97d6e42
 title: Preparar los equipos cliente en el asociado de cuenta
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: b78c3d3b4c5562acfcc7b2657f6e49119fc491e2
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 27c7e49fa35a47c7cfa60e9495600a1988f8e776
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87967602"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049453"
 ---
 # <a name="prepare-client-computers-in-the-account-partner"></a>Preparar los equipos cliente en el asociado de cuenta
 

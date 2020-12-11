@@ -1,4 +1,5 @@
 ---
+description: 'Más información sobre: solución de problemas de controladores de dominio virtualizados'
 ms.assetid: 249ba1be-b0d3-4a77-99af-3699074a2b6e
 title: Solucionar problemas de controladores de dominio virtualizados
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 28e1f82322389e7b46b7d597b6657f9512ab011f
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: e5f99c11604b55988d1349148fc01cdd3f319bb2
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93071267"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97050173"
 ---
 # <a name="virtualized-domain-controller-troubleshooting"></a>Solucionar problemas de controladores de dominio virtualizados
 
@@ -129,7 +130,7 @@ Para desactivar el arranque DSRM usando una GUI, usa la herramienta Configuraci�
 
 1. Ejecuta msconfig.exe
 
-2. En la pestaña **Arranque** , en **Opciones de arranque** , desactiva **Arranque a prueba de errores** (ya está activada con la opción **Reparar Active Directory** habilitada).
+2. En la pestaña **Arranque**, en **Opciones de arranque**, desactiva **Arranque a prueba de errores** (ya está activada con la opción **Reparar Active Directory** habilitada).
 
 3. Haz clic en Aceptar y reinicia cuando se te pida.
 
@@ -183,7 +184,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | **Identificador del evento** | **2160** |
 | **Origen** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **Gravedad** | Informativo |
-| **Mensaje**
+| **Message**
 | El local *<COMPUTERNAME>* ha encontrado un archivo de configuración de clonación del controlador de dominio virtual.<p>El archivo de configuración de clonación de controladores de dominio virtuales se encuentra en: %1<p>La existencia del archivo de configuración de clonación de controladores de dominio virtuales indica que el controlador de dominio virtual local es un clon de otro controlador de dominio virtual. Comenzará *<COMPUTERNAME>* a clonar. |
  **Notas y resolución** | Este es un evento de procedimiento correcto y solo es un problema si es imprevisto. Busca el archivo dcclconeconfig.xml en el directorio de trabajo de DSA, %systemroot%\ntds, y en el directorio raíz de todos los discos locales o extraíbles. |
 
@@ -192,14 +193,14 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | **Identificador del evento** | **2161** |
 | **Origen** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **Gravedad** | Informativo |
-| **Mensaje** | El local *<COMPUTERNAME>* no encontró el archivo de configuración de clonación del controlador de dominio virtual. La máquina local no es un controlador de dominio clonado.| **Notas y resolución** | Este es un evento de procedimiento correcto y solo es un problema si es imprevisto. Busca el archivo dcclconeconfig.xml en el directorio de trabajo de DSA, %systemroot%\ntds, y en el directorio raíz de todos los discos locales o extraíbles. |
+| **Message** | El local *<COMPUTERNAME>* no encontró el archivo de configuración de clonación del controlador de dominio virtual. La máquina local no es un controlador de dominio clonado.| **Notas y resolución** | Este es un evento de procedimiento correcto y solo es un problema si es imprevisto. Busca el archivo dcclconeconfig.xml en el directorio de trabajo de DSA, %systemroot%\ntds, y en el directorio raíz de todos los discos locales o extraíbles. |
 
 | Eventos | Descripción |
 |--|--|
 | **Identificador del evento** | **2162** |
 | **Origen** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **Gravedad** | Error |
-| **Mensaje** | Error de clonación del controlador de dominio virtual.<p>Comprueba los eventos registrados en los registros de eventos del sistema y %systemroot%\debug\dcpromo.log para obtener más información sobre los errores correspondientes al intento de clonación del controlador de dominio virtual.<p>Código de error: %1 |
+| **Message** | Error de clonación del controlador de dominio virtual.<p>Comprueba los eventos registrados en los registros de eventos del sistema y %systemroot%\debug\dcpromo.log para obtener más información sobre los errores correspondientes al intento de clonación del controlador de dominio virtual.<p>Código de error: %1 |
 | **Notas y resolución** | Sigue las instrucciones del mensaje; este error es un CatchAll. |
 
 | Eventos | Descripción |
@@ -207,7 +208,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 |**Identificador del evento**|**2163**|
 |**Origen**|Microsoft-Windows-ActiveDirectory_DomainService|
 |**Gravedad**|Informativo|
-|**Mensaje**|Se inició el servicio DsRoleSvc para clonar el controlador de dominio virtual local.|
+|**Message**|Se inició el servicio DsRoleSvc para clonar el controlador de dominio virtual local.|
 |**Notas y resolución**|Este es un evento de procedimiento correcto y solo es un problema si es imprevisto. Busca el archivo dcclconeconfig.xml en el directorio de trabajo de DSA, %systemroot%\ntds, y en el directorio raíz de todos los discos locales o extraíbles.|
 
 | Eventos | Descripción |
@@ -215,7 +216,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | **Identificador del evento** | **2164** |
 | **Origen** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **Gravedad** | Error |
-| **Mensaje** | *<COMPUTERNAME>* no se pudo iniciar el servicio DsRoleSvc para clonar el controlador de dominio virtual local. |
+| **Message** | *<COMPUTERNAME>* no se pudo iniciar el servicio DsRoleSvc para clonar el controlador de dominio virtual local. |
 | **Notas y resolución** | Examina la configuración del servicio Servidor de roles de DS (DsRoleSvc) y asegúrate de que el tipo de inicio es manual. Comprueba que ningún programa de terceros esté impidiendo el inicio del servicio. |
 
 | Eventos | Descripción |
@@ -223,7 +224,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | **Identificador del evento** | **2165** |
 | **Origen** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **Gravedad** | Error |
-| **Mensaje** | *<COMPUTERNAME>* no se pudo iniciar un subproceso durante la clonación del controlador de dominio virtual local.<p>Código de error:%1<p>Mensaje de error:%2<p>Nombre de subproceso:%3 |
+| **Message** | *<COMPUTERNAME>* no se pudo iniciar un subproceso durante la clonación del controlador de dominio virtual local.<p>Código de error:%1<p>Mensaje de error:%2<p>Nombre de subproceso:%3 |
 | **Notas y resolución** | Ponte en contacto con el soporte técnico de Microsoft. |
 
 | Eventos | Descripción |
@@ -231,7 +232,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | **Identificador del evento** | **2166** |
 | **Origen** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **Gravedad** | Error |
-| **Mensaje** | *<COMPUTERNAME>* necesita el servicio RPCSS para iniciar el reinicio en DSRM. Error en la espera de RPCSS para inicializar en un estado de ejecución.<p>Código de error:%1 |
+| **Message** | *<COMPUTERNAME>* necesita el servicio RPCSS para iniciar el reinicio en DSRM. Error en la espera de RPCSS para inicializar en un estado de ejecución.<p>Código de error:%1 |
 | **Notas y resolución** | Examina el registro de eventos de Sistema y la configuración del servicio Servidor RPC (Rpcss). |
 
 | Eventos | Descripción |
@@ -239,7 +240,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | **Identificador del evento** | **2168** |
 | **Origen** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **Gravedad** | Informativo |
-| **Mensaje** | Microsoft-Windows-ActiveDirectory_DomainService<p>El controlador de dominio se está ejecutando en un hipervisor admitido. Se detectó el identificador de generación de VM.<p>Valor actual del identificador de generación de VM: %1 |
+| **Message** | Microsoft-Windows-ActiveDirectory_DomainService<p>El controlador de dominio se está ejecutando en un hipervisor admitido. Se detectó el identificador de generación de VM.<p>Valor actual del identificador de generación de VM: %1 |
 | **Notas y resolución** | Este es un evento de procedimiento correcto y solo es un problema si es imprevisto. |
 
 | Eventos | Descripción |
@@ -247,7 +248,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | **Identificador del evento** | **2169** |
 | **Origen** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **Gravedad** | Informativo |
-| **Mensaje** | No se detectó un identificador de generación de VM. El controlador de dominio está hospedado en una máquina física, una versión de nivel inferior de Hyper-V, o un hipervisor que no es compatible con el identificador de generación de VM.<p>Datos adicionales<p>Código de error devuelto al comprobar el identificador de generación de VM:%1 |
+| **Message** | No se detectó un identificador de generación de VM. El controlador de dominio está hospedado en una máquina física, una versión de nivel inferior de Hyper-V, o un hipervisor que no es compatible con el identificador de generación de VM.<p>Datos adicionales<p>Código de error devuelto al comprobar el identificador de generación de VM:%1 |
 | **Notas y resolución** | Este es un evento de procedimiento correcto si el objetivo no es la clonación. De lo contrario, examina el registro de eventos de Sistema y revisa la documentación de soporte técnico del hipervisor. |
 
 | Eventos | Descripción |
@@ -255,7 +256,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | **Identificador del evento** | **2170** |
 | **Origen** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **Gravedad** | Advertencia |
-| **Mensaje** | Se detectó un cambio de id. de generación.<p>Id. de generación almacenado en caché en DS (valor antiguo):%1<p>Id. de generación actualmente en VM (valor nuevo):%2<p>El cambio de id. de generación se produce después de la aplicación de una instantánea de máquina virtual, después de una operación de importación de máquina virtual o después de una operación de migración en vivo. *<COMPUTERNAME>* creará un nuevo identificador de invocación para recuperar el controlador de dominio. Los controladores de dominio virtualizados no deben restaurarse con instantáneas de máquina virtual. El método admitido para restaurar o revertir el contenido de una base de datos de Active Directory Domain Services consiste en restaurar una copia de seguridad del estado del sistema realizada con una aplicación de copia de seguridad compatible con Active Directory Domain Services. |
+| **Message** | Se detectó un cambio de id. de generación.<p>Id. de generación almacenado en caché en DS (valor antiguo):%1<p>Id. de generación actualmente en VM (valor nuevo):%2<p>El cambio de id. de generación se produce después de la aplicación de una instantánea de máquina virtual, después de una operación de importación de máquina virtual o después de una operación de migración en vivo. *<COMPUTERNAME>* creará un nuevo identificador de invocación para recuperar el controlador de dominio. Los controladores de dominio virtualizados no deben restaurarse con instantáneas de máquina virtual. El método admitido para restaurar o revertir el contenido de una base de datos de Active Directory Domain Services consiste en restaurar una copia de seguridad del estado del sistema realizada con una aplicación de copia de seguridad compatible con Active Directory Domain Services. |
 | **Notas y resolución** | Este es un evento de procedimiento correcto si el objetivo es la clonación. De lo contrario, examina el registro de eventos de Sistema. |
 
 | Eventos | Descripción |
@@ -263,7 +264,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | **Identificador del evento** | **2171** |
 | **Origen** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **Gravedad** | Informativo |
-| **Mensaje** | No se detectó ningún cambio de identificador de generación.<p>Id. de generación almacenado en caché en DS (valor antiguo):%1<p>Id. de generación actualmente en VM (valor nuevo):%2 |
+| **Message** | No se detectó ningún cambio de identificador de generación.<p>Id. de generación almacenado en caché en DS (valor antiguo):%1<p>Id. de generación actualmente en VM (valor nuevo):%2 |
 | **Notas y resolución** | Este es un evento de procedimiento correcto si el objetivo no es la clonación, y debería verse cada vez que se reinicia un controlador de dominio. De lo contrario, examina el registro de eventos de Sistema. |
 
 | Eventos | Descripción |
@@ -271,7 +272,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | **Identificador del evento** | **2172** |
 | **Origen** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **Gravedad** | Informativo |
-| **Mensaje** | Se leyó el atributo msDS-GenerationId del objeto de equipo del controlador de dominio.<p>Valor de atributo de msDS-GenerationId:%1 |
+| **Message** | Se leyó el atributo msDS-GenerationId del objeto de equipo del controlador de dominio.<p>Valor de atributo de msDS-GenerationId:%1 |
 | **Notas y resolución** | Este es un evento de procedimiento correcto si el objetivo es la clonación. De lo contrario, examina el registro de eventos de Sistema. |
 
 | Eventos | Descripción |
@@ -279,7 +280,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | **Identificador del evento** | **2173** |
 | **Origen** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **Gravedad** | Informativo |
-| **Mensaje** | No se puede leer el atributo msDS-GenerationId del objeto de equipo del controlador de dominio. Esto puede deberse a un error de transacción de la base de datos o a que no existe el identificador de generación en la base de datos local. El atributo msDS-GenerationId no existe durante el primer reinicio después de ejecutar dcpromo o el controlador de dominio no es un controlador de dominio virtual.<p>Datos adicionales<p>Código de error:%1 |
+| **Message** | No se puede leer el atributo msDS-GenerationId del objeto de equipo del controlador de dominio. Esto puede deberse a un error de transacción de la base de datos o a que no existe el identificador de generación en la base de datos local. El atributo msDS-GenerationId no existe durante el primer reinicio después de ejecutar dcpromo o el controlador de dominio no es un controlador de dominio virtual.<p>Datos adicionales<p>Código de error:%1 |
 | **Notas y resolución** | Este es un evento de procedimiento correcto si el objetivo es la clonación y es el primer reinicio de la VM una vez completada la clonación. Se puede pasar por alto en controladores de dominio no virtuales. De lo contrario, examina el registro de eventos de Sistema. |
 
 | Eventos | Descripción |
@@ -287,7 +288,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | **Identificador del evento** | **2174** |
 | **Origen** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **Gravedad** | Informativo |
-| **Mensaje** | El controlador de dominio no es un clon de controlador de dominio virtual ni una instantánea de un controlador de dominio virtual restaurado. |
+| **Message** | El controlador de dominio no es un clon de controlador de dominio virtual ni una instantánea de un controlador de dominio virtual restaurado. |
 | **Notas y resolución** | Este es un evento de procedimiento correcto si el objetivo no es la clonación. De lo contrario, examina el registro de eventos de Sistema. |
 
 | Eventos | Descripción |
@@ -295,7 +296,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 |**Identificador del evento**|**2175**|
 |**Origen**|Microsoft-Windows-ActiveDirectory_DomainService|
 |**Gravedad**|Error|
-|**Mensaje**|Hay un archivo de configuración de clonación del controlador de dominio virtual en una plataforma no admitida.|
+|**Message**|Hay un archivo de configuración de clonación del controlador de dominio virtual en una plataforma no admitida.|
 |**Notas y resolución**|Esto sucede cuando se encuentra un archivo dccloneconfig.xml pero no un id. de generación de máquina virtual, por ejemplo, cuando se encuentra un archivo dccloneconfig.xml en un equipo físico o en un hipervisor que no admite un id. de generación de máquina virtual.|
 
 | Eventos | Descripción |
@@ -303,7 +304,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | **Identificador del evento** | **2176** |
 | **Origen** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **Gravedad** | Informativo |
-| **Mensaje** | Se cambió el nombre del archivo de configuración del clon de controlador de dominio virtual.<p>Datos adicionales<p>Nombre de archivo anterior:%1<p>Nombre de archivo nuevo:%2 |
+| **Message** | Se cambió el nombre del archivo de configuración del clon de controlador de dominio virtual.<p>Datos adicionales<p>Nombre de archivo anterior:%1<p>Nombre de archivo nuevo:%2 |
 | **Notas y resolución** | Se espera un cambio de nombre al arrancar una copia de seguridad de una VM de origen, porque el identificador de generación de VM no ha cambiado. Esto impide que el controlador de dominio de origen intente clonarse. |
 
 | Eventos | Descripción |
@@ -311,7 +312,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | **Identificador del evento** | **2177** |
 | **Origen** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **Gravedad** | Error |
-| **Mensaje** | Error al cambiar el nombre del archivo de configuración de clonación del controlador de dominio virtual.<p>Datos adicionales<p>Nombre de archivo:%1<p>Código de error:%2 %3 |
+| **Message** | Error al cambiar el nombre del archivo de configuración de clonación del controlador de dominio virtual.<p>Datos adicionales<p>Nombre de archivo:%1<p>Código de error:%2 %3 |
 | **Notas y resolución** | Se espera un intento de cambio de nombre al arrancar una copia de seguridad de una VM de origen, porque el identificador de generación de VM no ha cambiado. Esto impide que el controlador de dominio de origen intente clonarse. Cambia el nombre del archivo manualmente e investiga los productos de terceros instalados que pudieran impedir el cambio de nombre. |
 
 | Eventos | Descripción |
@@ -319,7 +320,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 |**Identificador del evento**|**2178**|
 |**Origen**|Microsoft-Windows-ActiveDirectory_DomainService|
 |**Gravedad**|Informativo|
-|**Mensaje**|Se detectó el archivo de configuración del clon de controlador de dominio virtual, pero no se cambió el identificador de generación de VM. El controlador de dominio local es el controlador de dominio de origen del clon. Cambie el nombre del archivo de configuración del clon.|
+|**Message**|Se detectó el archivo de configuración del clon de controlador de dominio virtual, pero no se cambió el identificador de generación de VM. El controlador de dominio local es el controlador de dominio de origen del clon. Cambie el nombre del archivo de configuración del clon.|
 |**Notas y resolución**|Es previsible cuando se arranca una copia de seguridad de una VM de origen, porque el identificador de generación de VM no ha cambiado. Esto impide que el controlador de dominio de origen intente clonarse.|
 
 | Eventos | Descripción |
@@ -327,7 +328,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | **Identificador del evento** | **2179** |
 | **Origen** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **Gravedad** | Informativo |
-| **Mensaje** | El atributo msDS-GenerationId del objeto de equipo del controlador de dominio se estableció en el parámetro siguiente:<p>Atributo GenerationID:%1 |
+| **Message** | El atributo msDS-GenerationId del objeto de equipo del controlador de dominio se estableció en el parámetro siguiente:<p>Atributo GenerationID:%1 |
 | **Notas y resolución** | Este es un evento de procedimiento correcto y solo es un problema si es imprevisto. |
 
 | Eventos | Descripción |
@@ -335,7 +336,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | **Identificador del evento** | **2180** |
 | **Origen** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **Gravedad** | Advertencia |
-| **Mensaje** | No se pudo establecer el atributo msDS-GenerationId del objeto de equipo del controlador de dominio.<p>Datos adicionales<p>Código de error:%1 |
+| **Message** | No se pudo establecer el atributo msDS-GenerationId del objeto de equipo del controlador de dominio.<p>Datos adicionales<p>Código de error:%1 |
 | **Notas y resolución** | Examina el registro de eventos de Sistema y Dcpromo.log. Busca el error específico en MS TechNet, MS Knowledgebase y en los blogs de MS para determinar su significado habitual y, después, soluciona los problemas en función de esos resultados. |
 
 | Eventos | Descripción |
@@ -343,7 +344,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | **Identificador del evento** | **2182** |
 | **Origen** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **Gravedad** | Informativo |
-| **Mensaje** | Evento interno: se ha solicitado al servicio de directorio que Clone un DSA remoto: |
+| **Message** | Evento interno: se ha solicitado al servicio de directorio que Clone un DSA remoto: |
 | **Notas y resolución** | Este es un evento de procedimiento correcto y solo es un problema si es imprevisto. |
 
 | Eventos | Descripción |
@@ -351,7 +352,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | **Identificador del evento** | **2183** |
 | **Origen** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **Gravedad** | Informativo |
-| **Mensaje** | Evento interno: *<COMPUTERNAME>* se completó la solicitud para clonar el agente del sistema de directorio remoto.<p>Nombre de DC original:%3<p>Nombre de DC clonado solicitado:%4<p>Sitio de DC clonado solicitado:%5<p>Datos adicionales<p>Valor del error:%1 %2 |
+| **Message** | Evento interno: *<COMPUTERNAME>* se completó la solicitud para clonar el agente del sistema de directorio remoto.<p>Nombre de DC original:%3<p>Nombre de DC clonado solicitado:%4<p>Sitio de DC clonado solicitado:%5<p>Datos adicionales<p>Valor del error:%1 %2 |
 | **Notas y resolución** | Este es un evento de procedimiento correcto y solo es un problema si es imprevisto. |
 
 | Eventos | Descripción |
@@ -359,7 +360,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | **Identificador del evento** | **2184** |
 | **Origen** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **Gravedad** | Error |
-| **Mensaje** | *<COMPUTERNAME>* no se pudo crear una cuenta de controlador de dominio para el DC clonado.<p>Nombre de DC original: %1<p>Número permitido de DC clonados:%2<p><em> <COMPUTERNAME> Se superó el límite en el número de cuentas de controlador de dominio que se pueden generar mediante clonación </em> . |
+| **Message** | *<COMPUTERNAME>* no se pudo crear una cuenta de controlador de dominio para el DC clonado.<p>Nombre de DC original: %1<p>Número permitido de DC clonados:%2<p><em> <COMPUTERNAME> Se superó el límite en el número de cuentas de controlador de dominio que se pueden generar mediante clonación </em> . |
 | **Notas y resolución** | Un único nombre de controlador de dominio de origen solo se puede generar automáticamente 9999 veces si los controladores de dominio no se reducen de nivel, de acuerdo con la convención de nombres. Use el elemento <computername> del código XML para generar un nuevo nombre único o un clon de un controlador de dominio con un nombre diferente. |
 
 | Eventos | Descripción |
@@ -367,7 +368,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | **Identificador del evento** | **2191** |
 | **Origen** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **Gravedad** | Informativo |
-| **Mensaje** | *<COMPUTERNAME>* Establezca el siguiente valor del registro para deshabilitar las actualizaciones de DNS.<p>Clave del Registro:%1<p>Valor del Registro: %2<p>Datos del valor del Registro: %3<p>Durante el proceso de clonación, la máquina local podría tener durante un corto período de tiempo el mismo nombre de equipo que la máquina de origen clonada. Los registros A y AAAA de DNS están deshabilitados durante este período para que los clientes no puedan enviar solicitudes a la máquina local que se está clonando. El proceso de clonación habilitará las actualizaciones de DNS de nuevo una vez que finalice la clonación. |
+| **Message** | *<COMPUTERNAME>* Establezca el siguiente valor del registro para deshabilitar las actualizaciones de DNS.<p>Clave del Registro:%1<p>Valor del Registro: %2<p>Datos del valor del Registro: %3<p>Durante el proceso de clonación, la máquina local podría tener durante un corto período de tiempo el mismo nombre de equipo que la máquina de origen clonada. Los registros A y AAAA de DNS están deshabilitados durante este período para que los clientes no puedan enviar solicitudes a la máquina local que se está clonando. El proceso de clonación habilitará las actualizaciones de DNS de nuevo una vez que finalice la clonación. |
 | **Notas y resolución** | Este es un evento de procedimiento correcto y solo es un problema si es imprevisto. |
 
 | Eventos | Descripción |
@@ -375,7 +376,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | **Identificador del evento** | **2192** |
 | **Origen** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **Gravedad** | Error |
-| **Mensaje** | *<COMPUTERNAME>* no se pudo establecer el siguiente valor del registro para deshabilitar las actualizaciones de DNS.<p>Clave del Registro:%1<p>Valor del Registro: %2<p>Datos del valor del Registro: %3<p>Código de error: % 4<p>Mensaje de error: %5<p>Durante el proceso de clonación, la máquina local podría tener durante un corto período de tiempo el mismo nombre de equipo que la máquina de origen clonada. Los registros A y AAAA de DNS están deshabilitados durante este período para que los clientes no puedan enviar solicitudes a la máquina local que se está clonando. |
+| **Message** | *<COMPUTERNAME>* no se pudo establecer el siguiente valor del registro para deshabilitar las actualizaciones de DNS.<p>Clave del Registro:%1<p>Valor del Registro: %2<p>Datos del valor del Registro: %3<p>Código de error: % 4<p>Mensaje de error: %5<p>Durante el proceso de clonación, la máquina local podría tener durante un corto período de tiempo el mismo nombre de equipo que la máquina de origen clonada. Los registros A y AAAA de DNS están deshabilitados durante este período para que los clientes no puedan enviar solicitudes a la máquina local que se está clonando. |
 | **Notas y resolución** | Examina los registros de eventos de aplicación y del sistema. Investiga aplicaciones de terceros que pudieran estar bloqueando las actualizaciones del Registro. |
 
 | Eventos | Descripción |
@@ -383,7 +384,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | **Identificador del evento** | **2193** |
 | **Origen** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **Gravedad** | Informativo |
-| **Mensaje** | *<COMPUTERNAME>* Establezca el siguiente valor del registro para habilitar las actualizaciones de DNS.<p>Clave del Registro:%1<p>Valor del Registro: %2<p>Datos del valor del Registro: %3<p>Durante el proceso de clonación, la máquina local podría tener durante un corto período de tiempo el mismo nombre de equipo que la máquina de origen clonada. Los registros A y AAAA de DNS están deshabilitados durante este período para que los clientes no puedan enviar solicitudes a la máquina local que se está clonando. |
+| **Message** | *<COMPUTERNAME>* Establezca el siguiente valor del registro para habilitar las actualizaciones de DNS.<p>Clave del Registro:%1<p>Valor del Registro: %2<p>Datos del valor del Registro: %3<p>Durante el proceso de clonación, la máquina local podría tener durante un corto período de tiempo el mismo nombre de equipo que la máquina de origen clonada. Los registros A y AAAA de DNS están deshabilitados durante este período para que los clientes no puedan enviar solicitudes a la máquina local que se está clonando. |
 | **Notas y resolución** | Este es un evento de procedimiento correcto y solo es un problema si es imprevisto. |
 
 | Eventos | Descripción |
@@ -391,7 +392,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | **Identificador del evento** | **2194** |
 |--|--|
 | **Gravedad** | Error |
-| **Mensaje** | *<COMPUTERNAME>* no se pudo establecer el siguiente valor del registro para habilitar las actualizaciones de DNS.<p>Clave del Registro:%1<p>Valor del Registro: %2<p>Datos del valor del Registro: %3<p>Código de error: % 4<p>Mensaje de error: %5<p>Durante el proceso de clonación, la máquina local podría tener durante un corto período de tiempo el mismo nombre de equipo que la máquina de origen clonada. Los registros A y AAAA de DNS están deshabilitados durante este período para que los clientes no puedan enviar solicitudes a la máquina local que se está clonando. |
+| **Message** | *<COMPUTERNAME>* no se pudo establecer el siguiente valor del registro para habilitar las actualizaciones de DNS.<p>Clave del Registro:%1<p>Valor del Registro: %2<p>Datos del valor del Registro: %3<p>Código de error: % 4<p>Mensaje de error: %5<p>Durante el proceso de clonación, la máquina local podría tener durante un corto período de tiempo el mismo nombre de equipo que la máquina de origen clonada. Los registros A y AAAA de DNS están deshabilitados durante este período para que los clientes no puedan enviar solicitudes a la máquina local que se está clonando. |
 | **Notas y resolución** | Examina los registros de eventos de aplicación y del sistema. Investiga aplicaciones de terceros que pudieran estar bloqueando las actualizaciones del Registro. |
 
 | Eventos | Descripción |
@@ -399,7 +400,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | **Identificador del evento** | **2195** |
 | **Origen** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **Gravedad** | Error |
-| **Mensaje** | No se pudo establecer el modo de arranque de DSRM.<p>Código de error:%1<p>Mensaje de error:%2<p>Cuando se produzca un error de clonación del controlador de dominio virtual o cuando aparezca el archivo de configuración de clonación del controlador de dominio virtual en un hipervisor no admitido, la máquina local se reiniciará en DSRM para solucionar los problemas. Error al establecer el arranque de DSRM. |
+| **Message** | No se pudo establecer el modo de arranque de DSRM.<p>Código de error:%1<p>Mensaje de error:%2<p>Cuando se produzca un error de clonación del controlador de dominio virtual o cuando aparezca el archivo de configuración de clonación del controlador de dominio virtual en un hipervisor no admitido, la máquina local se reiniciará en DSRM para solucionar los problemas. Error al establecer el arranque de DSRM. |
 | **Notas y resolución** | Examina los registros de eventos de aplicación y del sistema. Investiga aplicaciones de terceros que pudieran estar bloqueando las actualizaciones del Registro. |
 
 | Eventos | Descripción |
@@ -407,7 +408,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | **Identificador del evento** | **2196** |
 | **Origen** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **Gravedad** | Error |
-| **Mensaje** | No se pudo establecer el privilegio de apagado.<p>Código de error:%1<p>Mensaje de error:%2<p>Cuando se produzca un error de clonación del controlador de dominio virtual o cuando aparezca el archivo de configuración de clonación del controlador de dominio virtual en un hipervisor no admitido, la máquina local se reiniciará en DSRM para solucionar los problemas. Error al habilitar el privilegio de apagado. |
+| **Message** | No se pudo establecer el privilegio de apagado.<p>Código de error:%1<p>Mensaje de error:%2<p>Cuando se produzca un error de clonación del controlador de dominio virtual o cuando aparezca el archivo de configuración de clonación del controlador de dominio virtual en un hipervisor no admitido, la máquina local se reiniciará en DSRM para solucionar los problemas. Error al habilitar el privilegio de apagado. |
 | **Notas y resolución** | Examina los registros de eventos de aplicación y del sistema. Investiga aplicaciones de terceros que pudieran estar bloqueando el uso de privilegios. |
 
 | Eventos | Descripción |
@@ -415,7 +416,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | **Identificador del evento** | **2197** |
 | **Origen** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **Gravedad** | Error |
-| **Mensaje** | No se pudo iniciar el apagado del sistema.<p>Código de error:%1<p>Mensaje de error:%2<p>Cuando se produzca un error de clonación del controlador de dominio virtual o cuando aparezca el archivo de configuración de clonación del controlador de dominio virtual en un hipervisor no admitido, la máquina local se reiniciará en DSRM para solucionar los problemas. Error al iniciar el apagado del sistema. |
+| **Message** | No se pudo iniciar el apagado del sistema.<p>Código de error:%1<p>Mensaje de error:%2<p>Cuando se produzca un error de clonación del controlador de dominio virtual o cuando aparezca el archivo de configuración de clonación del controlador de dominio virtual en un hipervisor no admitido, la máquina local se reiniciará en DSRM para solucionar los problemas. Error al iniciar el apagado del sistema. |
 | **Notas y resolución** | Examina los registros de eventos de aplicación y del sistema. Investiga aplicaciones de terceros que pudieran estar bloqueando el uso de privilegios. |
 
 | Eventos | Descripción |
@@ -423,7 +424,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | **Identificador del evento** | **2198** |
 | **Origen** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **Gravedad** | Error |
-| **Mensaje** | *<COMPUTERNAME>* no se pudo crear o modificar el siguiente objeto de controlador de dominio clonado.<p>Datos adicionales:<p>Objeto:<p>%1<p>Valor del error: %2<p>%3 |
+| **Message** | *<COMPUTERNAME>* no se pudo crear o modificar el siguiente objeto de controlador de dominio clonado.<p>Datos adicionales:<p>Objeto:<p>%1<p>Valor del error: %2<p>%3 |
 | **Notas y resolución** | Busca el error específico en MS TechNet, MS Knowledgebase y en los blogs de MS para determinar su significado habitual y, después, soluciona los problemas en función de esos resultados. |
 
 | Eventos | Descripción |
@@ -431,7 +432,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | **Identificador del evento** | **2199** |
 | **Origen** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **Gravedad** | Error |
-| **Mensaje** | *<COMPUTERNAME>* no se pudo crear el siguiente objeto de controlador de dominio clonado porque el objeto ya existe.<p>Datos adicionales:<p>Controlador de dominio de origen:<p>%1<p>Objeto:<p>%2 |
+| **Message** | *<COMPUTERNAME>* no se pudo crear el siguiente objeto de controlador de dominio clonado porque el objeto ya existe.<p>Datos adicionales:<p>Controlador de dominio de origen:<p>%1<p>Objeto:<p>%2 |
 | **Notas y resolución** | Comprueba que el archivo dccloneconfig.xml no especifique un controlador de dominio existente o no se hayan usado copias del archivo dccloneconfig.xml en varios clones sin editar el nombre. Si aún no se prevé ningún conflicto, determina qué administrador lo promovió y ponte en contacto con él para determinar si el controlador de dominio existente debe disminuirse de nivel, si se deben limpiar los metadatos del controlador de dominio existente o si el clon debe usar un nombre diferente. |
 
 | Eventos | Descripción |
@@ -439,14 +440,14 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | **Identificador del evento** | **2203** |
 | **Origen** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **Gravedad** | Error |
-| **Mensaje** | Error en la última clonación del controlador de dominio virtual. Este es el primer reinicio desde entonces, por lo que debería ser un reintento de la clonación. Sin embargo, no existe un archivo de configuración del clon del controlador de dominio virtual ni se ha detectado un cambio de identificador de generación de máquina virtual. Arranque en DSRM.<p>Error en la última clonación del controlador de dominio virtual:%1<p>El archivo de configuración de clonación del controlador de dominio virtual existen:%2<p>Se ha detectado un cambio de identificación de generación de máquina virtual:%3 |
+| **Message** | Error en la última clonación del controlador de dominio virtual. Este es el primer reinicio desde entonces, por lo que debería ser un reintento de la clonación. Sin embargo, no existe un archivo de configuración del clon del controlador de dominio virtual ni se ha detectado un cambio de identificador de generación de máquina virtual. Arranque en DSRM.<p>Error en la última clonación del controlador de dominio virtual:%1<p>El archivo de configuración de clonación del controlador de dominio virtual existen:%2<p>Se ha detectado un cambio de identificación de generación de máquina virtual:%3 |
 | **Notas y resolución** | Es previsible si ya se había producido un error en la clonación, debido a un archivo dccloneconfig.xml que falta o no es válido. |
 
 | Eventos | Descripción |
 |--|--|
 | Id. de evento | 2210 |
 | Source | Microsoft-Windows-ActiveDirectory_DomainService |
-| severity | Error |
+| Gravedad | Error |
 | Message | Error de <COMPUTERNAME> al crear objetos para el controlador de dominio clonado.<p>Datos adicionales:<p>Id. de clon: %6<p>Nombre del controlador de dominio clonado: %1<p>Bucle de reintentos: %2<p>Valor de excepción: %3<p>Valor del error: %4<p>DSID: %5 |
 | Notas y resolución | Revisa los registros de eventos de Sistema y Servicios de directorio, así como dcpromo.log, para obtener más información sobre el motivo del error de la clonación. |
 
@@ -454,7 +455,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 |--|--|
 | Id. de evento | 2211 |
 | Source | Microsoft-Windows-ActiveDirectory_DomainService |
-| severity | Informativo |
+| Gravedad | Informativo |
 | Message | <COMPUTERNAME> ha creado objetos para el controlador de dominio clonado.<p>Datos adicionales:<p>Id. de clon: %3<p>Nombre del controlador de dominio clonado: %1<p>Bucle de reintentos: %2 |
 | Notas y resolución | Este es un evento de procedimiento correcto y solo es un problema si es imprevisto. |
 
@@ -462,7 +463,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 |--|--|
 | Id. de evento | 2212 |
 | Source | Microsoft-Windows-ActiveDirectory_DomainService |
-| severity | Informativo |
+| Gravedad | Informativo |
 | Message | <COMPUTERNAME> comenzó a crear objetos para el controlador de dominio clonado.<p>Datos adicionales:<p>Id. de clon: %1<p>Nombre del clon: %2<p>Sitio del clon: %3<p>RODC del clon: %4 |
 | Notas y resolución | Este es un evento de procedimiento correcto y solo es un problema si es imprevisto. |
 
@@ -470,7 +471,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 |--|--|
 | Id. de evento | 2213 |
 | Source | Microsoft-Windows-ActiveDirectory_DomainService |
-| severity | Informativo |
+| Gravedad | Informativo |
 | Message | <COMPUTERNAME> creó un nuevo objeto KrbTgt para la clonación del controlador de dominio de solo lectura.<p>Datos adicionales:<p>Id. de clon: %1<p>GUID del nuevo objeto KrbTgt: %2 |
 | Notas y resolución | Este es un evento de procedimiento correcto y solo es un problema si es imprevisto. |
 
@@ -478,7 +479,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | -- |--|
 |Id. de evento|2214|
 |Source|Microsoft-Windows-ActiveDirectory_DomainService|
-|severity|Informativo|
+|Gravedad|Informativo|
 |Message|<COMPUTERNAME> creará un objeto de equipo para el controlador de dominio clonado.<p>Datos adicionales:<p>Id. de clon: %1<p>Controlador de dominio original: %2<p>Controlador de dominio clonado: %3|
 |Notas y resolución|Este es un evento de procedimiento correcto y solo es un problema si es imprevisto.|
 
@@ -486,7 +487,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | -- |--|
 |Id. de evento|2215|
 |Source|Microsoft-Windows-ActiveDirectory_DomainService|
-|severity|Informativo|
+|Gravedad|Informativo|
 |Message|<COMPUTERNAME> agregará el controlador de dominio clonado al sitio siguiente.<p>Datos adicionales:<p>Id. de clon: %1<p>Sitio: %2|
 |Notas y resolución|Este es un evento de procedimiento correcto y solo es un problema si es imprevisto.|
 
@@ -494,7 +495,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | -- |--|
 |Id. de evento|2216|
 |Source|Microsoft-Windows-ActiveDirectory_DomainService|
-|severity|Informativo|
+|Gravedad|Informativo|
 |Message|<COMPUTERNAME> creará un contenedor de servidores para el controlador de dominio clonado.<p>Datos adicionales:<p>Id. de clon: %1<p>Contenedor de servidores: %2|
 |Notas y resolución|Este es un evento de procedimiento correcto y solo es un problema si es imprevisto.|
 
@@ -502,7 +503,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | -- |--|
 |Id. de evento|2217|
 |Source|Microsoft-Windows-ActiveDirectory_DomainService|
-|severity|Informativo|
+|Gravedad|Informativo|
 |Message|<COMPUTERNAME> creará un objeto de servidor para el controlador de dominio clonado.<p>Datos adicionales:<p>Id. de clon: %1<p>Objeto de servidor: %2|
 |Notas y resolución|Este es un evento de procedimiento correcto y solo es un problema si es imprevisto.|
 
@@ -510,7 +511,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | -- |--|
 |Id. de evento|2218|
 |Source|Microsoft-Windows-ActiveDirectory_DomainService|
-|severity|Informativo|
+|Gravedad|Informativo|
 |Message|<COMPUTERNAME> creará un objeto de configuración NTDS para el controlador de dominio clonado.<p>Datos adicionales:<p>Id. de clon: %1<p>Objeto: %2|
 |Notas y resolución|Este es un evento de procedimiento correcto y solo es un problema si es imprevisto.|
 
@@ -518,7 +519,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | -- |--|
 |Id. de evento|2219|
 |Source|Microsoft-Windows-ActiveDirectory_DomainService|
-|severity|Informativo|
+|Gravedad|Informativo|
 |Message|<COMPUTERNAME> creará objetos de conexión para el controlador de dominio de solo lectura clonado.<p>Datos adicionales:<p>Id. de clon: %1|
 |Notas y resolución|Este es un evento de procedimiento correcto y solo es un problema si es imprevisto.|
 
@@ -526,7 +527,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | -- |--|
 |Id. de evento|2220|
 |Source|Microsoft-Windows-ActiveDirectory_DomainService|
-|severity|Informativo|
+|Gravedad|Informativo|
 |Message|<COMPUTERNAME> creará objetos SYSVOL para el controlador de dominio de solo lectura clonado.<p>Datos adicionales:<p>Id. de clon: %1|
 |Notas y resolución|Este es un evento de procedimiento correcto y solo es un problema si es imprevisto.|
 
@@ -534,7 +535,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | -- |--|
 |Id. de evento|2221|
 |Source|Microsoft-Windows-ActiveDirectory_DomainService|
-|severity|Error|
+|Gravedad|Error|
 |Message|Error de <COMPUTERNAME> al generar una contraseña aleatoria para el controlador de dominio clonado.<p>Datos adicionales:<p>Id. de clon: %1<p>Nombre del controlador de dominio clonado: %2<p>Error: %3 %4|
 |Notas y resolución|Examina el registro de eventos de Sistema para obtener más información sobre el motivo por el que no se pudo crear la contraseña de la cuenta de la máquina.|
 
@@ -542,7 +543,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | -- |--|
 |Id. de evento|2222|
 |Source|Microsoft-Windows-ActiveDirectory_DomainService|
-|severity|Error|
+|Gravedad|Error|
 |Message|Error de <COMPUTERNAME> al establecer la contraseña para el controlador de dominio clonado.<p>Datos adicionales:<p>Id. de clon: %1<p>Nombre del controlador de dominio clonado: %2<p>Error: %3 %4|
 |Notas y resolución|Examina el registro de eventos de Sistema para obtener más información sobre el motivo por el que no se pudo establecer la contraseña de la cuenta de la máquina.|
 
@@ -550,7 +551,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | -- |--|
 |Id. de evento|2223|
 |Source|Microsoft-Windows-ActiveDirectory_DomainService|
-|severity|Informativo|
+|Gravedad|Informativo|
 |Message|<COMPUTERNAME> establece correctamente la contraseña de la cuenta de equipo para el controlador de dominio clonado.<p>Datos adicionales:<p>Id. de clon: %1<p>Nombre del controlador de dominio clonado: %2<p>Número total de reintentos: %3|
 |Notas y resolución|Este es un evento de procedimiento correcto y solo es un problema si es imprevisto.|
 
@@ -558,7 +559,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | -- |--|
 |Id. de evento|2224|
 |Source|Microsoft-Windows-ActiveDirectory_DomainService|
-|severity|Error|
+|Gravedad|Error|
 |Message|Error de clonación del controlador de dominio virtual. En el equipo clonado existen las siguientes %1 cuentas de servicio administradas:<p>%2<p>Para que la clonación se realice correctamente, deben quitarse todas las cuentas de servicio administradas. Para ello, usa el cmdlet de PowerShell Remove-ADComputerServiceAccount.|
 |Notas y resolución|Es previsible cuando se usan MSA independientes (no MSA de grupo). *No* sigas el consejo del evento de quitar la cuenta; está escrito incorrectamente. Use Uninstall-AdServiceAccount- [https://technet.microsoft.com/library/hh852310](/previous-versions/windows/it-pro/windows-powershell-1.0/ee176927(v=technet.10)) .<p>MSA independientes: se lanzaron por primera vez en Windows Server 2008 R2 y se reemplazaron en Windows Server 2012 con MSA de grupo (gMSA). Las GMSA admiten la clonación.|
 
@@ -566,7 +567,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | -- |--|
 |Id. de evento|2225|
 |Source|Microsoft-Windows-ActiveDirectory_DomainService|
-|severity|Informativo|
+|Gravedad|Informativo|
 |Message|Los secretos en caché de la siguiente entidad de seguridad se han quitado correctamente del controlador de dominio local:<p>%1<p>Después de clonar un controlador de dominio de solo lectura, los secretos previamente guardados en caché en el controlador de dominio de solo lectura origen de la clonación se quitarán del controlador de dominio clonado.|
 |Notas y resolución|Este es un evento de procedimiento correcto y solo es un problema si es imprevisto.|
 
@@ -574,7 +575,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | -- |--|
 |Id. de evento|2226|
 |Source|Microsoft-Windows-ActiveDirectory_DomainService|
-|severity|Error|
+|Gravedad|Error|
 |Message|Error al quitar los secretos en caché de la siguiente entidad de seguridad del controlador de dominio local:<p>%1<p>Error: %2 (%3)<p>Después de clonar un controlador de dominio de solo lectura, los secretos previamente guardados en caché del controlador de dominio de solo lectura origen de la clonación deben eliminarse del clon para reducir el riesgo de que un atacante pueda obtener esas credenciales del clon robado o comprometido. Si la entidad de seguridad es una cuenta con muchos privilegios y debería estar protegida frente a estas amenazas, use la operación de rootDSE rODCPurgeAccount para borrar manualmente sus secretos en el controlador de dominio local.|
 |Notas y resolución|Examina los registros de eventos de Sistema y Servicios de directorio para obtener más información.|
 
@@ -582,7 +583,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | -- |--|
 |Id. de evento|2227|
 |Source|Microsoft-Windows-ActiveDirectory_DomainService|
-|severity|Error|
+|Gravedad|Error|
 |Message|Se produjo una excepción al intentar quitar los secretos en caché del controlador de dominio local.<p>Datos adicionales:<p>Valor de excepción: %1<p>Valor del error: %2<p>DSID: %3<p>Después de clonar un controlador de dominio de solo lectura, los secretos previamente guardados en caché del controlador de dominio de solo lectura origen de la clonación deben eliminarse del clon para reducir el riesgo de que un atacante pueda obtener esas credenciales del clon robado o comprometido. Si alguna de las entidades de seguridad es una cuenta con muchos privilegios y debería estar protegida frente a estas amenazas, usa la operación de rootDSE rODCPurgeAccount para borrar manualmente sus secretos en el controlador de dominio local.|
 |Notas y resolución|Examina los registros de eventos de Sistema y Servicios de directorio para obtener más información.|
 
@@ -590,7 +591,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | -- |--|
 |Id. de evento|2228|
 |Source|Microsoft-Windows-ActiveDirectory_DomainService|
-|severity|Error|
+|Gravedad|Error|
 |Message|El id. de generación de la máquina virtual en la base de datos de Active Directory de este controlador de dominio difiere del valor actual de esta máquina virtual. Sin embargo, no se pudo encontrar un archivo de configuración del clon del controlador de dominio virtual (DCCloneConfig.xml), por lo que no se intentó la clonación del controlador de dominio. Si tu intención era realizar una operación de este tipo, asegúrate de que se proporcione un DCCloneConfig.xml en cualquiera de las ubicaciones admitidas. Asimismo, la dirección IP de este controlador de dominio está en conflicto con la dirección IP de otro controlador de dominio. Para evitar que haya interrupciones en el servicio, el controlador de dominio se ha configurado para arrancar en DSRM.<p>Datos adicionales:<p>Dirección IP duplicada: %1|
 |Notas y resolución|Este mecanismo de protección detiene los controladores de dominio duplicados cuando es posible (no lo hará cuando se usa DHCP, por ejemplo). Agrega un archivo DcCloneConfig.xml válido, quita el indicador DSRM y vuelve a intentar la clonación.|
 
@@ -598,7 +599,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | -- |--|
 |Id. de evento|29218|
 |Source|Microsoft-Windows-DirectoryServices-DSROLE-Server|
-|severity|Error|
+|Gravedad|Error|
 |Message|Error de clonación del controlador de dominio virtual. La operación de clonación no se pudo completar y el controlador de dominio clonado se reinició en modo de restauración de servicios de directorio (DSRM).<p>Comprueba los eventos anteriormente registrados y %systemroot%\debug\dcpromo.log para obtener más información sobre los errores correspondientes al intento de clonación del controlador de dominio virtual y si esta imagen clonada puede volver a usarse o no.<p>Si una o más entradas de registro indican que el proceso de clonación no se puede recuperar, la imagen debe destruirse de forma segura. Si los registros indican que el proceso de clonación puede volver a intentarse, soluciona los errores, borra la bandera de inicio de DSRM y reinicia de forma normal. Tras el reinicio, volverá a intentarse la operación de clonación.|
 |Notas y resolución|Revisa los registros de eventos de Sistema y Servicios de directorio, así como dcpromo.log, para obtener más información sobre el motivo del error de la clonación.|
 
@@ -606,7 +607,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | -- |--|
 |Id. de evento|29219|
 |Source|Microsoft-Windows-DirectoryServices-DSROLE-Server|
-|severity|Informativo|
+|Gravedad|Informativo|
 |Message|La clonación del controlador de dominio virtual se realizó correctamente.|
 |Notas y resolución|Este es un evento de procedimiento correcto y solo es un problema si es imprevisto.|
 
@@ -614,7 +615,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | -- |--|
 |Id. de evento|29248|
 |Source|Microsoft-Windows-DirectoryServices-DSROLE-Server|
-|severity|Error|
+|Gravedad|Error|
 |Message|La clonación del controlador de dominio virtual no pudo obtener la notificación de Winlogon. El código de error devuelto es %1 (%2).<p>Para obtener más información acerca del error, busca en %systemroot%\debug\dcpromo.log errores correspondientes al intento de clonación del controlador de dominio virtual.|
 |Notas y resolución|Ponte en contacto con el soporte técnico de Microsoft.|
 
@@ -622,7 +623,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | -- |--|
 |Id. de evento|29249|
 |Source|Microsoft-Windows-DirectoryServices-DSROLE-Server|
-|severity|Error|
+|Gravedad|Error|
 |Message|La clonación de controlador de dominio virtual no pudo analizar el archivo de configuración de controlador de dominio virtual.<p>El código HRESULT devuelto es %1.<p>El archivo de configuración es:%2<p>Soluciona los errores en el archivo de configuración y vuelve a intentar la operación de clonación.<p>Para obtener más información sobre este error, consulta %systemroot%\debug\dcpromo.log.|
 |Notas y resolución|Comprueba si el archivo dclconeconfig.xml contiene errores de sintaxis usando un editor XML y el archivo de esquema DCCloneConfigSchema.xsd.|
 
@@ -630,7 +631,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | -- |--|
 |Id. de evento|29250|
 |Source|Microsoft-Windows-DirectoryServices-DSROLE-Server|
-|severity|Error|
+|Gravedad|Error|
 |Message|Error de clonación del controlador de dominio virtual. Hay software o tareas actualmente habilitados en el controlador de dominio virtual clonado que no están presentes en la lista de aplicaciones permitidas para la clonación del controlador de dominio virtual.<p>A continuación se indican las entradas que faltan:<p>%2<p>%1 (si hay) se usó como la lista de inclusión definida.<p>No se puede completar la operación de clonación si hay aplicaciones instaladas que no pueden clonarse.<p>Ejecuta el cmdlet Get-ADDCCloningExcludedApplicationList de Active Directory PowerShell para comprobar cuáles son las aplicaciones que están instaladas en el equipo clonado, pero que no se incluyen en la lista de aplicaciones permitidas, y agrégalas a dicha lista si son compatibles con la clonación del controlador de dominio virtual. Si alguna de estas aplicaciones no es compatible con la clonación del controlador de dominio virtual, desinstálala antes de volver a intentar la operación de clonación.<p>El proceso de clonación del controlador de dominio virtual busca el archivo con la lista de aplicaciones permitidas, CustomDCCloneAllowList.xml, en el siguiente orden; se utiliza el primer archivo que se encuentra y se omiten los demás:<p>1. el nombre del valor del registro: HKey_Local_Machine \System\CurrentControlSet\Services\NTDS\Parameters\AllowListFolder<p>2. el mismo directorio donde reside la carpeta del directorio de trabajo de DSA<p>3. %windir%\NTDS<p>4. medios extraíbles de lectura/escritura en orden de letra de unidad en la raíz de la unidad|
 |Notas y resolución|Sigue las instrucciones del mensaje.|
 
@@ -638,7 +639,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 |--|--|
 | Id. de evento | 29251 |
 | Source | Microsoft-Windows-DirectoryServices-DSROLE-Server |
-| severity | Error |
+| Gravedad | Error |
 | Message | La clonación del controlador de dominio virtual no pudo restablecer las direcciones IP de la máquina clonada.<p>El código de error devuelto es %1 (%2).<p>Puede que este error se deba a un error de configuración en las secciones de configuración de red en el archivo de configuración del controlador de dominio virtual.<p>Consulta %systemroot%\debug\dcpromo.log para obtener más información acerca de los errores correspondientes al restablecimiento de direcciones IP durante los intentos de clonación de controladores de dominio virtual.<p>Puede encontrar información sobre cómo restablecer las direcciones IP del equipo en la máquina clonada en https://go.microsoft.com/fwlink/?LinkId=208030 |
 | Notas y resolución | Comprueba que información de las direcciones IP establecida en dccloneconfig.xml sea válida y no duplique la máquina de origen original. |
 
@@ -646,7 +647,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 |--|--|
 | Id. de evento | 29253 |
 | Source | Microsoft-Windows-DirectoryServices-DSROLE-Server |
-| severity | Error |
+| Gravedad | Error |
 | Message | Error de clonación del controlador de dominio virtual. El controlador de dominio clonado no pudo encontrar el maestro de operaciones del controlador de dominio principal (PDC) en el dominio principal del equipo clonado de la máquina clonada.<p>El código de error devuelto es %1 (%2).<p>Comprueba que el controlador de dominio principal en el dominio principal de la máquina clonada esté asignado a un controlador de dominio activo, esté en línea y sea operativo. Comprueba que la máquina clonada tenga conectividad LDAP/RPC al controlador de dominio principal en los puertos y protocolos necesarios. |
 | Notas y resolución | Comprueba que se haya establecido la información sobre DNS e IP del controlador de dominio clonado. Use Dcdiag.exe/test: locatorcheck para validar si el PDCE está en línea, use Nltest.exe/Server: *<PDCE>* /dclist: *<domain>* para RPC válido, obtenga una captura de red del PDCE mientras se produce un error en la clonación y analice el tráfico. |
 
@@ -654,7 +655,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 |--|--|
 | Id. de evento | 29254 |
 | Source | Microsoft-Windows-DirectoryServices-DSROLE-Server |
-| severity | Error |
+| Gravedad | Error |
 | Message | La clonación del controlador de dominio virtual no pudo enlazar con el controlador de dominio principal %1.<p>El código de error devuelto es %2 (%3).<p>Comprueba que el controlador de dominio principal %1 esté en línea y sea operativo. Comprueba que la máquina clonada tenga conectividad LDAP/RPC al controlador de dominio principal en los puertos y protocolos necesarios. |
 | Notas y resolución | Comprueba que se haya establecido la información sobre DNS e IP del controlador de dominio clonado. Use Dcdiag.exe/test: locatorcheck para validar si el PDCE está en línea, use Nltest.exe/Server: *<PDCE>* /dclist: *<domain>* para RPC válido, obtenga una captura de red del PDCE mientras se produce un error en la clonación y analice el tráfico. |
 
@@ -662,7 +663,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | -- |--|
 |Id. de evento|29255|
 |Source|Microsoft-Windows-DirectoryServices-DSROLE-Server|
-|severity|Error|
+|Gravedad|Error|
 |Message|Error de clonación del controlador de dominio virtual.<p>Un intento de crear objetos en el controlador de dominio principal %1 necesario para clonar la imagen devolvió el error %2 (%3).<p>Comprueba que el controlador de dominio clonado tiene privilegios para clonarse a sí mismo. Comprueba los eventos relacionados en el registro de eventos de Servicios de directorio en el controlador de dominio principal %1.|
 |Notas y resolución|Busca el error específico en MS TechNet, MS Knowledgebase y en los blogs de MS para determinar su significado habitual y, después, soluciona los problemas en función de esos resultados.|
 
@@ -670,7 +671,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | -- |--|
 |Id. de evento|29256|
 |Source|Microsoft-Windows-DirectoryServices-DSROLE-Server|
-|severity|Error|
+|Gravedad|Error|
 |Message|Error al intentar establecer la marca de arranque en el Modo de restauración de servicios de directorio %1.<p>Consulta %systemroot%\debug\dcpromo.log para obtener más información sobre los errores.|
 |Notas y resolución|Examina el registro de Servicios de directorio y dcpromo.log para obtener más información. Examina los registros de eventos de aplicación y del sistema. Investiga aplicaciones de terceros que pudieran estar bloqueando el uso de privilegios.|
 
@@ -678,7 +679,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | -- |--|
 |Id. de evento|29257|
 |Source|Microsoft-Windows-DirectoryServices-DSROLE-Server|
-|severity|Error|
+|Gravedad|Error|
 |Message|Se ha realizado la clonación del controlador de dominio virtual. Error al intentar reiniciar el equipo. Código de error %1.<p>Reinicia el equipo para finalizar la operación de clonación.|
 |Notas y resolución|Examina los registros de eventos de aplicación y del sistema. Investiga aplicaciones de terceros que pudieran estar bloqueando el uso de privilegios.|
 
@@ -686,7 +687,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | -- |--|
 |Id. de evento|29264|
 |Source|Microsoft-Windows-DirectoryServices-DSROLE-Server|
-|severity|Error|
+|Gravedad|Error|
 |Message|Error al intentar borrar la marca de arranque en el Modo de restauración de servicios de directorio. Código de error: %1.<p>Consulta %systemroot%\debug\dcpromo.log para obtener más información sobre los errores.|
 |Notas y resolución|Examina el registro de Servicios de directorio y dcpromo.log para obtener más información. Examina los registros de eventos de aplicación y del sistema. Investiga aplicaciones de terceros que pudieran estar bloqueando el uso de privilegios.|
 
@@ -694,7 +695,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | -- |--|
 |Id. de evento|29265|
 |Source|Microsoft-Windows-DirectoryServices-DSROLE-Server|
-|severity|Informativo|
+|Gravedad|Informativo|
 |Message|La clonación del controlador de dominio virtual se realizó correctamente. Se ha cambiado el nombre del archivo de configuración de clonación del controlador de dominio virtual %1 a %2.|
 |Notas y resolución|N/D. Este es un evento de procedimiento correcto.|
 
@@ -702,7 +703,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | -- |--|
 |Id. de evento|29266|
 |Source|Microsoft-Windows-DirectoryServices-DSROLE-Server|
-|severity|Error|
+|Gravedad|Error|
 |Message|La clonación del controlador de dominio virtual se realizó correctamente. Error al intentar cambiar el nombre del archivo de configuración de clonación del controlador de dominio virtual %1. Código de error: %2 (%3).|
 |Notas y resolución|Cambia manualmente el nombre del archivo dccloneconfig.xml.|
 
@@ -710,7 +711,7 @@ A continuación se indican los eventos específicos de clonación de Windows Ser
 | -- |--|
 |Id. de evento|29267|
 |Source|Microsoft-Windows-DirectoryServices-DSROLE-Server|
-|severity|Error|
+|Gravedad|Error|
 |Message|Error del controlador de dominio virtual al comprobar la lista de aplicaciones con permiso para clonar el controlador de dominio virtual.<p>El código de error devuelto es %1 (%2).<p>La causa podría ser un error de sintaxis en el archivo de lista de permitidos para clonar (el archivo que se está comprobando actualmente es: %3). Para obtener más información sobre este error, consulta %systemroot%\debug\dcpromo.log.|
 |Notas y resolución|Sigue las instrucciones del evento.|
 
@@ -801,7 +802,7 @@ En este ejemplo, el controlador de dominio clonado usa DHCP para obtener una dir
 ##### <a name="directory-services-event-log"></a>Registro de eventos de Servicios de directorio
 El registro de Servicios de directorio contiene la mayoría de la información operativa basada en eventos relativa a la clonación. El hipervisor cambia el id. de generación de VM y el servicio NTDS lo anota; después, invalida el grupo de RID y cambia el id. de invocación. Se establece el nuevo id. de generación de VM y el servidor replica los datos de Active Directory de entrada. El servicio DFSR se detiene y se elimina su base de datos, que hospeda SYSVOL, lo que obliga a una sincronización de entrada no autoritativa. Se ajusta la marca de límite superior de USN.
 
-| **Identificador del evento** | **Origen** | **Mensaje** |
+| **Identificador del evento** | **Origen** | **Message** |
 |--|--|--|
 | **2160** | ActiveDirectory_DomainService | Active Directory Domain Services local encontró un archivo de configuración de clonación de controladores de dominio virtuales.<p>El archivo de configuración de clonación de controladores de dominio virtuales se encuentra en:<p>*<path>* \DCCloneConfig.xml<p>La existencia del archivo de configuración de clonación de controladores de dominio virtuales indica que el controlador de dominio virtual local es un clon de otro controlador de dominio virtual. Active Directory Domain Services empezará a clonarse a sí mismo. |
 | **2191** | ActiveDirectory_DomainService | Active Directory Domain Services establecieron el valor del Registro siguiente para deshabilitar las actualizaciones de DNS.<p>Claves del Registro:<p>SYSTEM\CurrentControlSet\Services\Netlogon\Parameters<p>Valor del Registro:<p>UseDynamicDns<p>Datos del valor del Registro:<p>0<p>Durante el proceso de clonación, la máquina local podría tener durante un corto período de tiempo el mismo nombre de equipo que la máquina de origen clonada. Los registros A y AAAA de DNS están deshabilitados durante este período para que los clientes no puedan enviar solicitudes a la máquina local que se está clonando. El proceso de clonación habilitará las actualizaciones de DNS de nuevo una vez que finalice la clonación. |
@@ -830,13 +831,13 @@ El registro de Servicios de directorio contiene la mayoría de la información o
 | **2173** | ActiveDirectory_DomainService | No se puede leer el atributo msDS-GenerationId del objeto de equipo del controlador de dominio. Esto puede deberse a un error de transacción de la base de datos o a que no existe el identificador de generación en la base de datos local. El atributo msDS-GenerationId no existe durante el primer reinicio después de ejecutar dcpromo o el controlador de dominio no es un controlador de dominio virtual.<p>Datos adicionales<p>Código de error:<p>6 |
 | **1000** | ActiveDirectory_DomainService | Inicio de los Servicios de dominio de Active Directory de Microsoft completado, versión 6.2.8225.0. |
 | **1394** | ActiveDirectory_DomainService | Se solucionaron todos los problemas que impedían la actualización de la base de datos de Active Directory Domain Services. Las nuevas actualizaciones de la base de datos de Active Directory Domain Services se están realizando correctamente. Se reinició el servicio de Net Logon. |
-| **1128** | ActiveDirectory_DomainService | 1128, Comprobador de coherencia de la información, "Se creó una conexión de replicación desde el siguiente servicio de directorio de origen al servicio de directorio local.<p>Servicio de directorio de origen:<p>CN = configuración NTDS, *<Domain Controller DN>*<p>Servicio de directorio local:<p>CN = configuración NTDS, *<Domain Controller DN>*<p>Datos adicionales<p>Código de motivo:<p>0x2<p>ID interno de punto de creación:<p>f0a025d |
+| **1128** | ActiveDirectory_DomainService | 1128, Comprobador de coherencia de la información, "Se creó una conexión de replicación desde el siguiente servicio de directorio de origen al servicio de directorio local.<p>Servicio de directorio de origen:<p>CN = configuración NTDS,*<Domain Controller DN>*<p>Servicio de directorio local:<p>CN = configuración NTDS, *<Domain Controller DN>*<p>Datos adicionales<p>Código de motivo:<p>0x2<p>ID interno de punto de creación:<p>f0a025d |
 | **1999** | ActiveDirectory_DomainService | El servicio de directorio de origen ha optimizado el número de secuencia de actualización (USN) presentado por el servicio de directorio de destino. Los servicios de directorio de destino y de origen tienen un asociado de replicación en común. El servicio de directorio de destino está actualizado con el asociado de replicación común y el servicio de directorio de origen se instaló utilizando una copia de seguridad de este asociado.<p>Id. de servicio de directorio de destino:<p>*<GUID> (<FQDN>)*<p>Id. de servicio de directorio común:<p>*<GUID>*<p>USN de la propiedad común:<p>*<Number>*<p>Como resultado, el vector de actualización del servicio de directorio de destino se ha configurado de la siguiente forma.<p>USN del objeto anterior:<p>0<p>USN de la propiedad anterior:<p>0<p>GUID de la base de datos:<p>*<GUID>*<p>USN de objeto:<p>*<Number>*<p>USN de la propiedad:<p>*<Number>* |
 
 ##### <a name="system-event-log"></a>Registro de eventos del sistema
 Las siguientes indicaciones sobre las operaciones de clonación están en el registro de eventos de Sistema. Cuando el hipervisor indica al equipo invitado que fue clonado o restaurado a partir de una instantánea, el controlador de dominio invalida inmediatamente su grupo de RID para evitar duplicar las entidades de seguridad más adelante. A medida que continúa la clonación, aparecen varios mensajes y operaciones previstos, la mayoría relativos al inicio y detención de servicios, y algunos errores causados por este motivo. Una vez completada, el registro de eventos de Sistema anota que la clonación se realizó correctamente.
 
-|**Identificador del evento**|**Origen**|**Mensaje**|
+|**Identificador del evento**|**Origen**|**Message**|
 |--|--|--|
 |**16654**|Directory-Services-SAM|Se invalidó un grupo de identificadores de cuenta (RID). Esto puede suceder en los siguientes casos previstos:<p>1. un controlador de dominio se restaura a partir de una copia de seguridad.<p>2. un controlador de dominio que se ejecuta en una máquina virtual se restaura desde una instantánea.<p>3. un administrador invalidó manualmente el grupo|
 |**7036**|Administrador de control de servicios|El servicio Active Directory Domain Services entró en estado de ejecución.|
@@ -1345,7 +1346,7 @@ Microsoft Active Directory Domain Services startup complete, version 6.2.8225.0
 ##### <a name="active-directory-web-services-event-log"></a>Registro de eventos de Servicios web de Active Directory
 Durante la clonación, la base de datos NTDS.DIT suele estar sin conexión durante largos períodos. El servicio ADWS registra al menos un evento para esto. Una vez completa la clonación, el servicio ADWS se inicia, anota que aún no hay un certificado de equipo válido (podría haberlo o no según si tu entorno implementa un PKI de Microsoft con inscripción automática o no) y, después, inicia la instancia del nuevo controlador de dominio.
 
-|**Identificador del evento**|**Origen**|**Mensaje**|
+|**Identificador del evento**|**Origen**|**Message**|
 |--|--|--|
 |**1202**|Eventos de instancias de ADWS|Este equipo hospeda ahora la instancia de directorio especificada, pero Servicios web de Active Directory no pudo atenderla. Servicios web de Active Directory reintentará esta operación periódicamente.<p>Instancia de directorio: NTDS<p>Puerto LDAP de instancia de directorio: 389<p>Puerto SSL de instancia de directorio: 636|
 |**1000**|Eventos de instancias de ADWS|Se está iniciando Servicios web de Active Directory|
@@ -1358,7 +1359,7 @@ Durante la clonación, la base de datos NTDS.DIT suele estar sin conexión duran
 ##### <a name="dns-server-event-log"></a>Registro de eventos del servidor DNS
 El servicio DNS experimentará breves interrupciones previstas durante la clonación, porque el servicio DNS sigue ejecutándose mientras la base de datos de AD DS está sin conexión. Esto sucede si se usa DSN integrado en Active Directory, pero no si se usa DSN principal o secundario estándar. Estos errores se registran varias veces. Una vez completa la clonación, DNS vuelve a conectarse normalmente.
 
-|**Identificador del evento**|**Origen**|**Mensaje**|
+|**Identificador del evento**|**Origen**|**Message**|
 |--|--|--|
 |**4013**|DNS-Server-Service|El servidor DNS está esperando a que Active Directory Domain Services (AD DS) señalen que se ha completado la sincronización inicial del directorio. El servicio del servidor DNS no puede iniciarse hasta que se haya completado la sincronización inicial porque es posible que todavía no se hayan replicado en este controlador de dominio algunos datos de DNS críticos. Si los eventos del registro de eventos de AD DS indican que hay un problema con la resolución de nombres DNS, puede agregar la dirección IP de otro servidor DNS para este dominio a la lista de servidores DNS en las propiedades de protocolo de Internet de este equipo. Este evento se registrará cada dos minutos hasta que AD DS haya señalado que la sincronización inicial se ha completado correctamente.|
 |**4015**|DNS-Server-Service|El servidor DNS encontró un error crítico en Active Directory. Comprueba que Active Directory esté funcionado correctamente. La información de depuración de error extendida (puede estar vacía) es """". Los datos del evento contienen el error.|
@@ -1370,7 +1371,7 @@ El servicio DNS experimentará breves interrupciones previstas durante la clonac
 ##### <a name="file-replication-service-event-log"></a>Registro de eventos del Servicio de replicación de archivos
 El Servicio de replicación de archivos realiza una sincronización no autoritativa de un asociado durante la clonación. Para ello, la clonación elimina los archivos de base de datos de NTFRS y deja el contenido de SYSVOL intacto, para usarlo como datos previos a la inicialización. Se esperan dos intentos de sincronización.
 
-| **Identificador del evento** | **Origen** | **Mensaje** |
+| **Identificador del evento** | **Origen** | **Message** |
 |--|--|--|
 | **13562** | NtFrs | El siguiente resumen muestra las advertencias y errores que el Servicio de replicación de archivos encuentra mientras sondea DC2.root.fabrikam.com del controlador de dominio para buscar información sobre la configuración del conjunto de réplicas de FRS.<p>No se pudo enlazar con un controlador de dominio. Se volverá a intentar en el próximo ciclo de sondeo. |
 | **13502** | NtFrs | El Servicio de replicación de archivos se está deteniendo. |
@@ -1389,7 +1390,7 @@ El Servicio de replicación de archivos realiza una sincronización no autoritat
 ##### <a name="dfs-replication-event-log"></a>Registro de eventos de Replicación DFS
 Los servicios DFSR realizan una sincronización no autoritativa de un asociado durante la clonación. Para ello, la clonación elimina los archivos de base de datos de DFSR y deja el contenido de SYSVOL intacto, para usarlo como datos previos a la inicialización. Se esperan dos intentos de sincronización.
 
-| **Identificador del evento** | **Origen** | **Mensaje** |
+| **Identificador del evento** | **Origen** | **Message** |
 |--|--|--|
 | **1004** | DFSR | El servicio de replicación DFS se ha iniciado. |
 | **1314** | DFSR | El servicio de replicación DFS configuró correctamente los archivos de registro de depuración.<p>Información adicional:<p>Ruta de acceso del archivo de registro de depuración: C:\Windows\debug |
@@ -1460,7 +1461,7 @@ Los siguientes son eventos específicos de la restauración segura de Windows Se
 | **Identificador del evento** | **2170** |
 | **Origen** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **Gravedad** | Advertencia |
-| **Mensaje** | Se detectó un cambio de id. de generación.<p>Id. de generación almacenado en caché en DS (valor antiguo):%1<p>Id. de generación actualmente en VM (valor nuevo):%2<p>El cambio de id. de generación se produce después de la aplicación de una instantánea de máquina virtual, después de una operación de importación de máquina virtual o después de una operación de migración en vivo. *<COMPUTERNAME>* creará un nuevo identificador de invocación para recuperar el controlador de dominio. Los controladores de dominio virtualizados no deben restaurarse con instantáneas de máquina virtual. El método admitido para restaurar o revertir el contenido de una base de datos de Active Directory Domain Services consiste en restaurar una copia de seguridad del estado del sistema realizada con una aplicación de copia de seguridad compatible con Active Directory Domain Services. |
+| **Message** | Se detectó un cambio de id. de generación.<p>Id. de generación almacenado en caché en DS (valor antiguo):%1<p>Id. de generación actualmente en VM (valor nuevo):%2<p>El cambio de id. de generación se produce después de la aplicación de una instantánea de máquina virtual, después de una operación de importación de máquina virtual o después de una operación de migración en vivo. *<COMPUTERNAME>* creará un nuevo identificador de invocación para recuperar el controlador de dominio. Los controladores de dominio virtualizados no deben restaurarse con instantáneas de máquina virtual. El método admitido para restaurar o revertir el contenido de una base de datos de Active Directory Domain Services consiste en restaurar una copia de seguridad del estado del sistema realizada con una aplicación de copia de seguridad compatible con Active Directory Domain Services. |
 | **Notas y resolución** | Este es un evento de procedimiento correcto si la instantánea era previsible. Si no lo es, examina el registro de eventos de Hyper-V-Worker o ponte en contacto con el administrador del hipervisor. |
 
 | Eventos | Descripción |
@@ -1468,7 +1469,7 @@ Los siguientes son eventos específicos de la restauración segura de Windows Se
 |**Identificador del evento**|**2174**|
 |**Origen**|Microsoft-Windows-ActiveDirectory_DomainService|
 |**Gravedad**|Informativo|
-|**Mensaje**|El controlador de dominio no es un clon de controlador de dominio virtual ni una instantánea de un controlador de dominio virtual restaurado.|
+|**Message**|El controlador de dominio no es un clon de controlador de dominio virtual ni una instantánea de un controlador de dominio virtual restaurado.|
 |**Notas y resolución**|Evento previsible cuando se inician controladores de dominio físicos o controladores de dominio virtualizados no restaurados a partir de la instantánea.|
 
 | Eventos | Descripción |
@@ -1476,7 +1477,7 @@ Los siguientes son eventos específicos de la restauración segura de Windows Se
 |**Identificador del evento**|**2181**|
 |**Origen**|Microsoft-Windows-ActiveDirectory_DomainService|
 |**Gravedad**|Informativo|
-|**Mensaje**|La transacción se anuló debido a que una máquina virtual se revirtió a un estado anterior. Esto se produce después de la aplicación de una instantánea de máquina virtual, después de una operación de importación de máquina virtual o después de una operación de migración en vivo.|
+|**Message**|La transacción se anuló debido a que una máquina virtual se revirtió a un estado anterior. Esto se produce después de la aplicación de una instantánea de máquina virtual, después de una operación de importación de máquina virtual o después de una operación de migración en vivo.|
 |**Notas y resolución**|Es previsible cuando se restaura una instantánea. Las transacciones rastrean los cambios de identificadores de generación de máquina virtual.|
 
 | Evento | Descripción |
@@ -1484,7 +1485,7 @@ Los siguientes son eventos específicos de la restauración segura de Windows Se
 | **Identificador del evento** | **2185** |
 | **Origen** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **Gravedad** | Informativo |
-| **Mensaje** | *<COMPUTERNAME>* se detuvo el servicio FRS o DFSR usado para replicar la carpeta SYSVOL.<p>Nombre del servicio:%1<p>Active Directory detectó que la máquina virtual que hospeda el controlador de dominio se revirtió a un estado anterior. *<COMPUTERNAME>* debe inicializar una restauración no autoritativa en la réplica de SYSVOL local. Para ello, se debe detener el servicio de replicación FRS o DFSR que se usa para replicar la carpeta SYSVOL y, a continuación, iniciarlo con los valores y las claves del Registro adecuados para desencadenar la restauración. Se registrará el evento 2187 cuando el servicio FRS o DFSR se reinicie. |
+| **Message** | *<COMPUTERNAME>* se detuvo el servicio FRS o DFSR usado para replicar la carpeta SYSVOL.<p>Nombre del servicio:%1<p>Active Directory detectó que la máquina virtual que hospeda el controlador de dominio se revirtió a un estado anterior. *<COMPUTERNAME>* debe inicializar una restauración no autoritativa en la réplica de SYSVOL local. Para ello, se debe detener el servicio de replicación FRS o DFSR que se usa para replicar la carpeta SYSVOL y, a continuación, iniciarlo con los valores y las claves del Registro adecuados para desencadenar la restauración. Se registrará el evento 2187 cuando el servicio FRS o DFSR se reinicie. |
 | **Notas y resolución** | Es previsible cuando se restaura una instantánea. Todos los datos de SYSVOL de este controlador de dominio se reemplazan con una copia de un controlador de dominio del asociado. |
 
 | Evento | Descripción |
@@ -1492,14 +1493,14 @@ Los siguientes son eventos específicos de la restauración segura de Windows Se
 | **Identificador del evento** | 2186 |
 | **Origen** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **Gravedad** | Error |
-| **Mensaje** | *<COMPUTERNAME>* no se pudo detener el servicio FRS o DFSR usado para replicar la carpeta SYSVOL.<p>Nombre del servicio:%1<p>Código de error: %2<p>Mensaje de error: %3<p>Active Directory detectó que la máquina virtual que hospeda el controlador de dominio se revirtió a un estado anterior. *<COMPUTERNAME>* debe inicializar una restauración no autoritativa en la réplica de SYSVOL local. Para ello, se debe detener el servicio de replicación FRS o DFSR que se usa para replicar la carpeta SYSVOL y, a continuación, iniciarlo con los valores y las claves del Registro adecuados para desencadenar la restauración. *<COMPUTERNAME>* no se pudo detener el servicio en ejecución actual y no se puede completar la restauración no autoritativa. Ejecuta una restauración no autoritativa manualmente. |
+| **Message** | *<COMPUTERNAME>* no se pudo detener el servicio FRS o DFSR usado para replicar la carpeta SYSVOL.<p>Nombre del servicio:%1<p>Código de error: %2<p>Mensaje de error: %3<p>Active Directory detectó que la máquina virtual que hospeda el controlador de dominio se revirtió a un estado anterior. *<COMPUTERNAME>* debe inicializar una restauración no autoritativa en la réplica de SYSVOL local. Para ello, se debe detener el servicio de replicación FRS o DFSR que se usa para replicar la carpeta SYSVOL y, a continuación, iniciarlo con los valores y las claves del Registro adecuados para desencadenar la restauración. *<COMPUTERNAME>* no se pudo detener el servicio en ejecución actual y no se puede completar la restauración no autoritativa. Ejecuta una restauración no autoritativa manualmente. |
 | **Notas y resolución** | Examina los registros de eventos de Sistema, FRS y DFSR para obtener más información. |
 
 | Evento | Descripción |
 |--|--|
 | **Identificador del evento** | **2187** |
 | **Gravedad** | Informativo |
-| **Mensaje** | *<COMPUTERNAME>* se inició el servicio FRS o DFSR usado para replicar la carpeta SYSVOL.<p>Nombre del servicio:%1<p>Active Directory detectó que la máquina virtual que hospeda el controlador de dominio se revirtió a un estado anterior. *<COMPUTERNAME>* necesario para inicializar una restauración no autoritativa en la réplica de SYSVOL local. Para ello, se tuvo que detener el servicio FRS o DFSR que se usa para replicar la carpeta SYSVOL y, a continuación, iniciarlo con los valores y las claves del Registro adecuados para desencadenar la restauración. |
+| **Message** | *<COMPUTERNAME>* se inició el servicio FRS o DFSR usado para replicar la carpeta SYSVOL.<p>Nombre del servicio:%1<p>Active Directory detectó que la máquina virtual que hospeda el controlador de dominio se revirtió a un estado anterior. *<COMPUTERNAME>* necesario para inicializar una restauración no autoritativa en la réplica de SYSVOL local. Para ello, se tuvo que detener el servicio FRS o DFSR que se usa para replicar la carpeta SYSVOL y, a continuación, iniciarlo con los valores y las claves del Registro adecuados para desencadenar la restauración. |
 | **Notas y resolución** | Es previsible cuando se restaura una instantánea. Todos los datos de SYSVOL de este controlador de dominio se reemplazan con una copia de un controlador de dominio del asociado. |
 
 | Evento | Descripción |
@@ -1507,7 +1508,7 @@ Los siguientes son eventos específicos de la restauración segura de Windows Se
 | **Identificador del evento** | **2188** |
 | **Origen** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **Gravedad** | Error |
-| **Mensaje** | *<COMPUTERNAME>* no se pudo iniciar el servicio FRS o DFSR usado para replicar la carpeta SYSVOL.<p>Nombre del servicio:%1<p>Código de error: %2<p>Mensaje de error: %3<p>Active Directory detectó que la máquina virtual que hospeda el controlador de dominio se revirtió a un estado anterior. *<COMPUTERNAME>* debe inicializar una restauración no autoritativa en la réplica de SYSVOL local. Para DFSR, se debe detener el servicio DFSR, eliminar las bases de datos de DFSR y reiniciar el servicio. Una vez reiniciado, DFSR volverá a generar las bases de datos e iniciará la sincronización inicial. *<COMPUTERNAME>* no se pudo iniciar el servicio FRS o DFSR usado para replicar la carpeta SYSVOL y no puede completar la restauración no autoritativa. Ejecuta una restauración no autoritativa manualmente y reinicia el servicio. |
+| **Message** | *<COMPUTERNAME>* no se pudo iniciar el servicio FRS o DFSR usado para replicar la carpeta SYSVOL.<p>Nombre del servicio:%1<p>Código de error: %2<p>Mensaje de error: %3<p>Active Directory detectó que la máquina virtual que hospeda el controlador de dominio se revirtió a un estado anterior. *<COMPUTERNAME>* debe inicializar una restauración no autoritativa en la réplica de SYSVOL local. Para DFSR, se debe detener el servicio DFSR, eliminar las bases de datos de DFSR y reiniciar el servicio. Una vez reiniciado, DFSR volverá a generar las bases de datos e iniciará la sincronización inicial. *<COMPUTERNAME>* no se pudo iniciar el servicio FRS o DFSR usado para replicar la carpeta SYSVOL y no puede completar la restauración no autoritativa. Ejecuta una restauración no autoritativa manualmente y reinicia el servicio. |
 | **Notas y resolución** | Examina los registros de eventos de Sistema, FRS y DFSR para obtener más información. |
 
 | Evento | Descripción |
@@ -1515,7 +1516,7 @@ Los siguientes son eventos específicos de la restauración segura de Windows Se
 | **Identificador del evento** | **2189** |
 | **Origen** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **Gravedad** | Informativo |
-| **Mensaje** | *<COMPUTERNAME>* Establezca los siguientes valores del registro para inicializar la réplica SYSVOL durante una restauración no autoritativa:<p>Clave del Registro:%1<p>Valor del Registro: %2<p>Datos del valor del Registro: %3<p>Active Directory detectó que la máquina virtual que hospeda el controlador de dominio se revirtió a un estado anterior. *<COMPUTERNAME>* debe inicializar una restauración no autoritativa en la réplica de SYSVOL local. Para ello, hay que detener el servicio FRS o DFSR usado para replicar la carpeta SYSVOL e iniciarlo con las claves y los valores del Registro adecuados para desencadenar la restauración. |
+| **Message** | *<COMPUTERNAME>* Establezca los siguientes valores del registro para inicializar la réplica SYSVOL durante una restauración no autoritativa:<p>Clave del Registro:%1<p>Valor del Registro: %2<p>Datos del valor del Registro: %3<p>Active Directory detectó que la máquina virtual que hospeda el controlador de dominio se revirtió a un estado anterior. *<COMPUTERNAME>* debe inicializar una restauración no autoritativa en la réplica de SYSVOL local. Para ello, hay que detener el servicio FRS o DFSR usado para replicar la carpeta SYSVOL e iniciarlo con las claves y los valores del Registro adecuados para desencadenar la restauración. |
 | **Notas y resolución** | Es previsible cuando se restaura una instantánea. Todos los datos de SYSVOL de este controlador de dominio se reemplazan con una copia de un controlador de dominio del asociado. |
 
 | Evento | Descripción |
@@ -1523,7 +1524,7 @@ Los siguientes son eventos específicos de la restauración segura de Windows Se
 | **Identificador del evento** | **2190** |
 | **Origen** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **Gravedad** | Error |
-| **Mensaje** | *<COMPUTERNAME>* no se pudieron establecer los siguientes valores del registro para inicializar la réplica de SYSVOL durante una restauración no autoritativa:<p>Clave del Registro:%1<p>Valor del Registro: %2<p>Datos del valor del Registro: %3<p>Código de error: % 4<p>Mensaje de error: %5<p>Active Directory detectó que la máquina virtual que hospeda el rol de controlador de dominio se revirtió a un estado anterior. *<COMPUTERNAME>* debe inicializar una restauración no autoritativa en la réplica de SYSVOL local. Para ello, hay que detener el servicio FRS o DFSR usado para replicar la carpeta SYSVOL e iniciarlo con las claves y los valores del Registro adecuados para desencadenar la restauración. *<COMPUTERNAME>* no se pudieron establecer los valores del registro anteriores y no se puede completar la restauración no autoritativa. Ejecuta una restauración no autoritativa manualmente. |
+| **Message** | *<COMPUTERNAME>* no se pudieron establecer los siguientes valores del registro para inicializar la réplica de SYSVOL durante una restauración no autoritativa:<p>Clave del Registro:%1<p>Valor del Registro: %2<p>Datos del valor del Registro: %3<p>Código de error: % 4<p>Mensaje de error: %5<p>Active Directory detectó que la máquina virtual que hospeda el rol de controlador de dominio se revirtió a un estado anterior. *<COMPUTERNAME>* debe inicializar una restauración no autoritativa en la réplica de SYSVOL local. Para ello, hay que detener el servicio FRS o DFSR usado para replicar la carpeta SYSVOL e iniciarlo con las claves y los valores del Registro adecuados para desencadenar la restauración. *<COMPUTERNAME>* no se pudieron establecer los valores del registro anteriores y no se puede completar la restauración no autoritativa. Ejecuta una restauración no autoritativa manualmente. |
 | **Notas y resolución** | Examina los registros de eventos de aplicación y del sistema. Investiga aplicaciones de terceros que pudieran estar bloqueando las actualizaciones del Registro. |
 
 | Evento | Descripción |
@@ -1531,7 +1532,7 @@ Los siguientes son eventos específicos de la restauración segura de Windows Se
 | **Identificador del evento** | **2200** |
 | **Origen** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **Gravedad** | Informativo |
-| **Mensaje** | Active Directory detectó que la máquina virtual que hospeda el controlador de dominio se revirtió a un estado anterior. *<COMPUTERNAME>* Inicializa la replicación para actualizar el controlador de dominio. Se registrará el evento 2201 cuando la replicación finalice. |
+| **Message** | Active Directory detectó que la máquina virtual que hospeda el controlador de dominio se revirtió a un estado anterior. *<COMPUTERNAME>* Inicializa la replicación para actualizar el controlador de dominio. Se registrará el evento 2201 cuando la replicación finalice. |
 | **Notas y resolución** | Es previsible cuando se restaura una instantánea. Marca el comienzo de una replicación de AD de entrada. |
 
 | Evento | Descripción |
@@ -1539,7 +1540,7 @@ Los siguientes son eventos específicos de la restauración segura de Windows Se
 | **Identificador del evento** | **2201** |
 | **Origen** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **Gravedad** | Informativo |
-| **Mensaje** | Active Directory detectó que la máquina virtual que hospeda el controlador de dominio se revirtió a un estado anterior. *<COMPUTERNAME>* ha finalizado la replicación para actualizar el controlador de dominio. |
+| **Message** | Active Directory detectó que la máquina virtual que hospeda el controlador de dominio se revirtió a un estado anterior. *<COMPUTERNAME>* ha finalizado la replicación para actualizar el controlador de dominio. |
 | **Notas y resolución** | Es previsible cuando se restaura una instantánea. Marca el final de una replicación de AD de entrada. |
 
 | Evento | Descripción |
@@ -1547,7 +1548,7 @@ Los siguientes son eventos específicos de la restauración segura de Windows Se
 | **Identificador del evento** | **2202** |
 | **Origen** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **Gravedad** | Error |
-| **Mensaje** | Active Directory detectó que la máquina virtual que hospeda el controlador de dominio se revirtió a un estado anterior. *<COMPUTERNAME>* no se pudo realizar la replicación para actualizar el controlador de dominio. El controlador de dominio se actualizará después de la próxima replicación periódica. |
+| **Message** | Active Directory detectó que la máquina virtual que hospeda el controlador de dominio se revirtió a un estado anterior. *<COMPUTERNAME>* no se pudo realizar la replicación para actualizar el controlador de dominio. El controlador de dominio se actualizará después de la próxima replicación periódica. |
 | **Notas y resolución** | Examina el registro de eventos de Servicios de directorio y Sistema. Usa repadmin.exe para intentar forzar la replicación y anota los posibles errores. |
 
 | Evento | Descripción |
@@ -1555,7 +1556,7 @@ Los siguientes son eventos específicos de la restauración segura de Windows Se
 | **Identificador del evento** | **2204** |
 | **Origen** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **Gravedad** | Informativo |
-| **Mensaje** | *<COMPUTERNAME>* ha detectado un cambio de ID. de generación de máquina virtual. El cambio significa que el controlador de dominio virtual se revirtió a un estado anterior. *<COMPUTERNAME>* realizará las siguientes operaciones para proteger el controlador de dominio revertido contra una posible divergencia de datos y para proteger la creación de entidades de seguridad con SID duplicados:<p>Crear un id. de invocación<p>Invalidar el grupo RID actual<p>La propiedad de los roles FSMO se validará en la próxima replicación de entrada. Durante este intervalo, si el controlador de dominio tuvo un rol FSMO, dicho rol no estará disponible.<p>Inicia la operación de restauración del servicio de replicación de SYSVOL.<p>Inicie la replicación para actualizar el controlador de dominio revertido al estado más actual.<p>Solicite un nuevo grupo RID. |
+| **Message** | *<COMPUTERNAME>* ha detectado un cambio de ID. de generación de máquina virtual. El cambio significa que el controlador de dominio virtual se revirtió a un estado anterior. *<COMPUTERNAME>* realizará las siguientes operaciones para proteger el controlador de dominio revertido contra una posible divergencia de datos y para proteger la creación de entidades de seguridad con SID duplicados:<p>Crear un id. de invocación<p>Invalidar el grupo RID actual<p>La propiedad de los roles FSMO se validará en la próxima replicación de entrada. Durante este intervalo, si el controlador de dominio tuvo un rol FSMO, dicho rol no estará disponible.<p>Inicia la operación de restauración del servicio de replicación de SYSVOL.<p>Inicie la replicación para actualizar el controlador de dominio revertido al estado más actual.<p>Solicite un nuevo grupo RID. |
 | **Notas y resolución** | Es previsible cuando se restaura una instantánea. Esto explica todas las operaciones de restablecimiento que se producen como parte del proceso de restauración segura. |
 
 | Evento | Descripción |
@@ -1563,7 +1564,7 @@ Los siguientes son eventos específicos de la restauración segura de Windows Se
 | **Identificador del evento** | **2205** |
 | **Origen** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **Gravedad** | Informativo |
-| **Mensaje** | *<COMPUTERNAME>* se invalidó el grupo RID actual después de que el controlador de dominio virtual se revirtió al estado anterior. |
+| **Message** | *<COMPUTERNAME>* se invalidó el grupo RID actual después de que el controlador de dominio virtual se revirtió al estado anterior. |
 | **Notas y resolución** | Es previsible cuando se restaura una instantánea. El grupo de RID local debe destruirse porque el controlador de dominio ha viajado en el tiempo y puede que ya se hayan emitido. |
 
 | Evento | Descripción |
@@ -1571,7 +1572,7 @@ Los siguientes son eventos específicos de la restauración segura de Windows Se
 | **Identificador del evento** | **2206** |
 | **Origen** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **Gravedad** | ERROR |
-| **Mensaje** | *<COMPUTERNAME>* no se pudo invalidar el grupo RID actual después de que el controlador de dominio virtual se revirtió al estado anterior.<p>Datos adicionales:<p>Código de error: %1<p>Valor del error: %2 |
+| **Message** | *<COMPUTERNAME>* no se pudo invalidar el grupo RID actual después de que el controlador de dominio virtual se revirtió al estado anterior.<p>Datos adicionales:<p>Código de error: %1<p>Valor del error: %2 |
 | **Notas y resolución** | Examina el registro de eventos de Servicios de directorio y Sistema. Comprueba que el maestro RID está conectado y es accesible desde este servidor usando Dcdiag.exe /test:ridmanager |
 
 | Evento | Descripción |
@@ -1579,7 +1580,7 @@ Los siguientes son eventos específicos de la restauración segura de Windows Se
 | **Identificador del evento** | **2207** |
 | **Origen** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **Gravedad** | ERROR |
-| **Mensaje** | *<COMPUTERNAME>* no se pudo restaurar después de que el controlador de dominio virtual se revirtió al estado anterior. Se necesitó reiniciar en DSRM. Comprueba los eventos anteriores para obtener más información. |
+| **Message** | *<COMPUTERNAME>* no se pudo restaurar después de que el controlador de dominio virtual se revirtió al estado anterior. Se necesitó reiniciar en DSRM. Comprueba los eventos anteriores para obtener más información. |
 | **Notas y resolución** | Examina el registro de eventos de Servicios de directorio y Sistema. |
 
 | Evento | Descripción |
@@ -1587,7 +1588,7 @@ Los siguientes son eventos específicos de la restauración segura de Windows Se
 | **Identificador del evento** | **2208** |
 | **Origen** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **Gravedad** | Informativo |
-| **Mensaje** | *<COMPUTERNAME>* se han eliminado las bases de datos de DFSR para inicializar la réplica SYSVOL durante una restauración no autoritativa. |
+| **Message** | *<COMPUTERNAME>* se han eliminado las bases de datos de DFSR para inicializar la réplica SYSVOL durante una restauración no autoritativa. |
 | **Notas y resolución** | Es previsible cuando se restaura una instantánea. Esto garantiza que DFSR realiza una sincronización no autoritativa desde un controlador de dominio asociado. Ten en cuenta que todas las demás carpetas replicadas de DFSR que estén en el mismo volumen que SYSVOL también se sincronizarán de forma autoritativa (no se recomienda que los controladores de dominio hospeden conjuntos de DFSR personalizados en el mismo volumen que SYSVOL). |
 
 | Evento | Descripción |
@@ -1595,7 +1596,7 @@ Los siguientes son eventos específicos de la restauración segura de Windows Se
 | **Identificador del evento** | **2209** |
 | **Origen** | Microsoft-Windows-ActiveDirectory_DomainService |
 | **Gravedad** | Error |
-| **Mensaje** | *<COMPUTERNAME>* no se pudieron eliminar las bases de datos de DFSR.<p>Datos adicionales:<p>Código de error: %1<p>Valor del error: %2<p>Active Directory detectó que la máquina virtual que hospeda el controlador de dominio se revirtió a un estado anterior. *<COMPUTERNAME>* debe inicializar una restauración no autoritativa en la réplica de SYSVOL local. Para DFSR, se debe detener el servicio DFSR, eliminar las bases de datos de DFSR y reiniciar el servicio. Una vez reiniciado, DFSR volverá a generar las bases de datos e iniciará la sincronización inicial. |
+| **Message** | *<COMPUTERNAME>* no se pudieron eliminar las bases de datos de DFSR.<p>Datos adicionales:<p>Código de error: %1<p>Valor del error: %2<p>Active Directory detectó que la máquina virtual que hospeda el controlador de dominio se revirtió a un estado anterior. *<COMPUTERNAME>* debe inicializar una restauración no autoritativa en la réplica de SYSVOL local. Para DFSR, se debe detener el servicio DFSR, eliminar las bases de datos de DFSR y reiniciar el servicio. Una vez reiniciado, DFSR volverá a generar las bases de datos e iniciará la sincronización inicial. |
 | **Notas y resolución** | Examina el registro de eventos de DFSR. |
 
 #### <a name="error-messages"></a>mensajes de error
@@ -1622,7 +1623,7 @@ El objetivo de este módulo es enseñar la solución avanzada de problemas usand
 ##### <a name="directory-services-event-log"></a>Registro de eventos de Servicios de directorio
 El registro de Servicios de directorio contiene la mayoría de la información operativa relativa a la restauración segura. El hipervisor cambia el id. de generación de VM y el servicio NTDS lo anota; después, invalida el grupo de RID y cambia el id. de invocación. Se establece el nuevo id. de generación de VM y los servidores replican los datos de AD de entrada. El servicio DFSR se detiene y se elimina su base de datos, que hospeda SYSVOL, lo que obliga a una sincronización de entrada no autoritativa. Se ajusta la marca de límite superior de USN.
 
-| **Identificador del evento** | **Origen** | **Mensaje** |
+| **Identificador del evento** | **Origen** | **Message** |
 |--|--|--|
 | **2170** | ActiveDirectory_DomainService | Se detectó un cambio de id. de generación.<p>Id. de generación almacenado en caché en DS (valor antiguo):<p>*<number>*<p>Id. de generación actualmente en VM (valor nuevo):<p>*<number>*<p>El cambio de id. de generación se produce después de la aplicación de una instantánea de máquina virtual, después de una operación de importación de máquina virtual o después de una operación de migración en vivo. Active Directory Domain Services creará un nuevo id. de invocación para recuperar el controlador de dominio. Los controladores de dominio virtualizados no deben restaurarse con instantáneas de máquina virtual. El método admitido para restaurar o revertir el contenido de una base de datos de Active Directory Domain Services consiste en restaurar una copia de seguridad del estado del sistema realizada con una aplicación de copia de seguridad compatible con Active Directory Domain Services. |
 | **2181** | ActiveDirectory_DomainService | La transacción se anuló debido a que una máquina virtual se revirtió a un estado anterior. Esto se produce después de la aplicación de una instantánea de máquina virtual, después de una operación de importación de máquina virtual o después de una operación de migración en vivo. |
@@ -1640,17 +1641,17 @@ El registro de Servicios de directorio contiene la mayoría de la información o
 ##### <a name="system-event-log"></a>Registro de eventos del sistema
 El registro de eventos de Sistema anota la hora del equipo en que se conecta de nuevo una máquina virtual y se sincroniza con la hora del host. El grupo RID se invalida y se reinician los servicios DFSR o FRS.
 
-| **Identificador del evento** | **Origen** | **Mensaje** |
+| **Identificador del evento** | **Origen** | **Message** |
 |--|--|--|
 | **1** | Kernel-General | La hora del sistema ha cambiado *a <now> ?* en *<>de fecha y hora* de la instantánea.<p>Cambiar motivo: una aplicación o un componente del sistema cambió la hora. |
-| **16654** | Directory-Services-SAM | Se invalidó un grupo de identificadores de cuenta (RID). Esto puede suceder en los siguientes casos previstos:<p>1. un controlador de dominio se restaura a partir de una copia de seguridad.<p>2. un controlador de dominio que se ejecuta en una máquina virtual se restaura desde una instantánea.<p>3. un administrador invalidó el grupo manualmente.<p>Vea <https://go.microsoft.com/fwlink/?LinkId=226247> para obtener más información. |
+| **16654** | Directory-Services-SAM | Se invalidó un grupo de identificadores de cuenta (RID). Esto puede suceder en los siguientes casos previstos:<p>1. un controlador de dominio se restaura a partir de una copia de seguridad.<p>2. un controlador de dominio que se ejecuta en una máquina virtual se restaura desde una instantánea.<p>3. un administrador invalidó el grupo manualmente.<p>Consulte <https://go.microsoft.com/fwlink/?LinkId=226247> para obtener más información. |
 | **7036** | Administrador de control de servicios | El servicio Replicación DFS entró en estado de detención. |
 | **7036** | Administrador de control de servicios | El servicio Replicación DFS entró en estado de ejecución. |
 
 ##### <a name="application-event-log"></a>Registro de eventos de aplicación
 El registro de eventos de Aplicación anota la detención e inicio de la base de datos de DFSR.
 
-| **Identificador del evento** | **Origen** | **Mensaje** |
+| **Identificador del evento** | **Origen** | **Message** |
 |--|--|--|
 | **103** | ESENT | DFSR (1360) \\ \\ .\c: \System Volume Information\DFSR\database <em> _ <GUID> </em> \dfsr.dB: el motor de base de datos detuvo la instancia (0).<p>Cierre con errores: 0<p>Secuencia temporal interna: [1] 0,000, [2] 0,000, [3] 0,000, [4] 0,000, [5] 0,141, [6] 0,000, [7] 0,000, [8] 0,000, [9] 0,000, [10] 0,000, [11] 0,016, [12] 0,000, [13] 0.000, [14] 0.000, [15] 0.000. |
 | **102** | ESENT | DFSR (532) \\ \\ .\c: \System Volume Information\DFSR\database <em> _ <GUID> </em> \dfsr.dB: el motor de base de datos (6.02.8189.0000) está iniciando una nueva instancia (0). |
@@ -1660,7 +1661,7 @@ El registro de eventos de Aplicación anota la detención e inicio de la base de
 ##### <a name="dfs-replication-event-log"></a>Registro de eventos de Replicación DFS
 El servicio DFSR se detiene y se elimina la base de datos que hospeda SYSVOL, lo que obliga a una sincronización de entrada no autoritativa.
 
-| **Identificador del evento** | **Origen** | **Mensaje** |
+| **Identificador del evento** | **Origen** | **Message** |
 |--|--|--|
 | **1006** | DFSR | El servicio de replicación DFS se está deteniendo. |
 | **1008** | DFSR | El servicio de replicación DFS se ha detenido. |
@@ -1679,7 +1680,7 @@ En este caso, se usa el registro de eventos de Replicación de archivos en lugar
 ##### <a name="file-replication-service-event-log"></a>Registro de eventos del Servicio de replicación de archivos
 El servicio FRS se ha detenido y reiniciado con un valor D2 BURFLAGS para sincronizar SYSVOL de forma no autoritativa.
 
-| **Identificador del evento** | **Origen** | **Mensaje** |
+| **Identificador del evento** | **Origen** | **Message** |
 |--|--|--|
 | **13502** | NTFRS | El Servicio de replicación de archivos se está deteniendo. |
 | **13503** | NTFRS | El Servicio de replicación de archivos se ha detenido. |
@@ -1694,7 +1695,7 @@ El servicio FRS se ha detenido y reiniciado con un valor D2 BURFLAGS para sincro
 ##### <a name="application-event-log"></a>Registro de eventos de aplicación
 La base de datos de FRS se detiene y se inicia, y se limpia debido a la operación D2 BURFLAGS.
 
-| **Identificador del evento** | **Origen** | **Mensaje** |
+| **Identificador del evento** | **Origen** | **Message** |
 |--|--|--|
 | **327** | ESENT | ntfrs (1424) El motor de la base de datos separó una base de datos (1, c:\windows\ntfrs\jet\ntfrs.jdb). (Tiempo=0 segundos)<p>Secuencia temporal interna: [1] 0,000, [2] 0,015, [3] 0,000, [4] 0,000, [5] 0,000, [6] 0,516, [7] 0,000, [8] 0,000, [9] 0,000, [10] 0,000, [11] 0,063, [12] 0,000.<p>Caché reactivada: 0 |
 | **103** | ESENT | ntfrs (1424) El motor de base de datos detuvo la instancia (0).<p>Cierre con errores: 0<p>Secuencia temporal interna: [1] 0,000, [2] 0,000, [3] 0,000, [4] 0,000, [5] 0,000, [6] 0,000, [7] 0,000, [8] 0,000, [9] 0,031, [10] 0,000, [11] 0,016, [12] 0,000, [13] 0,000, [14] 0,047, [15] 0,000. |

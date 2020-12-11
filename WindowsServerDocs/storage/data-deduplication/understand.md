@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: Descripción de la desduplicación de datos'
 ms.assetid: acc0803b-fa05-4fc3-b94d-2916abf4fdbd
 title: Información acerca de Desduplicación de datos
 ms.topic: article
@@ -6,12 +7,12 @@ author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 09/15/2016
-ms.openlocfilehash: e3a58889d42020d939981e2d10eda450e5860642
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: eac0cf9b658ddc4e0676ed53c48b12e62d617d6f
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87936258"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97050073"
 ---
 # <a name="understanding-data-deduplication"></a>Información acerca de Desduplicación de datos
 
@@ -54,14 +55,14 @@ Los siguientes Tipos de uso proporcionan una configuración razonable de Desdupl
 |------------|-----------------|------------------|
 | <a id="usage-type-default"></a>Predeterminada | Servidor de archivos de uso general:<ul><li>Recursos compartidos del equipo</li><li>Carpetas de trabajo</li><li>Redirección de carpetas</li><li>Recursos compartidos de desarrollo de software</li></ul> | <ul><li>Optimización en segundo plano</li><li>Directiva de optimización predeterminada:<ul><li>Antigüedad mínima de archivo = 3 días</li><li>Optimizar archivos en uso = No</li><li>Optimizar archivos parciales = No</li></ul></li></ul> |
 | <a id="usage-type-hyperv"></a>Hyper-V | Servidores de Infraestructura de escritorio virtual (VDI) | <ul><li>Optimización en segundo plano</li><li>Directiva de optimización predeterminada:<ul><li>Antigüedad mínima de archivo = 3 días</li><li>Optimizar archivos en uso = Sí</li><li>Optimizar archivos parciales = Yes</li></ul></li><li>Ajustes técnicos para la interoperabilidad de Hyper-V</li></ul> |
-| <a id="usage-type-backup"></a>Copia de seguridad | Aplicaciones de copia de seguridad virtualizadas, como [Microsoft Data Protection Manager (DPM)](/previous-versions/system-center/system-center-2012-R2/hh758173(v=sc.12)) | <ul><li>Optimización de prioridad</li><li>Directiva de optimización predeterminada:<ul><li>Antigüedad mínima de archivo = 0 días</li><li>Optimizar archivos en uso = Sí</li><li>Optimizar archivos parciales = No</li></ul></li><li>Ajustes técnicos para la interoperabilidad con soluciones de DPM o similares a DPM.</li></ul> |
+| <a id="usage-type-backup"></a>Backup | Aplicaciones de copia de seguridad virtualizadas, como [Microsoft Data Protection Manager (DPM)](/previous-versions/system-center/system-center-2012-R2/hh758173(v=sc.12)) | <ul><li>Optimización de prioridad</li><li>Directiva de optimización predeterminada:<ul><li>Antigüedad mínima de archivo = 0 días</li><li>Optimizar archivos en uso = Sí</li><li>Optimizar archivos parciales = No</li></ul></li><li>Ajustes técnicos para la interoperabilidad con soluciones de DPM o similares a DPM.</li></ul> |
 
 ## <a name="jobs"></a><a id="job-info"></a>Tareas
 Desduplicación de datos usa una estrategia de procesamiento posterior para optimizar y mantener la eficacia del espacio de un volumen.
 
 | Nombre del trabajo | Descripciones del trabajo | Programación predeterminada |
 |----------|------------------|------------------|
-| <a id="job-info-optimization"></a>Optimization | El trabajo de **optimización** se desduplica mediante la fragmentación de los datos en un volumen por la configuración de la Directiva de volumen, (opcionalmente), la compresión de esos fragmentos y el almacenamiento de fragmentos de forma única en el almacén de fragmentos. El proceso de optimización que usa Desduplicación de datos se describe con detalle en [¿Cómo funciona Desduplicación de datos?](understand.md#how-does-dedup-work) | Una vez cada hora |
+| <a id="job-info-optimization"></a>Optimización | El trabajo de **optimización** se desduplica mediante la fragmentación de los datos en un volumen por la configuración de la Directiva de volumen, (opcionalmente), la compresión de esos fragmentos y el almacenamiento de fragmentos de forma única en el almacén de fragmentos. El proceso de optimización que usa Desduplicación de datos se describe con detalle en [¿Cómo funciona Desduplicación de datos?](understand.md#how-does-dedup-work) | Una vez cada hora |
 | <a id="job-info-gc"></a>Recolección de elementos no utilizados | El trabajo **Recolección de elementos no utilizados** recupera espacio en disco. Para ello, quita los fragmentos innecesarios a los que ya no hacen referencia los archivos que se han modificado o eliminado recientemente. | Todos los sábados a las 2:35 a. m. |
 | <a id="job-info-scrubbing"></a>Limpieza de integridad | El trabajo **Limpieza de integridad** identifica los daños en el almacén de fragmentos debido a errores en discos o sectores incorrectos. Cuando sea posible, Desduplicación de datos puede utilizar automáticamente las características de volumen (por ejemplo, reflejo o paridad en un volumen de Espacios de almacenamiento) para reconstruir los datos dañados. Además, Desduplicación de datos mantiene copias de seguridad de fragmentos populares a los que se hace referencia más de 100 veces en un área denominada zona activa. | Todos los sábados a las 3:35 a. m. |
 | <a id="job-info-unoptimization"></a>Desoptimización | El trabajo **Desoptimización**, que es un trabajo especial que solo se puede ejecutar manualmente, deshace la optimización realizada por la desduplicación y deshabilita Desduplicación de datos de ese volumen. | [Solo a petición](run.md#disabling-dedup) |
@@ -76,11 +77,11 @@ Desduplicación de datos usa una estrategia de procesamiento posterior para opti
 | <a id="dedup-term-file-stream"></a>Secuencia de archivos | La secuencia de archivos es el contenido principal del archivo. Esta es la parte del archivo que optimiza Desduplicación de datos. |
 | <a id="dedup-term-file-system"></a>Sistema de archivos | El sistema de archivos es la estructura de datos en disco y de software que el sistema operativo usa para almacenar archivos en medios de almacenamiento. Desduplicación de datos es compatible en volúmenes con formato NTFS. |
 | <a id="dedup-term-file-system-filter"></a>Filtro de sistema de archivos | Un filtro de sistema de archivos es un complemento que modifica el comportamiento predeterminado del sistema de archivos. Para conservar la semántica de acceso, Desduplicación de datos usa un filtro de sistema de archivos (Dedup.sys) para redirigir las lecturas a contenido optimizado completamente transparente para el usuario o aplicación que realiza la solicitud de lectura. |
-| <a id="dedup-term-optimization"></a>Optimization | Un archivo se considera optimizado (o desduplicado) por Desduplicación de datos si se ha fragmentado y sus fragmentos únicos se han almacenado en el almacén de fragmentos. |
+| <a id="dedup-term-optimization"></a>Optimización | Un archivo se considera optimizado (o desduplicado) por Desduplicación de datos si se ha fragmentado y sus fragmentos únicos se han almacenado en el almacén de fragmentos. |
 | <a id="dedup-term-in-policy"></a>Directiva de optimización | La directiva de optimización especifica los archivos que deben tenerse en cuenta para Desduplicación de datos. Por ejemplo, los archivos se pueden considerar fuera de directiva si son completamente nuevos, están abiertos, se encuentran en una ruta de acceso determinada del volumen o son de un tipo de archivo determinado. |
 | <a id="dedup-term-reparse-point"></a>Punto de repetición de análisis | Un [punto de reanálisis](/windows/win32/fileio/reparse-points) es una etiqueta especial que notifica al sistema de archivos que pase la e/s a un filtro del sistema de archivos especificado. Cuando se ha optimizado el flujo de archivos de un archivo, Desduplicación de datos reemplaza el flujo de archivos por un punto de reanálisis, lo que permite a Desduplicación de datos conservar la semántica de acceso para ese archivo. |
-| <a id="dedup-term-volume"></a>Cantidad | Un volumen es una construcción de Windows para una unidad de almacenamiento lógico que puede abarcar varios dispositivos de almacenamiento físico a través de uno o varios servidores. Desduplicación está habilitada en un volumen en función de su configuración individual. |
-| <a id="dedup-term-workload"></a>Duplica | Una carga de trabajo es una aplicación que se ejecuta en Windows Server. Las cargas de trabajo de ejemplo incluyen el servidor de archivos de uso general, Hyper-V y SQL Server. |
+| <a id="dedup-term-volume"></a>Volumen | Un volumen es una construcción de Windows para una unidad de almacenamiento lógico que puede abarcar varios dispositivos de almacenamiento físico a través de uno o varios servidores. Desduplicación está habilitada en un volumen en función de su configuración individual. |
+| <a id="dedup-term-workload"></a>Carga de trabajo | Una carga de trabajo es una aplicación que se ejecuta en Windows Server. Las cargas de trabajo de ejemplo incluyen el servidor de archivos de uso general, Hyper-V y SQL Server. |
 
 > [!Warning]
 > A menos que lo indique el personal de soporte técnico de Microsoft autorizado, no intente modificar manualmente el almacén de fragmentos. Si lo hace, podrían producirse daños en los datos o la pérdida de estos.

@@ -6,12 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 03/20/2020
 ms.topic: article
-ms.openlocfilehash: cea61a282a560645613b4444aa4de06086bb7dbe
-ms.sourcegitcommit: 03048411c07c1a1d0c8bb0b2a60c1c17c9987314
+ms.openlocfilehash: c7779522e874fb484f3801780495f96ddcead990
+ms.sourcegitcommit: 4165d4a9198228d4ec809ccd7d791f8de2aeb159
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96938995"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091279"
 ---
 # <a name="configure-browsers-to-use-windows-integrated-authentication-wia-with-ad-fs"></a>Configurar exploradores para usar la autenticación integrada de Windows (WIA) con AD FS
 
@@ -20,7 +20,7 @@ De forma predeterminada, la autenticación integrada de Windows (WIA) está habi
 AD FS 2016 ahora tiene una configuración predeterminada mejorada que permite que el explorador de Edge realice WIA y no también (incorrectamente) la detección de Windows Phone:
 
 ```
-=~Windows\s*NT.*Edge
+=~Windows\s*NT.*Edg.*
 ```
 
 Lo anterior significa que ya no tiene que configurar cadenas de agente de usuario individuales para admitir escenarios perimetrales comunes, aunque se actualicen con bastante frecuencia.

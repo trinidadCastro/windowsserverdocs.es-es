@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo delegar la administración de las unidades organizativas de cuentas y las unidades organizativas de recursos
 ms.assetid: 19feca0e-a6d0-4d27-93b0-cb44f8c26484
 title: Delegar la administración de unidades organizativas de cuentas y unidades organizativas de recursos
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: a3da376f3e84d0fb16145d6de3677896db753d26
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 3d434b1619c476d2a80003fd6c8d379d6177462e
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93069467"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97050123"
 ---
 # <a name="delegating-administration-of-account-ous-and-resource-ous"></a>Delegar la administración de unidades organizativas de cuentas y unidades organizativas de recursos
 
@@ -28,7 +29,7 @@ En la ilustración siguiente se muestra un ejemplo de una estructura de unidad o
 
 En la tabla siguiente se enumeran y describen las posibles unidades organizativas secundarias que se pueden crear en una estructura de unidad organizativa de cuentas.
 
-|OU|Finalidad|
+|OU|Propósito|
 |------|-----------|
 |Usuarios|Contiene cuentas de usuario para personal no administrativo.|
 |Cuentas de servicio|Algunos servicios que requieren acceso a los recursos de red se ejecutan como cuentas de usuario. Esta unidad organizativa se crea para separar las cuentas de usuario de servicio de las cuentas de usuario contenidas en la unidad organizativa usuarios. Además, la colocación de los distintos tipos de cuentas de usuario en unidades organizativas independientes le permite administrarlos de acuerdo con sus requisitos administrativos específicos.|

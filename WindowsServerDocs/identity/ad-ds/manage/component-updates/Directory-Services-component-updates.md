@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: actualizaciones de componentes de servicios de directorio'
 ms.assetid: 8a3cf2ae-2511-4eea-afd5-a43179a78613
 title: Actualizaciones de componentes de Servicios de directorio
 author: iainfoulds
@@ -6,18 +7,18 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 85095e1b75ca5c2ae781ffddbeed43e5bb3a3864
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: a5836f3dda9615a449c89fe130798566e7481906
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93070767"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049663"
 ---
 # <a name="directory-services-component-updates"></a>Actualizaciones de componentes de Servicios de directorio
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-**Autor** : Diego Turner, Ingeniero de soporte técnico de nivel superior con el grupo de Windows
+**Autor**: Diego Turner, Ingeniero de soporte técnico de nivel superior con el grupo de Windows
 
 > [!NOTE]
 > Este contenido está escrito por un ingeniero de asistencia al cliente de Microsoft y está destinado a los arquitectos de sistemas y administradores con experiencia que están buscando explicaciones técnicas más detalladas de características y soluciones de Windows Server 2012 R2 que los temas que se suelen proporcionar en TechNet. Sin embargo, no ha experimentado los mismos pasos de edición, por lo que parte del lenguaje puede parecer menos perfeccionado de lo que se encuentra normalmente en TechNet.
@@ -112,7 +113,7 @@ Creación de un nuevo dominio en un bosque existente
 ### <a name="adprep"></a>ADPREP
 No hay nuevas operaciones de bosque o dominio en esta versión.
 
-Estos archivos. ldf contienen cambios de esquema para el **servicio de registro de dispositivos** .
+Estos archivos. ldf contienen cambios de esquema para el **servicio de registro de dispositivos**.
 
 1.  Sch59
 
@@ -269,9 +270,9 @@ Log Record Bytes Generated: 0
 
 1.  Abra LDP.exe y conéctese y enlace con un controlador de dominio.
 
-2.  En el menú **Opciones** , haga clic en **controles** .
+2.  En el menú **Opciones** , haga clic en **controles**.
 
-3.  En el cuadro de diálogo controles, expanda el menú desplegable **cargar predefinido** , haga clic en **estadísticas de búsqueda** y, a continuación, haga clic en **Aceptar** .
+3.  En el cuadro de diálogo controles, expanda el menú desplegable **cargar predefinido** , haga clic en **estadísticas de búsqueda** y, a continuación, haga clic en **Aceptar**.
 
     ![actualizaciones de servicios de directorio](media/Directory-Services-component-updates/GTR_ADDS_Controls.gif)
 
@@ -279,7 +280,7 @@ Log Record Bytes Generated: 0
 
 5.  En el cuadro de diálogo Buscar, seleccione el botón **Opciones** .
 
-6.  Asegúrese de que la casilla **extendido** está activada en el cuadro de diálogo Opciones de búsqueda y seleccione **Aceptar** .
+6.  Asegúrese de que la casilla **extendido** está activada en el cuadro de diálogo Opciones de búsqueda y seleccione **Aceptar**.
 
     ![actualizaciones de servicios de directorio](media/Directory-Services-component-updates/GTR_ADDS_SearchOptions.gif)
 

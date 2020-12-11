@@ -1,4 +1,5 @@
 ---
+description: 'Más información sobre: copia de seguridad de CA y restauración de cmdlets de Windows PowerShell'
 ms.assetid: 7e195f5b-b194-40f3-a26d-5cf4ade5fc4d
 title: Cmdlets de Windows PowerShell para copia de seguridad y restauración de CA
 author: iainfoulds
@@ -6,18 +7,18 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 1a36e72858e5ea2ae95cc0f1730e5906b3c85866
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: f6db1828b52a2987ee3df9f1028a66db4536c0a8
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93070737"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049473"
 ---
 # <a name="ca-backup-and-restore-windows-powershell-cmdlets"></a>Cmdlets de Windows PowerShell para copia de seguridad y restauración de CA
 
 > Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 >
-> **Autor** : Diego Turner, Ingeniero de soporte técnico de nivel superior con el grupo de Windows
+> **Autor**: Diego Turner, Ingeniero de soporte técnico de nivel superior con el grupo de Windows
 >
 > [!NOTE]
 > Este contenido está escrito por un ingeniero de asistencia al cliente de Microsoft y está destinado a los arquitectos de sistemas y administradores con experiencia que están buscando explicaciones técnicas más detalladas de características y soluciones de Windows Server 2012 R2 que los temas que se suelen proporcionar en TechNet. Sin embargo, no ha experimentado los mismos pasos de edición, por lo que parte del lenguaje puede parecer menos perfeccionado de lo que se encuentra normalmente en TechNet.
@@ -36,8 +37,8 @@ El módulo ADCSAdministration de Windows PowerShell se presentó en Windows Serv
 
 |Arguments: se requieren argumentos en **negrita**|Descripción|
 |------------------------------------------------|---------------|
-|**-Path**|-String-Location para guardar la copia de seguridad<br />-Este es el único parámetro sin nombre<br />-parámetro posicional<p>**Ejemplo** :<p>Backup-CARoleService.-Path c:\adcsbackup1<p>Backup-CARoleService c:\adcsbackup2|
-|-KeyOnly|-Hacer una copia de seguridad del certificado de CA sin la base de datos<p>**Ejemplo** :<p>Backup-CARoleService c:\adcsbackup3-KeyOnly|
+|**-Path**|-String-Location para guardar la copia de seguridad<br />-Este es el único parámetro sin nombre<br />-parámetro posicional<p>**Ejemplo**:<p>Backup-CARoleService.-Path c:\adcsbackup1<p>Backup-CARoleService c:\adcsbackup2|
+|-KeyOnly|-Hacer una copia de seguridad del certificado de CA sin la base de datos<p>**Ejemplo**:<p>Backup-CARoleService c:\adcsbackup3-KeyOnly|
 |-Password|: Especifica la contraseña para proteger los certificados y las claves privadas de la entidad de certificación.<br />-Debe ser una cadena segura<br />-No es válido con el parámetro-DatabaseOnly<p>Ejemplo:<p>Backup-CARoleService c:\adcsbackup4-Password (Read-host-prompt "Password:"-AsSecureString)<p>Backup-CARoleService c:\adcsbackup5-Password (ConvertTo-SecureString "Pa55w0rd!" -AsPlainText-Force)|
 |-DatabaseOnly|-Hacer una copia de seguridad de la base de datos sin el certificado de CA<p>Backup-CARoleService c:\adcsbackup6-DatabaseOnly|
 |-Force|1. permite sobrescribir la copia de seguridad que existe en la ubicación especificada en el parámetro-Path.<p>Backup-CARoleService c:\adcsbackup1-Force|
@@ -66,9 +67,9 @@ Backup-CARoleService c:\adcsbackup5 -Password (ConvertTo-SecureString "Pa55w0rd!
 
 |Arguments: se requieren argumentos en **negrita**|Descripción|
 |------------------------------------------------|---------------|
-|**-Path**|-Cadena: ubicación de la que se va a restaurar la copia de seguridad<br />-Este es el único parámetro sin nombre<br />-parámetro posicional<p>**Ejemplo** :<p>Restore-CARoleService.-Path c:\adcsbackup1-Force<p>Restore-CARoleService c:\adcsbackup2-Force|
-|-KeyOnly|-Restaurar el certificado de la entidad de certificación sin la base de datos<br />-Se debe especificar si la copia de seguridad se realizó con la opción-KeyOnly<p>**Ejemplo** :<p>Restore-CARoleService c:\adcsbackup3-KeyOnly-Force|
-|-Password|: Especifica la contraseña de los certificados y las claves privadas de la entidad de certificación.<br />-Debe ser una cadena segura<p>**Ejemplo** :<p>Restore-CARoleService c:\adcsbackup4-Password (Read-host-prompt "Password:"-AsSecureString)-Force<p>Restore-CARoleService c:\adcsbackup5-Password (ConvertTo-SecureString "Pa55w0rd!" -AsPlainText-Force)-Force|
+|**-Path**|-Cadena: ubicación de la que se va a restaurar la copia de seguridad<br />-Este es el único parámetro sin nombre<br />-parámetro posicional<p>**Ejemplo**:<p>Restore-CARoleService.-Path c:\adcsbackup1-Force<p>Restore-CARoleService c:\adcsbackup2-Force|
+|-KeyOnly|-Restaurar el certificado de la entidad de certificación sin la base de datos<br />-Se debe especificar si la copia de seguridad se realizó con la opción-KeyOnly<p>**Ejemplo**:<p>Restore-CARoleService c:\adcsbackup3-KeyOnly-Force|
+|-Password|: Especifica la contraseña de los certificados y las claves privadas de la entidad de certificación.<br />-Debe ser una cadena segura<p>**Ejemplo**:<p>Restore-CARoleService c:\adcsbackup4-Password (Read-host-prompt "Password:"-AsSecureString)-Force<p>Restore-CARoleService c:\adcsbackup5-Password (ConvertTo-SecureString "Pa55w0rd!" -AsPlainText-Force)-Force|
 |-DatabaseOnly|-Restaurar la base de datos sin el certificado de CA<p>Restore-CARoleService c:\adcsbackup6-DatabaseOnly|
 |-Force|: Permite sobrescribir las claves existentes<br />-Es un parámetro opcional, pero al restaurar en contexto, es probable que sea necesario.<p>Restore-CARoleService c:\adcsbackup1-Force|
 

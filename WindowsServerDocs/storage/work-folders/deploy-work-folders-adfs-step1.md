@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de cómo implementar carpetas de trabajo con AD FS y el proxy de aplicación web: paso 1, configurar AD FS'
 title: 'Implementar carpetas de trabajo con AD FS y proxy de aplicación web: paso 1, configurar AD FS'
 ms.topic: article
 manager: klaasl
@@ -6,12 +7,12 @@ ms.author: jeffpatt
 author: JeffPatt24
 ms.date: 10/18/2018
 ms.assetid: 938cdda2-f17e-4964-9218-f5868fd96735
-ms.openlocfilehash: f9cb2a47b4478e440b6f9491358a2de4822912cb
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 0cb9e88455a6c7c1b3d917a8ad839d7f7217a6a3
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87965842"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048583"
 ---
 # <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-1-set-up-ad-fs"></a>Implementar carpetas de trabajo con AD FS y proxy de aplicación web: paso 1, configurar AD FS
 
@@ -107,7 +108,7 @@ Cambie la dirección IP del servidor a una dirección IP estática. En el ejempl
 ## <a name="install-the-ad-fs-role-service"></a>Instalación del servicio de rol de AD FS
 Para instalar AD FS, siga estos pasos:
 
-1.  Inicie sesión en la máquina física o virtual en la que va a instalar AD FS, Abra **Administrador del servidor**e inicie el Asistente para agregar roles y características.
+1.  Inicie sesión en la máquina física o virtual en la que va a instalar AD FS, Abra **Administrador del servidor** e inicie el Asistente para agregar roles y características.
 
 2.  En la página **roles de servidor** , seleccione el rol de **servicios de Federación de Active Directory (AD FS)** y, a continuación, haga clic en **siguiente**.
 
@@ -141,9 +142,9 @@ Para configurar AD FS mediante Administrador del servidor, siga estos pasos:
     > [!NOTE]
     > El nombre del Servicio de federación no debe usar el nombre de un servidor existente en el entorno. Si usa el nombre de un servidor existente, se producirá un error en la instalación de AD FS y debe reiniciarse.
 
-6.  En la página **especificar cuenta de servicio** , escriba el nombre que desea usar para la cuenta de servicio administrada. En el ejemplo de prueba, seleccione **crear una cuenta de servicio administrada de grupo**y, en **nombre de cuenta**, escriba **ADFSService**. Haga clic en **Next**.
+6.  En la página **especificar cuenta de servicio** , escriba el nombre que desea usar para la cuenta de servicio administrada. En el ejemplo de prueba, seleccione **crear una cuenta de servicio administrada de grupo** y, en **nombre de cuenta**, escriba **ADFSService**. Haga clic en **Next**.
 
-7.  En la página **especificar base de datos de configuración** , seleccione **crear una base de datos en este servidor con Windows Internal Database**y haga clic en **siguiente**.
+7.  En la página **especificar base de datos de configuración** , seleccione **crear una base de datos en este servidor con Windows Internal Database** y haga clic en **siguiente**.
 
 8.  La página **revisar opciones** muestra una visión general de las opciones que ha seleccionado. Haga clic en **Next**.
 
@@ -175,7 +176,7 @@ Después de configurar AD FS, debe configurar una granja de AD FS con la cuenta 
 Para configurar una granja de AD FS:
 
 ```powershell
-$cert = Get-ChildItem CERT:\LocalMachine\My |where {$_.Subject -match blueadfs.contoso.com} | sort $_.NotAfter -Descending | select -first 1 
+$cert = Get-ChildItem CERT:\LocalMachine\My |where {$_.Subject -match blueadfs.contoso.com} | sort $_.NotAfter -Descending | select -first 1 
 $thumbprint = $cert.Thumbprint
 Install-ADFSFarm -CertificateThumbprint $thumbprint -FederationServiceDisplayName "Contoso Corporation" –FederationServiceName blueadfs.contoso.com -GroupServiceAccountIdentifier contoso\ADFSService$ -OverwriteConfiguration -ErrorAction Stop
 ```

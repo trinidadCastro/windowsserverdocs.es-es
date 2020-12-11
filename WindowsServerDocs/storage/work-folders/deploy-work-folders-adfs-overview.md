@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de cómo implementar carpetas de trabajo con AD FS y proxy de aplicación web: información general'
 title: Información general sobre la implementación de carpetas de trabajo con AD FS y proxy de aplicación Web
 ms.topic: article
 ms.assetid: ea19f0f0-6cc0-4322-b387-c0873f7795ad
@@ -6,12 +7,12 @@ manager: klaasl
 ms.author: jeffpatt
 author: JeffPatt24
 ms.date: 4/5/2017
-ms.openlocfilehash: 386f7b4ad2646b09b06c98321385143d09483160
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 0c0b913d2b896e102c221217cb85b233110f6e5f
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87965982"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048603"
 ---
 # <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-overview"></a>Implementar carpetas de trabajo con AD FS y proxy de aplicación web: información general
 
@@ -30,7 +31,7 @@ En estos temas se proporciona lo siguiente:
 
 -   Instrucciones paso a paso para configurar e implementar carpetas de trabajo con AD FS y proxy de aplicación web a través de la interfaz de usuario de Windows Server. Las instrucciones describen cómo configurar un entorno de prueba simple con certificados autofirmados. Después puede usar el ejemplo de prueba como guía para ayudarle a crear un entorno de producción que utiliza certificados de confianza pública.
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerrequisitos
 Para seguir los procedimientos y ejemplos de estos temas, debe tener preparados los siguientes componentes:
 
 -   Un Active Directory® bosque de servicios de dominio con extensiones de esquema en Windows Server 2012 R2 para admitir la referencia automática de equipos y dispositivos al servidor de archivos adecuado cuando se usan varios servidores de archivos. Es preferible que DNS esté habilitado en el bosque, pero esto no es necesario.

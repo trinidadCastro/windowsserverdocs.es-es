@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: reconocimiento de dominios de error'
 ms.assetid: 56fc7f80-9558-467e-a6e9-a04c9abbee33
 title: Reconocimiento de dominio de error
 ms.author: cosdar
@@ -6,12 +7,12 @@ manager: eldenc
 ms.topic: article
 author: cosmosdarwin
 ms.date: 09/16/2016
-ms.openlocfilehash: 8b54c2ee9f6c1b47d99e8d7329749aedda7d3a35
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 5f0c3df62ec7385a3402a8b71b8f50d4a7b359a2
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87992932"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048663"
 ---
 # <a name="fault-domain-awareness"></a>Reconocimiento de dominio de error
 

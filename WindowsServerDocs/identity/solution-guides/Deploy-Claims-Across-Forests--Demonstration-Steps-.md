@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo implementar notificaciones entre bosques (pasos de demostración)
 ms.assetid: 846c3680-b321-47da-8302-18472be42421
 title: Implementación de notificaciones entre bosques (pasos de demostración)
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 828b7256854f9d2fd6d58567c773d4abc288cd0a
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 16f175baade8cffb16225ef195edf425762e839b
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952877"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048523"
 ---
 # <a name="deploy-claims-across-forests-demonstration-steps"></a>Implementación de notificaciones entre bosques (pasos de demostración)
 
@@ -100,7 +101,7 @@ En este paso, se aplica la Directiva de transformación de notificaciones recié
 
 ##### <a name="to-apply-the-claims-transformation-policy"></a>Para aplicar la Directiva de transformación de notificaciones
 
-1. Inicie sesión en el controlador de dominio, adatum.com como administrador con la contraseña <strong>pass@word1</strong> .
+1. Inicie sesión en el controlador de dominio, adatum.com como administrador con la contraseña  <strong>pass@word1</strong> .
 
 2. Abra un símbolo del sistema con privilegios elevados en Windows PowerShell y escriba lo siguiente:
 
@@ -168,11 +169,11 @@ A continuación se muestra una lista de casos comunes adicionales en la transfor
 
 |                                                 Escenario                                                 |                                                                                                                                                                                                                                           Directiva                                                                                                                                                                                                                                            |
 |----------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|                  Permitir que todas las notificaciones que proceden de Adatum pasen a contoso Adatum                  |                                                          Codifica <br />New-ADClaimTransformPolicy\`<br /> -Description: "Directiva de transformación de notificaciones para permitir todas las notificaciones"\`<br />-Name: "AllowAllClaimsPolicy"\`<br />-AllowAll\`<br />-Server:"contoso. com"\`<br />Set-ADClaimTransformLink\`<br />-Identity:"adatum. com"\`<br />-Policy: "AllowAllClaimsPolicy"\`<br />-TrustRole: confiar en\`<br />-Server:"contoso. com"\`                                                          |
-|                  Denegar todas las notificaciones que proceden de Adatum a pasar a contoso Adatum                   |                                                            Codifica <br />New-ADClaimTransformPolicy\`<br />-Description: "Directiva de transformación de notificaciones para denegar todas las notificaciones"\`<br />-Name: "DenyAllClaimsPolicy"\`<br /> -DenyAll\`<br />-Server:"contoso. com"\`<br />Set-ADClaimTransformLink\`<br />-Identity:"adatum. com"\`<br />-Policy: "DenyAllClaimsPolicy"\`<br />-TrustRole: confiar en\`<br />-Server:"contoso. com"\`                                                             |
-| Permitir todas las notificaciones que proceden de Adatum, excepto "compañía" y "Departamento", para pasar a contoso Adatum | Código <br />-New-ADClaimTransformationPolicy\`<br />-Description: "Directiva de transformación de notificaciones para permitir todas las notificaciones excepto la empresa y el Departamento"\`<br /> -Name: "AllowAllClaimsExceptCompanyAndDepartmentPolicy"\`<br />-AllowAllExcept: compañía, Departamento\`<br />-Server:"contoso. com"\`<br />Set-ADClaimTransformLink\`<br /> -Identity:"adatum. com"\`<br />-Policy: "AllowAllClaimsExceptCompanyAndDepartmentPolicy"\`<br /> -TrustRole: confiar en\`<br />-Server:"contoso. com"\` |
+|                  Permitir que todas las notificaciones que proceden de Adatum pasen a contoso Adatum                  |                                                          Codifica <br />New-ADClaimTransformPolicy \`<br /> -Description: "Directiva de transformación de notificaciones para permitir todas las notificaciones" \`<br />-Name: "AllowAllClaimsPolicy" \`<br />-AllowAll \`<br />-Server:"contoso. com" \`<br />Set-ADClaimTransformLink \`<br />-Identity:"adatum. com" \`<br />-Policy: "AllowAllClaimsPolicy" \`<br />-TrustRole: confiar en \`<br />-Server:"contoso. com" \`                                                          |
+|                  Denegar todas las notificaciones que proceden de Adatum a pasar a contoso Adatum                   |                                                            Codifica <br />New-ADClaimTransformPolicy \`<br />-Description: "Directiva de transformación de notificaciones para denegar todas las notificaciones" \`<br />-Name: "DenyAllClaimsPolicy" \`<br /> -DenyAll \`<br />-Server:"contoso. com" \`<br />Set-ADClaimTransformLink \`<br />-Identity:"adatum. com" \`<br />-Policy: "DenyAllClaimsPolicy" \`<br />-TrustRole: confiar en \`<br />-Server:"contoso. com"\`                                                             |
+| Permitir todas las notificaciones que proceden de Adatum, excepto "compañía" y "Departamento", para pasar a contoso Adatum | Código <br />-New-ADClaimTransformationPolicy \`<br />-Description: "Directiva de transformación de notificaciones para permitir todas las notificaciones excepto la empresa y el Departamento" \`<br /> -Name: "AllowAllClaimsExceptCompanyAndDepartmentPolicy" \`<br />-AllowAllExcept: compañía, Departamento \`<br />-Server:"contoso. com" \`<br />Set-ADClaimTransformLink \`<br /> -Identity:"adatum. com" \`<br />-Policy: "AllowAllClaimsExceptCompanyAndDepartmentPolicy" \`<br /> -TrustRole: confiar en \`<br />-Server:"contoso. com" \` |
 
-## <a name="see-also"></a><a name="BKMK_Links"></a>Vea también
+## <a name="see-also"></a><a name="BKMK_Links"></a>Otras referencias
 
 -   Para obtener una lista de todos los cmdlets de Windows PowerShell que están disponibles para la transformación de notificaciones, vea [Active Directory referencia de cmdlets de PowerShell](https://go.microsoft.com/fwlink/?LinkId=243150).
 

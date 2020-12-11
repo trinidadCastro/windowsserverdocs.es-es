@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: Apéndice H: protección de grupos y cuentas de administrador local'
 ms.assetid: ea015cbc-dea9-4c72-a9d8-d6c826d07608
 title: 'Apéndice H: protección de grupos y cuentas de administrador local'
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: aaf1557ccfa12c017139c29d48c6f7661abd5584
-ms.sourcegitcommit: 3181fcb69a368f38e0d66002e8bc6fd9628b1acc
+ms.openlocfilehash: e6c7a8e99f14e0c93b77cd7440d9d83029ef4eca
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96330477"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049683"
 ---
 # <a name="appendix-h-securing-local-administrator-accounts-and-groups"></a>Anexo H: protección de cuentas de administrador local y grupos
 
@@ -82,7 +83,7 @@ Para la cuenta de administrador local en cada dominio del bosque, debe configura
 
         ![protección de grupos y cuentas de administrador local](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_105.png)
 
-    3. Haga clic en **Aceptar**.
+    3. Haga clic en **OK**.
 
         > [!IMPORTANT]
         > Al agregar la cuenta de administrador a esta configuración, debe especificar si va a configurar la cuenta de administrador local o la cuenta de administrador de dominio mediante el etiquetado de las cuentas. Por ejemplo, para agregar la cuenta de administrador del dominio TAILSPINTOYS a estos derechos de denegación, debe ir a la cuenta de administrador del dominio TAILSPINTOYS, que aparecería como TAILSPINTOYS\Administrator. Si escribe **Administrador** en esta configuración de derechos de usuario en el editor de objetos de directiva de grupo, restringe la cuenta de administrador local en cada equipo al que se aplica el GPO, como se describió anteriormente.
@@ -95,7 +96,7 @@ Para la cuenta de administrador local en cada dominio del bosque, debe configura
 
         ![protección de grupos y cuentas de administrador local](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_106.png)
 
-    3. Haga clic en **Aceptar**.
+    3. Haga clic en **OK**.
 
         > [!IMPORTANT]
         > Al agregar la cuenta de administrador a esta configuración, debe especificar si va a configurar la cuenta de administrador local o la cuenta de administrador de dominio mediante el etiquetado de las cuentas. Por ejemplo, para agregar la cuenta de administrador del dominio TAILSPINTOYS a estos derechos de denegación, debe ir a la cuenta de administrador del dominio TAILSPINTOYS, que aparecería como TAILSPINTOYS\Administrator. Si escribe **Administrador** en esta configuración de derechos de usuario en el editor de objetos de directiva de grupo, restringe la cuenta de administrador local en cada equipo al que se aplica el GPO, como se describió anteriormente.
@@ -108,7 +109,7 @@ Para la cuenta de administrador local en cada dominio del bosque, debe configura
 
         ![protección de grupos y cuentas de administrador local](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_107.png)
 
-    3. Haga clic en **Aceptar**.
+    3. Haga clic en **OK**.
 
         > [!IMPORTANT]
         > Al agregar la cuenta de administrador a esta configuración, debe especificar si va a configurar la cuenta de administrador local o la cuenta de administrador de dominio mediante el etiquetado de las cuentas. Por ejemplo, para agregar la cuenta de administrador del dominio TAILSPINTOYS a estos derechos de denegación, debe ir a la cuenta de administrador del dominio TAILSPINTOYS, que aparecería como TAILSPINTOYS\Administrator. Si escribe **Administrador** en esta configuración de derechos de usuario en el editor de objetos de directiva de grupo, restringe la cuenta de administrador local en cada equipo al que se aplica el GPO, como se describió anteriormente.
@@ -191,7 +192,7 @@ Desde cualquier servidor miembro o estación de trabajo afectada por los cambios
 
 7. En el campo **programa/script** , haga clic en **examinar**, busque y seleccione el archivo por lotes creado en la sección **crear un archivo por lotes** y haga clic en **abrir**.
 
-8. Haga clic en **Aceptar**.
+8. Haga clic en **OK**.
 
 9. Haga clic en la pestaña **General**.
 
@@ -201,7 +202,7 @@ Desde cualquier servidor miembro o estación de trabajo afectada por los cambios
 
 12. Seleccione **ejecutar si el usuario ha iniciado sesión o no** y no **almacena la contraseña**. La tarea solo tendrá acceso a los recursos del equipo local.
 
-13. Haga clic en **Aceptar**.
+13. Haga clic en **OK**.
 
 14. Debe aparecer un cuadro de diálogo que solicite las credenciales de la cuenta de usuario para ejecutar la tarea.
 

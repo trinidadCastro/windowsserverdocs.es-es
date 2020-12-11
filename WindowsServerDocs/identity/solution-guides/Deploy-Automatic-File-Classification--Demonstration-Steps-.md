@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo implementar la clasificación automática de archivos (pasos de demostración)
 ms.assetid: 01988844-df02-4952-8535-c87aefd8a38a
 title: Deploy Automatic File Classification (Demonstration Steps)
 author: billmath
@@ -6,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 19c2ddbdc7ae00c32147023b2204efface9c4727
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 218fd28153631828dcb1ee076bda379de61a725b
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952887"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048563"
 ---
 # <a name="deploy-automatic-file-classification-demonstration-steps"></a>Deploy Automatic File Classification (Demonstration Steps)
 
@@ -53,7 +54,7 @@ Las propiedades de recurso Impact y Personally Identifiable Information se habil
 
 5.  Haz clic con el botón secundario en **Personally Identifiable Information** y, luego, haz clic en **Habilitar**.
 
-![guías de soluciones](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***
+![guías de soluciones ](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif) * *_<em>comandos equivalentes de Windows PowerShell</em>_* _
 
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.
 
@@ -71,7 +72,7 @@ Una regla de clasificación de contenido de cadena analiza un archivo en busca d
 
 1.  Inicia sesión en el servidor de archivos como miembro del grupo de seguridad Administradores.
 
-2.  En el símbolo del sistema de Windows PowerShell, escribe **Update-FsrmClassificationPropertyDefinition** y presiona ENTRAR. Esto hará que las definiciones de propiedades creadas en el controlador de dominio se sincronicen en el servidor de archivos.
+2.  En el símbolo del sistema de Windows PowerShell, escriba _ *Update-FsrmClassificationPropertyDefinition** y presione Entrar. Esto hará que las definiciones de propiedades creadas en el controlador de dominio se sincronicen en el servidor de archivos.
 
 3.  Abra el Administrador de recursos del servidor de archivos. En el Administrador del servidor, haz clic en **Herramientas** y, luego, en **Administrador de recursos del servidor de archivos**.
 
@@ -104,7 +105,7 @@ Una regla de clasificación de contenido de cadena analiza un archivo en busca d
 
 13. En la pestaña **Tipo de evaluación**, activa la casilla **Volver a evaluar los valores de propiedad existentes**, haz clic en **Sobrescribir el valor existente** y, luego, haz clic en **Aceptar**.
 
-![guías de soluciones](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***
+![guías de soluciones ](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif) * *_<em>comandos equivalentes de Windows PowerShell</em>_* _
 
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.
 
@@ -124,7 +125,7 @@ Una regla de clasificación de contenido de expresión regular analiza un archiv
 
 1.  Inicia sesión en el servidor de archivos como miembro del grupo de seguridad Administradores.
 
-2.  En el símbolo del sistema de Windows PowerShell, escribe **Update-FsrmClassificationPropertyDefinition** y presiona ENTRAR. Esto hará que las definiciones de propiedades creadas en el controlador de dominio se sincronicen en el servidor de archivos.
+2.  En el símbolo del sistema de Windows PowerShell, escriba _ * Update-FsrmClassificationPropertyDefinition * * y presione Entrar. Esto hará que las definiciones de propiedades creadas en el controlador de dominio se sincronicen en el servidor de archivos.
 
 3.  Abra el Administrador de recursos del servidor de archivos. En el Administrador del servidor, haz clic en **Herramientas** y, luego, en **Administrador de recursos del servidor de archivos**.
 
@@ -152,7 +153,7 @@ Una regla de clasificación de contenido de expresión regular analiza un archiv
 
 12. En la pestaña **Tipo de evaluación**, activa la casilla **Volver a evaluar los valores de propiedad existentes**, haz clic en **Sobrescribir el valor existente** y, luego, haz clic en **Aceptar**.
 
-![guías de soluciones](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***
+![guías de soluciones ](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif) * *_<em>comandos equivalentes de Windows PowerShell</em>_* _
 
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.
 
@@ -167,7 +168,7 @@ Para comprobar que los archivos están correctamente clasificados, puedes ver la
 
 1.  Ejecuta las reglas de clasificación en el servidor de archivos por medio del Administrador de recursos del servidor de archivos.
 
-    1.  Haz clic en **Administración de clasificaciones**, haz clic con el botón secundario en **Reglas de clasificación** y, luego, haz clic en **Ejecutar clasificación con todas las reglas ahora**.
+    1.  Haga clic en _ * administración de clasificaciones * *, haga clic con el botón secundario en **reglas de clasificación** y, a continuación, haga clic en **Ejecutar clasificación con todas las reglas ahora**.
 
     2.  Haz clic en la opción **Esperar a que termine la clasificación** y, luego, haz clic en **Aceptar**.
 
@@ -181,7 +182,7 @@ Para comprobar que los archivos están correctamente clasificados, puedes ver la
 
 4.  Haz clic en la pestaña **Clasificación** y confirma que el archivo está bien clasificado.
 
-## <a name="see-also"></a><a name="BKMK_Links"></a>Vea también
+## <a name="see-also"></a><a name="BKMK_Links"></a>Otras referencias
 
 -   [Escenario: Comprender los datos mediante la clasificación](Scenario--Get-Insight-into-Your-Data-by-Using-Classification.md)
 

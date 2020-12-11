@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de cómo importar un certificado de autenticación de servidor al sitio web predeterminado
 ms.assetid: e1f2ce2d-b24f-4ccd-8add-9e69419fc6c1
 title: Importar un certificado de autenticación de servidor al sitio web predeterminado
 author: billmath
@@ -6,12 +7,12 @@ manager: femila
 ms.date: 05/31/2017
 ms.topic: article
 ms.author: billmath
-ms.openlocfilehash: 94202e8dc60bc64a46f6cb7a9195b43b82bc66c9
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 390e7dcaf3277d092509a15b6c3c60363454ab7d
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87972202"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048423"
 ---
 # <a name="import-a-server-authentication-certificate-to-the-default-web-site"></a>Importar un certificado de autenticación de servidor al sitio web predeterminado
 
@@ -28,7 +29,7 @@ La pertenencia al grupo **Administradores** o equivalente en el equipo local es 
 
 ### <a name="to-import-a-server-authentication-certificate-to-the-default-web-site"></a>Para importar un certificado de autenticación de servidor al sitio web predeterminado
 
-1.  En la pantalla **Inicio** , escriba**Internet Information Services \( \) Administrador de IIS**y, a continuación, presione Entrar.
+1.  En la pantalla **Inicio** , escriba **Internet Information Services \( \) Administrador de IIS** y, a continuación, presione Entrar.
 
 2.  En el árbol de consola, haz clic en **nombreDeEquipo**.
 

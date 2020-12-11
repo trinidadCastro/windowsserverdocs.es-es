@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: autonomía frente a aislamiento'
 ms.assetid: ef63d40c-a262-4a18-938d-b95c10680c0b
 title: Autonomía frente a aislamiento
 author: iainfoulds
@@ -6,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 4e422ce523a5433cafaad2b0bbaf45da154b6fa8
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 5e15b57384b006f741ed936e202409f3ee22541f
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93071157"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97050033"
 ---
 # <a name="autonomy-vs-isolation"></a>Autonomía frente a aislamiento
 
@@ -19,17 +20,17 @@ ms.locfileid: "93071157"
 
 Puede diseñar la estructura lógica de Active Directory para lograr una de las siguientes acciones:
 
--   **Autonomía** . Implica un control independiente pero no exclusivo de un recurso. Al conseguir autonomía, los administradores tienen la autoridad necesaria para administrar los recursos de forma independiente. sin embargo, existen administradores con mayor autoridad que también tienen control sobre esos recursos y pueden tomar el control si es necesario. Puede diseñar la estructura lógica de Active Directory para lograr los siguientes tipos de autonomía:
+-   **Autonomía**. Implica un control independiente pero no exclusivo de un recurso. Al conseguir autonomía, los administradores tienen la autoridad necesaria para administrar los recursos de forma independiente. sin embargo, existen administradores con mayor autoridad que también tienen control sobre esos recursos y pueden tomar el control si es necesario. Puede diseñar la estructura lógica de Active Directory para lograr los siguientes tipos de autonomía:
 
-    -   **Autonomía del servicio** . Este tipo de autonomía implica el control de toda o parte de la administración de servicios.
+    -   **Autonomía del servicio**. Este tipo de autonomía implica el control de toda o parte de la administración de servicios.
 
     -   **Autonomía** de los datos. Este tipo de autonomía implica el control sobre todos o parte de los datos almacenados en el directorio o en los equipos miembros Unidos al directorio.
 
--   **Aislamiento** . Implica el control independiente y exclusivo de un recurso. Al lograr el aislamiento, los administradores tienen la autoridad para administrar un recurso de forma independiente y ningún otro administrador puede quitar el control del recurso. Puede diseñar la estructura lógica de Active Directory para lograr los siguientes tipos de aislamiento:
+-   **Aislamiento**. Implica el control independiente y exclusivo de un recurso. Al lograr el aislamiento, los administradores tienen la autoridad para administrar un recurso de forma independiente y ningún otro administrador puede quitar el control del recurso. Puede diseñar la estructura lógica de Active Directory para lograr los siguientes tipos de aislamiento:
 
-    -   **Aislamiento del servicio** . Impide que los administradores (distintos de los administradores designados específicamente para controlar administración de servicios) controlen o interfieran con la administración de servicios.
+    -   **Aislamiento del servicio**. Impide que los administradores (distintos de los administradores designados específicamente para controlar administración de servicios) controlen o interfieran con la administración de servicios.
 
-    -   **Aislamiento de datos** . Impide que los administradores (que no sean los administradores designados específicamente para controlar o ver datos) controlen o vean un subconjunto de datos en el directorio o en los equipos miembro Unidos al directorio.
+    -   **Aislamiento de datos**. Impide que los administradores (que no sean los administradores designados específicamente para controlar o ver datos) controlen o vean un subconjunto de datos en el directorio o en los equipos miembro Unidos al directorio.
 
 Los administradores que solo requieren autonomía aceptan que otros administradores que tienen una autoridad administrativa igual o superior tengan un mayor control sobre el servicio o la administración de datos. Los administradores que requieren aislamiento tienen control exclusivo sobre el servicio o la administración de datos. Crear un diseño para lograr autonomía es generalmente más económico que crear un diseño para lograr el aislamiento.
 

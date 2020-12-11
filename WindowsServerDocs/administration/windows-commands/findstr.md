@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 65223132d4577a5e90929073cb964851f1ab67ce
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 5fe0f2a5dfd51f3b7689db7b3ad6a38938428a01
+ms.sourcegitcommit: 4165d4a9198228d4ec809ccd7d791f8de2aeb159
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89637551"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091269"
 ---
 # <a name="findstr"></a>findstr
 
@@ -31,7 +31,7 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<file>] 
 | /b | Coincide con el patrón de texto si está al principio de una línea. |
 | /e | Coincide con el patrón de texto si está al final de una línea. |
 | /l | Procesa literalmente las cadenas de búsqueda. |
-| /r | Procesa las cadenas de búsqueda como expresiones regulares. Ésta es la configuración predeterminada. |
+| /r | Procesa las cadenas de búsqueda como expresiones regulares. Esta es la configuración predeterminada. |
 | /s | Busca en el directorio actual y en todos los subdirectorios. |
 | /i | Omite el uso de mayúsculas y minúsculas en los caracteres al buscar la cadena. |
 | /x | Imprime las líneas que coinciden exactamente. |
@@ -46,11 +46,11 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<file>] 
 | /g`<file>` | Obtiene las cadenas de búsqueda del archivo especificado. |
 | /d.`<dirlist>` | Busca la lista de directorios especificada. Cada directorio debe estar separado por un punto y coma (;), por ejemplo `dir1;dir2;dir3` . |
 | /a`<colorattribute>` | Especifica los atributos de color con dos dígitos hexadecimales. Escriba `color /?` para obtener información adicional. |
-| `<strings>` | Especifica el texto que se va a buscar en el *nombre de archivo*. Necesario. |
-| `[\<drive>:][<path>]<filename>[ ...]` | Especifica la ubicación y el archivo o los archivos que se van a buscar. Se requiere al menos un nombre de archivo. |
+| `<strings>` | Especifica el texto que se va a buscar en el *nombre de archivo*. Obligatorio. |
+| `[\<drive>:][<path>]<filename>[...]` | Especifica la ubicación y el archivo o los archivos que se van a buscar. Se requiere al menos un nombre de archivo. |
 | /? | Muestra la Ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - Todas las opciones de línea de comandos de **Findstr** deben preceder a las *cadenas* y el *nombre de archivo* en la cadena de comandos.
 
@@ -62,18 +62,18 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<file>] 
 
     Los metacaracteres aceptados son:
 
-    | Metacarácter | Value |
+    | Metacarácter | Valor |
     | -------------- | ----- |
-    | `.` | Carácter **comodín** : cualquier carácter |
-    | `*` | **REPEAT** : cero o más apariciones del carácter o la clase anterior. |
-    | `^` | **Posición de la línea inicial** : Inicio de la línea. |
-    | `$` | **Posición de línea final** : final de la línea. |
-    | `[class]` | **Clase de caracteres** : cualquier carácter de un conjunto. |
-    | `[^class]` | **Clase inversa** : cualquier carácter que no esté en un conjunto. |
-    | `[x-y]` | **Range** : cualquier carácter del intervalo especificado. |
-    | `\x` | **Escape** : uso literal de un metacarácter. |
-    | `<string` | **Posición de la palabra inicial** : Inicio de la palabra. |
-    | `string>` | **Posición de palabra final** de la palabra. |
+    | `.`            | Carácter **comodín** : cualquier carácter |
+    | `*`            | **REPEAT** : cero o más apariciones del carácter o la clase anterior. |
+    | `^`            | **Posición de la línea inicial** : Inicio de la línea. |
+    | `$`            | **Posición de línea final** : final de la línea. |
+    | `[class]`      | **Clase de caracteres** : cualquier carácter de un conjunto. |
+    | `[^class]`     | **Clase inversa** : cualquier carácter que no esté en un conjunto. |
+    | `[x-y]`        | **Range** : cualquier carácter del intervalo especificado. |
+    | `\x`           | **Escape** : uso literal de un metacarácter. |
+    | `\<string`     | **Posición de la palabra inicial** : Inicio de la palabra. |
+    | `string\>`     | **Posición de palabra final** de la palabra. |
 
     Los caracteres especiales de la sintaxis de expresiones regulares tienen la máxima eficacia cuando se usan juntos. Por ejemplo, use la combinación del carácter comodín ( `.` ) y el carácter REPEAT ( `*` ) para que coincida con cualquier cadena de caracteres: `.*`
 
@@ -97,7 +97,7 @@ Para buscar *Hello* en el archivo *x. y*, escriba:
 findstr /c:hello there x.y
 ```
 
-Para buscar todas las apariciones de la palabra *Windows* (con una letra mayúscula inicial W) en el *proposal.txt*de archivo, escriba:
+Para buscar todas las apariciones de la palabra *Windows* (con una letra mayúscula inicial W) en el *proposal.txt* de archivo, escriba:
 
 ```
 findstr Windows proposal.txt
@@ -115,7 +115,7 @@ Para buscar todas las apariciones de líneas que comienzan por *para* y van prec
 findstr /b /n /r /c:^ *FOR *.bas
 ```
 
-Para enumerar los archivos exactos que desea buscar en un archivo de texto, use los criterios de búsqueda del archivo *stringlist.txt*, para buscar los archivos enumerados en *filelist.txt*y, a continuación, para almacenar los resultados en el archivo *Results. out*, escriba:
+Para enumerar los archivos exactos que desea buscar en un archivo de texto, use los criterios de búsqueda del archivo *stringlist.txt*, para buscar los archivos enumerados en *filelist.txt* y, a continuación, para almacenar los resultados en el archivo *Results. out*, escriba:
 
 ```
 findstr /g:stringlist.txt /f:filelist.txt > results.out
@@ -124,13 +124,13 @@ findstr /g:stringlist.txt /f:filelist.txt > results.out
 Para enumerar todos los archivos que contengan la palabra *Computer* en el directorio actual y todos los subdirectorios, independientemente del caso, escriba:
 
 ```
-findstr /s /i /m <computer> *.*
+findstr /s /i /m \<computer\> *.*
 ```
 
 Para enumerar todos los archivos que contengan la palabra Computer y cualquier otra palabra que comience por COMP (como complemento y competir), escriba:
 
 ```
-findstr /s /i /m <comp.* *.*
+findstr /s /i /m \<comp.* *.*
 ```
 
 ## <a name="additional-references"></a>Referencias adicionales

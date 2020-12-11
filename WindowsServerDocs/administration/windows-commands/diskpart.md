@@ -5,12 +5,12 @@ ms.topic: reference
 author: jasongerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 1d2f4cc814dad4313e7eb0925b60f44ec0348a30
-ms.sourcegitcommit: de207e887575757f3389ccf940c2e0ad2dc70bd3
+ms.openlocfilehash: 3bdb980754fedefebddfb33b998b37b621c3505a
+ms.sourcegitcommit: 4165d4a9198228d4ec809ccd7d791f8de2aeb159
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94617205"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091289"
 ---
 # <a name="diskpart"></a>diskpart
 
@@ -42,7 +42,7 @@ Algunos comandos cambian automáticamente el foco. Por ejemplo, al crear una nue
 
 Solo puede dar el foco a una partición en el disco seleccionado. Después de que una partición tenga el foco, el volumen relacionado (si existe) también tiene el foco. Una vez que un volumen tiene el foco, el disco y la partición relacionados también tienen el foco si el volumen se asigna a una única partición específica. Si no es así, se perderá el foco en el disco y la partición.
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>Sintaxis
 
 Para iniciar el intérprete de comandos Diskpart, en el símbolo del sistema, escriba:
 
@@ -57,7 +57,7 @@ diskpart <parameter>
 
 Puede ejecutar los siguientes comandos desde el intérprete de comandos de Diskpart:
 
-| Get-Help | Description |
+| Comando | Descripción |
 | ------- | ----------- |
 | [active](active.md) | Marca la partición del disco con el foco, como activa. |
 | [add](add.md) | Refleja el volumen simple que tiene el foco en el disco especificado. |
@@ -80,9 +80,9 @@ Puede ejecutar los siguientes comandos desde el intérprete de comandos de Diskp
 | [format](format.md) | Formatea un disco para aceptar archivos de Windows. |
 | [gpt](gpt.md) | Asigna los atributos GPT a la partición que tiene el foco en discos básicos de tabla de particiones GUID (GPT). |
 | [help](help.md) | Muestra una lista de los comandos disponibles o información de ayuda detallada sobre un comando especificado. |
-| [import](import.md) | Importa un grupo de discos externos en el grupo de discos del equipo local. |
+| [import](import_1.md) | Importa un grupo de discos externos en el grupo de discos del equipo local. |
 | [inactive](inactive.md) | Marca la partición del sistema o la partición de arranque con el foco como inactivo en discos básicos de registro de arranque maestro (MBR). |
-| [lista](list.md) | Muestra una lista de discos, de particiones en un disco, de volúmenes de un disco o de discos duros virtuales (VHD). |
+| [list](list.md) | Muestra una lista de discos, de particiones en un disco, de volúmenes de un disco o de discos duros virtuales (VHD). |
 | [merge vdisk](merge-vdisk.md) | Combina un disco duro virtual (VHD) de diferenciación con su VHD primario correspondiente. |
 | [offline](offline.md) | Toma un disco o volumen en línea en el estado sin conexión. |
 | [online](online.md) | Toma un disco o volumen sin conexión al estado en línea. |

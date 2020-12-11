@@ -1,4 +1,5 @@
 ---
+description: Más información acerca de las novedades de Active Directory Domain Services para Windows Server 2016
 ms.assetid: 6a852428-c1ec-4703-b3b3-a4bfdf8cbb9d
 title: Novedades de Active Directory Domain Services en Windows Server 2016
 ms.author: joflore
@@ -6,12 +7,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/07/2018
 ms.topic: article
-ms.openlocfilehash: 727e3dde99c0c2e7d4aa8999a91a2b913d9a314b
-ms.sourcegitcommit: 1808ce451b9e37ec1110bd684e1b0d3812fc77e0
+ms.openlocfilehash: d13e4f64d0e73d9066bf0c614e8c653b94a6db1e
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91772405"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97050063"
 ---
 # <a name="whats-new-in-active-directory-domain-services-for-windows-server-2016"></a>Novedades de Active Directory Domain Services para Windows Server 2016
 
@@ -60,7 +61,7 @@ Azure Active Directory join mejora las experiencias de identidad de los clientes
 
 Ventajas:
 
-- **Disponibilidad de la configuración moderna** en dispositivos Windows de la empresa. Los servicios de oxígeno ya no requieren un cuenta de Microsoft personal: ahora se ejecutan en las cuentas de trabajo existentes de los usuarios para garantizar el cumplimiento. Los servicios de oxígeno funcionarán en equipos Unidos a un dominio de Windows local y equipos y dispositivos que están "Unidos" a su inquilino de Azure AD ("dominio en la nube"). Esta configuración incluye lo siguiente:
+- **Disponibilidad de la configuración moderna** en dispositivos Windows de la empresa. Los servicios de oxígeno ya no requieren un cuenta de Microsoft personal: ahora se ejecutan en las cuentas de trabajo existentes de los usuarios para garantizar el cumplimiento. Los servicios de oxígeno funcionarán en equipos Unidos a un dominio de Windows local y equipos y dispositivos que están "Unidos" a su inquilino de Azure AD ("dominio en la nube"). Esta configuración incluye:
 
    - Itinerancia o personalización, configuración de accesibilidad y credenciales
    - Copias de seguridad y restauración

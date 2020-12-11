@@ -1,4 +1,5 @@
 ---
+description: 'Más información acerca de: Apéndice L: eventos para supervisar'
 ms.assetid: 99a68050-8d19-4c58-ad86-e08a3dcdb4f7
 title: 'Apéndice L: eventos para supervisar'
 ms.author: daveba
@@ -6,12 +7,12 @@ author: iainfoulds
 manager: daveba
 ms.date: 07/30/2018
 ms.topic: article
-ms.openlocfilehash: b1d359ad760e04b75f28453694fc42235af54423
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 5a5c4431a6c9bab32a3b5b74dcf1f99e3e881dc3
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93071177"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97050053"
 ---
 # <a name="appendix-l-events-to-monitor"></a>Anexo L: eventos para supervisar
 
