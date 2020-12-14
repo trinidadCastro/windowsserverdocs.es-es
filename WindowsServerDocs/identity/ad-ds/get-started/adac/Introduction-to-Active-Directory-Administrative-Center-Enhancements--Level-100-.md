@@ -7,12 +7,12 @@ author: iainfoulds
 manager: daveba
 ms.date: 08/07/2018
 ms.topic: article
-ms.openlocfilehash: 884710e1cf327940937d627fbbbc124bb99baca9
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 901078ec17ce744fb4eb4a2bb3a29f1d79718060
+ms.sourcegitcommit: 7c0794e257f602bd71af5eb9a11b8a03d2b9adfd
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97045833"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97390333"
 ---
 # <a name="introduction-to-active-directory-administrative-center-enhancements-level-100"></a>Introduction to Active Directory Administrative Center Enhancements (Level 100)
 
@@ -151,7 +151,7 @@ Add-ADGroupMember -Identity group1 -Member test1
 #### <a name="to-create-an-organizational-unit"></a>Para crear una unidad organizativa
 
 1. Haga clic con el botón derecho en el icono de Windows PowerShell, haga clic en _ *Ejecutar como administrador** y escriba **dsac.exe** para abrir ADAC.
-2. Haga clic en **administrar**, en **agregar nodos de navegación** y seleccione el dominio de destino adecuado en el cuadro de diálogo **agregar nodos de navegación** y, a continuación, haga clic en * * Aceptar.
+2. Haga clic en **Administrar**, en **Agregar nodos de navegación** y seleccione el dominio de destino apropiado en el cuadro de diálogo **Agregar nodos de navegación** y, a continuación, haga clic en **Aceptar**.
 3. En el panel de **tareas**, haga clic en **Nuevo** y, a continuación, haga clic en **Unidad organizativa**.
 4. Escriba la siguiente información en **Unidad organizativa** y haga clic en **Aceptar**:
 
@@ -356,7 +356,7 @@ En el siguiente procedimiento, editará la directiva de contraseña específica 
 
 5. En **Exigir historial de contraseñas**, cambie el valor de **Número de contraseñas recordadas** a **30**.
 
-6. Haga clic en **OK**.
+6. Haga clic en **Aceptar**.
 
 ![Introducción al centro de administración de ad ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>comandos equivalentes de Windows PowerShell</em>_* _
 
