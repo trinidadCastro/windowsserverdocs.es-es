@@ -1,15 +1,16 @@
 ---
+description: 'Más información sobre: Servicio de instantáneas de volumen'
 title: Servicio de instantáneas de volumen
 ms.date: 01/30/2019
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 0a8015096d22cfb384815f1e5b8c5b9c9c248922
-ms.sourcegitcommit: 7499749ce7baaf58a523cae2dd46737d635475ce
+ms.openlocfilehash: fce81dbff86ec06d69a9a684a5f418866fe485c6
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93043913"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97046043"
 ---
 # <a name="volume-shadow-copy-service"></a>Servicio de instantáneas de volumen
 
@@ -49,13 +50,13 @@ Entre las características y aplicaciones de Windows que usan VSS, se incluyen l
 
 Una solución completa de VSS requiere todos los elementos básicos a continuación:
 
-**Servicio VSS** : parte del sistema operativo Windows que garantiza que los demás componentes pueden comunicarse entre sí correctamente y funcionar juntos.
+**Servicio VSS**: parte del sistema operativo Windows que garantiza que los demás componentes pueden comunicarse entre sí correctamente y funcionar juntos.
 
-**Solicitante de VSS** : software que solicita realmente la creación de instantáneas (u otras operaciones de alto nivel, como su importación o eliminación). Normalmente, se trata de la aplicación de copia de seguridad. La utilidad Copias de seguridad de Windows Server y la aplicación System Center Data Protection Manager son solicitantes de VSS. Entre los solicitantes de VSS que no son de Microsoft® se incluye casi todo el software de copia de seguridad que se ejecuta en Windows.
+**Solicitante de VSS**: software que solicita realmente la creación de instantáneas (u otras operaciones de alto nivel, como su importación o eliminación). Normalmente, se trata de la aplicación de copia de seguridad. La utilidad Copias de seguridad de Windows Server y la aplicación System Center Data Protection Manager son solicitantes de VSS. Entre los solicitantes de VSS que no son de Microsoft® se incluye casi todo el software de copia de seguridad que se ejecuta en Windows.
 
-**VSS Writer** : componente que garantiza que existe un conjunto de datos coherente para realizar la copia de seguridad. Normalmente, se proporciona como parte de una aplicación de línea de negocio, como SQL Server® o Exchange Server. Las instancias de VSS Writer para varios componentes de Windows, como el registro, se incluyen con el sistema operativo Windows. Las instancias de VSS Writer que no son de Microsoft se incluyen con muchas aplicaciones para Windows que necesitan garantizar la coherencia de los datos durante la copia de seguridad.
+**VSS Writer**: componente que garantiza que existe un conjunto de datos coherente para realizar la copia de seguridad. Normalmente, se proporciona como parte de una aplicación de línea de negocio, como SQL Server® o Exchange Server. Las instancias de VSS Writer para varios componentes de Windows, como el registro, se incluyen con el sistema operativo Windows. Las instancias de VSS Writer que no son de Microsoft se incluyen con muchas aplicaciones para Windows que necesitan garantizar la coherencia de los datos durante la copia de seguridad.
 
-**Proveedor de VSS** : componente que crea y mantiene las instantáneas. Puede tener lugar en el software o en el hardware. El sistema operativo Windows incluye un proveedor de VSS que usa la operación de copia en escritura. Si utilizas una red de área de almacenamiento (SAN), es importante que instales el proveedor de hardware de VSS para la SAN, si se proporciona uno. Un proveedor de hardware retira la tarea de creación y mantenimiento de una instantánea del sistema operativo host.
+**Proveedor de VSS**: componente que crea y mantiene las instantáneas. Puede tener lugar en el software o en el hardware. El sistema operativo Windows incluye un proveedor de VSS que usa la operación de copia en escritura. Si utilizas una red de área de almacenamiento (SAN), es importante que instales el proveedor de hardware de VSS para la SAN, si se proporciona uno. Un proveedor de hardware retira la tarea de creación y mantenimiento de una instantánea del sistema operativo host.
 
 En el diagrama siguiente se ilustra cómo el servicio VSS se coordina con solicitantes, escritores y proveedores para crear la instantánea de un volumen.
 
@@ -103,11 +104,11 @@ Para crear una instantánea, el solicitante, el escritor y el proveedor realizan
 
 Un proveedor de instantáneas de hardware o software usa alguno de los métodos siguientes para crear una instantánea:
 
-**Copia completa** : este método realiza una copia completa (denominada "clon") del volumen original en un momento específico. Esta copia es de solo lectura.
+**Copia completa**: este método realiza una copia completa (denominada "clon") del volumen original en un momento específico. Esta copia es de solo lectura.
 
-**Copia en escritura** : este método no copia el volumen original. En su lugar, realiza una copia diferencial al copiar todos los cambios (solicitudes de E/S de escritura completadas) que se realizan en el volumen después de un momento específico.
+**Copia en escritura**: este método no copia el volumen original. En su lugar, realiza una copia diferencial al copiar todos los cambios (solicitudes de E/S de escritura completadas) que se realizan en el volumen después de un momento específico.
 
-**Redirección en escritura** : este método no copia el volumen original ni realiza ningún cambio en el volumen original después de un momento específico. En su lugar, realiza una copia diferencial al redirigir todos los cambios a un volumen diferente.
+**Redirección en escritura**: este método no copia el volumen original ni realiza ningún cambio en el volumen original después de un momento específico. En su lugar, realiza una copia diferencial al redirigir todos los cambios a un volumen diferente.
 
 ## <a name="complete-copy"></a>Copia completa
 
@@ -442,15 +443,15 @@ El sistema operativo Windows proporciona las siguientes herramientas para trabaj
 
 DiskShadow es un solicitante de VSS que puedes usar para administrar todas las instantáneas de hardware y software que se pueden tener en un sistema. DiskShadow incluye comandos como los siguientes:
 
-  - **list** : enumera los escritores y proveedores de VSS, además de las instantáneas.
+  - **list**: enumera los escritores y proveedores de VSS, además de las instantáneas.
 
-  - **create** : crea una nueva instantánea.
+  - **create**: crea una nueva instantánea.
 
-  - **import** : importa una instantánea transportable.
+  - **import**: importa una instantánea transportable.
 
-  - **expose** : expone una instantánea persistente (como una letra de unidad, por ejemplo).
+  - **expose**: expone una instantánea persistente (como una letra de unidad, por ejemplo).
 
-  - **revert** : revierte un volumen a una instantánea especificada.
+  - **revert**: revierte un volumen a una instantánea especificada.
 
 
 Esta herramienta está pensada para que la usen los profesionales de TI, aunque también puede resultar útil para los desarrolladores cuando realizan pruebas para VSS Writer o un proveedor de VSS.
@@ -463,15 +464,15 @@ VssAdmin se usa para crear, eliminar y mostrar información sobre las instantán
 
 VssAdmin incluye comandos como los siguientes:
 
-  - **create shadow** : crea una nueva instantánea.
+  - **create shadow**: crea una nueva instantánea.
 
-  - **delete shadows** : elimina las instantáneas.
+  - **delete shadows**: elimina las instantáneas.
 
-  - **list providers** : enumera todos los proveedores de VSS registrados.
+  - **list providers**: enumera todos los proveedores de VSS registrados.
 
-  - **list writers** : enumera todos los VSS Writer suscritos.
+  - **list writers**: enumera todos los VSS Writer suscritos.
 
-  - **resize shadowstorage** : cambia el tamaño máximo del área de almacenamiento de instantáneas.
+  - **resize shadowstorage**: cambia el tamaño máximo del área de almacenamiento de instantáneas.
 
 
 VssAdmin solo se puede usar para administrar las instantáneas creadas por el proveedor de software del sistema.

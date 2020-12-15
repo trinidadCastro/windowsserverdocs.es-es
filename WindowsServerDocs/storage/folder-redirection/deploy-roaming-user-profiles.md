@@ -1,17 +1,18 @@
 ---
 title: Implementación de perfiles de usuario móviles
+description: 'Más información sobre: Implementación de perfiles de usuario móviles'
 TOCTitle: Deploying Roaming User Profiles
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.date: 06/07/2019
 ms.author: jgerend
-ms.openlocfilehash: 8019986ed29e9ffedaca8d714f63d5de06ae3c80
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 1ed7e52b5408e654d007e1f5c02cb9e61ad5c8bb
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87942257"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97049193"
 ---
 # <a name="deploying-roaming-user-profiles"></a>Implementación de perfiles de usuario móviles
 
@@ -205,7 +206,7 @@ A continuación, se muestra cómo configurar perfiles de usuario móviles en equ
 1. Abre el Administrador del servidor en un equipo que tenga instalada Administración de directivas de grupo.
 2. En el menú **Herramientas**, selecciona **Administración de directivas de grupo**. Se mostrará Administración de directivas de grupo.
 3. En Administración de directivas de grupo, haz clic con el botón derecho en el GPO que creaste en el paso 3 (por ejemplo, **Configuración de perfiles de usuario móviles**) y selecciona **Editar**.
-4. En la ventana Editor de administración de directivas de grupo, navega hasta **Configuración del equipo**, **Directivas**, **Plantillas administrativas**, **Sistema**y, finalmente, **Perfiles de usuario**.
+4. En la ventana Editor de administración de directivas de grupo, navega hasta **Configuración del equipo**, **Directivas**, **Plantillas administrativas**, **Sistema** y, finalmente, **Perfiles de usuario**.
 5. Haz clic con el botón derecho en **Establecer ruta de perfil móvil para todos los usuarios conectados a este equipo** y selecciona **Editar**.
     > [!TIP]
     > Si se configura una carpeta particular para los usuarios, esta será la carpeta predeterminada usada por algunos programas como Windows PowerShell. Puedes configurar una ubicación alternativa, ya sea local o de red, por usuario en la sección **Carpeta particular** de las propiedades de la cuenta de usuario en AD DS. Para configurar la ubicación de la carpeta particular de todos los usuarios de un equipo que ejecute Windows 8.1, Windows 8, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012 en un entorno de escritorio virtual, habilita la configuración de directiva **Establecer la carpeta particular del usuario** y, después, especifica el recurso compartido de archivos y la letra de unidad a la que se asignará (o bien especifica una carpeta local). No uses variables de entorno ni puntos suspensivos. El alias del usuario se anexa al final de la ruta de acceso especificada durante el inicio de sesión del usuario.
@@ -240,7 +241,7 @@ Para especificar un diseño del menú Inicio, haz lo siguiente:
 
 5. (Opcional) Habilita las optimizaciones de inicio de sesión por primera vez para que los usuarios puedan iniciar sesión más rápidamente. Para ello, consulta [Aplicar directivas para mejorar el tiempo de inicio de sesión](/windows/client-management/mandatory-user-profile#apply-policies-to-improve-sign-in-time).
 6. (Opcional) Reduce todavía más los tiempos de inicio de sesión quitando las aplicaciones innecesarias de la imagen base de Windows 10 que usas para implementar los equipos cliente. Windows Server 2019 y Windows Server 2016 no tienen ninguna aplicación aprovisionada previamente, por lo que puedes omitir este paso en las imágenes del servidor.
-    - Para quitar aplicaciones, usa el cmdlet [Remove-AppxProvisionedPackage](/powershell/module/dism/remove-appxprovisionedpackage?view=win10-ps) en Windows PowerShell para desinstalar las siguientes aplicaciones. Si los equipos ya están implementados, puedes crear scripts para la eliminación de estas aplicaciones mediante [Remove-AppxPackage](/powershell/module/appx/remove-appxpackage?view=win10-ps).
+    - Para quitar aplicaciones, usa el cmdlet [Remove-AppxProvisionedPackage](/powershell/module/dism/remove-appxprovisionedpackage) en Windows PowerShell para desinstalar las siguientes aplicaciones. Si los equipos ya están implementados, puedes crear scripts para la eliminación de estas aplicaciones mediante [Remove-AppxPackage](/powershell/module/appx/remove-appxpackage).
 
       - Microsoft.windowscommunicationsapps\_8wekyb3d8bbwe
       - Microsoft.BingWeather\_8wekyb3d8bbwe

@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 12/02/2020
+ms.date: 12/11/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: fe553c03e85f3cb68f76b1a8d27e1da93bf9d9a3
-ms.sourcegitcommit: dce404a0a4500a693e294e0431c93f0ae90f8b13
+ms.openlocfilehash: b4085868c136f2f8653f623e5a167a283f463eee
+ms.sourcegitcommit: 7c0794e257f602bd71af5eb9a11b8a03d2b9adfd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96563785"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97390323"
 ---
 # <a name="windows-desktop-client-for-admins"></a>Cliente de escritorio de Windows para administradores
 
@@ -49,7 +49,7 @@ Para desactivar las notificaciones, configura la siguiente información del regi
 - **Clave:** HKLM\Software\Microsoft\MSRDC\Policies
 - **Tipo:** REG_DWORD
 - **Nombre:** AutomaticUpdates
-- **Datos:** 0 = deshabilitar las notificaciones; 1 = mostrar las notificaciones. 2 = mostrar notificaciones y actualizar automáticamente al cerrar.
+- **Datos:** 0 = deshabilitar las notificaciones y desactivar la actualización automática. 1 = mostrar las notificaciones y desactivar la actualización automática. 2 = mostrar notificaciones y actualizar automáticamente al cerrar.
 
 ### <a name="configure-user-groups"></a>Configuración de grupos de usuarios
 

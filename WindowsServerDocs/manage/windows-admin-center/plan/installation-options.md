@@ -5,17 +5,19 @@ ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
-ms.date: 12/02/2019
-ms.openlocfilehash: 403a0f68f559d72dfaa54e4b537a50a66fc3ec6a
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.date: 12/11/2019
+ms.openlocfilehash: e1ddd00ab30e2ef547be5a874a4dc57d18f1d69f
+ms.sourcegitcommit: 7c0794e257f602bd71af5eb9a11b8a03d2b9adfd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766728"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97390283"
 ---
 # <a name="what-type-of-installation-is-right-for-you"></a>¿Qué tipo de instalación es la adecuada para ti?
 
 En este tema se describen las diferentes opciones de instalación para Windows Admin Center, incluida la instalación en un equipo con Windows 10 o en Windows Server para que lo usen varios administradores. Para instalar Windows Admin Center en una VM en Azure, consulta [Implementación de Windows Admin Center en Azure](../azure/deploy-wac-in-azure.md).
+
+No se recomienda usar Windows Admin Center para la administración local del mismo servidor en el que está instalado. Para administrar un servidor, use Windows Admin Center para conectarse al servidor de forma remota desde un equipo de administración u otro servidor.
 
 ## <a name="installation-types"></a>Instalación: Tipos
 
@@ -23,7 +25,7 @@ En este tema se describen las diferentes opciones de instalación para Windows A
 
 | Cliente local                                | Servidor de puerta de enlace                                  | Servidor administrado                               | Clúster de conmutación por error                           |
 |---------------------------------------------|-------------------------------------------------|----------------------------------------------|--------------------------------------------|
-| [Instalación](../deploy/install.md) en un cliente de Windows 10 local que tiene conectividad con los servidores administrados.  Excelente para escenarios de inicio rápido, pruebas, ad hoc o de pequeña escala. |[Instalación](../deploy/install.md) en un servidor de puerta de enlace designado y con acceso desde cualquier explorador del cliente con conectividad con el servidor de puerta de enlace.  Ideal para escenarios a gran escala. | [Instalación](../deploy/install.md) directa en un servidor administrado para administrarse a sí mismo o en un clúster en el que es un nodo miembro.  Excelente para escenarios distribuidos. | [Implementación](#high-availability) en un clúster de conmutación por error para permitir la alta disponibilidad del servicio de puerta de enlace. Genial para entornos de producción para garantizar la resistencia del servicio de administración. |
+| [Instalación](../deploy/install.md) en un cliente de Windows 10 local que tiene conectividad con los servidores administrados. Excelente para escenarios de inicio rápido, pruebas, ad hoc o de pequeña escala. |[Instalación](../deploy/install.md) en un servidor de puerta de enlace designado y con acceso desde cualquier explorador del cliente con conectividad con el servidor de puerta de enlace. Ideal para escenarios a gran escala. | [Instalación](../deploy/install.md) directa en un servidor administrado para administrar de forma remota el servidor o en un clúster en el que es un nodo miembro. Excelente para escenarios distribuidos. | [Implementación](#high-availability) en un clúster de conmutación por error para permitir la alta disponibilidad del servicio de puerta de enlace. Genial para entornos de producción para garantizar la resistencia del servicio de administración. |
 
 ## <a name="installation-supported-operating-systems"></a>Instalación: Sistemas operativos compatibles
 

@@ -6,18 +6,19 @@ ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 09/17/2020
+ms.date: 12/11/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f59c00e375ab142c4e3dadc480c648cdd8e2396
-ms.sourcegitcommit: 877d6db73d9520e3a23738d6528016235493cff3
+ms.custom: contperf-fy21q1
+ms.openlocfilehash: 5e289d1641d5171b4a11526f36aa569baa41980c
+ms.sourcegitcommit: 7c0794e257f602bd71af5eb9a11b8a03d2b9adfd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90779249"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97390313"
 ---
 # <a name="get-started-with-the-android-client"></a>Introducción al cliente de Android
 
->Se aplica a: Android 4.1 y versiones posteriores
+>Se aplica a: Android 6.0 y versiones posteriores
 
 El cliente de Escritorio remoto para Android se puede usar con aplicaciones de Windows y escritorios directamente desde un dispositivo Android o Chromebook que sea compatible con Google Play Store.
 
@@ -25,7 +26,7 @@ En este artículo se muestra cómo empezar a usar el cliente. Si tiene alguna pr
 
 > [!NOTE]
 > - ¿Tienes curiosidad acerca de las nuevas versiones para el cliente Android? Consulta las [Novedades del cliente de Android](android-whatsnew.md).
-> - El cliente de Android es compatible con dispositivos que ejecutan Android 4.1 y versiones posteriores, así como Chromebooks con ChromeOS 53 y versiones posteriores. Obtenga más información sobre las aplicaciones Android en Chrome en [Sistemas Chrome OS que admiten aplicaciones Android](https://sites.google.com/a/chromium.org/dev/chromium-os/chrome-os-systems-supporting-android-apps).
+> - El cliente de Android es compatible con dispositivos que ejecutan Android 6.0 y versiones posteriores, así como Chromebooks con ChromeOS 53 y versiones posteriores. Obtenga más información sobre las aplicaciones Android en Chrome en [Sistemas Chrome OS que admiten aplicaciones Android](https://sites.google.com/a/chromium.org/dev/chromium-os/chrome-os-systems-supporting-android-apps).
 
 ## <a name="download-the-remote-desktop-client"></a>Descarga del cliente de Escritorio remoto
 

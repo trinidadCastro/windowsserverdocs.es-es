@@ -1,16 +1,17 @@
 ---
+description: 'Más información sobre: Servicio de hora de Windows'
 ms.assetid: e34622ff-b2d0-4f81-8d00-dacd5d6c215e
 title: Servicio de hora de Windows
 author: dahavey
 ms.author: dahavey
 ms.date: 05/08/2018
 ms.topic: article
-ms.openlocfilehash: a8bce2d3f43d3c2bc6c35a107efe8e8170a9860d
-ms.sourcegitcommit: b5b040a47cf48c94852de9aad8b91475f891d2f7
+ms.openlocfilehash: 3b0eef62e35e7d0001662961cd39f62cebab158f
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88563245"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97046793"
 ---
 # <a name="windows-time-service"></a>Servicio de hora de Windows
 

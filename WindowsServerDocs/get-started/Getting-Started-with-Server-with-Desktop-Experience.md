@@ -8,12 +8,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 43a483df0f9ad8c6961f9309249a5c2eef88c085
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 74a98c02794c2bba95a9de8684e4e7d308d99da2
+ms.sourcegitcommit: 2365a7b23e2eccd13be350306c622d2ad9d36bc8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990537"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788064"
 ---
 # <a name="install-server-with-desktop-experience"></a>Instalación de servidor con Experiencia de escritorio
 > Se aplica a: Windows Server 2016
@@ -83,7 +83,7 @@ Para muchas opciones adicionales para migrar a Windows Server 2016, como la conv
 ### <a name="migration"></a>Migración
 **Migración** significa mover desde el sistema operativo existente a Windows Server 2016 mediante una instalación limpia en un conjunto diferente de hardware o máquina virtual y después transferir las cargas de trabajo del servidor anterior al nuevo servidor. La migración, que puede variar de forma notable según los roles de servidor que haya instalados, se aborda en profundidad en [Windows Server Installation, Upgrade, and Migration](./installation-and-upgrade.md) (Instalación, actualización y migración de Windows Server).
 
-La capacidad de migración varía entre los diferentes roles de servidor. En la cuadrícula siguiente se explican las opciones de actualización y migración de roles de servidor específicamente para migrar a Windows Server 2016. Para obtener instrucciones para la migración de roles individuales, visite [Migración de roles y características en Windows Server](./migrate-roles-and-features.md). Para más información sobre la instalación y las actualizaciones, vea [Windows Server Installation, Upgrade, and Migration](./installation-and-upgrade.md) (Instalación, actualización y migración de Windows Server).
+La capacidad de migración varía entre los diferentes roles de servidor. En la cuadrícula siguiente se explican las opciones de actualización y migración de roles de servidor específicamente para migrar a Windows Server 2016. Para obtener instrucciones para la migración de roles individuales, visite [Migración de roles y características en Windows Server](./migrate-roles-and-features.md). Para más información sobre la instalación y las actualizaciones, vea [Windows Server Installation, Upgrade, and Migration](./installation-and-upgrade.md) (Instalación, actualización y migración de Windows Server).
 
 |Rol de servidor|¿Se puede actualizar desde Windows Server 2012 R2?|¿Se puede actualizar desde Windows Server 2012?|¿Se admite la migración?|¿La migración puede completarse sin tiempo de inactividad?|
 |-------------------|----------|--------------|--------------|----------|

@@ -1,18 +1,19 @@
 ---
 ms.assetid: c9844427-27cf-4d76-b5bb-e06368b092f7
 title: Clúster de conmutación por error
+description: 'Más información sobre: Conmutación de clústeres por error en Windows Server'
 ms.topic: landing-page
 manager: lizross
 author: JasonGerend
 ms.author: jgerend
 ms.date: 06/06/2019
 ms.localizationpriority: high
-ms.openlocfilehash: 41f5eef75e20a4da740141620493d2daa254b0a1
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: cfcb4fc5762289b90f4a660778ef5943034bcb95
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87992859"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97041333"
 ---
 # <a name="failover-clustering-in-windows-server"></a>Conmutación de clústeres por error en Windows Server
 
@@ -42,7 +43,7 @@ La Conmutación de clústeres por error tiene muchas aplicaciones prácticas, in
 
 |**Administrar**  |  **Herramientas y configuración**  |  **Recursos de la comunidad**       |
 | ------------- |  -------------- | --------------------- |
-| [Actualización compatible con clústeres](cluster-aware-updating.md)    |   [Cmdlets de Windows PowerShell de clúster de conmutación por error](/powershell/module/failoverclusters/?view=win10-ps)      |  [Foro sobre alta disponibilidad (clúster)](https://go.microsoft.com/fwlink/p/?LinkId=230641)       |
-|  [Servicio de mantenimiento](health-service-overview.md)   |   [Cmdlets de PowerShell de actualización compatible con clústeres](/powershell/module/clusterawareupdating/?view=win10-ps)      | [Blog del equipo de Clústeres de conmutación por error y Equilibrio de carga de red](https://blogs.msdn.com/b/clustering/)        |
+| [Actualización compatible con clústeres](cluster-aware-updating.md)    |   [Cmdlets de Windows PowerShell de clúster de conmutación por error](/powershell/module/failoverclusters/)      |  [Foro sobre alta disponibilidad (clúster)](https://go.microsoft.com/fwlink/p/?LinkId=230641)       |
+|  [Servicio de mantenimiento](health-service-overview.md)   |   [Cmdlets de PowerShell de actualización compatible con clústeres](/powershell/module/clusterawareupdating/)      | [Blog del equipo de Clústeres de conmutación por error y Equilibrio de carga de red](https://blogs.msdn.com/b/clustering/)        |
 |  [Migración del dominio del clúster](cluster-domain-migration.md)   |         |         |
 |  [Solución de problemas de uso del Informe de errores de Windows](troubleshooting-using-wer-reports.md)   |         |         |

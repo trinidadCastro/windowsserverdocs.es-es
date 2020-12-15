@@ -1,16 +1,17 @@
 ---
+description: 'Más información sobre: Instrucciones para solucionar problemas de activación relacionados con DNS'
 title: Instrucciones para solucionar problemas de activación relacionados con DNS
 ms.topic: troubleshooting
 ms.date: 09/10/2019
 author: Teresa-Motiv
 ms.author: v-tea
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d44da55f62348dfc0f776a6106d4fb613227057
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: eda94c17dcf54e689daf853cfde39f9e0253b615
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953374"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97040933"
 ---
 # <a name="guidelines-for-troubleshooting-dns-related-activation-issues"></a>Instrucciones para solucionar problemas de activación relacionados con DNS
 

@@ -1,15 +1,16 @@
 ---
+description: 'Más información sobre: Introducción a la replicación DFS'
 title: Introducción a la replicación DFS
 ms.date: 03/08/2019
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 6a68d27ec7c1d06e070d18362de68e12ecbf9578
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 7cc69e3d1b3a141d79a1a0ef036db93762154039
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87950759"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048773"
 ---
 # <a name="dfs-replication-overview"></a>Introducción a la replicación DFS
 
@@ -63,7 +64,7 @@ Instala Replicación DFS mediante [Windows Admin Center](../../manage/windows-ad
 
 ### <a name="to-install-dfs-by-using-server-manager"></a>Para instalar DFS mediante el Administrador del servidor
 
-1. Abra el Administrador del servidor, haga clic en **Administrar**y, a continuación, en **Agregar roles y características**. Aparece el Asistente para agregar roles y características.
+1. Abra el Administrador del servidor, haga clic en **Administrar** y, a continuación, en **Agregar roles y características**. Aparece el Asistente para agregar roles y características.
 
 2. En la página **Selección de servidor** , seleccione el servidor o el disco duro virtual (VHD) de una máquina virtual sin conexión en la que desee instalar DFS.
 
@@ -71,7 +72,7 @@ Instala Replicación DFS mediante [Windows Admin Center](../../manage/windows-ad
 
     - Para instalar el servicio Replicación DFS, en la página **Roles de servidor**, selecciona **Replicación DFS**.
 
-    - Para instalar solamente las Herramientas de administración de DFS, en la página **Características** , expanda **Herramientas de administración remota del servidor**, **Herramientas de administración de roles**, expanda **Herramientas de Servicios de archivo**y, a continuación, seleccione **Herramientas de administración de DFS**.
+    - Para instalar solamente las Herramientas de administración de DFS, en la página **Características** , expanda **Herramientas de administración remota del servidor**, **Herramientas de administración de roles**, expanda **Herramientas de Servicios de archivo** y, a continuación, seleccione **Herramientas de administración de DFS**.
 
          **Herramientas de administración de DFS** instala el complemento Administración de DFS, los módulos Replicación DFS y Espacios de nombres DFS para Windows PowerShell y las herramientas de línea de comandos, pero no instala ningún servicio DFS en el servidor.
 

@@ -6,12 +6,12 @@ ms.date: 8/28/2020
 ms.localizationpriority: medium
 ms.topic: article
 author: christianmontoya
-ms.openlocfilehash: 71b892d95b15f02445ec7898a6c57f931bc4b501
-ms.sourcegitcommit: 2b1a12c85acff137e5ac84cd0e62d8353fcdde31
+ms.openlocfilehash: a3a38581a257007d9e6afbf4059c88c485ac5a04
+ms.sourcegitcommit: 97af0c18f5868567a1435658bce9c7751454caea
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89087468"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96913415"
 ---
 # <a name="set-up-email-discovery-to-subscribe-to-your-rds-feed"></a>Configuración de la detección de correo electrónico para suscribirte a la fuente de RDS
 
@@ -35,7 +35,7 @@ Ahora, siga estos pasos para configurar la detección de correo electrónico:
 3. Especifica un nuevo registro DNS con las siguientes propiedades:
    - **Host:** _msradc
    - **Texto:** \<RD Web Feed URL\>
-   - **TTL:** 300
+   - **TTL:** 300 segundos
 
    Los nombres de los campos de los registros DNS varían según el registrador del nombre de dominio, pero este proceso dará lugar a un registro TXT llamado _msradc.\<domain_name\> (como _msradc.contoso.com) que tiene un valor de la fuente web de Escritorio remoto completa.
 

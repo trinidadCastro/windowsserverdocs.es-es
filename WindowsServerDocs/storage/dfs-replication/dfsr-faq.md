@@ -1,15 +1,16 @@
 ---
+description: 'Más información sobre: Replicación DFS: Preguntas más frecuentes'
 title: 'Replicación DFS: Preguntas más frecuentes (P+F)'
 ms.date: 06/18/2014
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 346fa77e1a22626094baa33aaf70ead23f2f0db0
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: 976539e31fa335a09d834e889ecd6c729b533236
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766648"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048783"
 ---
 # <a name="dfs-replication-frequently-asked-questions-faq"></a>Replicación DFS: Preguntas más frecuentes
 
@@ -68,7 +69,7 @@ Replicación DFS interopera con NFS en un servidor que ejecuta un sistema operat
 
 Sí. Replicación DFS es compatible con los volúmenes de Servicio de instantáneas de volumen (VSS) y las instantáneas anteriores se pueden restaurar correctamente con el cliente de versiones anteriores.
 
-### <a name="can-i-use-windowsbackup-ntbackupexe-to-remotely-back-up-a-replicated-folder"></a>¿Puedo usar Copias de seguridad de Windows (Ntbackup.exe) para realizar una copia de seguridad de una carpeta replicada de forma remota?
+### <a name="can-i-use-windows-backup-ntbackupexe-to-remotely-back-up-a-replicated-folder"></a>¿Puedo usar Copias de seguridad de Windows (Ntbackup.exe) para realizar una copia de seguridad de una carpeta replicada de forma remota?
 
 No, no se admite el uso de Copias de seguridad de Windows (Ntbackup.exe) en un equipo que ejecuta Windows Server 2003 o una versión anterior para realizar una copia de seguridad del contenido de una carpeta replicada en un equipo que ejecuta Windows Server 2012, Windows Server 2008 R2 o Windows Server 2008.
 
@@ -440,7 +441,7 @@ Para usar RDC entre archivos, un miembro de la conexión de replicación debe es
 <td><p>Sí</p></td>
 </tr>
 <tr class="even">
-<td><p>Windows Server 2008 R2</p></td>
+<td><p>Windows Server 2008 R2</p></td>
 <td><p>No</p></td>
 <td><p>Sí</p></td>
 <td><p>Sí</p></td>
@@ -452,7 +453,7 @@ Para usar RDC entre archivos, un miembro de la conexión de replicación debe es
 <td><p>No</p></td>
 </tr>
 <tr class="even">
-<td><p>Windows Server 2003 R2</p></td>
+<td><p>Windows Server 2003 R2</p></td>
 <td><p>No</p></td>
 <td><p>Sí</p></td>
 <td><p>No</p></td>
@@ -692,7 +693,7 @@ Los archivos se almacenan provisionalmente en el miembro remitente cuando el mie
 </colgroup>
 <thead>
 <tr class="header">
-<th> </th>
+<th> </th>
 <th>RDC habilitada</th>
 <th>RDC deshabilitada</th>
 </tr>

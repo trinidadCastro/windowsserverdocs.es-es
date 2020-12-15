@@ -1,4 +1,5 @@
 ---
+description: 'Más información sobre: Niveles funcionales de bosque y dominio'
 ms.assetid: f964d056-11bf-4d9b-b5ab-dceaad8bfbc3
 title: Niveles funcionales de Windows Server 2016
 ms.author: daveba
@@ -8,12 +9,12 @@ ms.date: 08/25/2020
 ms.topic: article
 ms.custom: it-pro
 ms.reviewer: maheshu
-ms.openlocfilehash: b74bb786b3d1a6ec8a1f96054b2d74ca93bd9bcf
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: a05049c17e3d8fec8198c42c6dd589a4907e6e54
+ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93068379"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97048963"
 ---
 # <a name="forest-and-domain-functional-levels"></a>Niveles funcionales de bosque y dominio
 
@@ -180,7 +181,7 @@ Sistema operativo de controlador de dominio admitido:
    * Mejora en la escalabilidad y los algoritmos del comprobador de coherencia de la información (KCC)
       - El generador de topología entre sitios (ISTG) usa algoritmos mejorados que se escalan para admitir bosques con un número mayor de sitios del que AD DS puede admitir en el nivel funcional del bosque de Windows 2000. El algoritmo mejorado de elección del ISTG es un mecanismo menos intrusivo para elegir el ISTG en el nivel funcional del bosque de Windows 2000.
    * La capacidad de crear instancias de la clase auxiliar dinámica denominada **dynamicObject** en una partición de directorio de dominio.
-   * La capacidad de convertir una instancia de un objeto **inetOrgPerson** en una instancia de un objeto **User** , y para completar la conversión en la dirección opuesta.
+   * La capacidad de convertir una instancia de un objeto **inetOrgPerson** en una instancia de un objeto **User**, y para completar la conversión en la dirección opuesta.
    * La capacidad de crear instancias de nuevos tipos de grupos para admitir la autorización basada en roles.
       - Estos tipos se denominan grupos básicos de aplicación y grupos de consulta LDAP.
    * Desactivación y nueva definición de atributos y clases en el esquema. Se pueden reutilizar los siguientes atributos: ldapDisplayName, schemaIdGuid, OID y mapiID.
