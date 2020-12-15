@@ -8,12 +8,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 862349c0601981f064becd8bd02a1b26b308dc48
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 68a684ad9c99014f8b0bab922de52319e99354b4
+ms.sourcegitcommit: 2365a7b23e2eccd13be350306c622d2ad9d36bc8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87959263"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788109"
 ---
 # <a name="upgrade-and-conversion-options-for-windows-server-2016"></a>Opciones de actualización y conversión para Windows Server 2016
 
@@ -87,7 +87,7 @@ Antes de intentar convertir una versión de evaluación a comercial, compruebe q
 
 - Desde un símbolo del sistema con privilegios elevados, ejecute **slmgr.vbs /dlv**. Las versiones de evaluación incluirán EVAL en la salida.
 
-- En la pantalla Inicio , abra el **Panel de control**. Abra **Sistema y seguridad**y después **Sistema**. Vea el estado de activación de Windows en el área de activación del Windows de la página del **sistema**. Haga clic en **Ver los detalles** en Activación de Windows para obtener más información sobre el estado de activación de Windows.
+- En la pantalla Inicio , abra el **Panel de control**. Abra **Sistema y seguridad** y después **Sistema**. Vea el estado de activación de Windows en el área de activación del Windows de la página del **sistema**. Haga clic en **Ver los detalles** en Activación de Windows para obtener más información sobre el estado de activación de Windows.
 
 Si ya activó Windows, el escritorio muestra el tiempo restante en el período de evaluación.
 

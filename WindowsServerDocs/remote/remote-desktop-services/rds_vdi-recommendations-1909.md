@@ -7,12 +7,12 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.date: 02/19/2020
-ms.openlocfilehash: 2caecd2b625de8790ddd0d1ebfeeb9db24d11635
-ms.sourcegitcommit: faa5db4cdba4ad2b3a65533b6b49d960080923c9
+ms.openlocfilehash: 94deca783d770fb5322f9fc489d692f925cfa1a9
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91752917"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96866264"
 ---
 # <a name="optimizing-windows-10-version-1909-for-a-virtual-desktop-infrastructure-vdi-role"></a>Optimización de Windows 10, versión 1909, para un rol de Infraestructura de escritorio virtual (VDI)
 
@@ -180,7 +180,7 @@ Las aplicaciones para UWP que se aprovisionan en un sistema pueden eliminarse du
 
 [Windows 10 1607: Keeping apps from coming back when deploying the feature update](/archive/blogs/mniehaus/windows-10-1607-keeping-apps-from-coming-back-when-deploying-the-feature-update) (Evitar que las aplicaciones vuelvan a aparecer al implementar la actualización de características)
 
-A continuación, ejecute el comando [Remove-AppxProvisionedPackage](/powershell/module/dism/remove-appxprovisionedpackage?view=win10-ps) de PowerShell para eliminar las cargas útiles de la aplicación UWP:
+A continuación, ejecute el comando [Remove-AppxProvisionedPackage](/powershell/module/dism/remove-appxprovisionedpackage) de PowerShell para eliminar las cargas útiles de la aplicación UWP:
 
 ```powershell
 Remove-AppxProvisionedPackage -Online -PackageName
@@ -755,7 +755,7 @@ Válido para Windows 10. El valor predeterminado es **128**, con un intervalo v
 
 Válido para Windows 10. El valor predeterminado es **1023**. Este parámetro especifica el número máximo de archivos que se deben dejar abiertos en un recurso compartido una vez que la aplicación cerró el archivo. Si varios miles de clientes se conectan a servidores SMB, considera la posibilidad de reducir este valor a **256**.
 
-Puedes configurar varias de estas opciones de SMB con los cmdlets [Set-SmbClientConfiguration](/powershell/module/smbshare/set-smbclientconfiguration?view=win10-ps) y [Set-SmbServerConfiguration](/powershell/module/smbshare/set-smbserverconfiguration?view=win10-ps) de Windows PowerShell. Las opciones de solo registro se pueden configurar con Windows PowerShell, tal como se muestra en el siguiente ejemplo:
+Puedes configurar varias de estas opciones de SMB con los cmdlets [Set-SmbClientConfiguration](/powershell/module/smbshare/set-smbclientconfiguration) y [Set-SmbServerConfiguration](/powershell/module/smbshare/set-smbserverconfiguration) de Windows PowerShell. Las opciones de solo registro se pueden configurar con Windows PowerShell, tal como se muestra en el siguiente ejemplo:
 
 ```powershell
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters" RequireSecuritySignature -Value 0 -Force

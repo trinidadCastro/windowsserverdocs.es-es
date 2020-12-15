@@ -6,12 +6,12 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 06/04/2019
-ms.openlocfilehash: 6337a3812cb6e1ca838c463bc811f8959d1f0714
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 9260cf9cc377c5a0665e4ad6b3ca5871f016a256
+ms.sourcegitcommit: 2365a7b23e2eccd13be350306c622d2ad9d36bc8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87972372"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96788042"
 ---
 # <a name="whats-new-in-windows-server-2019"></a>Novedades de Windows Server 2019
 
@@ -69,7 +69,7 @@ Los sensores de plataforma profunda y las acciones de respuesta de ATP exponen a
 
 [Control de aplicaciones de Windows Defender](/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control) (también conocido como la directiva de integridad de código (CI)) se lanzó en Windows Server 2016.
 Los comentarios de los clientes sugieren que es un concepto excelente, pero difícil de implementar.
-Para solucionar esta problemática, se crearon directivas de CI predeterminadas que habilitan a todos los archivos incluidos en Windows y aplicaciones de Microsoft, como SQL Server, y bloquean archivos ejecutables conocidos que pueden omitir la CI. 
+Para solucionar esta problemática, se crearon directivas de CI predeterminadas que habilitan a todos los archivos incluidos en Windows y aplicaciones de Microsoft, como SQL Server, y bloquean archivos ejecutables conocidos que pueden omitir la CI. 
 
 ### <a name="security-with-software-defined-networking-sdn"></a>Seguridad con Redes definidas por software (SDN)
 

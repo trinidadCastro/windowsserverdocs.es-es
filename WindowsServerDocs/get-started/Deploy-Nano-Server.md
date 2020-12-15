@@ -8,12 +8,12 @@ ms.assetid: 9f109c91-7c2e-4065-856c-ce9e2e9ce558
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: deb17bb54f2576cdb811a11d78d4cb324a120140
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 67ef50ce2c788ac5028de1ab39a5f6b6bf388978
+ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87959903"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96865733"
 ---
 # <a name="deploy-nano-server"></a>Implementación de Nano Server
 
@@ -72,7 +72,7 @@ Esta tabla muestra los roles y las características que están disponibles en es
 | Desired State Configuration (DSC) de PowerShell | \- Paquete Microsoft-NanoServer-DSC-Package<p>**Nota:** Para obtener todos los detalles, vea [Uso de DSC en Nano Server](/archive/blogs/askcore/kms-host-client-count-not-increasing-due-to-duplicate-cmids). |
 | Internet Information Server (IIS) | \- Paquete Microsoft-NanoServer-IIS-Package<p>**Nota:** Consulta [IIS en Nano Server](IIS-on-Nano-Server.md) para más información sobre cómo trabajar con IIS. |
 | Compatibilidad de host para los contenedores de Windows | -Containers |
-| Agente System Center Virtual Machine Manager | -Package Microsoft-NanoServer-SCVMM-Package<p>-Package Microsoft-NanoServer-SCVMM-Compute-Package<p>**Nota:** Usa el paquete de proceso SCVMM solo si supervisas Hyper-V. Para implementaciones hiperconvergidas en VMM, conviene especificar también el parámetro -Storage. Para más información, consulta la [documentación sobre VMM](/system-center/vmm/hyper-v-nano?view=sc-vmm-2016&viewFallbackFrom=sc-vmm-2019). |
+| Agente System Center Virtual Machine Manager | -Package Microsoft-NanoServer-SCVMM-Package<p>-Package Microsoft-NanoServer-SCVMM-Compute-Package<p>**Nota:** Usa el paquete de proceso SCVMM solo si supervisas Hyper-V. Para implementaciones hiperconvergidas en VMM, conviene especificar también el parámetro -Storage. Para más información, consulta la [documentación sobre VMM](/system-center/vmm/hyper-v-nano?view=sc-vmm-2016). |
 | Agente de System Center Operations Manager | Instalado por separado. Consulta la documentación de System Center Operations Manager para más detalles, en https://technet.microsoft.com/system-center-docs/om/manage/install-agent-on-nano-server. |
 | Protocolo de puente del centro de datos (incluido DCBQoS) | -Package Microsoft-NanoServer-DCB-Package |
 | Implementación en una máquina virtual | \- Paquete Microsoft-NanoServer-Guest-Package |
@@ -523,7 +523,7 @@ Tanto los paquetes de controladores PnP y del filtro del sistema de archivos deb
 
 #### <a name="installing-driver-packages-offline"></a>Instalación de paquetes de controladores sin conexión
 
-Se pueden instalar paquetes de controladores compatibles en Nano Server sin conexión a través de los cmdlets [DISM.exe](/windows-hardware/manufacture/desktop/dism-driver-servicing-command-line-options-s14) o de [PowerShell de DISM](/powershell/module/dism/add-windowsdriver?view=win10-ps).
+Se pueden instalar paquetes de controladores compatibles en Nano Server sin conexión a través de los cmdlets [DISM.exe](/windows-hardware/manufacture/desktop/dism-driver-servicing-command-line-options-s14) o de [PowerShell de DISM](/powershell/module/dism/add-windowsdriver).
 
 #### <a name="installing-driver-packages-online"></a>Instalación de paquetes de controladores en línea
 Los paquetes de controladores PnP se pueden instalar en Nano Server en línea mediante [PnpUtil](/windows-hardware/drivers/devtest/pnputil). La instalación de controladores en línea de paquetes de controladores que no son PnP no se admite actualmente en Nano Server.
