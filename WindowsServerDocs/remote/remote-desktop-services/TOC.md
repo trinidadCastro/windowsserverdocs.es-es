@@ -102,6 +102,7 @@
 #### [Configuración de privacidad de las aplicaciones y escritorios administrados](clients/remote-privacy-settings.md)
 ### Problemas conocidos
 #### [Solución de problemas generales de conexión con Escritorio remoto](troubleshoot/rdp-error-general-troubleshooting.md)
+#### [Límite de credenciales por aplicación](troubleshoot/credential-limit.md)
 #### [Los clientes no se pueden conectar y reciben el mensaje "Clase no registrada"](troubleshoot/rdp-error-class-not-registered.md)
 #### [Los clientes no se pueden conectar y reciben el error "No hay licencias disponibles"](troubleshoot/rdp-error-no-licenses-available.md)
 #### [Los usuarios no se pueden autenticar o deben autenticarse dos veces](troubleshoot/cannot-authenticate-or-must-authenticate-twice.md)
