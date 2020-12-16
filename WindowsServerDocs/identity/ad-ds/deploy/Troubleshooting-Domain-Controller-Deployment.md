@@ -7,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 03/20/2019
 ms.topic: article
-ms.openlocfilehash: 80f152b4a8d7c7c73226a3e32a63cc4b8620be66
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: e9d08bd4580766a7e4ccd2929dfc4695b3220f95
+ms.sourcegitcommit: 6fbe337587050300e90340f9aa3e899ff5ce1028
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97045983"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97599688"
 ---
 # <a name="troubleshooting-domain-controller-deployment"></a>Solución de problemas de implementación de controladores de dominio
 
@@ -22,13 +22,13 @@ En este tema se describe la metodología para solucionar problemas de configurac
 
 ## <a name="introduction-to-troubleshooting"></a>Introducción a la solución de problemas
 
-![Solución de problemas](media/Troubleshooting-Domain-Controller-Deployment/adds_deploy_troubleshooting.png)
+![Diagrama que muestra el flujo de trabajo para la solución de problemas de implementación del controlador de dominio.](media/Troubleshooting-Domain-Controller-Deployment/adds_deploy_troubleshooting.png)
 
 ## <a name="built-in-logs-for-troubleshooting"></a>Registros integrados para la solución de problemas
 
 Los registros integrados son la herramienta más importante para solucionar problemas de promoción y degradación de controladores de dominio. Todos estos registros están habilitados y configurados para ofrecer el máximo nivel de detalle de forma predeterminada.
 
-| Fase | Registro |
+| Fase | Log |
 |--|--|
 | Operaciones de Administrador del servidor o de ADDSDeployment para Windows PowerShell | - %systemroot%\debug\dcpromoui.log<p>-%SystemRoot%\debug\dcpromoui *. log |
 | Instalación/Promoción del controlador de dominio | -%SystemRoot%\debug\dcpromo.log<p>-%SystemRoot%\debug\dcpromo *. log<p>-Event Eventos\registros logs\System<p>-Event Eventos\registros \ aplicación<p>-Servicio de visor eventos\registros de eventos y servicios de logs\Directory<p>-Event visor eventos\registros and Services logs\File Replication Service<p>-Visor eventos\registros de eventos y servicios de logs\DFS replicación |
@@ -219,7 +219,7 @@ Los siguientes son problemas habituales que se observan durante el proceso de de
 | Problema | Al degradar un controlador de dominio, el DNS se ejecuta sin zonas |
 |--|--|
 | Síntomas | El servidor sigue respondiendo a las consultas DNS, pero no posee información de zona |
-| Solución y notas | Al eliminar el rol de AD DS, también se elimina el rol de servidor DNS o se establece el servicio Servidor DNS como deshabilitado. No te olvides de apuntar el cliente DNS a un servidor distinto. Si usas Windows PowerShell, ejecuta lo siguiente antes de degradar el servidor:<p>Código: desinstalar-WindowsFeature DNS<p>o<p>DNS de Code-Set-Service-StartType deshabilitado<br />detención del servicio DNS |
+| Solución y notas | Al eliminar el rol de AD DS, también se elimina el rol de servidor DNS o se establece el servicio Servidor DNS como deshabilitado. No te olvides de apuntar el cliente DNS a un servidor distinto. Si usas Windows PowerShell, ejecuta lo siguiente antes de degradar el servidor:<p>Código: desinstalar-WindowsFeature DNS<p>or<p>DNS de Code-Set-Service-StartType deshabilitado<br />detención del servicio DNS |
 
 | Problema | Al promocionar un equipo con Windows Server 2012 en un dominio de etiqueta única existente, no se configura updatetopleveldomain=1 ni allowsinglelabeldnsdomain=1 |
 |--|--|

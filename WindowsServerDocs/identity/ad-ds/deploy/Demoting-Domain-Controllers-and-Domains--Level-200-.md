@@ -7,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 11/14/2018
 ms.topic: article
-ms.openlocfilehash: 6ebbeed0ab8f06ba4f3189af31396d5c30b3427f
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 5a4d182d89f2e4f3143cb1f5d193a241fba3e672
+ms.sourcegitcommit: 6fbe337587050300e90340f9aa3e899ff5ce1028
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97049223"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97599768"
 ---
 # <a name="demoting-domain-controllers-and-domains"></a>Degradar controladores de dominio y dominios
 
@@ -192,7 +192,7 @@ Emplea el argumento opcional **Whatif** con el cmdlet **Uninstall-ADDSDomainCont
 
 Por ejemplo:
 
-![Ejemplo de Uninstall-ADDSDomainController de PowerShell](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_PSUninstall.png)
+![Captura de pantalla de una ventana de terminal que muestra los valores explícitos e implícitos de los argumentos de un cmdlet.](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_PSUninstall.png)
 
 El mensaje para reiniciar es tu última oportunidad de cancelar esta operación cuando uses ADDSDeployment de Windows PowerShell. Para invalidar ese mensaje, usa los argumentos **-force** o **confirm:$false**.
 
@@ -220,7 +220,7 @@ Para aceptar el aviso de reinicio de forma automática, utiliza los argumentos *
 
 Aquí se presenta un ejemplo de degradación forzada con los argumentos mínimos requeridos de **-forceremoval** y **-demoteoperationmasterrole**. El argumento **-credential** no es necesario porque el usuario inició sesión como miembro del grupo Administradores de empresas:
 
-![Ejemplo de Uninstall-ADDSDomainController de PowerShell](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_PSUninstallExampleForce.png)
+![Captura de pantalla de una ventana de terminal que muestra un ejemplo de degradación forzada con los argumentos mínimos necesarios de-forceremoval y-demoteoperationmasterrole.](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_PSUninstallExampleForce.png)
 
 Aquí te mostramos un ejemplo de eliminación del último controlador de dominio en un dominio con los argumentos mínimos requeridos **-lastdomaincontrollerindomain** y **-removeapplicationpartitions**:
 

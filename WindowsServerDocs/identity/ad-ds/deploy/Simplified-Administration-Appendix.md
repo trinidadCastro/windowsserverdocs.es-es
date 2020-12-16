@@ -7,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: d54ed836b60c4b1551b3a87ff92a50f2b10bda23
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 21b379b8138e95b70ebae91b34b8955e20715b3b
+ms.sourcegitcommit: 6fbe337587050300e90340f9aa3e899ff5ce1028
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97046003"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97599698"
 ---
 # <a name="simplified-administration-appendix"></a>Anexo de administración simplificada
 
@@ -100,6 +100,6 @@ En la tabla siguiente se describen los dos nuevos elementos de menú:
 |Crear la nodefrag% s completa|Crear medios IFMs sin desfragmentación para un DC de AD completo o una instancia de AD/LDS en la carpeta% s|
 |Crear SYSVOL total nodefrag% s|Crear medios IFMs con SYSVOL y sin desfragmentar un DC de AD completo en la carpeta% s|
 
-![Administración simplificada](media/Simplified-Administration-Appendix/ADDS_PSIFM.png)
+![Captura de pantalla de una ventana de terminal que muestra el proceso para crear medios IFM.](media/Simplified-Administration-Appendix/ADDS_PSIFM.png)
 
-![Administración simplificada](media/Simplified-Administration-Appendix/ADDS_PSIFMComplete.gif)
+![Captura de pantalla de una ventana de terminal que muestra que los medios IFM se crearon correctamente.](media/Simplified-Administration-Appendix/ADDS_PSIFMComplete.gif)

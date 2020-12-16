@@ -7,12 +7,12 @@ author: iainfoulds
 manager: daveba
 ms.date: 08/07/2018
 ms.topic: article
-ms.openlocfilehash: 56f97929f14c1d8e9ff8819b6d821dade79c2535
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: bc9202a65aa4a698172463956ad4b98e0c319718
+ms.sourcegitcommit: 6fbe337587050300e90340f9aa3e899ff5ce1028
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97043423"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97599808"
 ---
 # <a name="advanced-ad-ds-management-using-active-directory-administrative-center-level-200"></a>Advanced AD DS Management Using Active Directory Administrative Center (Level 200)
 
@@ -40,7 +40,7 @@ Los módulos y la arquitectura subyacente del Centro de administración de Activ
 
 A continuación se ilustran la capa de operaciones y de Windows PowerShell subyacentes de la nueva funcionalidad de papelera de reciclaje:
 
-![Administración avanzada de AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/adds_adrestore.png)
+![Ilustración que muestra la capa de operaciones y Windows PowerShell subyacentes para la nueva funcionalidad de papelera de reciclaje.](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/adds_adrestore.png)
 
 ## <a name="enabling-and-managing-the-active-directory-recycle-bin-using-active-directory-administrative-center"></a><a name="BKMK_EnableRecycleBin"></a>Habilitar y administrar la papelera de reciclaje de Active Directory mediante el Centro de administración de Active Directory
 
@@ -64,7 +64,7 @@ La papelera de reciclaje de Active Directory requiere un nivel funcional de bosq
 
 Para habilitar la papelera de reciclaje de Active Directory, abre el **Centro de administración de Active Directory** y haz clic en el nombre del bosque en el panel de navegación. En el panel **Tareas**, haz clic en **Habilitar papelera de reciclaje**.
 
-![Administración avanzada de AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_EnableRecycleBin.png)
+![Captura de pantalla que muestra cómo habilitar la papelera de reciclaje en el Centro de administración de Active Directory.](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_EnableRecycleBin.png)
 
 El Centro de administración de Active Directory muestra el cuadro de diálogo **Habilitar confirmación de papelera de reciclaje**. Este cuadro de diálogo avisa de que la operación para habilitar la papelera de reciclaje es irreversible. Haz clic en **Aceptar** para habilitar la papelera de reciclaje de Active Directory. El Centro de administración de Active Directory muestra otro cuadro de diálogo para recordarte que la papelera de reciclaje de Active Directory no será completamente funcional hasta que todos los controladores de dominio repliquen el cambio de configuración.
 
@@ -86,13 +86,13 @@ Para obtener más información sobre cómo usar Windows PowerShell para habilita
 
 Esta sección usa el ejemplo de un dominio existente llamado **corp.contoso.com**. Este dominio organiza los usuarios en una OU primaria llamada **UserAccounts**. La OU **UserAccounts** contiene tres OU secundarias con los nombres de departamento, que a su vez contienen otras OU, usuarios y grupos.
 
-![Administración avanzada de AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_EnableRecycleBinExampleOU.png)
+![Captura de pantalla que muestra un ejemplo de un dominio existente.](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_EnableRecycleBinExampleOU.png)
 
 #### <a name="storage-and-filtering"></a>Almacenamiento y filtrado
 
 La papelera de reciclaje de Active Directory conserva todos los objetos eliminados en el bosque. Guarda estos objetos según el atributo **msDS-deletedObjectLifetime** que, de forma predeterminada, está establecido para que coincida con el atributo **tombstoneLifetime** del bosque. En cualquier bosque creado usando Windows Server 2003 SP1 o posterior, el valor de **tombstoneLifetime** está establecido en 180 días de forma predeterminada. En los bosques actualizados desde Windows 2000 o instalados con Windows Server 2003 (sin Service Pack), el atributo tombstoneLifetime predeterminado NO ESTÁ ESTABLECIDO y, por lo tanto, Windows usa el valor interno predeterminado de 60 días. Todo esto se puede configurar. Puedes usar el Centro de administración de Active Directory para restaurar los objetos eliminados de las particiones de dominio del bosque. Debes continuar usando el cmdlet **Restore-ADObject** para restaurar los objetos eliminados de otras particiones, como Configuración. Al habilitar la papelera de reciclaje de Active Directory el contenedor **Objetos eliminados** se hace visible en cada partición de dominio del Centro de administración de Active Directory.
 
-![Administración avanzada de AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_DeletedObjectsContainer.png)
+![Captura de pantalla que resalta el contenedor de objetos eliminados. ](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_DeletedObjectsContainer.png)
 
 El contenedor **Objetos eliminados** muestra todos los objetos restaurables en la partición de dominio. Los objetos eliminados anteriores a **msDS-deletedObjectLifetime** se conocen como objetos reciclados. El Centro de administración de Active Directory no muestra los objetos reciclados y estos objetos no se pueden restaurar usando el Centro de administración de Active Directory.
 
@@ -100,15 +100,15 @@ Para obtener una explicación detallada de la arquitectura y las reglas de proce
 
 El Centro de administración de Active Directory limita artificialmente a 20.000 el número predeterminado de objetos que se devuelven de un contenedor. Puedes aumentar este límite hasta 100.000 objetos haciendo clic en el menú **Administrar** y, después, **Opciones de la lista de administración**.
 
-![Administración avanzada de AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_MgmtList.png)
+![Captura de pantalla que muestra cómo elevar el límite del número de objetos devueltos desde un contenedor seleccionando la opción de menú opciones de lista de administración.](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_MgmtList.png)
 
 #### <a name="restoration"></a>Restauración
 
 ##### <a name="filtering"></a>Filtrado
 
-El Centro de administración de Active Directory ofrece unos criterios y unas opciones de filtrado eficaces con las que debes familiarizarte antes de que necesites usarlas en una restauración real. Los dominios eliminan intencionadamente muchos objetos a lo largo de su vida. La vigencia probable de un objeto eliminado es de 180 días, por lo que no puedes simplemente restaurar todos los objetos en caso de accidente.
+El Centro de administración de Active Directory ofrece unos criterios y unas opciones de filtrado eficaces con las que debes familiarizarte antes de que necesites usarlas en una restauración real. Los dominios eliminan intencionadamente muchos objetos a lo largo de su duración. Con una duración de objeto que probablemente se haya eliminado de 180 días, no se pueden restaurar todos los objetos cuando se produce un accidente.
 
-![Administración avanzada de AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_AddCriteria.png)
+![Captura de pantalla que muestra las opciones de filtrado disponibles durante una restauración.](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_AddCriteria.png)
 
 En lugar de escribir complejos filtros LDAP y convertir valores de UTC en fechas y horas, usa el menú **Filtro** avanzado y básico para mostrar solo los objetos relevantes. Si sabes el día de la eliminación, el nombre de los objetos y otros datos clave, usa esa información para ayudarte a filtrar. Para activar o desactivar las opciones avanzadas de filtro, haz clic en el botón de contenido adicional, a la derecha del cuadro de búsqueda.
 
@@ -117,14 +117,14 @@ La operación de restauración admite todas las opciones de criterios de filtrad
 - *ANR (resolución de nombres ambiguos; no aparece en el menú, pero lo que se usa al escribir en el cuadro * * * * filtro * * *)*
 - Última modificación entre las fechas indicadas
 - El tipo de objeto es usuario, inetOrgPerson, equipo, grupo o unidad organizativa
-- NOMBRE
+- Nombre
 - Al eliminar
 - Principal último conocido
 - Tipo
 - Descripción
 - City
 - País o región
-- Departamento
+- department
 - Identificador de empleado
 - Nombre
 - Puesto
@@ -139,7 +139,7 @@ Puedes agregar varios criterios. Por ejemplo, puede buscar todos los objetos de 
 
 También puedes agregar, modificar o reordenar los encabezados de columna para proporcionar más información a la hora de evaluar qué objetos se van a recuperar.
 
-![Administración avanzada de AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_ColumnHeaders.png)
+![Captura de pantalla que muestra dónde agregar, modificar o reordenar los encabezados de columna para proporcionar más detalles al evaluar qué objetos se van a recuperar.](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_ColumnHeaders.png)
 
 Para obtener más información sobre la resolución de nombres ambiguos, consulte [Atributos de ANR](/windows/win32/adschema/attributes-anr).
 
@@ -153,17 +153,17 @@ La restauración de objetos eliminados siempre ha sido una operación única.  E
 
 El objeto se restaura a su ubicación original.
 
-![Administración avanzada de AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_RestoreSingle.gif)
+![Captura de pantalla que resalta el menú que se usa para restaurar un objeto a su ubicación original.](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_RestoreSingle.gif)
 
 Haga clic en **restaurar a...** para cambiar la ubicación de restauración. Esto resulta útil si el contenedor primario del objeto eliminado también se eliminó pero no desea restaurar el elemento primario.
 
-![Administración avanzada de AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_RestoreToSingle.gif)
+![Captura de pantalla que muestra dónde se puede restaurar un objeto sin restaurar el elemento primario.](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_RestoreToSingle.gif)
 
 ##### <a name="multiple-peer-objects"></a>Varios objetos del mismo nivel
 
 Puedes restaurar varios objetos del mismo nivel, como todos los usuarios de una OU. Mantén presionada la tecla CTRL y haz clic en uno o varios de los objetos eliminados que quieres restaurar. Haz clic en **Restaurar** en el panel Tareas. Para seleccionar todos los objetos mostrados, presiona las teclas CTRL y A, o para seleccionar un intervalo de objetos, presiona MAYÚS y haz clic.
 
-![Administración avanzada de AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_RestorePeers.png)
+![Captura de pantalla que muestra la restauración de varios proyectos de nivel del mismo nivel.](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_RestorePeers.png)
 
 ##### <a name="multiple-parent-and-child-objects"></a>Varios objetos primarios y secundarios
 
@@ -184,19 +184,19 @@ Piensa en un escenario en el que un administrador elimina accidentalmente la OU 
 
 En primer lugar, observe el valor del atributo **principal último conocido** de todos los usuarios eliminados y cómo Lee **ou = Sales\0ADEL:*<GUID + nombre distintivo del contenedor de objetos eliminados> * * *:
 
-![Administración avanzada de AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_LastKnownParent.gif)
+![Captura de pantalla que resalta el valor del último atributo primario conocido.](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_LastKnownParent.gif)
 
 Filtra por el nombre ambiguo Sales para devolver la OU eliminada, que puedes restaurar:
 
-![Administración avanzada de AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_LastKnownParentSales.png)
+![Captura de pantalla que muestra la opción de menú restaurar.](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_LastKnownParentSales.png)
 
 Actualice el Centro de administración de Active Directory para ver que el último atributo primario conocido del objeto de usuario eliminado cambia al nombre distintivo de la OU de ventas restaurada:
 
-![Administración avanzada de AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_LastKnownParentSalesRestored.gif)
+![Captura de pantalla que destaca dónde puede ver el último atributo primario conocido del objeto de usuario eliminado cambia al nombre distintivo de la OU de ventas restaurada.](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_LastKnownParentSalesRestored.gif)
 
 Filtra todos los usuarios de Sales. Presiona las teclas CTRL y A para seleccionar todos los usuarios de Sales eliminados. Haz clic en **Restaurar** para mover los objetos del contenedor **Objetos eliminados** a la OU Sales con sus pertenencias a grupos y atributos intactos.
 
-![Administración avanzada de AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_LastKnownParentSalesUndelete.png)
+![Captura de pantalla que muestra los objetos seleccionados y el progreso a medida que se mueven desde el contenedor objetos eliminados a la unidad organizativa ventas.](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_LastKnownParentSalesUndelete.png)
 
 Si la OU **Sales** contenía a su vez OU secundarias, restaurarías primero las OU secundarias antes de restaurar sus secundarias, y así sucesivamente.
 
@@ -228,19 +228,19 @@ Para obtener más información sobre la directiva de contraseña específica, co
 
 En el panel de navegación, haz clic en la Vista de árbol, en tu dominio, en **Sistema**, en **Contenedor de configuraciones de contraseña** y, en el panel tareas, haz clic en **Nuevo** y **Configuración de contraseña**.
 
-![Administración avanzada de AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_PasswordSettings.png)
+![Captura de pantalla que muestra dónde se puede Agregar una nueva configuración de contraseña.](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_PasswordSettings.png)
 
 ### <a name="managing-fine-grained-password-policies"></a>Administrar directivas de contraseña específica
 
 Al crear una nueva FGPP o editar una existente, se abre el editor **Configuración de contraseña**. Aquí puedes configurar todas las directivas de contraseña que quieras, como harías en Windows Server 2008 o Windows Server 2008 R2, solo que ahora con un editor creado específicamente para ello.
 
-![Administración avanzada de AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_CreatePasswordSettings.png)
+![Captura de pantalla que muestra el editor de configuración de contraseña para crear o editar Fine-Grained directivas de contraseñas.](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_CreatePasswordSettings.png)
 
 Rellena todos los campos necesarios (asterisco rojo) y los campos opcionales, y haz clic en **Agregar** para establecer los usuarios o grupos que reciben esta directiva. FGPP invalida la configuración de directiva de dominio predeterminada para las entidades de seguridad especificadas. En la figura anterior, una directiva extremadamente restrictiva se aplica solo a la cuenta Administrador integrada, para evitar riesgos. La directiva es demasiado compleja para que los usuarios estándar la cumplan, pero es perfecta para cuentas de alto riesgo que usan solo los profesionales de TI.
 
 También se establece la prioridad y a qué usuarios y grupos se aplica la directiva en un dominio determinado.
 
-![Administración avanzada de AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_Precedence.png)
+![Captura de pantalla que muestra dónde puede establecer la prioridad y a qué usuarios y grupos se aplica la Directiva en un dominio determinado.](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_Precedence.png)
 
 Los cmdlets de Active Directory Windows PowerShell para la directiva de contraseña específica son:
 
@@ -256,15 +256,15 @@ Set-ADFineGrainedPasswordPolicy
 
 La funcionalidad del cmdlet para la directiva de contraseña específica no cambió de Windows Server 2008 R2 a Windows Server 2012. Por comodidad, el siguiente diagrama ilustra los argumentos asociados para los cmdlets:
 
-![Administración avanzada de AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_FGPP.gif)
+![Ilustración que muestra los argumentos asociados para los cmdlets.](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_FGPP.gif)
 
 El Centro de administración de Active Directory también permite encontrar el conjunto resultante de FGPP aplicadas para un usuario específico. Haga clic con el botón derecho en cualquier usuario y haga clic en **Ver configuración de contraseña resultante...** para abrir la página *configuración de contraseña* que se aplica a ese usuario mediante asignación implícita o explícita:
 
-![Administración avanzada de AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_RSOP.png)
+![Captura de pantalla que resalta la opción de menú Ver configuración de contraseña resultante.](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_RSOP.png)
 
 Al examinar las **Propiedades** de un usuario o grupo, se muestra la **Configuración de contraseña asociada directamente**, que son las FGPP explícitamente asignadas:
 
-![Administración avanzada de AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_FGPPSettings.gif)
+![Captura de pantalla que resalta la sección configuración de contraseñas directamente asociada. ](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_FGPPSettings.gif)
 
 La asignación implícita de FGPP no se muestra aquí; para ello, debe usar la opción **Ver configuración de contraseña resultante...**
 
@@ -276,23 +276,23 @@ Ahora, el Centro de administración de Active Directory ofrece un historial comp
 
 El objetivo del visor del historial de Windows PowerShell en el Centro de administración de Active Directory es que aprendas mediante experiencia práctica.
 
-![Administración avanzada de AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_HistoryViewer.gif)
+![Captura de pantalla que muestra el Centro de administración de Active Directory visor del historial de Windows PowerShell.](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_HistoryViewer.gif)
 
 Haz clic en el botón de contenido adicional (flecha) para mostrar el visor del historial de Windows PowerShell.
 
-![Administración avanzada de AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_RaiseViewer.png)
+![Captura de pantalla que muestra cómo mostrar el visor del historial de Windows PowerShell.](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_RaiseViewer.png)
 
 Después, crea un usuario o modifica la pertenencia de un grupo. El visor del historial se actualiza continuamente con una vista contraída de cada cmdlet que el Centro de administración de Active Directory ejecutó con los argumentos especificados.
 
 Expande cualquier elemento de línea para ver todos los valores proporcionados a los argumentos del cmdlet:
 
-![Administración avanzada de AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_ViewArgs.png)
+![Captura de pantalla que muestra cómo expandir un elemento de línea para ver todos los valores proporcionados a los argumentos del cmdlet.](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_ViewArgs.png)
 
 Haz clic en el menú **Iniciar tarea** para crear una anotación manual antes de usar el Centro de administración de Active Directory para crear, modificar o eliminar un objeto. Escribe lo que estabas haciendo.  Cuando hayas terminado con el cambio, selecciona **Finalizar tarea**. La nota de tarea agrupa todas las acciones realizadas en una nota contraíble que puedes usar para obtener más información.
 
 Por ejemplo, para ver los comandos de Windows PowerShell usados para cambiar la contraseña de un usuario y quitarlo de un grupo:
 
-![Administración avanzada de AD DS](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_RemoveUser.gif)
+![Captura de pantalla que destaca cómo ver los comandos de Windows PowerShell usados para cambiar la contraseña de un usuario y quitar el usuario de un grupo.](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_RemoveUser.gif)
 
 Al seleccionar la casilla Mostrar todo también se muestran los cmdlets de Windows PowerShell del verbo Get-* que solo recuperan datos.
 

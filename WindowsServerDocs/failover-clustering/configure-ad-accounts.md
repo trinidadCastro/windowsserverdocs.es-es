@@ -5,12 +5,12 @@ ms.date: 11/12/2012
 author: JasonGerend
 manager: lizross
 ms.author: jgerend
-ms.openlocfilehash: e6b7c2a3af136fa7c3970de4550609f4eaa9fa8d
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 86662b623adb0a482c843286608a796b923e13fd
+ms.sourcegitcommit: 6fbe337587050300e90340f9aa3e899ff5ce1028
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97041073"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97599628"
 ---
 # <a name="configuring-cluster-accounts-in-active-directory"></a>Configuración de cuentas de clúster en Active Directory
 
@@ -156,7 +156,7 @@ La pertenencia a grupos mínima necesaria para completar el procedimiento siguie
 
    6.  En el cuadro de diálogo **Entrada de permiso para**_contenedor_, busque los permisos **Crear objetos de equipo** y **Leer todas las propiedades**, y asegúrese de que la casilla **Permitir** esté activada para cada uno.
 
-       ![Entrada de permiso (cuadro de diálogo)](media/configure-ad-accounts/Cc731002.0a863ac5-2024-4f9f-8a4d-a419aff32fa0(WS.10).gif)
+       ![Captura de pantalla que muestra la opción crear objetos de equipo establecida en permitir. ](media/configure-ad-accounts/Cc731002.0a863ac5-2024-4f9f-8a4d-a419aff32fa0(WS.10).gif)
 
 ## <a name="steps-for-prestaging-the-cluster-name-account"></a>Pasos para preconfigurar la cuenta de nombre de clúster
 
@@ -208,7 +208,7 @@ El requisito mínimo para completar este procedimiento es la pertenencia al grup
 
     5.  Asegúrese de que la cuenta de usuario recién agregada está seleccionada y a continuación, junto a **Control total**, active la casilla **Permitir**.
 
-        ![Entrada de permiso (cuadro de diálogo)](media/configure-ad-accounts/Cc731002.fffaafe2-a494-498b-974c-8f9d70f7103b(WS.10).gif)
+        ![Captura de pantalla que muestra la pestaña seguridad en el cuadro de diálogo Propiedades de Cluster1.](media/configure-ad-accounts/Cc731002.fffaafe2-a494-498b-974c-8f9d70f7103b(WS.10).gif)
 
 ## <a name="steps-for-prestaging-an-account-for-a-clustered-service-or-application"></a>Pasos para preconfigurar una cuenta para un servicio o una aplicación en clúster
 
@@ -306,7 +306,7 @@ El requisito mínimo para completar este procedimiento es la pertenencia al grup
 
 9. Para la cuenta de nombre de clúster (también conocida como objeto de nombre de clúster o CNO), asegúrese de que está seleccionado **Permitir** para los permisos **Crear objetos de equipo** y **Leer todas las propiedades**.
 
-   ![Entrada de permiso (cuadro de diálogo)](media/configure-ad-accounts/Cc731002.f5977c4d-a62e-4b17-81e3-8c19ddca2078(WS.10).gif)
+   ![Captura de pantalla que muestra el cuadro de diálogo entrada de permiso con la opción crear objetos de equipo establecida en permitir.](media/configure-ad-accounts/Cc731002.f5977c4d-a62e-4b17-81e3-8c19ddca2078(WS.10).gif)
 
 10. Haga clic en **Aceptar** hasta volver al complemento **Usuarios y equipos de Active Directory**.
 

@@ -7,12 +7,12 @@ manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 398918dc-c8ab-41a6-a377-95681ec0b543
-ms.openlocfilehash: 259b47909085f65225082a2480a2e621812bc9f7
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 1dd7d3bd1a96346fe040f81781fd603167af880e
+ms.sourcegitcommit: 6fbe337587050300e90340f9aa3e899ff5ce1028
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97045793"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97599748"
 ---
 # <a name="ad-forest-recovery---backing-up-a-full-server"></a>Recuperación de bosque de AD: copia de seguridad de un servidor completo
 
@@ -36,8 +36,8 @@ Para conocer los pasos para instalarlo en Windows Server 2008 y Windows Server 2
 3. En la pantalla **tipo de instalación** , deje la instalación predeterminada basada en **características o en roles** y haga clic en **siguiente**.
 4. En la pantalla **selección de servidor** , haga clic en **siguiente**.
 5. En la pantalla **roles de servidor** , haga clic en **siguiente**.
-6. En la pantalla **características** , seleccione **copias de seguridad de Windows Server** y haga clic en **siguiente** 
-    ![ instalar copia de seguridad.](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup2.png)
+6. En la pantalla **características** , seleccione **copias de seguridad de Windows Server** y haga clic en captura de pantalla **siguiente** 
+    ![ que resalte la opción copias de seguridad de Windows Server seleccionada.](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup2.png)
 7. Haga clic en **Instalar**.
 8. Una vez completada la instalación, haga clic en **cerrar**.
 
@@ -46,21 +46,21 @@ Para conocer los pasos para instalarlo en Windows Server 2008 y Windows Server 2
 1. Abra **Administrador del servidor**, haga clic en **herramientas** y, a continuación, haga clic en **copias de seguridad de Windows Server**.
    - En Windows Server 2008 R2 y Windows Server 2008, haga clic en **Inicio**, seleccione **herramientas administrativas** y, a continuación, haga clic en **copias de seguridad de Windows Server**.
 
-   ![Instalar copia de seguridad](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup1.png)
+   ![Captura de pantalla que muestra dónde apuntar a herramientas administrativas y, a continuación, seleccione Copias de seguridad de Windows Server.](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup1.png)
 
 2. Si se le solicita, en el cuadro de diálogo **control de cuentas de usuario** , proporcione credenciales de operador de copia de seguridad y, a continuación, haga clic en **Aceptar**.
 3. Haga clic en **copia de seguridad local**.
 4. En el menú **Acción**, haga clic en **Hacer copia de seguridad una vez**.
 5. En el Asistente para hacer copia de seguridad una vez, en la página **Opciones de copia de seguridad** , haga clic en **opciones diferentes** y, a continuación, en **siguiente**.
 
-   ![Instalar copia de seguridad](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup3.png)
+   ![Captura de pantalla que muestra la opción de opciones diferentes seleccionada.](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup3.png)
 
 6. En la página **seleccionar configuración de copia de seguridad** , haga clic en **servidor completo (recomendado)** y, a continuación, haga clic en **siguiente**.
 7. En la página **especificar tipo de destino** , haga clic en **unidades locales** o en **carpeta compartida remota** y, a continuación, haga clic en **siguiente**.
 8. En la página **Seleccionar destino** de la copia de seguridad, elija la ubicación de copia de seguridad.  Si seleccionó unidad local, elija una unidad local o, si seleccionó recurso compartido remoto, elija un recurso compartido de red.
 9. En la pantalla confirmación, haga clic en **copia de seguridad**.
 
-   ![Instalar copia de seguridad](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup4.png)
+   ![Captura de pantalla que muestra la pantalla de progreso de copia de seguridad.](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup4.png)
 
 10. Una vez que se haya completado, haga clic en **cerrar**.
 11. Cierre Copias de seguridad de Windows Server.

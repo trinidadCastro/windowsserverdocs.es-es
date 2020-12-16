@@ -1,18 +1,18 @@
 ---
 description: 'Más información acerca de: arquitectura de controlador de dominio virtualizado'
-ms.assetid: 341614c6-72c2-444f-8b92-d2663aab7070
+s.assetid: 341614c6-72c2-444f-8b92-d2663aab7070
 title: Arquitectura de controladores de dominio virtualizados
 author: iainfoulds
 ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 6f8984528aab0d1929d2a90d9558288b2c4cdf03
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 42a0bdd3fc8e6ec45c884322c1de71088a679837
+ms.sourcegitcommit: 6fbe337587050300e90340f9aa3e899ff5ce1028
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97045823"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97599658"
 ---
 # <a name="virtualized-domain-controller-architecture"></a>Arquitectura de controladores de dominio virtualizados
 
@@ -26,7 +26,7 @@ En este tema se describe la arquitectura de clonación de controles de dominio v
 
 ## <a name="virtualized-domain-controller-cloning-architecture"></a><a name="BKMK_CloneArch"></a>Arquitectura de clonación de controles de dominio virtualizados
 
-### <a name="overview"></a>Información general
+### <a name="overview"></a>Introducción
 La clonación de controles de dominio virtualizados depende de la plataforma del hipervisor para exponer un identificador llamado **identificador de generación de VM** a fin de detectar la creación de máquinas virtuales. AD DS almacena inicialmente el valor de este identificador en su base de datos (NTDS.DIT) durante la promoción de controladores de dominio. Cuando se arranca la máquina virtual, el valor actual del identificador de generación de VM de esta se compara con el valor de la base de datos. Si los valores son distintos, el controlador de dominio restaurará el identificador de invocación y descartará el grupo RID, lo que evita que USN pueda volver a crear entidades de seguridad duplicadas. El controlador de dominio buscará el archivo DCCloneConfig.xml en las ubicaciones invocadas en el paso 3 en [Procesamiento detallado de clonación](../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Architecture.md#BKMK_CloneProcessDetails). Si se encuentra el archivo DCCloneConfig.xml, entonces asumirá que se ha implementado como clon, por lo que iniciará la clonación para aprovisionarse como controlador de dominio adicional (para ello, vuelve a promocionarse mediante los contenidos de NTDS.DIT y de SYSVOL copiados desde el medio de origen).
 
 En un entorno mixto, donde algunos hipervisores admiten VM-GenerationID y otros no, es posible que se implemente por error un medio clonado en un hipervisor que no admita VM-GenerationID. La presencia del archivo DCCloneConfig.xml indica el intento administrativo de clonar un controlador de dominio (DC). Por lo tanto, si se encuentra un archivo DCCloneConfig.xml durante el arranque, pero el host no proporciona ningún VM-GenerationID, el DC clonado se iniciará en el modo de restauración de servicios de directorio (DSRM) para que no afecte al resto del entorno. El medio clonado se puede mover posteriormente a un hipervisor que admita VM-GenerationID y, después, se puede volver a intentar la clonación.
@@ -38,7 +38,7 @@ En el diagrama siguiente puedes ver la arquitectura de una operación de clonaci
 
 **Operación de clonación inicial**
 
-![Arquitectura de controlador de dominio virtualizado](media/Virtualized-Domain-Controller-Architecture/ADDS_VDC_InitialCloningProcess.png)
+![Diagrama que muestra la arquitectura de una operación de clonación inicial y una operación de reintento de clonación.](media/Virtualized-Domain-Controller-Architecture/ADDS_VDC_InitialCloningProcess.png)
 
 **Operación de reintento de clonación**
 
@@ -142,7 +142,7 @@ En los pasos siguientes se explica el proceso con más detalle:
 
 ## <a name="virtualized-domain-controller-safe-restore-architecture"></a><a name="BKMK_SafeRestoreArch"></a>Arquitectura de restauración segura de controladores de dominio virtualizados
 
-### <a name="overview"></a>Información general
+### <a name="overview"></a>Introducción
 AD DS depende de la plataforma del hipervisor para exponer un identificador llamado **identificador de generación de VM** a fin de detectar la restauración de instantáneas de máquinas virtuales. AD DS almacena inicialmente el valor de este identificador en su base de datos (NTDS.DIT) durante la promoción de controladores de dominio. Cuando un administrador restaura una máquina virtual a partir de una instantánea anterior, el valor actual del identificador de generación de VM de esta se compara con el valor de la base de datos. Si los valores son distintos, el controlador de dominio restaurará el identificador de invocación y descartará el grupo RID, lo que evita que USN pueda volver a crear entidades de seguridad duplicadas. Existen dos escenarios en los que se puede producir una restauración segura:
 
 -   Cuando se inicia un controlador de dominio virtual después de restaurar una instantánea cuando esta estaba apagada
@@ -156,7 +156,7 @@ En las secciones siguientes se explica en detalle la restauración segura para c
 ### <a name="safe-restore-detailed-processing"></a>Procesamiento detallado de restauración segura
 En el diagrama de flujo siguiente puedes ver cómo se produce una restauración segura cuando se inicia un controlador de dominio virtual después de restaurar una instantánea cuando esta estaba apagada.
 
-![Arquitectura de controlador de dominio virtualizado](media/Virtualized-Domain-Controller-Architecture/ADDS_VDC_VirtualizationSafeguardsDuringNormalBoot.png)
+![Diagrama de flujo que muestra cómo se produce una restauración segura cuando se inicia un controlador de dominio virtual después de restaurar una instantánea mientras estaba apagada.](media/Virtualized-Domain-Controller-Architecture/ADDS_VDC_VirtualizationSafeguardsDuringNormalBoot.png)
 
 1.  Cuando se inicia la máquina virtual después de una restauración de instantánea, tendrá un nuevo identificador de generación de VM proporcionado por el host del hipervisor debido a la restauración de la instantánea.
 
@@ -173,7 +173,7 @@ En el diagrama de flujo siguiente puedes ver cómo se produce una restauración 
 
 En el diagrama siguiente se muestra cómo las medidas de seguridad de virtualización evitan la divergencia inducida por la reversión de USN cuando se restaura una instantánea en un controlador de dominio virtual en ejecución.
 
-![Arquitectura de controlador de dominio virtualizado](media/Virtualized-Domain-Controller-Architecture/ADDS_VDC_VirtualizationSafeguardsDuringSnapShotRestore.png)
+![Diagrama que muestra cómo las medidas de seguridad de virtualización evitan la divergencia inducida por la reversión de USN cuando se restaura una instantánea en un controlador de dominio virtual en ejecución.](media/Virtualized-Domain-Controller-Architecture/ADDS_VDC_VirtualizationSafeguardsDuringSnapShotRestore.png)
 
 > [!NOTE]
 > La ilustración anterior se ha simplificado para explicar los conceptos.

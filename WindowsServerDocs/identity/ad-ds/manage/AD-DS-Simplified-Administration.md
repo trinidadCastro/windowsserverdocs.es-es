@@ -7,12 +7,12 @@ author: iainfoulds
 manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
-ms.openlocfilehash: 680664d1ef24e714b86661d5fb334b82250137f5
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 9b8ccb3ce08b098ca125d976bb30950c64a5ad61
+ms.sourcegitcommit: 6fbe337587050300e90340f9aa3e899ff5ce1028
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97043113"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97599788"
 ---
 # <a name="ad-ds-simplified-administration"></a>Administración simplificada de AD DS
 
@@ -58,7 +58,7 @@ Para obtener más información sobre Adprep y la preparación de bosques de sist
 
 ## <a name="server-manager-ad-ds-integration"></a>Integración de AD DS con el Administrador del servidor
 
-![administración simplificada](media/AD-DS-Simplified-Administration/ADDS_SMI_TR_Dashboard.png)
+![Captura de pantalla que muestra el panel de Administrador del servidor.](media/AD-DS-Simplified-Administration/ADDS_SMI_TR_Dashboard.png)
 
 El Administrador del servidor actúa como concentrador de las tareas de administración del servidor. Su aspecto semejante a un panel actualiza periódicamente las vistas de los roles instalados y de los grupos de servidores remotos. El Administrador del servidor permite una administración centralizada de los servidores locales y remotos, sin necesidad de acceder mediante la consola.
 
@@ -74,7 +74,7 @@ Estas vistas incluyen:
 
 ## <a name="active-directory-administrative-center-recycle-bin"></a>Papelera de reciclaje del Centro de administración de Active Directory
 
-![administración simplificada](media/AD-DS-Simplified-Administration/ADDS_SMI_TR_ADAC.png)
+![Captura de pantalla que muestra los objetos de eliminación en la papelera de reciclaje de Centro de administración de Active Directory.](media/AD-DS-Simplified-Administration/ADDS_SMI_TR_ADAC.png)
 
 Windows Server 2008 R2 introdujo la papelera de reciclaje de Active Directory, que recupera objetos eliminados de Active Directory sin restaurarlos desde una copia de seguridad, reiniciar el servicio AD DS o reiniciar los controladores de dominio.
 
@@ -84,7 +84,7 @@ Para obtener más información sobre la papelera de reciclaje de Active Director
 
 ## <a name="active-directory-administrative-center-fine-grained-password-policy"></a>Directiva de contraseña específica del Centro de administración de Active Directory
 
-![administración simplificada](media/AD-DS-Simplified-Administration/ADDS_SMI_TR_FGPP.png)
+![Captura de pantalla que muestra el Centro de administración de Active Directory Fine-Grained interfaz gráfica de la Directiva de contraseñas.](media/AD-DS-Simplified-Administration/ADDS_SMI_TR_FGPP.png)
 
 Windows Server 2008 introdujo la directiva de contraseña específica (FGPP), que permite a los administradores configurar varias directivas de contraseñas y bloqueo de cuentas por dominio. Esto ofrece a los dominios una solución flexible para aplicar reglas de contraseñas más o menos restrictivas, basadas en usuarios y grupos. No contaba con una interfaz de administración y obligaba a los administradores a realizar la configuración con Ldp.exe o Adsiedit.msc. Windows Server 2008 R2 introdujo el módulo de Active Directory para Windows PowerShell, que ofrecía a los administradores una interfaz de línea de comandos para FGPP.
 
@@ -94,7 +94,7 @@ Para obtener más información sobre la directiva de contraseña específica, co
 
 ## <a name="active-directory-administrative-center-windows-powershell-history-viewer"></a>Visor del historial de Windows PowerShell del Centro de administración de Active Directory
 
-![administración simplificada](media/AD-DS-Simplified-Administration/ADDS_SMI_TR_HistoryViewer.png)
+![Captura de pantalla que muestra el Centro de administración de Active Directory visor del historial de Windows PowerShell.](media/AD-DS-Simplified-Administration/ADDS_SMI_TR_HistoryViewer.png)
 
 Windows Server 2008 R2 introdujo el Centro de administración de Active Directory, que reemplazó el anterior complemento de Usuarios y equipos de Active Directory creado en Windows 2000. El Centro de administración de Active Directory ha creado una interfaz de administración gráfica en el módulo de Active Directory para Windows PowerShell, por aquel entonces nuevo.
 
@@ -102,7 +102,7 @@ Aunque el módulo de Active Directory contiene más de un centenar de cmdlets, e
 
 ## <a name="ad-replication-windows-powershell"></a>Windows PowerShell con replicación de AD
 
-![administración simplificada](media/AD-DS-Simplified-Administration/ADDS_PSNewADReplSite.png)
+![Captura de pantalla que muestra cómo usar los cmdlets de replicación de AD.](media/AD-DS-Simplified-Administration/ADDS_PSNewADReplSite.png)
 
 Windows Server 2012 agrega más cmdlets de replicación de Active Directory al módulo de Windows PowerShell de Active Directory. Estos permiten la configuración de sitios, subredes, conexiones, vínculos a sitios y puentes nuevos o existentes. Asimismo, devuelven metadatos de replicación, estado de replicación, puesta en cola e información sobre vectores de versión de actualización de Active Directory. La introducción de los cmdlets de replicación (combinados con los cmdlets de implementación y otros cmdlets existentes de AD DS) permite administrar un bosque utilizando solo Windows PowerShell. De este modo se ofrecen nuevas oportunidades a los administradores que desean aprovisionar y administrar Windows Server 2012 sin una interfaz gráfica, lo que reduce la superficie de ataque del sistema operativo y los requisitos de mantenimiento. Esto es especialmente importante cuando se implementan servidores en redes de alta seguridad, como el Enrutador de protocolo de Internet secreto (SIPR) y DMZ corporativas.
 
@@ -166,7 +166,7 @@ La comprobación de los requisitos previos garantiza que se cumplan ciertas cond
 
 El código para la preparación de AD anteriormente almacenado en ADprep.exe se ha refactorizado en adprep.dll. Esto permite que tanto ADPrep.exe como el módulo ADDSDeployment de Windows PowerShell usen la biblioteca para las mismas tareas y tengan las mismas capacidades. Adprep.exe se incluye en los medios de instalación, pero los procesos automatizados no lo llaman directamente; lo ejecuta manualmente un administrador. Solo puede ejecutarse en Windows Server 2008 x64 y sistemas operativos posteriores. Ldifde.exe y csvde.exe también tienen versiones refactorizadas como DLL que carga el proceso de preparación. La extensión de esquema sigue usando los archivos LDF comprobados por firma, como en las versiones de sistemas operativos anteriores.
 
-![administración simplificada](media/AD-DS-Simplified-Administration/ADDS_SMI_TR_AdprepDLLs.png)
+![Diagrama que muestra cómo ADprep.dll permite que tanto ADPrep.exe como el módulo ADDSDeployment de Windows PowerShell usen la biblioteca para las mismas tareas y tengan las mismas capacidades.](media/AD-DS-Simplified-Administration/ADDS_SMI_TR_AdprepDLLs.png)
 
 > [!IMPORTANT]
 > No existe ninguna herramienta Adprep32.exe de 32 bits para Windows Server 2012. Debes tener por lo menos un equipo con Windows Server 2008 x64, Windows Server 2008 R2 o Windows Server 2012, que se ejecute como controlador de dominio, servidor miembro o en un grupo de trabajo, para preparar el bosque y el dominio. Adprep.exe no se ejecuta en Windows Server 2003 x64.

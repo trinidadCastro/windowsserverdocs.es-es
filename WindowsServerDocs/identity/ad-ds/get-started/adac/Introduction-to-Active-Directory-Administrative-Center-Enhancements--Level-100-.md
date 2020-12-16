@@ -7,12 +7,12 @@ author: iainfoulds
 manager: daveba
 ms.date: 08/07/2018
 ms.topic: article
-ms.openlocfilehash: 901078ec17ce744fb4eb4a2bb3a29f1d79718060
-ms.sourcegitcommit: 7c0794e257f602bd71af5eb9a11b8a03d2b9adfd
+ms.openlocfilehash: 0ed7c9d61aa451675d474d38c74dd926a7225b2c
+ms.sourcegitcommit: 6fbe337587050300e90340f9aa3e899ff5ce1028
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97390333"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97599657"
 ---
 # <a name="introduction-to-active-directory-administrative-center-enhancements-level-100"></a>Introduction to Active Directory Administrative Center Enhancements (Level 100)
 
@@ -73,7 +73,7 @@ En este paso, elevará el nivel funcional del bosque. Primero debe elevar el niv
 
 3. Haga clic en el dominio de destino en el panel de navegación izquierdo, y en el panel de **tareas**, haga clic en **Elevar el nivel funcional del bosque**. Seleccione un nivel funcional del bosque que sea como mínimo Windows Server 2008 R2 o posterior y, a continuación, haga clic en **Aceptar**.
 
-![Introducción al centro de administración de ad ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>comandos equivalentes de Windows PowerShell</em>_* _
+![Logotipo de PowerShell muestra los comandos equivalentes de PowerShell para elevar el nivel funcional del bosque. ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>Comandos equivalentes de Windows PowerShell</em>_* _
 
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.
 
@@ -97,7 +97,7 @@ En este paso, permitirá que la papelera de reciclaje restaure los objetos elimi
 
 4. Presione F5 para actualizar ADAC.
 
-![Introducción al centro de administración de ad ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>comandos equivalentes de Windows PowerShell</em>_* _
+![Logotipo de PowerShell muestra los comandos equivalentes de PowerShell para habilitar la papelera de reciclaje. ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>Comandos equivalentes de Windows PowerShell</em>_* _
 
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.
 
@@ -117,7 +117,7 @@ En los siguientes procedimientos, creará dos usuarios de prueba. Después crear
 
 3. En el panel de **tareas**, haga clic en **Nuevo** y, a continuación, en **Usuario**.
 
-    ![Introducción al centro de administración de AD](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/ADDS_ADACNewUser.gif)
+    ![Captura de pantalla que muestra cómo crear un nuevo usuario de prueba.](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/ADDS_ADACNewUser.gif)
 
 4. Escriba la siguiente información en **Cuenta** y haga clic en Aceptar:
 
@@ -140,7 +140,7 @@ En los siguientes procedimientos, creará dos usuarios de prueba. Después crear
 5. Haga clic en **group1** y después en el panel **Tareas**, haga clic en **Propiedades**.
 6. Haga clic en **Miembros**, en **Agregar**, escriba **test1;test2** y, a continuación, haga clic en **Aceptar**.
 
-![Introducción al centro de administración de ad ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>comandos equivalentes de Windows PowerShell</em>_* _
+![Logotipo de PowerShell muestra los comandos equivalentes de PowerShell para agregar usuarios al grupo. ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>Comandos equivalentes de Windows PowerShell</em>_* _
 
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.
 
@@ -151,13 +151,13 @@ Add-ADGroupMember -Identity group1 -Member test1
 #### <a name="to-create-an-organizational-unit"></a>Para crear una unidad organizativa
 
 1. Haga clic con el botón derecho en el icono de Windows PowerShell, haga clic en _ *Ejecutar como administrador** y escriba **dsac.exe** para abrir ADAC.
-2. Haga clic en **Administrar**, en **Agregar nodos de navegación** y seleccione el dominio de destino apropiado en el cuadro de diálogo **Agregar nodos de navegación** y, a continuación, haga clic en **Aceptar**.
+2. Haga clic en **administrar**, en **agregar nodos de navegación** y seleccione el dominio de destino adecuado en el cuadro de diálogo **agregar nodos de navegación** y, a continuación, haga clic en * * Aceptar.
 3. En el panel de **tareas**, haga clic en **Nuevo** y, a continuación, haga clic en **Unidad organizativa**.
 4. Escriba la siguiente información en **Unidad organizativa** y haga clic en **Aceptar**:
 
    - **NameOU1**
 
-![Introducción al centro de administración de ad ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>comandos equivalentes de Windows PowerShell</em>_* _
+![Logotipo de PowerShell muestra los comandos equivalentes de PowerShell para crear una unidad organizativa. ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>Comandos equivalentes de Windows PowerShell</em>_* _
 
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.
 
@@ -179,7 +179,7 @@ En los procedimientos siguientes, restaurará los objetos eliminados del contene
 
 3. Seleccione los usuarios **test1** y **test2**, haga clic en **Eliminar** en el panel **Tareas** y después haga clic en **Sí** para confirmar la eliminación.
 
-    ![Introducción al centro de administración de ad ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>comandos equivalentes de Windows PowerShell</em>_* _
+    ![Logotipo de PowerShell muestra los comandos equivalentes de PowerShell para quitar usuarios. ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>Comandos equivalentes de Windows PowerShell</em>_* _
 
     Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.
 
@@ -196,7 +196,7 @@ En los procedimientos siguientes, restaurará los objetos eliminados del contene
 
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.
 
-![Introducción al centro de administración de ad ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>comandos equivalentes de Windows PowerShell</em>_* _
+![Logotipo de PowerShell muestra los comandos equivalentes de PowerShell para restaurar objetos a su ubicación original. ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>Comandos equivalentes de Windows PowerShell</em>_* _
 
 ```powershell
 Get-ADObject -Filter 'Name -Like "_test*"' -IncludeDeletedObjects | Restore-ADObject
@@ -216,7 +216,7 @@ Get-ADObject -Filter 'Name -Like "_test*"' -IncludeDeletedObjects | Restore-ADOb
 
 6. Para confirmar que los objetos se restauraron a **OU1**, navegue al dominio de destino, haga doble clic en **OU1** y compruebe que las cuentas de usuario estén enumeradas.
 
-![Introducción al centro de administración de ad ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>comandos equivalentes de Windows PowerShell</em>_* _
+![Logotipo de PowerShell muestra los comandos equivalentes de PowerShell para restaurar los objetos eliminados en una ubicación diferente. ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>Comandos equivalentes de Windows PowerShell</em>_* _
 
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.
 
@@ -271,7 +271,7 @@ En el siguiente procedimiento, elevará el nivel funcional del dominio de destin
 
 3. Haga clic en el dominio de destino en el panel de navegación izquierdo, y en el panel  **Tareas**, haga clic en **Elevar el nivel funcional del dominio**. Seleccione un nivel funcional del bosque que sea como mínimo Windows Server 2008 o posterior y, a continuación, haga clic en **Aceptar**.
 
-![Introducción al centro de administración de ad ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>comandos equivalentes de Windows PowerShell</em>_* _
+![Logotipo de PowerShell muestra los comandos equivalentes de PowerShell para elevar el nivel funcional del dominio. ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>Comandos equivalentes de Windows PowerShell</em>_* _
 
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.
 
@@ -299,7 +299,7 @@ En el siguiente procedimiento, creará una directiva de contraseña específica 
 
     Complete o edite los campos dentro de la página de propiedades para crear un nuevo objeto de **Configuración de contraseña**. Los campos **Nombre** y **Precedencia** son necesarios.
 
-    ![Introducción al centro de administración de AD](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/ADDS_ADACNewFGPP.gif)
+    ![Captura de pantalla que muestra cómo crear o editar la configuración de contraseña.](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/ADDS_ADACNewFGPP.gif)
 
 5. En **Se aplica directamente a**, en **Agregar**, escriba **grupo1** y, a continuación, haga clic en **Aceptar**.
 
@@ -307,7 +307,7 @@ En el siguiente procedimiento, creará una directiva de contraseña específica 
 
 6. Haga clic en **Aceptar** para enviar la creación.
 
-![Introducción al centro de administración de ad ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>comandos equivalentes de Windows PowerShell</em>_* _
+![Logotipo de PowerShell muestra los comandos equivalentes de PowerShell para crear una nueva Directiva de contraseña específica. ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>Comandos equivalentes de Windows PowerShell</em>_* _
 
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.
 
@@ -332,7 +332,7 @@ En el siguiente procedimiento, verá la configuración de contraseña resultante
 
 5. Examine la directiva de configuración de contraseñas y haga clic en **Cancelar**.
 
-![Introducción al centro de administración de ad ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>comandos equivalentes de Windows PowerShell</em>_* _
+![Logotipo de PowerShell muestra los comandos equivalentes de PowerShell para ver un conjunto de directivas resultante para un usuario. ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>Comandos equivalentes de Windows PowerShell</em>_* _
 
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.
 
@@ -356,9 +356,9 @@ En el siguiente procedimiento, editará la directiva de contraseña específica 
 
 5. En **Exigir historial de contraseñas**, cambie el valor de **Número de contraseñas recordadas** a **30**.
 
-6. Haga clic en **Aceptar**.
+6. Haga clic en **OK**.
 
-![Introducción al centro de administración de ad ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>comandos equivalentes de Windows PowerShell</em>_* _
+![Logotipo de PowerShell muestra los comandos equivalentes de PowerShell para editar una directiva de contraseña específica. ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif) * *_<em>Comandos equivalentes de Windows PowerShell</em>_* _
 
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.
 
