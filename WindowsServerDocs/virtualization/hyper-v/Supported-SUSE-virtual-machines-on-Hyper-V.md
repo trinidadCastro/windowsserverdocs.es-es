@@ -6,12 +6,12 @@ ms.assetid: 7ec0e14c-4498-4bd9-8fe6-b94260198efc
 ms.author: benarm
 author: BenjaminArmstrong
 ms.date: 04/07/2020
-ms.openlocfilehash: cae0a1218badc9d3110a14c81f95ffa2a944702b
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 6bd14354f007469f62ae070ca2c5c03b65a127de
+ms.sourcegitcommit: 4f7308430a69fe7965e16aa5b31f87c5d68e4a09
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96866394"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97577337"
 ---
 # <a name="supported-suse-virtual-machines-on-hyper-v"></a>Máquinas virtuales de SUSE compatibles en Hyper-V
 
@@ -31,7 +31,7 @@ Los Controladores integrados de SUSE Linux Enterprise Service para Hyper-V está
 
 SLES12 + es solo 64 bits.
 
-|**Característica**|**Versión del sistema operativo Windows Server**|**SLES 15 SP1**|**SLES 15**|**SLES 12 SP3-SP5**|**SLES 12 SP2**|**SLES 12 SP1**|**SLES 11 SP4**|**SLES 11 SP3**|
+|**Característica**|**Versión del sistema operativo Windows Server**|**SLES 15 SP1-SP2**|**SLES 15**|**SLES 12 SP3-SP5**|**SLES 12 SP2**|**SLES 12 SP1**|**SLES 11 SP4**|**SLES 11 SP3**|
 |-|-|-|-|-|-|-|-|-|
 |**Disponibilidad**||Integrada|Integrada|Integrada|Integrada|Integrada|Integrada|Integrada|
 |**[Core](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
@@ -51,12 +51,12 @@ SLES12 + es solo 64 bits.
 |Compatibilidad con TRIM|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;||
 |WWN SCSI|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;||||
 |**[Memoria](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**|||||||||
-|Compatibilidad con el kernel PAE|2019, 2016, 2012 R2|N/D|N/D|N/D|N/D|N/D|&#10004;|&#10004;|
+|Compatibilidad con el kernel PAE|2019, 2016, 2012 R2|N/A|N/A|N/A|N/A|N/A|&#10004;|&#10004;|
 |Configuración de la brecha de MMIO|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Memoria dinámica Hot-Add|2019, 2016, 2012 R2|&#10004; Nota 6|&#10004;Nota 6|&#10004; Nota 6|&#10004; Nota 6|&#10004; Nota 6|&#10004; Nota 4, 5, 6|&#10004; Nota 4, 5, 6|
 |Memoria dinámica: globos|2019, 2016, 2012 R2|&#10004; Nota 6|&#10004; Nota 6|&#10004; Nota 6|&#10004; Nota 6|&#10004; Nota 6|&#10004; Nota 4, 5, 6|&#10004; Nota 4, 5, 6|
 |Tamaño de memoria en tiempo de ejecución|2019, 2016|&#10004; Nota 6|&#10004; Nota 6|&#10004; Nota 6|&#10004; Nota 6||||
-|**[Vídeo](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**|||||||||
+|**[Vídeos](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**|||||||||
 |Dispositivo de vídeo específico de Hyper-V|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |**[Varios](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**|||||||||
 |Par clave-valor|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|Nota de &#10004; 7|Nota de &#10004; 7|
@@ -98,7 +98,7 @@ SLES12 + es solo 64 bits.
 
    ```
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 
 * [Set-VMFirmware](/powershell/module/hyper-v/set-vmfirmware)
 

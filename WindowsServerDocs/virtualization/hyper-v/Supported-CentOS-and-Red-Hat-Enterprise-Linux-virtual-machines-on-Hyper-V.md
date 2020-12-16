@@ -3,15 +3,15 @@ title: Compatibilidad con máquinas virtuales de alta y Red Hat Enterprise Linux
 description: Enumera las versiones de los servicios de integración de Linux para las distribuciones admitidas y Red Hat Enterprise
 ms.topic: article
 ms.assetid: 4bf8783d-dee5-4b3e-8cce-2b11b117c189
-author: danihalfin
-ms.author: vichen
-ms.date: 04/06/2020
-ms.openlocfilehash: 5631dbab8876ab3ceafebdb573e5137d589e7c72
-ms.sourcegitcommit: 7e08990a4837a12b550f585a4bfb95a86bdc5d4f
+author: jperrin
+ms.author: japerrin
+ms.date: 11/11/2020
+ms.openlocfilehash: a43a5b3a107f6b4309bce33d61be123dedf8c8ed
+ms.sourcegitcommit: 4f7308430a69fe7965e16aa5b31f87c5d68e4a09
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97488219"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97577417"
 ---
 <a name="supported-centos-and-red-hat-enterprise-linux-virtual-machines-on-hyper-v"></a>Compatibilidad con máquinas virtuales de alta y Red Hat Enterprise Linux en Hyper-V
 =========================================================================
@@ -73,7 +73,7 @@ En esta sección:
 | Compatibilidad con TRIM                                                                                                                             | 2019, 2016, 2012 R2        | ✔                | ✔               | ✔                 |
 | WWN SCSI                                                                                                                                 | 2019, 2016, 2012 R2        | ✔                | ✔               | ✔                 |
 | [Memoria](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)                                               |                            |                  |                 |                   |
-| Compatibilidad con el kernel PAE                                                                                                                       | 2019, 2016, 2012 R2        |                  | N/D             | N/D               |
+| Compatibilidad con el kernel PAE                                                                                                                       | 2019, 2016, 2012 R2        |                  | N/A             | N/A               |
 | Configuración de la brecha de MMIO                                                                                                                | 2019, 2016, 2012 R2        | ✔                | ✔               | ✔                 |
 | Memoria dinámica Hot-Add                                                                                                                 | 2019, 2016, 2012 R2        | ✔ Nota 8, 9, 10  | ✔ Nota 8, 9, 10 | ✔ Nota 8, 9, 10   |
 | Memoria dinámica: globos                                                                                                              | 2019, 2016, 2012 R2        | ✔ Nota 8, 9, 10  | ✔ Nota 8, 9, 10 | ✔ Nota 8, 9, 10   |
@@ -117,7 +117,7 @@ Esta serie solo tiene kernels de 64 bits.
 | Compatibilidad con TRIM                                                                                                                             | 2019, 2016, 2012 R2        | ✔               | ✔                                                                  | ✔                                                                  | ✔                                                                  | ✔            | ✔            | ✔            | ✔            |               |                  |
 | WWN SCSI                                                                                                                                 | 2019, 2016, 2012 R2        | ✔               | ✔                                                                  | ✔                                                                  | ✔                                                                  | ✔            |               |               |               |               |                  |
 | [Memoria](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)                                               |                            |                  |                                                                     |                                                                     |                                                                     |               |               |               |               |               |                  |
-| Compatibilidad con el kernel PAE                                                                                                                       | 2019, 2016, 2012 R2        | N/D              | N/D                                                                 | N/D                                                                 | N/D                                                                 | N/D           | N/D           | N/D           | N/D           | N/D           | N/D              |
+| Compatibilidad con el kernel PAE                                                                                                                       | 2019, 2016, 2012 R2        | N/A              | N/A                                                                 | N/A                                                                 | N/A                                                                 | N/A           | N/A           | N/A           | N/A           | N/A           | N/A              |
 | Configuración de la brecha de MMIO                                                                                                                | 2019, 2016, 2012 R2        | ✔               | ✔                                                                  | ✔                                                                  | ✔                                                                  | ✔            | ✔            | ✔            | ✔            | ✔            | ✔               |
 | Memoria dinámica Hot-Add                                                                                                                 | 2019, 2016, 2012 R2        | ✔ Nota 8, 9, 10 | ✔ Nota 8, 9, 10                                                    | ✔ Nota 8, 9, 10                                                    | ✔ Nota 8, 9, 10                                                    | ✔ Nota 9, 10 | ✔ Nota 9, 10 | ✔ Nota 9, 10 | ✔ Nota 9, 10 | ✔ Nota 9, 10 | ✔ Nota 8, 9, 10 |
 | Memoria dinámica: globos                                                                                                              | 2019, 2016, 2012 R2        | ✔ Nota 8, 9, 10 | ✔ Nota 8, 9, 10                                                    | ✔ Nota 8, 9, 10                                                    | ✔ Nota 8, 9, 10                                                    | ✔ Nota 9, 10 | ✔ Nota 9, 10 | ✔ Nota 9, 10 | ✔ Nota 9, 10 | ✔ Nota 9, 10 | ✔ Nota 8, 9, 10 |
