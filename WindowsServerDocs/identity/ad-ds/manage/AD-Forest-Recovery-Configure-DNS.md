@@ -6,12 +6,12 @@ author: iainfoulds
 manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
-ms.openlocfilehash: c03d223bcfcf4be9360d175bfcc9f70e7b4cd59e
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 86a47d6fc6660413e42c270616d4ec004729063e
+ms.sourcegitcommit: e57536e28902ae52d3040141bbd2aa00e91bbdd3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97042943"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97644665"
 ---
 # <a name="ad-forest-recovery---configuring-the-dns-server-service"></a>Recuperación del bosque de AD: configurar el servicio servidor DNS
 
@@ -37,13 +37,13 @@ Complete los pasos de instalación y configuración que se indican a continuaci�
 5. En la pantalla **roles de servidor** , seleccione **servidor DNS**. Si se le pide, haga clic en **Agregar características** y en **siguiente**.
 6. En la pantalla **características** , haga clic en **siguiente**.
 7. Lea la información de la página **servidor DNS** y, a continuación, haga clic en **siguiente**.
-   ![Servidor DNS](media/AD-Forest-Recovery-Configure-DNS/dns1.png)
+   ![Captura de pantalla que muestra la página servidor DNS.](media/AD-Forest-Recovery-Configure-DNS/dns1.png)
 8. En la página **confirmación** , compruebe que se instalará el rol de servidor DNS y, a continuación, haga clic en **instalar**.
 
 ### <a name="to-configure-the-dns-server-service"></a>Para configurar el servicio servidor DNS
 
 1. Abra Administrador del servidor, haga clic en **herramientas** y en **DNS**.
-   ![Servidor DNS](media/AD-Forest-Recovery-Configure-DNS/dns2.png)
+   ![Captura de pantalla que muestra el objeto DNS.](media/AD-Forest-Recovery-Configure-DNS/dns2.png)
 2. Cree zonas DNS para los mismos nombres de dominio DNS que se hospedaron en los servidores DNS antes de que el funcionamiento sea crítico. Para obtener más información, consulte Agregar una zona de búsqueda directa ( [https://go.microsoft.com/fwlink/?LinkId=74574](https://go.microsoft.com/fwlink/?LinkId=74574) ).
 3. Configure los datos DNS tal como existían antes de que el funcionamiento sea crítico. Por ejemplo:
 

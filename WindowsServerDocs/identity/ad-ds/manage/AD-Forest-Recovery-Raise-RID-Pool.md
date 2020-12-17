@@ -7,12 +7,12 @@ manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: c37bc129-a5e0-4219-9ba7-b4cf3a9fc9a4
-ms.openlocfilehash: 7f27438ba96d1ce3a8876408123ab768aa32d6c6
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: fe5498bf5efc940b9a91f214f93f40de670df547
+ms.sourcegitcommit: e57536e28902ae52d3040141bbd2aa00e91bbdd3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97041833"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97644695"
 ---
 # <a name="ad-forest-recovery---raising-the-value-of-available-rid-pools"></a>Recuperación del bosque de AD: aumentar el valor de los grupos de RID disponibles
 
@@ -37,15 +37,15 @@ Al aumentar el valor del entero grande, se aumenta el valor de la parte baja. Po
 
 1. Abra Administrador del servidor, haga clic en **herramientas** y en **Editor ADSI**.
 2. Haga clic con el botón secundario en, seleccione **conectar con** y conecte el contexto de nomenclatura predeterminado y haga clic en **Aceptar**.
-   ![Editor ADSI](media/AD-Forest-Recovery-Raise-RID-Pool/adsi1.png)
+   ![Captura de pantalla que muestra cómo conectarse al contexto de nomenclatura predeterminado](media/AD-Forest-Recovery-Raise-RID-Pool/adsi1.png)
 3. Vaya a la siguiente ruta de acceso de nombre distintivo: **CN = RID Manager $, CN = System <domain name> , DC =**.
-   ![Editor ADSI](media/AD-Forest-Recovery-Raise-RID-Pool/adsi2.png)
+   ![Captura de pantalla que muestra cómo buscar la ruta de acceso del nombre distintivo.](media/AD-Forest-Recovery-Raise-RID-Pool/adsi2.png)
 3. Haga clic con el botón derecho y seleccione las propiedades de CN = RID Manager $.
 4. Seleccione el atributo **rIDAvailablePool**, haga clic en **Editar** y, a continuación, copie el valor entero grande en el portapapeles.
-   ![Editor ADSI](media/AD-Forest-Recovery-Raise-RID-Pool/adsi3.png)
+   ![Captura de pantalla que muestra el atributo rIDAvailablePool seleccionado.](media/AD-Forest-Recovery-Raise-RID-Pool/adsi3.png)
 5. Inicie Calculator y, en el menú **Ver** , seleccione **modo científico**.
 6. Agregue 100.000 al valor actual.
-   ![Editor ADSI](media/AD-Forest-Recovery-Raise-RID-Pool/adsi4.png)
+   ![Captura de pantalla que muestra dónde agregar 100.000 al valor actual.](media/AD-Forest-Recovery-Raise-RID-Pool/adsi4.png)
 7. Con Ctrl-c o el comando **copiar** del menú **edición** , copie el valor en el portapapeles.
 8. En el cuadro de diálogo Editar de ADSIEdit, pegue este nuevo valor.
    ![Editor ADSI](media/AD-Forest-Recovery-Raise-RID-Pool/adsi5.png)
@@ -55,17 +55,17 @@ Al aumentar el valor del entero grande, se aumenta el valor de la parte baja. Po
 
 1. En el símbolo del sistema, escriba el siguiente comando y, a continuación, presione ENTRAR: **LDP**
 2. Haga clic en **conexión**, haga clic en **conectar**, escriba el nombre del administrador de RID y, a continuación, haga clic en **Aceptar**.
-   ![LDP](media/AD-Forest-Recovery-Raise-RID-Pool/ldp1.png)
+   ![Captura de pantalla que muestra dónde escribir el nombre del administrador de RID.](media/AD-Forest-Recovery-Raise-RID-Pool/ldp1.png)
 3. Haga clic en **conexión**, haga clic en **enlazar**, seleccione **enlazar con credenciales** , escriba sus credenciales administrativas y, a continuación, haga clic en **Aceptar**.
-   ![LDP](media/AD-Forest-Recovery-Raise-RID-Pool/ldp2.png)
-4. Haga clic en **Ver**, haga clic en **árbol** y escriba la siguiente ruta de acceso distintivo: CN = RID Manager $, CN = System, DC =*Domain Name* 
-    ![ LDP](media/AD-Forest-Recovery-Raise-RID-Pool/ldp3.png)
+   ![Captura de pantalla que muestra la opción enlazar con credenciales.](media/AD-Forest-Recovery-Raise-RID-Pool/ldp2.png)
+4. Haga clic en **Ver**, haga clic en **árbol** y, a continuación, escriba la captura de pantalla nombre distintivo siguiente: CN = RID Manager $, CN = System, DC =*nombre* 
+    ![ de dominio que muestra dónde se escribe la ruta de acceso del nombre distintivo.](media/AD-Forest-Recovery-Raise-RID-Pool/ldp3.png)
 5. Haga clic en **examinar** y, a continuación, en **modificar**.
 6. Agregue 100.000 al valor actual de **rIDAvailablePool** y, a continuación, escriba la suma en **los valores**.
 7. En **DN**, escriba `cn=RID Manager$,cn=System,dc=` *<nombre \> de dominio*.
 8. En **Editar atributo de entrada**, escriba `rIDAvailablePool` .
 9. Seleccione **reemplazar** como la operación y, a continuación, haga clic en **entrar**.
-   ![LDP](media/AD-Forest-Recovery-Raise-RID-Pool/ldp4.png)
+   ![Captura de pantalla que muestra la opción reemplazar.](media/AD-Forest-Recovery-Raise-RID-Pool/ldp4.png)
 10. Haga clic en **Ejecutar** para ejecutar la operación. Haga clic en **Cerrar**.
 11. Para validar el cambio, haga clic en **Ver**, en **árbol** y escriba la siguiente ruta de acceso de nombre distintivo: CN = RID Manager $, CN = System, DC =*Domain Name*.   Compruebe el atributo **rIDAvailablePool** .
    ![LDP](media/AD-Forest-Recovery-Raise-RID-Pool/ldp5.png)

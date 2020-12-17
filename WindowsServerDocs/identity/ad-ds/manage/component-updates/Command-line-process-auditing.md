@@ -7,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 24d4541da55e97b5506719b7b6df0566695c4e5f
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 635910f1988a06ca86aff048a6df80eea28ef86e
+ms.sourcegitcommit: e57536e28902ae52d3040141bbd2aa00e91bbdd3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97049463"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97644635"
 ---
 # <a name="command-line-process-auditing"></a>Auditoría de proceso de línea de comandos
 
@@ -35,7 +35,7 @@ ms.locfileid: "97049463"
 
     -   "Incluir línea de comandos en eventos de creación de procesos"
 
-![auditoría de línea de comandos](media/Command-line-process-auditing/GTR_ADDS_Event4688.gif)
+![Captura de pantalla que resalta la línea de comandos del proceso.](media/Command-line-process-auditing/GTR_ADDS_Event4688.gif)
 
 **Figura SEQ figura \\ \* árabe 16 evento 4688**
 
@@ -74,11 +74,11 @@ Volumen de eventos: bajo a medio, según del uso del sistema
 |**Compatible con:**|?|
 |**Descripción**|Esta configuración de directiva determina la información que se registra en los eventos de auditoría de seguridad cuando se ha creado un nuevo proceso.<p>Esta configuración solo se aplica cuando está habilitada la Directiva de creación de procesos de auditoría. Si habilita esta Directiva, la información de la línea de comandos de cada proceso se registrará en texto sin formato en el registro de eventos de seguridad como parte del evento 4688 de creación de proceso de auditoría, "se ha creado un nuevo proceso", en las estaciones de trabajo y los servidores en los que se aplica esta configuración de directiva.<p>Si deshabilita o no establece esta configuración de Directiva, la información de línea de comandos del proceso no se incluirá en los eventos de creación de procesos de auditoría.<p>Valor predeterminado: no configurado<p>Nota: cuando esta configuración de directiva está habilitada, cualquier usuario con acceso para leer los eventos de seguridad podrá leer los argumentos de la línea de comandos para cualquier proceso creado correctamente. Los argumentos de la línea de comandos pueden contener información confidencial o privada como contraseñas o datos de usuario.|
 
-![auditoría de línea de comandos](media/Command-line-process-auditing/GTR_ADDS_IncludeCLISetting.gif)
+![Captura de pantalla que muestra ](media/Command-line-process-auditing/GTR_ADDS_IncludeCLISetting.gif)
 
 Si usa la Configuración de directiva de auditoría avanzada, deberá confirmar que la configuración de directiva de auditoría básica no la sobrescribe.  El evento 4719 se registra cuando se sobrescribe la configuración.
 
-![auditoría de línea de comandos](media/Command-line-process-auditing/GTR_ADDS_Event4719.gif)
+![Captura de pantalla que muestra el cuadro de diálogo incluir línea de comandos en eventos de creación de procesos.](media/Command-line-process-auditing/GTR_ADDS_Event4719.gif)
 
 En el procedimiento siguiente se muestra cómo evitar conflictos bloqueando la aplicación de cualquier configuración de directiva de auditoría básica.
 
