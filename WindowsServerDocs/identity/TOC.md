@@ -476,10 +476,7 @@
 ## Active Directory Rights Management Services
 ### [Actualización de AD RMS a Windows Server 2016](ad-rms/adrms-deploy.md)
 
-
-## [Protección del acceso con privilegios](securing-privileged-access/securing-privileged-access.md)
-### [Estaciones de trabajo de acceso con privilegios](securing-privileged-access/privileged-access-workstations.md)
-### [Protección del material de referencia de acceso con privilegios](securing-privileged-access/securing-privileged-access-reference-material.md)
+## [Referencia de herramientas administrativas y tipos de inicio de sesión](securing-privileged-access/reference-tools-logon-types.md)
 
 ## [Directivas de restricción de software](software-restriction-policies/software-restriction-policies.md)
 ### [Información técnica de directivas de restricción de software](software-restriction-policies/software-restriction-policies-technical-overview.md)
