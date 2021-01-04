@@ -95,7 +95,8 @@
 #### [Conceder acceso a su PC desde fuera de la red](clients/remote-desktop-allow-outside-access.md)
 #### [Cambiar el puerto de escucha de Escritorio remoto en su PC](clients/change-listening-port.md)
 ### Información avanzada
-#### [Comparación de los clientes](clients/remote-desktop-app-compare.md)
+#### [Comparación de los clientes: características](clients/remote-desktop-features.md)
+#### [Comparación de los clientes: redireccionamientos](clients/remote-desktop-app-compare.md)
 #### [Configuración admitida del archivo RDP de Escritorio remoto](clients/rdp-files.md)
 #### [Esquema de URI de Escritorio remoto](clients/remote-desktop-uri.md)
 #### [Preguntas más frecuentes del cliente de Escritorio remoto](clients/remote-desktop-client-faq.md)
