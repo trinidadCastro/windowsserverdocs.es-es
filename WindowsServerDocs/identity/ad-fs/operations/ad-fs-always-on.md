@@ -6,12 +6,12 @@ ms.author: billmath
 manager: daveba
 ms.date: 01/20/2020
 ms.topic: article
-ms.openlocfilehash: 3d1ad6745eb7051857bc27b4fc60400f40b01731
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 44131a445fcad6f3ddc5a1123ede7d492ed68bc9
+ms.sourcegitcommit: 5f234fb15c1d0365b60e83a50bf953e317d6239c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97039431"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879664"
 ---
 # <a name="setting-up-an-ad-fs-deployment-with-alwayson-availability-groups"></a>Configuración de una implementación de AD FS con Grupos de disponibilidad AlwaysOn
 Una topología de distribución geográfica de alta disponibilidad proporciona:
@@ -95,7 +95,7 @@ Para implementar AD FS siga los vínculos iniciales siguientes para instalar el 
 
 ## <a name="configuring-ad-fs-to-use-an-alwayson-availability-group"></a>Configuración de AD FS para usar un grupo de disponibilidad AlwaysOn
 
-La configuración de una granja de AD FS con grupos de disponibilidad AlwaysOn requiere una ligera modificación en el procedimiento de implementación de AD FS. Asegúrese de que cada instancia de servidor ejecuta la misma versión de SQL. Para ver la lista completa de requisitos previos, restricciones y recomendaciones para Grupos de disponibilidad Always On, lea [aquí](/sql/database-engine/availability-groups/windows/prereqs-restrictions-recommendations-always-on-availability?view=sql-server-2017#PrerequisitesForDbs).
+La configuración de una granja de AD FS con grupos de disponibilidad AlwaysOn requiere una ligera modificación en el procedimiento de implementación de AD FS. Asegúrese de que cada instancia de servidor ejecuta la misma versión de SQL. Para ver la lista completa de requisitos previos, restricciones y recomendaciones para Grupos de disponibilidad Always On, lea [aquí](/sql/database-engine/availability-groups/windows/prereqs-restrictions-recommendations-always-on-availability?view=sql-server-2017&preserve-view=true#PrerequisitesForDbs).
 
 1.  Las bases de datos de las que desea realizar una copia de seguridad deben crearse antes de que se puedan configurar los grupos de disponibilidad AlwaysOn.  AD FS crea sus bases de datos como parte de la configuración y la configuración inicial del primer nodo de servicio de Federación de una nueva granja de servidores de SQL Server de AD FS.  Especifique el nombre de host de base de datos de la granja existente mediante SQL Server. Como parte de la configuración de AD FS, debe especificar una cadena de conexión SQL, por lo que tendrá que configurar la primera granja de AD FS para conectarse directamente a una instancia de SQL (esto es solo temporal). Para obtener instrucciones específicas sobre la configuración de una granja de AD FS, incluida la configuración de un nodo de la granja de AD FS con una cadena de conexión de SQL Server, vea [configurar un servidor de Federación](../deployment/configure-a-federation-server.md).
 

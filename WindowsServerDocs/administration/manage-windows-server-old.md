@@ -6,12 +6,12 @@ author: lizap
 ms.author: elizapo
 ms.date: 03/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 55b33c7ab74ac9295d42ef884540d551b1ad6ec4
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 5fe4750b1ca960df0ec74000344ca9d72bb0a785
+ms.sourcegitcommit: 5f234fb15c1d0365b60e83a50bf953e317d6239c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87992432"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879734"
 ---
 # <a name="manage-windows-server"></a>Administrar Windows Server
 
@@ -108,7 +108,7 @@ Con Microsoft Server Performance Advisor (SPA), puede recopilar métricas para d
 
 Windows Server incluye un conjunto de comandos y módulos de Windows PowerShell que puede usar para automatizar las tareas de administración.
 
-### <a name="windows-powershell"></a>[Windows PowerShell](/powershell/scripting/powershell-scripting?view=powershell-5.1)
+### <a name="windows-powershell"></a>[Windows PowerShell](/powershell/scripting/powershell-scripting?view=powershell-5.1&preserve-view=true)
 Instalador PowerShell es un shell de línea de comandos y un lenguaje de scripting diseñado para permitirle automatizar rápidamente las tareas administrativas.
 
 ### <a name="windows-commands"></a>[Comandos de Windows](windows-commands/windows-commands.md)

@@ -7,12 +7,12 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.date: 02/19/2020
-ms.openlocfilehash: 94deca783d770fb5322f9fc489d692f925cfa1a9
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 0eaea9ced163f63c37f2ef932e568872ec84bdcc
+ms.sourcegitcommit: 5f234fb15c1d0365b60e83a50bf953e317d6239c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96866264"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879764"
 ---
 # <a name="optimizing-windows-10-version-1909-for-a-virtual-desktop-infrastructure-vdi-role"></a>Optimización de Windows 10, versión 1909, para un rol de Infraestructura de escritorio virtual (VDI)
 
@@ -663,7 +663,7 @@ Nombre de tarea programada:
 
 ### <a name="apply-windows-and-other-updates"></a>Aplicación de actualizaciones de Windows (y otras)
 
-Aplica las actualizaciones disponibles, desde Microsoft Update o desde los recursos internos, incluidas las firmas de Windows Defender. Este es un buen momento para aplicar otras actualizaciones disponibles, incluidas las de Microsoft Office si están instaladas, y otras actualizaciones de software. Si PowerShell va a permanecer en la imagen, puedes descargar la ayuda más reciente disponible para PowerShell ejecutando el comando [Update-Help](/powershell/module/microsoft.powershell.core/update-help?view=powershell-7).
+Aplica las actualizaciones disponibles, desde Microsoft Update o desde los recursos internos, incluidas las firmas de Windows Defender. Este es un buen momento para aplicar otras actualizaciones disponibles, incluidas las de Microsoft Office si están instaladas, y otras actualizaciones de software. Si PowerShell va a permanecer en la imagen, puedes descargar la ayuda más reciente disponible para PowerShell ejecutando el comando [Update-Help](/powershell/module/microsoft.powershell.core/update-help?view=powershell-7&preserve-view=true).
 
 #### <a name="servicing-the-operating-system-and-apps"></a>Mantenimiento del sistema operativo y las aplicaciones
 

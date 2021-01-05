@@ -6,12 +6,12 @@ author: BenjaminArmstrong
 ms.date: 12/20/2016
 ms.topic: article
 ms.assetid: 9cafd6cb-dbbe-4b91-b26c-dee1c18fd8c2
-ms.openlocfilehash: f82ccc4e6dc2dbd7a34d829c0bc753fc6533f8dd
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 8b1519bb8b17393a29a04413eebcae0126799480
+ms.sourcegitcommit: 5f234fb15c1d0365b60e83a50bf953e317d6239c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96866114"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879884"
 ---
 # <a name="manage-hyper-v-integration-services"></a>Administrar Integration Services de Hyper-V
 
@@ -125,7 +125,7 @@ Para que un servicio de integración sea totalmente funcional, el servicio corre
     Running  vmicvss            Hyper-V Volume Shadow Copy Requestor
     ```
 
-1. Ejecute [Start-Service](/powershell/module/microsoft.powershell.management/start-service?view=powershell-7) o [Stop-Service](/powershell/module/microsoft.powershell.management/stop-service?view=powershell-7). Por ejemplo, para desactivar Windows PowerShell Direct, ejecute:
+1. Ejecute [Start-Service](/powershell/module/microsoft.powershell.management/start-service?view=powershell-7&preserve-view=true) o [Stop-Service](/powershell/module/microsoft.powershell.management/stop-service?view=powershell-7&preserve-view=true). Por ejemplo, para desactivar Windows PowerShell Direct, ejecute:
 
     ```
     Stop-Service -Name vmicvmsession

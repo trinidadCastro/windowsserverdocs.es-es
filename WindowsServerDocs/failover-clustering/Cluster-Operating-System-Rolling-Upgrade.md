@@ -7,12 +7,12 @@ author: jasongerend
 ms.author: jgerend
 manager: lizross
 ms.date: 03/27/2018
-ms.openlocfilehash: e1e4cd3cc7258b1670de58a7df5e5930274ae3b6
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 7929fc90f42c2033952e527a3edf180dedef24c2
+ms.sourcegitcommit: 5f234fb15c1d0365b60e83a50bf953e317d6239c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97041703"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879934"
 ---
 # <a name="cluster-operating-system-rolling-upgrade"></a>Actualización gradual del sistema operativo del clúster
 
@@ -43,7 +43,7 @@ En esta guía se describen las distintas fases del proceso de actualización gra
 El siguiente escenario no se admite en Windows Server 2016:
 -  Actualización gradual del sistema operativo de clúster de los clústeres invitados con el disco duro virtual (archivo. vhdx) como almacenamiento compartido
 
-La actualización gradual del sistema operativo del clúster es totalmente compatible con System Center Virtual Machine Manager (SCVMM) 2016. Si usa SCVMM 2016, consulte [realizar una actualización gradual de un clúster de hosts de Hyper-V a Windows Server 2016 en VMM](/system-center/vmm/hyper-v-rolling-upgrade?view=sc-vmm-1807) para obtener instrucciones sobre cómo actualizar los clústeres y automatizar los pasos que se describen en este documento.
+La actualización gradual del sistema operativo del clúster es totalmente compatible con System Center Virtual Machine Manager (SCVMM) 2016. Si usa SCVMM 2016, consulte [realizar una actualización gradual de un clúster de hosts de Hyper-V a Windows Server 2016 en VMM](/system-center/vmm/hyper-v-rolling-upgrade?view=sc-vmm-1807&preserve-view=true) para obtener instrucciones sobre cómo actualizar los clústeres y automatizar los pasos que se describen en este documento.
 
 ## <a name="requirements"></a>Requisitos
 Complete los requisitos siguientes antes de comenzar el proceso de actualización gradual del sistema operativo del clúster:

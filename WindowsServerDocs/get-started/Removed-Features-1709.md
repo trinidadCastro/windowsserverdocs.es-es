@@ -7,12 +7,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: ad9c64083ec07bd8fc5d1db56978f2b469da9953
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 2dfd52bc9f2524ff40820478dde69c5b8d9fe8be
+ms.sourcegitcommit: 5f234fb15c1d0365b60e83a50bf953e317d6239c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87959443"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879754"
 ---
 # <a name="features-removed-or-planned-for-replacement-starting-with-windows-server-version-1709"></a>Características eliminadas o que está previsto su reemplazo a partir de Windows Server, versión 1709
 
@@ -62,4 +62,4 @@ Se está considerando el reemplazo de iSNS. La característica Bloque de mensaje
 Se está considerando el reemplazo de este método de cifrado porque el método superior de API de criptografía: Next Generation (CNG) ya está disponible. Si quieres obtener más información sobre el cifrado de CNG, consulta [Acerca de CNG](/windows/win32/seccng/about-cng).
 
 ### <a name="windows-powershell-20"></a>Windows PowerShell 2.0
-Esta versión anterior de Windows PowerShell se ha reemplazado por varias versiones más recientes. Para obtener las mejores características y un rendimiento excepcional, migra a Windows PowerShell 5.0 o una versión posterior. Consulta la [documentación de PowerShell](/powershell/index?view=powershell-5.1) para obtener más información.
+Esta versión anterior de Windows PowerShell se ha reemplazado por varias versiones más recientes. Para obtener las mejores características y un rendimiento excepcional, migra a Windows PowerShell 5.0 o una versión posterior. Consulta la [documentación de PowerShell](/powershell/index?view=powershell-5.1&preserve-view=true) para obtener más información.

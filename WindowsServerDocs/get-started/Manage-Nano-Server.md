@@ -8,12 +8,12 @@ ms.assetid: 599d6438-a506-4d57-a0ea-1eb7ec19f46e
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: cb6ffed04856c1e4fe670893a2af3acedb6da012
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: 305f01d4d7d329a11d29a0aad06b165f052c729a
+ms.sourcegitcommit: 5f234fb15c1d0365b60e83a50bf953e317d6239c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90765956"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879894"
 ---
 # <a name="manage-nano-server"></a>Administración de Nano Server
 
@@ -369,7 +369,7 @@ También puede utilizar la interfaz gráfica de Perfmon.exe de forma remota con 
 
 ### <a name="interact-with-the-windows-event-log"></a>Interactuación con el registro de eventos de Windows
 
-Nano Server admite el cmdlet ```Get-WinEvent```, que proporciona el registro de eventos de Windows filtrando y consultando las capacidades, tanto localmente así como en un equipo remoto. Las opciones y los ejemplos detallados están disponibles en la [página de documentación de Get-WinEvent](/powershell/module/microsoft.powershell.diagnostics/get-winevent?view=powershell-5.1). En este sencillo ejemplo se recuperan los *errores* indicados en el registro del *sistema* durante los últimos dos días.
+Nano Server admite el cmdlet ```Get-WinEvent```, que proporciona el registro de eventos de Windows filtrando y consultando las capacidades, tanto localmente así como en un equipo remoto. Las opciones y los ejemplos detallados están disponibles en la [página de documentación de Get-WinEvent](/powershell/module/microsoft.powershell.diagnostics/get-winevent?view=powershell-5.1&preserve-view=true). En este sencillo ejemplo se recuperan los *errores* indicados en el registro del *sistema* durante los últimos dos días.
 ```
 PS C:\> $StartTime = (Get-Date) - (New-TimeSpan -Day 2)
 PS C:\> Get-WinEvent -FilterHashTable @{LogName='System'; Level=2; StartTime=$StartTime} | select TimeCreated, Message

@@ -6,18 +6,18 @@ ms.assetid: 7110ad21-a33e-48d5-bb3c-129982913bc8
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: bd7d80ca79175f41944292d7a11dbc03a1e30c3d
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 128c9ce3591f9603ac9085b66fc3359d85a892f2
+ms.sourcegitcommit: 5f234fb15c1d0365b60e83a50bf953e317d6239c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997588"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879784"
 ---
 # <a name="deploy-dhcp-using-windows-powershell"></a>Implementación de DHCP mediante Windows PowerShell
 
 > Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-En esta guía se proporcionan instrucciones sobre cómo usar Windows PowerShell para implementar un servidor DHCP del Protocolo de configuración dinámica de host de protocolo de Internet (IP) versión 4 \( \) que asigna automáticamente direcciones IP y opciones de DHCP a los clientes DHCP IPv4 que están conectados a una o más subredes de la red.
+En esta guía se proporcionan instrucciones sobre cómo usar Windows PowerShell para implementar un servidor DHCP del Protocolo de configuración dinámica de host de protocolo de Internet (IP) versión 4 \( \)  que asigna automáticamente direcciones IP y opciones de DHCP a los clientes DHCP IPv4 que están conectados a una o más subredes de la red.
 
 > [!NOTE]
 > Para descargar este documento en formato de Word desde la galería de TechNet, consulte [implementar DHCP mediante Windows PowerShell en Windows Server 2016](https://gallery.technet.microsoft.com/Deploy-DHCP-Using-Windows-246dd293).
@@ -93,7 +93,7 @@ TCP/IP proporciona utilidades de TCP/IP básicas que permiten a los equipos basa
 
 - Windows 7
 
-- Windows Server 2008
+- Windows Server 2008
 
 - Windows Vista
 
@@ -298,9 +298,9 @@ Para obtener más información, consulte la sección **creación de un conmutado
 
 Puede usar el siguiente procedimiento para ejecutar Windows PowerShell con privilegios de administrador.
 
-1. En un equipo que ejecute Windows Server 2016, haga clic en **Inicio**y, a continuación, haga clic con el botón secundario en el icono de Windows PowerShell. Aparece un menú.
+1. En un equipo que ejecute Windows Server 2016, haga clic en **Inicio** y, a continuación, haga clic con el botón secundario en el icono de Windows PowerShell. Aparece un menú.
 
-2. En el menú, haga clic en **más**y, a continuación, haga clic en **Ejecutar como administrador**. Si se le solicita, escriba las credenciales de una cuenta que tenga privilegios de administrador en el equipo. Si la cuenta de usuario con la que ha iniciado sesión en el equipo es una cuenta de administrador, no recibirá una solicitud de credenciales.
+2. En el menú, haga clic en **más** y, a continuación, haga clic en **Ejecutar como administrador**. Si se le solicita, escriba las credenciales de una cuenta que tenga privilegios de administrador en el equipo. Si la cuenta de usuario con la que ha iniciado sesión en el equipo es una cuenta de administrador, no recibirá una solicitud de credenciales.
 
 3. Windows PowerShell se abre con privilegios de administrador.
 
@@ -352,7 +352,7 @@ Restart-Computer
 
 Para obtener más información sobre el comando Add-Computer, vea el siguiente tema.
 
-- [Add-Computer](/powershell/module/microsoft.powershell.management/add-computer?view=powershell-5.1)
+- [Add-Computer](/powershell/module/microsoft.powershell.management/add-computer?view=powershell-5.1&preserve-view=true)
 
 ### <a name="install-dhcp"></a>Instalar DHCP
 

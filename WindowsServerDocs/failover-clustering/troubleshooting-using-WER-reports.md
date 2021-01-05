@@ -4,12 +4,12 @@ description: Solución de problemas de un clúster de conmutación por error med
 ms.author: johnmar
 author: JohnMarlin-MSFT
 ms.date: 03/27/2018
-ms.openlocfilehash: 9b4569f4f4d28ad1380cf057cdf96e4b81fbdb2a
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 865689fd18825d32e7f5d46a60b3bf02321aaebb
+ms.sourcegitcommit: 5f234fb15c1d0365b60e83a50bf953e317d6239c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990744"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879874"
 ---
 # <a name="troubleshooting-a-failover-cluster-using-windows-error-reporting"></a>Solución de problemas de clúster de conmutación por error con el Informe de errores de Windows
 
@@ -77,7 +77,7 @@ Una vez que haya habilitado los canales de eventos, puede usar **DumpLogQuery** 
 
 A la hora de solucionar problemas, si necesita recopilar canales de eventos adicionales, puede modificar la propiedad **DumpLogQuery** agregando consultas adicionales o modificando la lista.
 
-Para ello, primero pruebe la consulta XPATH con el cmdlet de PowerShell [Get-WinEvent](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent?view=powershell-5.1) :
+Para ello, primero pruebe la consulta XPATH con el cmdlet de PowerShell [Get-WinEvent](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent?view=powershell-5.1&preserve-view=true) :
 
 ```powershell
 get-WinEvent -FilterXML "<QueryList><Query><Select Path='Microsoft-Windows-GroupPolicy/Operational'>*[System[TimeCreated[timediff(@SystemTime) &gt;= 600000]]]</Select></Query></QueryList>"
@@ -304,7 +304,7 @@ Para identificar por qué se produjo un error en el disco, navegue hasta los eve
 
 ### <a name="physical-disk-timed-out"></a>Tiempo de espera agotado del disco físico
 
-Para diagnosticar este problema, vaya a la carpeta de informes WER. La carpeta contiene archivos de registro y archivos de volcado de memoria para **RHS**, **clussvc.exe**y del proceso que hospeda el servicio "**smphost**", como se muestra a continuación:
+Para diagnosticar este problema, vaya a la carpeta de informes WER. La carpeta contiene archivos de registro y archivos de volcado de memoria para **RHS**, **clussvc.exe** y del proceso que hospeda el servicio "**smphost**", como se muestra a continuación:
 
 ```powershell
 PS C:\Windows\system32> dir C:\ProgramData\Microsoft\Windows\WER\ReportArchive\Critical_PhysicalDisk_64acaf7e4590828ae8a3ac3c8b31da9a789586d4_00000000_cab_1d94712e
@@ -395,7 +395,7 @@ DynamicSig[29].Value=10008
 
 La lista de servicios y procesos que se recopilan en un volcado de memoria se controla mediante la siguiente propiedad: **PS C:\Windows\system32> (get-ClusterResourceType-name "Physical Disk"). DumpServicesSmphost**
 
-Para identificar por qué se ha producido el bloqueo, abra los archivos Dum. A continuación, ejecute la consulta siguiente: **EventLog. EventData ["LogString"] contiene "disco de clúster 10"** , que le proporcionará el siguiente resultado:
+Para identificar por qué se ha producido el bloqueo, abra los archivos Dum. A continuación, ejecute la consulta siguiente: **EventLog. EventData ["LogString"] contiene "disco de clúster 10"**  , que le proporcionará el siguiente resultado:
 
 ![Salida de la consulta de registro en ejecución 2](media/troubleshooting-using-WER-reports/output-of-running-log-query-2.png)
 

@@ -5,12 +5,12 @@ ms.topic: article
 ms.author: jasonsh
 author: lzybkr
 ms.date: 10/16/2017
-ms.openlocfilehash: f5ab7fbb1c993192f4626935d2adb73fc9401250
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: fc6be9ef894e7d427c6abb7d8f00e77d52610af5
+ms.sourcegitcommit: 5f234fb15c1d0365b60e83a50bf953e317d6239c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896254"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879534"
 ---
 # <a name="powershell-scripting-performance-considerations"></a>Consideraciones sobre el rendimiento del scripting de PowerShell
 
@@ -123,11 +123,11 @@ finally
 }
 ```
 
-## <a name="avoid-write-host"></a>Evitar write-host
+## <a name="avoid-write-host"></a>Evitar Write-Host
 
 Generalmente, se considera una práctica inadecuada escribir la salida directamente en la consola, pero cuando tiene sentido, se usan muchos scripts `Write-Host` .
 
 Si debe escribir muchos mensajes en la consola, `Write-Host` puede ser un orden de magnitud más lento que `[Console]::WriteLine()` . Sin embargo, tenga en cuenta que `[Console]::WriteLine()` solo es una alternativa adecuada para hosts específicos, como powershell.exe o powershell_ise.exe, no se garantiza que funcione en todos los hosts.
 
-En lugar de usar `Write-Host` , considere la posibilidad de usar [Write-Output](/powershell/module/Microsoft.PowerShell.Utility/Write-Output?view=powershell-5.1).
+En lugar de usar `Write-Host` , considere la posibilidad de usar [Write-Output](/powershell/module/Microsoft.PowerShell.Utility/Write-Output?view=powershell-5.1&preserve-view=true).
 

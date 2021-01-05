@@ -1,17 +1,17 @@
 ---
 title: La extensión de conmutador virtual de WFP debe habilitarse si así lo requieren las extensiones de terceros
-description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información acerca de qué hacer cuando la extensión de conmutador virtual de la plataforma de filtrado de Windows (WFP) está deshabilitada.
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 8aa8a9a5-e3fa-4c9b-8331-ba5a3de22429
 ms.date: 8/16/2016
-ms.openlocfilehash: 00312413c8da02ce5221767667ecd941f0095776
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 1f9543b90610bb361e379e545ecd40d6db1f9efc
+ms.sourcegitcommit: 42581433c0bb62e291d412ee9e13869b42e69a4b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865164"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97846327"
 ---
 # <a name="the-wfp-virtual-switch-extension-should-be-enabled-if-it-is-required-by-third-party-extensions"></a>La extensión de conmutador virtual de WFP debe habilitarse si así lo requieren las extensiones de terceros
 
@@ -36,7 +36,7 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 
 \<list of virtual machines>
 
-## <a name="resolution"></a>**Solución**
+## <a name="resolution"></a>**Resolución**
 *Use el cmdlet de Windows PowerShell, enable-VMSwitchExtension, para habilitar la plataforma de filtrado de Windows si es necesaria para las extensiones de terceros.*
 
 ### <a name="enable-the-windows-filtering-platform-using-windows-powershell"></a>Habilitar la plataforma de filtrado de Windows mediante Windows PowerShell
@@ -51,5 +51,5 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 Enable-VMSwitchExtension -VMSwitchName External -Name Microsoft Windows Filtering Platform
 ```
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 [Enable-VMSwitchExtension](/powershell/module/hyper-v/enable-vmswitchextension)

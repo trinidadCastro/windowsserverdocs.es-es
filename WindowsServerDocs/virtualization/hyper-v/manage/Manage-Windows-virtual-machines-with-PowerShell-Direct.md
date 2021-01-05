@@ -6,12 +6,12 @@ ms.assetid: b5715c02-a90f-4de9-a71e-0fc09093ba2d
 ms.author: benarm
 author: BenjaminArmstrong
 ms.date: 10/04/2016
-ms.openlocfilehash: fcf9863a90b9d42d1495c0da0267feba18d119a1
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: c6879f6c7762b7a4e811db8aaa001444be0b6688
+ms.sourcegitcommit: 5f234fb15c1d0365b60e83a50bf953e317d6239c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90744740"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879864"
 ---
 # <a name="manage-windows-virtual-machines-with-powershell-direct"></a>Administración de máquinas virtuales Windows con PowerShell Direct
 
@@ -31,7 +31,7 @@ Si está administrando máquinas virtuales antiguas, use la opción Conexión a 
 
 1. En el host de Hyper-V, abra Windows PowerShell como administrador.
 
-2. Use el cmdlet [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-7) para conectarse a la máquina virtual. Ejecute uno de los siguientes comandos para crear una sesión mediante el GUID o el nombre de la máquina virtual:
+2. Use el cmdlet [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-7&preserve-view=true) para conectarse a la máquina virtual. Ejecute uno de los siguientes comandos para crear una sesión mediante el GUID o el nombre de la máquina virtual:
 
     ```
     Enter-PSSession -VMName <VMName>
@@ -44,13 +44,13 @@ Si está administrando máquinas virtuales antiguas, use la opción Conexión a 
 3. Escriba las credenciales de la máquina virtual.
 4. Ejecute los comandos que necesite. Estos comandos se ejecutan en la máquina virtual con la que creó la sesión.
 
-5.  Cuando haya terminado, use [Exit-PSSession](/powershell/module/microsoft.powershell.core/exit-pssession?view=powershell-7) para cerrar la sesión.
+5.  Cuando haya terminado, use [Exit-PSSession](/powershell/module/microsoft.powershell.core/exit-pssession?view=powershell-7&preserve-view=true) para cerrar la sesión.
 
     ```
     Exit-PSSession
     ```
 
-## <a name="run-script-or-command-with-invoke-command-cmdlet"></a>Ejecutar script o comando con el cmdlet Invoke-Command
+## <a name="run-script-or-command-with-invoke-command-cmdlet"></a>Ejecutar script o comando con Invoke-Command cmdlet
 Puede usar el cmdlet [Invoke-Command](/powershell/module/Microsoft.PowerShell.Core/Invoke-Command) para ejecutar un conjunto predeterminado de comandos en la máquina virtual. Este es un ejemplo de cómo puede usar el cmdlet Invoke-Command, donde PSTest es el nombre de la máquina virtual y el script que se ejecutará (foo.ps1) está en la carpeta script de la unidad C:/:
 
 ```

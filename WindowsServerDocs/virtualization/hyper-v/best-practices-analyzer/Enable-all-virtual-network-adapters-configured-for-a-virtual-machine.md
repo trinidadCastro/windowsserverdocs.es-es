@@ -1,17 +1,17 @@
 ---
 title: Habilitar todos los adaptadores de red virtuales configurados para una máquina virtual
-description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información acerca de qué hacer cuando uno o varios adaptadores de red se pueden deshabilitar en una máquina virtual.
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: fcd350b7-4240-4359-aadd-93e7ac4d314e
 ms.date: 8/16/2016
-ms.openlocfilehash: 81e0bbb8fce32b8343a13dea953498efb627d496
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 300aad537c5e111003db60b1ba947dbea447ada9
+ms.sourcegitcommit: 42581433c0bb62e291d412ee9e13869b42e69a4b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746290"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97846371"
 ---
 # <a name="enable-all-virtual-network-adapters-configured-for-a-virtual-machine"></a>Habilitar todos los adaptadores de red virtuales configurados para una máquina virtual
 

@@ -6,12 +6,12 @@ author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 5/23/2018
-ms.openlocfilehash: 2a97fdbc2e2a80c310cac2b770e18f34d53dd983
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: f522623fa88c5ea979d405be013fa26937c658f1
+ms.sourcegitcommit: 5f234fb15c1d0365b60e83a50bf953e317d6239c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997150"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879834"
 ---
 # <a name="system-insights-faq"></a>Preguntas más frecuentes sobre System Insights
 
@@ -19,7 +19,7 @@ ms.locfileid: "87997150"
 
 ## <a name="how-can-you-use-system-insights-with-azure-monitor-or-system-center-operations-manager"></a>¿Cómo se puede usar System Insights con Azure Monitor o System Center Operations Manager?
 
-[Azure monitor](https://azure.microsoft.com/services/monitor/) y [System Center Operations Manager](/system-center/scom/welcome?view=sc-om-1807) proporcionan información operativa a través de las implementaciones para ayudarle a administrar la infraestructura. Por el contrario, System Insights es una característica de Windows Server que presenta las capacidades de análisis predictivo local. Juntos, System Insights y Azure Monitor o SCOM pueden mostrar las predicciones en una población de dispositivos:
+[Azure monitor](https://azure.microsoft.com/services/monitor/) y [System Center Operations Manager](/system-center/scom/welcome?view=sc-om-1807&preserve-view=true) proporcionan información operativa a través de las implementaciones para ayudarle a administrar la infraestructura. Por el contrario, System Insights es una característica de Windows Server que presenta las capacidades de análisis predictivo local. Juntos, System Insights y Azure Monitor o SCOM pueden mostrar las predicciones en una población de dispositivos:
 
  Azure Monitor o SCOM pueden aprovechar los eventos creados por System Insights, ya que System Insights genera el resultado de cada predicción en el registro de eventos. Pueden exponer estas predicciones específicas del equipo en una flota de servidores de Windows, lo que le permite tener una vista unificada de estas predicciones en un grupo de instancias de servidor.
 

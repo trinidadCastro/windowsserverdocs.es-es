@@ -6,12 +6,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 05/05/2020
 ms.topic: article
-ms.openlocfilehash: 2c1d05450869d558d1991da2f95b72bcaeca7462
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 7df064f4afe5fa8536bd35003a397ab85ea1bf67
+ms.sourcegitcommit: 5f234fb15c1d0365b60e83a50bf953e317d6239c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97047823"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879654"
 ---
 # <a name="build-plug-ins-with-ad-fs-2019-risk-assessment-model"></a>Compilación de complementos con el modelo de evaluación de riesgos 2019 de AD FS
 
@@ -23,7 +23,7 @@ El modelo de evaluación de riesgos es un conjunto de interfaces y clases que pe
 
 El modelo permite el código de complemento en cualquiera de las tres fases de AD FS canalización de autenticación, como se muestra a continuación
 
-![modelo](media/ad-fs-risk-assessment-model/risk1.png)
+![model](media/ad-fs-risk-assessment-model/risk1.png)
 
 1.    **Fase de solicitud recibida** : permite compilar complementos para permitir o bloquear solicitudes cuando AD FS recibe la solicitud de autenticación, es decir, antes de que el usuario escriba las credenciales. Puede usar el contexto de la solicitud (por ejemplo, la dirección IP del cliente, el método http, el servidor proxy DNS, etc.) disponible en esta fase para realizar la evaluación de riesgos. Por ejemplo, puede crear un complemento para leer la dirección IP desde el contexto de la solicitud y bloquear la solicitud de autenticación si la dirección IP está en la lista predefinida de direcciones IP de riesgo.
 
@@ -78,7 +78,7 @@ El siguiente procedimiento le guiará a través de la creación de un archivo dl
    >[!NOTE]
    >En mi caso, voy a crear el complemento en el propio servidor de AD FS. Si el entorno de desarrollo está en un servidor diferente, copie el `Microsoft.IdentityServer.dll` de la carpeta de instalación de AD FS en AD FS Server en el cuadro de desarrollo.</br>
 
-   ![modelo](media/ad-fs-risk-assessment-model/risk4.png)
+   ![model](media/ad-fs-risk-assessment-model/risk4.png)
 
    c.    Haga clic en **Aceptar** en la ventana **Administrador de referencias** después de asegurarse de que la `Microsoft.IdentityServer.dll` casilla está activada.</br>
    ![model](media/ad-fs-risk-assessment-model/risk5.png)
@@ -261,7 +261,7 @@ IList<Claim> additionalClams
 );
 }
 ```
-La interfaz incluye el método [EvaluatePreAuthentication](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.ipreauthenticationthreatdetectionmodule.evaluatepreauthentication) que permite usar la información pasada en los parámetros de entrada [RequestContext RequestContext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext), [SecurityContext SecurityContext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.securitycontext), [ProtocolContext ProtocolContext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.protocolcontext)y [IList <Claim> additionalClams](/dotnet/api/system.collections.generic.ilist-1?view=netframework-4.7.2) para escribir la lógica de evaluación de riesgos de autenticación previa.
+La interfaz incluye el método [EvaluatePreAuthentication](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.ipreauthenticationthreatdetectionmodule.evaluatepreauthentication) que permite usar la información pasada en los parámetros de entrada [RequestContext RequestContext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext), [SecurityContext SecurityContext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.securitycontext), [ProtocolContext ProtocolContext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.protocolcontext)y [IList <Claim> additionalClams](/dotnet/api/system.collections.generic.ilist-1?view=netframework-4.7.2&preserve-view=true) para escribir la lógica de evaluación de riesgos de autenticación previa.
 
 >[!NOTE]
 >Para obtener una lista de las propiedades que se pasan con cada tipo de contexto, visite las definiciones de clase [RequestContext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext), [SecurityContext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.securitycontext)y [ProtocolContext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.protocolcontext) .
@@ -288,7 +288,7 @@ IList<Claim> additionalClams
 }
 ```
 
-La interfaz incluye el método [EvaluatePostAuthentication](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.ipostauthenticationthreatdetectionmodule.evaluatepostauthentication) que le permite usar la información que se pasa en los parámetros de entrada [RequestContext RequestContext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext), [SecurityContext SecurityContext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.securitycontext), [ProtocolContext ProtocolContext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.protocolcontext)y [IList <Claim> additionalClams](/dotnet/api/system.collections.generic.ilist-1?view=netframework-4.7.2) para escribir la lógica de evaluación del riesgo posterior a la autenticación.
+La interfaz incluye el método [EvaluatePostAuthentication](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.ipostauthenticationthreatdetectionmodule.evaluatepostauthentication) que le permite usar la información que se pasa en los parámetros de entrada [RequestContext RequestContext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext), [SecurityContext SecurityContext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.securitycontext), [ProtocolContext ProtocolContext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.protocolcontext)y [IList <Claim> additionalClams](/dotnet/api/system.collections.generic.ilist-1?view=netframework-4.7.2&preserve-view=true) para escribir la lógica de evaluación del riesgo posterior a la autenticación.
 
 >[!NOTE]
 > Para obtener una lista completa de las propiedades que se pasan con cada tipo de contexto, consulte las definiciones de la clase [RequestContext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.requestcontext), [SecurityContext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.securitycontext)y [ProtocolContext](/dotnet/api/microsoft.identityserver.public.threatdetectionframework.protocolcontext) .
@@ -317,6 +317,6 @@ El método devuelve la [puntuación de riesgo](/dotnet/api/microsoft.identityser
 **¿Qué otros complementos de ejemplo están disponibles?**</br>
 **R:** Están disponibles los siguientes complementos de ejemplo:
 
-|NOMBRE|Descripción|
+|Nombre|Descripción|
 |-----|-----|
 |[Complemento de usuario de riesgo](https://github.com/microsoft/adfs-sample-block-user-on-adfs-marked-risky-by-AzureAD-IdentityProtection)|Complemento de ejemplo que bloquea la autenticación o aplica MFA en función del nivel de riesgo del usuario determinado por Azure AD Identity Protection.|

@@ -1,17 +1,17 @@
 ---
 title: Configuración de máquinas virtuales que ejecutan Windows 7 con un máximo de 4 procesadores virtuales
-description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información acerca de qué hacer cuando una máquina virtual que ejecuta Windows 7 está configurada con más de 4 procesadores virtuales.
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 8fcf0868-b543-4f94-aee7-35324346da55
 ms.date: 8/16/2016
-ms.openlocfilehash: 09388f843e963252dfcaca1eb587778658b48039
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: f52884ea6ce7298980f42b1aca876866c7dbaa77
+ms.sourcegitcommit: 42581433c0bb62e291d412ee9e13869b42e69a4b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90745770"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97846398"
 ---
 # <a name="configure-virtual-machines-running-windows-7-with-no-more-than-4-virtual-processors"></a>Configuración de máquinas virtuales que ejecutan Windows 7 con un máximo de 4 procesadores virtuales
 
@@ -36,7 +36,7 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 
 \<list of virtual machines>
 
-## <a name="resolution"></a>**Solución**
+## <a name="resolution"></a>**Resolución**
 *Apague la máquina virtual y Quite uno o varios procesadores virtuales.*
 
 #### <a name="to-remove-virtual-processors"></a>Para quitar procesadores virtuales

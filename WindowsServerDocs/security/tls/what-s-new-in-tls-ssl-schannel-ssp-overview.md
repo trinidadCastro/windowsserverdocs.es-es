@@ -7,12 +7,12 @@ author: justinha
 ms.author: justinha
 manager: brianlic
 ms.date: 05/16/2018
-ms.openlocfilehash: a60ed0b1228780ebb6e8d1e75541dc3089f7665c
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 2592783d0f5187c27db45522420c93ac52748667
+ms.sourcegitcommit: 5f234fb15c1d0365b60e83a50bf953e317d6239c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989451"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879704"
 ---
 # <a name="overview-of-tls---ssl-schannel-ssp"></a>Información general sobre TLS-SSL (Schannel SSP)
 
@@ -31,7 +31,7 @@ A continuación se describen las características de TLS en el SSP de Schannel.
 ### <a name="tls-session-resumption"></a>Reanudación de la sesión de TLS
 El protocolo de Seguridad de la capa de transporte (TLS), un componente del proveedor de soporte técnico de seguridad de Schannel, se usa para proteger los datos que se envían entre las aplicaciones de una red que no sea de confianza. Puede usarse TLS/SSL para autenticar servidores y equipos cliente y también para cifrar mensajes entre las partes autenticadas.
 
-Los dispositivos que conectan TLS con los servidores con frecuencia necesitan volver a conectarse debido a la expiración de la sesión. Windows 8.1 y Windows Server 2012 R2 admiten ahora RFC 5077 (reanudación de la sesión de TLS sin el estado del lado servidor). Esta modificación proporciona a los dispositivos Windows Phone y Windows RT:
+Los dispositivos que conectan TLS con los servidores con frecuencia necesitan volver a conectarse debido a la expiración de la sesión. Windows 8.1 y Windows Server 2012 R2 admiten ahora RFC 5077 (reanudación de la sesión TLS sin estado Server-Side). Esta modificación proporciona a los dispositivos Windows Phone y Windows RT:
 
 -   Un uso de recursos reducido en el servidor
 
@@ -84,15 +84,15 @@ En Windows Server 2012, la lista de emisores de confianza se configura mediante 
 
 -   Si no existe ningún certificado en el almacén definido por la aplicación, entonces Schannel comprueba el almacén de **Emisores de autenticación de cliente** en el equipo local y, si están presentes los certificados, usa ese almacén como el origen. Si no se encuentra ningún certificado en ningún almacén, se comprueba el almacén de raíces de confianza.
 
--   Si ninguno de los almacenes locales o globales contienen certificados, el proveedor de Schannel usará el almacén de **entidades de certificación raíz de confianza** como el origen de la lista de emisores de confianza. (Este es el comportamiento de Windows Server 2008 R2).
+-   Si ninguno de los almacenes locales o globales contienen certificados, el proveedor de Schannel usará el almacén de  **entidades de certificación raíz de confianza** como el origen de la lista de emisores de confianza. (Este es el comportamiento de Windows Server 2008 R2).
 
-Si el almacén de **entidades certificación raíz de confianza** que se usó contiene una combinación de certificados de emisores raíz (autofirmados) y de entidades de certificación (CA), de forma predeterminada solo se enviarán al servidor los certificados de emisor de la CA.
+Si el almacén de  **entidades certificación raíz de confianza** que se usó contiene una combinación de certificados de emisores raíz (autofirmados) y de entidades de certificación (CA), de forma predeterminada solo se enviarán al servidor los certificados de emisor de la CA.
 
 **Cómo configurar Schannel para usar el almacén de certificados para emisores de confianza**
 
 La arquitectura de Schannel SSP en Windows Server 2012 usará de forma predeterminada los almacenes como se describió anteriormente para administrar la lista de emisores de confianza. Todavía puede usar los cmdlets de administración certificados existente del proveedor de PowerShell, además de herramientas de línea de comandos como Certutil para administrar certificados.
 
-Para obtener información acerca de cómo administrar certificados mediante el proveedor de PowerShell, consulte [Cmdlets de administración de AD CS en Windows](/powershell/module/adcsadministration/?view=winserver2012-ps).
+Para obtener información acerca de cómo administrar certificados mediante el proveedor de PowerShell, consulte [Cmdlets de administración de AD CS en Windows](/powershell/module/adcsadministration/?view=winserver2012-ps&preserve-view=true).
 
 Para obtener información acerca de cómo administrar certificados mediante la utilidad de certificados, consulte [certutil.exe](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc732443(v=ws.11)).
 
@@ -100,7 +100,7 @@ Para obtener información acerca de los datos, incluido el almacén definido por
 
 **Valores predeterminados para los modos de confianza**
 
-Hay tres modos de confianza de autenticación de cliente admitidos por el proveedor de Schannel. El modo de confianza controla cómo se realiza la validación de la cadena de certificados del cliente y es una configuración de todo el sistema controlada por el REG_DWORD "ClientAuthTrustMode" en HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\Schannel.
+Hay tres modos de confianza de autenticación de cliente admitidos por el proveedor de Schannel. El modo de confianza controla cómo se realiza la validación de la cadena de certificados del cliente y es una configuración de todo el sistema controlada por el REG_DWORD "ClientAuthTrustMode" en HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\Schannel.
 
 |Valor|Modo de confianza|Descripción|
 |-----|-------|--------|

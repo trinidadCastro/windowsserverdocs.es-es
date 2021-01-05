@@ -6,12 +6,12 @@ author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 5/23/2018
-ms.openlocfilehash: 0fe40bd568a043f4eec9bfc86f9e1a537c07f038
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: 32d6bdc9cf91f04c70584ce515f60f26ceb6290a
+ms.sourcegitcommit: 5f234fb15c1d0365b60e83a50bf953e317d6239c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766858"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879924"
 ---
 # <a name="system-insights-overview"></a>Introducción a información del sistema
 
@@ -21,7 +21,7 @@ System Insights es una nueva característica de análisis predictivo en Windows 
 
 En Windows Server 2019, System Insights se incluye con cuatro funcionalidades predeterminadas centradas en la previsión de la capacidad, lo que predice recursos futuros de proceso, redes y almacenamiento en función de los patrones de uso anteriores. System Insights también se suministra con una [infraestructura extensible](adding-and-developing-capabilities.md), por lo que Microsoft y terceros pueden agregar nuevas capacidades de predicción a la información del sistema sin necesidad de actualizar el sistema operativo.
 
-Puede administrar información del sistema a través de una extensión intuitiva del [centro de administración de Windows](../windows-admin-center/overview.md) o [directamente a través de PowerShell](/powershell/module/systeminsights/), y System Insights le permite configurar cada una de las funcionalidades predictivas de forma independiente según las necesidades de su implementación. Todos los resultados de predicción se publican en el registro de eventos, lo que permite usar [Azure monitor](https://azure.microsoft.com/services/monitor/) o [System Center Operations Manager](/system-center/scom/welcome?view=sc-om-1807) para agregar fácilmente y ver las predicciones en un grupo de máquinas.
+Puede administrar información del sistema a través de una extensión intuitiva del [centro de administración de Windows](../windows-admin-center/overview.md) o [directamente a través de PowerShell](/powershell/module/systeminsights/), y System Insights le permite configurar cada una de las funcionalidades predictivas de forma independiente según las necesidades de su implementación. Todos los resultados de predicción se publican en el registro de eventos, lo que permite usar [Azure monitor](https://azure.microsoft.com/services/monitor/) o [System Center Operations Manager](/system-center/scom/welcome?view=sc-om-1807&preserve-view=true) para agregar fácilmente y ver las predicciones en un grupo de máquinas.
 
 ![Extensión de System Insights en el centro de administración de Windows, donde se muestra la capacidad de previsión de la capacidad de CPU con un gráfico que traza la previsión](media/cpu-forecast-2.png)
 
@@ -42,7 +42,7 @@ System Insights está disponible en cualquier instancia de Windows Server 2019. 
 
 ### <a name="install-system-insights"></a>Instalación del sistema Insights
 >[!IMPORTANT]
->System Insights recopila y almacena hasta un año de datos de forma local. Si desea conservar los datos al actualizar el sistema operativo, asegúrese **de usar la actualización en contexto**.
+>System Insights recopila y almacena hasta un año de datos de forma local. Si desea conservar los datos al actualizar el sistema operativo, asegúrese de **usar In-Place actualización**.
 
 #### <a name="install-the-feature"></a>Instalar la característica
 Puede instalar System Insights mediante la extensión del centro de administración de Windows:
@@ -55,7 +55,7 @@ También puede instalar información del sistema directamente a través de Admin
 Add-WindowsFeature System-Insights -IncludeManagementTools
 ```
 
-## <a name="provide-feedback"></a>Proporciona comentarios
+## <a name="provide-feedback"></a>Envío de comentarios
 Nos encantaría conocer sus comentarios para ayudarnos a mejorar esta característica. Puede usar los siguientes canales para enviar comentarios:
 - **Centro de comentarios**: Use la herramienta centro de comentarios de Windows 10 para archivar un error o comentarios. Al hacerlo, especifique:
     - **Categoría**: servidor

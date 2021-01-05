@@ -1,17 +1,17 @@
 ---
 title: La configuración de PVLAN en un conmutador virtual debe ser coherente
-description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información acerca de qué hacer cuando la red de área local virtual privada (PVLAN) no está configurada correctamente en uno o varios adaptadores de red virtuales.
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 4db63bcc-7a54-4f19-98a6-c274c3956d51
 ms.date: 8/16/2016
-ms.openlocfilehash: 205917e793bfb0cc398f7309981109083189d439
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: d09f1d06c691563ecac9d4ed29fee977588443de
+ms.sourcegitcommit: 42581433c0bb62e291d412ee9e13869b42e69a4b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90745590"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97846339"
 ---
 # <a name="pvlan-configuration-on-a-virtual-switch-must-be-consistent"></a>La configuración de PVLAN en un conmutador virtual debe ser coherente
 
@@ -34,7 +34,7 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 ## <a name="impact"></a>**Impacto**
 *Es posible que PVLAN no Aísle correctamente el tráfico de red entre las máquinas virtuales.*
 
-## <a name="resolution"></a>**Solución**
+## <a name="resolution"></a>**Resolución**
 *Use el cmdlet de Windows PowerShell, Set-VMNetworkAdapterVlan, para configurar PVLAN correctamente.*
 
 

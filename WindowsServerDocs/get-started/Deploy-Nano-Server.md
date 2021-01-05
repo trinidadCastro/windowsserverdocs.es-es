@@ -8,12 +8,12 @@ ms.assetid: 9f109c91-7c2e-4065-856c-ce9e2e9ce558
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 67ef50ce2c788ac5028de1ab39a5f6b6bf388978
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: e2a60a3fdb27753784773659711f486421ed31b3
+ms.sourcegitcommit: 5f234fb15c1d0365b60e83a50bf953e317d6239c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865733"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879854"
 ---
 # <a name="deploy-nano-server"></a>Implementación de Nano Server
 
@@ -72,7 +72,7 @@ Esta tabla muestra los roles y las características que están disponibles en es
 | Desired State Configuration (DSC) de PowerShell | \- Paquete Microsoft-NanoServer-DSC-Package<p>**Nota:** Para obtener todos los detalles, vea [Uso de DSC en Nano Server](/archive/blogs/askcore/kms-host-client-count-not-increasing-due-to-duplicate-cmids). |
 | Internet Information Server (IIS) | \- Paquete Microsoft-NanoServer-IIS-Package<p>**Nota:** Consulta [IIS en Nano Server](IIS-on-Nano-Server.md) para más información sobre cómo trabajar con IIS. |
 | Compatibilidad de host para los contenedores de Windows | -Containers |
-| Agente System Center Virtual Machine Manager | -Package Microsoft-NanoServer-SCVMM-Package<p>-Package Microsoft-NanoServer-SCVMM-Compute-Package<p>**Nota:** Usa el paquete de proceso SCVMM solo si supervisas Hyper-V. Para implementaciones hiperconvergidas en VMM, conviene especificar también el parámetro -Storage. Para más información, consulta la [documentación sobre VMM](/system-center/vmm/hyper-v-nano?view=sc-vmm-2016). |
+| Agente System Center Virtual Machine Manager | -Package Microsoft-NanoServer-SCVMM-Package<p>-Package Microsoft-NanoServer-SCVMM-Compute-Package<p>**Nota:** Usa el paquete de proceso SCVMM solo si supervisas Hyper-V. Para implementaciones hiperconvergidas en VMM, conviene especificar también el parámetro -Storage. Para más información, consulta la [documentación sobre VMM](/system-center/vmm/hyper-v-nano?view=sc-vmm-2016&preserve-view=true). |
 | Agente de System Center Operations Manager | Instalado por separado. Consulta la documentación de System Center Operations Manager para más detalles, en https://technet.microsoft.com/system-center-docs/om/manage/install-agent-on-nano-server. |
 | Protocolo de puente del centro de datos (incluido DCBQoS) | -Package Microsoft-NanoServer-DCB-Package |
 | Implementación en una máquina virtual | \- Paquete Microsoft-NanoServer-Guest-Package |

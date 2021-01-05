@@ -6,12 +6,12 @@ ms.topic: get-started-article
 ms.assetid: ad848a5b-0811-4c67-afe5-6147489c0384
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: c7eb9b82938d6506493ff7cf0856a8c25d3af0ed
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: d47a1e7ca434098ffec3b3d3fd602c6ca7934cf7
+ms.sourcegitcommit: 5f234fb15c1d0365b60e83a50bf953e317d6239c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996503"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879774"
 ---
 # <a name="internal-dns-service-idns-for-sdn"></a>Servicio DNS interno (iDNS) para SDN
 
@@ -158,7 +158,7 @@ Puede usar el siguiente comando de Windows PowerShell para reiniciar el servicio
 Restart-Service nchostagent -Force
 ```
 
-Para obtener más información, vea [restart-Service](/powershell/module/microsoft.powershell.management/restart-service?view=powershell-7).
+Para obtener más información, vea [restart-Service](/powershell/module/microsoft.powershell.management/restart-service?view=powershell-7&preserve-view=true).
 
 ### <a name="enable-firewall-rules-for-the-dns-proxy-service"></a>Habilitar reglas de Firewall para el servicio de proxy DNS
 Puede usar el siguiente comando de Windows PowerShell para crear una regla de firewall que permita que las excepciones del proxy se comuniquen con la máquina virtual y el servidor IDN.

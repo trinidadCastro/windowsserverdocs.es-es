@@ -7,12 +7,12 @@ author: pronichkin
 ms.author: artemp
 ms.localizationpriority: medium
 ms.date: 12/18/2018
-ms.openlocfilehash: 2cdddf706d03aa5b1aa1239b58fd4d8a9f4beed2
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 2e4e7902a52378f29c4a0a48339618c279b7cc95
+ms.sourcegitcommit: 5f234fb15c1d0365b60e83a50bf953e317d6239c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96864324"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879714"
 ---
 # <a name="administer-a-server-core-server"></a>Administrar un servidor Server Core
 
@@ -64,7 +64,7 @@ Para establecer una dirección IP estática, haga lo siguiente:
 
 Si necesita cambiar al uso de DHCP, ejecute **set-DnsClientServerAddress – InterfaceIndex 12 – ResetServerAddresses**.
 
-### <a name="join-a-domain"></a>Unión a un dominio
+### <a name="join-a-domain"></a>Unirse a un dominio
 Use los cmdlets siguientes para unir un equipo a un dominio.
 
 1. Ejecute **Add-Computer**. Se le pedirán las dos credenciales para unirse al dominio y el nombre de dominio.
@@ -101,7 +101,7 @@ Puede configurar el Firewall de Windows de forma local en el equipo Server Core 
 
 Puede habilitar la comunicación remota de Windows PowerShell, con la cual los comandos de Windows PowerShell escritos en un equipo se ejecutan en otro. Habilite la comunicación remota de Windows PowerShell con **enable-PSRemoting**.
 
-Para obtener más información, vea [acerca de las preguntas más frecuentes sobre Remote](/powershell/module/microsoft.powershell.core/about/about_remote_faq?view=powershell-5.1).
+Para obtener más información, vea [acerca de las preguntas más frecuentes sobre Remote](/powershell/module/microsoft.powershell.core/about/about_remote_faq?view=powershell-5.1&preserve-view=true).
 
 ## <a name="administrative-tasks-from-the-command-line"></a>Tareas administrativas desde la línea de comandos
 Use la siguiente información de referencia para realizar tareas administrativas desde la línea de comandos.
