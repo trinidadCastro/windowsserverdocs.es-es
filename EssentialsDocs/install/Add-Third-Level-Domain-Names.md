@@ -1,18 +1,18 @@
 ---
 title: Agregar nombres de dominio de tercer nivel
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo agregar la capacidad de los usuarios para solicitar nombres de dominio de tercer nivel en el Asistente para configurar nombres de dominio.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: e5b4a362-1881-4024-ae4e-cc3b05e50103
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: dd68308646eba5fba2f79593cba82de467c1888b
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: d5658ade3fbffe3d1b9517a83ea1c10a03616753
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89626359"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711640"
 ---
 # <a name="add-third-level-domain-names"></a>Agregar nombres de dominio de tercer nivel
 

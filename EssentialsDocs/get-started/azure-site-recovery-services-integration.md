@@ -1,18 +1,18 @@
 ---
 title: Integración de los servicios de Azure Site Recovery
-description: Describe cómo usar Windows Server Essentials
+description: Aprenda a usar Azure Site Recovery Services para crear replicaciones en tiempo real de las máquinas virtuales (VM) que se almacenan en el almacén de copia de seguridad en Azure.
 ms.date: 10/01/2016
 ms.topic: article
 ms.assetid: 262701a6-8a97-4c4e-bfbf-9f8007c308d6
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: aa84ae8f3d11631b76d2e85e6a50f309eb83dd74
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 1f6d0f69bdec22c264bfdea6a232892accafe414
+ms.sourcegitcommit: 8e330f9066097451cd40e840d5f5c3317cbc16c2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89622580"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97696870"
 ---
 # <a name="azure-site-recovery-services-integration"></a>Integración de los servicios de Azure Site Recovery
 
@@ -60,7 +60,7 @@ Cuando se produce un error en una máquina virtual protegida, o en el servidor h
 
 En cualquiera de los tres casos anteriores, cuando una máquina virtual conmute por error a Azure, el panel de Windows Server Essentials mostrará la nueva máquina virtual en Azure que se ejecuta como en la ilustración siguiente.
 
-![Captura de pantalla que muestra la página recuperación de Azure del panel de Windows Server Essentials. La replicación en Azure se ha habilitado para un host denominado Essentials y una máquina virtual denominada Essentials-test que se ejecuta en Azure indica que el host se ha conmutado por error a Azure.](media/azure-site-recovery-8.PNG)
+![Captura de pantalla que muestra la página recuperación de Azure del panel de Windows Server Essentials. La replicación en Azure se ha habilitado para un host con el nombre Essentials y una máquina virtual llamada Essentials-Test que se ejecuta en Azure indica que el host se ha conmutado por error a Azure.](media/azure-site-recovery-8.PNG)
 
 <a name="see-also"></a>Consulte también
 --------

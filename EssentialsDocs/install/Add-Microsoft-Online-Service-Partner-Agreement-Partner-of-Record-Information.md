@@ -1,18 +1,18 @@
 ---
 title: Agregar información de socio de registro del contrato de socio del servicio en línea de Microsoft
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo crear una clave del registro que contenga su identificación de socio comercial del contrato de socio del servicio en línea de Microsoft (ID.).
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 9bd191d6-ecc5-4230-a88e-f3fc281cb956
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 0f8a1b769b207bd40add46f3e7e9273c67409ac1
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 458bcfd3642cf2fceb485d57927708635e494c17
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89624041"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711650"
 ---
 # <a name="add-microsoft-online-service-partner-agreement-partner-of-record-information"></a>Agregar información de socio de registro del contrato de socio del servicio en línea de Microsoft
 

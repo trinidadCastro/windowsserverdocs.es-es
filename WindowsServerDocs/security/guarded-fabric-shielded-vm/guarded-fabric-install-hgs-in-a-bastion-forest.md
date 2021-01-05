@@ -6,19 +6,19 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: 1d25127b974c6b379e4fd52433ea74252801c166
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: c1afb664162609aa270dfa25137b9ccbad43373b
+ms.sourcegitcommit: 8e330f9066097451cd40e840d5f5c3317cbc16c2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97047283"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97696980"
 ---
 # <a name="install-hgs-in-an-existing-bastion-forest"></a>Instalación de HGS en un bosque bastión existente
 
 >Se aplica a: Windows Server 2019, Windows Server (canal semianual), Windows Server 2016
 
 
-## <a name="join-the-hgs-server-to-the-existing-domain"></a>Unir el servidor de HGS al dominio existente
+## <a name="join-the-hgs-server-to-the-root-domain"></a>Unir el servidor de HGS al dominio raíz
 
 En un bosque bastión existente, se debe agregar HGS al dominio raíz. Use Administrador del servidor o [Add-Computer](https://go.microsoft.com/fwlink/?LinkId=821564) para unir el servidor de HGS al dominio raíz.
 
@@ -31,7 +31,7 @@ Ejecute todos los comandos de este tema en una sesión de PowerShell con privile
 Si el centro de seguridad tiene un bosque bastión seguro al que desea unir nodos HGS, siga estos pasos.
 También puede usar estos pasos para configurar 2 o más clústeres de HGS independientes que están Unidos al mismo dominio.
 
-## <a name="join-the-hgs-server-to-the-existing-domain"></a>Unir el servidor de HGS al dominio existente
+## <a name="join-the-hgs-server-to-the-desired-domain"></a>Unir el servidor de HGS al dominio deseado
 
 Use Administrador del servidor o [Add-Computer](https://go.microsoft.com/fwlink/?LinkId=821564) para unir los servidores HGS al dominio deseado.
 

@@ -1,18 +1,18 @@
 ---
 title: Instalación y configuración de Windows Server Essentials o Experiencia con Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo instalar y configurar Windows Server Essentials o el rol de experiencia de Essentials en Windows Server 2016.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 48ea6cd4-3955-4aaf-9236-2515a6c3e730
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: dfd0611d47c159e629efff11073bec084e175a43
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: e0f903d3f515d749836222686ee6a6b4020b61d4
+ms.sourcegitcommit: e00e789dff216dbade861e61365f078b758a5720
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89626277"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97755071"
 ---
 # <a name="install-and-configure-windows-server-essentials-or-windows-server-essentials-experience"></a>Instalación y configuración de Windows Server Essentials o Experiencia con Windows Server Essentials
 
@@ -44,7 +44,7 @@ Antes de instalar Windows Server Essentials o el rol de experiencia de Essential
 
 -    Windows Server 2016 con el rol de experiencia con Windows Server Essentials instalado
 
-|Entorno de implementación|Descripción|Sección relacionada|
+|Entorno de implementación|Description|Sección relacionada|
 |----------------------------|-----------------|---------------------|
 |Nuevo entorno de Active Directory|Puede instalar Windows Server Essentials para crear un entorno de Active Directory.|[Implementar Windows Server Essentials para configurar un nuevo entorno de Active Directory](Install-and-Configure-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md#BKMK_NewAD)|
 |Entorno de Active Directory existente|Puede instalar Windows Server Essentials en un entorno de Active Directory existente.|[Implementar Windows Server Essentials en un entorno de Active Directory existente](Install-and-Configure-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md#BKMK_ExistingAD)|
@@ -167,7 +167,7 @@ Antes de instalar Windows Server Essentials o el rol de experiencia de Essential
 
 #### <a name="to-deploy-windows-server-essentials-as-a-virtual-machine"></a>Para implementar Windows Server Essentials como una máquina virtual
 
-1.  Después de la página de bienvenida de Windows (según el proveedor del sistema "configuración de ¢ s"), la página **antes de comenzar** ofrece la opción de configurar Windows Server Essentials como una instancia virtual o en hardware físico. La disponibilidad de estas opciones depende del proveedor del sistema y no siempre están disponibles. Para instalar Windows Server Essentials como una máquina virtual, en **instalar Windows Server Essentials**, seleccione **instalar como instancia virtual**y, a continuación, haga clic en **configurar**.
+1.  Después de la página de bienvenida de Windows (según el proveedor del sistema "configuración de ¢ s"), la página **antes de comenzar** ofrece la opción de configurar Windows Server Essentials como una instancia virtual o en hardware físico. La disponibilidad de estas opciones depende del proveedor del sistema y no siempre están disponibles. Para instalar Windows Server Essentials como una máquina virtual, en **instalar Windows Server Essentials**, seleccione **instalar como instancia virtual** y, a continuación, haga clic en **configurar**.
 
 2.  El asistente ofrece una máquina virtual que tarda aproximadamente cinco minutos.
 

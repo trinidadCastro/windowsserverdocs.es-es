@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: c9cecb94-3cd5-4da7-9a3e-084148b8226b
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 31fdb8921bcb896cb009dcd4d67d57c6c503efa6
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: a2d38b9f9aaac11f5e4e218e24e4428f97ae2c8f
+ms.sourcegitcommit: 8e330f9066097451cd40e840d5f5c3317cbc16c2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865614"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97696738"
 ---
 # <a name="whats-new-in-dns-server-in-windows-server"></a>Novedades del servidor DNS en Windows Server
 
@@ -21,7 +21,7 @@ En este tema se describen las funciones de servidor de sistema de nombres de dom
 
 En Windows Server 2016, el servidor DNS ofrece compatibilidad mejorada en las áreas siguientes.
 
-|Funcionalidad|Nueva o mejorada|Descripción|
+|Funcionalidad|Nueva o mejorada|Description|
 |-----------------|-------------------|---------------|
 |Directivas de DNS|Nuevo|Puede configurar directivas DNS para especificar el modo en que un servidor DNS responde a las consultas DNS. Las respuestas DNS pueden basarse en la dirección IP del cliente (ubicación), la hora del día y otros parámetros. Las directivas de DNS permiten el DNS, la administración del tráfico, el equilibrio de carga, el DNS de cerebro dividido y otros escenarios que tienen en cuenta la ubicación.|
 |Limitación de velocidad de respuesta (RRL)|Nuevo|Puede habilitar la limitación de la velocidad de respuesta en los servidores DNS. Al hacerlo, evita la posibilidad de que los sistemas malintencionados usen los servidores DNS para iniciar un ataque de denegación de servicio en un cliente DNS.|
@@ -65,11 +65,11 @@ Puede establecer la configuración de RRL para controlar cómo responder a las s
 
 -   **Número máximo de respuestas**. Este es el número máximo de respuestas que el servidor emitirá a un cliente mientras se suspenden las respuestas.
 
--   **Dominios de lista blanca**. Esta es una lista de dominios que se van a excluir de la configuración de RRL.
+-   **Dominios de permitidos**. Esta es una lista de dominios que se van a excluir de la configuración de RRL.
 
--   **Subredes de lista blanca**. Esta es una lista de subredes que se van a excluir de la configuración de RRL.
+-   **Subredes permitidos**. Esta es una lista de subredes que se van a excluir de la configuración de RRL.
 
--   **Interfaces de servidor de lista blanca**. Esta es una lista de las interfaces de servidor DNS que se van a excluir de la configuración de RRL.
+-   **Interfaces de servidor permitidos**. Esta es una lista de las interfaces de servidor DNS que se van a excluir de la configuración de RRL.
 
 ## <a name="dane-support"></a>Compatibilidad con SUNDANÉS
 

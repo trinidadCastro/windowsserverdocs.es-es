@@ -1,18 +1,18 @@
 ---
 title: Administrar BranchCache en Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información sobre BranchCache y cómo puede ayudarle a optimizar el uso de Internet, mejorar el rendimiento de las aplicaciones en red y reducir el tráfico en la WAN.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: f6e05aec-d07c-4e0b-94ab-f20279e9ffd1
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 52493dae886eb8f74a6276854c7b7cce2f77470f
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: efa4abc7da2c0949444ffa87514500561c9840ba
+ms.sourcegitcommit: e00e789dff216dbade861e61365f078b758a5720
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623203"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97755281"
 ---
 # <a name="manage-branchcache-in-windows-server-essentials"></a>Administrar BranchCache en Windows Server Essentials
 

@@ -1,18 +1,18 @@
 ---
 title: Cambiar el orden y la agrupación de las fichas
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo cambiar el orden de las pestañas en el panel para que la pestaña sea la primera (a la izquierda) de la fila de pestañas.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 79a417fd-1b3e-47ab-ae33-bb1faf95c86d
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 5a52f4b14423d1ef337cba9c2d18dbf4c196ca93
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: d9b657c31c13fa8ad3d08e9663bd65671e54ab57
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623876"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711460"
 ---
 # <a name="change-the-order-and-grouping-of-tabs"></a>Cambiar el orden y la agrupación de las fichas
 

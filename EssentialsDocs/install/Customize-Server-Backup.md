@@ -1,18 +1,18 @@
 ---
 title: Personalización de la copia de seguridad del servidor
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo personalizar la configuración de copia de seguridad del servidor para Windows Server Essentials.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 19b2559c-6090-45af-9a08-2eefc28473c8
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 9cf27c09e2b6946b5daa584ff27b1da95788a4ea
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 5558364d21374649cc57e28f9df1331a59428b7b
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623687"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711090"
 ---
 # <a name="customize-server-backup"></a>Personalización de la copia de seguridad del servidor
 

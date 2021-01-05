@@ -7,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 1e4aff28a2212b678770cb9f78400e1db48cf8ec
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: b8dd22072326398f20477dbb65ebf3e1adf1164a
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97049623"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711810"
 ---
 # <a name="guidance-about-how-to-configure-protected-accounts"></a>Instrucciones sobre cómo configurar cuentas protegidas
 
@@ -89,7 +89,7 @@ Para obtener más información acerca de los eventos de estos registros, consult
 #### <a name="troubleshoot-tgt-expiration"></a>Solucionar problemas de expiración de TGT
 Normalmente, el controlador de dominio establece la vigencia del TGT y su renovación según la directiva del dominio, tal y como se muestra en la siguiente ventana del Editor de administración de directivas de grupo.
 
-![cuentas protegidas](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_TGTExpiration.png)
+![Captura de pantalla que muestra la ventana Editor de administración de directivas de grupo.](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_TGTExpiration.png)
 
 Para los **Usuarios protegidos**, las siguientes opciones se codifican de forma rígida:
 
@@ -100,7 +100,7 @@ Para los **Usuarios protegidos**, las siguientes opciones se codifican de forma 
 #### <a name="troubleshoot-delegation-issues"></a>Solucionar problemas de delegación
 Anteriormente, si una tecnología que usa delegación de Kerberos producía un error, se comprobaba la cuenta de cliente para ver si la opción **La cuenta es importante y no se puede delegar** estaba establecida. Sin embargo, si la cuenta es miembro de **Usuarios protegidos**, quizás no tenga esta opción configurada en el Centro de administración de Active Directory (ADAC). Por lo tanto, comprueba la opción y la pertenencia al grupo cuando soluciones problemas de delegación.
 
-![cuentas protegidas](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_TshootDelegation.gif)
+![Captura de pantalla que resalta la casilla la cuenta es importante y no se puede delegar.](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_TshootDelegation.gif)
 
 ### <a name="audit-authentication-attempts"></a><a name="BKMK_AuditAuthNattempts"></a>Auditar los intentos de autenticación
 Para auditar los intentos de autenticación explícitamente para los miembros del grupo **Usuarios protegidos**, puedes continuar recopilando eventos de auditoría del registro de seguridad o puedes recopilar los datos de los nuevos registros administrativos operativos. Para obtener más información sobre estos eventos, consulte [directivas de autenticación y silos de directivas de autenticación](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn486813(v=ws.11)) .
@@ -121,7 +121,7 @@ Las cuentas de servicios y equipos no pueden ser miembros de **Usuarios protegid
 
 -   Denegar la delegación con delegación limitada o no limitada: Para restringir una cuenta, abre el Centro de administración de Active Directory (ADAC) y activa la casilla **La cuenta es importante y no se puede delegar** .
 
-    ![cuentas protegidas](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_TshootDelegation.gif)
+    ![Captura de pantalla que muestra cómo restringir una cuenta.](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_TshootDelegation.gif)
 
 ## <a name="authentication-policies"></a><a name="BKMK_CreateAuthNPolicies"></a>Directivas de autenticación
 Directivas de autenticación es un nuevo contenedor de AD DS que contiene objetos de directiva de autenticación. Las directivas de autenticación pueden especificar configuraciones que ayuden a mitigar la exposición a robos de credenciales, como restringir la vigencia de los TGT para las cuentas o agregar otras condiciones relativas a notificaciones.
@@ -137,7 +137,7 @@ En Windows Server 2012, Dynamic Access Control incorporó una clase de objeto Ac
 ### <a name="quick-kerberos-refresher"></a>Actualizador de Kerberos rápido
 El protocolo de autenticación Kerberos consiste en tres tipos de intercambios, también conocidos como subprotocolos:
 
-![cuentas protegidas](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_KerbRefresher.gif)
+![Diagrama que muestra los tres tipos de intercambios en el protocolo de autenticación Kerberos.](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_KerbRefresher.gif)
 
 -   Intercambio del servicio de autenticación (AS) (KRB_AS_*)
 
@@ -162,7 +162,7 @@ Puedes configura lo siguiente para limitar la autenticación inicial o el interc
 
 -   Condiciones de control de acceso para restringir el inicio de sesión de usuarios, que deben cumplir los dispositivos desde los que procede el intercambio AS.
 
-![cuentas protegidas](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_RestrictAS.gif)
+![Captura de pantalla que muestra cómo restringir la autenticación inicial o como Exchange.](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_RestrictAS.gif)
 
 Puedes configurar lo siguiente para restringir las solicitudes de vales de servicio mediante un intercambio de servicio de concesión de vales (TGS):
 
@@ -188,14 +188,14 @@ El dominio de la cuenta del usuario debe estar en el nivel funcional del dominio
 
 1.  En la Directiva predeterminada de controladores de dominio, haz clic en **Habilitada** para habilitar **Compatibilidad del cliente Kerberos con notificaciones, autenticación compuesta y protección de Kerberos** en Configuración del equipo | Plantillas administrativas | Sistema | KDC.
 
-    ![cuentas protegidas](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_EnableKDCClaims.gif)
+    ![Captura de pantalla que resalta la opción habilitada.](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_EnableKDCClaims.gif)
 
 2.  En **Opciones**, en el cuadro de lista desplegable, selecciona **Proporcionar notificaciones siempre**.
 
     > [!NOTE]
     > También se puede configurar **compatible** , pero como el dominio está en Windows Server 2012 R2 nivel funcional, el hecho de que los controladores de dominio proporcionen siempre notificaciones permitirán que se realicen comprobaciones de acceso basadas en notificaciones de usuario cuando se usen dispositivos y hosts que no sean compatibles con notificaciones para conectarse a los servicios compatibles con notificaciones.
 
-    ![cuentas protegidas](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_AlwaysProvideClaims.png)
+    ![Captura de pantalla que resalta la opción de menú siempre proporcionar notificaciones.](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_AlwaysProvideClaims.png)
 
     > [!WARNING]
     > La configuración de **errores en las solicitudes de autenticación sin protección** provocará errores de autenticación de cualquier sistema operativo que no admita la protección de Kerberos, como Windows 7 y sistemas operativos anteriores, o sistemas operativos que empiecen por Windows 8, que no se han configurado explícitamente para admitirla.
@@ -204,20 +204,20 @@ El dominio de la cuenta del usuario debe estar en el nivel funcional del dominio
 
 1.  Abre el Centro de administración de Active Directory (ADAC).
 
-    ![cuentas protegidas](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_OpenADAC.gif)
+    ![Captura de pantalla que muestra la página de autenticación.](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_OpenADAC.gif)
 
     > [!NOTE]
     > El nodo de **autenticación** seleccionado es visible para los dominios que están en Windows Server 2012 R2 nivel funcional. Si el nodo no aparece, vuelva a intentarlo mediante una cuenta de administrador de dominio de un dominio que esté en Windows Server 2012 R2 nivel funcional.
 
 2.  Haz clic en **Directivas de autenticación** y, después, haz clic en **Nueva** para crear una nueva directiva.
 
-    ![cuentas protegidas](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_NewAuthNPolicy.gif)
+    ![Captura de pantalla que muestra cómo crear una nueva Directiva.](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_NewAuthNPolicy.gif)
 
     Las directivas de autenticación deben tener un nombre para mostrar y se aplican de forma predeterminada.
 
 3.  Para crear una directiva solo de auditoría, haz clic en **Solo restricciones de directiva de auditoría**.
 
-    ![cuentas protegidas](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_NewAuthNPolicyAuditOnly.gif)
+    ![Captura de pantalla que resalta la única opción de restricciones de la Directiva de auditoría.](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_NewAuthNPolicyAuditOnly.gif)
 
     Las directivas de autenticación se aplican en función del tipo de cuenta de Active Directory. Una única directiva se puede aplicar a los tres tipos de cuentas configurando las opciones de cada tipo. Los tipos de cuentas son:
 
@@ -231,107 +231,107 @@ El dominio de la cuenta del usuario debe estar en el nivel funcional del dominio
 
 4.  Para configurar una vigencia de TGT para cuentas de usuario, activa la casilla **Especifique la duración de un vale de concesión de vales para las cuentas de usuario** y especifica el tiempo en minutos.
 
-    ![cuentas protegidas](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_TGTLifetime.gif)
+    ![Captura de pantalla que resalta la casilla especificar una duración de vale de Ticket-Granting para las cuentas de usuario.](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_TGTLifetime.gif)
 
     Por ejemplo, si quieres una vigencia máxima de TGT de 10 horas, especifica **600** tal y como se indica. Si no hay configurada una vigencia de TGT, si la cuenta es miembro del grupo **Protected Users**, la vigencia y la renovación del TGT es de 4 horas. De lo contrario, la vigencia y la renovación del TGT se basan en la directiva de dominio tal y como se observa en la siguiente ventana del Editor de administración de directivas de grupo para un dominio con configuración predeterminada.
 
-    ![cuentas protegidas](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_TGTExpiration.png)
+    ![Captura de pantalla que muestra la configuración de directiva predeterminada.](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_TGTExpiration.png)
 
 5.  Para restringir la cuenta de usuario a los dispositivos seleccionados, haz clic en **Editar** para definir las condiciones necesarias para el dispositivo.
 
-    ![cuentas protegidas](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_EditAuthNPolicy.gif)
+    ![Captura de pantalla que muestra cómo restringir la cuenta de usuario para seleccionar dispositivos.](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_EditAuthNPolicy.gif)
 
 6.  En la ventana **Editar condiciones de Access Control**, haz clic en **Agregar una condición**.
 
-    ![cuentas protegidas](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_AddCondition.png)
+    ![Captura de pantalla que resalta agregar una condición.](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_AddCondition.png)
 
 ##### <a name="add-computer-account-or-group-conditions"></a>Agregar condiciones para cuentas de equipo o grupos
 
 1.  Para configurar cuentas de equipo o grupos, en la lista desplegable, selecciona el cuadro de lista desplegable **Miembro de cada** y cámbialo a **Miembro de cualquiera**.
 
-    ![cuentas protegidas](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_AddCompMember.png)
+    ![Captura de pantalla que resalta el miembro de cada cuadro de lista.](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_AddCompMember.png)
 
     > [!NOTE]
     > Este control de acceso define las condiciones del servicio o host desde el que el usuario inicia sesión. En la terminología del control de acceso, la cuenta de equipo para el dispositivo o host es el usuario, motivo por el que **Usuario** es la única opción.
 
 2.  Haz clic en **Agregar elementos**.
 
-    ![cuentas protegidas](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_AddCompAddItems.png)
+    ![Captura de pantalla que resalta el botón Agregar elementos.](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_AddCompAddItems.png)
 
 3.  Para cambiar los tipos de objeto, haz clic en **Tipos de objeto**.
 
-    ![cuentas protegidas](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_ChangeObjects.gif)
+    ![Captura de pantalla que resalta el botón tipos de objeto.](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_ChangeObjects.gif)
 
 4.  Para seleccionar objetos de equipo en Active Directory, haz clic en **Equipos** y, después, haz clic en **Aceptar**.
 
-    ![cuentas protegidas](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_ChangeObjectsComputers.gif)
+    ![Captura de pantalla que resalta la casilla equipos.](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_ChangeObjectsComputers.gif)
 
 5.  Escribe el nombre de los equipos para restringir el usuario y haz clic en **Comprobar nombres**.
 
-    ![cuentas protegidas](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_ChangeObjectsCompName.gif)
+    ![Captura de pantalla que resalta los nombres de comprobación.](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_ChangeObjectsCompName.gif)
 
 6.  Haz clic en Aceptar y crea otras condiciones para la cuenta de equipo.
 
-    ![cuentas protegidas](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_AddCompAddConditions.png)
+    ![Captura de pantalla que muestra cómo editar las condiciones de control de acceso.](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_AddCompAddConditions.png)
 
 7.  Una vez hecho, haz clic en **Aceptar** y las condiciones definidas aparecerán para la cuenta de equipo.
 
-    ![cuentas protegidas](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_AddCompDone.png)
+    ![Captura de pantalla que muestra dónde seleccionar aceptar cuando haya terminado.](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_AddCompDone.png)
 
 ##### <a name="add-computer-claim-conditions"></a>Agregar condiciones de notificaciones de equipo
 
 1.  Para configurar notificaciones de equipo, abre la lista desplegable Grupo para seleccionar la notificación.
 
-    ![cuentas protegidas](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_CompClaim.gif)
+    ![Captura de pantalla que muestra dónde seleccionar el grupo.](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_CompClaim.gif)
 
     Las notificaciones solo están disponibles si ya se han aprovisionado en el bosque.
 
 2.  Escribe el nombre de la OU; la cuenta de usuario debe restringirse al inicio de sesión.
 
-    ![cuentas protegidas](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_CompClaimOUName.gif)
+    ![Captura de pantalla que muestra dónde escribir el nombre.](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_CompClaimOUName.gif)
 
 3.  Una vez hecho, haz clic en Aceptar y el cuadro mostrará las condiciones definidas.
 
-    ![cuentas protegidas](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_CompClaimComplete.gif)
+    ![Captura de pantalla que muestra las condiciones definidas.](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_CompClaimComplete.gif)
 
 ##### <a name="troubleshoot-missing-computer-claims"></a>Solucionar problemas de notificaciones de equipo que faltan
 Si la notificación se ha aprovisionado pero no está disponible, quizás solo se ha configurado para las clases **Equipo**.
 
 Supongamos que desea restringir la autenticación en función de la unidad organizativa (OU) del equipo, que ya estaba configurada, pero solo para las clases de **equipo** .
 
-![cuentas protegidas](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_RestrictComputers.gif)
+![Captura de pantalla que resalta la casilla equipo.](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_RestrictComputers.gif)
 
 Para que la notificación esté disponible para restringir el inicio de usuarios en el dispositivo, activa la casilla **Usuario**.
 
-![cuentas protegidas](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_RestrictUsersComputers.gif)
+![Captura de pantalla que resalta la casilla usuario.](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_RestrictUsersComputers.gif)
 
 #### <a name="provision-a-user-account-with-an-authentication-policy-with-adac"></a>Aprovisionar una cuenta de usuario con una directiva de autenticación con ADAC
 
 1.  En la cuenta **Usuario**, haz clic en **Directiva**.
 
-    ![cuentas protegidas](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_UserPolicy.gif)
+    ![Captura de pantalla que muestra dónde seleccionar la Directiva.](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_UserPolicy.gif)
 
 2.  Activa la casilla **Asigne una directiva de autenticación a esta cuenta**.
 
-    ![cuentas protegidas](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_UserPolicyAssign.gif)
+    ![Captura de pantalla que resalta la casilla asignar una directiva de autenticación a esta cuenta.](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_UserPolicyAssign.gif)
 
 3.  Después, selecciona la directiva de autenticación que se aplicará al usuario.
 
-    ![cuentas protegidas](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_UserPolicySelect.png)
+    ![Captura de pantalla que muestra dónde seleccionar la Directiva de autenticación que se va a aplicar.](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_UserPolicySelect.png)
 
 #### <a name="configure-dynamic-access-control-support-on-devices-and-hosts"></a>Configurar la compatibilidad con el control de acceso dinámico en dispositivos y hosts
 Puedes configurar la vigencia de los TGT sin configurar el control de acceso dinámico (DAC). DAC solo se necesita para comprobar AllowedToAuthenticateFrom y AllowedToAuthenticateTo.
 
 Usa el Editor de directivas de grupo o el Editor de directivas de grupo local para habilitar **Compatibilidad del cliente Kerberos con notificaciones, autenticación compuesta y protección de Kerberos** en Configuración del equipo | Plantillas administrativas | Sistema | Kerberos:
 
-![cuentas protegidas](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_KerbClientDACSupport.gif)
+![Captura de pantalla que muestra dónde seleccionar la opción habilitada.](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_KerbClientDACSupport.gif)
 
 ### <a name="troubleshoot-authentication-policies"></a><a name="BKMK_TroubleshootAuthnPolicies"></a>Solucionar problemas de directivas de autenticación
 
 #### <a name="determine-the-accounts-that-are-directly-assigned-an-authentication-policy"></a>Determina las cuentas que están directamente asignadas a una directiva de autenticación
 La sección de cuentas de la directiva de autenticación muestra las cuentas a las que se ha aplicado directamente la directiva.
 
-![cuentas protegidas](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_AccountsAssigned.gif)
+![Captura de pantalla que muestra cómo determinar las cuentas a las que se ha asignado directamente una directiva de autenticación.](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_AccountsAssigned.gif)
 
 #### <a name="use-the-authentication-policy-failures---domain-controller-administrative-log"></a>Usar el registro administrativo errores de directiva de autenticación-controlador de dominio
 Un nuevo registro administrativo **errores de directiva de autenticación-controlador de dominio** en **registros de aplicaciones y servicios** se ha creado la autenticación de  >  **Microsoft**  >  **Windows**  >   para facilitar la detección de errores debidos a las directivas de autenticación. El registro está deshabilitado de forma predeterminada. Para habilitarlo, haz clic con el botón derecho en el nombre del registro y haz clic en **Habilitar registro**. El contenido de los nuevos eventos es muy similar al de los eventos de auditoría de TGT y de vales de servicio de Kerberos existentes. Para obtener más información acerca de estos eventos, consulte [Directivas de autenticación y silos de directivas de autenticación](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn486813(v=ws.11)).
@@ -424,7 +424,7 @@ Puede crear un silo de directivas de autenticación mediante Centro de administr
 
 2.  En **Nombre para mostrar**, escribe un nombre para el silo. En **Cuentas permitidas**, haz clic en **Agregar**, escribe el nombre de las cuentas y, después, haz clic en **Aceptar**. Puedes especificar cuentas de usuario, de equipo o de servicio. Después, especifica si se usará una única directiva para todas las entidades de seguridad, o una directiva diferente para cada tipo de entidad de seguridad, y el nombre de la directiva o directivas.
 
-    ![cuentas protegidas](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_NewAuthNPolicySiloDisplayName.gif)
+    ![Captura de pantalla que muestra cómo agregar una cuenta permitida.](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_NewAuthNPolicySiloDisplayName.gif)
 
 ### <a name="manage-authentication-policy-silos-by-using-windows-powershell"></a><a name="BKMK_ManageAuthnSilosUsingPSH"></a>Administrar silos de directivas de autenticación mediante Windows PowerShell
 Este comando crea un objeto de silo de directivas de autenticación y lo aplica.

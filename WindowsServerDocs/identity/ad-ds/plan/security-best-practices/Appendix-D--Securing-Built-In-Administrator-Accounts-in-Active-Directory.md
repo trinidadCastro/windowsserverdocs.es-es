@@ -7,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 2d6a8a626c5fbf2a8d34a1527b3eb9976c21ebd0
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 2f7588b852c9061f8183d4db02be65ac2e0f79f6
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97041723"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711790"
 ---
 # <a name="appendix-d-securing-built-in-administrator-accounts-in-active-directory"></a>Anexo D: protección de cuentas de administrador integradas en Active Directory
 
@@ -53,7 +53,7 @@ En el caso de la cuenta de administrador integrada en cada dominio del bosque, d
 > Se recomienda restringir las cuentas de administrador local en los servidores miembro y las estaciones de trabajo de la misma manera que las cuentas de administrador basadas en dominio. Por lo tanto, normalmente debe agregar la cuenta de administrador para cada dominio del bosque y la cuenta de administrador de los equipos locales a esta configuración de derechos de usuario. En la captura de pantalla siguiente se muestra un ejemplo de configuración de estos derechos de usuario para bloquear cuentas de administrador local y la cuenta de administrador de un dominio para realizar inicios de sesión que no deben ser necesarios para estas cuentas.
 
 
-![protección de cuentas de administrador integradas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_23.gif)
+![Captura de pantalla que resalta la asignación de derechos de usuario.](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_23.gif)
 
 -   Configurar GPO para restringir cuentas de administrador en controladores de dominio
     -   En cada dominio del bosque, el GPO de controladores de dominio predeterminados o una directiva vinculada a la unidad organizativa controladores de dominio debe modificarse para agregar la cuenta de administrador de cada dominio a los siguientes derechos de usuario en el **equipo \ \ configuración de Seguridad\directivas \ configuración de Seguridad\directivas \ asignaciones de derechos**:
@@ -84,7 +84,7 @@ En el caso de la cuenta de administrador integrada en cada dominio del bosque, d
 
     3.  En **Opciones de cuenta**, seleccione la opción la **cuenta es importante y no se puede delegar** , como se indica en la siguiente captura de pantalla, y haga clic en **Aceptar**.
 
-        ![protección de cuentas de administrador integradas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_24.gif)
+        ![Captura de pantalla que muestra la casilla la cuenta es importante y no se puede delegar.](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_24.gif)
 
 3.  Para habilitar la **tarjeta inteligente es necesaria para** la marca de inicio de sesión interactivo en la cuenta, realice los pasos siguientes:
 
@@ -94,7 +94,7 @@ En el caso de la cuenta de administrador integrada en cada dominio del bosque, d
 
     3.  En opciones de **cuenta** , seleccione la **tarjeta inteligente es necesaria para la marca de inicio de sesión interactivo** , como se indica en la siguiente captura de pantalla, y haga clic en **Aceptar**.
 
-        ![protección de cuentas de administrador integradas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_25.gif)
+        ![Captura de pantalla que muestra que la tarjeta inteligente es necesaria para la casilla inicio de sesión interactivo.](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_25.gif)
 
 ##### <a name="configuring-gpos-to-restrict-administrator-accounts-at-the-domain-level"></a>Configuración de GPO para restringir las cuentas de administrador en el Domain-Level
 
@@ -107,17 +107,17 @@ En el caso de la cuenta de administrador integrada en cada dominio del bosque, d
 
 3.  En el árbol de consola, haga clic con el botón secundario en **Directiva de grupo objetos** y haga clic en **nuevo**.
 
-    ![protección de cuentas de administrador integradas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_27.gif)
+    ![Captura de pantalla que muestra directiva de grupo objetos en el árbol de consola.](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_27.gif)
 
 4.  En el cuadro de diálogo **nuevo GPO** , escriba <GPO Name> y haga clic en **Aceptar** (donde <GPO Name> es el nombre de este GPO) como se indica en la siguiente captura de pantalla.
 
-    ![protección de cuentas de administrador integradas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_28.gif)
+    ![Captura de pantalla que muestra el cuadro de diálogo nuevo GPO.](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_28.gif)
 
 5.  En el panel de detalles, haga clic con el botón secundario <GPO Name> y haga clic en **Editar**.
 
 6.  Vaya a **equipo \ configuración de Seguridad\directivas \ directivas de seguridad\Directivas** y haga clic en **asignación de derechos de usuario**.
 
-    ![protección de cuentas de administrador integradas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_29.gif)
+    ![Captura de pantalla que muestra el Editor de administración de directivas de grupo.](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_29.gif)
 
 7.  Configure los derechos de usuario para impedir que la cuenta de administrador tenga acceso a los servidores y estaciones de trabajo de los miembros a través de la red haciendo lo siguiente:
 
@@ -127,7 +127,7 @@ En el caso de la cuenta de administrador integrada en cada dominio del bosque, d
 
     3.  Escriba **Administrador**, haga clic en **Comprobar nombres** y haga clic en **Aceptar**. Compruebe que la cuenta se muestra en <DomainName> formato \username., como se indica en la siguiente captura de pantalla.
 
-        ![protección de cuentas de administrador integradas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_30.gif)
+        ![Captura de pantalla que muestra el formato DomainName/username.](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_30.gif)
 
     4.  Haga clic en **Aceptar** y en **Aceptar** de nuevo.
 
@@ -139,7 +139,7 @@ En el caso de la cuenta de administrador integrada en cada dominio del bosque, d
 
     3.  Escriba **Administrador**, haga clic en **Comprobar nombres** y haga clic en **Aceptar**. Compruebe que la cuenta se muestra en <DomainName> formato \username., como se indica en la siguiente captura de pantalla.
 
-        ![protección de cuentas de administrador integradas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_31.gif)
+        ![Captura de pantalla que muestra cómo comprobar que ha configurado los derechos de usuario para impedir que la cuenta de administrador inicie sesión como un trabajo por lotes.](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_31.gif)
 
     4.  Haga clic en **Aceptar** y en **Aceptar** de nuevo.
 
@@ -151,7 +151,7 @@ En el caso de la cuenta de administrador integrada en cada dominio del bosque, d
 
     3.  Escriba **Administrador**, haga clic en **Comprobar nombres** y haga clic en **Aceptar**. Compruebe que la cuenta se muestra en <DomainName> formato \username., como se indica en la siguiente captura de pantalla.
 
-        ![protección de cuentas de administrador integradas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_32.gif)
+        ![Captura de pantalla que muestra cómo comprobar que ha configurado los derechos de usuario para impedir que la cuenta de administrador inicie sesión como servicio.](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_32.gif)
 
     4.  Haga clic en **Aceptar** y en **Aceptar** de nuevo.
 
@@ -163,7 +163,7 @@ En el caso de la cuenta de administrador integrada en cada dominio del bosque, d
 
     3.  Escriba **Administrador**, haga clic en **Comprobar nombres** y haga clic en **Aceptar**. Compruebe que la cuenta se muestra en <DomainName> formato \username., como se indica en la siguiente captura de pantalla.
 
-        ![protección de cuentas de administrador integradas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_33.gif)
+        ![Captura de pantalla que muestra cómo comprobar que ha configurado los derechos de usuario para impedir que la cuenta de BA tenga acceso a los servidores miembro y a las estaciones de trabajo a través de Servicios de Escritorio remoto.](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_33.gif)
 
     4.  Haga clic en **Aceptar** y en **Aceptar** de nuevo.
 
@@ -175,11 +175,11 @@ En el caso de la cuenta de administrador integrada en cada dominio del bosque, d
 
     2.  Haga clic con el botón secundario en la unidad organizativa a la que se aplicará el GPO y haga clic en **vincular un GPO existente**.
 
-        ![protección de cuentas de administrador integradas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_34.gif)
+        ![Captura de pantalla que muestra la opción de menú vincular un GPO existente.](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_34.gif)
 
     3.  Seleccione el GPO que ha creado y haga clic en **Aceptar**.
 
-        ![protección de cuentas de administrador integradas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_35.gif)
+        ![Captura de pantalla que muestra dónde seleccionar el GPO que creó.](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_35.gif)
 
     4.  Cree vínculos a todas las demás unidades organizativas que contengan estaciones de trabajo.
 
@@ -195,13 +195,13 @@ Los pasos de comprobación que se describen aquí son específicos de Windows 8 
 
 1.  Desde cualquier servidor miembro o estación de trabajo afectada por los cambios de GPO, intente iniciar sesión interactivamente en el dominio mediante la cuenta de administrador integrada del dominio. Después de intentar iniciar sesión, debe aparecer un cuadro de diálogo similar al siguiente.
 
-![protección de cuentas de administrador integradas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_36.gif)
+![Captura de pantalla que indica que debe usar una tarjeta inteligente para iniciar sesión.](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_36.gif)
 
 ##### <a name="verify-account-is-disabled-account-option"></a>Opción de cuenta comprobar que la cuenta está deshabilitada
 
 1.  Desde cualquier servidor miembro o estación de trabajo afectada por los cambios de GPO, intente iniciar sesión interactivamente en el dominio mediante la cuenta de administrador integrada del dominio. Después de intentar iniciar sesión, debe aparecer un cuadro de diálogo similar al siguiente.
 
-![protección de cuentas de administrador integradas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_37.gif)
+![Captura de pantalla que indica que la cuenta se ha deshabilitado.](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_37.gif)
 
 ##### <a name="verify-deny-access-to-this-computer-from-the-network-gpo-settings"></a>Comprobar la configuración de GPO "denegar el acceso a este equipo desde la red"
 Desde cualquier servidor miembro o estación de trabajo que no se vea afectado por los cambios de GPO (como un servidor de salto), intente tener acceso a un servidor miembro o una estación de trabajo a través de la red afectada por los cambios de GPO. Para comprobar la configuración del GPO, intente asignar la unidad del sistema mediante el comando **net use** mediante los pasos siguientes:
@@ -214,13 +214,13 @@ Desde cualquier servidor miembro o estación de trabajo que no se vea afectado p
 
 4.  Cuando se le pida que apruebe la elevación, haga clic en **sí**.
 
-    ![protección de cuentas de administrador integradas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_38.gif)
+    ![Captura de pantalla que muestra el cuadro de diálogo Access Control de usuario.](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_38.gif)
 
 5.  En la ventana del **símbolo del sistema** , escriba **net use \\ \\ \<Server Name\> \c $**, donde \<Server Name\> es el nombre del servidor miembro o de la estación de trabajo a la que está intentando obtener acceso a través de la red.
 
 6.  En la captura de pantalla siguiente se muestra el mensaje de error que debe aparecer.
 
-    ![protección de cuentas de administrador integradas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_39.gif)
+    ![Captura de pantalla que muestra un error de acceso.](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_39.gif)
 
 ##### <a name="verify-deny-log-on-as-a-batch-job-gpo-settings"></a>Comprobar la configuración del GPO "denegar el inicio de sesión como trabajo por lotes"
 
@@ -257,7 +257,7 @@ Desde cualquier servidor miembro o estación de trabajo afectada por los cambios
 
 7.  En **programa/script:**, haga clic en **examinar**, busque y seleccione el archivo por lotes creado en la sección "crear un archivo por lotes" y haga clic en **abrir**.
 
-8.  Haga clic en **OK**.
+8.  Haga clic en **Aceptar**.
 
 9. Haga clic en la pestaña **General**.
 
@@ -267,7 +267,7 @@ Desde cualquier servidor miembro o estación de trabajo afectada por los cambios
 
 12. Seleccione **ejecutar si el usuario ha iniciado sesión o no** y no **almacena la contraseña**. La tarea solo tendrá acceso a los recursos del equipo local.
 
-13. Haga clic en **OK**.
+13. Haga clic en **Aceptar**.
 
 14. Debe aparecer un cuadro de diálogo que solicite las credenciales de la cuenta de usuario para ejecutar la tarea.
 
@@ -275,7 +275,7 @@ Desde cualquier servidor miembro o estación de trabajo afectada por los cambios
 
 16. Debería aparecer un cuadro de diálogo similar al siguiente.
 
-    ![protección de cuentas de administrador integradas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_40.gif)
+    ![Captura de pantalla que muestra un cuadro de diálogo de Programador de tareas.](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_40.gif)
 
 ##### <a name="verify-deny-log-on-as-a-service-gpo-settings"></a>Comprobar la configuración del GPO "denegar el inicio de sesión como servicio"
 
@@ -301,7 +301,7 @@ Desde cualquier servidor miembro o estación de trabajo afectada por los cambios
 
 11. Cuando se reinicia el servicio, debe aparecer un cuadro de diálogo similar al siguiente.
 
-    ![protección de cuentas de administrador integradas](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_41.gif)
+    ![Captura de pantalla que muestra el cuadro de diálogo servicios.](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_41.gif)
 
 ##### <a name="revert-changes-to-the-printer-spooler-service"></a>Revertir los cambios en el servicio cola de impresión
 

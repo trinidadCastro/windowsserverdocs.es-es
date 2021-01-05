@@ -1,18 +1,18 @@
 ---
 title: Personalizar la tarea Suscribirse a Microsoft Online Backup Service
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo personalizar la tarea suscribirse a Microsoft Online Backup Service.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: a7eafbb3-7728-487e-b287-90bbd6fee7f0
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: c424be2d0815fbcb217e0453b27f4b7aceb07ee6
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 3c34e948da79d5b6a21b24da575d8b5b23022d96
+ms.sourcegitcommit: e00e789dff216dbade861e61365f078b758a5720
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623633"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97755111"
 ---
 # <a name="customize-sign-up-for-microsoft-online-backup-service-task"></a>Personalizar la tarea Suscribirse a Microsoft Online Backup Service
 
@@ -22,7 +22,7 @@ De forma predeterminada, la tarea **Suscribirse a Microsoft Online Backup Servic
 
  La tarea **Suscribirse a Microsoft Online Backup Service** se puede personalizar de dos formas:
 
--   Puede sustituir la URL del sitio web predeterminado por una URL que represente una experiencia del cliente personalizada. Para sustituir la URL predeterminada, abra el Editor del Registro, cree la clave del Registro: **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Server\OnlineBackup\LinkUrl**y, a continuación, asigne la URL personalizada como valor de la clave.
+-   Puede sustituir la URL del sitio web predeterminado por una URL que represente una experiencia del cliente personalizada. Para sustituir la URL predeterminada, abra el Editor del Registro, cree la clave del Registro: **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Server\OnlineBackup\LinkUrl** y, a continuación, asigne la URL personalizada como valor de la clave.
 
 -   Puede ocultar la tarea: Para ocultar la tarea, abra el Editor del Registro y cree la clave del Registro: **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Server\OnlineBackup\OnlineBackupInstalled**.
 

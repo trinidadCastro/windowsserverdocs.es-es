@@ -5,12 +5,12 @@ ms.topic: article
 ms.date: 09/25/2017
 ms.author: nirb
 author: nirb-ms
-ms.openlocfilehash: 1ddfbbda9ab0bdf4d04213069e192e471e4d1b98
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 3f12a1eae7349d3f9c5b447a65a5455f9d41b51a
+ms.sourcegitcommit: 8e330f9066097451cd40e840d5f5c3317cbc16c2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991689"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97696989"
 ---
 # <a name="beginning-your-general-data-protection-regulation-gdpr-journey-for-windows-server"></a>Inicio del viaje de Reglamento general de protección de datos (RGPD) para Windows Server
 
@@ -241,7 +241,7 @@ Windows Server 2016 también incluye protección integrada frente a algunas clas
 
 Cuando el programa llama a través de esta función, puede saltar a una ubicación no deseada especificada por el atacante. Estos ataques también se conocen como ataques de programación orientada a saltos (JOP). La protección de flujo de control evita ataques de JOP al colocar restricciones estrictas sobre qué código de aplicación se puede ejecutar, especialmente instrucciones de llamadas indirectas. Agrega comprobaciones de seguridad ligeras para identificar el conjunto de funciones de la aplicación que son destinos válidos para las llamadas indirectas. Cuando se ejecuta una aplicación, comprueba que estos destinos de llamadas indirectas son válidos.
 
-Si se produce un error en la comprobación de la protección del flujo de control en tiempo de ejecución, Windows Server 2016 finaliza inmediatamente el programa, interrumpiendo cualquier ataque que intente llamar indirectamente a una dirección no válida. La protección de flujo de control proporciona una capa de protección adicional importante a Device Guard. Si una aplicación de la lista blanca se ha puesto en peligro, se podría ejecutar sin activar en Device Guard, ya que el filtrado de Device Guard vería que la aplicación se firmó y se considera de confianza.
+Si se produce un error en la comprobación de la protección del flujo de control en tiempo de ejecución, Windows Server 2016 finaliza inmediatamente el programa, interrumpiendo cualquier ataque que intente llamar indirectamente a una dirección no válida. La protección de flujo de control proporciona una capa de protección adicional importante a Device Guard. Si una aplicación allowlisted se ha puesto en peligro, se podría ejecutar sin activar en Device Guard, ya que el filtrado de Device Guard vería que la aplicación se firmó y se considera de confianza.
 
 Sin embargo, como la protección de flujo de control puede identificar si la aplicación se ejecuta en un orden no predeterminado y no viable, se produciría un error en el ataque, lo que impidió la ejecución de la aplicación en peligro. En conjunto, estas protecciones hacen que sea muy difícil que los atacantes inserten malware en el software que se ejecuta en Windows Server 2016.
 
@@ -338,7 +338,7 @@ Obtenga más información en [novedades de la versión preliminar de Windows Def
 ATA es un producto local que ayuda a detectar el riesgo de identidad en una organización. ATA puede capturar y analizar el tráfico de red para la autenticación, autorización y protocolos de recopilación de información (como Kerberos, DNS, RPC, NTLM y otros protocolos). ATA usa estos datos para crear un perfil de comportamiento sobre los usuarios y otras entidades de una red para que pueda detectar anomalías y patrones de ataque conocidos. En la tabla siguiente se enumeran los tipos de ataque detectados por ATA.
 
 
-|Tipo de ataque |Descripción |
+|Tipo de ataque |Description |
 |---------|---------|
 |Ataques malintencionados |Estos ataques se detectan mediante la búsqueda de ataques a partir de una lista conocida de tipos de ataque, incluidos:<ul><li>Pass-the-Ticket (PtT)</li><li>Pass-the-Hash (PtH)</li><li>Overpass-the-Hash</li><li>PAC falsificado (MS14-068)</li><li>Golden ticket</li><li>Replicaciones malintencionadas</li><li>Reconocimiento</li><li>Fuerza bruta</li><li>Ejecución remota</li></ul>Para obtener una lista completa de los ataques malintencionados que se pueden detectar y su descripción, vea [¿qué actividades sospechosas puede detectar ATA?](/advanced-threat-analytics/understand-explore/ata-threats).|
 |Comportamiento anómalo |Estos ataques se detectan mediante el análisis de comportamiento y usan el aprendizaje automático para identificar actividades cuestionables, entre las que se incluyen:<ul><li>Inicios de sesión anómalos</li><li>Amenazas desconocidas</li><li>Uso compartido de contraseña</li><li>Desplazamiento lateral</li></ul>|
@@ -348,19 +348,19 @@ Puede usar ATA para ayudar a detectar atacantes que intenten poner en peligro la
 
 ## <a name="related-content-for-associated-windows-server-2016-solutions"></a>Contenido relacionado para las soluciones de Windows Server 2016 asociadas
 
-- **Antivirus de Windows Defender:** https://www.youtube.com/watch?v=P1aNEy09NaI etchttps://docs.microsoft.com/windows/threat-protection/windows-defender-antivirus/windows-defender-antivirus-in-windows-10
+- **Antivirus de Windows Defender:** https://www.youtube.com/watch?v=P1aNEy09NaI etc https://docs.microsoft.com/windows/threat-protection/windows-defender-antivirus/windows-defender-antivirus-in-windows-10
 
-- **Protección contra amenazas avanzada de Windows Defender:** https://www.youtube.com/watch?v=qxeGa3pxIwg etchttps://docs.microsoft.com/windows/threat-protection/windows-defender-atp/configure-server-endpoints-windows-defender-advanced-threat-protection
+- **Protección contra amenazas avanzada de Windows Defender:** https://www.youtube.com/watch?v=qxeGa3pxIwg etc https://docs.microsoft.com/windows/threat-protection/windows-defender-atp/configure-server-endpoints-windows-defender-advanced-threat-protection
 
-- **Protección de dispositivos de Windows Defender:** https://www.youtube.com/watch?v=F-pTkesjkhI etchttps://docs.microsoft.com/windows/device-security/device-guard/device-guard-deployment-guide
+- **Protección de dispositivos de Windows Defender:** https://www.youtube.com/watch?v=F-pTkesjkhI etc https://docs.microsoft.com/windows/device-security/device-guard/device-guard-deployment-guide
 
-- **Protección de credenciales de Windows Defender:** https://www.youtube.com/watch?v=F-pTkesjkhI etchttps://docs.microsoft.com/windows/access-protection/credential-guard/credential-guard
+- **Protección de credenciales de Windows Defender:** https://www.youtube.com/watch?v=F-pTkesjkhI etc https://docs.microsoft.com/windows/access-protection/credential-guard/credential-guard
 
 - **Protección de flujo de control:**https://msdn.microsoft.com/library/windows/desktop/mt637065(v=vs.85).aspx
 
 - **Seguridad y garantía:**https://docs.microsoft.com/windows-server/security/security-and-assurance
 
-## <a name="disclaimer"></a>Renuncia de responsabilidades
+## <a name="disclaimer"></a>Declinación de responsabilidades
 Este artículo es un Comentario sobre el RGPD, a medida que Microsoft lo interpreta, a partir de la fecha de publicación. Hemos dedicado mucho tiempo a RGPD y me gustaría pensar en su intención y el significado. Pero la aplicación de RGPD es muy específica, y no todos los aspectos e interpretaciones de RGPD están bien liquidados.
 
 Como resultado, este artículo se proporciona solo con fines informativos y no se debe confiar en ellos como asesoría legal o para determinar cómo se puede aplicar RGPD a usted y a su organización. Le recomendamos que trabaje con un profesional calificado legalmente para discutir RGPD, cómo se aplica específicamente a su organización y cómo garantizar el cumplimiento normativo.

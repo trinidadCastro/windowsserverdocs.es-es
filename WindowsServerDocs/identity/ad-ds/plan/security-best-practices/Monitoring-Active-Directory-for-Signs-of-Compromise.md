@@ -7,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 30aa1010d1222b61ed21d2a3921d0166f24f7a79
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 54dc9de562352f3b1106a6b0725ab368b449cac5
+ms.sourcegitcommit: e2dadc9b0c227a489a945bbc531aca5e101f18cd
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97042483"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97801749"
 ---
 # <a name="monitoring-active-directory-for-signs-of-compromise"></a>Supervisión de Active Directory en busca de indicios de riesgo
 
@@ -109,7 +109,7 @@ Para obtener una lista de las subcategorías de auditoría configuradas actualme
 
 En la captura de pantalla siguiente se muestra un ejemplo de auditpol.exe que enumeran la Directiva de auditoría actual.
 
-![supervisar AD](media/Monitoring-Active-Directory-for-Signs-of-Compromise/SAD_5.gif)
+![Captura de pantalla que muestra un ejemplo de auditpol.exe lista de la Directiva de auditoría actual.](media/Monitoring-Active-Directory-for-Signs-of-Compromise/SAD_5.gif)
 
 > [!NOTE]
 > Directiva de grupo no notifica siempre con precisión el estado de todas las directivas de auditoría habilitadas, mientras auditpol.exe sí. Consulte [obtención de la Directiva de auditoría efectiva en Windows 7 y 2008 R2](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731607(v=ws.10)) para obtener más detalles.
@@ -328,7 +328,7 @@ Para establecer la Directiva de auditoría mediante directivas de grupo, configu
 
 La Directiva de auditoría avanzada se puede establecer mediante el Active Directory o las directivas de grupo local. Para establecer la Directiva de auditoría avanzada, configure las subcategorías adecuadas que se encuentran en configuración de equipo \ \ \ \ \ **Directiva de auditoría de seguridad\directiva** (consulte la siguiente captura de pantalla para obtener un ejemplo del editor de directivas de grupo local (gpedit. msc)). Cada subcategoría de directiva de auditoría se puede habilitar para eventos **correctos**, **erróneos**, o **correctos** y **erróneos** .
 
-![supervisar AD](media/Monitoring-Active-Directory-for-Signs-of-Compromise/SAD_7.gif)
+![Captura de pantalla que muestra un ejemplo del Editor de directivas de grupo local (gpedit. msc).](media/Monitoring-Active-Directory-for-Signs-of-Compromise/SAD_7.gif)
 
 ### <a name="setting-windows-audit-policy-using-auditpolexe"></a>Configuración de la Directiva de auditoría de Windows mediante Auditpol.exe
 
@@ -378,7 +378,7 @@ Auditpol.exe se puede usar para guardar y restaurar una directiva de auditoría 
 
 ## <a name="enforcing-traditional-auditing-or-advanced-auditing"></a>Aplicación de auditorías y auditorías avanzadas tradicionales
 
-En Windows Server 2012, Windows Server 2008 R2, Windows Server 2008, Windows 8, Windows 7 y Windows Vista, los administradores pueden optar por habilitar las nueve categorías tradicionales o usar las subcategorías. Se trata de una elección binaria que debe realizarse en cada sistema de Windows. Puede habilitar las categorías principales o el subcategoriesit no puede ser ambos.
+En Windows Server 2012, Windows Server 2008 R2, Windows Server 2008, Windows 8, Windows 7 y Windows Vista, los administradores pueden optar por habilitar las nueve categorías tradicionales o usar las subcategorías. Se trata de una elección binaria que debe realizarse en cada sistema de Windows. Las categorías principales pueden estar habilitadas o las subcategorías, no pueden ser ambas.
 
 Para evitar que la Directiva de categoría tradicional heredada sobrescriba las subcategorías de la Directiva de auditoría, debe habilitar la configuración de la **Subcategoría forzar Directiva de auditoría (Windows Vista o posterior) para invalidar** la configuración de la categoría configuración de categorías de directiva de auditoría ubicada en configuración del equipo \ configuración de seguridad\Directivas **locales\Opciones** de directivas.
 

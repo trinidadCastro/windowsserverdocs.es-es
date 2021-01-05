@@ -1,18 +1,18 @@
 ---
 title: Crear el archivo Oobe.xml, incluyendo el logotipo y los términos de licencia
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo usar el archivo de Oobe.xml para agregar su propio contrato de licencia para el usuario final (CLUF) a la configuración inicial.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 8a7b3cc1-21bb-4344-8110-f5d5959b370d
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: d6c1a721107d96f8a2a5de89f95c97ab87bf740a
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: a809aa273c6cae3a713ee2c39f16b610a7a0ab36
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623757"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711320"
 ---
 # <a name="create-the-oobexml-file-including-logo-and-eula"></a>Crear el archivo Oobe.xml, incluyendo el logotipo y los términos de licencia
 
@@ -26,11 +26,11 @@ Puede agregar su propio Contrato de licencia para el usuario final (CLUF) a la C
 
 1. Abra el archivo Oobe.xml en un editor de textos como el Bloc de notas.
 
-2. En el <logopath \>< \> etiquetas/logopath, escriba la ruta de acceso absoluta al archivo del logotipo. El archivo debe contener un archivo .png (portable network graphics) de 32 bits de 240 x 100 píxeles.
+2. En el <logopath \><\> etiquetas/logopath, escriba la ruta de acceso absoluta al archivo del logotipo. El archivo debe contener un archivo .png (portable network graphics) de 32 bits de 240 x 100 píxeles.
 
-3. En el <eulafilename \>< \> etiquetas/eulafilename, escriba la ruta de acceso absoluta al archivo del CLUF. El archivo del CLUF debe estar en formato .rtf (texto enriquecido).
+3. En el <eulafilename \><\> etiquetas/eulafilename, escriba la ruta de acceso absoluta al archivo del CLUF. El archivo del CLUF debe estar en formato .rtf (texto enriquecido).
 
-4. En el nombre de la <\>< \> etiquetas/Name, escriba el nombre de la empresa.
+4. En el nombre de la <\><\> etiquetas/Name, escriba el nombre de la empresa.
 
     En el ejemplo siguiente se muestra el formato del archivo Oobe.xml:
 

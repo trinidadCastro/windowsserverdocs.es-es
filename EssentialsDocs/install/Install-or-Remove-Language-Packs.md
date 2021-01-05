@@ -1,18 +1,18 @@
 ---
 title: Instalar o quitar paquetes de idiomas
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo instalar o quitar paquetes de idioma en Windows Server Essentials.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 98f13f63-4480-40ba-a7ef-d1d9b7582e5f
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 50fd17a057e15661ed6c3440bdea8f22bea1bada
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 7dcbc6cb67c79d59dd589ae9b8747e4319967731
+ms.sourcegitcommit: e00e789dff216dbade861e61365f078b758a5720
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89626201"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97755401"
 ---
 # <a name="install-or-remove-language-packs"></a>Instalar o quitar paquetes de idiomas
 

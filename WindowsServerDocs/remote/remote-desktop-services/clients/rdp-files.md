@@ -7,12 +7,12 @@ manager: lizross
 ms.author: helohr
 ms.date: 09/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 00bda15c409f5323a96dcbf48bc2dd130ec6368b
-ms.sourcegitcommit: 40466c8af1fc60dfca733ea476f088549cedba65
+ms.openlocfilehash: 3bd855e172b8c9999fa258d0d5e6f5fa57664467
+ms.sourcegitcommit: 4f7308430a69fe7965e16aa5b31f87c5d68e4a09
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92793602"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97577377"
 ---
 # <a name="supported-remote-desktop-rdp-file-settings"></a>Configuración admitida del archivo RDP de Escritorio remoto
 
@@ -35,7 +35,7 @@ En la tabla también se resalta qué configuración se admite como propiedades p
 | promptcredentialonce:i:value | Establece si las credenciales del usuario se guardan y se usan para la Puerta de enlace de Escritorio remoto y el equipo remoto. | - 0: La sesión remota no usará las mismas credenciales</br>- 1: La sesión remota usará las mismas credenciales | 1 | No |
 | authentication level:i:value | Define la configuración del nivel de autenticación del servidor. | - 0: Si se produce un error de autenticación de servidor, conectar al equipo sin advertencia (Conectar y no avisarme)</br>- 1: Si se produce un error de autenticación de servidor, no establecer una conexión (No conectar)</br>- 2: Si se produce un error de autenticación de servidor, mostrar una advertencia y permitirme conectarme o rechazar la conexión (Avisarme)</br>- 3: No se especifica ningún requisito de autenticación. | 3 | No |
 | enablecredsspsupport:i:value | Determina si el cliente usará el proveedor de compatibilidad para seguridad de credenciales (CredSSP) para la autenticación si está disponible. | - 0: RDP no usará CredSSP, incluso si el sistema operativo es compatible con CredSSP</br>- 1: RDP usará CredSSP si el sistema operativo es compatible con CredSSP | 1 | Sí |
-| disableconnectionsharing:i:value | Determina si el cliente se vuelve a conectar a una sesión desconectada existente o si inicia una nueva conexión cuando se lanza una nueva conexión. | - 0: Volver a conectar a cualquier sesión existente</br>- 1: Iniciar nueva conexión | 0 | Sí |
+| disableconnectionsharing:i:value | Determina si el cliente se vuelve a conectar a una sesión desconectada existente o si inicia una nueva conexión cuando se lanza una nueva conexión. | - 0: Volver a conectar a cualquier sesión existente</br>- 1: Iniciar nueva conexión | 0 | No |
 | alternate shell:s:value | Especifica que un programa se inicie automáticamente en la sesión remota como el shell en lugar del explorador. | Ruta de acceso válida a un archivo ejecutable, como "C:\ProgramFiles\Office\word.exe". | | Sí |
 
 ## <a name="session-behavior"></a>Comportamiento de la sesión.

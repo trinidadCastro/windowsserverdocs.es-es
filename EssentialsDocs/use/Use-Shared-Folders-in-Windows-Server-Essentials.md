@@ -1,18 +1,18 @@
 ---
 title: Usar carpetas compartidas en Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información sobre las carpetas compartidas que se encuentran en el servidor y cómo proporcionan una ubicación central para todos los datos y archivos.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: cb7f3d7d-4225-409a-9f6b-34a106e8dd24
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 8c2b906d1484f0f681325cccc36fe3446760a175
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 52e49410cc105cf2ad15b452c6d336489021e06a
+ms.sourcegitcommit: 8e330f9066097451cd40e840d5f5c3317cbc16c2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89624888"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97696897"
 ---
 # <a name="use-shared-folders-in-windows-server-essentials"></a>Usar carpetas compartidas en Windows Server Essentials
 
@@ -41,10 +41,6 @@ ms.locfileid: "89624888"
 -   [Usar la aplicación Mi servidor para Windows Phone](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_Phone)
 
 -   [Usar la aplicación Mi servidor para Windows 8](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_App)
-
-##  <a name="using-the-windows-server-essentials-launchpad"></a><a name="BKMK_UsingLaunchpad"></a> Usar el Launchpad de Windows Server Essentials
- Puede utilizar el Launchpad desde cualquier equipo que esté conectado al servidor usando el Asistente para conectar un equipo al servidor. Para obtener más información acerca de cómo conectar el equipo al servidor, consulte [Conectar equipos al servidor](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_9).
-
 
  Después de conectar el equipo al servidor, se agregará un acceso directo al Launchpad en el área de notificación del escritorio. Haga doble clic en el icono del Launchpad y escriba las credenciales de red para tener acceso a las carpetas compartidas mediante el uso del Launchpad. Mediante el vínculo de carpetas compartidas del Launchpad, puede cargar o descargar archivos en cualquiera de las carpetas compartidas que aparezcan en la lista arrastrando y colocando los archivos del equipo local a las carpetas compartidas. Con las carpetas compartidas podrá retransmitir música y vídeos, reproducir presentaciones o grabar programas de TV en cualquier equipo que esté conectado al servidor, así como reproducir una presentación para ver las imágenes.
 

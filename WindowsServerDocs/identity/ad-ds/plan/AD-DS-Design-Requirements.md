@@ -7,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 244f11e30e5c17f86dab6e8eee8ff8313e9d065f
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 1be3943fa2dcc5f0d84e96ac6270be3b7ee3c0e5
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97050153"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711720"
 ---
 # <a name="ad-ds-design-requirements"></a>Requisitos de diseño de AD DS
 
@@ -24,14 +24,14 @@ Antes de implementar Windows Server 2008 Active Directory Domain Services (AD DS
 
 Para diseñar la estructura lógica de AD DS, determine el número de bosques que requiere su organización y, a continuación, cree diseños para los dominios, la infraestructura del sistema de nombres de dominio (DNS) y las unidades organizativas (OU). En la ilustración siguiente se muestra el proceso para diseñar la estructura lógica.
 
-![Requisitos de diseño de AD DS](media/AD-DS-Design-Requirements/d5cebae6-a752-4063-a98f-473799c251bd.gif)
+![Ilustración en la que se muestra el proceso de diseño de la estructura lógica.](media/AD-DS-Design-Requirements/d5cebae6-a752-4063-a98f-473799c251bd.gif)
 
 Para obtener más información, vea [diseñar la estructura lógica para Windows Server 2008 AD DS](Designing-the-Logical-Structure.md).
 
 ## <a name="designing-the-site-topology"></a>Diseño de la topología de sitio
 Después de diseñar la estructura lógica de la infraestructura de AD DS, debe diseñar la topología del sitio para la red. La topología del sitio es una representación lógica de la red física. Contiene información acerca de la ubicación de los sitios de AD DS, el AD DS los controladores de dominio de cada sitio y los vínculos a sitios y puentes de vínculos a sitios que admiten la replicación de AD DS entre sitios. En la ilustración siguiente se muestra el proceso de diseño de la topología de sitio.
 
-![Requisitos de diseño de AD DS](media/AD-DS-Design-Requirements/d34d43c0-437f-47cb-9b64-09c0f9ce6479.gif)
+![Ilustración en la que se muestra el proceso de diseño de la topología de sitio.](media/AD-DS-Design-Requirements/d34d43c0-437f-47cb-9b64-09c0f9ce6479.gif)
 
 Para obtener más información, vea [diseñar la topología de sitio para Windows Server 2008 AD DS](Designing-the-Site-Topology.md).
 

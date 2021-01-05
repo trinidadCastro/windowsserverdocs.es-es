@@ -1,18 +1,18 @@
 ---
 title: Configurar el almacenamiento de servidor
-description: Describe cómo usar Windows Server Essentials
+description: Aprenda a configurar el almacenamiento del servidor, la copia de seguridad del servidor y la partición de datos.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: ef7ddcdd-3a74-40ca-9487-c3a6fc5155a5
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: be4bf42f2fe287ad6bd96b9ea5735147ec253e0d
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 85b89486008334f5da899349ca21ca9ad41feba5
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89621837"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711430"
 ---
 # <a name="configure-server-storage"></a>Configurar el almacenamiento de servidor
 

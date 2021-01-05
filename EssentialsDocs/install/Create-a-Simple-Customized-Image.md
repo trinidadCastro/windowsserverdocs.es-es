@@ -1,18 +1,18 @@
 ---
 title: Crear una imagen personalizada básica
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información sobre cómo crear una imagen personalizada sencilla en Windows Server Essentials.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 29f9a09f-e4e8-476d-ada1-ab9202a670d7
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: c4b1d0bde98ee162d099976f4ac4db49c9deb773
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: b9e022ce07e28f6a4d91a3bf8fb8c782cb5c0bb4
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623833"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711210"
 ---
 # <a name="create-a-simple-customized-image"></a>Crear una imagen personalizada básica
 

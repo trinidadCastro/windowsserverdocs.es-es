@@ -1,18 +1,18 @@
 ---
 title: Información importante para el uso del ADK de Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información sobre las diferencias importantes entre el ADK de Windows 8 y el ADK de Windows Server Essentials.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 26cb2992-1250-4672-98ee-8b870baa45d5
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: a7fc10eb7c04163ca3202e481df130fc86f3c49c
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 36cdbc03f6b241026f24c811cb69d5331f71bae7
+ms.sourcegitcommit: e00e789dff216dbade861e61365f078b758a5720
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623503"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97755061"
 ---
 # <a name="important-information-for-using-the-windows-server-essentials-adk"></a>Información importante para el uso del ADK de Windows Server Essentials
 
@@ -22,7 +22,7 @@ Para crear y personalizar una imagen de Windows Server Essentials, puede usar mu
 
  Debe tener en cuenta las siguientes diferencias:
 
--   Se han modificado algunos valores de configuración en **%windir%\setup\script\SetupComplete.cmd**. Si desea utilizar este comando, puede agregar líneas de comandos adicionales, pero no elimine las líneas existentes.
+-   Se han modificado algunos valores de configuración en **%windir%\setup\script\SetupComplete.cmd**. Si desea utilizar este comando, puede agregar más `cmdlines` , pero no quite las líneas existentes.
 
 ## <a name="working-with-passwords"></a>Cómo trabajar con contraseñas
 

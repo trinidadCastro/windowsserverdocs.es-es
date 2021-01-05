@@ -1,18 +1,18 @@
 ---
 title: Agregue Alertas de estado
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo instalar un complemento de estado para proporcionar definiciones de alertas, comprobaciones de estado y reparaciones de problemas de red.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 270e0aac-dc42-46f3-a20b-a68ffbded06d
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 3a3c04a48e06ef0040943b866eaf1ddb0be8fa89
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 9c57e364e4596427b8a2f07c7e67e2573a21ba78
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89624074"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711660"
 ---
 # <a name="add-health-alerts"></a>Agregue Alertas de estado
 

@@ -1,18 +1,18 @@
 ---
 title: Preparación de la imagen para su distribución
-description: Describe cómo usar Windows Server Essentials
+description: Aprenda a usar un archivo de sysprep.exe para preparar una imagen para la implementación.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 681c6cad-7fde-494f-86a5-f4c7c15d23f9
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: a08b8f284701cf486f23a22604ea0c90740146d4
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: abe50e40cf8de99b94c6ba956745c8df43f02ed7
+ms.sourcegitcommit: e00e789dff216dbade861e61365f078b758a5720
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623405"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97755391"
 ---
 # <a name="preparing-the-image-for-deployment"></a>Preparación de la imagen para su distribución
 

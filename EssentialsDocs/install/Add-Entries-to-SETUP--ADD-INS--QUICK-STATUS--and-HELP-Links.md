@@ -1,27 +1,27 @@
 ---
 title: Agregar entradas a CONFIGURAR, COMPLEMENTOS, ESTADO RÁPIDO Y VÍNCULOS DE AYUDA
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información sobre cómo agregar tareas a las listas de tareas configurar, COMPLEMENTOs y estado rápido en Windows Server Essentials.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: c0a8f10d-fd85-4c8d-b9bb-176cb1db1f46
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: b8abf96a5d07d3bcda3cfc43c4e0e960a38e465b
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: c065eaf8c70ec24e0eddab35cdc672891bc7407b
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89624080"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711690"
 ---
 # <a name="add-entries-to-setup-add-ins-quick-status-and-help-links"></a>Agregar entradas a CONFIGURAR, COMPLEMENTOS, ESTADO RÁPIDO Y VÍNCULOS DE AYUDA
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-Puede agregar tareas a las listas de tareas **CONFIGURAR**, **COMPLEMENTOS**o **ESTADO RÁPIDO**, y puede agregar vínculos a la sección Vínculos de la comunidad en la página principal del Panel. Para agregar las tareas y enlaces a las listas y secciones, copie un archivo XML llamado OEMHomePageContent.home o un archivo de recursos incrustado llamado OEMHomePageContent.dll en %ProgramFiles%\Windows Server\Bin\Addins\Home. El archivo de recursos incrustado se puede utilizar para localizar el texto en las tareas y los vínculos que se agregan. El archivo .home contiene las definiciones XML de las tareas y vínculos.
+Puede agregar tareas a las listas de tareas **CONFIGURAR**, **COMPLEMENTOS** o **ESTADO RÁPIDO**, y puede agregar vínculos a la sección Vínculos de la comunidad en la página principal del Panel. Para agregar las tareas y enlaces a las listas y secciones, copie un archivo XML llamado OEMHomePageContent.home o un archivo de recursos incrustado llamado OEMHomePageContent.dll en %ProgramFiles%\Windows Server\Bin\Addins\Home. El archivo de recursos incrustado se puede utilizar para localizar el texto en las tareas y los vínculos que se agregan. El archivo .home contiene las definiciones XML de las tareas y vínculos.
 
 ## <a name="adding-tasks-to-the-setup-add-ins-quick-status-task-lists-and-adding-links-to-help-task"></a>Agregar tareas a las listas de tareas CONFIGURAR, COMPLEMENTOS o ESTADO RÁPIDO y agregar vínculos a la tarea AYUDA
- Puede agregar tareas a las listas de tareas **CONFIGURAR**, **COMPLEMENTOS**o **ESTADO RÁPIDO**, y vínculos a la **AYUDA**; para ello, defina las tareas y los enlaces en el archivo XML y, de manera opcional, cree el archivo de recursos incrustado e instálelo en el servidor. Si el archivo XML se instala en el servidor sin un archivo de recursos, debe tener como nombre OEMHomePageContent.home. Si se está usando un ensamblado para instalar el archivo XML y el archivo de recursos, se debe denominar OEMHomePageContent.dll y firmar con Authenticode.
+ Puede agregar tareas a las listas de tareas **CONFIGURAR**, **COMPLEMENTOS** o **ESTADO RÁPIDO**, y vínculos a la **AYUDA**; para ello, defina las tareas y los enlaces en el archivo XML y, de manera opcional, cree el archivo de recursos incrustado e instálelo en el servidor. Si el archivo XML se instala en el servidor sin un archivo de recursos, debe tener como nombre OEMHomePageContent.home. Si se está usando un ensamblado para instalar el archivo XML y el archivo de recursos, se debe denominar OEMHomePageContent.dll y firmar con Authenticode.
 
 ### <a name="define-the-tasks-and-links"></a>Definición de tareas y enlaces
  Puede utilizar un editor de textos como el Bloc de notas para crear el archivo .home; si también va a crear un archivo de recursos incrustado, puede utilizar Visual Studio 2010 o superior para definir los archivos. En el procedimiento siguiente se muestra cómo utilizar Visual Studio 2010 o superior para crear los archivos.
@@ -105,7 +105,7 @@ Puede agregar tareas a las listas de tareas **CONFIGURAR**, **COMPLEMENTOS**o **
    |exelocation|La ruta a la aplicación asociada con la tarea. Este atributo solo se utiliza con las tareas **exe**.|
    |replaceid|El identificador de la tarea que es sustituida por esta tarea.|
    |ensamblado|AssemblyName del conjunto que proporciona la clase para implementar la consulta de estado rápido. El ensamblado debe encontrarse en archivos de programa \ Windows Server\Bin. \\ .|
-   |clase|Nombre de la clase que implementa la consulta de estado rápido. La clase debe implementar la interfaz **ITaskStatusQuery**.|
+   |class|Nombre de la clase que implementa la consulta de estado rápido. La clase debe implementar la interfaz **ITaskStatusQuery**.|
    |Título (vínculo)|El texto del enlace. Si crea un archivo de recursos incrustado, el valor de este atributo será el recurso de cadena.|
    |Descripción (vínculo)|La descripción del destino del enlace. Si crea un archivo de recursos incrustado, el valor de este atributo será el recurso de cadena.|
    |ShellExecPath|La ruta a la aplicación o la dirección URL.<br /><br /> **Nota:** Las variables de entorno se admiten en el atributo ShellExecPath.|

@@ -1,18 +1,18 @@
 ---
 title: Administrar aplicaciones en Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo administrar aplicaciones e instalar y quitar complementos en Windows Server Essentials.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: ae89c46a-0afd-4858-9150-ec97650f45a4
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 30b8dfa2087e76cc80011eb359715c95564ec1b6
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: f978405236a83c89f07e65589e5d9af899ea1045
+ms.sourcegitcommit: e00e789dff216dbade861e61365f078b758a5720
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623277"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97755301"
 ---
 # <a name="manage-applications-in-windows-server-essentials"></a>Administrar aplicaciones en Windows Server Essentials
 
@@ -43,7 +43,7 @@ ms.locfileid: "89623277"
 
   En la tabla siguiente se describen las diversas tareas de administración del complemento que están disponibles en el panel del servidor. Algunas de las tareas son para complementos, por lo que solo están visibles cuando se selecciona un complemento en la lista.
 
-|Nombre de la tarea|Descripción|
+|Nombre de la tarea|Description|
 |---------------|-----------------|
 |Quitar el complemento|Quita el complemento seleccionado desde el servidor y de todos los demás equipos de la red.|
 |Instalar el complemento en los equipos de la red|Ayuda a programar la instalación del complemento seleccionado en todos los equipos de la red.|
@@ -60,7 +60,7 @@ ms.locfileid: "89623277"
 
 #### <a name="to-install-an-add-in-from-microsoft-pinpoint"></a>Para instalar un complemento de Microsoft Pinpoint
 
-1.  En el panel del servidor, haga clic en **aplicaciones**y, a continuación, haga clic en la pestaña **Microsoft Pinpoint** .  Aparece una lista de complementos disponibles.
+1.  En el panel del servidor, haga clic en **aplicaciones** y, a continuación, haga clic en la pestaña **Microsoft Pinpoint** .  Aparece una lista de complementos disponibles.
 
 2.  Haga clic en el complemento que quiera instalar. Aparecerá la página de información.
 

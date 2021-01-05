@@ -1,18 +1,18 @@
 ---
 title: Agregar Windows Server Essentials como servidor miembro
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo agregar Windows Server Essentials como un servidor miembro a un entorno de dominio de Active Directory existente.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: d09dd82f-f7d2-47ce-862d-fd9869f2021c
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 3325799dc8fb81ab15f8cb03102b9c6248526b74
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 470d713d2d9b105c834369cd15dad372f843a67d
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89624001"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711620"
 ---
 # <a name="add-windows-server-essentials-as-a-member-server"></a>Agregar Windows Server Essentials como servidor miembro
 
@@ -52,7 +52,7 @@ Este tema se aplica a un servidor que ejecuta Windows Server 2012 R2 Standard, W
 
 4. En **Nombre de equipo**, en la sección **Dominio**, haga clic en **Cambiar**.
 
-5. En **cambios**en el dominio o el nombre del equipo, en la sección **miembro** , elija si desea unir el servidor que ejecuta Windows Server Essentials a un **grupo de trabajo** o a un **dominio**.
+5. En **cambios** en el dominio o el nombre del equipo, en la sección **miembro** , elija si desea unir el servidor que ejecuta Windows Server Essentials a un **grupo de trabajo** o a un **dominio**.
 
    -   Para agregar el servidor a un grupo de trabajo, escriba **workgroup** y, a continuación, haga clic en **Aceptar**.
 

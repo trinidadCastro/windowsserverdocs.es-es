@@ -1,18 +1,18 @@
 ---
 title: Administrar Acceso desde cualquier lugar en Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información sobre cómo activar las funcionalidades de acceso desde cualquier lugar, acceso Web remoto, red privada virtual y DirectAccess en Windows Server Essentials.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: c369c317-f94d-4179-a735-e74bf6f62692
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 1bd8f498cef17edc73569077dc03d4b7b4e26d66
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: a0dcf82a4ee88518058db18f986151924b08f7e4
+ms.sourcegitcommit: e00e789dff216dbade861e61365f078b758a5720
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623296"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97755311"
 ---
 # <a name="manage-anywhere-access-in-windows-server-essentials"></a>Administrar Acceso desde cualquier lugar en Windows Server Essentials
 

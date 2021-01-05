@@ -1,18 +1,18 @@
 ---
 title: Instalación y configuración de Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo instalar y configurar Windows Server Essentials.
 ms.date: 06/17/2013
 ms.topic: article
 ms.assetid: e95cf219-46a4-4041-bd81-0c4c2a0622cf
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: c6fe658db8756856a65bb5284731b949d8edbd31
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: c20f06922a29f723e927035689831c04bd13df49
+ms.sourcegitcommit: e00e789dff216dbade861e61365f078b758a5720
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89626232"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97754951"
 ---
 # <a name="install-and-configure-windows-server-essentials"></a>Instalación y configuración de Windows Server Essentials
 
@@ -81,7 +81,7 @@ ms.locfileid: "89626232"
         > [!NOTE]
         >  Una vez que ha hecho clic en **Opciones de unidad (avanzadas)**, esa opción no volverá a aparecer. En ese caso, omita la parte del paso que hace referencia a las opciones de unidad.
 
-    2.  Para crear una partición a partir de un espacio sin particionar, haga clic en el disco duro que desea particionar, haga clic en **Opciones de unidad (avanzadas)**, haga clic en **Nuevo** y, a continuación, en el cuadro de texto **Tamaño**, escriba la partición que desea crear. Por ejemplo, si utiliza el tamaño de partición recomendado de 120 gigabytes (GB), escriba **122880**y, a continuación, haga clic en **Aplicar**. Una vez creada la partición, haga clic en **Siguiente**. La partición se formatea antes de continuar la instalación.
+    2.  Para crear una partición a partir de un espacio sin particionar, haga clic en el disco duro que desea particionar, haga clic en **Opciones de unidad (avanzadas)**, haga clic en **Nuevo** y, a continuación, en el cuadro de texto **Tamaño**, escriba la partición que desea crear. Por ejemplo, si utiliza el tamaño de partición recomendado de 120 gigabytes (GB), escriba **122880** y, a continuación, haga clic en **Aplicar**. Una vez creada la partición, haga clic en **Siguiente**. La partición se formatea antes de continuar la instalación.
 
     3.  Para crear una partición que utilice todo el espacio sin particionar, haga clic en el disco duro que desea particionar, haga clic en **Opciones de unidad (avanzadas)**, haga clic en **Nuevo** y, a continuación, haga clic en **Aplicar** para aceptar el tamaño de partición predeterminado. Una vez creada la partición, haga clic en **Siguiente**. La partición se formatea antes de continuar la instalación.
 
@@ -152,7 +152,7 @@ ms.locfileid: "89626232"
 
  En la siguiente tabla se definen los elementos que pueden aparecer en la lista de tareas de configuración.
 
-|Tarea|Descripción
+|Tarea|Description
 |----------|-----------------|
 |Obtener actualizaciones para otros productos de Microsoft|Haga clic en esta tarea para tener acceso a un vínculo que ejecuta una herramienta que le permite especificar si desea usar Microsoft Update para obtener automáticamente actualizaciones para Windows Server Essentials y otros productos de Microsoft como Office.
 |Adición de cuentas de usuario|Haga clic en esta tarea para ver información breve acerca de cómo agregar cuentas de usuario. Se proporciona un vínculo al **Asistente para agregar cuentas de usuario**. Para obtener más información, vea cómo [agregar una cuenta de usuario](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage1).

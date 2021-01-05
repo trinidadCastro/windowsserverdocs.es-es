@@ -1,18 +1,18 @@
 ---
 title: Cree el archivo Cfg.ini
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo crear el archivo de cfg.ini que se usa para automatizar una instalación del sistema operativo.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 93a73556-22ef-402d-b8d4-582b74c22bcf
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 597f6349d96d29f06f06034504d5800e7e207eae
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: ffc9ecaf6059ab21aae474d211ab397858f1b7d2
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623779"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711230"
 ---
 # <a name="create-the-cfgini-file"></a>Cree el archivo Cfg.ini
 
@@ -99,7 +99,7 @@ El archivo cfg.ini se usa para automatizar una instalación del sistema operativ
     |--------------------|---------------------------|
     |*AcceptEula*|Indica que el usuario acepta los Términos de licencia de software de Microsoft. El valor puede ser verdadero o falso, pero la instalación solo se realizará cuando se especifica verdadero.|
     |*AcceptOEMEula*|(Opcional) Indica que el usuario acepta el contrato de licencia del asociado. El valor puede ser verdadero o falso. Este campo solo se requiere si el servidor se adquirió a través de un asociado que proporciona un contrato de licencia aparte.|
-    |*Compañía*|(Opcional) Nombre de la empresa. El nombre de la empresa se usa para asociar el servidor con la empresa y personalizar los informes de la empresa. Puede tener hasta 254 caracteres|
+    |*CompanyName*|(Opcional) Nombre de la empresa. El nombre de la empresa se usa para asociar el servidor con la empresa y personalizar los informes de la empresa. Puede tener hasta 254 caracteres|
     |*País*|(Opcional) Cadena que representa la región/país deseado. Ejemplo: US para Estados Unidos.|
     |*ServerName*|El nombre del servidor identifica de forma única el servidor en la red. El nombre del servidor debe cumplir los criterios siguientes:<br /><br /> -Puede tener una longitud de hasta 15 caracteres.<br /><br /> : Puede contener letras, números y guiones (-).<br /><br /> -No debe comenzar con un guión.<br /><br /> : No debe contener espacios.<br /><br /> -No debe contener solo números.<br /><br /> Ejemplo: ContosoServer.|
     |*DNSName*|Un dominio interno agrupa el servidor y los equipos cliente para compartir una base de datos común de nombres de usuario, contraseñas y otros datos comunes. Los usuarios ven este nombre al iniciar sesión en sus equipos, pero solo se usa internamente y no coincide con el nombre de dominio de Internet. El nombre de dominio interno debe cumplir los mismos criterios especificados para *ServerName*.<br /><br /> Ejemplo: contoso.local.|

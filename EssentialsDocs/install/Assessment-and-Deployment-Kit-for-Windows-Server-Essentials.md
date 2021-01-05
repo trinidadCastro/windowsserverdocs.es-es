@@ -1,18 +1,18 @@
 ---
 title: Kit de evaluación e implementación para Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información sobre el kit de evaluación e implementación de Windows Server Essentials, que es una colección de herramientas, archivos binarios y paquetes de idioma del sistema operativo.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: ef3a7934-e36f-40d8-9e0b-7ed59089f85e
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 6198e8d8e06a76b9768f5c1166b438639d2ffca2
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 991ffd45a2e4af4bdfabc569a40b6f26467d7dc1
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623974"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711580"
 ---
 # <a name="assessment-and-deployment-kit-for-windows-server-essentials"></a>Kit de evaluación e implementación para Windows Server Essentials
 
@@ -71,7 +71,7 @@ Windows Server &reg; 2012 Essentials Assessment and Deployment Kit (ADK) es una 
 
     -   [Agregar información de socio de registro del contrato de socio de servicio en línea de Microsoft](Add-Microsoft-Online-Service-Partner-Agreement-Partner-of-Record-Information.md)
 
-    -   [Reemplace Microsoft 365 módulo de integración compre-try dirección URL del punto de conexión en soporte del acuerdo de revendedor de Microsoft Online Services.](Replace-O365-Integration-Module-Buy-Try-Endpoint-URL-in-Support-of-Microsoft-Online-Service-Reseller-Agreement.md)
+    -   [Reemplazar la dirección URL de punto de conexión de compra/prueba del módulo de integración de Microsoft 365 en cumplimiento del contrato de revendedor de servicio en línea de Microsoft](Replace-O365-Integration-Module-Buy-Try-Endpoint-URL-in-Support-of-Microsoft-Online-Service-Reseller-Agreement.md)
 
     -   [Crear un DVD de recuperación del servidor para servidores administrados de forma remota](Create-a-Server-Recovery-DVD-for-Remotely-Administered-Servers.md)
 

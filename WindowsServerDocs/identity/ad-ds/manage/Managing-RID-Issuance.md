@@ -7,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 1acf51705b112d2a1d3409b08532f0f5355c5403
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 1362cf8080e1188746887df1bdc45824aed8ea80
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97049523"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711740"
 ---
 # <a name="managing-rid-issuance"></a>Administrar la emisión de RID
 
@@ -53,7 +53,7 @@ En un espacio global de RID de 30 bits predeterminado, el primer evento se regi
 > [!IMPORTANT]
 > No se espera que aparezca este evento: si se produce, investiga enseguida los procesos de creación de usuarios, equipos y grupos del dominio. No es muy normal que se creen más de cien millones de objetos de AD DS.
 
-![Emisión de RID](media/Managing-RID-Issuance/ADDS_RID_TR_EventWaypoints2.png)
+![Gráfico de puntos de trayecto de eventos.](media/Managing-RID-Issuance/ADDS_RID_TR_EventWaypoints2.png)
 
 ### <a name="rid-pool-invalidation-events"></a>Eventos de invalidación de grupos de RID
 Hay nuevas alertas de eventos que indican que se descartó un grupo de RID del controlador de dominio local. Son informativas y no es raro que aparezcan, especialmente con la nueva funcionalidad de controladores de dominio virtuales. Para ver los detalles del evento, consulta la lista de eventos que se incluye a continuación.
@@ -85,7 +85,7 @@ Dcdiag.exe /TEST:RidManager /v | find /i "Available RID Pool for the Domain"
 
 Si incrementas el grupo global de RID, el grupo disponible cambiará a 2.147.483.647 en lugar de al valor predeterminado de 1.073.741.823. Por ejemplo:
 
-![Emisión de RID](media/Managing-RID-Issuance/ADDS_RID_TR_Dcdiag.png)
+![Captura de pantalla de una ventana de terminal que muestra el aumento del valor predeterminado.](media/Managing-RID-Issuance/ADDS_RID_TR_Dcdiag.png)
 
 > [!WARNING]
 > Este desbloqueo se diseñó *únicamente* para evitar que se agoten los RID y se debe utilizar *únicamente* si también se exige un límite superior de RID (consulta la siguiente sección). No lo configures “para prevenir” en los entornos en los que queden millones de RID y donde el crecimiento sea lento: podrían aparecer problemas de compatibilidad de aplicaciones con los SID generados desde el grupo de RID desbloqueado.
@@ -126,7 +126,7 @@ Para desbloquear el grupo de RID con el 31.º bit<sup></sup> después de recibi
 
 3. Activa las opciones **Sincrónico** y **Extendido** y, luego, haz clic en **Ejecutar**.
 
-    ![Emisión de RID](media/Managing-RID-Issuance/ADDS_RID_TR_LDPModify.png)
+    ![Captura de pantalla que muestra dónde seleccionar ejecutar.](media/Managing-RID-Issuance/ADDS_RID_TR_LDPModify.png)
 
 4. Si finaliza correctamente, la ventana de salida de LDP mostrará:
 
@@ -137,7 +137,7 @@ Para desbloquear el grupo de RID con el 31.º bit<sup></sup> después de recibi
 
     ```
 
-    ![Emisión de RID](media/Managing-RID-Issuance/ADDS_RID_TR_LDPModifySuccess.png)
+    ![Captura de pantalla que muestra la salida de LDP.](media/Managing-RID-Issuance/ADDS_RID_TR_LDPModifySuccess.png)
 
 5. Confirma que se aumentó el grupo global de RID: examina el registro de eventos del sistema de ese controlador de dominio y busca en él el evento informativo de Directory-Services-SAM 16655.
 
@@ -187,7 +187,7 @@ Para quitar el bloque después de alcanzar el límite superior artificial, sigue
 
 9. Habilita las opciones **Sincrónico** y **Extendido** y, luego, haz clic en **Ejecutar**:
 
-    ![Emisión de RID](media/Managing-RID-Issuance/ADDS_RID_TR_LDPRaiseCeiling.png)
+    ![Captura de pantalla que muestra cómo ejecutar la operación.](media/Managing-RID-Issuance/ADDS_RID_TR_LDPRaiseCeiling.png)
 
 10. Si finaliza correctamente, la ventana de salida de LDP mostrará:
 
@@ -198,7 +198,7 @@ Para quitar el bloque después de alcanzar el límite superior artificial, sigue
 
     ```
 
-    ![Emisión de RID](media/Managing-RID-Issuance/ADDS_RID_TR_LDPRaiseCeilingSuccess.png)
+    ![Captura de pantalla que muestra el resultado de una operación correcta.](media/Managing-RID-Issuance/ADDS_RID_TR_LDPRaiseCeilingSuccess.png)
 
 ### <a name="other-rid-fixes"></a>Otras correcciones de RID
 Los sistemas operativos de Windows Server anteriores tenían una pérdida de grupos de RID cuando faltaba el atributo rIDSetReferences. Para resolver este problema en los controladores de dominio que ejecutan Windows Server 2008 R2, instale la revisión desde [KB 2618669](https://support.microsoft.com/kb/2618669).
@@ -263,7 +263,7 @@ En los controladores de dominio de Windows Server 2012, se registran los sigui
 |--|--|
 | Source | Directory-Services-SAM |
 | Gravedad | Informativo |
-| Message | Se invalidó un grupo de identificadores de cuenta (RID). Esto puede suceder en los siguientes casos previstos:<p>1. un controlador de dominio se restaura a partir de una copia de seguridad.<p>2. un controlador de dominio que se ejecuta en una máquina virtual se restaura desde una instantánea.<p>3. un administrador invalidó el grupo manualmente.<p>Consulte https://go.microsoft.com/fwlink/?LinkId=226247 para obtener más información. |
+| Message | Se invalidó un grupo de identificadores de cuenta (RID). Esto puede suceder en los siguientes casos previstos:<p>1. un controlador de dominio se restaura a partir de una copia de seguridad.<p>2. un controlador de dominio que se ejecuta en una máquina virtual se restaura desde una instantánea.<p>3. un administrador invalidó el grupo manualmente.<p>Vea https://go.microsoft.com/fwlink/?LinkId=226247 para obtener más información. |
 | Notas y resolución | Si este evento no se esperaba, ponte en contacto con los administradores de todos los dominios y averigua cuál de ellos llevó a cabo esta acción. El registro de eventos de los Servicios de directorio también contiene información adicional sobre el momento en el que se realizó uno de estos pasos. |
 
 | Id. de evento | 16655 |
@@ -278,20 +278,20 @@ En los controladores de dominio de Windows Server 2012, se registran los sigui
 | Source | Directory-Services-SAM |
 | Gravedad | Advertencia |
 | Message | El máximo global para identificadores de cuenta (RID) se ha incrementado a %1. |
-| Notas y resolución | Acción requerida. Se asignó un grupo de identificadores de cuenta (RID) a este controlador de dominio. El valor del grupo indica que este dominio consumió una parte considerable del total de identificadores de cuenta disponibles.<p>Se activará un mecanismo de protección cuando el dominio alcance el siguiente umbral de número total de identificadores de cuenta disponibles restantes: %1. El mecanismo de protección impedirá que se creen más cuentas hasta que vuelvas a habilitar manualmente la asignación de identificadores de cuenta en el controlador de dominio del maestro de RID.<p>Consulte https://go.microsoft.com/fwlink/?LinkId=228610 para obtener más información. |
+| Notas y resolución | Acción requerida. Se asignó un grupo de identificadores de cuenta (RID) a este controlador de dominio. El valor del grupo indica que este dominio consumió una parte considerable del total de identificadores de cuenta disponibles.<p>Se activará un mecanismo de protección cuando el dominio alcance el siguiente umbral de número total de identificadores de cuenta disponibles restantes: %1. El mecanismo de protección impedirá que se creen más cuentas hasta que vuelvas a habilitar manualmente la asignación de identificadores de cuenta en el controlador de dominio del maestro de RID.<p>Vea https://go.microsoft.com/fwlink/?LinkId=228610 para obtener más información. |
 
 | Id. de evento | 16657 |
 |--|--|
 | Source | Directory-Services-SAM |
 | Gravedad | Error |
-| Message | Acción requerida. Este dominio consumió una parte considerable del total de identificadores de cuenta (RID) disponibles. Se ha activado un mecanismo de protección porque el número total de identificadores de cuenta disponibles restante es inferior a: X% [argumento de techo artificial].<p>El mecanismo de protección impide que se creen más cuentas hasta que vuelvas a habilitar manualmente la asignación de identificadores de cuenta en el controlador de dominio del maestro de RID.<p>Es extremadamente importante que se realicen determinados diagnósticos antes de volver a habilitar la creación de cuentas, para comprobar que este dominio no está consumiendo identificadores de cuenta con una frecuencia inusualmente alta. Todos los problemas que se identifiquen se deben resolver antes de volver a habilitar la creación de cuentas.<p>Si no se diagnostican y se corrigen los problemas subyacentes que provocan el consumo de identificadores de cuenta a una frecuencia inusualmente alta, es posible que se agoten los identificadores de cuenta del dominio. Si esto ocurre, la creación de cuentas quedará deshabilitada permanentemente en este dominio.<p>Consulte https://go.microsoft.com/fwlink/?LinkId=228610 para obtener más información. |
+| Message | Acción requerida. Este dominio consumió una parte considerable del total de identificadores de cuenta (RID) disponibles. Se ha activado un mecanismo de protección porque el número total de identificadores de cuenta disponibles restante es inferior a: X% [argumento de techo artificial].<p>El mecanismo de protección impide que se creen más cuentas hasta que vuelvas a habilitar manualmente la asignación de identificadores de cuenta en el controlador de dominio del maestro de RID.<p>Es extremadamente importante que se realicen determinados diagnósticos antes de volver a habilitar la creación de cuentas, para comprobar que este dominio no está consumiendo identificadores de cuenta con una frecuencia inusualmente alta. Todos los problemas que se identifiquen se deben resolver antes de volver a habilitar la creación de cuentas.<p>Si no se diagnostican y se corrigen los problemas subyacentes que provocan el consumo de identificadores de cuenta a una frecuencia inusualmente alta, es posible que se agoten los identificadores de cuenta del dominio. Si esto ocurre, la creación de cuentas quedará deshabilitada permanentemente en este dominio.<p>Vea https://go.microsoft.com/fwlink/?LinkId=228610 para obtener más información. |
 | Notas y resolución | Ponte en contacto con los administradores de todos los dominios e infórmales de que no se pueden crear más entidades de seguridad en este dominio hasta que se invalide esta protección. Para más información sobre cómo invalidar la protección y, posiblemente, incrementar el grupo de RID en general, consulta [Desbloqueo del tamaño del espacio global de RID](../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/Managing-RID-Issuance.md#BKMK_GlobalRidSpaceUnlock). |
 
 | Id. de evento | 16658 |
 |--|--|
 | Source | Directory-Services-SAM |
 | Gravedad | Advertencia |
-| Message | Este evento es una actualización periódica sobre la cantidad total restante de identificadores de cuenta disponibles (RID). El número de identificadores de cuenta restantes es aproximadamente: %1.<p>Los identificadores de cuenta se usan a medida que se crean cuentas, cuando se agotan, no se pueden crear nuevas cuentas en el dominio.<p>Consulte https://go.microsoft.com/fwlink/?LinkId=228745 para obtener más información. |
+| Message | Este evento es una actualización periódica sobre la cantidad total restante de identificadores de cuenta disponibles (RID). El número de identificadores de cuenta restantes es aproximadamente: %1.<p>Los identificadores de cuenta se usan a medida que se crean cuentas, cuando se agotan, no se pueden crear nuevas cuentas en el dominio.<p>Vea https://go.microsoft.com/fwlink/?LinkId=228745 para obtener más información. |
 | Notas y resolución | Ponte en contacto con los administradores de todos los dominios e infórmales de que el consumo de RID alcanzó un hito principal. Para averiguar si este comportamiento se esperaba o no, revisa los patrones de creación de elementos de confianza de seguridad. Es muy poco habitual que aparezca este evento: significa que se asignaron, al menos, unos 100 millones de RID. |
 
 ## <a name="see-also"></a>Consulte también

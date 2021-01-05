@@ -1,18 +1,18 @@
 ---
 title: Automatizar la instalación de complementos durante la instalación
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información sobre cómo usar el método Postic. cmd para instalar complementos automáticamente durante la instalación de Windows Server Essentials.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 2e6ff6e4-8d68-4d49-9e38-8088bc8bf95e
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: ebfd0950c585e2383f736818789e8a2dce67ad4d
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 0982cfc5064167044466a82ee44a575717596e2a
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623963"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711490"
 ---
 # <a name="automate-installation-of-add-ins-during-setup"></a>Automatizar la instalación de complementos durante la instalación
 

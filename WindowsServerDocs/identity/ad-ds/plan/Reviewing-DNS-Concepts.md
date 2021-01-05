@@ -7,12 +7,12 @@ author: iainfoulds
 manager: daveba
 ms.date: 08/08/2018
 ms.topic: article
-ms.openlocfilehash: 331d62ab65e8030057824b82b23ced3ede7e035f
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: c0f1850af11734b0f43a530e8119cb21a4a8393d
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97042603"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711820"
 ---
 # <a name="reviewing-dns-concepts"></a>Revisar los conceptos de DNS
 
@@ -53,7 +53,7 @@ En algunas configuraciones, los servidores DNS incluyen sugerencias de raíz (es
 
 Las sugerencias de raíz permiten a cualquier servidor DNS localizar los servidores raíz DNS. Después de que un servidor DNS encuentre el servidor raíz DNS, puede resolver cualquier consulta para ese espacio de nombres. En la ilustración siguiente se describe el modo en que DNS resuelve un nombre mediante sugerencias de raíz.
 
-![Conceptos de DNS](../../media/Reviewing-DNS-Concepts/1c044845-b104-4262-a7af-474ba3558a85.gif)
+![Ilustración que muestra cómo DNS resuelve un nombre mediante sugerencias de raíz.](../../media/Reviewing-DNS-Concepts/1c044845-b104-4262-a7af-474ba3558a85.gif)
 
 En este ejemplo, se producen los siguientes eventos:
 
@@ -68,7 +68,7 @@ En este ejemplo, se producen los siguientes eventos:
 
 El reenvío le permite enrutar la resolución de nombres a través de servidores específicos en lugar de usar sugerencias de raíz. En la ilustración siguiente se describe el modo en que DNS resuelve un nombre mediante el reenvío.
 
-![Conceptos de DNS](../../media/Reviewing-DNS-Concepts/05bc2eb0-1033-4e53-ae30-244fa247d000.gif)
+![Ilustración que muestra cómo DNS resuelve un nombre mediante el reenvío.](../../media/Reviewing-DNS-Concepts/05bc2eb0-1033-4e53-ae30-244fa247d000.gif)
 
 En este ejemplo, se producen los siguientes eventos:
 

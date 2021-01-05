@@ -7,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 40701cbea94da12aea169a4d53b51024c8d31bfe
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 60c8f9b11efc18ffa7eab726126baad1139bf0c0
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97049693"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711780"
 ---
 # <a name="forest-design-models"></a>Modelos de diseño de bosque
 
@@ -33,14 +33,14 @@ En el modelo de bosque de la organización, las cuentas de usuario y los recurso
 
 Si los usuarios de un bosque de la organización necesitan tener acceso a los recursos de otros bosques (o a la inversa), se pueden establecer relaciones de confianza entre un bosque de la organización y los otros bosques. Esto permite a los administradores conceder acceso a los recursos del otro bosque. En la ilustración siguiente se muestra el modelo de bosque de la organización.
 
-![modelos de diseño de bosque](media/Forest-Design-Models/b1ddb47e-78a5-49c7-bb21-d7421b7b84b8.gif)
+![Ilustración que muestra el modelo de bosque de la organización.](media/Forest-Design-Models/b1ddb47e-78a5-49c7-bb21-d7421b7b84b8.gif)
 
 Cada diseño de Active Directory incluye al menos un bosque de la organización.
 
 ## <a name="resource-forest-model"></a>Modelo de bosque de recursos
 En el modelo de bosque de recursos, se usa un bosque independiente para administrar los recursos. Los bosques de recursos no contienen cuentas de usuario distintas de las necesarias para la administración del servicio y las necesarias para proporcionar acceso alternativo a los recursos de ese bosque, si las cuentas de usuario del bosque de la organización dejan de estar disponibles. Las confianzas de bosque se establecen para que los usuarios de otros bosques puedan tener acceso a los recursos contenidos en el bosque de recursos. En la ilustración siguiente se muestra el modelo de bosque de recursos.
 
-![modelos de diseño de bosque](media/Forest-Design-Models/c0b348a6-958c-4fc5-9035-e2d2a54d5573.gif)
+![Ilustración que muestra el modelo de bosque de recursos.](media/Forest-Design-Models/c0b348a6-958c-4fc5-9035-e2d2a54d5573.gif)
 
 Los bosques de recursos proporcionan aislamiento de servicio que se usa para proteger las áreas de la red que necesitan mantener un estado de alta disponibilidad. Por ejemplo, si su empresa incluye una instalación de fabricación que debe seguir funcionando cuando haya problemas en el resto de la red, puede crear un bosque de recursos independiente para el grupo de fabricación.
 

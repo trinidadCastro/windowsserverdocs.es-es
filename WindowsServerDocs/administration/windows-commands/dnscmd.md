@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 6ec39f97be1998f45373ee12cdbb6e1814c7bdd1
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: a804965efaa135d366b62fe2379ad7d9c3d17e5c
+ms.sourcegitcommit: 8e330f9066097451cd40e840d5f5c3317cbc16c2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89636268"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97696924"
 ---
 # <a name="dnscmd"></a>Dnscmd
 
@@ -28,7 +28,7 @@ dnscmd <servername> <command> [<command parameters>]
 
 ### <a name="parameters"></a>Parámetros
 
-| Parámetro | Descripción |
+| Parámetro | Description |
 | --------- | ----------- |
 | `<servername>` | La dirección IP o el nombre de host de un servidor DNS local o remoto. |
 
@@ -44,7 +44,7 @@ dnscmd [<servername>] /ageallrecords <zonename>[<nodename>] | [/tree]|[/f]
 
 #### <a name="parameters"></a>Parámetros
 
-| Parámetro | Descripción |
+| Parámetro | Description |
 | ---------- | ----------- |
 | `<servername>` | Especifica el servidor DNS que el administrador tiene previsto administrar, representado por la dirección IP, el nombre de dominio completo (FQDN) o el nombre de host. Si se omite este parámetro, se utiliza el servidor local. |
 | `<zonename>` | Especifica el FQDN de la zona. |
@@ -52,7 +52,7 @@ dnscmd [<servername>] /ageallrecords <zonename>[<nodename>] | [/tree]|[/f]
 | /tree | Especifica que todos los nodos secundarios también reciben la marca de tiempo. |
 | /f | Ejecuta el comando sin solicitar confirmación. |
 
-##### <a name="remarks"></a>Observaciones
+##### <a name="remarks"></a>Comentarios
 
 - El comando **ageallrecords** es para la compatibilidad con versiones anteriores de DNS y versiones anteriores de DNS en las que no se admitía la detección y eliminación de registros obsoletos. Agrega una marca de tiempo con la hora actual a los registros de recursos que no tienen una marca de tiempo y establece la hora actual en los registros de recursos que tienen una marca de tiempo.
 
@@ -105,32 +105,35 @@ dnscmd [<servername>] /config <parameter>
 
 #### <a name="parameters"></a>Parámetros
 
+> [!NOTE]
+> Este artículo contiene referencias al término esclavo, un término que Microsoft ya no usa. Cuando se quite el término del software, se quitará también del artículo.
+
 | Parámetros | Descripción |
 | ---------- | ----------- |
 | `<servername>` | Especifica el servidor DNS que se va a administrar, representado por la sintaxis del equipo local, la dirección IP, el FQDN o el nombre de host. Si se omite este parámetro, se utiliza el servidor local. |
 | `<parameter>` | Especifique una configuración y, como opción, un valor. Los valores de parámetro usan esta sintaxis: *parámetro* [*valor*]. |
 | /addressanswerlimit`[0|5-28]` | Especifica el número máximo de registros de host que un servidor DNS puede enviar como respuesta a una consulta. El valor puede ser cero (0) o puede estar en el intervalo de 5 a 28 registros. El valor predeterminado es cero (0). |
-| /bindsecondaries`[0|1]` | Cambia el formato de la transferencia de zona para que pueda lograr la máxima compresión y eficacia. Acepta los valores:<ul><li>**0** : usa la compresión máxima y es compatible con las versiones de BIND 4.9.4 y versiones posteriores.</li><li>**1** -envía solo un registro de recursos por mensaje a servidores DNS que no son de Microsoft y es compatible con las versiones de BIND anteriores a la 4.9.4. Ésta es la configuración predeterminada.</li></ul> |
-| /bootmethod`[0|1|2|3]` | Determina el origen desde el que el servidor DNS obtiene la información de configuración. Acepta los valores:<ul><li>**0** : borra el origen de la información de configuración.</li><li>**1** : carga desde el archivo de enlace que se encuentra en el directorio DNS, que es de `%systemroot%\System32\DNS` forma predeterminada.</li><li>**2** : carga desde el registro.</li><li>**3** -carga desde AD DS y el registro. Ésta es la configuración predeterminada.</li></ul> |
-| /defaultagingstate`[0|1]` | Determina si la característica de eliminación de registros obsoletos de DNS está habilitada de forma predeterminada en las zonas recién creadas. Acepta los valores:<ul><li>**0** : deshabilita la eliminación de registros obsoletos. Ésta es la configuración predeterminada.</li><li>**1** : habilita la eliminación de registros obsoletos.</li></ul> |
+| /bindsecondaries`[0|1]` | Cambia el formato de la transferencia de zona para que pueda lograr la máxima compresión y eficacia. Acepta los valores:<ul><li>**0** : usa la compresión máxima y es compatible con las versiones de BIND 4.9.4 y versiones posteriores.</li><li>**1** -envía solo un registro de recursos por mensaje a servidores DNS que no son de Microsoft y es compatible con las versiones de BIND anteriores a la 4.9.4. Esta es la configuración predeterminada.</li></ul> |
+| /bootmethod`[0|1|2|3]` | Determina el origen desde el que el servidor DNS obtiene la información de configuración. Acepta los valores:<ul><li>**0** : borra el origen de la información de configuración.</li><li>**1** : carga desde el archivo de enlace que se encuentra en el directorio DNS, que es de `%systemroot%\System32\DNS` forma predeterminada.</li><li>**2** : carga desde el registro.</li><li>**3** -carga desde AD DS y el registro. Esta es la configuración predeterminada.</li></ul> |
+| /defaultagingstate`[0|1]` | Determina si la característica de eliminación de registros obsoletos de DNS está habilitada de forma predeterminada en las zonas recién creadas. Acepta los valores:<ul><li>**0** : deshabilita la eliminación de registros obsoletos. Esta es la configuración predeterminada.</li><li>**1** : habilita la eliminación de registros obsoletos.</li></ul> |
 | /defaultnorefreshinterval`[0x1-0xFFFFFFFF|0xA8]` | Establece un período de tiempo en el que no se aceptan actualizaciones para los registros actualizados dinámicamente. Las zonas del servidor heredan este valor automáticamente.<p>Para cambiar el valor predeterminado, escriba un valor en el intervalo de **0x1-0xFFFFFFFF**. El valor predeterminado del servidor es **0xA8**. |
 | /defaultrefreshinterval `[0x1-0xFFFFFFFF|0xA8]` | Establece un período de tiempo que se permite para las actualizaciones dinámicas en registros DNS. Las zonas del servidor heredan este valor automáticamente.<p>Para cambiar el valor predeterminado, escriba un valor en el intervalo de **0x1-0xFFFFFFFF**. El valor predeterminado del servidor es **0xA8**. |
-| /disableautoreversezones `[0|1]` | Habilita o deshabilita la creación automática de zonas de búsqueda inversa. Las zonas de búsqueda inversa proporcionan la resolución de direcciones de protocolo de Internet (IP) a nombres de dominio DNS. Acepta los valores:<ul><li>**0** : habilita la creación automática de zonas de búsqueda inversa. Ésta es la configuración predeterminada.</li><li>**1** : deshabilita la creación automática de zonas de búsqueda inversa.</li></ul> |
+| /disableautoreversezones `[0|1]` | Habilita o deshabilita la creación automática de zonas de búsqueda inversa. Las zonas de búsqueda inversa proporcionan la resolución de direcciones de protocolo de Internet (IP) a nombres de dominio DNS. Acepta los valores:<ul><li>**0** : habilita la creación automática de zonas de búsqueda inversa. Esta es la configuración predeterminada.</li><li>**1** : deshabilita la creación automática de zonas de búsqueda inversa.</li></ul> |
 | /disablensrecordsautocreation `[0|1]` | Especifica si el servidor DNS crea automáticamente registros de recursos del servidor de nombres (NS) para las zonas que hospeda. Acepta los valores:<ul><li>**0** : crea automáticamente registros de recursos del servidor de nombres (NS) para las zonas que hospeda el servidor DNS.</li><li>**1** : no crea automáticamente registros de recursos del servidor de nombres (NS) para las zonas que hospeda el servidor DNS.</li></ul> |
 | /dspollinginterval `[0-30]` | Especifica la frecuencia con que el servidor DNS sondea AD DS para buscar cambios en zonas integradas de Active Directory. |
 | /dstombstoneinterval `[1-30]` |Cantidad de tiempo en segundos que se conservarán los registros eliminados en AD DS. |
-| /ednscachetimeout `[3600-15724800]` | Especifica el número de segundos que se almacena en caché la información de DNS extendido (EDNS). El valor mínimo es **3600**y el valor máximo es **15.724.800**. El valor predeterminado es **604.800** segundos (una semana). |
+| /ednscachetimeout `[3600-15724800]` | Especifica el número de segundos que se almacena en caché la información de DNS extendido (EDNS). El valor mínimo es **3600** y el valor máximo es **15.724.800**. El valor predeterminado es **604.800** segundos (una semana). |
 | /enableednsprobes `[0|1]` | Habilita o deshabilita el servidor para sondear a otros servidores a fin de determinar si admiten EDNS. Acepta los valores:<ul><li>**0** : deshabilita la compatibilidad activa para los sondeos de EDNS.</li><li>**1** : habilita la compatibilidad activa para sondeos de EDNS.</li></ul> |
 | /enablednssec `[0|1]` | Habilita o deshabilita la compatibilidad con las extensiones de seguridad DNS (DNSSEC). Acepta los valores:<ul><li>**0** : deshabilita DNSSEC.</li><li>**1** : habilita DNSSEC.</li></ul> |
 | /enableglobalnamessupport `[0|1]` | Habilita o deshabilita la compatibilidad con la zona GlobalNames. La zona GlobalNames admite la resolución de nombres DNS de etiqueta única en un bosque. Acepta los valores:<ul><li>**0** : deshabilita la compatibilidad con la zona GlobalNames. Cuando el valor de este comando se establece en 0, el servicio servidor DNS no resuelve los nombres de etiqueta única en la zona GlobalNames.</li><li>**1** : habilita la compatibilidad con la zona GlobalNames. Al establecer el valor de este comando en 1, el servicio servidor DNS resuelve los nombres de etiqueta única en la zona GlobalNames.</li></ul> |
 | /enableglobalqueryblocklist `[0|1]` | Habilita o deshabilita la compatibilidad con la lista global de consultas bloqueadas que bloquea la resolución de nombres de los nombres de la lista. El servicio servidor DNS crea y habilita la lista global de consultas bloqueadas de forma predeterminada cuando el servicio se inicia por primera vez. Para ver la lista global de consultas bloqueadas actualmente, use el comando DNSCmd/info **/GlobalQueryBlockList** . Acepta los valores:<ul><li>**0** : deshabilita la compatibilidad con la lista global de consultas bloqueadas. Cuando el valor de este comando se establece en 0, el servicio servidor DNS responde a las consultas de nombres en la lista de bloques.</li><li>**1** : habilita la compatibilidad con la lista global de consultas bloqueadas. Al establecer el valor de este comando en 1, el servicio servidor DNS no responde a las consultas de los nombres de la lista de bloques.</li></ul> |
-| /eventloglevel `[0|1|2|4]` | Determina qué eventos se registran en el registro del servidor DNS en Visor de eventos. Acepta los valores:<ul><li>**0** : no registra ningún evento.</li><li>**1** : solo registra errores.</li><li>**2** -solo registra errores y advertencias.</li><li>**4** : registra los errores, las advertencias y los eventos informativos. Ésta es la configuración predeterminada.</li></ul> |
-| /forwarddelegations `[0|1]` | Determina cómo controla el servidor DNS una consulta para una subzona delegada. Estas consultas se pueden enviar a la subzona a la que se hace referencia en la consulta o a la lista de reenviadores que se denomina para el servidor DNS. Las entradas de la configuración solo se usan cuando está habilitado el reenvío. Acepta los valores:<ul><li>**0** : envía automáticamente las consultas que hacen referencia a las subzonas delegadas a la subzona adecuada. Ésta es la configuración predeterminada.</li><li>**1** -reenvía las consultas que hacen referencia a la subzona delegada a los reenviadores existentes.</li></ul> |
+| /eventloglevel `[0|1|2|4]` | Determina qué eventos se registran en el registro del servidor DNS en Visor de eventos. Acepta los valores:<ul><li>**0** : no registra ningún evento.</li><li>**1** : solo registra errores.</li><li>**2** -solo registra errores y advertencias.</li><li>**4** : registra los errores, las advertencias y los eventos informativos. Esta es la configuración predeterminada.</li></ul> |
+| /forwarddelegations `[0|1]` | Determina cómo controla el servidor DNS una consulta para una subzona delegada. Estas consultas se pueden enviar a la subzona a la que se hace referencia en la consulta o a la lista de reenviadores que se denomina para el servidor DNS. Las entradas de la configuración solo se usan cuando está habilitado el reenvío. Acepta los valores:<ul><li>**0** : envía automáticamente las consultas que hacen referencia a las subzonas delegadas a la subzona adecuada. Esta es la configuración predeterminada.</li><li>**1** -reenvía las consultas que hacen referencia a la subzona delegada a los reenviadores existentes.</li></ul> |
 | /forwardingtimeout `[<seconds>]` | Determina el número de segundos (**0x1-0xFFFFFFFF**) que un servidor DNS espera a que un reenviador responda antes de intentar otro reenviador. El valor predeterminado es **0X5**, que es 5 segundos. |
 | /globalneamesqueryorder `[0|1]` | Especifica si el servicio servidor DNS busca primero en la zona GlobalNames o en las zonas locales cuando resuelve los nombres. Acepta los valores:<ul><li>**0** -el servicio servidor DNS intenta resolver nombres consultando la zona GlobalNames antes de consultar las zonas para las que es autoritativo.</li><li>**1** -el servicio servidor DNS intenta resolver nombres mediante la consulta de las zonas para las que es autoritativo antes de consultar la zona GlobalNames.</li></ul> |
 | /globalqueryblocklist`[[<name> [<name>]...]` | Reemplaza la lista global de consultas bloqueadas actual por una lista de los nombres que especifique. Si no especifica ningún nombre, este comando borra la lista de bloques. De forma predeterminada, la lista global de consultas bloqueadas contiene los siguientes elementos:<ul><li>ISATAP</li><li>WPAD</li></ul>El servicio servidor DNS puede quitar uno o ambos nombres cuando se inicia por primera vez, si encuentra estos nombres en una zona existente. |
-| /isslave `[0|1]` | Determina cómo responde el servidor DNS cuando las consultas que reenvía no reciben ninguna respuesta. Acepta los valores:<ul><li>**0** : especifica que el servidor DNS no es un subordinado. Si el reenviador no responde, el servidor DNS intenta resolver la propia consulta. Ésta es la configuración predeterminada.</li><li>**1** : especifica que el servidor DNS es un subordinado. Si el reenviador no responde, el servidor DNS finaliza la búsqueda y envía un mensaje de error al solucionador.</li></ul> |
-| /localnetpriority `[0|1]` | Determina el orden en el que se devuelven los registros de host cuando el servidor DNS tiene varios registros de host para el mismo nombre. Acepta los valores:<ul><li>**0** -devuelve los registros en el orden en que aparecen en la base de datos DNS.</li><li>**1** -devuelve los registros que tienen direcciones de red IP similares en primer lugar. Ésta es la configuración predeterminada.</li></ul> |
+| /isslave `[0|1]` | Determina cómo responde el servidor DNS cuando las consultas que reenvía no reciben ninguna respuesta. Acepta los valores:<ul><li>**0** : especifica que el servidor DNS no es un subordinado. Si el reenviador no responde, el servidor DNS intenta resolver la propia consulta. Esta es la configuración predeterminada.</li><li>**1** : especifica que el servidor DNS es un subordinado. Si el reenviador no responde, el servidor DNS finaliza la búsqueda y envía un mensaje de error al solucionador.</li></ul> |
+| /localnetpriority `[0|1]` | Determina el orden en el que se devuelven los registros de host cuando el servidor DNS tiene varios registros de host para el mismo nombre. Acepta los valores:<ul><li>**0** -devuelve los registros en el orden en que aparecen en la base de datos DNS.</li><li>**1** -devuelve los registros que tienen direcciones de red IP similares en primer lugar. Esta es la configuración predeterminada.</li></ul> |
 | /logfilemaxsize `[<size>]` | Especifica el tamaño máximo en bytes (**0x10000-0xFFFFFFFF**) del archivo DNS. log. Cuando el archivo alcanza su tamaño máximo, DNS sobrescribe los eventos más antiguos. El tamaño predeterminado es **0x400000**, que es 4 megabytes (MB). |
 | /logFilePath `[<path+logfilename>]` | Especifica la ruta de acceso del archivo DNS. log. La ruta de acceso predeterminada es `%systemroot%\System32\Dns\Dns.log`. Puede especificar una ruta de acceso diferente con el formato `path+logfilename` . |
 | /logipfilterlist `<IPaddress> [,<IPaddress>...]` | Especifica los paquetes que se registran en el archivo de registro de depuración. Las entradas son una lista de direcciones IP. Solo se registran los paquetes que van hacia y desde las direcciones IP de la lista. |
@@ -138,20 +141,20 @@ dnscmd [<servername>] /config <parameter>
 | /maxcachesize | Especifica el tamaño máximo, en kilobytes (KB), de la memoria caché del servidor DNS. |
 | /maxcachettl `[<seconds>]` | Determina cuántos segundos (**0X0-0xFFFFFFFF**) se guarda un registro en la memoria caché. Si se usa la opción **0X0** , el servidor DNS no almacena en caché los registros. La configuración predeterminada es **0x15180** (86.400 segundos o 1 día). |
 | /maxnegativecachettl `[<seconds>]` | Especifica el número de segundos (**0x1-0xFFFFFFFF**) que una entrada que registra una respuesta negativa en una consulta permanece almacenada en la memoria caché de DNS. La configuración predeterminada es **0x384** (900 segundos). |
-| /namecheckflag `[0|1|2|3]` | Especifica el estándar de caracteres que se utiliza al comprobar los nombres DNS. Acepta los valores:<ul><li>**0** : usa caracteres ANSI que cumplen con la solicitud de comentarios (RFC) de Internet Engineering Task Force (IETF).</li><li>**1** : usa caracteres ANSI que no cumplen necesariamente las RFC de IETF.</li><li>**2** -usa caracteres de formato de transformación UCS 8 (UTF-8) multibyte. Ésta es la configuración predeterminada.</li><li>**3** -usa todos los caracteres.</li></ul> |
-| /norecursion `[0|1]` | Determina si un servidor DNS realiza la resolución de nombres recursivos. Acepta los valores:<ul><li>**0** : el servidor DNS realiza la resolución de nombres recursivo si se solicita en una consulta. Ésta es la configuración predeterminada.</li><li>**1** : el servidor DNS no realiza la resolución de nombres recursivo.</li></ul> |
+| /namecheckflag `[0|1|2|3]` | Especifica el estándar de caracteres que se utiliza al comprobar los nombres DNS. Acepta los valores:<ul><li>**0** : usa caracteres ANSI que cumplen con la solicitud de comentarios (RFC) de Internet Engineering Task Force (IETF).</li><li>**1** : usa caracteres ANSI que no cumplen necesariamente las RFC de IETF.</li><li>**2** -usa caracteres de formato de transformación UCS 8 (UTF-8) multibyte. Esta es la configuración predeterminada.</li><li>**3** -usa todos los caracteres.</li></ul> |
+| /norecursion `[0|1]` | Determina si un servidor DNS realiza la resolución de nombres recursivos. Acepta los valores:<ul><li>**0** : el servidor DNS realiza la resolución de nombres recursivo si se solicita en una consulta. Esta es la configuración predeterminada.</li><li>**1** : el servidor DNS no realiza la resolución de nombres recursivo.</li></ul> |
 | /notcp | Este parámetro está obsoleto y no tiene ningún efecto en las versiones actuales de Windows Server. |
 | /recursionretry `[<seconds>]` | Determina el número de segundos (**0x1-0xFFFFFFFF**) que un servidor DNS espera antes de volver a intentar ponerse en contacto con un servidor remoto. El valor predeterminado es **0X3** (tres segundos). Este valor debe aumentarse cuando se produce la recursividad a través de un vínculo de red de área extensa (WAN) lento. |
 | /recursiontimeout `[<seconds>]` | Determina el número de segundos (**0x1-0xFFFFFFFF**) que un servidor DNS espera antes de que se insiga intentando ponerse en contacto con un servidor remoto. La configuración oscila entre **0x1** y **0xFFFFFFFF**. La configuración predeterminada es **0xF** (15 segundos). Este valor debe aumentarse cuando se produce la recursividad a través de un vínculo WAN lento. |
-| /roundrobin `[0|1]` | Determina el orden en el que se devuelven los registros de host cuando un servidor tiene varios registros de host para el mismo nombre. Acepta los valores:<ul><li>**0** : el servidor DNS no usa Round Robin. En su lugar, devuelve el primer registro en cada consulta.</li><li>**1** -el servidor DNS gira entre los registros que devuelve desde la parte superior a la parte inferior de la lista de registros coincidentes. Ésta es la configuración predeterminada.</li></ul> |
-| /rpcprotocol `[0x0|0x1|0x2|0x4|0xFFFFFFFF]` | Especifica el protocolo que usa la llamada a procedimiento remoto (RPC) cuando realiza una conexión desde el servidor DNS. Acepta los valores:<ul><li>**0X0** : deshabilita RPC para DNS.</li><li>**0x01** : usa TCP/IP</li><li>**0X2** : usa canalizaciones con nombre.</li><li>**0x4** : usa la llamada a procedimiento local (LPC).</li><li>**0xFFFFFFFF** : todos los protocolos. Ésta es la configuración predeterminada.</li></ul> |
+| /roundrobin `[0|1]` | Determina el orden en el que se devuelven los registros de host cuando un servidor tiene varios registros de host para el mismo nombre. Acepta los valores:<ul><li>**0** : el servidor DNS no usa Round Robin. En su lugar, devuelve el primer registro en cada consulta.</li><li>**1** -el servidor DNS gira entre los registros que devuelve desde la parte superior a la parte inferior de la lista de registros coincidentes. Esta es la configuración predeterminada.</li></ul> |
+| /rpcprotocol `[0x0|0x1|0x2|0x4|0xFFFFFFFF]` | Especifica el protocolo que usa la llamada a procedimiento remoto (RPC) cuando realiza una conexión desde el servidor DNS. Acepta los valores:<ul><li>**0X0** : deshabilita RPC para DNS.</li><li>**0x01** : usa TCP/IP</li><li>**0X2** : usa canalizaciones con nombre.</li><li>**0x4** : usa la llamada a procedimiento local (LPC).</li><li>**0xFFFFFFFF** : todos los protocolos. Esta es la configuración predeterminada.</li></ul> |
 | /scavenginginterval `[<hours>]` | Determina si la característica de eliminación de registros obsoletos para el servidor DNS está habilitada y establece el número de horas (**0X0-0xFFFFFFFF**) entre los ciclos de eliminación de registros obsoletos. La configuración predeterminada es **0X0**, que deshabilita la eliminación de registros obsoletos para el servidor DNS. Un valor mayor que **0X0** habilita la eliminación de registros obsoletos para el servidor y establece el número de horas entre los ciclos de eliminación de registros obsoletos. |
-| /secureresponses `[0|1]` | Determina si DNS filtra los registros que se guardan en una memoria caché. Acepta los valores:<ul><li>**0** : guarda todas las respuestas a las consultas de nombres en una memoria caché. Ésta es la configuración predeterminada.</li><li>**1** : guarda solo los registros que pertenecen al mismo subárbol DNS en una memoria caché.</li></ul> |
+| /secureresponses `[0|1]` | Determina si DNS filtra los registros que se guardan en una memoria caché. Acepta los valores:<ul><li>**0** : guarda todas las respuestas a las consultas de nombres en una memoria caché. Esta es la configuración predeterminada.</li><li>**1** : guarda solo los registros que pertenecen al mismo subárbol DNS en una memoria caché.</li></ul> |
 | /sendport `[<port>]` | Especifica el número de puerto (**0X0-0xFFFFFFFF**) que DNS usa para enviar consultas recursivas a otros servidores DNS. La configuración predeterminada es **0X0**, lo que significa que el número de puerto se selecciona aleatoriamente. |
 | /serverlevelplugindll`[<dllpath>]` | Especifica la ruta de acceso de un complemento personalizado. Cuando Dllpath especifica el nombre completo de la ruta de acceso de un complemento de servidor DNS válido, el servidor DNS llama a las funciones del complemento para resolver las consultas de nombres que están fuera del ámbito de todas las zonas hospedadas localmente. Si un nombre consultado está fuera del ámbito del complemento, el servidor DNS realiza la resolución de nombres mediante reenvío o recursividad, tal y como se ha configurado. Si no se especifica Dllpath, el servidor DNS deja de usar un complemento personalizado si se configuró previamente un complemento personalizado. |
-| /strictfileparsing `[0|1]` | Determina el comportamiento de un servidor DNS cuando encuentra un registro erróneo mientras carga una zona. Acepta los valores:<ul><li>**0** : el servidor DNS continúa cargando la zona aunque el servidor encuentre un registro erróneo. El error se registra en el registro de DNS. Ésta es la configuración predeterminada.</li><li>**1** : el servidor DNS deja de cargar la zona y registra el error en el registro de DNS.</li></ul> |
+| /strictfileparsing `[0|1]` | Determina el comportamiento de un servidor DNS cuando encuentra un registro erróneo mientras carga una zona. Acepta los valores:<ul><li>**0** : el servidor DNS continúa cargando la zona aunque el servidor encuentre un registro erróneo. El error se registra en el registro de DNS. Esta es la configuración predeterminada.</li><li>**1** : el servidor DNS deja de cargar la zona y registra el error en el registro de DNS.</li></ul> |
 | /updateoptions `<RecordValue>` | Prohíbe las actualizaciones dinámicas de los tipos de registros especificados. Si desea que se prohíba más de un tipo de registro en el registro, use la adición hexadecimal para agregar los valores y, a continuación, escriba la suma. Acepta los valores:<ul><li>**0X0** : no restringe ningún tipo de registro.</li><li>**0x1** : excluye los registros de recursos de inicio de autoridad (SOA).</li><li>**0X2** -excluye los registros de recursos del servidor de nombres (NS).</li><li>**0x4** : excluye la delegación de registros de recursos del servidor de nombres (NS).</li><li>**0x8** : excluye los registros de host de servidor.</li><li>**0x100** : durante la actualización dinámica segura, excluye los registros de recursos de inicio de autoridad (SOA).</li><li>**0x200** : durante la actualización dinámica segura, excluye los registros de recursos del servidor de nombres raíz (NS).</li><li>**0x30F** : durante la actualización dinámica estándar, excluye los registros de recursos del servidor de nombres (NS), los registros de recursos de inicio de autoridad (SOA) y los registros de host de servidor. Durante la actualización dinámica segura, excluye los registros de recursos del servidor de nombres raíz (NS) y los registros de recursos de inicio de autoridad (SOA). Permite las delegaciones y las actualizaciones del host de servidor.</li><li>**0x400** : durante la actualización dinámica segura, excluye los registros de recursos del servidor de nombres de delegación (NS).</li><li>**0x800** : durante la actualización dinámica segura, excluye los registros de host de servidor.</li><li>**0x1000000** : excluye los registros del firmante de delegación (DS).</li><li>**0x80000000** : deshabilita la actualización dinámica de DNS.</li></ul> |
-| /writeauthorityns `[0|1]` | Determina cuándo el servidor DNS escribe los registros de recursos del servidor de nombres (NS) en la sección de autoridad de una respuesta. Acepta los valores:<ul><li>**0** : escribe los registros de recursos del servidor de nombres (NS) en la sección autoridad de las referencias. Esta configuración cumple con RFC 1034, los conceptos y las instalaciones de los nombres de dominio, y con RFC 2181, aclaraciones de la especificación de DNS. Ésta es la configuración predeterminada.</li><li>**1** : escribe los registros de recursos del servidor de nombres (NS) en la sección autoridad de todas las respuestas autoritativas correctas.</li></ul> |
+| /writeauthorityns `[0|1]` | Determina cuándo el servidor DNS escribe los registros de recursos del servidor de nombres (NS) en la sección de autoridad de una respuesta. Acepta los valores:<ul><li>**0** : escribe los registros de recursos del servidor de nombres (NS) en la sección autoridad de las referencias. Esta configuración cumple con RFC 1034, los conceptos y las instalaciones de los nombres de dominio, y con RFC 2181, aclaraciones de la especificación de DNS. Esta es la configuración predeterminada.</li><li>**1** : escribe los registros de recursos del servidor de nombres (NS) en la sección autoridad de todas las respuestas autoritativas correctas.</li></ul> |
 | /xfrconnecttimeout `[<seconds>]` | Determina el número de segundos (**0X0-0xFFFFFFFF**) que un servidor DNS principal espera una respuesta de transferencia de su servidor secundario. El valor predeterminado es **0x1E** (30 segundos). Después de que expire el valor de tiempo de espera, se finaliza la conexión. |
 
 ### <a name="zone-level-syntax"></a>Sintaxis de nivel de zona
@@ -174,7 +177,7 @@ dnscmd /config <parameters>
 | /forwardertimeout `<zonename>` | Determina el número de segundos que una zona DNS espera a que un reenviador responda antes de intentar otro reenviador. Este valor invalida el valor que se establece en el nivel de servidor. |
 | /norefreshinterval `<zonename>` | Establece un intervalo de tiempo para una zona durante la cual ninguna actualización puede actualizar dinámicamente los registros DNS de una zona especificada. |
 | /refreshinterval `<zonename>` | Establece un intervalo de tiempo para una zona durante la cual las actualizaciones pueden actualizar dinámicamente los registros DNS de una zona especificada. |
-| /securesecondaries `<zonename>` | Determina qué servidores secundarios pueden recibir actualizaciones de zona del servidor maestro para esta zona. |
+| /securesecondaries `<zonename>` | Determina qué servidores secundarios pueden recibir actualizaciones de zona del servidor principal para esta zona. |
 
 ## <a name="dnscmd-createbuiltindirectorypartitions-command"></a>comando DNSCmd/createbuiltindirectorypartitions
 
@@ -392,7 +395,7 @@ dnscmd [<servername>] /info [<settings>]
 
 ## <a name="dnscmd-ipvalidate-command"></a>comando DNSCmd/ipvalidate
 
-Comprueba si una dirección IP identifica un servidor DNS en funcionamiento o si el servidor DNS puede actuar como reenviador, un servidor de sugerencias raíz o un servidor maestro para una zona específica.
+Comprueba si una dirección IP identifica un servidor DNS en funcionamiento o si el servidor DNS puede actuar como reenviador, un servidor de sugerencias raíz o un servidor principal para una zona específica.
 
 ### <a name="syntax"></a>Sintaxis
 
@@ -405,7 +408,7 @@ dnscmd [<servername>] /ipvalidate <context> [<zonename>] [[<IPaddress>]]
 | Parámetros | Descripción |
 | ---------- | ----------- |
 | `<servername>` | Especifica el servidor DNS que se va a administrar, representado por la dirección IP, el FQDN o el nombre de host. Si se omite este parámetro, se utiliza el servidor local. |
-| `<context>` | Especifica el tipo de prueba que se va a realizar. Puede especificar cualquiera de las siguientes pruebas:<ul><li>**/dnsservers** : comprueba que los equipos con las direcciones que especifique son servidores DNS que funcionan.</li><li>**/Forwarders** : comprueba que las direcciones que especifique identifican los servidores DNS que pueden actuar como reenviadores.</li><li>**/roothints** : comprueba que las direcciones que especifique identifican los servidores DNS que pueden actuar como servidores de nombres de sugerencia de raíz.</li><li>**/zonemasters** : comprueba que las direcciones que especifique identifican los servidores DNS que son servidores maestros para *nombre_zona*. |
+| `<context>` | Especifica el tipo de prueba que se va a realizar. Puede especificar cualquiera de las siguientes pruebas:<ul><li>**/dnsservers** : comprueba que los equipos con las direcciones que especifique son servidores DNS que funcionan.</li><li>**/Forwarders** : comprueba que las direcciones que especifique identifican los servidores DNS que pueden actuar como reenviadores.</li><li>**/roothints** : comprueba que las direcciones que especifique identifican los servidores DNS que pueden actuar como servidores de nombres de sugerencia de raíz.</li><li>**/zonemasters** : comprueba que las direcciones que especifique identifican los servidores DNS que son servidores principales de *zonename*. |
 | `<zonename>` | Identifica la zona. Use este parámetro con el parámetro **/zonemasters** . |
 | `<IPaddress>` | Especifica las direcciones IP que el comando comprueba. |
 
@@ -515,10 +518,10 @@ dnscmd [<servername>] /resetforwarders <IPaddress> [,<IPaddress>]...][/timeout <
 | `<IPaddress>` | Muestra las direcciones IP a las que el servidor DNS reenvía las consultas no resueltas. |
 | /timeout `<timeout>` | Establece el número de segundos que el servidor DNS espera una respuesta del reenviador. De forma predeterminada, este valor es de cinco segundos. |
 | /Slave | Impide que el servidor DNS realice sus propias consultas iterativas si el reenviador no puede resolver una consulta. |
-| /noslave | Permite que el servidor DNS realice sus propias consultas iterativas si el reenviador no puede resolver una consulta. Ésta es la configuración predeterminada. |
+| /noslave | Permite que el servidor DNS realice sus propias consultas iterativas si el reenviador no puede resolver una consulta. Esta es la configuración predeterminada. |
 | /f | Ejecuta el comando sin solicitar confirmación. Dado que los nodos pueden tener más de un registro de recursos, este comando requiere que sea muy específico sobre el tipo de registro de recursos que desea eliminar. Si especifica un tipo de datos y no especifica un tipo de datos de registro de recursos, se eliminarán todos los registros con ese tipo de datos específico para el nodo especificado. |
 
-##### <a name="remarks"></a>Observaciones
+##### <a name="remarks"></a>Comentarios
 
 - De forma predeterminada, un servidor DNS realiza consultas iterativas cuando no puede resolver una consulta.
 
@@ -574,7 +577,7 @@ dnscmd [<servername>] /startscavenging
 | ---------- | ----------- |
 | `<servername>` | Especifica el servidor DNS que se va a administrar, representado por la dirección IP, el FQDN o el nombre de host. Si se omite este parámetro, se utiliza el servidor local. |
 
-##### <a name="remarks"></a>Observaciones
+##### <a name="remarks"></a>Comentarios
 
 - La finalización correcta de este comando inicia una eliminación de registros obsoletos inmediatamente. Si se produce un error en la eliminación de registros obsoletos, no aparece ningún mensaje de advertencia.
 
@@ -679,7 +682,7 @@ dnscmd [<servername>] /zoneadd <zonename> <zonetype> [/dp <FQDN> | {/domain | en
 | ---------- | ----------- |
 | `<servername>` | Especifica el servidor DNS que se va a administrar, representado por la dirección IP, el FQDN o el nombre de host. Si se omite este parámetro, se utiliza el servidor local. |
 | `<zonename>` | Especifica el nombre de la zona. |
-| `<zonetype>` | Especifica el tipo de zona que se va a crear. Al especificar un tipo de zona de **/Forwarder** o **/dsforwarder** , se crea una zona que realiza el reenvío condicional. Cada tipo de zona tiene parámetros necesarios diferentes:<ul><li>**/DsPrimary** : crea una zona integrada de Active Directory.</li><li>**/Primary/file `<filename>` ** -Crea una zona principal estándar y especifica el nombre del archivo que almacenará la información de la zona.</li><li>**/Secondary `<masterIPaddress> [<masterIPaddress>...]` ** : Crea una zona secundaria estándar.</li><li>**/stub `<masterIPaddress> [<masterIPaddress>...]` /file `<filename>` ** : crea una zona de rutas internas con copia de seguridad de archivos.</li><li>**/DsStub `<masterIPaddress> [<masterIPaddress>...]` ** : Crea una zona de rutas internas integrada de Active Directory.</li><li>**/Forwarder `<masterIPaddress> [<masterIPaddress>]` .../file `<filename>` ** : especifica que la zona creada reenvía las consultas sin resolver a otro servidor DNS.</li><li>**/dsforwarder** : especifica que la zona integrada de Active Directory que se ha creado reenvía las consultas no resueltas a otro servidor DNS.</li></ul> |
+| `<zonetype>` | Especifica el tipo de zona que se va a crear. Al especificar un tipo de zona de **/Forwarder** o **/dsforwarder** , se crea una zona que realiza el reenvío condicional. Cada tipo de zona tiene parámetros necesarios diferentes:<ul><li>**/DsPrimary** : crea una zona integrada de Active Directory.</li><li>**/Primary/file `<filename>`** -Crea una zona principal estándar y especifica el nombre del archivo que almacenará la información de la zona.</li><li>**/Secondary `<masterIPaddress> [<masterIPaddress>...]`** : Crea una zona secundaria estándar.</li><li>**/stub `<masterIPaddress> [<masterIPaddress>...]` /file `<filename>`** : crea una zona de rutas internas con copia de seguridad de archivos.</li><li>**/DsStub `<masterIPaddress> [<masterIPaddress>...]`** : Crea una zona de rutas internas integrada de Active Directory.</li><li>**/Forwarder `<masterIPaddress> [<masterIPaddress>]` .../file `<filename>`** : especifica que la zona creada reenvía las consultas sin resolver a otro servidor DNS.</li><li>**/dsforwarder** : especifica que la zona integrada de Active Directory que se ha creado reenvía las consultas no resueltas a otro servidor DNS.</li></ul> |
 | `<FQDN>` | Especifica el FQDN de la partición de directorio. |
 | /Domain | Almacena la zona en la partición de directorio de dominio. |
 | /enterprise | Almacena la zona en la partición de directorio de la empresa. |
@@ -777,7 +780,7 @@ dnscmd [<servername>] /zoneinfo <zonename> [<setting>]
 | `<zonename>` | Especifica el nombre de la zona. |
 | `<setting>` | Puede especificar individualmente cualquier valor que devuelva el comando **zoneinfo** . Si no especifica un valor, se devolverá toda la configuración. |
 
-##### <a name="remarks"></a>Observaciones
+##### <a name="remarks"></a>Comentarios
 
 - Para mostrar la configuración del registro en el nivel de servidor, use el comando **/info** .
 
@@ -806,7 +809,7 @@ dnscmd [<servername>] /zonepause <zonename>
 | `<servername>` | Especifica el servidor DNS que se va a administrar, representado por la dirección IP, el FQDN o el nombre de host. Si se omite este parámetro, se utiliza el servidor local. |
 | `<zonename>` | Especifica el nombre de la zona que se va a pausar. |
 
-##### <a name="remarks"></a>Observaciones
+##### <a name="remarks"></a>Comentarios
 
 - Para reanudar una zona y ponerla a disposición una vez que se haya pausado, use el comando **/zoneresume** .
 
@@ -856,9 +859,9 @@ dnscmd [<servername>] /zonerefresh <zonename>
 | `<servername>` | Especifica el servidor DNS que se va a administrar, representado por la dirección IP, el FQDN o el nombre de host. Si se omite este parámetro, se utiliza el servidor local. |
 | `<zonename>` | Especifica el nombre de la zona que se va a actualizar. |
 
-##### <a name="remarks"></a>Observaciones
+##### <a name="remarks"></a>Comentarios
 
-- El comando **zonerefresh** fuerza una comprobación del número de versión en el registro de recursos de inicio de autoridad (SOA) del servidor maestro. Si el número de versión del servidor maestro es mayor que el número de versión del servidor secundario, se inicia una transferencia de zona que actualiza el servidor secundario. Si el número de versión es el mismo, no se produce ninguna transferencia de zona.
+- El comando **zonerefresh** fuerza una comprobación del número de versión en el registro de recursos de inicio de autoridad (SOA) del servidor principal. Si el número de versión del servidor principal es mayor que el número de versión del servidor secundario, se inicia una transferencia de zona que actualiza el servidor secundario. Si el número de versión es el mismo, no se produce ninguna transferencia de zona.
 
 - La comprobación forzada se realiza de forma predeterminada cada 15 minutos. Para cambiar el valor predeterminado, use el `dnscmd config refreshinterval` comando.
 
@@ -885,7 +888,7 @@ dnscmd [<servername>] /zonereload <zonename>
 | `<servername>` | Especifica el servidor DNS que se va a administrar, representado por la dirección IP, el FQDN o el nombre de host. Si se omite este parámetro, se utiliza el servidor local. |
 | `<zonename>` | Especifica el nombre de la zona que se va a recargar. |
 
-##### <a name="remarks"></a>Observaciones
+##### <a name="remarks"></a>Comentarios
 
 - Si la zona está integrada en Active Directory, se vuelve a cargar desde Active Directory Domain Services (AD DS).
 
@@ -899,7 +902,7 @@ dnscmd dnssvr1.contoso.com /zonereload test.contoso.com
 
 ## <a name="dnscmd-zoneresetmasters-command"></a>comando DNSCmd/zoneresetmasters
 
-Restablece las direcciones IP del servidor maestro que proporciona información de transferencia de zona a una zona secundaria.
+Restablece las direcciones IP del servidor principal que proporciona información de transferencia de zona a una zona secundaria.
 
 ### <a name="syntax"></a>Sintaxis
 
@@ -914,9 +917,9 @@ dnscmd [<servername>] /zoneresetmasters <zonename> [/local] [<IPaddress> [<IPadd
 | `<servername>` | Especifica el servidor DNS que se va a administrar, representado por la dirección IP, el FQDN o el nombre de host. Si se omite este parámetro, se utiliza el servidor local. |
 | `<zonename>` | Especifica el nombre de la zona que se va a restablecer. |
 | /local | Establece una lista maestra local. Este parámetro se usa para las zonas integradas de Active Directory. |
-| `<IPaddress>` | Las direcciones IP de los servidores maestros de la zona secundaria. |
+| `<IPaddress>` | Las direcciones IP de los servidores principales de la zona secundaria. |
 
-##### <a name="remarks"></a>Observaciones
+##### <a name="remarks"></a>Comentarios
 
 - Este valor se establece originalmente cuando se crea la zona secundaria. Use el comando **zoneresetmasters** en el servidor secundario. Este valor no tiene ningún efecto si se establece en el servidor DNS maestro.
 
@@ -946,7 +949,7 @@ dnscmd [<servername>] /zoneresetscavengeservers <zonename> [/local] [<IPaddress>
 | /local | Establece una lista maestra local. Este parámetro se usa para las zonas integradas de Active Directory. |
 | `<IPaddress>` | Muestra las direcciones IP de los servidores que pueden realizar la eliminación de registros obsoletos. Si se omite este parámetro, todos los servidores que hospedan esta zona podrán borrarlo. |
 
-##### <a name="remarks"></a>Observaciones
+##### <a name="remarks"></a>Comentarios
 
 - De forma predeterminada, todos los servidores que hospedan una zona pueden borrar dicha zona.
 
@@ -962,7 +965,7 @@ dnscmd dnssvr1.contoso.com /zoneresetscavengeservers test.contoso.com 10.0.0.1 1
 
 ## <a name="dnscmd-zoneresetsecondaries-command"></a>comando DNSCmd/zoneresetsecondaries
 
-Especifica una lista de direcciones IP de los servidores secundarios a los que responde un servidor maestro cuando se le pide una transferencia de zona.
+Especifica una lista de direcciones IP de los servidores secundarios a los que responde un servidor principal cuando se le pide una transferencia de zona.
 
 ### <a name="syntax"></a>Sintaxis
 
@@ -980,16 +983,16 @@ dnscmd [<servername>] /zoneresetsecondaries <zonename> {/noxfr | /nonsecure | /s
 | /noxfr | Especifica que no se permiten las transferencias de zona. |
 | /nonsecure | Especifica que se concedan todas las solicitudes de transferencia de zona. |
 | /securens | Especifica que solo se conceda una transferencia al servidor que aparece en el registro de recursos de servidor de nombres (NS) para la zona. |
-| /securelist | Especifica que las transferencias de zona solo se conceden a la lista de servidores. Este parámetro debe ir seguido de una dirección IP o de las direcciones que usa el servidor maestro. |
-| `<securityIPaddresses>` | Muestra las direcciones IP que reciben transferencias de zona del servidor maestro. Este parámetro solo se usa con el parámetro **/securelist** . |
+| /securelist | Especifica que las transferencias de zona solo se conceden a la lista de servidores. Este parámetro debe ir seguido de una dirección IP o de las direcciones que usa el servidor principal. |
+| `<securityIPaddresses>` | Muestra las direcciones IP que reciben transferencias de zona del servidor principal. Este parámetro solo se usa con el parámetro **/securelist** . |
 | /nonotify | Especifica que no se envían notificaciones de cambios a los servidores secundarios. |
 | /notify | Especifica que las notificaciones de cambios se envían a todos los servidores secundarios. |
-| /notifylist | Especifica que las notificaciones de cambio solo se envían a la lista de servidores. Este comando debe ir seguido de una dirección IP o de las direcciones que usa el servidor maestro. |
+| /notifylist | Especifica que las notificaciones de cambio solo se envían a la lista de servidores. Este comando debe ir seguido de una dirección IP o de las direcciones que usa el servidor principal. |
 | `<notifyIPaddresses>` | Especifica la dirección o direcciones IP del servidor secundario o los servidores a los que se envían las notificaciones de cambios. Esta lista solo se usa con el parámetro **/notifylist** . |
 
-##### <a name="remarks"></a>Observaciones
+##### <a name="remarks"></a>Comentarios
 
-- Use el comando **zoneresetsecondaries** en el servidor maestro para especificar cómo responde a las solicitudes de transferencia de zona de los servidores secundarios.
+- Use el comando **zoneresetsecondaries** en el servidor principal para especificar cómo responde a las solicitudes de transferencia de zona de los servidores secundarios.
 
 #### <a name="examples"></a>Ejemplos
 
@@ -1014,11 +1017,11 @@ dnscmd [<servername>] /zoneresettype <zonename> <zonetype> [/overwrite_mem | /ov
 | ---------- | ----------- |
 | `<servername>` | Especifica el servidor DNS que se va a administrar, representado por la dirección IP, el FQDN o el nombre de host. Si se omite este parámetro, se utiliza el servidor local. |
 | `<zonename>` | Identifica la zona en la que se cambiará el tipo. |
-| `<zonetype>` | Especifica el tipo de zona que se va a crear. Cada tipo tiene parámetros necesarios diferentes, entre los que se incluyen:<ul><li>**/DsPrimary** : crea una zona integrada de Active Directory.</li><li>**/Primary/file `<filename>` ** : Crea una zona principal estándar.</li><li>**/Secondary `<masterIPaddress> [,<masterIPaddress>...]` ** : Crea una zona secundaria estándar.</li><li>**/stub `<masterIPaddress>[,<masterIPaddress>...]` /file `<filename>` ** : crea una zona de rutas internas con copia de seguridad de archivos.</li><li>**/DsStub `<masterIPaddress>[,<masterIPaddress>...]` ** : Crea una zona de rutas internas integrada de Active Directory.</li><li>**/Forwarder `<masterIPaddress[,<masterIPaddress>]` .../file `<filename>` ** : especifica que la zona creada reenvía las consultas sin resolver a otro servidor DNS.</li><li>**/dsforwarder** : especifica que la zona integrada de Active Directory que se ha creado reenvía las consultas no resueltas a otro servidor DNS.</li></ul> |
+| `<zonetype>` | Especifica el tipo de zona que se va a crear. Cada tipo tiene parámetros necesarios diferentes, entre los que se incluyen:<ul><li>**/DsPrimary** : crea una zona integrada de Active Directory.</li><li>**/Primary/file `<filename>`** : Crea una zona principal estándar.</li><li>**/Secondary `<masterIPaddress> [,<masterIPaddress>...]`** : Crea una zona secundaria estándar.</li><li>**/stub `<masterIPaddress>[,<masterIPaddress>...]` /file `<filename>`** : crea una zona de rutas internas con copia de seguridad de archivos.</li><li>**/DsStub `<masterIPaddress>[,<masterIPaddress>...]`** : Crea una zona de rutas internas integrada de Active Directory.</li><li>**/Forwarder `<masterIPaddress[,<masterIPaddress>]` .../file `<filename>`** : especifica que la zona creada reenvía las consultas sin resolver a otro servidor DNS.</li><li>**/dsforwarder** : especifica que la zona integrada de Active Directory que se ha creado reenvía las consultas no resueltas a otro servidor DNS.</li></ul> |
 | /overwrite_mem | Sobrescribe los datos DNS de los datos en AD DS. |
 | /overwrite_ds | Sobrescribe los datos existentes en AD DS. |
 
-##### <a name="remarks"></a>Observaciones
+##### <a name="remarks"></a>Comentarios
 
 - Al establecer el tipo de zona como **/dsforwarder** , se crea una zona que realiza el reenvío condicional.
 
@@ -1046,7 +1049,7 @@ dnscmd [<servername>] /zoneresume <zonename>
 | `<servername>` | Especifica el servidor DNS que se va a administrar, representado por la dirección IP, el FQDN o el nombre de host. Si se omite este parámetro, se utiliza el servidor local. |
 | `<zonename>` | Especifica el nombre de la zona que se va a reanudar. |
 
-##### <a name="remarks"></a>Observaciones
+##### <a name="remarks"></a>Comentarios
 
 - Puede usar esta operación para reiniciar desde la operación **/zonepause** .
 
@@ -1073,7 +1076,7 @@ dnscmd [<servername>] /zoneupdatefromds <zonename>
 | `<servername>` | Especifica el servidor DNS que se va a administrar, representado por la dirección IP, el FQDN o el nombre de host. Si se omite este parámetro, se utiliza el servidor local. |
 | `<zonename>` | Especifica el nombre de la zona que se va a actualizar. |
 
-##### <a name="remarks"></a>Observaciones
+##### <a name="remarks"></a>Comentarios
 
 - Las zonas integradas de Active Directory realizan esta actualización de forma predeterminada cada cinco minutos. Para cambiar este parámetro, use el `dnscmd config dspollinginterval` comando.
 
@@ -1100,7 +1103,7 @@ dnscmd [<servername>] /zonewriteback <zonename>
 | `<servername>` | Especifica el servidor DNS que se va a administrar, representado por la dirección IP, el FQDN o el nombre de host. Si se omite este parámetro, se utiliza el servidor local. |
 | `<zonename>` | Especifica el nombre de la zona que se va a actualizar. |
 
-##### <a name="remarks"></a>Observaciones
+##### <a name="remarks"></a>Comentarios
 
 - Se trata de una operación de nivel de zona. Puede actualizar todas las zonas de un servidor DNS mediante la operación **/writebackfiles** .
 

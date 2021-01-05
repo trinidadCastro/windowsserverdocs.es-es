@@ -1,18 +1,18 @@
 ---
 title: Administrar copias de seguridad del equipo cliente en Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información sobre las tareas de copia de seguridad comunes para los equipos cliente que puede realizar mediante el panel de Windows Server Essentials.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 1b4776e8-9504-4b98-ae80-11da797d9819
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: c743e0a30796eac374052787f7c47b0af6e656b6
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: ecf893cf0dd2e19a172d28e5579af551c1319977
+ms.sourcegitcommit: e00e789dff216dbade861e61365f078b758a5720
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623163"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97755271"
 ---
 # <a name="manage-client-computer-backup-in-windows-server-essentials"></a>Administrar copias de seguridad del equipo cliente en Windows Server Essentials
 
@@ -333,7 +333,7 @@ ms.locfileid: "89623163"
 
     -   **Copia de seguridad en curso**: muestra el porcentaje de copia de seguridad completado.
 
-    -   **Copia de seguridad cancelada**: muestra la fecha y la hora de inicio de la copia de seguridad si usted o el administrador de red la cancelaron.
+    -   **Copia de seguridad cancelada**: muestra la fecha y la hora en que se inició la copia de seguridad si usted o el administrador de red canceló la copia de seguridad.
 
     -   **La copia de seguridad se realizó correctamente**: muestra la fecha y la hora de inicio de la copia de seguridad si la copia de seguridad se completó correctamente.
 
@@ -357,7 +357,7 @@ ms.locfileid: "89623163"
 
 3.  En la sección **Estado de la copia de seguridad** del cuadro de diálogo **Propiedades de la copia de seguridad**, el botón **Iniciar la copia de seguridad** cambia a **Detener copia de seguridad** cuando la copia de seguridad está en curso. Haga clic en **Detener copia de seguridad** y después, en **Sí** para confirmar. La copia de seguridad seguirá ejecutándose hasta que haga clic en **Sí**.
 
-4.  Al detener una copia de seguridad en curso, el estado cambia a **Copia de seguridad cancelada** con la fecha y la hora en que se inició. Si, en vez de ello, ve un estado de copia de seguridad **correcta**, **incompleta** o **con errores**, significa que ya ha terminado la última copia de seguridad.
+4.  Al detener una copia de seguridad en curso, el estado cambia a **copia de seguridad cancelada** con la fecha y la hora en que se inició la copia de seguridad. Si, en vez de ello, ve un estado de copia de seguridad **correcta**, **incompleta** o **con errores**, significa que ya ha terminado la última copia de seguridad.
 
 5.  Haga clic en **Aceptar** para cerrar el cuadro de diálogo **Propiedades de la copia de seguridad**.
 
@@ -377,7 +377,7 @@ ms.locfileid: "89623163"
 
 4.  Escriba una descripción de la copia de seguridad y después haga clic en **Aceptar**. El estado cambia a **Iniciando copia de seguridad** y después, a **Haciendo copia de seguridad** con un porcentaje completado.
 
-5.  Tras iniciarse la copia de seguridad, el botón cambia a **Detener copia de seguridad**. Si la copia de seguridad está en curso y quiere detenerla, haga clic en **Detener copia de seguridad** y después, en **Sí**. Al detener una copia de seguridad en curso, el estado cambia a **Copia de seguridad cancelada** con la fecha y la hora en que se inició.
+5.  Tras iniciarse la copia de seguridad, el botón cambia a **Detener copia de seguridad**. Si la copia de seguridad está en curso y quiere detenerla, haga clic en **Detener copia de seguridad** y después, en **Sí**. Al detener una copia de seguridad en curso, el estado cambia a **copia de seguridad cancelada** con la fecha y la hora en que se inició la copia de seguridad.
 
 6.  Cuando la copia de seguridad finaliza correctamente, el estado cambia a **La copia de seguridad se realizó correctamente** con la fecha y la hora en que se inició la copia de seguridad finalizada.
 

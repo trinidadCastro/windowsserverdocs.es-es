@@ -1,18 +1,18 @@
 ---
 title: Agregar categorías de nivel superior a LaunchPad (sistema operativo Macintosh)
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información sobre cómo agregar categorías de nivel superior a Launchpad en un equipo que ejecute el sistema operativo Macintosh.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: ee2173c3-e464-4001-9f43-6d926a575092
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 8becc3159dc1f9374b95bbc90b51a44ae0f224e4
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 09cbae3e6643e9ebd729c06646647b361374c787
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89624028"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711630"
 ---
 # <a name="add-top-level-categories-to-the-launchpad-macintosh-operating-system"></a>Agregar categorías de nivel superior a LaunchPad (sistema operativo Macintosh)
 

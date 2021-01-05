@@ -1,18 +1,18 @@
 ---
 title: Compilar medios de restauración de cliente multilingüe
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo crear un medio de restauración de cliente multilingüe para Windows Server Essentials.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 2fdbc016-d464-43cb-bd75-8a63e61588a2
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 8440fe0a32128182b86d26190c9b0448c64807d8
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 8b5e08d1c606086722074f2dd45f86999aad164a
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623913"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711420"
 ---
 # <a name="build-multi-language-client-restore-media"></a>Compilar medios de restauración de cliente multilingüe
 

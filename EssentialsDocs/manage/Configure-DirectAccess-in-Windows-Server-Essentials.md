@@ -1,18 +1,18 @@
 ---
 title: Configurar DirectAccess en Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo configurar DirectAccess para permitir que los trabajadores móviles se conecten a la red desde cualquier ubicación remota sin establecer una conexión VPN.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: c959b6fc-c67e-46cd-a9cb-cee71a42fa4c
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 2d05c5d62eae5effda2c6b73adf71daf1cd0080c
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: eb24f45e301bb616c7d8a43dbf4151c0b8af1ac7
+ms.sourcegitcommit: e00e789dff216dbade861e61365f078b758a5720
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623327"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97755341"
 ---
 # <a name="configure-directaccess-in-windows-server-essentials"></a>Configurar DirectAccess en Windows Server Essentials
 
@@ -120,7 +120,7 @@ En este tema se proporcionan instrucciones paso a paso para configurar DirectAcc
 
 9. En el cuadro **Servidor DNS alternativo**, escriba la dirección IP del servidor DNS alternativo, si lo hay.
 
-10. Haga clic en **Aceptar**y, a continuación, en **Cerrar**.
+10. Haga clic en **Aceptar** y, a continuación, en **Cerrar**.
 
 > [!IMPORTANT]
 >  Asegúrese de que configura el enrutador para que derive los puertos 80 y 443 a la nueva dirección IP estática del servidor.
@@ -141,7 +141,7 @@ En este tema se proporcionan instrucciones paso a paso para configurar DirectAcc
 
 1.  En la página **Inicio**, abra **Entidad de certificación**.
 
-2.  En el árbol de consola, en **entidad de certificación (local)**, expanda **<ServerName \> -CA**, haga clic con el botón secundario en **plantillas de certificado**y, a continuación, haga clic en **administrar**.
+2.  En el árbol de consola, en **entidad de certificación (local)**, expanda **<ServerName \> -CA**, haga clic con el botón secundario en **plantillas de certificado** y, a continuación, haga clic en **administrar**.
 
 3.  En **Entidad de certificación (Local)**, haga clic con el botón derecho en **Servidor Web** y, después, haga clic en **Propiedades**.
 
@@ -191,7 +191,7 @@ En este tema se proporcionan instrucciones paso a paso para configurar DirectAcc
 
 ####  <a name="to-map-a-new-host-to-the-windows-server-essentials-server-address"></a><a name="BKMK_ToMapNewHosttoServerAddress"></a> Para asignar un nuevo host a la dirección del servidor de Windows Server Essentials
 
-1.  En la página de inicio, abra el Administrador de DNS. Para abrir el Administrador de DNS, busque **dnsmgmt.msc**y, después, haga clic en **dnsmgmt.msc** en los resultados.
+1.  En la página de inicio, abra el Administrador de DNS. Para abrir el Administrador de DNS, busque **dnsmgmt.msc** y, después, haga clic en **dnsmgmt.msc** en los resultados.
 
 2.  En el árbol de la consola del administrador de DNS, expanda el servidor local, expanda **zonas de búsqueda directa**, haga clic con el botón secundario en la zona con el sufijo de dominio del servidor y, a continuación, haga clic en **host nuevo (a o aaaa)**.
 
@@ -269,7 +269,7 @@ En este tema se proporcionan instrucciones paso a paso para configurar DirectAcc
 
     6.  Revise los objetos de directiva de grupo (GPO) que se aplicarán y modifíquelos, si fuera necesario.
 
-    7.  Haga clic en **Siguiente**y después en **Finalizar**.
+    7.  Haga clic en **Siguiente** y después en **Finalizar**.
 
     8.  Reinicie el servicio de administración de acceso remoto ejecutando el siguiente comando de Windows PowerShell en modo con privilegios elevados:
 
@@ -324,7 +324,7 @@ gpupdate
 
 2.  En la consola de administración de acceso remoto, haga clic en **Configuración** y, en el panel de detalles **Instalación de acceso remoto**, en el **Paso 3**, haga clic en **Editar**.
 
-3.  En el Asistente para la instalación del servidor de acceso remoto, en la pestaña **Servidor de ubicación de red** , seleccione **El servidor de ubicación de red se implementa en el servidor de acceso remoto**y, después, seleccione el certificado emitido anteriormente (en el [Step 3: Prepare a certificate and DNS record for the network location server](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_DNS)).
+3.  En el Asistente para la instalación del servidor de acceso remoto, en la pestaña **Servidor de ubicación de red** , seleccione **El servidor de ubicación de red se implementa en el servidor de acceso remoto** y, después, seleccione el certificado emitido anteriormente (en el [Step 3: Prepare a certificate and DNS record for the network location server](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_DNS)).
 
 4.  Siga las instrucciones para completar el asistente y, a continuación, haga clic en **Finalizar**.
 
@@ -415,7 +415,7 @@ Restart-Service winnat
 
 2.  Agregue un grupo de seguridad denominado **DirectAccessClients** a Active Directory y, a continuación, agregue los equipos cliente para los que desea proporcionar la funcionalidad de DirectAccess. Para obtener más información, vea [paso 4: crear un grupo de seguridad para equipos cliente de DirectAccess](#BKMK_AddSecurityGroup).
 
-### <a name="commands"></a>Comandos:
+### <a name="commands"></a>Comandos
 
 > [!IMPORTANT]
 >  En Windows Server Essentials, no es necesario quitar el GPO de prefijo IPv6 innecesario. Elimine la sección de código con la etiqueta siguiente: `# [WINDOWS SERVER 2012 ESSENTIALS ONLY] Remove the unnecessary IPv6 prefix GPO`.

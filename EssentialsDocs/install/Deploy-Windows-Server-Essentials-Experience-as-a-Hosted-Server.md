@@ -1,18 +1,18 @@
 ---
 title: Implementar Experiencia con Windows Server Essentials como servidor hospedado
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo implementar Microsoft Windows Server 16 y ofrecer la experiencia con Windows Server Essentials como servicio a los clientes.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: a455c6b4-b29f-4f76-8c6b-1578b6537717
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 5c0e186cb51eadd2671a4a7d21ccc1ce90dd7221
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 0698bb4d7def33194ccbdc6280e3336bbc3f2ee2
+ms.sourcegitcommit: e00e789dff216dbade861e61365f078b758a5720
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623537"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97755141"
 ---
 # <a name="deploy-windows-server-essentials-experience-as-a-hosted-server"></a>Implementar Experiencia con Windows Server Essentials como servidor hospedado
 
@@ -172,12 +172,12 @@ Install-WssVpnServer -IPv4AddressRange ('192.168.0.160','192.168.0.240') -ApplyT
 > [!NOTE]
 >  Asegúrese de que la configuración de zona horaria de la máquina virtual del host y la experiencia con Windows Server Essentials son las mismas. De lo contrario, pueden producirse varios errores. Estos incluyen: es posible que la configuración inicial del servidor no sea correcta en tareas relacionadas con los certificados, que el certificado no funcione durante unas horas después de instalar el rol de experiencia con Windows Server Essentials y que la información del dispositivo no se actualice correctamente.
 
- Después de la implementación, use el cmdlet de Windows PowerShell **Get-WssConfigurationStatus** para comprobar si la configuración inicial se llevó a cabo correctamente. El estado devuelto debería ser uno de los siguientes: **Notstarted**, **FinishedWithWarning**, **Running**, **Finished**, **Failed**o **PendingReboot**.
+ Después de la implementación, use el cmdlet de Windows PowerShell **Get-WssConfigurationStatus** para comprobar si la configuración inicial se llevó a cabo correctamente. El estado devuelto debe ser uno de los siguientes: `Notstarted` , `FinishedWithWarning` , `Running` , `Finished` , `Failed` o `PendingReboot` .
 
  El servidor se reiniciará durante la configuración inicial. Si necesita impedir el reinicio automático, puede utilizar el siguiente comando para agregar una clave de registro antes de la configuración inicial:
 
 ```
-New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name "WaitForReboot" -Value 1 -PropertyType "DWord" -Force -Confirm:$false
+New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name "WaitForReboot" -Value 1 -PropertyType "DWord" -Force -Confirm:$false
 
 ```
 
@@ -204,7 +204,7 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
 
  **Ejemplo**:
 
- $Enable WssRemoteWebAccess œDenyAccessByDefault œApplyToExistingUsers
+ `$Enable-WssRemoteWebAccess  œDenyAccessByDefault  œApplyToExistingUsers`
 
  Este comando habilitará el acceso Web remoto con el enrutador configurado automáticamente y cambiará los permisos de acceso predeterminados de todos los usuarios existentes.
 
@@ -215,7 +215,7 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
 
  **Ejemplo**:
 
- $password = ConvertTo-SecureString "Passw0rd!" -asplaintext œforce $ Add-WssUser-Name User2Test-password $password-Accesslevel administrador-FirstName user2-LastName test
+ `$password = ConvertTo-SecureString "Passw0rd!" -asplaintext  œforce$Add-WssUser -Name User2Test -Password $password -Accesslevel Administrator -FirstName User2 -LastName Test`
 
  Este comando agregará un administrador denominado User2Test con la contraseña Passw0rd!.
 
@@ -226,7 +226,7 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
 
  **Ejemplo**:
 
- $Add-WssFolder -Name "MyTestFolder" -Path "C:\ServerFolders\MyTestFolder"
+ `$Add-WssFolder -Name "MyTestFolder" -Path "C:\ServerFolders\MyTestFolder"`
 
  Este comando agregará una carpeta de servidor denominada MyTestFolder en la ubicación especificada.
 
@@ -251,12 +251,12 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
 #### <a name="server-backup"></a>Copia de seguridad del servidor
  Windows Server Essentials admite dos formas de copia de seguridad del servidor: copia de seguridad local y no local. Puede personalizar estas opciones si desea implementar su propia solución de copia de seguridad del servidor.
 
--   La**copia de seguridad local** le permite realizar copias de seguridad incrementales en el nivel de bloque de forma periódica en un disco aparte. Como proveedor de hospedaje, puede conectar un disco duro virtual a la máquina virtual que ejecuta Windows Server Essentials y, a continuación, configurar la copia de seguridad del servidor a este disco duro virtual. El disco duro virtual debe estar ubicado en un disco físico diferente al de la máquina virtual que ejecuta Windows Server Essentials.
+-   La **copia de seguridad local** le permite realizar copias de seguridad incrementales en el nivel de bloque de forma periódica en un disco aparte. Como proveedor de hospedaje, puede conectar un disco duro virtual a la máquina virtual que ejecuta Windows Server Essentials y, a continuación, configurar la copia de seguridad del servidor a este disco duro virtual. El disco duro virtual debe estar ubicado en un disco físico diferente al de la máquina virtual que ejecuta Windows Server Essentials.
 
     > [!NOTE]
     >  Si tiene otras soluciones de copia de seguridad para las máquinas virtuales y no quiere que los usuarios vean la característica de copia de seguridad de servidor nativa de Windows Server Essentials, puede desactivarla y quitar la interfaz de usuario del panel. Para obtener más información, consulte la sección [Personalizar la copia de seguridad del servidor](/previous-versions/windows/it-pro/windows-8.1-and-8/dn293413(v=win.10)) de [Personalizar e implementar Windows Server Essentials en Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-8.1-and-8/dn293241(v=win.10)).
 
--   La**copia de seguridad no local** le permite realizar copias de seguridad periódica de los datos del servidor en un servicio de nube. Puede descargar e instalar el módulo de integración de Microsoft Azure Backup para Windows Server Essentials para aprovechar los Azure Backup proporcionados por Microsoft.
+-   La **copia de seguridad no local** le permite realizar copias de seguridad periódica de los datos del servidor en un servicio de nube. Puede descargar e instalar el módulo de integración de Microsoft Azure Backup para Windows Server Essentials para aprovechar los Azure Backup proporcionados por Microsoft.
 
      Para obtener más información, consulte la sección integrar Windows Azure Backup con Windows Server Essentials en [administrar copias de seguridad del servidor](../manage/Manage-Server-Backup-in-Windows-Server-Essentials.md).
 

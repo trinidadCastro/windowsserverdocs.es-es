@@ -1,18 +1,18 @@
 ---
 title: Compatibilidad con implementaciones de gran tamaño
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de la compatibilidad con varios dominios, varios controladores de dominio, 500 usuarios y dispositivos 500 y la capacidad de especificar un controlador de dominio designado.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 07d0c4c6-3e92-4969-82b8-105e46ab8d97
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: bf5b6027c934c1dec9916ff08995a7f096a2b8bd
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: ec8cea711b679c41562b1e0580430cdb264ace0f
+ms.sourcegitcommit: 8e330f9066097451cd40e840d5f5c3317cbc16c2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89622448"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97696945"
 ---
 # <a name="support-for-larger-deployments"></a>Compatibilidad con implementaciones de gran tamaño
 
@@ -50,7 +50,7 @@ El controlador de dominio designado predeterminado será el mismo servidor que e
 
 El número máximo de usuarios y dispositivos admitidos en Windows Server 2012 R2 Essentials es 25 y 50, respectivamente. Con la introducción de la función de servidor de experiencia con Windows Server Essentials, se aumentó el límite a 100 usuarios y 200 dispositivos.
 
-Windows Server 2016 Essentials admite 500 usuarios y dispositivos 500. Hacer esto posible es una actualización de los controles de marco de trabajo del proveedor y de la lista de objetos, de modo que almacenen en memoria caché y representen rápidamente listas de objetos de dispositivos y usuarios. Además, se ha agregado una característica de búsqueda y filtro para encontrar rápidamente el usuario o el dispositivo que puede buscar (vea la figura 5-2). Encontrará la funcionalidad de búsqueda y filtrado en el **Panel de Windows Server Essentials**, el **acceso Web remoto**y las aplicaciones de Windows y Windows Phone almacenar **My Server** Applications.
+Windows Server 2016 Essentials admite 500 usuarios y dispositivos 500. Hacer esto posible es una actualización de los controles de marco de trabajo del proveedor y de la lista de objetos, de modo que almacenen en memoria caché y representen rápidamente listas de objetos de dispositivos y usuarios. Además, se ha agregado una característica de búsqueda y filtro para encontrar rápidamente el usuario o el dispositivo que puede buscar (vea la figura 5-2). Encontrará la funcionalidad de búsqueda y filtrado en el **Panel de Windows Server Essentials**, el **acceso Web remoto** y las aplicaciones de Windows y Windows Phone almacenar **My Server** Applications.
 
 ![Captura de pantalla que muestra el uso de la característica de búsqueda del panel de Windows Server Essentials para buscar la cadena "d5c". Los resultados de esta búsqueda incluyen dos archivos y carpetas y dos usuarios.](media/larger-deployments-2.PNG)
 

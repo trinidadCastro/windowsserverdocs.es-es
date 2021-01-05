@@ -1,20 +1,20 @@
 ---
-title: Reemplace Microsoft 365 módulo de integración compre-try dirección URL del punto de conexión en soporte del acuerdo de revendedor de Microsoft Online Services.
-description: Describe cómo usar Windows Server Essentials
+title: Reemplazar la dirección URL de punto de conexión de compra/prueba del módulo de integración de Microsoft 365 en cumplimiento del contrato de revendedor de servicio en línea de Microsoft
+description: Obtenga información acerca de cómo reemplazar las direcciones URL de extremo que usa el módulo de integración de Microsoft 365 de Windows Server Essentials.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 9860a6b9-baea-4bf0-9a9f-6f1a288f996e
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: a8a5cf91c6de2971bc8270cc3c7ea92327b71224
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 4d01b7dbea4566bae962c73220c389c3a4e2c19a
+ms.sourcegitcommit: e00e789dff216dbade861e61365f078b758a5720
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623379"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97755371"
 ---
-# <a name="replace-microsoft-365-integration-module-buy-try-endpoint-url-in-support-of-microsoft-online-service-reseller-agreement"></a>Reemplace Microsoft 365 módulo de integración compre-try dirección URL del punto de conexión en soporte del acuerdo de revendedor de Microsoft Online Services.
+# <a name="replace-microsoft-365-integration-module-buy-try-endpoint-url-in-support-of-microsoft-online-service-reseller-agreement"></a>Reemplazar la dirección URL de punto de conexión de compra/prueba del módulo de integración de Microsoft 365 en cumplimiento del contrato de revendedor de servicio en línea de Microsoft
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 

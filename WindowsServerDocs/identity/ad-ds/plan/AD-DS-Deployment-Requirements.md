@@ -7,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 91f5d6cd5d7c3646bed8d37e944979eb9448a87c
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: d108ca02919cde08b93f217712d3be2e8c622fb1
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97050163"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711750"
 ---
 # <a name="ad-ds-deployment-requirements"></a>Requisitos de implementación de AD DS
 
@@ -25,7 +25,7 @@ Además, como parte de la implementación de AD DS, puede decidir actualizar y r
 ## <a name="deploying-a-windows-server-2008-forest-root-domain"></a>Implementar un dominio raíz del bosque de Windows Server 2008
 El dominio raíz del bosque proporciona la base para la infraestructura de AD DS bosque. Para implementar AD DS, primero debe implementar un dominio raíz del bosque. Para ello, debe revisar el diseño del AD DS; configurar el servicio DNS para el dominio raíz del bosque; cree el dominio raíz del bosque, que consiste en la implementación de controladores de dominio raíz del bosque, la configuración de la topología del sitio para el dominio raíz del bosque y la configuración de roles de maestro de operaciones (también conocidos como operaciones de maestro único flexible o FSMO). y elevan los niveles funcionales del bosque y del dominio. En la ilustración siguiente se muestra el proceso general de implementación de un dominio raíz del bosque.
 
-![Requisitos de AD DS](media/AD-DS-Deployment-Requirements/033aad0b-25ff-4793-8825-88a6daa01a55.gif)
+![Ilustración en la que se muestra el proceso general de implementación de un dominio raíz del bosque.](media/AD-DS-Deployment-Requirements/033aad0b-25ff-4793-8825-88a6daa01a55.gif)
 
 Para obtener más información, vea [implementar un dominio raíz del bosque de Windows Server 2008](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc731174(v=ws.10)).
 

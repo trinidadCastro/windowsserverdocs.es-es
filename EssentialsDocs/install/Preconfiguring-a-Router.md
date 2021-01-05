@@ -1,18 +1,18 @@
 ---
 title: Configuración previa del enrutador
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo preconfigurar el enrutador compatible con Internet para proporcionar una mejor experiencia de usuario.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 9153ac90-bb0c-4b8d-93b2-e2121ed13636
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 79ffa14cfabc26afd87c0771f7412c98e661421d
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 44bcfaf4de49ef6709d73af545beb0fc3604d259
+ms.sourcegitcommit: e00e789dff216dbade861e61365f078b758a5720
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89626150"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97755411"
 ---
 # <a name="preconfiguring-a-router"></a>Configuración previa del enrutador
 

@@ -1,18 +1,18 @@
 ---
 title: Administrar copias de seguridad y restaurar en Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo realizar copias de seguridad periódicas del servidor y las copias de seguridad de los equipos de la red y restaurar los datos de esas copias de seguridad en Windows Server Essentials.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 41000915-f6ff-4dbb-b7be-629ef36386d4
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 996eb1293eebbd424c6063654322617a92043eae
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 89e67327786186a4fdd94a760d29afb47c5a2b66
+ms.sourcegitcommit: e00e789dff216dbade861e61365f078b758a5720
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623220"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97755291"
 ---
 # <a name="manage-backup-and-restore-in-windows-server-essentials"></a>Administrar copias de seguridad y restaurar en Windows Server Essentials
 
@@ -20,7 +20,7 @@ ms.locfileid: "89623220"
 
  Windows Server Essentials permite realizar copias de seguridad de su servidor y sus equipos de red con frecuencia y de manera fiable. En caso de perder sus datos, puede restaurarlos desde una copia de seguridad correcta en el servidor sin restaurar todo el equipo. Si es necesario, puede realizar una restauración completa del sistema en el servidor o los equipos cliente en la red. En la tabla siguiente se describen las distintas opciones de copia de seguridad disponibles, además de sus ventajas.
 
-|Característica de copia de seguridad|Descripción|Ventajas|
+|Característica de copia de seguridad|Description|Ventajas|
 |--------------------|-----------------|----------------|
 |Copia de seguridad del servidor|Realiza una copia de seguridad del servidor que ejecuta Windows Server Essentials. Los datos se copian en una unidad USB externa.<br /><br /> Para obtener más información, consulte [administrar copias de seguridad del servidor](Manage-Server-Backup-in-Windows-Server-Essentials.md) y [restaurar o reparar el servidor](Restore-or-repair-your-server-running-Windows-Server-Essentials.md).|-Puede restaurar archivos y carpetas en el servidor.<br /><br /> -Puede realizar una restauración completa del sistema de su servidor.|
 |Copia de seguridad del equipo cliente|Realiza una copia de seguridad de los equipos cliente en la red. Los datos se copian en el servidor que ejecuta Windows Server Essentials.<br /><br /> Para obtener más información, consulte [administrar copias de seguridad de cliente](Manage-Client-Computer-Backup-in-Windows-Server-Essentials.md) y [restaurar un sistema completo desde una copia de seguridad de equipos cliente existente](Restore-a-full-system-from-an-existing-client-computer-backup.md).|-Puede restaurar archivos y carpetas desde el servidor.<br /><br /> -Puede realizar una restauración completa del sistema del equipo cliente.|

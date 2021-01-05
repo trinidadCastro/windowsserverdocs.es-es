@@ -1,23 +1,23 @@
 ---
 title: Crear un DVD de recuperación del servidor para compatibilidad con varios idiomas
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo crear un DVD de configuración del servidor y de recuperación del servidor para compatibilidad con varios idiomas en servidores administrados localmente.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: c7da0f6c-9732-4784-9c28-7dad72c4071d
 author: daveba
 ms.author: daveba
-ms.openlocfilehash: 3c415155734515af004e25a07c4e61afabaa3359
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.openlocfilehash: d17a7103233b25553eb67a2c7d025d4647cbbbc5
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87838014"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711330"
 ---
 # <a name="create-a-server-recovery-dvd-for-multi-language-support"></a>Crear un DVD de recuperación del servidor para compatibilidad con varios idiomas
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-##  <a name="create-a-server-setup-and-server-recovery-dvd-for-multiple-language-support-on-locally-administered-servers"></a><a name="BKMK_MLHeadedRecovery"></a>Crear un DVD de configuración del servidor y de recuperación del servidor para compatibilidad con varios idiomas en servidores administrados localmente
+##  <a name="create-a-server-setup-and-server-recovery-dvd-for-multiple-language-support-on-locally-administered-servers"></a><a name="BKMK_MLHeadedRecovery"></a> Crear un DVD de configuración del servidor y de recuperación del servidor para compatibilidad con varios idiomas en servidores administrados localmente
 
 > [!NOTE]
 >  Primero debe crear una imagen de Windows multilingüe tal y como se describe en el [Tutorial: creación de imágenes de Windows multilingüe](/previous-versions/windows/it-pro/windows-8.1-and-8/jj126995(v=win.10)) antes de agregar el paquete de idioma de Windows Server Essentials a install. Wim.
@@ -43,7 +43,7 @@ ms.locfileid: "87838014"
 
 2.  Creación de medios distribuibles
 
-### <a name="prerequisites"></a>Requisitos previos
+### <a name="prerequisites"></a>Prerrequisitos
  Para agregar compatibilidad multilingüe al programa de instalación de Windows, necesita lo siguiente:
 
 
@@ -56,7 +56,7 @@ ms.locfileid: "87838014"
 
 -   Un DVD de paquete de idioma de Windows Server Essentials.
 
-###  <a name="adding-multiple-language-support"></a><a name="BKMK_Steps"></a>Incorporación de compatibilidad con varios idiomas
+###  <a name="adding-multiple-language-support"></a><a name="BKMK_Steps"></a> Incorporación de compatibilidad con varios idiomas
  Para agregar compatibilidad con varios idiomas a instalación de Windows actualice el archivo install. Wim mediante la adición de los paquetes de idioma de Windows Server 2012 y Windows Server Essentials.
 
 #### <a name="update-installwim"></a>Actualizar Install.wim

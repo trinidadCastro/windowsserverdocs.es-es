@@ -6,12 +6,12 @@ ms.topic: article
 ms.author: delhan
 ms.date: 8/8/2019
 author: Deland-Han
-ms.openlocfilehash: ce4a3f4a183478cd250159f1953a0fd2193f6de6
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c817a1b5763f04da8e66d97ce0e47db53a3fe205
+ms.sourcegitcommit: 8e330f9066097451cd40e840d5f5c3317cbc16c2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964081"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97696996"
 ---
 # <a name="troubleshooting-dns-servers"></a>Solución de problemas de servidores DNS
 
@@ -90,14 +90,14 @@ El problema puede deberse a un error del usuario cuando los usuarios escriben da
 
 ### <a name="if-the-server-is-hosting-a-secondary-copy-of-the-zone"></a>Si el servidor hospeda una copia secundaria de la zona
 
-1. Examine la zona en el servidor maestro (el servidor desde el que este servidor extrae las transferencias de zona).
+1. Examine la zona en el servidor principal (el servidor desde el que este servidor extrae las transferencias de zona).
 
    > [!NOTE]
-   >Puede determinar qué servidor es el servidor maestro mediante el examen de las propiedades de la zona secundaria en la consola DNS.
+   >Puede determinar qué servidor es el servidor principal mediante el examen de las propiedades de la zona secundaria en la consola DNS.
 
-   Si el nombre no es correcto en el servidor maestro, vaya al paso 4.
+   Si el nombre no es correcto en el servidor principal, vaya al paso 4.
 
-2. Si el nombre es correcto en el servidor maestro, compruebe si el número de serie del servidor maestro es menor o igual que el número de serie en el servidor secundario. Si es así, modifique el servidor maestro o el servidor secundario para que el número de serie del servidor maestro sea mayor que el número de serie en el servidor secundario.
+2. Si el nombre es correcto en el servidor principal, compruebe si el número de serie del servidor principal es menor o igual que el número de serie en el servidor secundario. Si es así, modifique el servidor principal o el servidor secundario para que el número de serie del servidor principal sea mayor que el número de serie en el servidor secundario.
 
 3. En el servidor secundario, fuerce una transferencia de zona desde la consola DNS o mediante la ejecución del siguiente comando:
 
@@ -159,7 +159,7 @@ Comience las pruebas en el procedimiento siguiente consultando un servidor raíz
 
    - Si la respuesta no contiene un registro de recursos "NS", tiene una delegación rota.
 
-   - Si la respuesta contiene registros de recursos "NS", pero no registros de recursos "A", escriba **recursividad de conjunto**y consulte individualmente los registros de recursos de "a" de los servidores que se enumeran en los registros "NS". Si no encuentra al menos una dirección IP válida de un registro de recursos "A" para cada registro de recursos NS de una zona, tiene una delegación rota.
+   - Si la respuesta contiene registros de recursos "NS", pero no registros de recursos "A", escriba **recursividad de conjunto** y consulte individualmente los registros de recursos de "a" de los servidores que se enumeran en los registros "NS". Si no encuentra al menos una dirección IP válida de un registro de recursos "A" para cada registro de recursos NS de una zona, tiene una delegación rota.
 
 3. Si determina que tiene una delegación rota, corríjalo agregando o actualizando un registro de recursos "A" en la zona principal mediante una dirección IP válida para un servidor DNS correcto para la zona delegada.
 
@@ -185,19 +185,19 @@ Ejecute las siguientes comprobaciones:
 
 - Compruebe Visor de eventos para el servidor DNS principal y secundario.
 
-- Compruebe el servidor maestro para ver si se rechaza el envío de la transferencia por seguridad.
+- Compruebe el servidor principal para ver si se rechaza la transferencia para la seguridad.
 
 - Compruebe la ficha **transferencias de zona** de las propiedades de la zona en la consola DNS. Si el servidor restringe las transferencias de zona a una lista de servidores, como los que aparecen en la pestaña **servidores de nombres** de las propiedades de la zona, asegúrese de que el servidor secundario se encuentra en esa lista. Asegúrese de que el servidor está configurado para enviar transferencias de zona.
 
-- Para comprobar si hay problemas en el servidor principal, siga los pasos de la sección comprobación de los [problemas del servidor DNS](#check-dns-server-problems) . Cuando se le pida que realice una tarea en el cliente, realice la tarea en el servidor secundario en su lugar.
+- Para comprobar si hay problemas en el servidor principal, siga los pasos descritos en la sección comprobación de los [problemas del servidor DNS](#check-dns-server-problems) . Cuando se le pida que realice una tarea en el cliente, realice la tarea en el servidor secundario en su lugar.
 
 - Compruebe si el servidor secundario está ejecutando otra implementación de servidor DNS, como BIND. Si es así, el problema puede deberse a una de las siguientes causas:
 
-  - Es posible que el servidor maestro de Windows esté configurado para enviar transferencias de zona rápidas, pero es posible que el servidor secundario de terceros no admita las transferencias de zona rápida. En este caso, deshabilite las transferencias de zona rápida en el servidor maestro desde la consola DNS activando la casilla **Habilitar secundarios de enlace** en la ficha **Opciones avanzadas** de las propiedades del servidor.
+  - Es posible que el servidor principal de Windows esté configurado para enviar transferencias de zona rápidas, pero es posible que el servidor secundario de terceros no admita las transferencias de zona rápida. En este caso, deshabilite las transferencias de zona rápida en el servidor principal desde la consola DNS activando la casilla **Habilitar secundarios de enlace** en la ficha **Opciones avanzadas** de las propiedades del servidor.
 
   - Si una zona de búsqueda directa en el servidor de Windows contiene un tipo de registro (por ejemplo, un registro SRV) que no admite el servidor secundario, es posible que el servidor secundario tenga problemas al extraer la zona.
 
-Compruebe si el servidor maestro está ejecutando otra implementación de servidor DNS, como BIND. Si es así, es posible que la zona del servidor maestro incluya registros de recursos incompatibles que Windows no reconoce.
+Compruebe si el servidor principal está ejecutando otra implementación de servidor DNS, como BIND. Si es así, es posible que la zona del servidor principal incluya registros de recursos incompatibles que Windows no reconoce.
 
 Si el servidor principal o secundario está ejecutando otra implementación de servidor DNS, compruebe ambos servidores para asegurarse de que admiten las mismas características. Puede comprobar el servidor de Windows en la consola DNS de la ficha **Opciones avanzadas** de la página de propiedades del servidor. Además del cuadro habilitar secundarios de enlace, esta página incluye la lista desplegable **comprobación de nombres** . Esto le permite seleccionar la aplicación de la compatibilidad estricta con RFC para los caracteres en nombres DNS.
 

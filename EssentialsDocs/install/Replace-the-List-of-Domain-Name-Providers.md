@@ -1,18 +1,18 @@
 ---
 title: Sustituir la lista de proveedores de nombre de dominio
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información sobre cómo reemplazar la lista de proveedores de nombres de dominio que se muestra en el Asistente para configurar el nombre de dominio.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 104d0412-2d77-4cd4-99f7-65a885522850
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 74509a7d64e718fe1d2b62f806306235e7d827e4
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 654334feaee0a0fb571a5394b15c41dc61eb2982
+ms.sourcegitcommit: e00e789dff216dbade861e61365f078b758a5720
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623366"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97755381"
 ---
 # <a name="replace-the-list-of-domain-name-providers"></a>Sustituir la lista de proveedores de nombre de dominio
 
@@ -41,7 +41,7 @@ Para sustituir la lista de proveedores de nombres de dominio que aparece en el A
 
 3.  En el nombre de dominio, Agregar un proveedor de nombres de dominio, introduciendo el nombre del mismo.
 
-4.  Agregue los dominios de nivel superior que sean compatibles con el proveedor de nombres de dominio. Para ello, haga clic en **Agregar**, introduzca el identificador de dominio de nivel superior y a continuación seleccione las regiones compatibles. Puede seleccionar**Todas las regiones**.
+4.  Agregue los dominios de nivel superior que sean compatibles con el proveedor de nombres de dominio. Para ello, haga clic en **Agregar**, introduzca el identificador de dominio de nivel superior y a continuación seleccione las regiones compatibles. Puede seleccionar **Todas las regiones**.
 
 5.  Introduzca la descripción del proveedor de nombres de dominio.
 
@@ -49,7 +49,7 @@ Para sustituir la lista de proveedores de nombres de dominio que aparece en el A
 
 7.  Para agregar un logotipo al proveedor de nombres de dominio, haga clic en **Cambiar logotipo**.
 
-8.  Haga clic en **Save**(Guardar).
+8.  Haga clic en **Guardar**.
 
 9. Repita los pasos 2 al 8 con todos los proveedor de nombres de dominio que desee agregar a la lista del asistente.
 
@@ -88,7 +88,7 @@ Para sustituir la lista de proveedores de nombres de dominio que aparece en el A
 
  Los siguientes estados de dominio son errores y deben notificarse como tales:
 
-- Failed
+- Con error
 
 - PendingCustomerInterventionRequired
 

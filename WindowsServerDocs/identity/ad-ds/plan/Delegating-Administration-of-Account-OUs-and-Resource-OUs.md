@@ -7,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 3d434b1619c476d2a80003fd6c8d379d6177462e
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 432f68a113055f9e68ca4c18ed8aa54b02cad8b0
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97050123"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711710"
 ---
 # <a name="delegating-administration-of-account-ous-and-resource-ous"></a>Delegar la administración de unidades organizativas de cuentas y unidades organizativas de recursos
 
@@ -25,7 +25,7 @@ Delegue una estructura de unidad organizativa de cuentas en administradores de d
 
 En la ilustración siguiente se muestra un ejemplo de una estructura de unidad organizativa de cuentas.
 
-![Delegación de la administración](media/Delegating-Administration-of-Account-OUs-and-Resource-OUs/66d38fbe-e8eb-42d7-abab-9526243bf6d9.gif)
+![Ilustración en la que se muestra un ejemplo de una estructura de unidad organizativa.](media/Delegating-Administration-of-Account-OUs-and-Resource-OUs/66d38fbe-e8eb-42d7-abab-9526243bf6d9.gif)
 
 En la tabla siguiente se enumeran y describen las posibles unidades organizativas secundarias que se pueden crear en una estructura de unidad organizativa de cuentas.
 
@@ -39,7 +39,7 @@ En la tabla siguiente se enumeran y describen las posibles unidades organizativa
 
 En la ilustración siguiente se muestra un ejemplo de un diseño de grupo administrativo para una estructura de unidad organizativa.
 
-![Delegación de la administración](media/Delegating-Administration-of-Account-OUs-and-Resource-OUs/be2cd2d2-6956-429c-a53a-369e6fe40b2b.gif)
+![Ilustración en la que se muestra un ejemplo de un diseño de grupo administrativo para una estructura de unidad organizativa.](media/Delegating-Administration-of-Account-OUs-and-Resource-OUs/be2cd2d2-6956-429c-a53a-369e6fe40b2b.gif)
 
 A los grupos que administran las unidades organizativas secundarias solo se les concede control total sobre la clase específica de objetos que son responsables de la administración.
 
@@ -50,7 +50,7 @@ Las unidades organizativas de recursos se usan para administrar el acceso a los 
 
 En la ilustración siguiente se muestran las dos ubicaciones posibles para la unidad organizativa de recursos.
 
-![Delegación de la administración](media/Delegating-Administration-of-Account-OUs-and-Resource-OUs/6667a5ce-34d6-48a9-9974-b823ba70e2af.gif)
+![Ilustración que muestra las dos ubicaciones posibles para la unidad organizativa de recursos.](media/Delegating-Administration-of-Account-OUs-and-Resource-OUs/6667a5ce-34d6-48a9-9974-b823ba70e2af.gif)
 
 La unidad organizativa de recursos se puede encontrar en la raíz del dominio o como una unidad organizativa secundaria de la unidad organizativa de la cuenta correspondiente en la jerarquía administrativa de la unidad organizativa. Las unidades organizativas de recursos no tienen unidades organizativas secundarias estándar. Los equipos y grupos se colocan directamente en la unidad organizativa de recursos.
 

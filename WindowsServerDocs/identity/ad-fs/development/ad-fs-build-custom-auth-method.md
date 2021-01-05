@@ -6,12 +6,12 @@ ms.author: billmath
 manager: daveba
 ms.date: 05/23/2019
 ms.topic: article
-ms.openlocfilehash: f1b3e687b9fd49052dd3087fdf21084278e43804
-ms.sourcegitcommit: 3c6c257526b243e876aed59e3f2dec42697f232d
+ms.openlocfilehash: 2622271abcd283471513cb7ae909499ba9d858a4
+ms.sourcegitcommit: 8e330f9066097451cd40e840d5f5c3317cbc16c2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92418142"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97697044"
 ---
 # <a name="build-a-custom-authentication-method-for-ad-fs-in-windows-server"></a>Crear un método de autenticación personalizado para AD FS en Windows Server
 
@@ -372,7 +372,7 @@ En este tutorial se usa Visual Studio 2012. El proyecto se puede compilar con cu
     }
     ```
 
-14.  Tenga en cuenta que "todo" para el elemento **Resources. FormPageHtml** anterior. Puede corregirlo en un minuto, pero primero vamos a agregar las instrucciones Return requeridas finales, en función de los tipos recién implementados, a la clase de adaptador inicial. Para ello, agregue lo siguiente a la implementación de IAuthenticationAdapter existente:
+14. Tenga en cuenta que "todo" para el elemento **Resources. FormPageHtml** anterior. Puede corregirlo en un minuto, pero primero vamos a agregar las instrucciones Return requeridas finales, en función de los tipos recién implementados, a la clase de adaptador inicial. Para ello, agregue lo siguiente a la implementación de IAuthenticationAdapter existente:
 
     ```csharp
     class MyAdapter : IAuthenticationAdapter
@@ -448,13 +448,13 @@ En este tutorial se usa Visual Studio 2012. El proyecto se puede compilar con cu
     </div>
     ```
 
-16. Después, seleccione **proyecto- \> Agregar componente... ** El archivo de recursos y el nombre de los **recursos**de archivo y haga clic en **Agregar:**
+16. Después, seleccione **proyecto- \> Agregar componente...** El archivo de recursos y el nombre de los **recursos** de archivo y haga clic en **Agregar:**
 
-   ![creación del proveedor](media/ad-fs-build-custom-auth-method/Dn783423.3369ad8f-f65f-4f36-a6d5-6a3edbc1911a(MSDN.10).jpg "creación del proveedor")
+    ![creación del proveedor](media/ad-fs-build-custom-auth-method/Dn783423.3369ad8f-f65f-4f36-a6d5-6a3edbc1911a(MSDN.10).jpg "creación del proveedor")
 
 17. Después, en el archivo **Resources. resx** , elija **Agregar recurso... Agregar archivo existente**. Navegue hasta el archivo de texto (que contiene el fragmento html) que guardó anteriormente.
 
-   Asegúrese de que el código de GetFormHtml resuelva el nombre del nuevo recurso correctamente en el prefijo de nombre del archivo de recursos (archivo. resx) seguido del nombre del propio recurso:
+    Asegúrese de que el código de GetFormHtml resuelva el nombre del nuevo recurso correctamente en el prefijo de nombre del archivo de recursos (archivo. resx) seguido del nombre del propio recurso:
 
     ```csharp
     public string GetFormHtml(int lcid)
@@ -548,7 +548,7 @@ Una vez cumplidos los requisitos previos anteriores, abra una ventana de comando
 
 4. En **seleccionar métodos de autenticación adicionales** en la parte inferior de la página, active la casilla de adminName del proveedor. Haga clic en **Aplicar**.
 
-5. Para proporcionar un "desencadenador" para invocar MFA con el adaptador, en **ubicaciones** , Compruebe la **extranet** y la **intranet**, por ejemplo. Haga clic en **OK**. (Para configurar desencadenadores por usuario de confianza, vea "crear la Directiva de autenticación mediante Windows PowerShell" a continuación).
+5. Para proporcionar un "desencadenador" para invocar MFA con el adaptador, en **ubicaciones** , Compruebe la **extranet** y la **intranet**, por ejemplo. Haga clic en **Aceptar**. (Para configurar desencadenadores por usuario de confianza, vea "crear la Directiva de autenticación mediante Windows PowerShell" a continuación).
 
 6. Compruebe los resultados con los siguientes comandos:
 
@@ -595,7 +595,7 @@ Por último, realice los pasos siguientes para probar el adaptador:
 
         1. O simplemente haga clic en la pestaña **principal** de la interfaz de usuario de la **Directiva multifactor** .
 
-2. Asegúrese de que la **autenticación mediante formularios** es la única opción comprobada para la extranet y el método de autenticación de la intranet. Haga clic en **OK**.
+2. Asegúrese de que la **autenticación mediante formularios** es la única opción comprobada para la extranet y el método de autenticación de la intranet. Haga clic en **Aceptar**.
 
 3. Abra la página HTML de inicio de sesión iniciado por IDP (https:// \<fsname\> /adfs/ls/idpinitiatedsignon.htm) e inicie sesión como un usuario de ad válido en el entorno de prueba.
 
@@ -619,35 +619,35 @@ Al completar los procedimientos anteriores, ha creado una implementación de ada
 
 Recuerde la implementación de TryEndAuthentication:
 
-    ```csharp
-    public IAdapterPresentation TryEndAuthentication(IAuthenticationContext authContext, IProofData proofData, HttpListenerRequest request, out Claim[] outgoingClaims)
-    {
-        //return new instance of IAdapterPresentationForm derived class
-        outgoingClaims = new Claim[0];
-        return new MyPresentationForm();
-    }
-    ```
+```csharp
+public IAdapterPresentation TryEndAuthentication(IAuthenticationContext authContext, IProofData proofData, HttpListenerRequest request, out Claim[] outgoingClaims)
+{
+    //return new instance of IAdapterPresentationForm derived class
+    outgoingClaims = new Claim[0];
+    return new MyPresentationForm();
+}
+```
 
 Vamos a actualizarlo para que no siempre devuelva MyPresentationForm (). Para ello, puede crear un sencillo método de utilidad dentro de la clase:
 
-    ```csharp
-    static bool ValidateProofData(IProofData proofData, IAuthenticationContext authContext)
+```csharp
+static bool ValidateProofData(IProofData proofData, IAuthenticationContext authContext)
+{
+    if (proofData == null || proofData.Properties == null || !proofData.Properties.ContainsKey("ChallengeQuestionAnswer"))
     {
-        if (proofData == null || proofData.Properties == null || !proofData.Properties.ContainsKey("ChallengeQuestionAnswer"))
-        {
-            throw new ExternalAuthenticationException("Error - no answer found", authContext);
-        }
-
-        if ((string)proofData.Properties["ChallengeQuestionAnswer"] == "adfabric")
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        throw new ExternalAuthenticationException("Error - no answer found", authContext);
     }
-    ```
+
+    if ((string)proofData.Properties["ChallengeQuestionAnswer"] == "adfabric")
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+```
 
 A continuación, actualice TryEndAuthentication como se indica a continuación:
 
@@ -731,7 +731,7 @@ Asegúrese de pegar el archivo. dll actualizado en primer lugar. `C:>.gacutil.ex
 
 4. En **seleccionar métodos de autenticación adicionales**, active la casilla de adminName de su proveedor. Haga clic en **Aplicar**.
 
-5. Para proporcionar un "desencadenador" para invocar MFA con el adaptador, en ubicaciones, Compruebe la **extranet** y la **intranet**, por ejemplo. Haga clic en **OK**.
+5. Para proporcionar un "desencadenador" para invocar MFA con el adaptador, en ubicaciones, Compruebe la **extranet** y la **intranet**, por ejemplo. Haga clic en **Aceptar**.
 
 ### <a name="authenticate-with-mfa-using-your-adapter"></a>Autenticación con MFA mediante el adaptador
 
@@ -743,7 +743,7 @@ Por último, realice los pasos siguientes para probar el adaptador:
 
         1. O simplemente haga clic en la pestaña **principal** de la interfaz de usuario de la Directiva multifactor.
 
-2. Asegúrese de que la **autenticación mediante formularios** es la única opción comprobada para la **extranet** y el método de autenticación de la **intranet** . Haga clic en **OK**.
+2. Asegúrese de que la **autenticación mediante formularios** es la única opción comprobada para la **extranet** y el método de autenticación de la **intranet** . Haga clic en **Aceptar**.
 
 3. Abra la página HTML de inicio de sesión iniciado por IDP (https:// \<fsname\> /adfs/ls/idpinitiatedsignon.htm) e inicie sesión como un usuario de ad válido en el entorno de prueba.
 

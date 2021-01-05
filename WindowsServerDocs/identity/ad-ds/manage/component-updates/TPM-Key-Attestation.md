@@ -7,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 7b8e311d395b31361b0ee705bf7bddf272011087
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: a297473e338e88e575db07ddbeffc568e557b6cf
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97048753"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711730"
 ---
 # <a name="tpm-key-attestation"></a>Atestación de clave de TPM
 
@@ -112,23 +112,23 @@ Para configurar la plantilla de certificado para la atestación de clave de TPM,
 
     -   Asegúrese de que se ha seleccionado **Windows 8.1/Windows Server 2012 R2** para el **destinatario del certificado**.
 
-    ![Atestación de clave de TPM](media/TPM-Key-Attestation/GTR_ADDS_CompatibilityTab.gif)
+    ![Captura de pantalla que resalta la lista de destinatarios de certificado.](media/TPM-Key-Attestation/GTR_ADDS_CompatibilityTab.gif)
 
 2.  Pestaña **Criptografía**
 
     Asegúrese de que se ha seleccionado **proveedor de almacenamiento de claves** para la categoría de **proveedor** y **RSA** está seleccionado para el **nombre del algoritmo**. Asegúrese **de que las solicitudes deben usar uno de los siguientes proveedores** está seleccionada y la opción **proveedor de criptografía de plataforma de Microsoft** está seleccionada en **proveedores**.
 
-    ![Atestación de clave de TPM](media/TPM-Key-Attestation/GTR_ADDS_CryptoTab.gif)
+    ![Captura de pantalla que resalta las listas categoría de proveedor y nombre de algoritmo.](media/TPM-Key-Attestation/GTR_ADDS_CryptoTab.gif)
 
 3.  Pestaña **atestación de clave**
 
     Se trata de una nueva pestaña para Windows Server 2012 R2:
 
-    ![Atestación de clave de TPM](media/TPM-Key-Attestation/GTR_ADDS_ConfigCertTemplate.gif)
+    ![Captura de pantalla que muestra la pestaña atestación de la clave.](media/TPM-Key-Attestation/GTR_ADDS_ConfigCertTemplate.gif)
 
     Elija un modo de atestación de las tres opciones posibles.
 
-    ![Atestación de clave de TPM](media/TPM-Key-Attestation/GTR_ADDS_KeyModes.gif)
+    ![Captura de pantalla que muestra los modos de atestación.](media/TPM-Key-Attestation/GTR_ADDS_KeyModes.gif)
 
     -   **Ninguno:** Implica que no se debe usar la atestación de clave
 
@@ -138,7 +138,7 @@ Para configurar la plantilla de certificado para la atestación de clave de TPM,
 
     A continuación, elija el modelo de confianza de TPM. Hay tres opciones de nuevo:
 
-    ![Atestación de clave de TPM](media/TPM-Key-Attestation/GTR_ADDS_KeyTypeToEnforce.gif)
+    ![Captura de pantalla que muestra los modelos de confianza de TPM.](media/TPM-Key-Attestation/GTR_ADDS_KeyTypeToEnforce.gif)
 
     -   **Credenciales de usuario:** Permita que un usuario que realiza la autenticación conceda un TPM válido mediante la especificación de sus credenciales de dominio.
 
@@ -150,7 +150,7 @@ Para configurar la plantilla de certificado para la atestación de clave de TPM,
 
     **OID de directivas de emisión**
 
-    |OID|Tipo de atestación de clave|Descripción|Nivel de seguridad|
+    |OID|Tipo de atestación de clave|Description|Nivel de seguridad|
     |-------|------------------------|---------------|-------------------|
     |1.3.6.1.4.1.311.21.30|EK|"EK verificado": para la lista administrada por el administrador de EK|Alto|
     |1.3.6.1.4.1.311.21.31|Certificado de aprobación|"Certificado EK comprobado": cuando se valida la cadena de certificados EK|Media|

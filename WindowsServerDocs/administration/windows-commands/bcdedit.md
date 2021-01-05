@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 03/27/2018
-ms.openlocfilehash: b3cd41f3ba1980718a5e2c0a37df470a94f67657
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 5278e05e04dc4960c4a298aeaeaf0616bbaa0d0b
+ms.sourcegitcommit: 8e330f9066097451cd40e840d5f5c3317cbc16c2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89632974"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97696906"
 ---
 # <a name="bcdedit"></a>bcdedit
 
@@ -39,7 +39,7 @@ bcdedit /command [<argument1>] [<argument2>] ...
 
 ### <a name="parameters"></a>Parámetros
 
-### <a name="general-bcdedit-command-line-options"></a>Opciones generales de la línea de comandos de BCDEdit
+### <a name="general-bcdedit-command-line-options"></a>Opciones generales de Command-Line de BCDEdit
 
 | Opción | Descripción |
 | ------ | ----------- |
@@ -47,7 +47,7 @@ bcdedit /command [<argument1>] [<argument2>] ...
 
 #### <a name="parameters-that-operate-on-a-store"></a>Parámetros que operan en un almacén
 
-| Opción | Descripción |
+| Opción | Description |
 | ------ | ----------- |
 | /createstore | Crea un nuevo almacén de datos de la configuración de arranque (BCD) vacío. El almacén creado no es un almacén del sistema. |
 | /export | Exporta el contenido del almacén del sistema a un archivo. Este archivo se puede usar más adelante para restaurar el estado del almacén del sistema. Este comando sólo es válido para el almacén del sistema. |
@@ -56,29 +56,29 @@ bcdedit /command [<argument1>] [<argument2>] ...
 
 #### <a name="parameters-that-operate-on-entries-in-a-store"></a>Parámetros que operan en entradas de un almacén
 
-| Parámetro | Descripción |
+| Parámetro | Description |
 | ------ | ----------- |
 | /copy | Hace una copia de una entrada de arranque especificada en el mismo almacén del sistema. |
-| /create | Crea una nueva entrada en el almacén de datos de la configuración de arranque (BCD). Si se especifica un identificador conocido, no se pueden especificar los parámetros **/disponibilidad**, **/inherit**y **/Device** . Si no se especifica un identificador o no se conoce bien, se debe especificar una opción **/disponibilidad**, **/inherit**o **/Device** . |
+| /create | Crea una nueva entrada en el almacén de datos de la configuración de arranque (BCD). Si se especifica un identificador conocido, no se pueden especificar los parámetros **/disponibilidad**, **/inherit** y **/Device** . Si no se especifica un identificador o no se conoce bien, se debe especificar una opción **/disponibilidad**, **/inherit** o **/Device** . |
 | /delete | Elimina un elemento de una entrada especificada. |
 
 #### <a name="parameters-that-operate-on-entry-options"></a>Parámetros que operan en opciones de entrada
 
-| Parámetro | Descripción |
+| Parámetro | Description |
 | ------ | ----------- |
 | /deletevalue | Elimina un elemento especificado de una entrada de arranque. |
 | /set | Establece el valor de una opción de entrada. |
 
 #### <a name="parameters-that-control-output"></a>Parámetros que controlan la salida
 
-| Parámetro | Descripción |
+| Parámetro | Description |
 | ------ | ----------- |
 | /enum | Enumera las entradas de un almacén. La opción **/enum** es el valor predeterminado de BCEdit, por lo que la ejecución del comando **bcdedit** sin parámetros equivale a ejecutar el comando **bcdedit/enum Active** . |
 | /v | Modo detallado. Normalmente, los identificadores de entrada conocidos se representan en formato abreviado. Si se especifica **/v** como opción de línea de comandos, se muestran todos los identificadores en su totalidad. Ejecutar el comando **bcdedit/v** solo es equivalente a ejecutar el comando **bcdedit/enum Active/v** . |
 
 #### <a name="parameters-that-control-the-boot-manager"></a>Parámetros que controlan el administrador de arranque
 
-| Parámetro | Descripción |
+| Parámetro | Description |
 | ------ | ----------- |
 | /bootsequence | Especifica un orden de presentación único que se usará en el siguiente arranque. Este comando es similar a la opción **/displayorder** , excepto en que solo se usa la próxima vez que se inicia el equipo. Después, el equipo vuelve al orden de presentación original. |
 | /default | Especifica la entrada predeterminada que el administrador de arranque selecciona cuando se agota el tiempo de espera. |
@@ -88,7 +88,7 @@ bcdedit /command [<argument1>] [<argument2>] ...
 
 #### <a name="parameters-that-control-emergency-management-services"></a>Parámetros que controlan los servicios de administración de emergencia
 
-| Parámetro | Descripción |
+| Parámetro | Description |
 | ------ | ----------- |
 | /bootems | Habilita o deshabilita Servicios de administración de emergencia (EMS) para la entrada especificada. |
 | /ems | Habilita o deshabilita EMS para la entrada de arranque de sistema operativo especificada. |
@@ -96,7 +96,7 @@ bcdedit /command [<argument1>] [<argument2>] ...
 
 #### <a name="parameters-that-control-debugging"></a>Parámetros que controlan la depuración
 
-| Parámetro | Descripción |
+| Parámetro | Description |
 | ------ | ----------- |
 | /bootdebug | Habilita o deshabilita el depurador de arranque para una entrada de arranque especificada. Aunque este comando funciona con cualquier entrada de arranque, sólo es efectivo para aplicaciones de arranque. |
 | /dbgsettings | Especifica o muestra la configuración global del depurador para el sistema. Este comando no enablepose. Para establecer una configuración de depurador global individual, use el comando **bcdedit/Set** `<dbgsettings> <type> <value>` . |
@@ -106,6 +106,4 @@ bcdedit /command [<argument1>] [<argument2>] ...
 
 Para obtener ejemplos de cómo usar BCDEdit, consulte el artículo de [referencia de las opciones de bcdedit](/windows-hardware/drivers/devtest/bcd-boot-options-reference) .
 
-## <a name="additional-references"></a>Referencias adicionales
-
-- [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+Para ver la notación que se usa para indicar la sintaxis de línea de comandos, vea  [clave de sintaxis de línea de comandos](command-line-syntax-key.md).

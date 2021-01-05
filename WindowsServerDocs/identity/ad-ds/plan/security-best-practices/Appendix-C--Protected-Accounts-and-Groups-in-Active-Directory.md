@@ -7,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: aa7b3947c668634565ddbb0fd8df081a3f4b6347
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: a968ddd70aa74d571e939c3d2c21cbc24e572f5e
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97041683"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711770"
 ---
 # <a name="appendix-c-protected-accounts-and-groups-in-active-directory"></a>Anexo C: cuentas protegidas y grupos de Active Directory
 
@@ -78,27 +78,27 @@ Puede forzar que SDProp se ejecute mediante Ldp.exe o mediante la ejecución de 
 1. Inicie **Ldp.exe**.
 2. Haga clic en **conexión** en el cuadro de diálogo LDP y haga clic en **conectar**.
 
-   ![cuentas y grupos protegidos](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_9.gif)
+   ![Captura de pantalla que muestra la opción de menú conectar.](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_9.gif)
 
 3. En el cuadro de diálogo **conectar** , escriba el nombre del controlador de dominio para el dominio que contiene el rol de emulador de PDC (PDCE) y haga clic en **Aceptar**.
 
-   ![cuentas y grupos protegidos](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_10.png)
+   ![Captura de pantalla que muestra dónde escribir el nombre del controlador de dominio para el dominio que contiene el rol de emulador de PDC (PDCE).](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_10.png)
 
 4. Compruebe que se ha conectado correctamente, como se indica en **DN: (RootDSE)** en la siguiente captura de pantalla, haga clic en **conexión** y haga clic en **enlazar**.
 
-   ![cuentas y grupos protegidos](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_11.png)
+   ![Captura de pantalla que muestra dónde seleccionar la conexión y, a continuación, seleccione enlazar para comprobar que se ha conectado correctamente.](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_11.png)
 
 5. En el cuadro de diálogo **enlazar** , escriba las credenciales de una cuenta de usuario que tenga permiso para modificar el objeto RootDSE. (Si inició sesión como ese usuario, puede seleccionar **enlazar como** usuario que ha iniciado sesión actualmente). Haga clic en **Aceptar**.
 
-   ![cuentas y grupos protegidos](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_12.png)
+   ![Captura de pantalla que muestra el cuadro de diálogo enlazar.](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_12.png)
 
 6. Una vez completada la operación de enlace, haga clic en **examinar** y, a continuación, en **modificar**.
 
-   ![cuentas y grupos protegidos](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_13.png)
+   ![Captura de pantalla que muestra la opción de menú modificar en el menú examinar.](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_13.png)
 
 7. En el cuadro de diálogo **modificar** , deje el campo **DN** en blanco. En el campo **Editar atributo de entrada** , escriba **FixUpInheritance** y, en el campo **valores** , escriba **sí**. Haga clic en **entrar** para rellenar la **lista de entradas** tal como se muestra en la siguiente captura de pantalla.
 
-   ![cuentas y grupos protegidos](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_14.gif)
+   ![Captura de pantalla que muestra el cuadro de diálogo modificar.](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_14.gif)
 
 8. En el cuadro de diálogo modificar, haga clic en ejecutar y compruebe que los cambios realizados en el objeto AdminSDHolder han aparecido en ese objeto.
 
@@ -107,7 +107,7 @@ Puede forzar que SDProp se ejecute mediante Ldp.exe o mediante la ejecución de 
 
 Si prefiere ejecutar SDProp manualmente mediante LDIFDE o un script, puede crear una entrada de modificación como se muestra aquí:
 
-![cuentas y grupos protegidos](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_15.gif)
+![Captura de pantalla que muestra cómo se puede crear una entrada de modificación.](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_15.gif)
 
 ###### <a name="running-sdprop-manually-in-windows-server-2012-or-windows-server-2008-r2"></a>Ejecutar SDProp manualmente en Windows Server 2012 o Windows Server 2008 R2
 
@@ -117,19 +117,19 @@ También puede forzar que SDProp se ejecute mediante Ldp.exe o mediante la ejecu
 
 2. En el cuadro de diálogo **LDP** , haga clic en **conexión** y, a continuación, haga clic en **conectar**.
 
-   ![cuentas y grupos protegidos](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_16.gif)
+   ![Captura de pantalla que muestra el cuadro de diálogo LDP.](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_16.gif)
 
 3. En el cuadro de diálogo **conectar** , escriba el nombre del controlador de dominio para el dominio que contiene el rol de emulador de PDC (PDCE) y haga clic en **Aceptar**.
 
-   ![cuentas y grupos protegidos](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_17.gif)
+   ![Captura de pantalla que muestra el cuadro de diálogo conectar.](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_17.gif)
 
 4. Compruebe que se ha conectado correctamente, como se indica en **DN: (RootDSE)** en la siguiente captura de pantalla, haga clic en **conexión** y haga clic en **enlazar**.
 
-   ![cuentas y grupos protegidos](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_18.gif)
+   ![Captura de pantalla que muestra la opción de menú enlazar en el menú conexión.](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_18.gif)
 
 5. En el cuadro de diálogo **enlazar** , escriba las credenciales de una cuenta de usuario que tenga permiso para modificar el objeto RootDSE. (Si inició sesión como ese usuario, puede seleccionar **enlazar como usuario que ha iniciado sesión actualmente**). Haga clic en **Aceptar**.
 
-   ![cuentas y grupos protegidos](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_19.gif)
+   ![Captura de pantalla que muestra dónde escribir las credenciales de una cuenta de usuario que tiene permiso para modificar el objeto rootDSE.](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_19.gif)
 
 6. Una vez completada la operación de enlace, haga clic en **examinar** y, a continuación, en **modificar**.
 
@@ -137,10 +137,10 @@ También puede forzar que SDProp se ejecute mediante Ldp.exe o mediante la ejecu
 
 7. En el cuadro de diálogo **modificar** , deje el campo **DN** en blanco. En el campo **Editar atributo de entrada** , escriba **RunProtectAdminGroupsTask** y, en el campo **valores** , escriba **1**. Haga clic en **entrar** para rellenar la lista de entradas como se muestra aquí.
 
-   ![cuentas y grupos protegidos](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_21.gif)
+   ![Captura de pantalla que muestra el campo editar atributo de entrada.](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_21.gif)
 
 8. En el cuadro de diálogo **modificar** , haga clic en **Ejecutar** y compruebe que los cambios realizados en el objeto AdminSDHolder han aparecido en ese objeto.
 
 Si prefiere ejecutar SDProp manualmente mediante LDIFDE o un script, puede crear una entrada de modificación como se muestra aquí:
 
-![cuentas y grupos protegidos](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_22.gif)
+![Captura de pantalla que muestra qué hacer si prefiere ejecutar SDProp manualmente mediante LDIFDE o un script.](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_22.gif)

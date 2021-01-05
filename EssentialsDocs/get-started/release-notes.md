@@ -1,18 +1,18 @@
 ---
 title: Documentación de la versión de Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información sobre lo que se encuentra en la versión de Windows Server 2016 Essentials.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: db402a2b-7a46-448a-841c-750557cd12cc
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 9ef0e6bda6e66ab46824189219219dc1843cbe21
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 55de648f4112bbb8fbba5f90a9e6a884e128659f
+ms.sourcegitcommit: 8e330f9066097451cd40e840d5f5c3317cbc16c2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89622404"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97696948"
 ---
 # <a name="release-documentation-for-windows-server-essentials"></a>Documentación de la versión de Windows Server Essentials
 

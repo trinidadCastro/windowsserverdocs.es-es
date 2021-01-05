@@ -1,18 +1,18 @@
 ---
 title: Integrar un servidor local de Exchange Server con Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo configurar e integrar un servidor local que ejecuta Exchange Server con un servidor que ejecuta Windows Server Essentials.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: b56a21e2-c9e3-4ba9-97d9-719ea6a0854b
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: a0dd4b7469aa44773d978da7d5afd68eac57bff3
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: aef1d55d3743dcee483b4e6e9e1cca5ae33682e9
+ms.sourcegitcommit: e00e789dff216dbade861e61365f078b758a5720
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623309"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97755331"
 ---
 # <a name="integrate-an-on-premises-exchange-server-with-windows-server-essentials"></a>Integrar un servidor local de Exchange Server con Windows Server Essentials
 
@@ -25,7 +25,7 @@ Esta guía proporciona información e instrucciones básicas que le ayudarán a 
 > [!NOTE]
 >  Exchange Server 2010 no permite la instalación de equipos que ejecutan Windows Server 2012.
 
-## <a name="prerequisites"></a>Requisitos previos
+## <a name="prerequisites"></a>Prerrequisitos
  Antes de instalar Exchange Server en una red de Windows Server Essentials, asegúrese de completar las tareas descritas en esta sección.
 
 -   [Configurar un servidor que ejecuta Windows Server Essentials](Integrate-an-On-Premises-Exchange-Server-with-Windows-Server-Essentials.md#BKMK_SetUpSBS8)
@@ -51,7 +51,7 @@ Esta guía proporciona información e instrucciones básicas que le ayudarán a 
  Por ejemplo, si el nombre de dominio de Internet de su compañía es contoso.com y quiere usar el nombre completo (FQDN) de *mail.contoso.com* para hacer referencia al servidor local que ejecuta Exchange Server, trabaje con su proveedor de nombres de dominio para crear los registros de recursos DNS de la siguiente tabla.
 
 
-| Nombre de registro de recurso |     Tipo de registro     |                                                                         Configuración del registro                                                                          |                                                                                                                                                                                                                                                              Descripción                                                                                                                                                                                                                                                              |
+| Nombre de registro de recurso |     Tipo de registro     |                                                                         Configuración del registro                                                                          |                                                                                                                                                                                                                                                              Description                                                                                                                                                                                                                                                              |
 |----------------------|---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |         mail         |      host (A)       |                                                        Address=*dirección IP pública asignada por su ISP*                                                         |                                                                                                                                                                                                   Exchange Server recibirá el correo dirigido a mail.contoso.com.<br /><br /> Puede usar un nombre diferente que elija.                                                                                                                                                                                                    |
 |          MX          | Agente de intercambio de correo (MX) |                                            Hostname=@<br /><br /> Address=mail.contoso.com<br /><br /> Preference=0                                             |                                                                                                                                                                                                      Proporciona el enrutamiento de los mensajes de correo electrónico para email@contoso.com que lleguen al servidor local que ejecuta Exchange Server.                                                                                                                                                                                                       |
@@ -78,7 +78,7 @@ Esta guía proporciona información e instrucciones básicas que le ayudarán a 
 
 2.  Ejecute Windows PowerShell como administrador.
 
-3.  En el símbolo del sistema de Windows PowerShell, escriba **Add-ADGroupMember "Enterprise Admins" $env: username**y, a continuación, presione Entrar.
+3.  En el símbolo del sistema de Windows PowerShell, escriba **Add-ADGroupMember "Enterprise Admins" $env: username** y, a continuación, presione Entrar.
 
 #### <a name="to-install-exchange-server"></a>Para instalar Exchange Server
 
@@ -237,7 +237,7 @@ New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressS
 15. Reinicie el servidor.
 
 > [!NOTE]
->  Si decide usar un certificado SSL de confianza pública en lugar de un certificado emitido automáticamente, puede seguir las instrucciones de la guía de instalación para crear una solicitud de certificado y enviarla a la entidad de certificación seleccionada. También puede usar un cmdlet de Exchange PowerShell para crear una solicitud de certificado. A continuación, encontrará un ejemplo.
+>  Si decide usar un certificado SSL de confianza pública en lugar de un certificado emitido automáticamente, puede seguir las instrucciones de la guía de instalación para crear una solicitud de certificado y enviarla a la entidad de certificación seleccionada. También puede usar un cmdlet de Exchange PowerShell para crear una solicitud de certificado. A continuación se muestra un ejemplo.
 >
 >  `New-ExchangeCertificate -GenerateRequest -SubjectName "C=US, S=Washington, L=Redmond, O=contoso, OU=contoso, CN=mail.contoso.com" -DomainName mail.contoso.com -PrivateKeyExportable $true | Set-Content -path "c:\Docs\MyCertRequest.req"`
 >
@@ -359,18 +359,18 @@ New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressS
 
    - Si está realizando una instalación limpia, ejecute el siguiente comando:
 
-      **ARRConfig config:** _ruta de acceso de certificado al archivo_ **de certificado:** _nombres de host nombres de host para Exchange Server_
+      `ARRConfig config  -cert`_ruta de acceso al archivo_ `-hostnames` de certificado _nombres de host para Exchange Server_
 
      > [!NOTE]
-     >  Por ejemplo, **ARRConfig config-CERT** _c:\temp\certificate.pfx_ **-hostnames** _mail.contoso.com_
+     >  Por ejemplo, `ARRConfig config  -cert` _c:\temp\certificate.pfx_ `-hostnames` _mail.contoso.com_
      >
      >  Reemplace *mail.contoso.com* con el nombre del dominio que está protegido por el certificado.
 
    - Si está migrando desde Windows Small Business Server, ejecute el siguiente comando:
 
-      **ARRConfig config:** _ruta de acceso de certificado al archivo de certificado_ **:** _nombres de host nombres de host para Exchange Server_ **-targetserver** _nombre de servidor de Exchange Server_
+      `ARRConfig config  -cert`_ruta de acceso al archivo_ `-hostnames` de certificado _nombres de host para Exchange Server_ `-targetserver` _nombre del servidor de Exchange Server_
 
-      Por ejemplo, **ARRConfig config-CERT** _c:\temp\certificate.pfx_ **-hostnames** _mail.contoso.com_ **-targetserver** _ExchangeSvr_
+      Por ejemplo, `ARRConfig config  -cert` _c:\temp\certificate.pfx_ `-hostnames` _mail.contoso.com_ `-targetserver` _ExchangeSvr_
 
       Reemplace *mail.contoso.com* con el nombre de su dominio. Reemplace *ExchangeSvr* con el nombre del servidor que ejecuta Exchange Server.
 

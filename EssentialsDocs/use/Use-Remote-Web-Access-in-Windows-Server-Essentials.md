@@ -1,18 +1,18 @@
 ---
 title: Administrar Acceso web remoto en Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información sobre cómo acceso Web remoto le permite tener acceso a archivos, carpetas y equipos de la red a través de un explorador Web desde cualquier lugar con conectividad a Internet.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 47ea21a0-5e05-4b4b-8fa4-338c82601276
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 25b3bf64672356027742858399d1e2cbc7037194
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 5d1b3d720684ab9ece6b816b2012ea153a32217f
+ms.sourcegitcommit: 8e330f9066097451cd40e840d5f5c3317cbc16c2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89624905"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97696879"
 ---
 # <a name="use-remote-web-access-in-windows-server-essentials"></a>Administrar Acceso web remoto en Windows Server Essentials
 
@@ -22,7 +22,7 @@ ms.locfileid: "89624905"
 
   El Acceso web remoto le permite estar conectado a la red de Windows Server Essentials cuando lo utilice. Al iniciar sesión en acceso Web remoto, puede conectarse a los equipos de la red de Windows Server Essentials, abrir el panel para administrar la red de Windows Server Essentials y acceder a todas las carpetas compartidas y archivos multimedia del servidor.
 
- Este tema incluye las siguientes secciones:
+ En este tema, se incluyen las siguientes secciones:
 
 -   [Conectarse al Acceso web remoto](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Connect)
 
@@ -42,19 +42,12 @@ ms.locfileid: "89624905"
 
 -   [Conectarse desde un dispositivo móvil](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_ConnectMobile)
 
-##  <a name="connect-to-remote-web-access"></a><a name="BKMK_Connect"></a> Conectarse al acceso Web remoto
-
--   [Iniciar sesión en acceso Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_1)
-
--   [Acceder de forma remota a su equipo](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_1.5)
-
-
 ###  <a name="log-on-to-remote-web-access"></a><a name="BKMK_1"></a> Iniciar sesión en acceso Web remoto
  Al iniciar sesión en el acceso Web remoto desde un equipo local o remoto, puede tener acceso a los recursos del servidor que ejecuta Windows Server Essentials y los equipos de la red.
 
 ##### <a name="to-log-on-to-remote-web-access-from-a-network-computer"></a>Para iniciar sesión en el Acceso web remoto desde un equipo de red
 
-1.  Abra un explorador Web, escriba **https://** _<nombreservidor \> _**/Remote** en la barra de direcciones y, a continuación, presione Entrar.
+1.  Abra un explorador Web, escriba **https://** _<nombreservidor \>_**/Remote** en la barra de direcciones y, a continuación, presione Entrar.
 
     > [!NOTE]
     >  Asegúrese de incluir s en https.
@@ -63,7 +56,7 @@ ms.locfileid: "89624905"
 
 ##### <a name="to-log-on-to-remote-web-access-from-a-remote-computer"></a>Para iniciar sesión en el Acceso web remoto desde un equipo remoto
 
-1.  Abra un explorador Web, escriba **https://** _<sudominio \> _**/Remote** en la barra de direcciones y, a continuación, presione Entrar.
+1.  Abra un explorador Web, escriba **https://** _<sudominio \>_**/Remote** en la barra de direcciones y, a continuación, presione Entrar.
 
     > [!NOTE]
     >  El administrador de red puede proporcionarle la información del nombre de dominio. Asegúrese de incluir s en https.
@@ -304,21 +297,21 @@ ms.locfileid: "89624905"
 
 ##### <a name="to-log-on-to-remote-web-access-from-a-mobile-device"></a>Para iniciar sesión en el Acceso web remoto desde un dispositivo móvil
 
-1.  Abra un explorador Web y escriba **https://** _<sudominio \> _**/Remote** en la barra de direcciones.  Asegúrese de incluir s en https.
+1.  Abra un explorador Web y escriba **https://** _<sudominio \>_**/Remote** en la barra de direcciones.  Asegúrese de incluir s en https.
 
 2.  En la página inicio de sesión de acceso Web remoto, escriba el nombre de usuario y la contraseña en los cuadros de texto y, a continuación, haga clic en la flecha. Ha iniciado sesión en la versión móvil del Acceso web remoto.
 
 ##### <a name="to-switch-to-the-desktop-version-of-remote-web-access"></a>Para cambiar a la versión de escritorio del Acceso web remoto
 
-1.  Abra un explorador Web y escriba **https://** _<sudominio \> _**/Remote** en la barra de direcciones.  Asegúrese de incluir s en https.
+1.  Abra un explorador Web y escriba **https://** _<sudominio \>_**/Remote** en la barra de direcciones.  Asegúrese de incluir s en https.
 
-2.  En la página inicio de sesión de acceso Web remoto, escriba su nombre de usuario y contraseña en los cuadros de texto, haga clic en **Ver versión de escritorio**y, a continuación, haga clic en la flecha. Ha iniciado sesión en la versión de escritorio del acceso Web remoto.
+2.  En la página inicio de sesión de acceso Web remoto, escriba su nombre de usuario y contraseña en los cuadros de texto, haga clic en **Ver versión de escritorio** y, a continuación, haga clic en la flecha. Ha iniciado sesión en la versión de escritorio del acceso Web remoto.
 
 ##### <a name="to-return-to-the-mobile-version-of-remote-web-access"></a>Para volver a la versión móvil del Acceso web remoto
 
 1. Cierre la sesión.
 
-2. Abra un explorador Web y escriba **https://** _<sudominio \> _**/remoto/m** en la barra de direcciones. Asegúrese de incluir s en https.
+2. Abra un explorador Web y escriba **https://** _<sudominio \>_**/remoto/m** en la barra de direcciones. Asegúrese de incluir s en https.
 
 3. Se muestra la versión móvil del acceso Web remoto. En la página inicio de sesión de acceso Web remoto, escriba el nombre de usuario y la contraseña en los cuadros de texto y, a continuación, haga clic en la flecha. Ha iniciado sesión en la versión móvil del acceso Web remoto.
 

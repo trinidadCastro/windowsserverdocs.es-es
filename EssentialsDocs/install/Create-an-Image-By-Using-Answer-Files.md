@@ -1,18 +1,18 @@
 ---
 title: Crear una imagen con archivos de respuesta
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información sobre cómo usar los archivos de respuesta para agregar, cambiar o realizar un seguimiento de los datos, la configuración y las condiciones cuando se ha creado una imagen personalizada.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 72809c9d-c2c9-478c-a867-65d3b9a08b95
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 4bd06e993af6712d2bcd38241777a4131647cce3
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: c48e2cc9d86aa48882c387d58822ce46e1ff1e48
+ms.sourcegitcommit: d2224cf55c5d4a653c18908da4becf94fb01819e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623794"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97711220"
 ---
 # <a name="create-an-image-by-using-answer-files"></a>Crear una imagen con archivos de respuesta
 

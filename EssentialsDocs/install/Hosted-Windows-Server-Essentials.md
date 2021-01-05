@@ -1,18 +1,18 @@
 ---
 title: Versión hospedada de Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo implementar Microsoft Windows Server y ofrecer la experiencia con Windows Server Essentials como servicio a los clientes.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: fda5628c-ad23-49de-8d94-430a4f253802
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: b1c5a0824dfa8cba03ff778dfad6ef4505eae1eb
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 50b4a0cf76028d80cea0331427761901ddea1e7e
+ms.sourcegitcommit: e00e789dff216dbade861e61365f078b758a5720
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623489"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97755081"
 ---
 # <a name="hosted-windows-server-essentials"></a>Versión hospedada de Windows Server Essentials
 
@@ -53,9 +53,9 @@ En este documento se incluye información específica de los proveedores de serv
    Si está utilizando Virtual Machine Manager, puede crear una plantilla mediante la instancia en ejecución. Al crear una plantilla, la instancia se preparará para el sistema y se apagará el servidor. Después de almacenarla en su biblioteca, puede utilizar la instancia caso por caso.
 
 ##  <a name="how-do-i-automate-the-deployment"></a><a name="BKMK_automatedeployment"></a> Cómo automatizar la implementación
- Después de obtener la imagen personalizada, puede realizar la implementación con su propia imagen. Para realizar una instalación semidesatendida, deberá proporcionar o implementar el archivo unattend.xml para la instalación de WinPE. Para realizar una instalación completamente desatendida, también debe proporcionar el archivo de cfg.ini para la configuración inicial de Windows Server Essentials.
+ Después de obtener la imagen personalizada, puede realizar la implementación con su propia imagen. Para realizar una instalación desatendida, debe proporcionar o implementar unattend.xml para la instalación de WinPE. Para realizar una instalación completamente desatendida, también debe proporcionar el archivo de cfg.ini para la configuración inicial de Windows Server Essentials.
 
-1. Realice únicamente la instalación desatendida de WinPE. De esta manera se automatizará solamente la instalación de WinPE, y permitirá que la instalación se detenga antes de la configuración inicial de modo que los usuarios finales puedan proporcionar por sí mismos información sobre la corporación, el dominio y el administrador después de RDP en la sesión de servidor. Para ello, siga estos pasos:
+1. Realice únicamente la instalación desatendida de WinPE. De esta manera se automatizará solamente la instalación de WinPE, y permitirá que la instalación se detenga antes de la configuración inicial de modo que los usuarios finales puedan proporcionar por sí mismos información sobre la corporación, el dominio y el administrador después de RDP en la sesión de servidor. Para hacerlo:
 
    1.  Proporcione el archivo unattend.xml de Windows. Siga el [Windows 8.1 ADK](https://go.microsoft.com/fwlink/?LinkId=248694) para generar el archivo y proporcione toda la información necesaria, como el nombre del servidor, las claves de producto y la contraseña de administrador. En la sección Microsoft-Windows-Setup del archivo de unattend.xml, proporcione la información que aparece a continuación.
 
@@ -79,7 +79,7 @@ En este documento se incluye información específica de los proveedores de serv
 
    Si va a utilizar Virtual Machine Manager, puede especificar la contraseña del administrador en la consola cuando cree una nueva instancia a partir de la plantilla.
 
-2. Realice la instalación desatendida completa, incluida la configuración inicial desatendida. Para ello, siga estos pasos:
+2. Realice la instalación desatendida completa, incluida la configuración inicial desatendida. Para hacerlo:
 
    1.  Proporcione el archivo unattend.xml como hizo anteriormente, si la implementación se inicia a partir de la instalación de WinPE.
 
@@ -209,7 +209,7 @@ $Enable-WssRemoteWebAccess  œDenyAccessByDefault  œApplyToExistingUsers
  **Agregar usuario**
 
 ```
-Add-WssUser [-Name] <string> [-Password] <securestring> [-AccessLevel <string> {User | Administrator}] [-FirstName <string>] [-LastName <string>] [-AllowRemoteAccess] [-AllowVpnAccess]   [<CommonParameters>]
+Add-WssUser [-Name] <string> [-Password] <securestring> [-AccessLevel <string> {User | Administrator}] [-FirstName <string>] [-LastName <string>] [-AllowRemoteAccess] [-AllowVpnAccess]   [<CommonParameters>]
 ```
 
  Ejemplo:
