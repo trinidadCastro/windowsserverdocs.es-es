@@ -1,17 +1,17 @@
 ---
 title: Windows 8 se debe configurar con la cantidad de memoria recomendada
-description: Proporciona instrucciones para resolver el problema que informa esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información acerca de qué hacer cuando una máquina virtual que ejecuta Windows 8 está configurada con menos de la cantidad de RAM recomendada, que es 1 GB.
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 0c739e7c-4403-4eff-9e69-213ba1ab7336
 ms.date: 10/03/2016
-ms.openlocfilehash: c8c38f5603926ae4042a30c34a4ccd9ebc43fc7c
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 67c2897d51dc5fe7c669ccd911247d77dcfa3c56
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96866024"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834020"
 ---
 # <a name="windows-8-should-be-configured-with-the-recommended-amount-of-memory"></a>Windows 8 se debe configurar con la cantidad de memoria recomendada
 
@@ -36,7 +36,7 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 ```
 <list of virtual machines>
 ```
-## <a name="resolution"></a>**Solución**
+## <a name="resolution"></a>**Resolución**
 *Use el administrador de Hyper-V para aumentar la memoria asignada a esta máquina virtual a 1 GB como mínimo.*
 
 ### <a name="increase-the-memory-using-hyper-v-manager"></a>Aumentar la memoria mediante el administrador de Hyper-V
@@ -63,5 +63,5 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 Set-VMMemory <MyVM> -StartupBytes 1GB
 ```
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 [Set-VMMemory](/powershell/module/hyper-v/set-vmmemory)

@@ -1,17 +1,17 @@
 ---
 title: Máquinas virtuales de Ubuntu admitidas en Hyper-V
-description: Enumera las características y servicios de integración de Linux que se incluyen en cada versión
+description: Enumera las características y los servicios de integración de Ubuntu/Linux incluidos en cada versión
 ms.topic: article
 ms.assetid: 95ea5f7c-25c6-494b-8ffd-2a77f631ee94
 ms.author: benarm
 author: BenjaminArmstrong
 ms.date: 08/29/2020
-ms.openlocfilehash: 40064ac11b9e6d27ea864ba286278179a2ebd4bf
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 4e1384d372714932d45f9274d8c6e98eb42a5a04
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96864025"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834820"
 ---
 # <a name="supported-ubuntu-virtual-machines-on-hyper-v"></a>Máquinas virtuales de Ubuntu admitidas en Hyper-V
 
@@ -129,7 +129,7 @@ El siguiente mapa de distribución de características indica las característic
        # sudo mv shimx64.efi bootx64.efi
        ```
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 
 * [Compatibilidad con máquinas virtuales de alta y Red Hat Enterprise Linux en Hyper-V](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
 

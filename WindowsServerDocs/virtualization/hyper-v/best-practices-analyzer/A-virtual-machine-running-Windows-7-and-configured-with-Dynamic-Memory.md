@@ -1,17 +1,17 @@
 ---
 title: Una máquina virtual que ejecuta Windows 7 y que está configurada con Memoria dinámica debe usar los valores recomendados para la configuración de memoria
-description: Proporciona instrucciones para resolver el problema que informa esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información acerca de qué hacer cuando una o varias máquinas virtuales están configuradas para usar Memoria dinámica con menos de la cantidad de memoria recomendada para Windows 7.
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: c3a0292a-a619-4d1c-8f9d-391c741411c1
 ms.date: 8/16/2016
-ms.openlocfilehash: eb27e0ed37f1699013d18b3666fd00da7e90a521
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: c8fe3bda2977f01794d4f51d43c35085a4514525
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746360"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834200"
 ---
 # <a name="a-virtual-machine-running-windows-7-and-configured-with-dynamic-memory-should-use-recommended-values-for-memory-settings"></a>Una máquina virtual que ejecuta Windows 7 y que está configurada con Memoria dinámica debe usar los valores recomendados para la configuración de memoria
 

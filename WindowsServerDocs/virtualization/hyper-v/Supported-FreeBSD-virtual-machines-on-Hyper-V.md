@@ -1,17 +1,17 @@
 ---
 title: Máquinas virtuales de FreeBSD compatibles en Hyper-V
-description: Enumera las características y servicios de integración de Linux que se incluyen en cada versión
+description: Enumera las características y los servicios de integración de FreeBSD/Linux incluidos en cada versión
 ms.topic: article
 ms.assetid: 930e758f-bd50-46b4-a3a4-9857110f17b4
 ms.author: benarm
 author: BenjaminArmstrong
 ms.date: 04/07/2020
-ms.openlocfilehash: bf4b1aeb701741a7f58f3d186ffe7861cdd1e8e0
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: f79c2c09f5fdce570ad6e61037756dab0d4056a1
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746410"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834870"
 ---
 # <a name="supported-freebsd-virtual-machines-on-hyper-v"></a>Máquinas virtuales de FreeBSD compatibles en Hyper-V
 
@@ -30,7 +30,7 @@ El siguiente mapa de distribución de características indica las característic
 |**Característica**|**Versión del sistema operativo Windows Server**|**12-12,1**|**11.1 a 11.3**|**11,0**|**10,3**|**10.2**|**10,0-10,1**|**9,1-9,3, 8,4**|
 |-|-|-|-|-|-|-|-|-|
 |**Disponibilidad**||Integrado|Integrado|Integrado|Integrado|Integrado|Integrado|[Puertos](https://svnweb.freebsd.org/ports/branches/2015Q1/emulators/hyperv-is/) |
-|**[Principal](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|**[Core](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Windows Server 2016 hora precisa|2019, 2016|&#10004;|&#10004;||||||
 |**[Redes](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**||||||||
 |Tramas gigantes|2019, 2016, 2012 R2|&#10004; Nota 3|&#10004; Nota 3|&#10004; Nota 3|&#10004; Nota 3|&#10004; Nota 3|&#10004; Nota 3|&#10004; Nota 3|
@@ -50,7 +50,7 @@ El siguiente mapa de distribución de características indica las característic
 |**[Memoria](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**|||||||||
 |Compatibilidad con el kernel PAE|2019, 2016, 2012 R2||||||||
 |Configuración de la brecha de MMIO|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|Memoria dinámica: agregar en caliente|2019, 2016, 2012 R2||||||||
+|Memoria dinámica Hot-Add|2019, 2016, 2012 R2||||||||
 |Memoria dinámica: globos|2019, 2016, 2012 R2||||||||
 |Tamaño de memoria en tiempo de ejecución|2019, 2016||||||||
 |**[Vídeo](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**|||||||||

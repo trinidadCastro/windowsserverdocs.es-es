@@ -1,17 +1,17 @@
 ---
 title: Configurar una directiva para limitar el tráfico de replicación en la red
-description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información acerca de qué hacer cuando es posible que no haya un límite en la cantidad de ancho de banda de red que puede consumir la replicación.
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 82cb1aef-cdc3-4d0a-88d4-ef497ab79606
 ms.date: 8/16/2016
-ms.openlocfilehash: 18c1c1e586075dfb1ef477c1d3f21e549791464a
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 69a03e85dd410f1f3b59daaf97ff97c2db5c7d48
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746990"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834850"
 ---
 # <a name="configure-a-policy-to-throttle-the-replication-traffic-on-the-network"></a>Configurar una directiva para limitar el tráfico de replicación en la red
 

@@ -1,17 +1,17 @@
 ---
 title: Se recomienda la pertenencia al dominio para servidores que ejecutan Hyper-V
-description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información acerca de qué hacer cuando el servidor es miembro de un grupo de trabajo.
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 2f4578e5-0848-46b4-a50b-7dbd480b80bf
 ms.date: 8/16/2016
-ms.openlocfilehash: 6a813af7d5064f91870652e6b0073c5c73c62604
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: e6e17da7f23eed04800a4c839ce52791f6221f9c
+ms.sourcegitcommit: 42581433c0bb62e291d412ee9e13869b42e69a4b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90745670"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97845979"
 ---
 # <a name="domain-membership-is-recommended-for-servers-running-hyper-v"></a>Se recomienda la pertenencia al dominio para servidores que ejecutan Hyper-V
 

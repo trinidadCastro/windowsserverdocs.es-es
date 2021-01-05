@@ -1,17 +1,17 @@
 ---
 title: Use como mínimo la versión 3,0 del protocolo SMB para los recursos compartidos de archivos que almacenan archivos para máquinas virtuales.
-description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información acerca de qué hacer cuando los archivos de máquina virtual o los archivos de disco duro virtual se almacenan en un recurso compartido de archivos que no admite como mínimo la versión 3,0 del protocolo SMB.
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 4bb832b8-f1aa-4c1f-a0f2-324dd53553ea
 ms.date: 8/16/2016
-ms.openlocfilehash: a979035c5b58542865faf6254baf49815f81cc2d
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 783ba7b2e8b5dc83eb575ee395d85e58701c0b89
+ms.sourcegitcommit: 42581433c0bb62e291d412ee9e13869b42e69a4b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746790"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97846221"
 ---
 # <a name="use-at-least-smb-protocol-version-30-for-file-shares-that-store-files-for-virtual-machines"></a>Use como mínimo la versión 3,0 del protocolo SMB para los recursos compartidos de archivos que almacenan archivos para máquinas virtuales.
 
@@ -36,7 +36,7 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 
 \<list of virtual machines>
 
-## <a name="resolution"></a>**Solución**
+## <a name="resolution"></a>**Resolución**
 *Mueva los archivos a un recurso compartido de archivos que use como mínimo la versión 3,0 del protocolo SMB.*
 
 

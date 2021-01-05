@@ -1,17 +1,17 @@
 ---
 title: Las instantáneas de recuperación se deben quitar después de la conmutación por error
-description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información acerca de qué hacer cuando una máquina virtual conmutada por error tiene una o varias instantáneas de recuperación.
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 922115fa-e8dd-4055-aaf1-4a4437c5cf28
 ms.date: 8/16/2016
-ms.openlocfilehash: b30dbf9996f2406e3d260c825dbe2dbbc6918324
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: e37e59b8796913c2d46914834f4467e927f7e32b
+ms.sourcegitcommit: 42581433c0bb62e291d412ee9e13869b42e69a4b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90745550"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97846276"
 ---
 # <a name="recovery-snapshots-should-be-removed-after-failover"></a>Las instantáneas de recuperación se deben quitar después de la conmutación por error
 
@@ -36,8 +36,8 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 
 \<list of virtual machines>
 
-## <a name="resolution"></a>**Solución**
-*Para cada máquina virtual conmutada por error, use el cmdlet complete-VMFailover en Windows PowerShell para quitar las instantáneas de recuperación e indicar la finalización de la conmutación por error.*
+## <a name="resolution"></a>**Resolución**
+*Para cada máquina virtual conmutada por error, use el cmdlet Complete-VMFailover en Windows PowerShell para quitar las instantáneas de recuperación e indicar la finalización de la conmutación por error.*
 
 
 

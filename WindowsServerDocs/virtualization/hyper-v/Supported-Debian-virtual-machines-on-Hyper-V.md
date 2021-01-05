@@ -1,17 +1,17 @@
 ---
 title: Máquinas virtuales Debian admitidas en Hyper-V
-description: Enumera las características y servicios de integración de Linux que se incluyen en cada versión
+description: Enumera las características y los servicios de integración de Debin/Linux incluidos en cada versión
 ms.topic: article
 ms.assetid: 3cc62c10-02a3-4633-960c-23bf91a45bd5
 ms.author: benarm
 author: BenjaminArmstrong
 ms.date: 04/07/2020
-ms.openlocfilehash: 440d3c0dc51cc9e7d9c4d8abe439f4adb5da07dc
-ms.sourcegitcommit: faa5db4cdba4ad2b3a65533b6b49d960080923c9
+ms.openlocfilehash: 22d356f668f0e289a41bb43d738b03998b985ceb
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91752897"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834331"
 ---
 # <a name="supported-debian-virtual-machines-on-hyper-v"></a>Máquinas virtuales Debian admitidas en Hyper-V
 
@@ -49,13 +49,13 @@ El siguiente mapa de distribución de características indica las característic
 | **[Memoria](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**                                               |                                             |                       |                       |                       |                       |
 | Compatibilidad con el kernel PAE                                                                                                                           | 2019, 2016, 2012 R2          | &#10004;              | &#10004;              | &#10004;              | &#10004;              |
 | Configuración de la brecha de MMIO                                                                                                                    | 2019, 2016, 2012 R2                         | &#10004;              | &#10004;              | &#10004;              | &#10004;              |
-| Memoria dinámica: agregar en caliente                                                                                                                     | 2019, 2016, 2012 R2                   | &#10004; Nota 4       | &#10004; Nota 4       |                       |                       |
+| Memoria dinámica Hot-Add                                                                                                                     | 2019, 2016, 2012 R2                   | &#10004; Nota 4       | &#10004; Nota 4       |                       |                       |
 | Memoria dinámica: globos                                                                                                                  | 2019, 2016, 2012 R2                   | &#10004; Nota 4       | &#10004; Nota 4       |                       |                       |
 | Tamaño de memoria en tiempo de ejecución                                                                                                                        | 2019, 2016                                  | &#10004; Nota 4       | &#10004; Nota 4       |                       |                       |
-| **[Vídeos](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**                                                 |                                             |                       |                       |                       |                       |
+| **[Vídeo](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**                                                 |                                             |                       |                       |                       |                       |
 | Dispositivo de vídeo específico de Hyper-V                                                                                                                | 2019, 2016, 2012 R2          | &#10004;              | &#10004;              | &#10004;              |                       |
 | **[Varios](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**                                 |                                             |                       |                       |                       |                       |
-| Par clave-valor                                                                                                                               | 2019, 2016, 2012 R2          | &#10004; Nota 2       | &#10004; Nota 2       | &#10004; Nota 2       |                       |
+| Key-Value par                                                                                                                               | 2019, 2016, 2012 R2          | &#10004; Nota 2       | &#10004; Nota 2       | &#10004; Nota 2       |                       |
 | Interrupción no enmascarable                                                                                                                       | 2019, 2016, 2012 R2                         | &#10004;              | &#10004;              | &#10004;              |                       |
 | Copia de archivos de host a invitado                                                                                                                 | 2019, 2016, 2012 R2                         | &#10004; Nota 2       | &#10004; Nota 2       | &#10004; Nota 2       |                       |
 | comando lsvmbus                                                                                                                              | 2019, 2016, 2012 R2          |                       |                       |                       |                       |

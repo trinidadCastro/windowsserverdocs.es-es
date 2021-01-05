@@ -1,17 +1,17 @@
 ---
 title: La conmutación por error de prueba debe intentarse una vez completada la replicación inicial
-description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información sobre qué hacer cuando no haya ninguna conmutación por error de prueba una vez completada la replicación inicial.
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: cea7eeaa-c1a7-4f87-89be-d4e1208c546f
 ms.date: 8/16/2016
-ms.openlocfilehash: b41cd79ccbf0d04825d077da34e894fc9a17b10d
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 5f97d6c5d9a44691af22506008dd20cd6f7a45a4
+ms.sourcegitcommit: 42581433c0bb62e291d412ee9e13869b42e69a4b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746700"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97845847"
 ---
 # <a name="test-failover-should-be-attempted-after-initial-replication-is-complete"></a>La conmutación por error de prueba debe intentarse una vez completada la replicación inicial
 

@@ -1,17 +1,17 @@
 ---
 title: Configuración de sistemas operativos invitados para las copias de seguridad basadas en VSS para habilitar instantáneas coherentes con la aplicación para la réplica de Hyper-V
-description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información sobre qué hacer cuando las instantáneas coherentes con la aplicación requieren que los servicios de instantáneas de volumen (VSS) estén habilitados y configurados en los sistemas operativos invitados de las máquinas virtuales que participan en la replicación.
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 7638e996-d42d-47b8-a670-1e09e7183850
 ms.date: 8/16/2016
-ms.openlocfilehash: b6a7eec504282e63e0cb24efbd2cdc5f66849005
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: ca6b2656554f0f22a956159c770f24ad824462c6
+ms.sourcegitcommit: 42581433c0bb62e291d412ee9e13869b42e69a4b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746890"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97846086"
 ---
 # <a name="configure-guest-operating-systems-for-vss-based-backups-to-enable-application-consistent-snapshots-for-hyper-v-replica"></a>Configuración de sistemas operativos invitados para las copias de seguridad basadas en VSS para habilitar instantáneas coherentes con la aplicación para la réplica de Hyper-V
 

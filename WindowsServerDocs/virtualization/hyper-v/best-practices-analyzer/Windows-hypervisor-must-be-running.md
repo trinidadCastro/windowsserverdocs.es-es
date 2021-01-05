@@ -1,17 +1,17 @@
 ---
 title: El hipervisor de Windows debe estar en ejecución
-description: Proporciona instrucciones para resolver el problema que informa esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información acerca de qué hacer cuando el hipervisor de Windows no se está ejecutando.
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 501a9beb-c464-46c0-88c5-e3e7e3e70101
 ms.date: 10/03/2016
-ms.openlocfilehash: 75437680370672a1eef9fad2957f398ce4f267d7
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 12c8273d28266f02ff9af0fa5dd5975f3b764614
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90744826"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97833860"
 ---
 # <a name="windows-hypervisor-must-be-running"></a>El hipervisor de Windows debe estar en ejecución
 
@@ -22,7 +22,7 @@ ms.locfileid: "90744826"
 |**Sistema operativo**|Windows Server 2016|
 |**Producto/Característica**|Hyper-V|
 |**Gravedad**|Advertencia|
-|**Categoría**|Requisitos previos|
+|**Categoría**|Prerrequisitos|
 
 En las secciones siguientes, cursiva indica el texto de la interfaz de usuario que aparece en la herramienta de Analizador de procedimientos recomendados para este problema.
 
@@ -72,9 +72,9 @@ A continuación, compruebe el registro de eventos del hipervisor de Hyper-V. Si 
 
 #### <a name="to-check-the-event-logs"></a>Para comprobar los registros de eventos
 
-1.  Abra el Visor de eventos. Haga clic en **Inicio**, en **herramientas administrativas**y, a continuación, en **visor de eventos**.
+1.  Abra el Visor de eventos. Haga clic en **Inicio**, en **herramientas administrativas** y, a continuación, en **visor de eventos**.
 
-2.  Abra el registro de eventos del hipervisor de Hyper-V. En el panel de navegación, expanda **registros de aplicaciones y servicios**  >>  **Microsoft**  >>  **Windows**  >>  **Hyper-V-hipervisor**y, a continuación, haga clic en **operativo**.
+2.  Abra el registro de eventos del hipervisor de Hyper-V. En el panel de navegación, expanda **registros de aplicaciones y servicios**  >>  **Microsoft**  >>  **Windows**  >>  **Hyper-V-hipervisor** y, a continuación, haga clic en **operativo**.
 
 3.  Si el hipervisor de Windows se está ejecutando, no es necesario realizar ninguna otra acción. Si el hipervisor de Windows no se está ejecutando, haga lo siguiente:
 

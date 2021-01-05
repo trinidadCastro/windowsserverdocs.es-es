@@ -1,17 +1,17 @@
 ---
 title: Las conmutaciones por error de prueba deben realizarse al menos mensualmente para comprobar que la conmutación por error se realizará correctamente y que las cargas de trabajo de máquina virtual funcionarán según lo previsto tras la conmutación por error
-description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información sobre qué hacer cuando no haya ninguna conmutación por error de prueba en al menos un mes.
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 57a8aa50-e59e-4a4b-8571-1099d5a8eee4
 ms.date: 8/16/2016
-ms.openlocfilehash: 4ec97d55f1a6caf33b1b46d0a6bdb4e99005c971
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: bf2b1f8bae67c2303fe19a92ac15a2cfdb46511c
+ms.sourcegitcommit: 42581433c0bb62e291d412ee9e13869b42e69a4b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90744098"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97845846"
 ---
 # <a name="test-failovers-should-be-carried-out-at-least-monthly-to-verify-that-failover-will-succeed-and-that-virtual-machine-workloads-will-operate-as-expected-after-failover"></a>Las conmutaciones por error de prueba deben realizarse al menos mensualmente para comprobar que la conmutación por error se realizará correctamente y que las cargas de trabajo de máquina virtual funcionarán según lo previsto tras la conmutación por error
 

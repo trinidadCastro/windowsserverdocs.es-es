@@ -1,17 +1,17 @@
 ---
 title: Todos los adaptadores de red virtuales deben estar habilitados
-description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información acerca de qué hacer cuando uno o varios adaptadores de red virtuales asociados a un adaptador de red físico están deshabilitados en el sistema operativo de administración.
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: b17d647d-a34a-44de-ada6-01a2bf5eeb48
 ms.date: 8/16/2016
-ms.openlocfilehash: 48417108f780c8b145613b110bb51681bd69bdc6
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 6b3fcd786a1f7f294b7c35a4dc0a8b3cf0971c83
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746310"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834760"
 ---
 # <a name="all-virtual-network-adapters-should-be-enabled"></a>Todos los adaptadores de red virtuales deben estar habilitados
 

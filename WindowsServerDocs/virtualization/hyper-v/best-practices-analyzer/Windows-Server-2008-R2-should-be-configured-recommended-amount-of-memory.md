@@ -1,17 +1,17 @@
 ---
 title: Windows Server 2008 R2 debe configurarse con la cantidad de memoria recomendada
-description: Proporciona instrucciones para resolver el problema que informa esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información acerca de qué hacer cuando una máquina virtual que ejecuta Windows Server 2008 R2 está configurada con menos de la cantidad de RAM recomendada, que es 2 GB.
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 26872519-ccf0-4757-827f-8df2a7a2b9f9
 ms.date: 8/16/2016
-ms.openlocfilehash: 771da0bbad31898a57f08e9fa55e43c5d3b5bd1d
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 183f09c40a3d62afc46cc72e12de20adb2b231a4
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865884"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834220"
 ---
 # <a name="windows-server-2008-r2-should-be-configured-with-the-recommended-amount-of-memory"></a>Windows Server 2008 R2 debe configurarse con la cantidad de memoria recomendada
 
@@ -28,7 +28,7 @@ Para más información acerca de los análisis y los procedimientos recomendados
 
 En las secciones siguientes, cursiva indica el texto de la interfaz de usuario que aparece en la herramienta de Analizador de procedimientos recomendados para este problema.
 
-## <a name="issue"></a>Incidencia
+## <a name="issue"></a>Problema
 
 *Una máquina virtual que ejecuta Windows Server 2008 R2 está configurada con menos de la cantidad de RAM recomendada, que es 2 GB.*
 
@@ -38,7 +38,7 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 
 \<list of virtual machine names>
 
-## <a name="resolution"></a>Resolución
+## <a name="resolution"></a>Solución
 
 *Use el administrador de Hyper-V para aumentar la memoria asignada a esta máquina virtual a 2 GB como mínimo.*
 
@@ -66,5 +66,5 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 Set-VMMemory <MyVM> -StartupBytes 2GB
 ```
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 [Set-VMMemory](/powershell/module/hyper-v/set-vmmemory)

@@ -1,17 +1,17 @@
 ---
 title: Una máquina virtual que ejecuta Windows Server 2008 y está configurada con Memoria dinámica debe usar los valores recomendados para la configuración de memoria
-description: Proporciona instrucciones para resolver el problema que informa esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información sobre cómo usar el administrador de Hyper-V o Windows PowerShell para aumentar la cantidad mínima de memoria hasta 256 MB y la memoria de inicio y la memoria máxima al menos 512 MB.
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: f4c05a2c-52d0-4fa2-987d-37a6ed667134
 ms.date: 8/16/2016
-ms.openlocfilehash: 34c5d5d22ffa08f7bfcedc593267313957ded535
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 2f7ffa9b73c69b114d90090c7de88fe03f00e0fc
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90745780"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834100"
 ---
 # <a name="a-virtual-machine-running-windows-server-2008-and-configured-with-dynamic-memory-should-use-recommended-values-for-memory-settings"></a>Una máquina virtual que ejecuta Windows Server 2008 y está configurada con Memoria dinámica debe usar los valores recomendados para la configuración de memoria
 

@@ -1,17 +1,17 @@
 ---
 title: Windows 7 debe configurarse con al menos la cantidad mínima de memoria
-description: Proporciona instrucciones para resolver el problema que informa esta regla de Analizador de procedimientos recomendados ".
+description: Obtenga información acerca de qué hacer cuando una máquina virtual que ejecuta Windows 7 está configurada con menos de la cantidad mínima de RAM, que es 512 MB.
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 1b81ec0b-ceca-4fba-83ea-90d5f1d9bda8
 ms.date: 8/16/2016
-ms.openlocfilehash: c2bd302fb5adafe0bb1d9252cbac3d6ba6a6a8ac
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: e8f24fd0ebb0bcd40efcc11b4ba003339055077b
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96864614"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834040"
 ---
 # <a name="windows-7-should-be-configured-with-at-least-the-minimum-amount-of-memory"></a>Windows 7 debe configurarse con al menos la cantidad mínima de memoria
 
@@ -28,7 +28,7 @@ Para más información acerca de los análisis y los procedimientos recomendados
 
 En las secciones siguientes, cursiva indica el texto de la interfaz de usuario que aparece en la herramienta de Analizador de procedimientos recomendados para este problema.
 
-## <a name="issue"></a>Incidencia
+## <a name="issue"></a>Problema
 
 *Una máquina virtual que ejecuta Windows 7 se configura con menos de la cantidad mínima de RAM, que es 512 MB.*
 
@@ -38,7 +38,7 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 ```
 <list of virtual machine names>
 ```
-## <a name="resolution"></a>Resolución
+## <a name="resolution"></a>Solución
 
 *Use el administrador de Hyper-V para aumentar la memoria asignada a esta máquina virtual al menos 512 MB.*
 
@@ -66,5 +66,5 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 Set-VMMemory <MyVM> -StartupBytes 512MB
 ```
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 [Set-VMMemory](/powershell/module/hyper-v/set-vmmemory)

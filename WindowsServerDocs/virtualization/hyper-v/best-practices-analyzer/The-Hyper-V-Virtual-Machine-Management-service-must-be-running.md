@@ -1,17 +1,17 @@
 ---
 title: El servicio de administración de máquinas virtuales de Hyper-V debe estar en ejecución
-description: Proporciona instrucciones para resolver el problema que informa esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información acerca de qué hacer cuando el servicio necesario para administrar máquinas virtuales no se está ejecutando.
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: f44d6887-6458-4438-9d93-574587e3f7d1
 ms.date: 10/03/2016
-ms.openlocfilehash: 6fe2f95821b23f98931b7cecc3c59dc58f0f5e37
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 1fc629002f17861c496e6aa6574cf2aead4baf46
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746240"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834350"
 ---
 # <a name="the-hyper-v-virtual-machine-management-service-must-be-running"></a>El servicio de administración de máquinas virtuales de Hyper-V debe estar en ejecución
 
@@ -24,7 +24,7 @@ Para más información acerca de los análisis y los procedimientos recomendados
 |**Sistema operativo**|Windows Server 2016|
 |**Producto/Característica**|Hyper-V|
 |**Gravedad**|Error|
-|**Categoría**|Requisitos previos|
+|**Categoría**|Prerrequisitos|
 
 En las secciones siguientes, cursiva indica el texto de la interfaz de usuario que aparece en la herramienta de Analizador de procedimientos recomendados para este problema.
 
@@ -49,13 +49,13 @@ Y si no puede ver la consola MMC de Hyper-V desde el menú Inicio, debe instalar
 Para instalar las herramientas de administración de Hyper-V:
 >
 > - En Windows Server, abra Administrador del servidor y use el Asistente para agregar roles y características. Para obtener más información, vea [instalar el rol Hyper-V en Windows Server 2016](../get-started/Install-the-Hyper-V-role-on-Windows-Server.md).  También puede usar PowerShell para instalar las herramientas ( `Install-WindowsFeature -Name Hyper-V-Tools, Hyper-V-PowerShell` )
-> - En Windows, desde el escritorio, empiece a escribir **programas**, haga clic en **programas y características** (panel de control) > **activar o desactivar las características de Windows en**  >  herramientas de administración de Hyper **-v**  >  **Hyper-V Management Tools**. A continuación, haga clic en **Aceptar**.
+> - En Windows, desde el escritorio, empiece a escribir **programas**, haga clic en **programas y características** (panel de control) > **activar o desactivar las características de Windows en**  >  herramientas de administración de Hyper **-v**  >  . A continuación, haga clic en **Aceptar**.
 
 ### <a name="to-reconfigure-the-service-to-start-automatically-using-the-services-desktop-app"></a>Para volver a configurar el servicio para que se inicie automáticamente con la aplicación de escritorio servicios
 
-1.  Abra la aplicación de escritorio servicios. (Haga clic en **Inicio**, haga clic en el cuadro **Iniciar búsqueda** , escriba **Services. msc**y, a continuación, presione Entrar).
+1.  Abra la aplicación de escritorio servicios. (Haga clic en **Inicio**, haga clic en el cuadro **Iniciar búsqueda** , escriba **Services. msc** y, a continuación, presione Entrar).
 
-2.  En el panel de detalles, haga clic con el botón secundario en **Administración de máquinas virtuales de Hyper-V**y, a continuación, haga clic en **propiedades**.
+2.  En el panel de detalles, haga clic con el botón secundario en **Administración de máquinas virtuales de Hyper-V** y, a continuación, haga clic en **propiedades**.
 
 3.  En la pestaña **General** , en tipo de **Inicio** , haga clic en **automático**.
 

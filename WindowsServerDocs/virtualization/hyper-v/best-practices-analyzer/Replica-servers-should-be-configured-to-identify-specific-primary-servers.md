@@ -1,17 +1,17 @@
 ---
 title: Los servidores de réplica deben configurarse para identificar servidores principales específicos autorizados para enviar el tráfico de replicación.
-description: Proporciona instrucciones para resolver el problema que informa esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información acerca de qué hacer cuando, como está configurado, el servidor réplica acepta el tráfico de replicación de todos los servidores principales y los almacena en una sola ubicación.
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 0aeb1f4b-2e75-430b-9557-fe64738c4992
 ms.date: 8/16/2016
-ms.openlocfilehash: 2771a9814fb9061756626466f446ca6131580dc2
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 542c58e3699a1132361f8698de6a72bbf967a5ca
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96864664"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834322"
 ---
 # <a name="replica-servers-should-be-configured-to-identify-specific-primary-servers-authorized-to-send-replication-traffic"></a>Los servidores de réplica deben configurarse para identificar servidores principales específicos autorizados para enviar el tráfico de replicación.
 
@@ -28,13 +28,13 @@ Para más información sobre los análisis y los procedimientos recomendados, ve
 
 En las secciones siguientes, cursiva indica el texto de la interfaz de usuario que aparece en la herramienta de Analizador de procedimientos recomendados para este problema.
 
-## <a name="issue"></a>Incidencia
+## <a name="issue"></a>Problema
 *Tal y como se ha configurado, este servidor de réplica acepta el tráfico de replicación de todos los servidores principales y los almacena en una sola ubicación.*
 
 ### <a name="impact"></a>Impacto
 *Toda la replicación de todos los servidores principales se almacena en una ubicación, lo que puede incluir problemas de privacidad o seguridad.*
 
-## <a name="resolution"></a>Resolución
+## <a name="resolution"></a>Solución
 *Use el administrador de Hyper-V para crear nuevas entradas de autorización para los servidores principales específicos y especificar ubicaciones de almacenamiento separadas para cada una de ellas. Puede usar caracteres comodín para agrupar los servidores principales en conjuntos para cada entrada de autorización.*
 
 #### <a name="create-authorization-entries-using-hyper-v-manager"></a>Crear entradas de autorización mediante el administrador de Hyper-V
@@ -55,7 +55,7 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 
     -   Especifique una ubicación dedicada para almacenar solo los archivos del servidor.
 
-7.  Haga clic en **OK**.
+7.  Haga clic en **Aceptar**.
 
 8.  Repita el procedimiento para cada servidor principal.
 
@@ -79,5 +79,5 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 New-VMReplicationAuthorizationEntry server01.domain01.contoso.com D:\ReplicaVMStorage DEFAULT
 ```
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 [New-VMReplicationAuthorizationEntry](/powershell/module/hyper-v/new-vmreplicationauthorizationentry)

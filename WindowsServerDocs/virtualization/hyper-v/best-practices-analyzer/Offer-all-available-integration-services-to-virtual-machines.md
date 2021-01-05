@@ -1,17 +1,17 @@
 ---
 title: Ofrecer todos los servicios de integración disponibles a las máquinas virtuales
-description: Proporciona instrucciones para resolver el problema que informa esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información acerca de qué hacer cuando uno o varios servicios de integración disponibles no están habilitados en las máquinas virtuales.
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 2c4b2043-ad81-495e-aa7a-467f813bb3d2
 ms.date: 8/16/2016
-ms.openlocfilehash: 1343761ae9e0982d25133bd429218c8fe31aadbc
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 0c618684e66f9a0af55e160ede8a263781d307a5
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746260"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97833730"
 ---
 # <a name="offer-all-available-integration-services-to-virtual-machines"></a>Ofrecer todos los servicios de integración disponibles a las máquinas virtuales
 

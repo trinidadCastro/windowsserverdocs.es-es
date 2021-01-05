@@ -1,17 +1,17 @@
 ---
 title: Oracle Linux compatibles con máquinas virtuales en Hyper-V
-description: Enumera las características y servicios de integración de Linux que se incluyen en cada versión
+description: Enumera el Oracle Linux Integration Services y las características incluidas en cada versión
 ms.topic: article
 ms.assetid: c02fdb5b-62f3-43cb-a190-ab74b3ebcf77
 ms.author: benarm
 author: BenjaminArmstrong
 ms.date: 06/05/2020
-ms.openlocfilehash: e4cf39e9c96a92df3962fa1a8fc2493c3022d898
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: ce31296712d23aaf30525eeec9a1e8b2c366d84f
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96866414"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97833850"
 ---
 # <a name="supported-oracle-linux-virtual-machines-on-hyper-v"></a>Oracle Linux compatibles con máquinas virtuales en Hyper-V
 
@@ -1352,7 +1352,7 @@ Esta serie solo tiene kernels de 64 bits.
     La descarga de Integration Services de Linux se puede aplicar a las máquinas virtuales de generación 2 existentes, pero no a la capacidad de generación 2.
 
 
-Vea también
+Consulte también
 
 * [Set-VMFirmware](/powershell/module/hyper-v/set-vmfirmware)
 

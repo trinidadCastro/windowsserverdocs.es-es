@@ -1,17 +1,17 @@
 ---
 title: Al menos una red para el tráfico de migración en vivo debe tener una velocidad de vínculo de al menos 1 Gbps.
-description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información acerca de qué hacer cuando al menos una de las redes para el tráfico de migración en vivo tiene una velocidad de vínculo de al menos 1 Gbps.
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 5714df3f-f810-4618-8c93-e24881651100
 ms.date: 8/16/2016
-ms.openlocfilehash: cf1f09a635d6f6a46ee2a0bab2de53c898af9084
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: e18b9c259963c9a6ab1a3495f517e05a522be0c2
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746300"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834750"
 ---
 # <a name="at-least-one-network-for-live-migration-traffic-should-have-a-link-speed-of-at-least-1-gbps"></a>Al menos una red para el tráfico de migración en vivo debe tener una velocidad de vínculo de al menos 1 Gbps.
 

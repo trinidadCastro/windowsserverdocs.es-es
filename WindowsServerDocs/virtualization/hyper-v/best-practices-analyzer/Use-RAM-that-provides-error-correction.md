@@ -1,17 +1,17 @@
 ---
 title: Usar RAM que proporcione corrección de errores
-description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información acerca de qué hacer cuando la RAM en uso en este equipo no es la RAM de corrección de errores (ECC).
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 67eb6cef-b045-4748-90e1-406af5345d6a
 ms.date: 8/16/2016
-ms.openlocfilehash: 818f7400b8ada5c92bc9f780c64a83d719cc13ee
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 486364c56134754afc94a4e125f40dead6651581
+ms.sourcegitcommit: 42581433c0bb62e291d412ee9e13869b42e69a4b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746820"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97846320"
 ---
 # <a name="use-ram-that-provides-error-correction"></a>Usar RAM que proporcione corrección de errores
 

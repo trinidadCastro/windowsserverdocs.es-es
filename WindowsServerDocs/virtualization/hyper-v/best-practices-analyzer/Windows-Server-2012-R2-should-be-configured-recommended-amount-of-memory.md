@@ -1,17 +1,17 @@
 ---
 title: Windows Server 2012 R2 debe configurarse con la cantidad de memoria recomendada
-description: Proporciona instrucciones para resolver el problema que informa esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información acerca de qué hacer cuando una máquina virtual que ejecuta Windows Server 2012 R2 está configurada con menos de la cantidad de RAM recomendada, que es 2 GB.
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: b383a3c9-3ab6-442e-abd8-0942a32b60f8
 ms.date: 8/16/2016
-ms.openlocfilehash: 8b4b51f1e143fa3e1879cc008aae30423e775a0d
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 61087b7a6dca280f06148f6e3e25de4781e986ad
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865854"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97833871"
 ---
 # <a name="windows-server-2012-r2-should-be-configured-with-the-recommended-amount-of-memory"></a>Windows Server 2012 R2 debe configurarse con la cantidad de memoria recomendada
 
@@ -36,7 +36,7 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 
 \<list of virtual machines>
 
-## <a name="resolution"></a>**Solución**
+## <a name="resolution"></a>**Resolución**
 *Use el administrador de Hyper-V para aumentar la memoria asignada a esta máquina virtual a 2 GB como mínimo.*
 
 ### <a name="increase-the-memory-using-hyper-v-manager"></a>Aumentar la memoria mediante el administrador de Hyper-V
@@ -63,5 +63,5 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 Set-VMMemory <MyVM> -StartupBytes 2GB
 ```
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 [Set-VMMemory](/powershell/module/hyper-v/set-vmmemory)

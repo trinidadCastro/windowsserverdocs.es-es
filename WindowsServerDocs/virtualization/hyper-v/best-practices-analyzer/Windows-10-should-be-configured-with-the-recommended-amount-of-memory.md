@@ -1,17 +1,17 @@
 ---
 title: Windows 10 debe configurarse con la cantidad de memoria recomendada
-description: Proporciona instrucciones para resolver el problema que informa esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información acerca de qué hacer cuando una máquina virtual que ejecuta Windows 10 está configurada con menos de la cantidad de RAM recomendada, que es 1 GB.
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 0c810b82-b06a-4382-b598-5c642e8534be
 ms.date: 8/16/2016
-ms.openlocfilehash: ffe4b2060b7e57a8c70b00f0157c8fba10a093df
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 52339d59afbd7d6159e11d48d3d3eff7b2513ea4
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865914"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97833760"
 ---
 # <a name="windows-10-should-be-configured-with-the-recommended-amount-of-memory"></a>Windows 10 debe configurarse con la cantidad de memoria recomendada
 
@@ -36,7 +36,7 @@ En las secciones siguientes se proporcionan detalles sobre el problema específi
 ```
 <list of virtual machines>
 ```
-## <a name="resolution"></a>**Solución**
+## <a name="resolution"></a>**Resolución**
 *Use el administrador de Hyper-V para aumentar la memoria asignada a esta máquina virtual a 1 GB como mínimo.*
 
 #### <a name="increase-the-memory-using-hyper-v-manager"></a>Aumentar la memoria mediante el administrador de Hyper-V
@@ -63,5 +63,5 @@ En las secciones siguientes se proporcionan detalles sobre el problema específi
 Set-VMMemory <MyVM> -StartupBytes 1GB
 ```
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 [Set-VMMemory](/powershell/module/hyper-v/set-vmmemory)

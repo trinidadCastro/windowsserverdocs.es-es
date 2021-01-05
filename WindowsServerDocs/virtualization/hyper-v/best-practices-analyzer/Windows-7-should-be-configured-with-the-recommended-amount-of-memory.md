@@ -1,17 +1,17 @@
 ---
 title: Windows 7 debe configurarse con la cantidad de memoria recomendada
-description: Proporciona instrucciones para resolver el problema que informa esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información acerca de qué hacer cuando una máquina virtual que ejecuta Windows 7 está configurada con menos de la cantidad de RAM recomendada, que es 1 GB.
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: d77d648c-6e26-43fa-be0a-6eb4b28f9cb4
 ms.date: 8/16/2016
-ms.openlocfilehash: 4aa94d0b7fd06702e0aa7e53eb945e9736950476
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 96ce80f1827f0ab78b3230d507c9e60ec2198acd
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96866044"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834270"
 ---
 # <a name="windows-7-should-be-configured-with-the-recommended-amount-of-memory"></a>Windows 7 debe configurarse con la cantidad de memoria recomendada
 
@@ -28,7 +28,7 @@ Para más información acerca de los análisis y los procedimientos recomendados
 
 En las secciones siguientes, cursiva indica el texto de la interfaz de usuario que aparece en la herramienta de Analizador de procedimientos recomendados para este problema.
 
-## <a name="issue"></a>Incidencia
+## <a name="issue"></a>Problema
 
 *Una máquina virtual que ejecuta Windows 7 está configurada con menos de la cantidad de RAM recomendada, que es 1 GB.*
 
@@ -38,7 +38,7 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 ```
 <list of virtual machine names>
 ```
-## <a name="resolution"></a>Resolución
+## <a name="resolution"></a>Solución
 
 *Use el administrador de Hyper-V para aumentar la memoria asignada a esta máquina virtual a 1 GB como mínimo.*
 
@@ -66,5 +66,5 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 Set-VMMemory <MyVM> -StartupBytes 1GB
 ```
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 [Set-VMMemory](/powershell/module/hyper-v/set-vmmemory)

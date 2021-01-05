@@ -1,17 +1,17 @@
 ---
 title: Asegúrese de que hay suficiente espacio en disco físico disponible cuando las máquinas virtuales usan discos duros virtuales de expansión dinámica
-description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información acerca de qué hacer cuando una o varias máquinas virtuales usan discos duros virtuales de expansión dinámica.
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 9e3e3e64-4b3a-4b9d-acf1-e4df61a04f1e
 ms.date: 8/16/2016
-ms.openlocfilehash: 1e67b51aa3c41c9642a8972d25e0501b26e91cd5
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: cb4d3bbb21850f234fc9ff552612863970f89efc
+ms.sourcegitcommit: 42581433c0bb62e291d412ee9e13869b42e69a4b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746870"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97846227"
 ---
 # <a name="ensure-sufficient-physical-disk-space-is-available-when-virtual-machines-use-dynamically-expanding-virtual-hard-disks"></a>Asegúrese de que hay suficiente espacio en disco físico disponible cuando las máquinas virtuales usan discos duros virtuales de expansión dinámica
 

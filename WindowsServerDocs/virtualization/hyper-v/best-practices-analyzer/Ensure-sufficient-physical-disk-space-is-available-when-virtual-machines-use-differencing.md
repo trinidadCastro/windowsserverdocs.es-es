@@ -1,17 +1,17 @@
 ---
 title: Asegúrese de que hay suficiente espacio en disco físico disponible cuando las máquinas virtuales usan discos duros virtuales de diferenciación
-description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información acerca de qué hacer cuando una o varias máquinas virtuales usan discos duros virtuales de diferenciación.
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 71f99aab-f994-4022-9da0-d661965b95ac
 ms.date: 8/16/2016
-ms.openlocfilehash: d5a8c5d38aa47845a88077eaa6b785dc5ebb148c
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: fe4cf45a9b93ce0a5277dcd6e108205a74ffca0b
+ms.sourcegitcommit: 42581433c0bb62e291d412ee9e13869b42e69a4b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746280"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97846102"
 ---
 # <a name="ensure-sufficient-physical-disk-space-is-available-when-virtual-machines-use-differencing-virtual-hard-disks"></a>Asegúrese de que hay suficiente espacio en disco físico disponible cuando las máquinas virtuales usan discos duros virtuales de diferenciación
 

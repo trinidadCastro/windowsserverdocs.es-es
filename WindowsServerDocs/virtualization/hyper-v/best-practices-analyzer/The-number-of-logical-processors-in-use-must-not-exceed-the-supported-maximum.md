@@ -1,17 +1,17 @@
 ---
 title: El número de procesadores lógicos en uso no debe superar el máximo admitido
-description: Proporciona instrucciones para resolver el problema que informa esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información acerca de qué hacer cuando el servidor está configurado con demasiados procesadores lógicos.
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 66df8b02-91d1-424b-8934-a39c214d530e
 ms.date: 8/16/2016
-ms.openlocfilehash: 580d04af45416e08e536d815390be0e45b760312
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 469f1a816be5b9ebd714a1c52b279111fed46da0
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746150"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97833810"
 ---
 # <a name="the-number-of-logical-processors-in-use-must-not-exceed-the-supported-maximum"></a>El número de procesadores lógicos en uso no debe superar el máximo admitido
 
@@ -40,7 +40,7 @@ En las secciones siguientes, cursiva indica el texto que aparece en la herramien
 
 *Quite algunos procesadores de este equipo o use msconfig para limitar el número de procesadores disponibles.*
 
-Vea las instrucciones siguientes para usar msconfig. Para obtener más información acerca de cómo quitar procesadores, consulte las instrucciones suministradas con el equipo o póngase en contacto con el fabricante del hardware. Para obtener más información acerca de las configuraciones máximas admitidas para Hyper-V, consulte [planear la escalabilidad de Hyper-v en Windows Server 2016](../plan/plan-hyper-v-scalability-in-windows-server.md).
+Vea las instrucciones siguientes para usar MSConfig. Para obtener más información acerca de cómo quitar procesadores, consulte las instrucciones suministradas con el equipo o póngase en contacto con el fabricante del hardware. Para obtener más información acerca de las configuraciones máximas admitidas para Hyper-V, consulte [planear la escalabilidad de Hyper-v en Windows Server 2016](../plan/plan-hyper-v-scalability-in-windows-server.md).
 
 ### <a name="to-limit-the-number-of-available-processors"></a>Para limitar el número de procesadores disponibles
 

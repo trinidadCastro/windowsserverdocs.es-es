@@ -1,17 +1,17 @@
 ---
 title: Evite configurar máquinas virtuales para permitir comandos SCSI sin filtrar
-description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información acerca de qué hacer cuando una máquina virtual está configurada para permitir comandos SCSI sin filtrar.
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: dd4a3d78-a77f-451e-a383-d5cf45ea17cf
 ms.date: 8/16/2016
-ms.openlocfilehash: 95d7fa223371aa3dbc3b66efcfefed217eed5216
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 70282ef6367c711e04bf5d29ee10303841019b2c
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90747090"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834700"
 ---
 # <a name="avoid-configuring-virtual-machines-to-allow-unfiltered-scsi-commands"></a>Evite configurar máquinas virtuales para permitir comandos SCSI sin filtrar
 

@@ -1,17 +1,17 @@
 ---
 title: Una máquina virtual que ejecuta Windows Vista y está configurada con Memoria dinámica debe usar los valores recomendados para la configuración de memoria
-description: Proporciona instrucciones para resolver el problema que informa esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información acerca de qué hacer cuando una o varias máquinas virtuales están configuradas para usar Memoria dinámica con menos de la cantidad de memoria recomendada para Windows Vista.
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: c35f08b2-e624-4811-a159-c1e5bb6d5281
 ms.date: 8/16/2016
-ms.openlocfilehash: 9cd96733de8bcc61195bf3d13d96cdea338643b6
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 9c6435ba203e834cfc17e52870f642e27e6f6a7a
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746530"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834860"
 ---
 # <a name="a-virtual-machine-running-windows-vista-and-configured-with-dynamic-memory-should-use-recommended-values-for-memory-settings"></a>Una máquina virtual que ejecuta Windows Vista y está configurada con Memoria dinámica debe usar los valores recomendados para la configuración de memoria
 

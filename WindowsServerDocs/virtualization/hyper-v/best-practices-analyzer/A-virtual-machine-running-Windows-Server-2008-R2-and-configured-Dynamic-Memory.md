@@ -1,17 +1,17 @@
 ---
 title: Una máquina virtual que ejecute Windows Server 2008 R2 y que esté configurada con Memoria dinámica debe usar los valores recomendados para la configuración de memoria
-description: Proporciona instrucciones para resolver el problema que informa esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información acerca de qué hacer cuando una o varias máquinas virtuales están configuradas para usar Memoria dinámica con menos de la cantidad de memoria recomendada para Windows Server 2008 R2.
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 81b5034a-31ea-4397-bcd0-7b9ef50beb94
 ms.date: 8/16/2016
-ms.openlocfilehash: c92989ee8816c5315af85d106aa7a761881f2420
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: fcc4303a6e28fefca9b4a191fadd758f65069316
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746330"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834130"
 ---
 # <a name="a-virtual-machine-running-windows-server-2008-r2-and-configured-with-dynamic-memory-should-use-recommended-values-for-memory-settings"></a>Una máquina virtual que ejecute Windows Server 2008 R2 y que esté configurada con Memoria dinámica debe usar los valores recomendados para la configuración de memoria
 

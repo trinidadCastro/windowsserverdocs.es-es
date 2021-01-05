@@ -1,17 +1,17 @@
 ---
 title: Configure al menos la cantidad de memoria necesaria para una máquina virtual que ejecute Windows Server 2008 R2 y que esté habilitada para Memoria dinámica
-description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información acerca de qué hacer cuando una o varias máquinas virtuales están configuradas para usar Memoria dinámica con menos de la cantidad de memoria necesaria para Windows Server 2008 R2.
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: db0bff4c-39fe-49c1-903a-1f2a0b0db891
 ms.date: 8/16/2016
-ms.openlocfilehash: eaafc5ba990e30880878c540642b32d2e81f63e0
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 3ccfb73448824f6f35d8b3831f6d596932010737
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746940"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834451"
 ---
 # <a name="configure-at-least-the-required-amount-of-memory-for-a-virtual-machine-running-windows-server-2008-r2-and-enabled-for-dynamic-memory"></a>Configure al menos la cantidad de memoria necesaria para una máquina virtual que ejecute Windows Server 2008 R2 y que esté habilitada para Memoria dinámica
 

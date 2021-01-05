@@ -1,17 +1,17 @@
 ---
 title: Evitar el uso de puntos de control en una máquina virtual que ejecuta una carga de trabajo de servidor en un entorno de producción
-description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información acerca de qué hacer cuando se ha encontrado una máquina virtual con uno o varios puntos de control.
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 1be75890-d316-495a-b9b7-be75fc1aac10
 ms.date: 8/16/2016
-ms.openlocfilehash: da0315ab06d4678d3cedc51092be7160d301ac4d
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 0fef612d9da5ad74561429c3852d407623d9d334
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90747010"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834570"
 ---
 # <a name="avoid-using-checkpoints-on-a-virtual-machine-that-runs-a-server-workload-in-a-production-environment"></a>Evitar el uso de puntos de control en una máquina virtual que ejecuta una carga de trabajo de servidor en un entorno de producción
 

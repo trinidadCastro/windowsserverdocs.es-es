@@ -1,17 +1,17 @@
 ---
 title: Hay más de un adaptador de red disponible
-description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información acerca de qué hacer cuando el servidor se configura con un adaptador de red, que el sistema operativo de administración debe compartir y todas las máquinas virtuales que requieren acceso a una red física.
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 59940e56-e06a-490f-90ea-cf30d9f80b09
 ms.date: 8/16/2016
-ms.openlocfilehash: 05dc0583424ed155c4780f9f0b4c016be850a71c
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 4cf106b15d69079e860b5a76febbc0ab549b0f34
+ms.sourcegitcommit: 42581433c0bb62e291d412ee9e13869b42e69a4b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746270"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97846296"
 ---
 # <a name="more-than-one-network-adapter-should-be-available"></a>Hay más de un adaptador de red disponible
 

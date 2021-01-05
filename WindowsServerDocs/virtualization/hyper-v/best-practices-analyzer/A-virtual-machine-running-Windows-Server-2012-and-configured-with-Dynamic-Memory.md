@@ -1,17 +1,17 @@
 ---
 title: Una máquina virtual que ejecuta Windows Server 2012 y está configurada con Memoria dinámica debe usar los valores recomendados para la configuración de memoria
-description: Proporciona instrucciones para resolver el problema que informa esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información acerca de qué hacer cuando una o varias máquinas virtuales están configuradas para usar Memoria dinámica con menos de la cantidad de memoria recomendada para Windows Server 2012.
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 0aa35e36-8e3b-498b-b71d-003a0a0947be
 ms.date: 8/16/2016
-ms.openlocfilehash: c14cb55ea11aad0801641535de2a544886db960a
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 5096e06816d1fc78b189a5b848063ad3e10fa8dd
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90744150"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834920"
 ---
 # <a name="a-virtual-machine-running-windows-server-2012-and-configured-with-dynamic-memory-should-use-recommended-values-for-memory-settings"></a>Una máquina virtual que ejecuta Windows Server 2012 y está configurada con Memoria dinámica debe usar los valores recomendados para la configuración de memoria
 
@@ -36,7 +36,7 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 
 \<list of virtual machines>
 
-## <a name="resolution"></a>**Solución**
+## <a name="resolution"></a>**Resolución**
 *Use el administrador de Hyper-V para aumentar al menos 256 MB, la memoria de inicio en al menos 512 MB y la memoria máxima de al menos 2 GB para esta máquina virtual.*
 
 #### <a name="increase-memory-using-hyper-v-manager"></a>Aumentar la memoria con el administrador de Hyper-V

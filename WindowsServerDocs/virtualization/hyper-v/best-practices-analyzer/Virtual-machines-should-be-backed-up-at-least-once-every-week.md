@@ -1,17 +1,17 @@
 ---
 title: Se debe realizar una copia de seguridad de las máquinas virtuales al menos una vez cada semana
-description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información sobre qué hacer cuando no se ha realizado una copia de seguridad de una o más máquinas virtuales en la última semana.
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 7dbd3dfc-c873-4a77-89f7-3166e18d9531
 ms.date: 8/16/2016
-ms.openlocfilehash: 3b6b515f795d6c3e85a48b0fc5e6ac5165c5b6d5
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 9c2cc7836eca57b5d7ae7e180a8af5c6e3104996
+ms.sourcegitcommit: 42581433c0bb62e291d412ee9e13869b42e69a4b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746230"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97846306"
 ---
 # <a name="virtual-machines-should-be-backed-up-at-least-once-every-week"></a>Se debe realizar una copia de seguridad de las máquinas virtuales al menos una vez cada semana
 

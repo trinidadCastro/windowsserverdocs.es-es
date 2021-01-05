@@ -1,17 +1,17 @@
 ---
 title: Asegurarse de que el controlador de función virtual funciona correctamente cuando una máquina virtual está configurada para usar SR-IOV
-description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información acerca de qué hacer cuando el controlador de función virtual no funciona correctamente en el sistema operativo invitado de una o varias máquinas virtuales.
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: d21e4b93-29bf-423a-a635-71c6d48dc49e
 ms.date: 8/16/2016
-ms.openlocfilehash: 3be2f616ab8981e887688404f2907524f5f53e49
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: a009060dc67ba29c12e986167b2ed746865311d5
+ms.sourcegitcommit: 42581433c0bb62e291d412ee9e13869b42e69a4b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746850"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97845918"
 ---
 # <a name="ensure-that-the-virtual-function-driver-operates-correctly-when-a-virtual-machine-is-configured-to-use-sr-iov"></a>Asegurarse de que el controlador de función virtual funciona correctamente cuando una máquina virtual está configurada para usar SR-IOV
 

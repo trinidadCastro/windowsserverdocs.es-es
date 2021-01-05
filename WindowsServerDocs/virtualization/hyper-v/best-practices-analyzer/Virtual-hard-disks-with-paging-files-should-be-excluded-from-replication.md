@@ -1,17 +1,17 @@
 ---
 title: Los discos duros virtuales con archivos de paginación se deben excluir de la replicación
-description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información sobre qué hacer cuando los archivos de paginación experimenten un gran volumen de actividad de entrada/salida, lo que requerirá innecesariamente recursos mucho mayores para participar en la replicación.
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: c0be8a5f-64a1-488a-944e-bb913bb90517
 ms.date: 8/16/2016
-ms.openlocfilehash: 14729113ee2ba3694bcc29d50da5e7113c763268
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: c710891396ffe8914819796c18abaf0ddc41fea4
+ms.sourcegitcommit: 42581433c0bb62e291d412ee9e13869b42e69a4b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746570"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97845748"
 ---
 # <a name="virtual-hard-disks-with-paging-files-should-be-excluded-from-replication"></a>Los discos duros virtuales con archivos de paginación se deben excluir de la replicación
 

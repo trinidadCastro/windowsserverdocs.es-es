@@ -1,17 +1,17 @@
 ---
 title: La replicación se pausó para una o varias máquinas virtuales en este servidor
-description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información sobre qué hacer cuando se pausa la replicación de una o varias máquinas virtuales. Mientras la máquina virtual principal esté en pausa, los cambios que se produzcan se acumularán y se enviarán a la máquina virtual de réplica una vez que se reanude la replicación.
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: e1119a40-eda3-4058-8648-7df81cbc6c29
 ms.date: 8/16/2016
-ms.openlocfilehash: 3a2bf07e1f93aed3966dd98ce608af53168bdf9e
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: bc8a173773217ea00c47080ded74901f70384b2a
+ms.sourcegitcommit: 42581433c0bb62e291d412ee9e13869b42e69a4b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746520"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97846121"
 ---
 # <a name="replication-is-paused-for-one-or-more-virtual-machines-on-this-server"></a>La replicación se pausó para una o varias máquinas virtuales en este servidor
 

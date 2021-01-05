@@ -1,17 +1,17 @@
 ---
 title: VMQ debe estar habilitado en los adaptadores de red físicos compatibles con VMQ enlazados a un conmutador virtual externo
-description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información acerca de qué hacer cuando los siguientes adaptadores de red son capaces de Virtual Machine Queue (VMQ) pero la funcionalidad está deshabilitada.
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 93d1b155-bf44-46b0-bb69-d34d5b30e574
 ms.date: 8/16/2016
-ms.openlocfilehash: 169f2ea06bf35c7bbc9bcaec354ca66e118c75d2
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 1ab79c106fd17d459a1b6b6adcedba620ae5a89c
+ms.sourcegitcommit: 42581433c0bb62e291d412ee9e13869b42e69a4b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746770"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97846209"
 ---
 # <a name="vmq-should-be-enabled-on-vmq-capable-physical-network-adapters-bound-to-an-external-virtual-switch"></a>VMQ debe estar habilitado en los adaptadores de red físicos compatibles con VMQ enlazados a un conmutador virtual externo
 
@@ -36,8 +36,8 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 
 \<list of network adapters>
 
-## <a name="resolution"></a>**Solución**
-*Habilite VMQ con el cmdlet enable-NetAdapterVmq de Windows PowerShell o con la interfaz de usuario de propiedades avanzadas del adaptador de red.*
+## <a name="resolution"></a>**Resolución**
+*Habilite VMQ con el cmdlet de Windows PowerShell de Enable-NetAdapterVmq o con la interfaz de usuario de propiedades avanzadas del adaptador de red.*
 
 
 

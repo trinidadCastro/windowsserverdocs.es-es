@@ -1,17 +1,17 @@
 ---
 title: Evitar incoherencias de alineación entre los bloques virtuales y los sectores del disco físico en discos duros virtuales dinámicos o en discos de diferenciación
-description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información sobre qué hacer cuando se detecten incoherencias de alineación en uno o varios discos duros virtuales.
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: a17c8fd2-af81-485b-bfea-bd1ef3e43923
 ms.date: 8/16/2016
-ms.openlocfilehash: aa165dad38ae455f7c4a5a0d73cdd005c01a60ef
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: a35906161a51e2884a15944b51416a2404cce38a
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90747100"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834730"
 ---
 # <a name="avoid-alignment-inconsistencies-between-virtual-blocks-and-physical-disk-sectors-on-dynamic-virtual-hard-disks-or-differencing-disks"></a>Evitar incoherencias de alineación entre los bloques virtuales y los sectores del disco físico en discos duros virtuales dinámicos o en discos de diferenciación
 

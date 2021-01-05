@@ -1,17 +1,17 @@
 ---
 title: Evite el uso de discos duros virtuales con un tamaño de sector menor que el tamaño de sector del almacenamiento físico que almacena el archivo de disco duro virtual.
-description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información acerca de qué hacer cuando uno o varios discos duros virtuales tienen un tamaño de sector físico menor que el tamaño de sector físico del almacenamiento en el que se encuentra el archivo de disco duro virtual.
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: b7cf994e-bf4b-4b1b-bad6-ecf7d46d105e
 ms.date: 8/16/2016
-ms.openlocfilehash: 946168aa200ec80e5d2c9a69e0ecfad2477dcb6e
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: e664b0947479935dd22c3409eeb0948e01fa9b89
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90745890"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97834490"
 ---
 # <a name="avoid-using-virtual-hard-disks-with-a-sector-size-less-than-the-sector-size-of-the-physical-storage-that-stores-the-virtual-hard-disk-file"></a>Evite el uso de discos duros virtuales con un tamaño de sector menor que el tamaño de sector del almacenamiento físico que almacena el archivo de disco duro virtual.
 
@@ -36,7 +36,7 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 
 \<list of virtual machines>
 
-## <a name="resolution"></a>**Solución**
+## <a name="resolution"></a>**Resolución**
 *Realice una de las siguientes acciones:*
 
 -   *Realizar una migración de almacenamiento para trasladar el disco duro virtual a un nuevo sistema físico*

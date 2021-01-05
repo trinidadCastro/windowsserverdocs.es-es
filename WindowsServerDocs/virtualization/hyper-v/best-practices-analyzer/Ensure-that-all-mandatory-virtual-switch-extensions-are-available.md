@@ -1,17 +1,17 @@
 ---
 title: Asegúrese de que todas las extensiones de conmutador virtual obligatoria están disponibles
-description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información acerca de qué hacer cuando uno o más adaptadores de red virtuales están conectados a un conmutador virtual con extensiones obligatorias que están deshabilitadas o no instaladas.
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 2f2f2698-f5ec-4cad-aa64-d6987e8142a1
 ms.date: 8/16/2016
-ms.openlocfilehash: 8eeadf6ed8b90ef217d694e2f14b38314b8be7a5
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 0af9d5823740ebcfaaf740f8738ea91d4d827baa
+ms.sourcegitcommit: 42581433c0bb62e291d412ee9e13869b42e69a4b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746860"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97846136"
 ---
 # <a name="ensure-that-all-mandatory-virtual-switch-extensions-are-available"></a>Asegúrese de que todas las extensiones de conmutador virtual obligatoria están disponibles
 
@@ -37,7 +37,7 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 \<list of virtual machines>
 
 ## <a name="resolution"></a>Solución
-*En primer lugar, asegúrese de que se ha instalado la extensión obligatoria en el host e instale la extensión si es necesario. A continuación, si la extensión obligatoria está deshabilitada, use el administrador de conmutadores virtuales o el cmdlet enable-VMSwitchExtension de Windows PowerShell para habilitar la extensión.*
+*En primer lugar, asegúrese de que se ha instalado la extensión obligatoria en el host e instale la extensión si es necesario. A continuación, si la extensión obligatoria está deshabilitada, use el administrador de conmutadores virtuales o el cmdlet de Windows PowerShell Enable-VMSwitchExtension para habilitar la extensión.*
 
 
 

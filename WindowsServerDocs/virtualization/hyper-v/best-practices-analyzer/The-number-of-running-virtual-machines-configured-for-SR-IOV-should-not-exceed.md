@@ -1,17 +1,17 @@
 ---
 title: El número de máquinas virtuales en ejecución configuradas para SR-IOV no debe superar el número de funciones virtuales disponibles para las máquinas virtuales
-description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información acerca de qué hacer cuando no hay suficientes funciones virtuales disponibles para el número de máquinas virtuales en ejecución configuradas para la virtualización de e/s de raíz única (SR-IOV).
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 8bd4af5e-9e7d-4710-8950-39435a8bb373
 ms.date: 8/16/2016
-ms.openlocfilehash: 432bf4132e8c19a326fda646960b30315d3952b1
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 783b5dbf170756e922b448d73881543b5a811ce9
+ms.sourcegitcommit: 42581433c0bb62e291d412ee9e13869b42e69a4b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90745810"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97845891"
 ---
 # <a name="the-number-of-running-virtual-machines-configured-for-sr-iov-should-not-exceed-the-number-of-virtual-functions-available-to-the-virtual-machines"></a>El número de máquinas virtuales en ejecución configuradas para SR-IOV no debe superar el número de funciones virtuales disponibles para las máquinas virtuales
 
