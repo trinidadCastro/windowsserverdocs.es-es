@@ -1,18 +1,18 @@
 ---
 title: Administrar dispositivos en Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de las características de administración de dispositivos de un servidor y aprenda a configurar y usar dispositivos en la red.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: f5fe1088-ebe7-4799-a47d-075b0048dea1
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 96d99bb41a528a3a2f86be2d876df6e777e4b790
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 0e275db0844ac431b80284a6c2d69540432a2be5
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623147"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97811402"
 ---
 # <a name="manage-devices-in-windows-server-essentials"></a>Administrar dispositivos en Windows Server Essentials
 
@@ -69,7 +69,7 @@ ms.locfileid: "89623147"
 
 ### <a name="computer-tasks-in-the-dashboard"></a>Tareas de equipo en el panel
 
-|Nombre de la tarea|Descripción|
+|Nombre de la tarea|Description|
 |---------------|-----------------|
 |Ver las propiedades del equipo|Se muestra información general del equipo seleccionado y se le permite ver los detalles de las copias de seguridad del equipo.|
 |Configurar las copias de seguridad de este equipo|Se ejecuta el asistente para la configuración de copias de seguridad.|
@@ -95,7 +95,7 @@ ms.locfileid: "89623147"
 
 3.  En la lista de cuentas de usuario, seleccione la cuenta de usuario que quiera cambiar.
 
-4.  En el panel ** \> tareas** de la cuenta de usuario de<, haga clic en **ver las propiedades de la cuenta**. Aparece la página **Propiedades** de la cuenta de usuario.
+4.  En el panel **\> tareas** de la cuenta de usuario de<, haga clic en **ver las propiedades de la cuenta**. Aparece la página **Propiedades** de la cuenta de usuario.
 
 5.  En la pestaña **Acceso al equipo**, seleccione el equipo al que este usuario puede acceder de forma remota y, a continuación, haga clic en **Aceptar**.
 
@@ -170,7 +170,7 @@ ms.locfileid: "89623147"
 
 1.  En la lista de equipos, seleccione la cuenta en la que quiera ver o cambiar las propiedades.
 
-2.  En el panel ** \> tareas de<NombreDeEquipo** , haga clic en **ver las propiedades del equipo**. Aparece la página **Propiedades** para los equipos.
+2.  En el panel **\> tareas de<NombreDeEquipo** , haga clic en **ver las propiedades del equipo**. Aparece la página **Propiedades** para los equipos.
 
 3.  Haga clic en una pestaña para ver las propiedades de ese equipo.
 

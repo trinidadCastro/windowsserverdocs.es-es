@@ -1,18 +1,18 @@
 ---
 title: Soporte técnico de Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información sobre las opciones de soporte técnico y solución de problemas de Windows Server Essentials.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: ac12e9a9-ba7a-480a-9249-6e216c70941b
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 45a81150168e0b1f21a39b8d773872a1d5daef6b
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 59bba0cdaadd977bd70b7155b47d8dffcb6f3073
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625278"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810272"
 ---
 # <a name="support-windows-server-essentials"></a>Soporte técnico de Windows Server Essentials
 

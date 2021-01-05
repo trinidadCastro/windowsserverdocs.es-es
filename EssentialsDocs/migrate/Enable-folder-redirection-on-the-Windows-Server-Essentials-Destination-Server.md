@@ -1,6 +1,6 @@
 ---
 title: Habilitación del redireccionamiento de carpetas en el servidor 1 de destino de Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo habilitar el redireccionamiento de carpetas en el servidor de destino de Windows Server Essentials.
 ms.date: 10/03/2016
 ms.topic: article
 H1: Habilitar la redirección de carpetas en el servidor de destino de Windows Server Essentials
@@ -8,12 +8,12 @@ ms.assetid: f67d195e-36f6-495a-8361-6d5faa889441
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 9ea3b7b6c42c85ef553e56f017d068fabea42eee
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 7e03d2d2033e9b5c3f20f5139c338584eac4cbde
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89622874"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97811012"
 ---
 # <a name="enable-folder-redirection-on-the-windows-server-essentials-destination-server1"></a>Habilitación del redireccionamiento de carpetas en el servidor 1 de destino de Windows Server Essentials
 
@@ -39,7 +39,7 @@ Puede hacer esta tarea si está habilitada la redirección de carpetas en el ser
 
 1. En el servidor de destino, abra la herramienta administrativa **Administración de directivas de grupo**.
 
-2. En **Administración de directivas de grupo**, expandaaa **Bosque:**<em>NombreDominioRed</em>, expandaaa **Dominios**, expandaaa *NombreDominioRed*y **Objetos de directiva de grupo**.
+2. En **Administración de directivas de grupo**, expandaaa **Bosque:**<em>NombreDominioRed</em>, expandaaa **Dominios**, expandaaa *NombreDominioRed* y **Objetos de directiva de grupo**.
 
 3. Haga clic con el botón secundario en **Redirección de carpetas de W7PVP** y después haga clic en **Eliminar**.
 

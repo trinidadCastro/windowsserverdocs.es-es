@@ -7,12 +7,12 @@ author: iainfoulds
 manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
-ms.openlocfilehash: 02ce80d936caff5ef77a78585a2e0f35e0b12ca5
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: ca8d073eff673697a65fd1266cf7de19ccd90c97
+ms.sourcegitcommit: e2dadc9b0c227a489a945bbc531aca5e101f18cd
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97040723"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97801759"
 ---
 # <a name="implementing-least-privilege-administrative-models"></a>Implementación de modelos administrativos de menor privilegio
 
@@ -31,7 +31,7 @@ El siguiente fragmento procede del [Kit de recursos de seguridad de Microsoft Wi
 
 ## <a name="the-privilege-problem"></a>El problema del privilegio
 
-Los principios descritos en los extractos anteriores no han cambiado, pero en la evaluación de las instalaciones Active Directory, encontramos invariablemente un número excesivo de cuentas a las que se les han concedido derechos y permisos mucho más allá de los necesarios para realizar el trabajo cotidiano. El tamaño del entorno afecta a los números sin procesar de las cuentas con privilegios elevados, pero no a los directorios proportionmidsized pueden tener docenas de cuentas en los grupos con más privilegios, mientras que las instalaciones grandes pueden tener cientos o incluso miles. Con pocas excepciones, independientemente de la sofisticación de los conocimientos y el arsenal de un atacante, los atacantes suelen seguir la ruta de acceso de menor resistencia. Aumentan la complejidad de sus herramientas y su enfoque solo si y cuándo se producen errores en mecanismos más sencillos o están frustrados por los defensores.
+Los principios descritos en los extractos anteriores no han cambiado, pero en la evaluación de las instalaciones Active Directory, encontramos invariablemente un número excesivo de cuentas a las que se les han concedido derechos y permisos mucho más allá de los necesarios para realizar el trabajo cotidiano. El tamaño del entorno afecta a los números sin procesar de las cuentas con privilegios elevados, pero no a los directorios de tamaño proporcional pueden tener docenas de cuentas en los grupos con más privilegios, mientras que las instalaciones grandes pueden tener cientos o incluso miles. Con pocas excepciones, independientemente de la sofisticación de los conocimientos y el arsenal de un atacante, los atacantes suelen seguir la ruta de acceso de menor resistencia. Aumentan la complejidad de sus herramientas y su enfoque solo si y cuándo se producen errores en mecanismos más sencillos o están frustrados por los defensores.
 
 Desafortunadamente, la ruta de acceso de menos resistencia en muchos entornos ha demostrado ser el uso excesivo de cuentas con privilegios amplios y profundos. Los amplios privilegios son derechos y permisos que permiten que una cuenta realice actividades específicas en una gran sección transversal del entorno; por ejemplo, se puede conceder permisos al personal del Departamento de soporte técnico que les permita restablecer las contraseñas en muchas cuentas de usuario.
 
@@ -312,7 +312,7 @@ Aunque un análisis exhaustivo de los ataques contra las infraestructuras de cla
 
 Cuando se presenta un certificado para la autenticación en un sistema unido a un dominio, el contenido del asunto o el atributo del nombre alternativo del sujeto (SAN) del certificado se utilizan para asignar el certificado a un objeto de usuario en Active Directory. Dependiendo del tipo de certificado y de cómo se construya, el atributo de asunto de un certificado normalmente contiene el nombre común (CN) del usuario, como se muestra en la siguiente captura de pantalla.
 
-![modelos de administración con privilegios mínimos](media/Implementing-Least-Privilege-Administrative-Models/SAD_4.gif)
+![Captura de pantalla que muestra que el atributo de asunto de un certificado normalmente contiene el nombre común de un usuario.](media/Implementing-Least-Privilege-Administrative-Models/SAD_4.gif)
 
 De forma predeterminada, Active Directory construye el CN de un usuario concatenando el nombre de la cuenta + "" + Apellido. Sin embargo, los componentes de CN de los objetos de usuario de Active Directory no son necesarios o se garantiza que son únicos, y mover una cuenta de usuario a una ubicación diferente en el directorio cambia el nombre distintivo (DN) de la cuenta, que es la ruta de acceso completa al objeto en el directorio, tal como se muestra en el panel inferior de la captura de pantalla anterior.
 

@@ -1,18 +1,18 @@
 ---
 title: 'Paso 8: Ejecución del Analizador de procedimientos recomendados de Windows Server Essentials'
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información sobre cómo ejecutar el Analizador de procedimientos recomendados de Windows Server Essentials.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: e6ba701d-7183-4c26-960e-44cc280bf3e6
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 25a991668f56bcb24606738a9a510d92b3d8f9eb
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: c767be324e960badbbb976f292e24b9d39502d7f
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625330"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810402"
 ---
 # <a name="step-8-run-the-windows-server-essentials-best-practices-analyzer"></a>Paso 8: Ejecución del Analizador de procedimientos recomendados de Windows Server Essentials
 

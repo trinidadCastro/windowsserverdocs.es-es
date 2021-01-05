@@ -1,18 +1,18 @@
 ---
 title: 'Paso 7: Realizar tareas postmigración para la migración de Windows Server Essentials'
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo realizar tareas posteriores a la migración para la migración de Windows Server Essentials.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: d382e3fd-d393-4bd0-883f-db50104a969f
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 5186cc808b46aa334dc994186e3d7d8d898f9d96
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: f2637a935c1835aab3d83d4099637ed3b06aad9b
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625367"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810412"
 ---
 # <a name="step-7-perform-post-migration-tasks-for-the-windows-server-essentials-migration"></a>Paso 7: Realizar tareas postmigración para la migración de Windows Server Essentials
 

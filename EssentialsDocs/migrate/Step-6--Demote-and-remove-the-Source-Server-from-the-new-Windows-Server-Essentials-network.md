@@ -1,18 +1,18 @@
 ---
 title: 'Paso 6: Disminución de nivel y eliminación del servidor de origen de la nueva red de Windows Server Essentials'
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo disminuir de nivel y quitar el servidor de origen de la nueva red de Windows Server Essentials.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 86244c66-2c5e-488d-adb8-112e1ca3e2e1
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 6c4410cb94f79be291984a92a2b788e3ae984a4f
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: d842f7cf0b7378254e43fec7b6ed2b7e80b5b9c1
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625427"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810422"
 ---
 # <a name="step-6-demote-and-remove-the-source-server-from-the-new-windows-server-essentials-network"></a>Paso 6: Disminución de nivel y eliminación del servidor de origen de la nueva red de Windows Server Essentials
 
@@ -50,7 +50,7 @@ Después de finalizar la instalación de Windows Server Essentials y completar l
 7.  En la página **Confirmar opciones de eliminación**, revise la información y haga clic en **Quitar**.
 
     > [!NOTE]
-    >  Si ejecuta Internet Information Services (IIS), se le solicitará que detenga el servicio antes de continuar. Haga clic en **OK**.
+    >  Si ejecuta Internet Information Services (IIS), se le solicitará que detenga el servicio antes de continuar. Haga clic en **Aceptar**.
 
     > [!NOTE]
     >  En primer lugar, deberá quitar la **Inscripción web de entidad de certificación**, si está instalada.
@@ -77,7 +77,7 @@ Después de finalizar la instalación de Windows Server Essentials y completar l
 
 3. En el símbolo del sistema, escriba **gpupdate /force** y, después, presione ENTRAR.
 
-4. El proceso puede requerir que cierre la sesión y vuelva a iniciarla para finalizar. Haga clic en **Sí** para confirmar.
+4. El proceso puede requerir que cierre la sesión y vuelva a iniciarla para finalizar. Haga clic en **Sí** para continuar.
 
    Si va a migrar desde Windows Server Essentials o desde sus versiones anteriores, para disminuir de nivel el servidor, consulte [quitar Active Directory Domain Services](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh472163(v=ws.11)). Después de agregar el servidor de origen como miembro de un grupo de trabajo y desconectarlo de la red, debe quitarlo de AD DS en el servidor de destino.
 

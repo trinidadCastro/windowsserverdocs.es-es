@@ -1,18 +1,18 @@
 ---
 title: Ejecución del compilador de registros de Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo ejecutar el compilador de registros de Windows Server Essentials desde el servidor o un equipo de la red.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 0d340223-fa24-4c75-ba8e-b654feb120ab
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 34c853abb19424d94fa768c70fcb6c9d8d8feea8
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 40efab1582bf035ee0426b748a2090d69eed23e1
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625287"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810322"
 ---
 # <a name="run-the-windows-server-essentials-log-collector"></a>Ejecución del compilador de registros de Windows Server Essentials
 Puede ejecutar el compilador de registros de Windows Server Essentials desde el servidor o un equipo de la red. Si ejecuta el Compilador de registros desde el servidor, solo podrá recopilar registros del servidor. Si ejecuta el Compilador de registros desde un equipo de red, puede recopilar registros del servidor además de los registros de ese equipo.
@@ -24,10 +24,10 @@ Puede ejecutar el compilador de registros de Windows Server Essentials desde el 
 1. En la página **Inicio** del servidor, haga clic en **recopilador de registros de Windows Server Essentials**.
 
    > [!NOTE]
-   > - Si el programa del compilador de registros no aparece en la página de **Inicio** , vaya a **%System%\Program Files files (x86) \Windows Server Essentials log Collector**y, a continuación, haga doble clic en **LogCollector**.
+   > - Si el programa del compilador de registros no aparece en la página de **Inicio** , vaya a **%System%\Program Files files (x86) \Windows Server Essentials log Collector** y, a continuación, haga doble clic en **LogCollector**.
    >   -   Si no ha iniciado sesión en el servidor con privilegios administrativos, el Compilador de registros le pide que escriba sus credenciales.
 
-2. Cuando se le pida una ubicación para guardar los archivos de registro recopilados, puede elegir la ubicación predeterminada, ** \\ \\<ServerName \> \logs**o especificar otra ubicación. Para aceptar la ubicación predeterminada, haga clic en **Siguiente**. Para cambiar la ubicación, haga clic en **Examinar**, vaya hasta la carpeta donde desea guardar los archivos de registro y, a continuación, haga clic en **Guardar**.
+2. Cuando se le pida una ubicación para guardar los archivos de registro recopilados, puede elegir la ubicación predeterminada, **\\ \\<ServerName \> \logs** o especificar otra ubicación. Para aceptar la ubicación predeterminada, haga clic en **Siguiente**. Para cambiar la ubicación, haga clic en **Examinar**, vaya hasta la carpeta donde desea guardar los archivos de registro y, a continuación, haga clic en **Guardar**.
 
    > [!NOTE]
    >  No es necesario que proporcione los nombres de archivo de los archivos de registro. El compilador de registros nombra la colección de archivos zip mediante la concatenación del nombre del equipo y la marca de tiempo del archivo.
@@ -38,7 +38,7 @@ Puede ejecutar el compilador de registros de Windows Server Essentials desde el 
 
 #### <a name="to-run-the-log-collector-on-a-network-computer-by-using-the-wizard"></a>Para ejecutar el Compilador de registros en un equipo de la red usando el asistente
 
-1.  Vaya a **%System%\Program Files files (x86) \Windows Server Essentials log Collector**y, a continuación, haga doble clic en el archivo **LogCollector.exe**.
+1.  Vaya a **%System%\Program Files files (x86) \Windows Server Essentials log Collector** y, a continuación, haga doble clic en el archivo **LogCollector.exe**.
 
     > [!NOTE]
     >  Si no ha iniciado una sesión en el equipo de red con privilegios de administrador, escriba el nombre de usuario y la contraseña cuando se le pida y, a continuación, haga clic en **Siguiente**.
@@ -73,7 +73,7 @@ Puede ejecutar el compilador de registros de Windows Server Essentials desde el 
 
 3.  En la raíz de la **Biblioteca del programador de tareas**, vaya a la tarea programada **LogCollector**.
 
-4.  Haga clic con el botón secundario en **LogCollector** y, a continuación, haga clic en **Ejecutar**. El recopilador de registros coloca los registros en la carpeta predeterminada en el servidor, ** \\ \\<ServerName \> \Logs**. Si no tiene permiso de escritura para la carpeta o la carpeta no existe, los registros se colocan en el subdirectorio **<Temp \> ** .
+4.  Haga clic con el botón secundario en **LogCollector** y, a continuación, haga clic en **Ejecutar**. El recopilador de registros coloca los registros en la carpeta predeterminada en el servidor, **\\ \\<ServerName \> \Logs**. Si no tiene permiso de escritura para la carpeta o la carpeta no existe, los registros se colocan en el subdirectorio **<Temp \>** .
 
 ##### <a name="to-manually-run-the-log-collector-on-a-network-computer"></a>Para ejecutar manualmente el Compilador de registros en un equipo de red
 

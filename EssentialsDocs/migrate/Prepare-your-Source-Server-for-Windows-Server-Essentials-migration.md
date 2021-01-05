@@ -1,18 +1,18 @@
 ---
 title: Preparar el servidor de origen para Windows Server Essentials migration1
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de los pasos preliminares para asegurarse de que la configuración y los datos del servidor de origen se migran correctamente al servidor de destino.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: f5861ae9-77cb-4d37-b4c5-8f0757213385
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: fa465e96d66e88e0561a5a6151d07d9950d226f1
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: dc2866525785506d4e6f3238d22ad8444ed0448f
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625604"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810642"
 ---
 # <a name="prepare-your-source-server-for-windows-server-essentials-migration1"></a>Preparar el servidor de origen para Windows Server Essentials migration1
 
@@ -89,7 +89,7 @@ Complete los siguientes pasos previos para asegurarse de que los datos y la conf
 
    Después de recopilar información sobre la configuración del servidor, el BPA de Soluciones de Windows Server comprueba que la información sea correcta y, a continuación, presenta a los administradores una lista de información y problemas ordenados por gravedad. En la lista se describe cada problema y se propone una recomendación o posible solución. Hay disponibles tres tipos de informes:
 
-|Tipo de informe|Descripción|
+|Tipo de informe|Description|
 |-----------------|-----------------|
 |Informes de lista|Muestra los informes como una lista unidimensional.|
 |Informes de árbol|Muestra los informes como una lista jerárquica.|

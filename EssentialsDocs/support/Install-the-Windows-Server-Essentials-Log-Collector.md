@@ -1,18 +1,18 @@
 ---
 title: Instalación del compilador de registros de Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Aprenda a usar el Asistente para la instalación del recopilador de registros para instalar el compilador de registros como un complemento de Launchpad.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: d271c54f-1ffa-464e-afa5-27b8df61854e
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 7e10da0d87b98ef84f8b8b7ea2ec74bdd02a909e
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: a2ccb30620a8e0f03f29a006ecab999542f5552e
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625321"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810362"
 ---
 # <a name="install-the-windows-server-essentials-log-collector"></a>Instalación del compilador de registros de Windows Server Essentials
 

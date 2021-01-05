@@ -1,18 +1,18 @@
 ---
 title: Solucionar problemas en la instalación de Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo solucionar problemas generales que podrían producirse al instalar Windows Server Essentials.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: ecf19216-7aac-4aca-839a-342ac28f5329
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: d46e760fd168d44cb8f036d6b1b28180db2ffce2
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 1aed2c5df875b59adfbd31fe2cf57ee1d129ec92
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625114"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810172"
 ---
 # <a name="troubleshoot-windows-server-essentials-installation"></a>Solucionar problemas en la instalación de Windows Server Essentials
 

@@ -1,18 +1,18 @@
 ---
 title: Administrar Acceso web remoto en Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo activar el acceso Web remoto mediante el Asistente para configurar el acceso desde cualquier lugar y, a continuación, obtenga información sobre cómo configurar el enrutador y el nombre de dominio.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: f3ea40fa-b6ba-4d66-b754-221ca6271387
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: f797bfee89b40437078862527a3c02e52e4f7833
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: a9d83d12dc34b9b540f9f10ea677690726347766
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623024"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97811302"
 ---
 # <a name="manage-remote-web-access-in-windows-server-essentials"></a>Administrar Acceso web remoto en Windows Server Essentials
 
@@ -122,9 +122,9 @@ ms.locfileid: "89623024"
 
 3.  En la lista de cuentas de usuario, seleccione aquella a la que desea conceder permisos de acceso remoto al escritorio.
 
-4.  En el panel ** \> tareas** de la cuenta de usuario de<, haga clic en **propiedades**.
+4.  En el panel **\> tareas** de la cuenta de usuario de<, haga clic en **propiedades**.
 
-5.  En **<\> propiedades**de la cuenta de usuario, haga clic en la pestaña **acceso desde cualquier lugar** .
+5.  En **<\> propiedades** de la cuenta de usuario, haga clic en la pestaña **acceso desde cualquier lugar** .
 
 6.  En la pestaña **Acceso desde cualquier lugar**, haga lo siguiente:
 
@@ -306,7 +306,7 @@ ms.locfileid: "89623024"
 
  **Algunos ejemplos de dominios genéricos de primer nivel:**
 
-|Extensión de dominio|Descripción|
+|Extensión de dominio|Description|
 |----------------------|-----------------|
 |.com|Normalmente la usan organizaciones comerciales, pero la puede utilizar cualquier usuario.|
 |.net|Diseñada para empresas que ofrecen servicios de infraestructura de red.|
@@ -318,7 +318,7 @@ ms.locfileid: "89623024"
 
  **Algunos ejemplos de dominios de primer nivel de código de país:**
 
-|Extensión de dominio|Descripción|
+|Extensión de dominio|Description|
 |----------------------|-----------------|
 |.ca|Para sitios web de Canadá.|
 |.cn|Para sitios web de China.|
@@ -368,9 +368,9 @@ ms.locfileid: "89623024"
 
 ##### <a name="to-find-the-domain-name-service-provider-for-your-domain-name"></a>Para buscar el proveedor de servicios de nombres de dominio para un nombre de dominio:
 
-1. Abra un explorador web y escriba <strong>www.internic.com</strong> en la barra de direcciones para ir a la página principal de Internic.
+1. Abra un explorador Web y escriba <strong>www.InterNIC.com</strong> en la barra de direcciones para ir a la Página principal de InterNIC.
 
-2. En la página principal de Internic, haga clic en **Whois**.
+2. En la Página principal de InterNic, haga clic en **Whois**.
 
 3. En el cuadro **Whois Search**, escriba el nombre de dominio (por ejemplo, contoso.com).
 

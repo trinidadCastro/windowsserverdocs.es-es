@@ -1,18 +1,18 @@
 ---
 title: Realizar tareas posteriores a la migración para Windows Server Essentials migration1
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de las tareas posteriores a la migración que debe realizar después de migrar Windows Server Essentials.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: f2d236a4-0d62-4961-9d1f-332054e06f6d
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: abd092b3e6b4176c83b51995f140aad0dafc6e0f
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: cf96832b6731dd8680ad41a49cd1d260644ba103
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625631"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810662"
 ---
 # <a name="perform-post-migration-tasks-for-windows-server-essentials-migration1"></a>Realizar tareas posteriores a la migración para Windows Server Essentials migration1
 
@@ -45,7 +45,7 @@ Las siguientes tareas le ayudarán a configurar el servidor de destino con algun
 
 5.  Para cada zona de búsqueda directa, haga clic con el botón derecho en la zona, haga clic en **Propiedades** y, después, haga clic en la pestaña **Servidores de nombres**.
 
-6.  Haga clic en una entrada del cuadro **Servidores de nombres** que apunte al servidor de origen, haga clic en **Quitar**y, después, haga clic en **Aceptar**.
+6.  Haga clic en una entrada del cuadro **Servidores de nombres** que apunte al servidor de origen, haga clic en **Quitar** y, después, haga clic en **Aceptar**.
 
 7.  Repita los pasos 5 y 6 hasta que se quiten todos los elementos que apunten al servidor de origen.
 
@@ -94,11 +94,11 @@ Las siguientes tareas le ayudarán a configurar el servidor de destino con algun
 
 1. En el servidor de destino, abra la herramienta administrativa **Administración de directivas de grupo**.
 
-2. En el árbol de consola de **Administración de directiva de grupo** , expanda **Forest:** * \><ServerName*, expanda dominios y, a continuación, expanda el servidor.
+2. En el árbol de consola de **Administración de directiva de grupo** , expanda **Forest:** *\><ServerName*, expanda dominios y, a continuación, expanda el servidor.
 
 3. Expanda **Controladores de dominio**, haga clic con el botón derecho en **Directiva predeterminada de controladores de dominio** y, después, haga clic en **Editar**.
 
-4. En **Editor de administración de directivas de grupo**, haga clic en **directiva predeterminada de controladores de dominio** <em><\> </em>**Directiva**de nombreDeServidor y, a continuación, expanda **configuración del equipo**.
+4. En **Editor de administración de directivas de grupo**, haga clic en **directiva predeterminada de controladores de dominio** <em><\></em>**Directiva** de nombreDeServidor y, a continuación, expanda **configuración del equipo**.
 
 5. Expanda **Directivas**, expanda **Configuración de Windows** y, después, expanda **Configuración de seguridad**.
 

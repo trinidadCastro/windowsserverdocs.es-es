@@ -1,18 +1,18 @@
 ---
 title: Unir equipos al nuevo network1 de Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo unir equipos a la nueva red de Windows Server Essentials.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: d94de050-3300-4323-a5ea-c824cb9cecc9
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 9a1133623af3a05f8aa0e867b1d3d66cbadd717f
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: e8caa931637219aec10477540c79a299bba25e80
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89622818"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810942"
 ---
 # <a name="join-computers-to-the-new-windows-server-essentials-network1"></a>Unir equipos al nuevo network1 de Windows Server Essentials
 

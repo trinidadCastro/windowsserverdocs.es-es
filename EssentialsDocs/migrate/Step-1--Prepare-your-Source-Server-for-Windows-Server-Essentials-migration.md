@@ -1,18 +1,18 @@
 ---
 title: 'Paso 1: Preparación del servidor de origen para la migración a Windows Server Essentials'
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información sobre cómo realizar una copia de seguridad del servidor de origen, evaluar el estado del sistema, instalar los Service Packs y las correcciones más recientes y comprobar la configuración de red.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 244c8a06-04c6-4863-8b52-974786455373
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 2be09665c0a2361938226b10be0ef058b8aa0ee6
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 700be9d860651767cca39fc285de4d76d07aa5a2
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625507"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810562"
 ---
 # <a name="step-1-prepare-your-source-server-for-windows-server-essentials-migration"></a>Paso 1: Preparación del servidor de origen para la migración a Windows Server Essentials
 
@@ -42,7 +42,7 @@ En esta sección se explica cómo realizar copias de seguridad del servidor de o
 
 2. Compruebe que la copia de seguridad se ejecute correctamente. Para probar la integridad de la copia de seguridad, seleccione archivos aleatorios de la copia de seguridad, restáurelos en una ubicación alternativa y confirme que los archivos restaurados son los mismos que los archivos originales.
 
-   |Producto|Recurso|
+   |Product|Recurso|
    |---|---|
    |Windows Small Business Server 2003|[Realizar una copia de seguridad y restaurar Windows Small Business Server 2003](/previous-versions/tn-archive/cc875809(v=technet.10))
    |Windows Small Business Server 2008|[Realizar una copia de seguridad y restaurar los datos en Windows Small Business Server 2008](https://technet.microsoft.com/library/cc527505\(WS.10\).aspx)
@@ -92,7 +92,7 @@ En esta sección se explica cómo realizar copias de seguridad del servidor de o
 
 -   El Registro
 
--   Servicios de Internet Information Server (IIS)
+-   Internet Information Services (IIS)
 
 ###### <a name="to-use-the-bpa-to-analyze-your-source-server"></a>Para usar el BPA para analizar el servidor de origen
 
@@ -120,7 +120,7 @@ En esta sección se explica cómo realizar copias de seguridad del servidor de o
 
    2.  En el panel, haga clic en la pestaña **Dispositivos**.
 
-   3.  En el panel tareas de **servidor**de < > **Tasks** , haga clic en **analizador de procedimientos recomendados**.
+   3.  En el panel tareas de **servidor** de < >  , haga clic en **analizador de procedimientos recomendados**.
 
 4. En el panel de detalles, escriba la etiqueta del análisis y, a continuación, haga clic en **Iniciar análisis**. La etiqueta del análisis es el nombre del informe de análisis, por ejemplo, **SBS BPA Scan 1Jul2013**.
 
@@ -128,7 +128,7 @@ En esta sección se explica cómo realizar copias de seguridad del servidor de o
 
    Después de que la herramienta BPA recopile información sobre la configuración del servidor, comprueba que la información sea correcta y muestra a los administradores una lista con información y problemas ordenados por gravedad. En la lista se describe cada problema y se propone una recomendación o posible solución. Hay disponibles tres tipos de informes:
 
-|Tipo de informe|Descripción
+|Tipo de informe|Description
 |-----------------|-----------------
 |Informes de lista|Muestra los informes como una lista unidimensional.
 |Informes de árbol|Muestra los informes como una lista jerárquica.
@@ -177,7 +177,7 @@ Para ver la descripción y las soluciones para un problema, haga clic en el prob
 >  Después de completar la instalación, debe activar la característica de integración de Microsoft 365 en Windows Server Essentials mediante la ejecución de la tarea **integrar con Microsoft 365** .
 
 > [!IMPORTANT]
->  Para permitir que la herramienta de migración de Microsoft 365 se conecte al servidor de Exchange Server que se está ejecutando en el servidor de origen, debe habilitar RPC a través de HTTP en el servidor de origen. Para obtener más información sobre cómo habilitar RPC a través de HTTP, consulte [Cómo implementar RPC a través de HTTP por primera vez en Small Business Server 2003 (Standard o Premium)](/previous-versions/tn-archive/bb123622(v=exchg.65)). Si no puede ejecutar correctamente la herramienta de migración de Microsoft 365 después de habilitar RPC a través de HTTP, vea la opción **ValidPorts** del registro en HKEY_LOCAL_MACHINE \software\microsoft\rpc\rpcproxy y asegúrese de que aparece el nombre de dominio completo (FQDN) para el servidor de origen. Si no aparece el nombre completo, agréguelo como en el ejemplo siguiente:
+>  Para permitir que la herramienta de migración de Microsoft 365 se conecte al servidor de Exchange Server que se está ejecutando en el servidor de origen, debe habilitar RPC a través de HTTP en el servidor de origen. Para obtener más información sobre cómo habilitar RPC a través de HTTP, consulte [Cómo implementar RPC a través de HTTP por primera vez en Small Business Server 2003 (Standard o Premium)](/previous-versions/tn-archive/bb123622(v=exchg.65)). Si no puede ejecutar correctamente la herramienta de migración de Microsoft 365 después de habilitar RPC a través de HTTP, vea la opción **ValidPorts** del registro en HKEY_LOCAL_MACHINE\Software\Microsoft\Rpc\RpcProxy y asegúrese de que aparece el nombre de dominio completo (FQDN) para el servidor de origen. Si no aparece el nombre completo, agréguelo como en el ejemplo siguiente:
 >
 >  remote. *contoso*.com:6001-6002;remote. *contoso*.com:6004 (reemplace *contoso* por el nombre de su dominio).
 

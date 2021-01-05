@@ -1,18 +1,18 @@
 ---
 title: Solucionar problemas de supervisión del equipo en Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo solucionar problemas detectados al supervisar el estado de mantenimiento de los equipos en el visor de alertas y mediante notificaciones por correo electrónico en Windows Server Essentials.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: f1e6b377-4a24-4d28-9b25-05910914826b
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 55daffa3c1db284d3772fa39eb64e0411ad1c7a6
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: d3483482d3540bf632e2d2bb8fbd8828fa764b28
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625091"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810162"
 ---
 # <a name="troubleshoot-computer-monitoring-in-windows-server-essentials"></a>Solucionar problemas de supervisión del equipo en Windows Server Essentials
 

@@ -1,18 +1,18 @@
 ---
 title: Administrar el almacenamiento de servidor en Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo administrar todo el almacenamiento de servidor (incluidas las unidades de disco duro y los espacios de almacenamiento) desde las páginas unidades de disco duro en la pestaña almacenamiento del panel.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 1836682e-c7bb-4dd5-a2b5-6ff032693574
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 2cd8ac4e93027e3ab88042d0bca465f3fea67f26
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 4f9f1c42996eb0582d9c2eb14bc88012e121e862
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89626108"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97811262"
 ---
 # <a name="manage-server-storage-in-windows-server-essentials"></a>Administrar el almacenamiento de servidor en Windows Server Essentials
 
@@ -55,7 +55,7 @@ ms.locfileid: "89626108"
 
 ### <a name="available-hard-drive-management-tasks"></a>Tareas administrativas de la unidad de disco duro disponibles
 
-|Nombre de tarea|Descripción|
+|Nombre de tarea|Description|
 |---------------|-----------------|
 |**Ver las propiedades de la unidad de disco duro**|Se abrirá la página _Propiedades_**NombreDeDiscoDuro** . Esta tarea se muestra cuando se selecciona la unidad de disco duro. La pestaña **General** de la página Propiedades de *NombreDeUnidadDeDiscoDuro* incluye las siguientes tareas adicionales:<br /><br /> -   **Limpieza de unidad**: permite limpiar los archivos no usados en el disco duro (esta tarea solo está disponible en Windows Server Essentials).<br />-   **Comprobar y reparar**: comprueba el disco duro en busca de errores del sistema de archivos e intenta reparar automáticamente los errores detectados.<br /><br /> La pestaña **Instantáneas** de la página Propiedades de _Propiedades_**NombreDeDiscoDuro** permite habilitar las instantáneas. Esta pestaña también muestra la hora en la que está programada la ejecución de la próxima instantánea.|
 |**Administrar los espacios de almacenamiento**|**Nota:** En Windows Server Essentials, esta tarea solo se muestra cuando hay un espacio de almacenamiento existente.<br /><br /> Abre el panel de control de los **Espacios de almacenamiento**, desde el que puede crear y administrar grupos de almacenamiento y espacios de almacenamiento.|

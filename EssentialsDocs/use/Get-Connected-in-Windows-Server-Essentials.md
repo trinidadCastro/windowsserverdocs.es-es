@@ -1,24 +1,24 @@
 ---
 title: Conéctese en Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo usar el software del conector para conectar los equipos al servidor de Windows Server Essentials.
 ms.date: 05/07/2016
 ms.topic: article
 ms.assetid: 149a5d34-43b7-4b9e-99e7-9f2294ab9ddb
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: ef0cdcffb90ba14eca6ccff50e4a297662bd61c6
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 3d8983444853846fdf5bb36173a4ca1d2136c0c2
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89624969"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810122"
 ---
 # <a name="get-connected-in-windows-server-essentials"></a>Conéctese en Windows Server Essentials
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
- Puede conectar los equipos al servidor de Windows Server Essentials mediante el software del Conector. El software del Conector se instala cuando conecta un equipo al servidor mediante el asistente para conectar un equipo al servidor. Puede iniciar este asistente escribiendo **http://<ServerName \> /Connect**, donde **<ServerName \> ** es el nombre del servidor.
+ Puede conectar los equipos al servidor de Windows Server Essentials mediante el software del Conector. El software del Conector se instala cuando conecta un equipo al servidor mediante el asistente para conectar un equipo al servidor. Puede iniciar este asistente escribiendo **http://<ServerName \> /Connect**, donde **<ServerName \>** es el nombre del servidor.
 
  En este tema:
 
@@ -191,7 +191,7 @@ ms.locfileid: "89624969"
 
 - Windows 10 Pro
 
-- Windows 10 Enterprise
+- Windows 10 Enterprise
 
 - Windows 10 Education
 
@@ -239,7 +239,7 @@ ms.locfileid: "89624969"
 
 - Windows 10 Pro
 
-- Windows 10 Enterprise
+- Windows 10 Enterprise
 
 - Windows 10 Education
 
@@ -389,7 +389,7 @@ ms.locfileid: "89624969"
 
 2.  Abra un explorador de Internet, como, por ejemplo, Internet Explorer.
 
-3.  En la barra de direcciones, escriba **http://<ServerName \> /Connect**y, a continuación, presione Entrar.
+3.  En la barra de direcciones, escriba **http://<ServerName \> /Connect** y, a continuación, presione Entrar.
 
     > [!NOTE]
     >  Si el equipo está en una ubicación remota fuera de la red de Windows Server Essentials, para ejecutar el Asistente para conectar un equipo al servidor, escriba **http://<nombreDeDominio \> /Connect** en la barra de direcciones del explorador web (donde <dominio \> es el nombre de dominio de su organización). El administrador de red puede proporcionarle la información del nombre de dominio.
@@ -449,7 +449,7 @@ ms.locfileid: "89624969"
 
 -   Este método no puede usarse para conectar un equipo remoto al servidor.
 
-#### <a name="prerequisites"></a>Requisitos previos
+#### <a name="prerequisites"></a>Prerrequisitos
 
 -   El equipo debe tener una conexión física a la red local.
 
@@ -482,11 +482,11 @@ ms.locfileid: "89624969"
 
 2.  Abra un símbolo del sistema con derechos de administrador.
 
-    -   En Windows 10, haga clic en el botón **Inicio** , seleccione **todas las aplicaciones**símbolo del sistema de Windows, haga clic  ->  **Windows System Tools**  ->  **Command Prompt**con el botón secundario en símbolo del sistema y, a continuación, haga clic en **Ejecutar como administrador**.
+    -   En Windows 10, haga clic en el botón **Inicio** , seleccione **todas las aplicaciones** símbolo del sistema de Windows, haga clic  ->    ->  con el botón secundario en símbolo del sistema y, a continuación, haga clic en **Ejecutar como administrador**.
 
     -   En Windows 8, en la página **Inicio** , escriba **comando** y, a continuación, presione Entrar. En los resultados, haga clic con el botón secundario en **Símbolo del sistema** y después haga clic en **Ejecutar como administrador**.
 
-    -   En Windows 7, en el menú **Inicio** , escriba **Command** en el cuadro de búsqueda, haga clic con el botón secundario en **símbolo del sistema**y, a continuación, haga clic en **Ejecutar como administrador**.
+    -   En Windows 7, en el menú **Inicio** , escriba **Command** en el cuadro de búsqueda, haga clic con el botón secundario en **símbolo del sistema** y, a continuación, haga clic en **Ejecutar como administrador**.
 
 3.  En el símbolo del sistema, escriba el siguiente comando y presione ENTRAR:
 
@@ -504,7 +504,7 @@ ms.locfileid: "89624969"
 
 1.  Inicie sesión en el servidor que quiere conectar a la red de Windows Server Essentials.
 
-2.  Abra un explorador de Internet y, en la barra de direcciones, escriba **http://<ServerName \> /Connect**, donde *<ServerName \> * es el nombre del servidor que ejecuta Windows Server Essentials y, a continuación, presione Entrar.
+2.  Abra un explorador de Internet y, en la barra de direcciones, escriba **http://<ServerName \> /Connect**, donde *<ServerName \>* es el nombre del servidor que ejecuta Windows Server Essentials y, a continuación, presione Entrar.
 
 3.  Si la configuración de seguridad mejorada de Internet Explorer está habilitada en el servidor que intenta conectar a la red de Windows Server Essentials, haga lo siguiente; de lo contrario, omita este paso.
 
@@ -561,10 +561,10 @@ ms.locfileid: "89624969"
 - El estado directiva de grupo del segundo servidor se muestra como **no aplicable**.
 
 ###  <a name="install-the-connector-software"></a><a name="BKMK_11"></a> Instalar el software del conector
- El software del Conector de Windows Server Essentials se instala cuando conecta un equipo al servidor mediante el asistente para conectar un equipo al servidor. Puede iniciar este asistente escribiendo **http://<ServerName \> /Connect** en la barra de direcciones del explorador web (donde *<ServerName \> * es el nombre del servidor).
+ El software del Conector de Windows Server Essentials se instala cuando conecta un equipo al servidor mediante el asistente para conectar un equipo al servidor. Puede iniciar este asistente escribiendo **http://<ServerName \> /Connect** en la barra de direcciones del explorador web (donde *<ServerName \>* es el nombre del servidor).
 
 > [!NOTE]
->  Si el equipo está en una ubicación remota, escriba **http://<nombreDeDominio \> /Connect** en la barra de direcciones del explorador web (donde *<dominio \> * es el nombre de dominio de su organización) para ejecutar el Asistente para conectar un equipo al servidor. El administrador de red puede proporcionarle la información del nombre de dominio.
+>  Si el equipo está en una ubicación remota, escriba **http://<nombreDeDominio \> /Connect** en la barra de direcciones del explorador web (donde *<dominio \>* es el nombre de dominio de su organización) para ejecutar el Asistente para conectar un equipo al servidor. El administrador de red puede proporcionarle la información del nombre de dominio.
 
  El software del Conector hace lo siguiente:
 

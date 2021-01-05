@@ -1,18 +1,18 @@
 ---
 title: Mover la configuración y los datos al servidor de destino para la migración a Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo migrar la configuración y los datos al servidor de destino para la migración a Windows Server Essentials.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 2b882e87-347a-4010-b7fd-9599d61198dd
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 4a37d8e39dde95a143c15a5573be0deb0291d827
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 1b9ee5e4c52b812ab05a251257625772c361c1e8
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625653"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810688"
 ---
 # <a name="move-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>Mover la configuración y los datos al servidor de destino para la migración a Windows Server Essentials
 
@@ -51,7 +51,7 @@ Para mover la configuración y los datos al servidor de destino, haga lo siguien
 
 3. Repita el paso anterior para cada carpeta compartida que vaya a migrar desde el servidor de origen.
 
-## <a name="configure-the-network"></a>Configurar la red
+## <a name="configure-the-network"></a>Configuración de la red
  Después de mover el rol de DHCP al enrutador, configure la red en el servidor de destino.
 
 #### <a name="to-configure-the-network"></a>Para configurar la red

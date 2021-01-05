@@ -1,18 +1,18 @@
 ---
 title: Administrar Microsoft 365 en Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo administrar los servicios de Microsoft 365 y las cuentas en línea junto con los recursos locales desde el panel de Windows Server Essentials.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 3f8485e4-e10f-4f38-8a5e-d5227abd0d84
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 71e8204c8b11f423871f890badffdfb96206feb8
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 1df50d94d8ec118742d089c11afbc5fff17f9800
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623064"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97811362"
 ---
 # <a name="manage-microsoft-365-in-windows-server-essentials"></a>Administrar Microsoft 365 en Windows Server Essentials
 
@@ -114,17 +114,17 @@ Al integrar el servidor de Windows Server Essentials con Microsoft 365, puede ad
 
 1. Inicie sesión en el servidor como administrador y abra el panel de Windows Server Essentials.
 
-2. En la página **principal** , haga clic en **servicios** (en Windows Server Essentials, haga clic en **correo electrónico**), en **integrar con Microsoft 365**y, a continuación, haga clic en **configurar la integración de Microsoft 365**.
+2. En la página **principal** , haga clic en **servicios** (en Windows Server Essentials, haga clic en **correo electrónico**), en **integrar con Microsoft 365** y, a continuación, haga clic en **configurar la integración de Microsoft 365**.
 
     Aparece el Asistente para la integración con Microsoft 365.
 
 3. En la página **Comenzar**, realice una de las acciones siguientes:
 
-   -   Si no tiene una suscripción a Microsoft 365, haga clic en **siguiente**y siga las instrucciones para suscribirse a Microsoft 365 o registrarse para obtener una suscripción de prueba.
+   -   Si no tiene una suscripción a Microsoft 365, haga clic en **siguiente** y siga las instrucciones para suscribirse a Microsoft 365 o registrarse para obtener una suscripción de prueba.
 
         Deberá iniciar sesión en Microsoft 365 antes de volver al asistente. Pero no es necesario realizar ninguna de las tareas de la sección **iniciar aquí** del portal de Microsoft 365.
 
-   -   Si ya tiene una suscripción a Microsoft 365 que desea integrar con el servidor, seleccione **ya tengo una suscripción para Microsoft 365**y, a continuación, haga clic en **siguiente**.
+   -   Si ya tiene una suscripción a Microsoft 365 que desea integrar con el servidor, seleccione **ya tengo una suscripción para Microsoft 365** y, a continuación, haga clic en **siguiente**.
 
 4. Siga las instrucciones para completar el asistente.
 
@@ -189,7 +189,7 @@ Al integrar el servidor de Windows Server Essentials con Microsoft 365, puede ad
 |-------------|--------------------------|-------------|
 |(Varios servicios)|MX| Microsoft 365 usa este registro para comprobar que posee un nombre de dominio específico. Este registro MX no interfiere con el enrutamiento de mensajes de correo electrónico.|
 |Exchange Online|MX|Proporciona el enrutamiento de mensajes de correo electrónico. **Importante:**  Si va a migrar el correo electrónico, no asigne una preferencia de cero (**0**) al nuevo registro MX. Asegúrese de que el valor del registro sea mayor que el valor asignado al registro MX actual. Cuando se complete la migración de correo electrónico y esté listo para cambiar el servidor de correo electrónico a Microsoft 365, pida al registrador de nombres de dominio que restablezca el valor de preferencia del nuevo registro MX.|
-|Exchange Online|Alias (CNAME)|Registro de detección automática que ayuda a los usuarios a establecer fácilmente una conexión entre Exchange Online y el cliente de escritorio de Outlook o un cliente de correo electrónico móvil. **Nota:**  Si prefiere tener acceso a Outlook Web Access mediante el nombre de dominio de su organización (por ejemplo, http://mail.contoso.com) en lugar de la dirección URL estándar ( https://outlook.com/owa/office365.com) ), puede configurar el registro de alias (CName) de la siguiente manera: **tipo = CName, TTL = 01:00:00, nombre de host = correo, dirección = correo. Office365. com**|
+|Exchange Online|Alias (CNAME)|Registro de detección automática que ayuda a los usuarios a establecer fácilmente una conexión entre Exchange Online y el cliente de escritorio de Outlook o un cliente de correo electrónico móvil. **Nota:**  Si prefiere tener acceso a Outlook Web Access mediante el nombre de dominio de su organización (por ejemplo, http://mail.contoso.com) en lugar de la dirección URL estándar ( https://outlook.com/owa/office365.com) ), puede configurar el registro de alias (CNAME) de la siguiente manera: **tipo = CNAME, TTL = 01:00:00, nombre de host = correo, dirección = correo. Office365. com**|
 |Exchange Online|TXT|Especifica que outlook.com, el dominio que usan los servidores de correo electrónico de Microsoft 365, está autorizado para enviar correo electrónico en nombre de su dominio. Cree este registro para evitar que el correo electrónico de salida se considere correo no deseado.|
 |Lync Online|SRV|Permite habilitar la federación con otros servicios de mensajería instantánea como Windows Live o Yahoo!.|
 |Lync Online|SRV|Registro de detección automática que ayuda a los usuarios a establecer fácilmente una conexión entre el cliente de escritorio de Lync y Microsoft Lync Online.|

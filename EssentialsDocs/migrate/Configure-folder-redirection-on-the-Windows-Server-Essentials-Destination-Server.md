@@ -1,18 +1,18 @@
 ---
 title: Configuración de la redirección de carpetas en el servidor de destino de Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo configurar el redireccionamiento de carpetas en el servidor de destino de Windows Server Essentials.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: fe77ba67-128c-4fc3-9361-30fa6af42516
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: bc67b6bae8492d7e176ec5e46d268d171ad7c94a
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 0613bb1167fff59f17bfc30dc84552022dd62572
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89622933"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97811052"
 ---
 # <a name="configure-folder-redirection-on-the-windows-server-essentials-destination-server"></a>Configuración de la redirección de carpetas en el servidor de destino de Windows Server Essentials
 
@@ -26,7 +26,7 @@ Haga esta tarea si está habilitada la redirección de carpetas en el servidor d
 
 1. En el servidor de destino, abra la herramienta administrativa **Administración de directivas de grupo**.
 
-2. En **Administración de directivas de grupo**, expandaaa **Bosque:**<em>NombreDominioRed</em>, expandaaa **Dominios**, expandaaa *NombreDominioRed*y **Objetos de directiva de grupo**.
+2. En **Administración de directivas de grupo**, expandaaa **Bosque:**<em>NombreDominioRed</em>, expandaaa **Dominios**, expandaaa *NombreDominioRed* y **Objetos de directiva de grupo**.
 
 3. Haga clic con el botón secundario en **Redirección de carpetas de directiva de grupo de SBS** y después haga clic en **Eliminar**.
 

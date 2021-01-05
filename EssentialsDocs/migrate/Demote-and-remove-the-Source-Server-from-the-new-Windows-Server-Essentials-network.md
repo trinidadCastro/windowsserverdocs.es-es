@@ -1,18 +1,18 @@
 ---
 title: Disminuir de nivel y quitar el servidor de origen del nuevo network1 de Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo disminuir de nivel y quitar el servidor de origen de la nueva red de Windows Server Essentials.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: d9f18b29-8e03-439e-bdf0-1dac5e4f70c5
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 3e0902f99be96e3197b90b4892f78849a5c84125
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 792aa83ed86c620921f243eba856f76258ab638f
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89622887"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97811042"
 ---
 # <a name="demote-and-remove-the-source-server-from-the-new-windows-server-essentials-network1"></a>Disminuir de nivel y quitar el servidor de origen del nuevo network1 de Windows Server Essentials
 
@@ -77,7 +77,7 @@ Una vez finalizada la instalación de Windows Server Essentials y completa las t
 
 3.  En el símbolo del sistema, escriba **gpupdate /force** y, después, presione ENTRAR.
 
-4.  El proceso puede requerir que cierre la sesión y vuelva a iniciarla para finalizar. Haga clic en **Sí** para confirmar.
+4.  El proceso puede requerir que cierre la sesión y vuelva a iniciarla para finalizar. Haga clic en **Sí** para continuar.
 
 ##### <a name="to-demote-the-source-server"></a>Para disminuir de nivel el servidor de origen:
 

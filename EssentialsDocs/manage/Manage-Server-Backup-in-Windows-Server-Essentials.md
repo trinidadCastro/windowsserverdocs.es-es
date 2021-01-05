@@ -1,18 +1,18 @@
 ---
 title: Administrar copias de seguridad del servidor en Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información sobre las tareas de copia de seguridad comunes que puede realizar mediante el panel de Windows Server Essentials.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 0302d070-c58a-40f2-b56d-7e7842813d02
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: f2b1e0205578cbf629418a2b78d6b27199cf694a
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: a1fbcd2e49da69fa602ab55f102615dc6b41e04b
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89626144"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97811292"
 ---
 # <a name="manage-server-backup-in-windows-server-essentials"></a>Administrar copias de seguridad del servidor en Windows Server Essentials
 

@@ -1,18 +1,18 @@
 ---
 title: Mover la configuración y los datos de Windows Server 2008 Foundation al servidor de destino para la migración a Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo migrar los datos y la configuración de Windows Server 2008 Foundation al servidor de destino para la migración a Windows Server Essentials.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 3ff7d040-ebd1-421c-80db-765deacedd4c
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: c2426e535ff67b1e76668e5fd2abefbd3f5569bb
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: c58d834677f8882bb0d76570f90846c41eddd465
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625666"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810652"
 ---
 # <a name="move-windows-server-2008-foundation-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>Mover la configuración y los datos de Windows Server 2008 Foundation al servidor de destino para la migración a Windows Server Essentials
 
@@ -92,7 +92,7 @@ Para mover la configuración y los datos al servidor de destino, haga lo siguien
         > [!IMPORTANT]
         >  Si no ha configurado reservas de DHCP o una dirección IP estática en el enrutador para el servidor de destino y el intervalo de DHCP no es el mismo que el servidor de origen, es posible que el enrutador emita una nueva dirección IP para el servidor de destino. Si ocurre, restablezca las reglas de reenvío del puerto del enrutador para hacer un reenvío a la nueva dirección IP del servidor de destino.
 
-## <a name="configure-the-network"></a>Configurar la red
+## <a name="configure-the-network"></a>Configuración de la red
  Después de mover el rol de DHCP al enrutador, configure la red en el servidor de destino.
 
 #### <a name="to-configure-the-network"></a>Para configurar la red

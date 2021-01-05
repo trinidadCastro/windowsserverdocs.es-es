@@ -1,18 +1,18 @@
 ---
 title: Opciones de escritorio remoto
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información sobre las opciones de escritorio remoto, incluida la velocidad de conexión, el tamaño de la pantalla, cómo habilitar el equipo remoto para imprimir en el equipo local, etc.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 51076946-ea9b-4ac7-9a6e-d6023816b97d
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: f4603adb7da1df0853b4c816254241d21b969fc5
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 02e34da2bf47498d3ee7ce7a424cc4abbc360f5a
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625921"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97811122"
 ---
 # <a name="remote-desktop-options"></a>Opciones de escritorio remoto
 

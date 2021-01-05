@@ -1,31 +1,31 @@
 ---
 title: Administrar cuentas en línea para usuarios de Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo administrar las cuentas en línea junto con las cuentas de usuario desde el panel de Windows Server Essentials.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: c09f4cf6-4d12-49fe-9ae4-e6cb14027b9d
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 3506f83ae2d6b5fc3d49376193cbf3c59e36fb65
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 684afa6d17e4be5282e1596244689a501ffaf5be
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623042"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97811352"
 ---
 # <a name="manage-online-accounts-for-windows-server-essentials-users"></a>Administrar cuentas en línea para usuarios de Windows Server Essentials
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-Al integrar el servidor de Windows Server Essentials con Microsoft 365, puede administrar las cuentas en línea junto con las cuentas de usuario desde el panel. En este tema, puede averiguar lo que puede obtener mediante la administración de las cuentas de Microsoft Online Services de los usuarios desde el panel, cómo crear y administrar cuentas en línea desde el panel, y cómo administrar direcciones de correo electrónico y grupos de distribución para Exchange online desde el panel.
+Al integrar el servidor de Windows Server Essentials con Microsoft 365, puede administrar las cuentas en línea junto con las cuentas de usuario desde el panel. En este tema, descubrirá lo que puede obtener mediante la administración de las cuentas de Microsoft Online Services de los usuarios desde el panel, cómo crear y administrar cuentas en línea desde el panel y cómo administrar direcciones de correo electrónico y grupos de distribución para Exchange online desde el panel.
 
 
 > [!NOTE]
 >  Para administrar las cuentas de Microsoft Online Services en Windows Server Essentials, debe integrar el servidor con Microsoft 365. Para obtener instrucciones, consulte [Administración de Microsoft 365](Manage-Office-365-in-Windows-Server-Essentials.md).
 
 > [!IMPORTANT]
->  Si administra cuentas en línea en Windows Server Essentials, está acostumbrado a ver las cuentas de Microsoft Online Services a las que se hace referencia como *Microsoft 365 cuentas*. En el panel de Windows Server Essentials, las etiquetas se cambiaron a *cuentas de Microsoft Online Services*o a *cuentas en línea de Microsoft* para abreviar. Las cuentas y los procedimientos son iguales, salvo las etiquetas. En la mayoría de los procedimientos de este tema se usa el término *cuenta en línea*.
+>  Si administra cuentas en línea en Windows Server Essentials, está acostumbrado a ver las cuentas de Microsoft Online Services a las que se hace referencia como *Microsoft 365 cuentas*. En el panel de Windows Server Essentials, las etiquetas se cambiaron a *cuentas de Microsoft Online Services* o a *cuentas en línea de Microsoft* para abreviar. Las cuentas y los procedimientos son iguales, salvo las etiquetas. En la mayoría de los procedimientos de este tema se usa el término *cuenta en línea*.
 
 ## <a name="in-this-topic"></a>En este tema
 
@@ -231,7 +231,7 @@ Al integrar el servidor de Windows Server Essentials con Microsoft 365, puede ad
 
 ###  <a name="to-add-a-distribution-group"></a><a name="BKMK_PROCEDURE_AddDistGroup"></a> Para agregar un grupo de distribución
 
-1.  En el panel de Windows Server Essentials, haga clic en **usuarios**y, a continuación, haga clic en la pestaña **grupos de distribución** .
+1.  En el panel de Windows Server Essentials, haga clic en **usuarios** y, a continuación, haga clic en la pestaña **grupos de distribución** .
 
 2.  En **Tareas de los grupos de distribución**, haga clic en **Agregar un grupo de distribución**.
 

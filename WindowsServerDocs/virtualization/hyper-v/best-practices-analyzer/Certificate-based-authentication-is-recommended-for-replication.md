@@ -1,17 +1,17 @@
 ---
 title: Se recomienda la autenticación basada en certificados para la replicación
-description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información acerca de qué hacer cuando una o varias máquinas virtuales seleccionadas para la replicación están configuradas para la autenticación Kerberos.
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: d931cc57-414f-4bdf-9ebd-08fd5e22b19d
 ms.date: 8/16/2016
-ms.openlocfilehash: 3ef11472c042e19de9f7ee52ea5958ca0bf6e44b
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 83d4b90670678660da0610d800eaf1fbe87a863e
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90745860"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97833560"
 ---
 # <a name="certificate-based-authentication-is-recommended-for-replication"></a>Se recomienda la autenticación basada en certificados para la replicación
 
@@ -36,7 +36,7 @@ En las secciones siguientes, cursiva indica el texto de la interfaz de usuario q
 
 \<list of virtual machines>
 
-## <a name="resolution"></a>**Solución**
+## <a name="resolution"></a>**Resolución**
 *Si se usa otro método para realizar el cifrado, puede pasarlo por alto. De lo contrario, modifique la configuración de la máquina virtual para elegir autenticación basada en certificados.*
 
 

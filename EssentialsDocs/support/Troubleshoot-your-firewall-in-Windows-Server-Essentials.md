@@ -1,18 +1,18 @@
 ---
 title: Solucionar problemas del firewall en Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo usar el Asistente para reparación del acceso desde cualquier lugar si tiene problemas con el acceso remoto.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 51d94b67-8b9b-4159-80dd-f652d73a43cb
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: d1a36ecbd62e658c6361c004cf0166a295641b35
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 3cf84844a0bbca8128df1429c843d3e565318f95
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625048"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810072"
 ---
 # <a name="troubleshoot-your-firewall-in-windows-server-essentials"></a>Solucionar problemas del firewall en Windows Server Essentials
 
@@ -30,7 +30,7 @@ ms.locfileid: "89625048"
 
    Si está usando una configuración de red avanzada o un firewall que no es de Microsoft, puede que necesite abrir puertos adicionales en el firewall. Los puertos de la tabla siguiente están registrados en la Autoridad de asignación de números de Internet (IANA).
 
-|Número de puerto|Descripción|
+|Número de puerto|Description|
 |-----------------|-----------------|
 |65500|Servicio web de certificados|
 |65510 y 65515|Sitio web de implementación de equipos cliente|

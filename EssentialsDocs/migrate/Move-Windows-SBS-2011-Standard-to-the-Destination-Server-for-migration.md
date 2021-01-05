@@ -1,18 +1,18 @@
 ---
 title: Mover la configuración y los datos de Windows SBS 2011 Standard al servidor de destino para la migración a Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo migrar los datos y la configuración de Windows SBS 2011 Standard al servidor de destino para la migración a Windows Server Essentials.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 16b24026-2fe3-4bd0-b82f-900e1564be99
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 6a961f8bb201f9746b4e212801576ff287dc43b2
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 02496775815c5d05f99f3a5fc7bbb1c1b9efaa6c
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625673"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810702"
 ---
 # <a name="move-windows-sbs-2011-standard-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>Mover la configuración y los datos de Windows SBS 2011 Standard al servidor de destino para la migración a Windows Server Essentials
 
@@ -94,7 +94,7 @@ Para mover la configuración y los datos al servidor de destino, haga lo siguien
  > [!IMPORTANT]
  > Si no ha configurado reservas de DHCP o una dirección IP estática en el enrutador para el servidor de destino y el intervalo de DHCP no es el mismo que el servidor de origen, es posible que el enrutador emita una nueva dirección IP para el servidor de destino. Si ocurre, restablezca las reglas de reenvío del puerto del enrutador para hacer un reenvío a la nueva dirección IP del servidor de destino.
 
-## <a name="configure-the-network"></a>Configurar la red
+## <a name="configure-the-network"></a>Configuración de la red
  Después de mover el rol de DHCP al enrutador, configure la red en el servidor de destino.
 
 #### <a name="to-configure-the-network"></a>Para configurar la red
@@ -126,9 +126,9 @@ Para mover la configuración y los datos al servidor de destino, haga lo siguien
 
 2. Haga clic en **Inicio** y, después, en **Administración de servidores**.
 
-3. En el panel de navegación, haga clic en **Administración avanzada**, en **Administración de directiva de grupo**y, a continuación, en **bosque:** _<sudominio \> _.
+3. En el panel de navegación, haga clic en **Administración avanzada**, en **Administración de directiva de grupo** y, a continuación, en **bosque:** _<sudominio \>_.
 
-4. Haga clic en **dominios**, haga clic en *<\> sudominio*y, a continuación, haga clic en **Directiva de grupo objetos**.
+4. Haga clic en **dominios**, haga clic en *<\> sudominio* y, a continuación, haga clic en **Directiva de grupo objetos**.
 
 5. Haga clic con el botón secundario en **Directiva de auditoría de Small Business Server**, en **Eliminar** y, a continuación, en **Aceptar**.
 
@@ -156,15 +156,15 @@ Para mover la configuración y los datos al servidor de destino, haga lo siguien
 
 2. Haga clic en **Inicio** y, después, en **Administración de servidores**.
 
-3. En el panel de navegación, haga clic en **características**, en **Administración de directiva de grupo**y, a continuación, en **bosque:** _<nombredominiored \> _
+3. En el panel de navegación, haga clic en **características**, en **Administración de directiva de grupo** y, a continuación, en **bosque:** _<nombredominiored \>_
 
-4. Haga clic en **dominios**, haga clic en *<\> nombredominiored*y, a continuación, en **filtros WMI**.
+4. Haga clic en **dominios**, haga clic en *<\> nombredominiored* y, a continuación, en **filtros WMI**.
 
 5. Haga clic con el botón derecho en **Cliente de Windows SBS**, haga clic en **Eliminar** y, a continuación, haga clic en **Sí**.
 
-6. Haga clic con el botón secundario en Windows **SBS Client Windows 7 y Windows Vista**, haga clic en **eliminar**y, a continuación, en **sí**.
+6. Haga clic con el botón secundario en Windows **SBS Client Windows 7 y Windows Vista**, haga clic en **eliminar** y, a continuación, en **sí**.
 
-7. Haga clic con el botón secundario en **Windows SBS Client Windows XP**, haga clic en **eliminar**y, a continuación, en **sí**.
+7. Haga clic con el botón secundario en **Windows SBS Client Windows XP**, haga clic en **eliminar** y, a continuación, en **sí**.
 
 8. Compruebe que se hayan eliminado los tres filtros WMI.
 

@@ -1,18 +1,18 @@
 ---
 title: Transición de Windows Server Essentials a Windows Server 2012 Standard
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo realizar una transición de licencias en contexto de Windows Server Essentials a Windows Server 2012 Standard para mantener la licencia conforme.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 51bcf124-c215-4e9d-9fa8-a90fa2c2fa22
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 3a73b744ca0b28802617881cbb64420f9f033dab
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 5f27bfff039e08003d45aeda2f2b8900808d1ffe
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625312"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810342"
 ---
 # <a name="transition-from-windows-server-essentials-to-windows-server-2012-standard"></a>Transición de Windows Server Essentials a Windows Server 2012 Standard
 
@@ -39,7 +39,9 @@ ms.locfileid: "89625312"
 
     2.  Ejecute el siguiente comando:
 
-         **DISM/online/Set-Edition: ServerStandard/geteula: ruta de acceso del CLUF**
+         ```console
+         dism /online /set-edition:ServerStandard /geteula: eula path
+         ```
 
          Donde **ruta de términos de licencia** representa la ubicación donde desea guardar al archivos de los términos de licencia. Por ejemplo: C:\ws8std_eula.rtf.  Asegúrese de usar .rtf como extensión de archivo.
 
@@ -61,7 +63,9 @@ ms.locfileid: "89625312"
 
 2. Abra Windows PowerShell como administrador y ejecute el siguiente comando.
 
-    **dism /online /set-edition:ServerStandard /accepteula /productkey:** *Clave de producto*
+    ```console
+    dism /online /set-edition:ServerStandard /accepteula /productkey: <Product Key>
+    ```
 
     Donde *clave de producto* es la clave de producto de su copia de Windows Server 2012 Standard.
 

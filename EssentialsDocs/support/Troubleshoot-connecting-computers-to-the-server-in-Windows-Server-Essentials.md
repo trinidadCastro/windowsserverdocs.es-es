@@ -1,18 +1,18 @@
 ---
 title: Solucionar problemas de conexión de equipos al servidor en Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo solucionar problemas que pueden surgir al conectar un equipo al servidor que ejecuta Windows Server Essentials.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: e45b3d89-c057-4c70-a627-86fb06dd22aa
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 6314ef0baa92f6e6fe0d6a4bb2b49c3fcee6f893
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: cfb7cd5b31e86fcbed9e92e8f82f1da4437f380d
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625071"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810142"
 ---
 # <a name="troubleshoot-connecting-computers-to-the-server-in-windows-server-essentials"></a>Solucionar problemas de conexión de equipos al servidor en Windows Server Essentials
 

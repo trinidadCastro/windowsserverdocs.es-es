@@ -1,18 +1,18 @@
 ---
 title: Restauración completa del sistema desde una copia de seguridad existente del equipo cliente
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo restaurar un sistema completo a partir de una copia de seguridad existente del equipo cliente.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 47e498a6-1b71-47de-88f6-8c13c221d108
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 6b93e0e31c592a11d44aca74029012a1b6229227
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 7423af3846648e353b9dcfebe4644efe0f91a846
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89622985"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97811093"
 ---
 # <a name="restore-a-full-system-from-an-existing-client-computer-backup"></a>Restauración completa del sistema desde una copia de seguridad existente del equipo cliente
 
@@ -161,7 +161,7 @@ ms.locfileid: "89622985"
 
 3. En la ventana **Asistente para restauración completa del sistema** elija su idioma preferido y, a continuación, haga clic en la flecha.
 
-4. Seleccione el **Formato de hora y moneda**, y **Teclado o método de entrada** adecuados para el equipo. Haga clic en **Continuar**.
+4. Seleccione el **Formato de hora y moneda**, y **Teclado o método de entrada** adecuados para el equipo. Haga clic en **Continue**.
 
 5. Si faltan controladores, el mensaje del proceso de restauración no puede comprobar que se muestran los controladores. Haga clic en **Cerrar** y a continuación, en el cuadro de diálogo Bienvenida, seleccione **Cargar controladores**.
 
@@ -185,7 +185,7 @@ ms.locfileid: "89622985"
 
    3.  Si se encuentra el servidor, se muestra la página **iniciar sesión \> en <nombreservidor** .
 
-9. En la página **iniciar sesión en <\> nombreServidor** , escriba *<nombredecuentadeadministrador \> * en el cuadro de texto **nombre de usuario** y la contraseña de la cuenta de administrador en el cuadro de texto **contraseña** y, a continuación, haga clic en **siguiente**.
+9. En la página **iniciar sesión en <\> nombreServidor** , escriba *<nombredecuentadeadministrador \>* en el cuadro de texto **nombre de usuario** y la contraseña de la cuenta de administrador en el cuadro de texto **contraseña** y, a continuación, haga clic en **siguiente**.
 
     > [!IMPORTANT]
     >  Debe usar una cuenta de administrador creada en inglés. Si no dispone de una, debe crear una cuenta nueva de administrador. Para ello, abra la pestaña **Usuarios** en el panel del servidor, establezca el formato de idioma de teclado en inglés y, a continuación, ejecute la tarea **Agregar una cuenta de usuario** para crear la cuenta de administrador. A continuación, use la nueva cuenta de administrador para proseguir con la restauración del equipo cliente.
@@ -238,7 +238,7 @@ ms.locfileid: "89622985"
           >  Si un equipo cliente se basa en Unified Extensible Firmware Interface (UEFI), debe usar la herramienta **DiskPart** para inicializar el disco del sistema. Para ello, abra una ventana de comandos (presione Ctrl + Alt + Mayús durante 5 segundos en el entorno WinPE), ejecute **diskpart.exe** y, a continuación, los siguientes comandos de Diskpart:
           >
           > 1. **Disco de lista de> de Diskpart**
-          >    2. **DiskPart> seleccionar disco #** *<disco \> *
+          >    2. **DiskPart> seleccionar disco #** *<disco \>*
           >    3. **DISKPART> clean**
           >    4. **DISKPART> convert gpt**
           >    5. **DISKPART> create partition efi size=** *100* (donde *100* es un tamaño de partición de ejemplo en MB, que debería ser el mismo que el de la partición original)

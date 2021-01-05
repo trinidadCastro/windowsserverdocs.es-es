@@ -1,20 +1,20 @@
 ---
-title: Guía de inicio rápido al uso de Microsoft 365 con Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+title: Guía de inicio rápido de Microsoft 365 con Windows Server Essentials
+description: Obtenga información sobre cómo abrir las aplicaciones en Microsoft 365 mediante herramientas conocidas como el Launchpad de Windows Server Essentials y el servidor 2012 R2.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 51a7f1f1-088b-4487-b2c6-4f97aad3004d
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: bdabd2f6e8f8fbc8199789ba91401ed6505c389e
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: b541a0ca1742d63df5b091b0787ed5fac01d1298
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89624934"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810042"
 ---
-# <a name="quick-start-guide-to-using-microsoft-365-with-windows-server-essentials"></a>Guía de inicio rápido al uso de Microsoft 365 con Windows Server Essentials
+# <a name="quick-start-guide-to-using-microsoft-365-with-windows-server-essentials"></a>Guía de inicio rápido de Microsoft 365 con Windows Server Essentials
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
@@ -41,7 +41,7 @@ ms.locfileid: "89624934"
 
 #### <a name="to-open-microsoft-365-from-the-launchpad"></a>Para abrir Microsoft 365 desde Launchpad
 
-1.  Abra el Launchpad, haga clic en **Microsoft Microsoft 365**y, a continuación, haga clic en **Microsoft 365 Inicio**.
+1.  Abra el Launchpad, haga clic en **Microsoft Microsoft 365** y, a continuación, haga clic en **Microsoft 365 Inicio**.
 
 2.  Inicie sesión en Microsoft 365 mediante el identificador de Microsoft online que se le proporcionó y la contraseña de Windows.
 

@@ -1,18 +1,18 @@
 ---
 title: Administrar VPN en Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Aprenda a usar conexiones VPN para acceder a los recursos del servidor.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: cc2b264a-b9a8-4114-9f7b-8604f77096e5
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: a4e2d87787c3c7e9ebcb8dc216de725f7cb13a1f
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: b4518d43b2b3a24f9df15e122c328c1874817092
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89626008"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97811212"
 ---
 # <a name="manage-vpn-in-windows-server-essentials"></a>Administrar VPN en Windows Server Essentials
 
@@ -54,9 +54,9 @@ ms.locfileid: "89626008"
 
 3.  En la lista de cuentas de usuario, seleccione aquella a la que desea conceder permisos de acceso remoto al escritorio.
 
-4.  En el panel ** \> tareas** de la cuenta de usuario de<, haga clic en **propiedades**.
+4.  En el panel **\> tareas** de la cuenta de usuario de<, haga clic en **propiedades**.
 
-5.  En las ** \> propiedades**de la cuenta de usuario de<, haga clic en la pestaña **acceso desde cualquier lugar** .
+5.  En las **\> propiedades** de la cuenta de usuario de<, haga clic en la pestaña **acceso desde cualquier lugar** .
 
 6.  En la pestaña **acceso desde cualquier lugar** , seleccione la casilla **permitir red privada virtual (VPN)**  para permitir que un usuario se conecte al servidor mediante VPN.
 

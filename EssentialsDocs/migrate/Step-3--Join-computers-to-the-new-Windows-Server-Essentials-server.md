@@ -1,18 +1,18 @@
 ---
 title: 'Paso 3: Unión de equipos al nuevo servidor de Windows Server Essentials'
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información sobre cómo conectar equipos cliente al nuevo servidor que ejecuta Windows Server Essentials.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: a0e07d1a-8409-429b-87d7-0f4a7e14d668
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 7495831c6f593b65261fda8f50d4ef9d1000d9b4
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 137330d084738313dbf666590f78575bba3b04ef
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625482"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810514"
 ---
 # <a name="step-3-join-computers-to-the-new-windows-server-essentials-server"></a>Paso 3: Unión de equipos al nuevo servidor de Windows Server Essentials
 
@@ -32,7 +32,7 @@ El siguiente paso del proceso de migración consiste en conectar los equipos cli
 2.  En la lista de programas, haga clic en la aplicación de conexión que se ejecuta en el equipo.
 
     > [!NOTE]
-    >  La aplicación de conector puede ser el **conector de Windows Small Business Server 2011 Essentials**o el **conector de Windows Server Essentials**, dependiendo de la versión de Windows Server Essentials a la que se conectó el equipo cliente.
+    >  La aplicación de conector puede ser el **conector de Windows Small Business Server 2011 Essentials** o el **conector de Windows Server Essentials**, dependiendo de la versión de Windows Server Essentials a la que se conectó el equipo cliente.
 
 3.  Haga clic en **Desinstalar**.
 
@@ -45,7 +45,7 @@ El siguiente paso del proceso de migración consiste en conectar los equipos cli
 
 2.  Abra un explorador de Internet, como, por ejemplo, Internet Explorer.
 
-3.  En la barra de direcciones, escriba **http://<ServerName \> /Connect**y, a continuación, presione Entrar.
+3.  En la barra de direcciones, escriba **http://<ServerName \> /Connect** y, a continuación, presione Entrar.
 
 4.  Siga las instrucciones en pantalla para unir el equipo cliente al nuevo servidor de Windows Server Essentials.
 

@@ -1,18 +1,18 @@
 ---
-title: Extensión de diagnósticos de ruta de acceso de datos SDN en el centro de administración de Windows
+title: Extensión de los diagnósticos de ruta de acceso de datos SDN en Windows Admin Center
 description: Use este tema para automatizar las capturas de paquetes basadas en el monitor de paquetes con la extensión de diagnóstico de rutas de acceso de datos de SDN en el centro de administración de Windows.
 ms.topic: how-to
 author: khdownie
 ms.author: v-kedow
 ms.date: 11/12/2020
-ms.openlocfilehash: 9b1a247e0d07a4e44ba7640aa2e95180956ccee8
-ms.sourcegitcommit: 8808f871c8cf131f819ef5540286218bd425da96
+ms.openlocfilehash: 54a65147847a28a9820589521f7c94ea1c4b08cd
+ms.sourcegitcommit: b0c10eaffaa5de3eeff44c433580b41270c27d32
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94632649"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97826179"
 ---
-# <a name="sdn-data-path-diagnostics-extension-in-windows-admin-center"></a>Extensión de diagnósticos de ruta de acceso de datos SDN en el centro de administración de Windows
+# <a name="sdn-data-path-diagnostics-extension-in-windows-admin-center"></a>Extensión de los diagnósticos de ruta de acceso de datos SDN en Windows Admin Center
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows 10, Azure Stack HCl, Azure Stack Hub, Azure
 
@@ -24,7 +24,7 @@ El monitor de paquetes (Pktmon) es una herramienta de diagnóstico de red integr
 ## <a name="what-is-windows-admin-center"></a>¿Qué es Windows Admin Center?
 El centro de administración de Windows es una herramienta de administración basada en explorador y implementada localmente que le permite administrar los servidores de Windows sin depender de Azure o de la nube. Windows Admin Center ofrece el control total de todos los aspectos de tu infraestructura de servidores y es especialmente útil para la administración de servidores en redes privadas que no están conectadas a Internet. Windows Admin Center es la evolución moderna de herramientas de administración como el Administrador de servidores y MMC.
 
-## <a name="before-you-start"></a>Antes de empezar
+## <a name="before-you-start"></a>Antes de comenzar
 - Para usar la herramienta, el servidor de destino debe ejecutar Windows Server 2019 versión 1903 (19H1) y versiones posteriores.
 - [Instale el centro de administración de Windows](/windows-server/manage/windows-admin-center/deploy/install).
 - Agregar un clúster al centro de administración de Windows:
@@ -39,7 +39,7 @@ El clúster se agregará a la lista de conexiones. Haga clic en él para iniciar
 
 <center>
 
-:::image type="content" source="media/add-sdn-enabled-hci-connection.png" alt-text="Agregar una conexión HCI habilitada para SDN con el centro de administración de Windows" border="true":::
+:::image type="content" source="media/add-sdn-enabled-hci-connection.png" alt-text="Agregar una conexión HCI habilitada para SDN con el centro de administración de Windows" border="true" lightbox="media/add-sdn-enabled-hci-connection.png":::
 
 </center>
 
@@ -53,7 +53,7 @@ En la primera página se enumeran todos los escenarios de SDN clasificados como 
 
 <center>
 
-:::image type="content" source="media/sdn-data-path-diagnostics-main-page.png" alt-text="Supervisión de SDN: Página de escenarios de diagnóstico" border="true":::
+:::image type="content" source="media/sdn-data-path-diagnostics-main-page.png" alt-text="Supervisión de SDN: Página de escenarios de diagnóstico" border="true" lightbox="media/sdn-data-path-diagnostics-main-page.png":::
 
 </center>
 
@@ -63,7 +63,7 @@ Después de elegir el escenario, rellene una lista de parámetros obligatorios y
 
 <center>
 
-:::image type="content" source="media/sdn-data-path-diagnostics-scenario-parameters.png" alt-text="Supervisión de SDN: Página de condiciones de captura" border="true":::
+:::image type="content" source="media/sdn-data-path-diagnostics-scenario-parameters.png" alt-text="Supervisión de SDN: Página de condiciones de captura" border="true" lightbox="media/sdn-data-path-diagnostics-scenario-parameters.png":::
 
 </center>
 
@@ -73,7 +73,7 @@ Después de iniciar la captura, la extensión mostrará una lista de los equipos
 
 <center>
 
-:::image type="content" source="media/sdn-data-path-diagnostics-loading-wheel2.png" alt-text="Inicio de la captura de paquetes" border="true":::
+:::image type="content" source="media/sdn-data-path-diagnostics-loading-wheel2.png" alt-text="Inicio de la captura de paquetes" border="true" lightbox="media/sdn-data-path-diagnostics-loading-wheel2.png":::
 
 </center>
 
@@ -81,7 +81,7 @@ Después de detener la captura, los registros de todas las máquinas se mostrar�
 
 <center>
 
-:::image type="content" source="media/sdn-data-path-diagnostics-log.png" alt-text="Registro de diagnóstico de ruta de datos después de detener la captura" border="true":::
+:::image type="content" source="media/sdn-data-path-diagnostics-log.png" alt-text="Registro de diagnóstico de ruta de datos después de detener la captura" border="true" lightbox="media/sdn-data-path-diagnostics-log.png":::
 
 </center>
 
@@ -102,7 +102,7 @@ La información de esta página es especialmente valiosa si tiene problemas inco
 
 <center>
 
-:::image type="content" source="media/sdn-data-path-diagnostics-details-page.png" alt-text="Página de detalles de diagnóstico de ruta de datos" border="true":::
+:::image type="content" source="media/sdn-data-path-diagnostics-details-page.png" alt-text="Página de detalles de diagnóstico de ruta de datos" border="true" lightbox="media/sdn-data-path-diagnostics-details-page.png":::
 
 </center>
 
@@ -110,7 +110,7 @@ Seleccione un salto para ver más detalles. En escenarios de encapsulación y NA
 
 <center>
 
-:::image type="content" source="media/sdn-data-path-diagnostics-details-page-with-pane1.png" alt-text="Ver detalles sobre un salto específico" border="true":::
+:::image type="content" source="media/sdn-data-path-diagnostics-details-page-with-pane1.png" alt-text="Ver detalles sobre un salto específico" border="true" lightbox="media/sdn-data-path-diagnostics-details-page-with-pane1.png":::
 
 </center>
 
@@ -118,7 +118,7 @@ Desplácese hacia abajo para ver los detalles del paquete sin formato:
 
 <center>
 
-:::image type="content" source="media/sdn-data-path-diagnostics-details-page-with-pane-raw-packet1.png" alt-text="Ver detalles de paquetes sin formato sobre un salto específico" border="true":::
+:::image type="content" source="media/sdn-data-path-diagnostics-details-page-with-pane-raw-packet1.png" alt-text="Ver detalles de paquetes sin formato sobre un salto específico" border="true" lightbox="media/sdn-data-path-diagnostics-details-page-with-pane-raw-packet1.png":::
 
 </center>
 
@@ -132,7 +132,7 @@ Los filtros de presentación le permiten filtrar el registro después de captura
 
 <center>
 
-:::image type="content" source="media/sdn-data-path-diagnostics-display-filters.png" alt-text="filtrar registros con filtros de presentación" border="true":::
+:::image type="content" source="media/sdn-data-path-diagnostics-display-filters.png" alt-text="filtrar registros con filtros de presentación" border="true" lightbox="media/sdn-data-path-diagnostics-display-filters.png":::
 
 </center>
 
@@ -147,6 +147,6 @@ El botón Guardar permite guardar el registro en el equipo local para su posteri
 
 <center>
 
-:::image type="content" source="media/sdn-data-path-diagnostics-save.png" alt-text="guardar registros localmente" border="true":::
+:::image type="content" source="media/sdn-data-path-diagnostics-save.png" alt-text="guardar registros localmente" border="true" lightbox="media/sdn-data-path-diagnostics-save.png":::
 
 </center>

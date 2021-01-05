@@ -1,18 +1,18 @@
 ---
 title: Mover la configuración y los datos de Windows SBS 2003 al servidor de destino para la migración a Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo migrar los datos y la configuración de Windows SBS 2003 al servidor de destino para la migración a Windows Server Essentials.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 67087ccb-d820-4642-8ca2-7d2d38714014
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: f2fe4a1bb9277ae5b314aa02ee5c94896d1eefd9
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: be7447c74c90e85522b166656fbf2c82b9d52668
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625721"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810738"
 ---
 # <a name="move-windows-sbs-2003-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>Mover la configuración y los datos de Windows SBS 2003 al servidor de destino para la migración a Windows Server Essentials
 
@@ -104,9 +104,9 @@ Los objetos de directiva de grupo (GPO) se actualizan para Windows Server Essent
 
 2. Haga clic en **Inicio** y, después, en **Administración de servidores**.
 
-3. En el panel de navegación, haga clic en **Administración avanzada**, en **Administración de directiva de grupo**y, a continuación, en **bosque:** _<sudominio \> _.
+3. En el panel de navegación, haga clic en **Administración avanzada**, en **Administración de directiva de grupo** y, a continuación, en **bosque:** _<sudominio \>_.
 
-4. Haga clic en **dominios**, haga clic en *<\> sudominio*y, a continuación, haga clic en **Directiva de grupo objetos**.
+4. Haga clic en **dominios**, haga clic en *<\> sudominio* y, a continuación, haga clic en **Directiva de grupo objetos**.
 
 5. Haga clic con el botón secundario en **Directiva de auditoría de Small Business Server**, en **Eliminar** y, a continuación, en **Aceptar**.
 
@@ -146,9 +146,9 @@ Se recomienda configurar la Directiva de contraseñas en Windows Server Essentia
 
 2. Haga clic en **Inicio** y, después, en **Administración de servidores**.
 
-3. En el panel de navegación, haga clic en **Administración avanzada**, en **Administración de directiva de grupo**y, a continuación, en **bosque:** _<nombredominiored \> _
+3. En el panel de navegación, haga clic en **Administración avanzada**, en **Administración de directiva de grupo** y, a continuación, en **bosque:** _<nombredominiored \>_
 
-4. Haga clic en **dominios**, haga clic en *<\> nombredominiored*y, a continuación, en **filtros WMI**.
+4. Haga clic en **dominios**, haga clic en *<\> nombredominiored* y, a continuación, en **filtros WMI**.
 
 5. Haga clic con el botón secundario en **PostSP2**, haga clic en **Eliminar** y, a continuación, haga clic en **Sí**.
 
@@ -156,7 +156,7 @@ Se recomienda configurar la Directiva de contraseñas en Windows Server Essentia
 
 7. Compruebe que se hayan eliminado los tres filtros WMI.
 
-## <a name="configure-the-network"></a>Configurar la red
+## <a name="configure-the-network"></a>Configuración de la red
 
 #### <a name="to-configure-the-network"></a>Para configurar la red
 

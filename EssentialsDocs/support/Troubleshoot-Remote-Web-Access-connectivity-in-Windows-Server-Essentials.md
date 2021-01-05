@@ -1,18 +1,18 @@
 ---
 title: Solucionar los problemas de conectividad del acceso Web remoto en Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo solucionar problemas relacionados con la conectividad de acceso Web remoto en Windows Server Essentials.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: d3642575-b3ee-4488-b654-5bf9d3b8c935
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: fc51555f680126cbd1b6e9fe2c672cbcbc5da7e9
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: c73283d60d2286ef9e04b4ad2d1bd747cc2d6e98
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625141"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810242"
 ---
 # <a name="troubleshoot-remote-web-access-connectivity-in-windows-server-essentials"></a>Solucionar los problemas de conectividad del acceso Web remoto en Windows Server Essentials
 

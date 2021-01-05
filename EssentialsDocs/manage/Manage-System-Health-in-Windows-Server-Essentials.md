@@ -1,18 +1,18 @@
 ---
 title: Administrar el mantenimiento del sistema en Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información sobre cómo ver y responder a todas las alertas de mantenimiento del sistema en la red mediante el panel.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 3043f83b-389c-4f37-a1ff-85afe99314fa
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 78b0b9f8cb2056bc307fd66b9fa70f3d128012cf
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 24b1853234754de0d02355210ffdd86f721fe00a
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89626044"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97811242"
 ---
 # <a name="manage-system-health-in-windows-server-essentials"></a>Administrar el mantenimiento del sistema en Windows Server Essentials
 
@@ -39,7 +39,7 @@ ms.locfileid: "89626044"
 
 -   [Posibles alertas de equipo](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_Potential)
 
-##  <a name="about-the-health-report-add-in"></a><a name="BKMK_AddIn"></a> Acerca del complemento de informes de mantenimiento
+##  <a name="about-the-health-report-add-in"></a><a name="BKMK_AddIn"></a> Acerca del informe de mantenimiento Add-In
  El complemento de informes de mantenimiento para Windows Server Essentials le da información consolidada sobre la red de Windows Server Essentials y le permite distribuir esta información a otras personas. Esta información se puede ver en la pestaña **Informes** del panel. Con la pestaña **Informes**, puede hacer lo siguiente:
 
 -   [Generar un informe a petición o mediante programación](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_Generate)
@@ -58,7 +58,7 @@ ms.locfileid: "89626044"
 
  Cuando se genera un informe de mantenimiento, se crea un nuevo elemento en el panel de la lista, identificado por la fecha y la hora en que se generó el informe. Para abrir un elemento, puede hacer doble clic en el panel de la lista o seleccionarlo y después hacer clic en **Abrir el informe de mantenimiento** en el panel de tareas. El informe se muestra en una nueva ventana en formato HTML.
 
- Además de generar un informe manualmente, también puede generar un informe de forma automática cada día o cada hora si lo prefiere. Para ello, en el panel de tareas, haga clic en **personalizar la configuración del informe de mantenimiento**y, a continuación, haga clic en la pestaña **programación y correo electrónico** . La característica **programación** está desactivada de forma predeterminada y puede activarla activando la casilla **generar un informe de mantenimiento a la hora programada** .
+ Además de generar un informe manualmente, también puede generar un informe de forma automática cada día o cada hora si lo prefiere. Para ello, en el panel de tareas, haga clic en **personalizar la configuración del informe de mantenimiento** y, a continuación, haga clic en la pestaña **programación y correo electrónico** . La característica **programación** está desactivada de forma predeterminada y puede activarla activando la casilla **generar un informe de mantenimiento a la hora programada** .
 
 ###  <a name="customize-the-content-of-the-report"></a><a name="BKMK_Customize"></a> Personalizar el contenido del informe
  El informe de mantenimiento contiene lo siguiente:
@@ -345,7 +345,7 @@ ms.locfileid: "89626044"
 
 6.  En la opción **Enviar automáticamente el informe de mantenimiento a los siguientes destinatarios de correo electrónico:** de **Personalizar la configuración del informe de mantenimiento**, escriba las direcciones de correo electrónico de las personas que quiere que reciban informes de mantenimiento por correo electrónico. Asegúrese de separar cada dirección de correo electrónico con un punto y coma (;).
 
-7.  Para comprobar que ha configurado el servidor SMTP correctamente para enviar informes de mantenimiento por correo electrónico, en la pestaña Informe de mantenimiento del panel, seleccione un informe y haga clic en **Enviar el informe de mantenimiento por correo electrónico** desde el panel de tareas.
+7.  Para comprobar que ha configurado correctamente la configuración del servidor SMTP para enviar informes de mantenimiento por correo electrónico, en la pestaña informe de mantenimiento del panel, seleccione un informe y haga clic en **Enviar el informe de mantenimiento por correo electrónico** desde el panel de tareas.
 
 ##  <a name="potential-computer-alerts"></a><a name="BKMK_Potential"></a> Posibles alertas de equipo
  En esta sección se describe cómo se deben comprender y administrar las alertas que son específicas de su equipo conectado al servidor y que aparecen en el Launchpad de su equipo.

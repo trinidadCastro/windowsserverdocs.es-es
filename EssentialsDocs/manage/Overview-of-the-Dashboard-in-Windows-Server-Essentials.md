@@ -1,18 +1,18 @@
 ---
 title: Introducción al panel en Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información sobre el panel administrativo, que simplifica las tareas que realiza para administrar la red y el servidor de Windows Server Essentials.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: f70a79de-9c56-4496-89b5-20a1bff2293e
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 50f610bec8573916edffd3efb5e551a45fc6e72a
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 4c9a5464d2a33d0116b38befd5a572407cac5b3a
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625952"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97811162"
 ---
 # <a name="overview-of-the-dashboard-in-windows-server-essentials"></a>Introducción al panel en Windows Server Essentials
 
@@ -144,7 +144,7 @@ ms.locfileid: "89625952"
 
 3.  Escriba su nombre de usuario y contraseña para iniciar sesión en el sitio de acceso Web remoto.
 
-4.  En la sección **equipos** de la página**principal** de acceso Web remoto; Busque el servidor y haga clic en **conectar**.
+4.  En la sección **equipos** de la página **principal** de acceso Web remoto; Busque el servidor y haga clic en **conectar**.
 
      Se abrirá una conexión remota al panel.
 

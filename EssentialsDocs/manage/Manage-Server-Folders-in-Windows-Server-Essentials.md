@@ -1,18 +1,18 @@
 ---
 title: Administrar carpetas de servidor en Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo administrar el acceso a cualquier carpeta del servidor en el servidor mediante las tareas de la pestaña carpetas del servidor del panel.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 090cf1b8-7b9b-48b9-ae85-b98477b8d7cc
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: e901038a2a4e294184241b4d35797347a5910026
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 09e64ad045216adf2ad59ad33d7445e5040863c7
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89626124"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97811282"
 ---
 # <a name="manage-server-folders-in-windows-server-essentials"></a>Administrar carpetas de servidor en Windows Server Essentials
 
@@ -57,7 +57,7 @@ ms.locfileid: "89626124"
 
 ### <a name="server-folder-tasks-on-the-dashboard"></a>Tareas de carpeta del servidor en el panel
 
-|Nombre de la tarea|Descripción|
+|Nombre de la tarea|Description|
 |---------------|-----------------|
 |Abrir la carpeta|Muestra el contenido de la carpeta seleccionada en el Explorador de archivos (denominado Explorador de Windows en las versiones anteriores de Windows).|
 |Eliminar la carpeta|Permite eliminar una carpeta creada por el usuario. Esta tarea no está disponible para las carpetas predeterminadas que crea la instalación del servidor.|
@@ -80,7 +80,7 @@ ms.locfileid: "89626124"
 
   Puede administrar el acceso a cualquier carpeta del servidor desde el propio servidor, con las tareas de la pestaña **Carpetas del servidor** del panel. La tabla siguiente enumera las carpetas del servidor que se crean de forma predeterminada al instalar Windows Server Essentials o activar el streaming en el servidor.
 
-|Nombre de la carpeta del servidor|Descripción|
+|Nombre de la carpeta del servidor|Description|
 |------------------------|-----------------|
 |Copias de seguridad de equipos cliente|De forma predeterminada, Windows Server Essentials crea copias de seguridad de equipos cliente que se almacenan en esta carpeta. El administrador de red puede modificar la configuración de Copias de seguridad de equipos cliente.|
 |Compañía|Se usa para que los usuarios de red almacenen y accedan a documentos relacionados con la organización.|
@@ -114,9 +114,9 @@ ms.locfileid: "89626124"
 
 3.  En la vista de lista, seleccione la carpeta del servidor cuyas propiedades desea ver o modificar.
 
-4.  En el panel de ** \> tareas<carpetadelservidor** , haga clic en **Ver propiedades de carpeta**.
+4.  En el panel de **\> tareas<carpetadelservidor** , haga clic en **Ver propiedades de carpeta**.
 
-5.  En **<\> propiedades de nombreDeCarpeta**, haga clic en **compartir**, seleccione **ocultar esta carpeta en aplicaciones de acceso Web remoto y servicio Web**y, a continuación, haga clic en **aplicar**.
+5.  En **<\> propiedades de nombreDeCarpeta**, haga clic en **compartir**, seleccione **ocultar esta carpeta en aplicaciones de acceso Web remoto y servicio Web** y, a continuación, haga clic en **aplicar**.
 
 ###  <a name="set-permissions-to-server-folders"></a><a name="BKMK_Perms"></a> Establecer permisos para las carpetas del servidor
  Para cualquier carpeta del servidor adicional que desee agregar a este desde el panel, puede elegir tres configuraciones de acceso diferentes:
@@ -147,9 +147,9 @@ ms.locfileid: "89626124"
 
 3.  En la vista de lista, seleccione la carpeta del servidor cuyas propiedades desea ver o modificar.
 
-4.  En el panel de ** \> tareas<carpetadelservidor** , haga clic en **Ver propiedades de carpeta**.
+4.  En el panel de **\> tareas<carpetadelservidor** , haga clic en **Ver propiedades de carpeta**.
 
-5.  En **<\> propiedades de nombreDeCarpeta**, haga clic en **compartir**y seleccione el nivel de acceso de usuario adecuado para las cuentas de usuario de la lista y, a continuación, haga clic en **aplicar**.
+5.  En **<\> propiedades de nombreDeCarpeta**, haga clic en **compartir** y seleccione el nivel de acceso de usuario adecuado para las cuentas de usuario de la lista y, a continuación, haga clic en **aplicar**.
 
 > [!NOTE]
 >  De forma predeterminada, al agregar una cuenta de usuario a la red, se crea una subcarpeta para el usuario bajo la carpeta **Usuarios** en el servidor. Únicamente el usuario o el administrador pueden acceder a la subcarpeta desde un equipo de red. Los permisos se establecen para cada subcarpeta en **Usuarios**, por lo que no hay ningún permiso de acceso general para la carpeta **Usuarios** de primer nivel.
@@ -171,7 +171,7 @@ ms.locfileid: "89626124"
 
 3.  En la vista de lista, seleccione la carpeta del servidor cuyas propiedades desea ver o modificar.
 
-4.  En el panel de ** \> tareas<carpetadelservidor** , haga clic en **Ver propiedades de carpeta**.
+4.  En el panel de **\> tareas<carpetadelservidor** , haga clic en **Ver propiedades de carpeta**.
 
 5.  En **<\> propiedades de NombreCarpeta**, en la pestaña **General** , vea o modifique el nombre y la descripción de la carpeta del servidor.
 

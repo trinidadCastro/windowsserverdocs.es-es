@@ -1,18 +1,18 @@
 ---
 title: Solucionar problemas del historial de archivos en Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo solucionar los problemas que pueden producirse al administrar las copias de seguridad del historial de archivos para un usuario o un equipo que se ha agregado a un servidor que ejecuta Windows Server Essentials.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: ed062945-27e9-4572-b1bb-6c8cf1b9c2f4
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 90f931c128d4e4eb9747203db7d097c68d451702
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: f02e6c6e9d01751515000289a9d284b405def55c
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625198"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810225"
 ---
 # <a name="troubleshoot-file-history-in-windows-server-essentials"></a>Solucionar problemas del historial de archivos en Windows Server Essentials
 
@@ -65,7 +65,7 @@ ms.locfileid: "89625198"
 
      La carpeta de copias de seguridad del historial de archivos tiene una subcarpeta para cada cuenta de usuario que se agregó a Windows Server Essentials. Por ejemplo, el historial de archivos del usuario John Smith se almacenaría en la subcarpeta File History Backups\JohnSmith.
 
-4.  Cambie el nombre de la subcarpeta del usuario que eliminó, por ejemplo, nombre de usuario ** < *UserName*>_Deleted**. Si ya no necesita historial de archivos del usuario, puede eliminar la carpeta.
+4.  Cambie el nombre de la subcarpeta del usuario que eliminó, por ejemplo, nombre de usuario **< >_Deleted**. Si ya no necesita historial de archivos del usuario, puede eliminar la carpeta.
 
 5. Ahora puede agregar el usuario nuevo. Para obtener instrucciones, consulte Agregar una cuenta de usuario. en [administrar cuentas de usuario](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md).
 

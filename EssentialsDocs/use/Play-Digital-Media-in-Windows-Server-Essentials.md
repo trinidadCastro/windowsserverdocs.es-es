@@ -1,18 +1,18 @@
 ---
 title: Reproducción de medios digitales en Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo Windows Server Essentials permite que los equipos conectados en red y los dispositivos multimedia digitales reproduzcan medios almacenados en el servidor.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 5f570492-ee21-471b-92c1-3fd9bfb84f55
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 77246642e7f011768742a30ed517d63b12c47ee4
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: ac159f49903ba2c15007c4c93fb1d146b457fa49
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89624943"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810032"
 ---
 # <a name="play-digital-media-in-windows-server-essentials"></a>Reproducción de medios digitales en Windows Server Essentials
 
@@ -159,7 +159,7 @@ Por medios digitales se hace referencia al audio, vídeo y contenido de fotos qu
 2. Vaya al sitio web de Acceso Web remoto. Escriba **https://<sudominio \> /Remote** en la barra de direcciones del explorador de Internet y, a continuación, presione Entrar.
 
    > [!NOTE]
-   >  *<sudominio \> * es un marcador de posición. Será un nombre que sea único para el servidor, por lo que la dirección que escriba será similar a la siguiente **https://contoso.com/remote** . Si no conoce el nombre del dominio, solicíteselo al administrador que ha elegido el nombre del dominio al establecer la funcionalidad de acceso remoto en el servidor. Para obtener más información, vea [Activar Acceso Web remoto](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_TurnOnRWA).
+   >  *<sudominio \>* es un marcador de posición. Será un nombre que sea único para el servidor, por lo que la dirección que escriba será similar a la siguiente **https://contoso.com/remote** . Si no conoce el nombre del dominio, solicíteselo al administrador que ha elegido el nombre del dominio al establecer la funcionalidad de acceso remoto en el servidor. Para obtener más información, vea [Activar Acceso Web remoto](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_TurnOnRWA).
 
 3. En la página de inicio de sesión de Acceso Web remoto, escriba el nombre de la cuenta de usuario y la contraseña y, a continuación, haga clic en la flecha.
 

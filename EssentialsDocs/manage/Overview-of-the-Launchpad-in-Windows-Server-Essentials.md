@@ -1,18 +1,18 @@
 ---
 title: Introducción al Launchpad en Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de Launchpad de Windows Server Essentials, que proporciona a los usuarios autenticados acceso a las características clave de Windows Server Essentials.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 198d16cb-3d07-4706-be89-ad14a5f7dc47
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: c20fd35a1a90e6d635891cd2257913c669273735
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 0f1bf8eba82173323e60f9b612ca829f6b167bf2
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623010"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97811112"
 ---
 # <a name="overview-of-the-launchpad-in-windows-server-essentials"></a>Introducción al Launchpad en Windows Server Essentials
 
@@ -42,7 +42,7 @@ Launchpad de Windows Server Essentials es una pequeña aplicación que se instal
 ##  <a name="use-the-launchpad"></a><a name="BKMK_Launchpad"></a> Uso de Launchpad
  La información y los vínculos siguientes están disponibles en Launchpad de Windows Server Essentials.
 
-### <a name="backup"></a>Copia de seguridad
+### <a name="backup"></a>Backup
  Haga clic en **Copia de seguridad** para abrir las **Propiedades de copia de seguridad** del equipo. En la página **Propiedades de copia de seguridad** puede:
 
 - Iniciar o detener una copia de seguridad.
@@ -79,7 +79,7 @@ Launchpad de Windows Server Essentials es una pequeña aplicación que se instal
 > [!NOTE]
 >  Los administradores del servidor no pueden usar Launchpad ni Acceso Web remoto en un equipo Mac para abrir el panel del servidor y administrar el servidor.
 
-### <a name="backup"></a>Copia de seguridad
+### <a name="backup"></a>Backup
  Haga clic en **Copia de seguridad** para configurar Time Machine, hacer una copia de seguridad del equipo y cambiar la configuración de Time Machine. Para obtener más información sobre Time Machine, vea la documentación del fabricante del equipo.
 
 ### <a name="remote-web-access"></a>Acceso web remoto

@@ -1,18 +1,18 @@
 ---
 title: Migración desde versiones anteriores a Windows Server Essentials o a Experiencia con Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo migrar desde versiones anteriores de Windows Small Business Server y Windows Server Essentials.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 2974fb3a-5150-43fd-a73f-3e5074eb5d03
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: ac59e41aab7c5085f9a9acdb781582c9cdecea54
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: e25e8407e960264387ba946d11b721b3b22014bf
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625730"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810762"
 ---
 # <a name="migrate-from-previous-versions-to-windows-server-essentials-or-windows-server-essentials-experience"></a>Migración desde versiones anteriores a Windows Server Essentials o a Experiencia con Windows Server Essentials
 

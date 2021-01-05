@@ -1,18 +1,18 @@
 ---
 title: Transición de Windows Server Essentials a Windows Server 2012 R2 Standard
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información sobre cómo pasar de Windows Server Essentials a Windows Server 2012 R2 Standard.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: a14689e3-2310-4229-bd3e-dafc0e739e02
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: a60ffd7593da8e8275e36e9aec2cf6e25fbe23db
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 4838101de3ed9daa1150e208d7aa0a938c95041e
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625302"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810352"
 ---
 # <a name="transition-from-windows-server-essentials-to-windows-server-2012-r2-standard"></a>Transición de Windows Server Essentials a Windows Server 2012 R2 Standard
 
@@ -40,7 +40,11 @@ Windows Server 2016 es el sistema operativo preparado para la nube que es compat
 
     2.  Ejecute el siguiente comando:
 
-         **dism /online /set-edition:ServerStandard /geteula:** *ruta del CLUF* (donde *ruta del CLUF* es la ubicación donde desea guardar el archivo del CLUF; por ejemplo: C:\ws8std_eula.rtf). Asegúrese de usar .rtf como extensión de archivo.
+        ```console
+        dism /online /set-edition:ServerStandard /geteula: <eula path>
+        ```
+
+        Donde *ruta de acceso de EULA* representa la ubicación en la que desea guardar el archivo del CLUF; por ejemplo: C:\ ws8std_eula. rtf). Asegúrese de usar .rtf como extensión de archivo.
 
     3.  Abra la ubicación donde guardó el archivo y haga doble clic en él para abrirlo.
 
@@ -60,7 +64,11 @@ Windows Server 2016 es el sistema operativo preparado para la nube que es compat
 
 2. Abra Windows PowerShell como administrador y ejecute el siguiente comando:
 
-    **DISM/online/Set-Edition: ServerStandard/ACCEPTEULA/ProductKey:** *clave* de producto (donde *Product Key* es la clave de producto de su copia de Windows Server 2012 R2 Standard).
+    ```console
+    dism /online /set-edition:ServerStandard /accepteula /productkey: <Product Key>
+    ```
+
+    Donde *clave de producto* es la clave de producto de su copia de Windows Server 2012 R2 Standard).
 
     El servidor se reinicia para terminar el proceso de transición.
 

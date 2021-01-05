@@ -1,17 +1,17 @@
 ---
 title: Hyper-V debe ser el único rol habilitado
-description: Proporciona instrucciones para resolver el problema que informa esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información acerca de qué hacer si los roles distintos de Hyper-V están habilitados en el servidor.
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 5a0ed176-048f-40b1-b56c-8391b805fd37
 ms.date: 8/16/2016
-ms.openlocfilehash: a59f4ebd1bf3ce7ce93d2eb098302b5bd2c42cce
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: f575f981975253faea30dad610120f3e314a1edf
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746840"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97833620"
 ---
 # <a name="hyper-v-should-be-the-only-enabled-role"></a>Hyper-V debe ser el único rol habilitado
 

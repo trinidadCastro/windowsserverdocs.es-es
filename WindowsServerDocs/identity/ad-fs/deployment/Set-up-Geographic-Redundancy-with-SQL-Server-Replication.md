@@ -7,12 +7,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.author: billmath
 ms.assetId: 7b9f9a4f-888c-4358-bacd-3237661b1935
-ms.openlocfilehash: dd666023e7b53af72f63edf1750321317e08f527
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 68222bf7dc0b0882fd2c063e38f0fc9f2faf9588
+ms.sourcegitcommit: 3247e193d9fe1b57543fff215460a6d9db52f58b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97049243"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97815024"
 ---
 # <a name="setup-geographic-redundancy-with-sql-server-replication"></a>Configuración de la redundancia geográfica con Replicación de SQL Server
 
@@ -32,13 +32,13 @@ Instalar y configurar una granja de servidores de SQL Server. Para obtener más 
 2. Asegúrese de que Agente SQL Server servicio se está ejecutando y establecido en Inicio automático.
 
 3. Ejecute **Export \- AdfsDeploymentSQLScript** en el nodo principal AD FS para crear archivos CreateDB. SQL y SetPermissions. SQL.  Por ejemplo: `PS:\>Export-AdfsDeploymentSQLScript -DestinationFolder . –ServiceAccountName CONTOSO\gmsa1$`.
-   ![Configuración de redundancia geográfica](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql2.png)
+   ![Captura de pantalla que muestra cómo ejecutar el Export-AdfsDeploymentSQLScript en el nodo principal AD FS.](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql2.png)
 
 4. Copie los scripts en el servidor secundario.  Abra el script CreateDB. SQL en **sql Management Studio** y haga clic en **Ejecutar**.
-   ![Configuración de redundancia geográfica](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql4.png)
+   ![Captura de pantalla que muestra cómo abrir el script CreateDB. SQL en SQL Management Studio.](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql4.png)
 
 5. Abra el script SetPermissions. SQL en **sql Management Studio** y haga clic en **Ejecutar**.
-   ![Configuración de redundancia geográfica](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql6.png)
+   ![Captura de pantalla que muestra cómo abrir el script SetPermissions. SQL en SQL Management Studio.](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql6.png)
 
 
 
@@ -52,92 +52,92 @@ Instalar y configurar una granja de servidores de SQL Server. Para obtener más 
 > ## <a name="create-publisher-settings-on-the-initial-sql-server"></a>Crear la configuración del publicador en el SQL Server inicial
 
 1. En el SQL Server Management Studio, en **replicación**, haga clic con el botón derecho en **publicaciones locales** y elija **nueva publicación...** 
-    ![ Configuración de redundancia geográfica](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql7.png) </br>
+    ![ Captura de pantalla que muestra la opción de menú Nueva publicación.](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql7.png) </br>
 
 2. En la pantalla del Asistente para nueva publicación, haga clic en **siguiente**.</br>
-   ![Configuración de redundancia geográfica](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql8.png) </br>
+   ![Captura de pantalla que muestra la pantalla del Asistente para nueva publicación.](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql8.png) </br>
 
 3. En la página **distribuidor** , elija servidor local como distribuidor y haga clic en **siguiente**.
-   ![Configuración de redundancia geográfica](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql9.png) </br>
+   ![Captura de pantalla que muestra dónde elegir el servidor local como distribuidor.](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql9.png) </br>
 
 4. En la página carpeta de **instantáneas** , escriba \\ \SQL1\repldata en lugar de la carpeta predeterminada. \(Nota: es posible que tenga que crear este recurso compartido \) .
-   ![Configuración de redundancia geográfica](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql10.png) </br>
+   ![Captura de pantalla que muestra dónde escribir la ruta de acceso a la carpeta de instantáneas predeterminada.](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql10.png) </br>
 
 5. Elija **AdfsConfigurationV3** como base de datos de publicación y haga clic en **siguiente**.
-   ![Configuración de redundancia geográfica](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql11.png) </br>
+   ![Captura de pantalla que muestra dónde elegir AdfsConfigurationV3 como base de datos de publicación.](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql11.png) </br>
 
 6. En **tipo de publicación**, seleccione **publicación de combinación** y haga clic en **siguiente**.
-   ![Configuración de redundancia geográfica](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql12.png) </br>
+   ![Captura de pantalla que muestra dónde ](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql12.png) </br>
 
 7. En **tipos de suscriptor**, elija **SQL Server 2008 o posterior** y haga clic en **siguiente**.
-   ![Configuración de redundancia geográfica](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql13.png) </br>
+   ![Captura de pantalla que muestra dónde elegir SQL Server 2008 o posterior.](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql13.png) </br>
 
 8. En la página **artículos** , seleccione el nodo **tablas** para seleccionar todas las tablas y, después, **\- desactive** la tabla SyncProperties. \( esta no se debe replicar.\)</br>
-   ![Configuración de redundancia geográfica](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql14.png) </br>
+   ![Captura de pantalla que muestra dónde borrar la casilla SyncProperties (IdentityServerPolicy).](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql14.png) </br>
 
 9. En la página **artículos** , seleccione el nodo **funciones definidas por el usuario** para seleccionar todas las funciones definidas por el usuario y haga clic en **siguiente**.
-   ![Configuración de redundancia geográfica](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql15.png) </br>
+   ![Captura de pantalla que muestra dónde activar la casilla funciones definidas por el usuario.](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql15.png) </br>
 
 10. En la página **problemas de artículo** , haga clic en **siguiente**.
-    ![Configuración de redundancia geográfica](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql16.png) </br>
+    ![Captura que muestra la pantalla de problemas de los artículos.](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql16.png) </br>
 
 11. En la página **Filtrar filas de tabla**, haga clic en **Siguiente**.
-    ![Configuración de redundancia geográfica](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql17.png) </br>
+    ![Captura de pantalla que muestra la pantalla filtrar filas de tabla.](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql17.png) </br>
 12. En la página **agente de instantáneas** , elija valores predeterminados inmediato y 14 días, haga clic en **siguiente**.
-    ![Configuración de redundancia geográfica](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql18.png) </br>
+    ![Captura de pantalla que muestra la pantalla Agente de instantáneas.](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql18.png) </br>
     Es posible que tenga que crear una cuenta de dominio para el Agente SQL. Siga los pasos descritos en [configurar el inicio de sesión de SQL para la cuenta de dominio contoso \\ SQLAgent](Set-up-Geographic-Redundancy-with-SQL-Server-Replication.md#sqlagent) para crear el inicio de sesión de SQL para este nuevo usuario de AD y asignar permisos específicos.
 
 13. En la página **seguridad del agente** , haga clic en configuración de **seguridad** y escriba la \/ contraseña del nombre de usuario de una cuenta de dominio que \( no sea un GMSA \) creado para el Agente SQL y haga clic en **Aceptar**.  Haga clic en **Next**.
-    ![Configuración de redundancia geográfica](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql19.png) </br>
+    ![Captura de pantalla que muestra dónde escribir el nombre de usuario y la contraseña de la cuenta de dominio.](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql19.png) </br>
 
 14. En la página **acciones del asistente** , haga clic en **siguiente**.
-    ![Configuración de redundancia geográfica](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql20.png) </br>
+    ![Captura de pantalla que muestra la pantalla acciones del asistente.](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql20.png) </br>
 
 15. En la página **finalización del asistente** , escriba un nombre para la publicación y haga clic en **Finalizar**.
-    ![Configuración de redundancia geográfica](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql21.png) </br>
+    ![Captura de pantalla que muestra dónde se escribe un nombre para la publicación.](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql21.png) </br>
 
 16. Una vez creada la publicación, debería ver el estado correcto.  Haga clic en **Cerrar**.
-    ![Configuración de redundancia geográfica](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql22.png) </br>
+    ![Captura de pantalla que muestra la finalización correcta de la publicación.](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql22.png) </br>
 
 17. De nuevo en SQL Server Management Studio, haga clic con el botón secundario en la nueva publicación y haga clic en **iniciar monitor de replicación**.
-    ![Configuración de redundancia geográfica](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql23.png) </br>
+    ![Captura de pantalla que muestra la opción de menú iniciar monitor de replicación.](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql23.png) </br>
 
 ## <a name="create-subscription-settings-on-the-replica-sql-server"></a>Crear configuración de suscripción en la réplica SQL Server
 Asegúrese de que ha creado la configuración del publicador en el SQL Server inicial como se describió anteriormente y, a continuación, complete el procedimiento siguiente:
 
-1. En el SQL Server de réplica, en SQL Server Management Studio, en **replicación**, haga clic con el botón secundario en **suscripciones locales** y elija **nueva suscripción.**... ![Configuración de redundancia geográfica](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql24.png) </br>
+1. En el SQL Server de réplica, en SQL Server Management Studio, en **replicación**, haga clic con el botón secundario en **suscripciones locales** y elija **nueva suscripción.**... ![Captura de pantalla que muestra dónde seleccionar nueva suscripción.](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql24.png) </br>
 
 2. En la página del **Asistente para nuevas suscripciones** , haga clic en **siguiente**.
-   ![Configuración de redundancia geográfica](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql25.png) </br>
+   ![Captura de pantalla que muestra la pantalla del Asistente para nueva suscripción.](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql25.png) </br>
 
 3. En la página **publicación** , seleccione el publicador en la lista desplegable.  Expanda **AdfsConfigurationV3** y seleccione el nombre de la publicación creada anteriormente y haga clic en **siguiente**.
-   ![Configuración de redundancia geográfica](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql26.png) </br>
+   ![Captura de pantalla que muestra dónde expandir AdfsConfigurationV3 y seleccionar el nombre del nombre de la publicación que creó.](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql26.png) </br>
 
 4. En la página **Ubicación de agente de mezcla** , seleccione **ejecutar cada agente en sus \( suscripciones \) de extracción del suscriptor** \( el valor predeterminado \) y haga clic en **siguiente**.
-   ![Configuración de redundancia geográfica](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql27.png) </br> Esto, junto con el tipo de suscripción siguiente, determina la lógica de resolución de conflictos. \(Para obtener más información, vea [detectar y resolver conflictos de replicación de mezcla](/sql/relational-databases/replication/merge/advanced-merge-replication-conflict-detection-and-resolution). </br>
+   ![Captura de pantalla que muestra la opción ejecutar cada agente en su suscriptor (suscripciones de extracción).](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql27.png) </br> Esto, junto con el tipo de suscripción siguiente, determina la lógica de resolución de conflictos. \(Para obtener más información, vea [detectar y resolver conflictos de replicación de mezcla](/sql/relational-databases/replication/merge/advanced-merge-replication-conflict-detection-and-resolution). </br>
 
 5. En la página **suscriptores** , seleccione **AdfsConfigurationV3** como la base de datos del suscriptor y haga clic en **siguiente**.
-   ![Configuración de redundancia geográfica](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql28.png) </br>
+   ![Captura de pantalla que muestra la pantalla de suscriptores.](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql28.png) </br>
 
 6. En la página **seguridad de agente de mezcla** , haga clic en **...** y escriba el nombre de usuario y la contraseña de una cuenta de dominio, \( no un GMSA \) creado para el Agente SQL mediante el cuadro puntos suspensivos y haga clic en **siguiente**.
-   ![Configuración de redundancia geográfica](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql30.png) </br>
+   ![Captura de pantalla que muestra la pantalla de seguridad de Agente de mezcla.](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql30.png) </br>
 
 7. En **programación de sincronización**, elija **Ejecutar continuamente** y haga clic en **siguiente**.
-   ![Configuración de redundancia geográfica](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql31.png) </br>
+   ![Captura de pantalla que muestra dónde seleccionar ejecutar continuamente.](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql31.png) </br>
 
 8. En **inicializar suscripciones**, haga clic en **siguiente**.
-   ![Configuración de redundancia geográfica](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql32.png) </br>
+   ![Captura de pantalla que muestra la pantalla inicializar suscripciones.](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql32.png) </br>
 
 9. En **tipo de suscripción**, elija **cliente** y haga clic en **siguiente**.
 
    Las implicaciones de esto se documentan [aquí](/sql/relational-databases/replication/merge/advanced-merge-replication-conflict-detection-and-resolution) y [aquí](/sql/relational-databases/replication/subscribe-to-publications).  En esencia, se realiza la resolución de conflictos "primero en el publicador gana" y no es necesario volver a publicar en otros suscriptores.
-   ![Configuración de redundancia geográfica](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql33.png) </br>
+   ![Captura de pantalla que muestra la pantalla tipo de suscripción.](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql33.png) </br>
 
 10. En la página **acciones del asistente** , asegúrese de **que la opción crear la suscripción** está activada y haga clic en **siguiente**.
-    ![Configuración de redundancia geográfica](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql34.png) </br>
+    ![Captura de pantalla que muestra dónde comprobar que está seleccionada la opción crear la suscripción.](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql34.png) </br>
 
 11. En la página **finalización del asistente** , haga clic en **Finalizar**.
-    ![Configuración de redundancia geográfica](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql35.png) </br>
+    ![Captura de pantalla que muestra la pantalla finalización del asistente.](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql35.png) </br>
 
 12. Una vez que la suscripción ha finalizado el proceso de creación, debería ver que se ha realizado correctamente. Haga clic en **Cerrar**.
     ![Configuración de redundancia geográfica](media/Set-up-Geographic-Redundancy-with-SQL-Server-Replication/sql36.png) </br>

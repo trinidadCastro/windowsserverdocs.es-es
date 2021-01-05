@@ -7,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 3816b41c446c3f7693f36a0525fada3b82e9946a
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 0abcc31dcf61ca66c79c9f6802ddd299ad92e47c
+ms.sourcegitcommit: e2dadc9b0c227a489a945bbc531aca5e101f18cd
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97041713"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97801809"
 ---
 # <a name="appendix-e-securing-enterprise-admins-groups-in-active-directory"></a>Anexo E: protección de grupos de administradores de empresa en Active Directory
 
@@ -46,17 +46,17 @@ Para el grupo administradores de empresas del bosque:
 
 2.  Si no está administrando el dominio raíz del bosque, en el árbol de consola, haga clic con el botón secundario <Domain> y, a continuación, haga clic en **cambiar dominio** (donde <Domain> es el nombre del dominio que está administrando actualmente).
 
-    ![proteger los grupos de administradores de empresa](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_43.gif)
+    ![Captura de pantalla que resalta la opción de menú cambiar dominio.](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_43.gif)
 
 3.  En el cuadro de diálogo **cambiar dominio** , haga clic en **examinar**, seleccione el dominio raíz del bosque y haga clic en **Aceptar**.
 
-    ![proteger los grupos de administradores de empresa](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_44.gif)
+    ![Captura de pantalla que muestra el botón Aceptar en el cuadro de diálogo cambiar dominio.](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_44.gif)
 
 4.  Para quitar todos los miembros del grupo EA:
 
     1.  Haga doble clic en el grupo **administradores de empresas** y, a continuación, haga clic en la pestaña **miembros** .
 
-        ![proteger los grupos de administradores de empresa](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_45.gif)
+        ![Captura de pantalla que muestra la pestaña miembros del grupo administradores de empresas.](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_45.gif)
 
     2.  Seleccione un miembro del grupo, haga clic en **quitar**, haga clic en **sí** y, a continuación, haga clic en **Aceptar**.
 
@@ -73,17 +73,17 @@ Para el grupo administradores de empresas del bosque:
 
 3.  En el árbol de consola, haga clic con el botón secundario en **Directiva de grupo objetos** y haga clic en **nuevo**.
 
-    ![proteger los grupos de administradores de empresa](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_46.gif)
+    ![Captura de pantalla que muestra la opción de menú nuevo en el menú directiva de grupo objetos.](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_46.gif)
 
 4.  En el cuadro de diálogo **nuevo GPO** , escriba <GPO Name> y haga clic en **Aceptar** (donde <GPO Name> es el nombre de este GPO).
 
-    ![proteger los grupos de administradores de empresa](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_47.gif)
+    ![Captura de pantalla que muestra dónde escribir el nombre del GPO y seleccionar el GPO de inicio de origen.](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_47.gif)
 
 5.  En el panel de detalles, haga clic con el botón secundario <GPO Name> y haga clic en **Editar**.
 
 6.  Vaya a **equipo \ configuración de Seguridad\directivas \ directivas de seguridad\Directivas** y haga clic en **asignación de derechos de usuario**.
 
-    ![proteger los grupos de administradores de empresa](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_48.gif)
+    ![Captura de pantalla que muestra dónde seleccionar asignación de derechos de usuario.](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_48.gif)
 
 7.  Configure los derechos de usuario para evitar que los miembros del grupo administradores de empresa tengan acceso a los servidores y estaciones de trabajo miembros a través de la red haciendo lo siguiente:
 
@@ -93,7 +93,7 @@ Para el grupo administradores de empresas del bosque:
 
     3.  Escriba **administradores de empresas**, haga clic en **Comprobar nombres** y haga clic en **Aceptar**.
 
-        ![proteger los grupos de administradores de empresa](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_49.gif)
+        ![Captura de pantalla que muestra cómo comprobar que ha configurado los derechos de usuario para impedir que los miembros del grupo administradores de empresas tengan acceso a los servidores y estaciones de trabajo miembros a través de la red.](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_49.gif)
 
     4.  Haga clic en **Aceptar** y en **Aceptar** de nuevo.
 
@@ -108,7 +108,7 @@ Para el grupo administradores de empresas del bosque:
 
     3.  Escriba **administradores de empresas**, haga clic en **Comprobar nombres** y haga clic en **Aceptar**.
 
-        ![proteger los grupos de administradores de empresa](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_50.gif)
+        ![Captura de pantalla que muestra cómo comprobar que ha configurado los derechos de usuario para impedir que los miembros del grupo administradores de empresas inicien sesión como un trabajo por lotes.](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_50.gif)
 
     4.  Haga clic en **Aceptar** y en **Aceptar** de nuevo.
 
@@ -123,7 +123,7 @@ Para el grupo administradores de empresas del bosque:
 
     3.  Escriba **administradores de empresas**, haga clic en **Comprobar nombres** y haga clic en **Aceptar**.
 
-        ![proteger los grupos de administradores de empresa](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_51.gif)
+        ![Captura de pantalla que muestra cómo comprobar que ha configurado los derechos de usuario para impedir que los miembros del grupo EA inicien sesión como servicio.](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_51.gif)
 
     4.  Haga clic en **Aceptar** y en **Aceptar** de nuevo.
 
@@ -138,7 +138,7 @@ Para el grupo administradores de empresas del bosque:
 
     3.  Escriba **administradores de empresas**, haga clic en **Comprobar nombres** y haga clic en **Aceptar**.
 
-        ![proteger los grupos de administradores de empresa](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_52.gif)
+        ![Captura de pantalla que muestra cómo comprobar que ha configurado los derechos de usuario para evitar que los miembros del grupo administradores de empresas inicien sesión localmente en los servidores miembro y las estaciones de trabajo.](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_52.gif)
 
     4.  Haga clic en **Aceptar** y en **Aceptar** de nuevo.
 
@@ -153,7 +153,7 @@ Para el grupo administradores de empresas del bosque:
 
     3.  Escriba **administradores de empresas**, haga clic en **Comprobar nombres** y haga clic en **Aceptar**.
 
-        ![proteger los grupos de administradores de empresa](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_53.gif)
+        ![Captura de pantalla que muestra cómo comprobar que ha configurado los derechos de usuario para impedir que los miembros del grupo administradores de empresas tengan acceso a los servidores y estaciones de trabajo miembro a través de Servicios de Escritorio remoto.](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_53.gif)
 
     4.  Haga clic en **Aceptar** y en **Aceptar** de nuevo.
 
@@ -165,11 +165,11 @@ Para el grupo administradores de empresas del bosque:
 
     2.  Haga clic con el botón secundario en la unidad organizativa a la que se aplicará el GPO y haga clic en **vincular un GPO existente**.
 
-        ![proteger los grupos de administradores de empresa](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_54.gif)
+        ![Captura de pantalla que resalta la opción de menú vincular un GPO existente.](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_54.gif)
 
     3.  Seleccione el GPO que acaba de crear y haga clic en **Aceptar**.
 
-        ![proteger los grupos de administradores de empresa](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_55.gif)
+        ![Captura de pantalla que muestra dónde seleccionar el GPO que acaba de crear.](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_55.gif)
 
     4.  Cree vínculos a todas las demás unidades organizativas que contengan estaciones de trabajo.
 
@@ -193,13 +193,13 @@ Desde cualquier servidor miembro o estación de trabajo que no se vea afectado p
 
 4.  Cuando se le pida que apruebe la elevación, haga clic en **sí**.
 
-    ![proteger los grupos de administradores de empresa](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_56.gif)
+    ![Captura de pantalla que muestra el cuadro de diálogo en el que se aprueba la elevación.](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_56.gif)
 
 5.  En la ventana del **símbolo del sistema** , escriba **net use \\ \\ \<Server Name\> \c $**, donde \<Server Name\> es el nombre del servidor miembro o de la estación de trabajo a la que está intentando obtener acceso a través de la red.
 
 6.  En la captura de pantalla siguiente se muestra el mensaje de error que debe aparecer.
 
-    ![proteger los grupos de administradores de empresa](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_57.gif)
+    ![Captura de pantalla que muestra el mensaje de error que debe aparecer.](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_57.gif)
 
 #### <a name="verify-deny-log-on-as-a-batch-job-gpo-settings"></a>Comprobar la configuración del GPO "denegar el inicio de sesión como trabajo por lotes"
 
@@ -236,7 +236,7 @@ Desde cualquier servidor miembro o estación de trabajo afectada por los cambios
 
 7.  En **programa/script**, haga clic en **examinar**, busque y seleccione el archivo por lotes creado en la sección **crear un archivo por lotes** y haga clic en **abrir**.
 
-8.  Haga clic en **OK**.
+8.  Haga clic en **Aceptar**.
 
 9. Haga clic en la pestaña **General**.
 
@@ -246,7 +246,7 @@ Desde cualquier servidor miembro o estación de trabajo afectada por los cambios
 
 12. Seleccione **ejecutar si el usuario ha iniciado sesión o no** y seleccione no **almacenar contraseña**. La tarea solo tendrá acceso a los recursos del equipo local.
 
-13. Haga clic en **OK**.
+13. Haga clic en **Aceptar**.
 
 14. Debe aparecer un cuadro de diálogo que solicite las credenciales de la cuenta de usuario para ejecutar la tarea.
 
@@ -254,7 +254,7 @@ Desde cualquier servidor miembro o estación de trabajo afectada por los cambios
 
 16. Debería aparecer un cuadro de diálogo similar al siguiente.
 
-    ![proteger los grupos de administradores de empresa](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_58.gif)
+    ![Captura de pantalla que muestra el cuadro de diálogo Programador de tareas.](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_58.gif)
 
 #### <a name="verify-deny-log-on-as-a-service-gpo-settings"></a>Comprobar la configuración del GPO "denegar el inicio de sesión como servicio"
 
@@ -280,7 +280,7 @@ Desde cualquier servidor miembro o estación de trabajo afectada por los cambios
 
 11. Cuando se reinicia el servicio, debe aparecer un cuadro de diálogo similar al siguiente.
 
-    ![proteger los grupos de administradores de empresa](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_59.gif)
+    ![Captura de pantalla que muestra un mensaje que indica que Windows no pudo iniciar el servidor del administrador de trabajos de impresión.](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_59.gif)
 
 #### <a name="revert-changes-to-the-printer-spooler-service"></a>Revertir los cambios en el servicio cola de impresión
 
@@ -300,7 +300,7 @@ Desde cualquier servidor miembro o estación de trabajo afectada por los cambios
 
 1.  Desde cualquier servidor miembro o estación de trabajo afectada por los cambios de GPO, intente iniciar sesión localmente con una cuenta que sea miembro del grupo EA. Debería aparecer un cuadro de diálogo similar al siguiente.
 
-    ![proteger los grupos de administradores de empresa](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_60.gif)
+    ![Captura de pantalla que muestra un mensaje que indica que el método de inicio de sesión que está usando no está permitido.](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_60.gif)
 
 #### <a name="verify-deny-log-on-through-remote-desktop-services-gpo-settings"></a>Comprobar la configuración del GPO "denegar el inicio de sesión a través de Servicios de Escritorio remoto"
 

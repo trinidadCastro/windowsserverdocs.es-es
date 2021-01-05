@@ -1,18 +1,18 @@
 ---
 title: Solución de problemas del compilador de registros de Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo solucionar los problemas que se producen al ejecutar el compilador de registros.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: fa2e1685-31c0-4d4f-a10a-6c8885dfc493
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 6f8318b6a6b711c6041a9227cd2d207470233dab
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 0da27272f3daf5159e5f6ac868788382b1bf11a7
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625134"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810234"
 ---
 # <a name="troubleshoot-windows-server-essentials-log-collector-errors"></a>Solución de problemas del compilador de registros de Windows Server Essentials
 
@@ -45,7 +45,7 @@ Al ejecutar el Compilador de registros, puede encontrar uno de los siguientes er
 ###  <a name="you-do-not-have-permission-to-save-the-log-files-to-the-selected-folder"></a><a name="BKMK_YouDoNotHavePermission"></a> No tiene permiso para guardar los archivos de registro en la carpeta seleccionada
  **Causa:** es posible que no tenga permisos de escritura en la carpeta que ha seleccionado para guardar los archivos de registro.
 
- **Solución:** Si usa la ruta de acceso predeterminada para guardar los archivos de registro, asegúrese de que tiene permiso de escritura para la carpeta compartida ** \\ \\<ServerName \> \Logs**. Si va a almacenar los registros en un equipo de red, asegúrese de tener permiso de escritura para la carpeta que ha seleccionado para guardar los archivos de registro.
+ **Solución:** Si usa la ruta de acceso predeterminada para guardar los archivos de registro, asegúrese de que tiene permiso de escritura para la carpeta compartida **\\ \\<ServerName \> \Logs**. Si va a almacenar los registros en un equipo de red, asegúrese de tener permiso de escritura para la carpeta que ha seleccionado para guardar los archivos de registro.
 
 ###  <a name="the-computer-is-not-configured-properly-to-collect-the-log-files"></a><a name="BKMK_TheComputerIsNotConfiguredProperly"></a> El equipo no está configurado correctamente para recopilar los archivos de registro
  **Causa:** el equipo no se ha configurado correctamente para el Compilador de registros.

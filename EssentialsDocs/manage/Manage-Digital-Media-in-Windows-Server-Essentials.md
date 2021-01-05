@@ -1,18 +1,18 @@
 ---
 title: Administración de medios digitales en Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información sobre las características de transmisión por secuencias de multimedia del servidor y aprenda a configurar y usar la transmisión por secuencias de multimedia en la red.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 9378bffa-487c-43ca-9ec3-7e7864d2dd9a
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: b5788495a2d622a74d5099d3e7c91e62c8d84a6f
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 59149ddfdde440d4b5d5ce722e054a858c5e5a6b
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89623129"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97811392"
 ---
 # <a name="manage-digital-media-in-windows-server-essentials"></a>Administración de medios digitales en Windows Server Essentials
 
@@ -199,7 +199,7 @@ En los siguientes temas se abordan las características de transmisión por secu
 
  El formato y la velocidad de bits elegidos para la transcodificación dependen en gran medida del rendimiento del procesador del servidor. El rendimiento del procesador se identifica como parte de la evaluación de experiencia de Windows. Para determinar los resultados de rendimiento del servidor realice una de las acciones siguientes:
 
-- En un equipo de red que ejecute Windows 7 o Windows 8 con el mismo procesador que el servidor, vaya al **Panel de control**, haga clic en **información de rendimiento y herramientas**y, a continuación, revise la información de la página **velocidad y mejorar el rendimiento del equipo** .
+- En un equipo de red que ejecute Windows 7 o Windows 8 con el mismo procesador que el servidor, vaya al **Panel de control**, haga clic en **información de rendimiento y herramientas** y, a continuación, revise la información de la página **velocidad y mejorar el rendimiento del equipo** .
 
 - Póngase en contacto con el fabricante del procesador.
 

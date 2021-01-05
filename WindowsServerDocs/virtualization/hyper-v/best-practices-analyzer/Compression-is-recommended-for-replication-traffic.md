@@ -1,17 +1,17 @@
 ---
 title: Se recomienda la compresión para el tráfico de replicación
-description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
+description: Obtenga información sobre qué hacer cuando se descomprime el tráfico de replicación enviado a través de la red desde el servidor principal al servidor réplica.
 ms.author: benarm
 author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: cf8be6e9-2909-4e4a-bb63-d1e1ebbc6930
 ms.date: 8/16/2016
-ms.openlocfilehash: 61f1b56720af3583745960073823fef7b7b5173f
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 41825e6484c7cef85b11795a68df501b13c4881e
+ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90745850"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97833650"
 ---
 # <a name="compression-is-recommended-for-replication-traffic"></a>Se recomienda la compresión para el tráfico de replicación
 

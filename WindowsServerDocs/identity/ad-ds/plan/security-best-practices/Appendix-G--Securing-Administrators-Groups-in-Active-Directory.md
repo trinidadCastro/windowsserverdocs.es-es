@@ -7,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 04debd028e1f881fae4caa62f2f51c3f02f48904
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 93ddd6cf87b3736895b15ff185e43dc0e98da78c
+ms.sourcegitcommit: 3247e193d9fe1b57543fff215460a6d9db52f58b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97049173"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97815034"
 ---
 # <a name="appendix-g-securing-administrators-groups-in-active-directory"></a>Anexo G: protección de grupos de administradores en Active Directory
 
@@ -54,7 +54,7 @@ Para el grupo administradores de cada dominio del bosque:
 
     1.  Haga doble clic en el grupo **administradores** y haga clic en la pestaña **miembros** .
 
-        ![proteger grupos de administración](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_79.gif)
+        ![Captura de pantalla que muestra la pestaña miembros para quitar todos los miembros del grupo administradores.](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_79.gif)
 
     2.  Seleccione un miembro del grupo, haga clic en **quitar**, haga clic en **sí** y, a continuación, haga clic en **Aceptar**.
 
@@ -68,17 +68,17 @@ Para el grupo administradores de cada dominio del bosque:
 
 3.  En el árbol de consola, haga clic con el botón secundario en **Directiva de grupo objetos** y haga clic en **nuevo**.
 
-    ![proteger grupos de administración](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_80.gif)
+    ![Captura de pantalla que muestra dónde seleccionar nuevo para que pueda proteger los grupos de administradores en Active Directory.](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_80.gif)
 
 4.  En el cuadro de diálogo **nuevo GPO** , escriba <GPO Name> y haga clic en **Aceptar** (donde *nombre de GPO* es el nombre de este GPO).
 
-    ![proteger grupos de administración](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_81.gif)
+    ![Captura de pantalla que muestra dónde nombrar G P O en el cuadro de diálogo nuevo GPO para que pueda proteger los grupos de administradores.](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_81.gif)
 
 5.  En el panel de detalles, haga clic con el botón secundario **<GPO Name>** y haga clic en **Editar**.
 
 6.  Vaya a **equipo \ configuración de Seguridad\directivas \ directivas de seguridad\Directivas** y haga clic en **asignación de derechos de usuario**.
 
-    ![proteger grupos de administración](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_82.gif)
+    ![Captura de pantalla que muestra dónde navegar para que pueda seleccionar la opción de administrador de derechos de usuario para proteger los grupos de administradores.](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_82.gif)
 
 7.  Configure los derechos de usuario para evitar que los miembros del grupo administradores tengan acceso a los servidores y estaciones de trabajo de los miembros a través de la red haciendo lo siguiente:
 
@@ -88,7 +88,7 @@ Para el grupo administradores de cada dominio del bosque:
 
     3.  Escriba **administradores**, haga clic en **Comprobar nombres** y haga clic en **Aceptar**.
 
-        ![proteger grupos de administración](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_83.gif)
+        ![Captura de pantalla que muestra cómo comprobar que ha configurado los derechos de usuario para impedir que los miembros del grupo administradores tengan acceso a los servidores y estaciones de trabajo miembro a través de la red.](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_83.gif)
 
     4.  Haga clic en **Aceptar** y en **Aceptar** de nuevo.
 
@@ -100,7 +100,7 @@ Para el grupo administradores de cada dominio del bosque:
 
     3.  Escriba **administradores**, haga clic en **Comprobar nombres** y haga clic en **Aceptar**.
 
-        ![proteger grupos de administración](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_84.gif)
+        ![Captura de pantalla que muestra cómo comprobar que ha configurado los derechos de usuario para evitar que los miembros del grupo administradores inicien sesión como un trabajo por lotes.](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_84.gif)
 
     4.  Haga clic en **Aceptar** y en **Aceptar** de nuevo.
 
@@ -112,7 +112,7 @@ Para el grupo administradores de cada dominio del bosque:
 
     3.  Escriba **administradores**, haga clic en **Comprobar nombres** y haga clic en **Aceptar**.
 
-        ![proteger grupos de administración](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_85.gif)
+        ![Captura de pantalla que muestra cómo comprobar que ha configurado los derechos de usuario para impedir que los miembros del grupo administradores inicien sesión como servicio.](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_85.gif)
 
     4.  Haga clic en **Aceptar** y en **Aceptar** de nuevo.
 
@@ -124,11 +124,11 @@ Para el grupo administradores de cada dominio del bosque:
 
     2.  Haga clic con el botón secundario en la unidad organizativa a la que se aplicará el GPO y haga clic en **vincular un GPO existente**.
 
-        ![proteger grupos de administración](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_86.gif)
+        ![Captura de pantalla que muestra la opción de menú vincular un G P existente al hacer clic con el botón secundario en la unidad organizativa.](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_86.gif)
 
     3.  Seleccione el GPO que acaba de crear y haga clic en **Aceptar**.
 
-        ![proteger grupos de administración](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_87.gif)
+        ![Captura de pantalla que muestra dónde seleccionar el GPO que acaba de crear.](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_87.gif)
 
     4.  Cree vínculos a todas las demás unidades organizativas que contengan estaciones de trabajo.
 
@@ -140,9 +140,9 @@ Para el grupo administradores de cada dominio del bosque:
         > [!NOTE]
         > Cuando se implementan restricciones en el grupo de administradores de GPO, Windows aplica la configuración a los miembros del grupo de administradores locales de un equipo además del grupo de administradores del dominio. Por lo tanto, debe tener cuidado al implementar restricciones en el grupo de administradores. Aunque se recomienda prohibir los inicios de sesión de red, de batch y de servicio para los miembros del grupo de administradores, siempre que sea factible implementarlos, no restrinja los inicios de sesión locales ni los inicios de sesión a través de Servicios de Escritorio remoto. El bloqueo de estos tipos de inicio de sesión puede bloquear la administración legítima de un equipo por parte de los miembros del grupo de administradores locales.
         >
-        > La siguiente captura de pantalla muestra los valores de configuración que bloquean el uso indebido de las cuentas de administrador de dominio y locales integradas, además de un uso incorrecto de los grupos de administradores locales o de dominio integrados. Tenga en cuenta que el derecho de usuario **denegar el inicio de sesión a través de servicios de escritorio remoto** no incluye el grupo administradores, ya que si se incluye en esta configuración, también se bloquearán estos inicios de sesión para las cuentas que son miembros del grupo administradores del equipo local. Si los servicios de en los equipos están configurados para ejecutarse en el contexto de cualquiera de los grupos con privilegios descritos en esta sección, la implementación de esta configuración puede provocar errores en los servicios y las aplicaciones. Por lo tanto, al igual que con todas las recomendaciones de esta sección, debe probar exhaustivamente la configuración de aplicabilidad en su entorno.
+        > En la captura de pantalla siguiente se muestran los valores de configuración que bloquean el uso indebido de cuentas de administrador de dominio y locales integradas, además de un uso incorrecto de los grupos de administradores locales o de dominio integrados. Tenga en cuenta que el derecho de usuario **denegar el inicio de sesión a través de servicios de escritorio remoto** no incluye el grupo administradores, ya que si se incluye en esta configuración, también se bloquearán estos inicios de sesión para las cuentas que son miembros del grupo administradores del equipo local. Si los servicios de en los equipos están configurados para ejecutarse en el contexto de cualquiera de los grupos con privilegios descritos en esta sección, la implementación de esta configuración puede provocar errores en los servicios y las aplicaciones. Por lo tanto, al igual que con todas las recomendaciones de esta sección, debe probar exhaustivamente la configuración de aplicabilidad en su entorno.
 
-        ![proteger grupos de administración](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_88.gif)
+        ![Captura de pantalla que muestra los valores de configuración que bloquean el uso indebido de cuentas de administrador de dominio y locales integradas.](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_88.gif)
 
 #### <a name="step-by-step-instructions-to-grant-user-rights-to-the-administrators-group"></a>Instrucciones paso a paso para conceder derechos de usuario al grupo de administradores
 
@@ -152,17 +152,17 @@ Para el grupo administradores de cada dominio del bosque:
 
 3.  En el árbol de consola, haga clic con el botón secundario en **Directiva de grupo objetos** y haga clic en **nuevo**.
 
-    ![proteger grupos de administración](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_89.gif)
+    ![Captura de pantalla que muestra el menú que se muestra al hacer clic con el botón secundario en directiva de grupo objetos.](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_89.gif)
 
 4.  En el cuadro de diálogo **nuevo GPO** , escriba <GPO Name> y haga clic en **Aceptar** (donde <GPO Name> es el nombre de este GPO).
 
-    ![proteger grupos de administración](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_90.gif)
+    ![Captura de pantalla que muestra dónde asignar un nombre a G P O para que pueda proteger los grupos de administradores.](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_90.gif)
 
 5.  En el panel de detalles, haga clic con el botón secundario **<GPO Name>** y haga clic en **Editar**.
 
 6.  Vaya a **equipo \ configuración de Seguridad\directivas \ directivas de seguridad\Directivas** y haga clic en **asignación de derechos de usuario**.
 
-    ![proteger grupos de administración](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_91.gif)
+    ![Captura de pantalla que muestra dónde navegar para que pueda seleccionar administrador de derechos de usuario para proteger los grupos de administradores.](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_91.gif)
 
 7.  Configure los derechos de usuario para permitir que los miembros del grupo administradores tengan acceso a los controladores de dominio a través de la red haciendo lo siguiente:
 
@@ -172,7 +172,7 @@ Para el grupo administradores de cada dominio del bosque:
 
     3.  Haga clic en **Agregar usuario o grupo** y, a continuación, en **examinar**.
 
-        ![proteger grupos de administración](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_92.gif)
+        ![Captura de pantalla que muestra cómo comprobar que ha configurado los derechos de usuario para permitir que los miembros del grupo administradores tengan acceso a los controladores de dominio a través de la red.](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_92.gif)
 
     4.  Haga clic en **Aceptar** y en **Aceptar** de nuevo.
 
@@ -184,7 +184,7 @@ Para el grupo administradores de cada dominio del bosque:
 
     3.  Escriba **administradores**, haga clic en comprobar **nombres** y haga clic en **Aceptar**.
 
-        ![proteger grupos de administración](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_93.gif)
+        ![Captura de pantalla que muestra cómo comprobar que ha configurado los derechos de usuario para permitir que los miembros del grupo administradores inicien sesión localmente.](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_93.gif)
 
     4.  Haga clic en **Aceptar** y en **Aceptar** de nuevo.
 
@@ -196,7 +196,7 @@ Para el grupo administradores de cada dominio del bosque:
 
     3.  Escriba **administradores**, haga clic en **Comprobar nombres** y haga clic en **Aceptar**.
 
-        ![proteger grupos de administración](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_94.gif)
+        ![Captura de pantalla que muestra cómo comprobar que ha configurado los derechos de usuario para permitir que los miembros del grupo administradores inicien sesión a través de Servicios de Escritorio remoto.](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_94.gif)
 
     4.  Haga clic en **Aceptar** y en **Aceptar** de nuevo.
 
@@ -208,11 +208,11 @@ Para el grupo administradores de cada dominio del bosque:
 
     2.  Haga clic con el botón secundario en la unidad organizativa controladores de dominio y haga clic en **vincular un GPO existente**.
 
-        ![proteger grupos de administración](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_95.gif)
+        ![Captura de pantalla que muestra la opción de menú vincular un GPO existente cuando está intentando vincular la P O a la unidad organizativa controladores de dominio.](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_95.gif)
 
     3.  Seleccione el GPO que acaba de crear y haga clic en **Aceptar**.
 
-        ![proteger grupos de administración](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_96.gif)
+        ![Captura de pantalla que muestra dónde seleccionar el GPO que acaba de crear mientras vincula los G P O a las estaciones de trabajo miembro y al servidor.](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_96.gif)
 
 #### <a name="verification-steps"></a>Pasos de comprobación
 
@@ -227,13 +227,13 @@ Desde cualquier servidor miembro o estación de trabajo que no se vea afectado p
 
 4.  Cuando se le pida que apruebe la elevación, haga clic en **sí**.
 
-    ![proteger grupos de administración](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_97.gif)
+    ![Captura de pantalla que resalta el cuadro de diálogo control de cuentas de usuario.](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_97.gif)
 
 5.  En la ventana del **símbolo del sistema** , escriba **net use \\ \\ \<Server Name\> \c $**, donde \<Server Name\> es el nombre del servidor miembro o de la estación de trabajo a la que está intentando obtener acceso a través de la red.
 
 6.  En la captura de pantalla siguiente se muestra el mensaje de error que debe aparecer.
 
-    ![proteger grupos de administración](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_98.gif)
+    ![Captura de pantalla que resalta el mensaje de error del error de inicio de sesión.](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_98.gif)
 
 ##### <a name="verify-deny-log-on-as-a-batch-job-gpo-settings"></a>Comprobar la configuración del GPO "denegar el inicio de sesión como trabajo por lotes"
 Desde cualquier servidor miembro o estación de trabajo afectada por los cambios de GPO, inicie sesión localmente.
@@ -269,7 +269,7 @@ Desde cualquier servidor miembro o estación de trabajo afectada por los cambios
 
 7.  En el campo **programa/script** , haga clic en **examinar**, busque y seleccione el archivo por lotes creado en la sección **crear un archivo por lotes** y haga clic en **abrir**.
 
-8.  Haga clic en **OK**.
+8.  Haga clic en **Aceptar**.
 
 9. Haga clic en la pestaña **General**.
 
@@ -277,9 +277,9 @@ Desde cualquier servidor miembro o estación de trabajo afectada por los cambios
 
 11. Escriba el nombre de una cuenta que sea miembro del grupo administradores, haga clic en **Comprobar nombres** y, a continuación, haga clic en **Aceptar**.
 
-12. Seleccione **ejecutar si el usuario ha registrado Onor** y no **almacenar la contraseña**. La tarea solo tendrá acceso a los recursos del equipo local.
+12. Seleccione **ejecutar si el usuario ha iniciado sesión o no** y no **almacena la contraseña**. La tarea solo tendrá acceso a los recursos del equipo local.
 
-13. Haga clic en **OK**.
+13. Haga clic en **Aceptar**.
 
 14. Debe aparecer un cuadro de diálogo que solicite las credenciales de la cuenta de usuario para ejecutar la tarea.
 
@@ -287,7 +287,7 @@ Desde cualquier servidor miembro o estación de trabajo afectada por los cambios
 
 16. Debería aparecer un cuadro de diálogo similar al siguiente.
 
-    ![proteger grupos de administración](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_99.gif)
+    ![Captura de pantalla que resalta el cuadro de diálogo Programador de tareas.](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_99.gif)
 
 ##### <a name="verify-deny-log-on-as-a-service-gpo-settings"></a>Comprobar la configuración del GPO "denegar el inicio de sesión como servicio"
 

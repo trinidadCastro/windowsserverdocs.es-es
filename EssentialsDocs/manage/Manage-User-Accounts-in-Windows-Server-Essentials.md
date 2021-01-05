@@ -1,18 +1,18 @@
 ---
 title: Administrar cuentas de usuario en Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información sobre la página usuarios del panel de Windows Server Essentials y cómo centraliza la información y las tareas que le ayudarán a administrar las cuentas de usuario.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 0d115697-532b-48c2-a659-9f889e235326
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: e45ca557db8a72c927eec56bed4f578f19f799b2
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: da6a85d2337af18464c1ce709d5a2c3cf3209e06
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89626025"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97811232"
 ---
 # <a name="manage-user-accounts-in-windows-server-essentials"></a>Administrar cuentas de usuario en Windows Server Essentials
 
@@ -85,7 +85,7 @@ La página de usuarios de la consola de Windows Server Essentials centraliza la 
 
 3.  En la lista de cuentas de usuario, seleccione la cuenta de usuario que quiere quitar.
 
-4.  En el panel ** \> tareas** de la cuenta de usuario de<, haga clic en **quitar la cuenta de usuario**. Aparece el Asistente para eliminar cuentas de usuario.
+4.  En el panel **\> tareas** de la cuenta de usuario de<, haga clic en **quitar la cuenta de usuario**. Aparece el Asistente para eliminar cuentas de usuario.
 
 5.  En la página **¿desea conservar los archivos?** del asistente, puede optar por eliminar los archivos del usuario, incluidas las copias de seguridad del historial de archivos y la carpeta redirigida de la cuenta de usuario. Para conservar los archivos del usuario, deje la casilla de verificación vacía. Después de hacer su selección, haga clic en **Siguiente**.
 
@@ -111,7 +111,7 @@ La página de usuarios de la consola de Windows Server Essentials centraliza la 
 
 1.  En la lista de cuentas de usuario, seleccione la cuenta para la que quiere ver o cambiar las propiedades.
 
-2.  En el panel ** \> tareas** de la cuenta de usuario de<, haga clic en **ver las propiedades de la cuenta**. Aparece la página **Propiedades** de la cuenta de usuario.
+2.  En el panel **\> tareas** de la cuenta de usuario de<, haga clic en **ver las propiedades de la cuenta**. Aparece la página **Propiedades** de la cuenta de usuario.
 
 3.  Haga clic en una pestaña para visualizar las propiedades de esa cuenta.
 
@@ -128,7 +128,7 @@ La página de usuarios de la consola de Windows Server Essentials centraliza la 
 
 3.  En la lista de cuentas de usuario, seleccione la cuenta de usuario que quiera cambiar.
 
-4.  En el panel ** \> tareas** de la cuenta de usuario de<, haga clic en **ver las propiedades de la cuenta**. Aparece la página **Propiedades** de la cuenta de usuario.
+4.  En el panel **\> tareas** de la cuenta de usuario de<, haga clic en **ver las propiedades de la cuenta**. Aparece la página **Propiedades** de la cuenta de usuario.
 
 5.  En la pestaña **General**, escriba un nuevo **Nombre** y **Apellidos** para la cuenta de usuario y después haga clic en **Aceptar**.
 
@@ -148,7 +148,7 @@ La página de usuarios de la consola de Windows Server Essentials centraliza la 
 
 3.  En la vista de lista, seleccione la cuenta de usuario que quiere activar.
 
-4.  En el panel ** \> tareas** de la cuenta de usuario de<, haga clic en **activar la cuenta de usuario**.
+4.  En el panel **\> tareas** de la cuenta de usuario de<, haga clic en **activar la cuenta de usuario**.
 
 5.  En la ventana de confirmación, haga clic en **Sí** para confirmar la acción.
 
@@ -173,7 +173,7 @@ La página de usuarios de la consola de Windows Server Essentials centraliza la 
 
 3.  En la vista de lista, seleccione la cuenta de usuario que quiere desactivar.
 
-4.  En el panel ** \> tareas** de la cuenta de usuario de<, haga clic en **desactivar la cuenta de usuario**.
+4.  En el panel **\> tareas** de la cuenta de usuario de<, haga clic en **desactivar la cuenta de usuario**.
 
 5.  En la ventana de confirmación, haga clic en **Sí** para confirmar la acción.
 
@@ -233,7 +233,7 @@ La página de usuarios de la consola de Windows Server Essentials centraliza la 
 
 ### <a name="user-account-tasks-in-the-dashboard"></a>Tareas de la cuenta de usuario en el panel
 
-|Nombre de la tarea|Descripción|
+|Nombre de la tarea|Description|
 |---------------|-----------------|
 |Ver las propiedades de la cuenta|Permite ver y cambiar las propiedades de la cuenta de usuario seleccionada y especificar los permisos de acceso a carpetas de la cuenta.|
 |Desactivar la cuenta de usuario|No se puede iniciar sesión con una cuenta de usuario desactivada en la red ni acceder a recursos de red como carpetas o impresoras compartidas.|
@@ -287,7 +287,7 @@ La página de usuarios de la consola de Windows Server Essentials centraliza la 
 
 3. En la lista de cuentas de usuario, seleccione la cuenta de usuario que quiere restablecer.
 
-4. En el panel ** \> tareas** de la cuenta de usuario de<, haga clic en **cambiar la contraseña de la cuenta de usuario**. Aparece el Asistente para cambiar la contraseña de la cuenta de usuario.
+4. En el panel **\> tareas** de la cuenta de usuario de<, haga clic en **cambiar la contraseña de la cuenta de usuario**. Aparece el Asistente para cambiar la contraseña de la cuenta de usuario.
 
 5. Escriba una nueva contraseña para la cuenta de usuario y después escriba la contraseña para confirmarla.
 
@@ -374,7 +374,7 @@ La página de usuarios de la consola de Windows Server Essentials centraliza la 
 
 3. En la lista de cuentas de usuario, seleccione la cuenta de usuario que quiere quitar.
 
-4. En el panel ** \> tareas** de la cuenta de usuario de<, haga clic en **quitar la cuenta de usuario**. Aparece el Asistente para eliminar cuentas de usuario.
+4. En el panel **\> tareas** de la cuenta de usuario de<, haga clic en **quitar la cuenta de usuario**. Aparece el Asistente para eliminar cuentas de usuario.
 
 5. En la página **¿Quiere mantener los archivos?**, asegúrese de que la casilla **Eliminar los archivos que incluyan copias de seguridad del Historial de archivos de esta cuenta de usuario** esté desactivada y después haga clic en **Siguiente**.
 
@@ -396,7 +396,7 @@ La página de usuarios de la consola de Windows Server Essentials centraliza la 
 
 5.  Haga clic con el botón secundario en la carpeta de la cuenta de usuario que quiere compartir y después haga clic en **Propiedades**.
 
-6.  En **<\> propiedades**de la cuenta de usuario, haga clic en la pestaña **compartir** y, a continuación, haga clic en **compartir**.
+6.  En **<\> propiedades** de la cuenta de usuario, haga clic en la pestaña **compartir** y, a continuación, haga clic en **compartir**.
 
 7.  En la ventana **Uso compartido de archivos**, escriba o seleccione el nombre de la cuenta de usuario con la que quiere compartir la carpeta y después haga clic en **Agregar**.
 
@@ -472,7 +472,7 @@ La página de usuarios de la consola de Windows Server Essentials centraliza la 
 
  Mediante las propiedades de cuenta de usuario, puede establecer acceso a lo siguiente para cada cuenta de usuario que cree:
 
--   **Carpetas compartidas**.  De forma predeterminada, los administradores de red tienen permisos de **lectura y escritura** para todas las carpetas compartidas, y las cuentas de usuario estándar tienen permisos de **solo lectura** para la carpeta de la empresa. Si se habilita la transmisión por secuencias de multimedia, puede asignar permisos de acceso a carpetas a las cuentas de usuario estándar individuales para las siguientes carpetas compartidas: **Música**, **Imágenes**, **TV grabada**y **Vídeos**. Puede establecer permisos para que las cuentas de usuario tengan acceso a las carpetas compartidas en la pestaña **Carpetas compartidas** de las propiedades de la cuenta de usuario.
+-   **Carpetas compartidas**.  De forma predeterminada, los administradores de red tienen permisos de **lectura y escritura** para todas las carpetas compartidas, y las cuentas de usuario estándar tienen permisos de **solo lectura** para la carpeta de la empresa. Si se habilita la transmisión por secuencias de multimedia, puede asignar permisos de acceso a carpetas a las cuentas de usuario estándar individuales para las siguientes carpetas compartidas: **Música**, **Imágenes**, **TV grabada** y **Vídeos**. Puede establecer permisos para que las cuentas de usuario tengan acceso a las carpetas compartidas en la pestaña **Carpetas compartidas** de las propiedades de la cuenta de usuario.
 
 -   **Acceso desde cualquier lugar**.  De forma predeterminada, los administradores de red pueden usar VPN o acceso web remoto a los recursos del servidor de acceso. Para las cuentas de usuario estándar, debe establecer los permisos de cuenta de usuario en la pestaña **Acceso desde cualquier lugar**.
 
@@ -486,9 +486,9 @@ La página de usuarios de la consola de Windows Server Essentials centraliza la 
 
 3.  En la lista de cuentas de usuario, seleccione la cuenta de usuario que quiere editar.
 
-4.  En el panel ** \> tareas** de la cuenta de usuario de<, haga clic en **ver las propiedades de la cuenta**.
+4.  En el panel **\> tareas** de la cuenta de usuario de<, haga clic en **ver las propiedades de la cuenta**.
 
-5.  En el **<\> propiedades**de la cuenta de usuario, haga lo siguiente:
+5.  En el **<\> propiedades** de la cuenta de usuario, haga lo siguiente:
 
     1.  En la pestaña **Carpetas compartidas**, configure los permisos de carpeta adecuados para cada carpeta compartida según sea necesario.
 
@@ -508,9 +508,9 @@ La página de usuarios de la consola de Windows Server Essentials centraliza la 
 
 3.  En la lista de cuentas de usuario, seleccione la cuenta de usuario que quiere editar.
 
-4.  En el panel ** \> tareas** de la cuenta de usuario de<, haga clic en **propiedades**.
+4.  En el panel **\> tareas** de la cuenta de usuario de<, haga clic en **propiedades**.
 
-5.  En el **<\> propiedades**de la cuenta de usuario, haga lo siguiente:
+5.  En el **<\> propiedades** de la cuenta de usuario, haga lo siguiente:
 
     1.  En la pestaña **General**, seleccione **El usuario puede ver las alertas de estado de la red** si la cuenta de usuario debe tener acceso a los informes de mantenimiento de la red.
 
@@ -535,7 +535,7 @@ La página de usuarios de la consola de Windows Server Essentials centraliza la 
 
 3.  En la lista de cuentas de usuario, seleccione la cuenta de usuario que quiera cambiar.
 
-4.  En el panel ** \> tareas** de la cuenta de usuario de<, haga clic en **ver las propiedades de la cuenta**. Aparece la página **Propiedades** de la cuenta de usuario.
+4.  En el panel **\> tareas** de la cuenta de usuario de<, haga clic en **ver las propiedades de la cuenta**. Aparece la página **Propiedades** de la cuenta de usuario.
 
 5.  En la pestaña **Acceso desde cualquier lugar**, haga lo siguiente:
 
@@ -556,9 +556,9 @@ La página de usuarios de la consola de Windows Server Essentials centraliza la 
 
 3.  En la lista de cuentas de usuario, seleccione la cuenta de usuario a la que quiere conceder permisos de acceso remoto al escritorio.
 
-4.  En el panel ** \> tareas** de la cuenta de usuario de<, haga clic en **propiedades**.
+4.  En el panel **\> tareas** de la cuenta de usuario de<, haga clic en **propiedades**.
 
-5.  En las ** \> propiedades**de la cuenta de usuario de<, haga clic en la pestaña **acceso desde cualquier lugar** .
+5.  En las **\> propiedades** de la cuenta de usuario de<, haga clic en la pestaña **acceso desde cualquier lugar** .
 
 6.  En la pestaña **Acceso desde cualquier lugar**, seleccione la casilla de verificación **Permitir red privada virtual (VPN)** para permitir a un usuario conectarse al servidor mediante VPN.
 
@@ -595,7 +595,7 @@ La página de usuarios de la consola de Windows Server Essentials centraliza la 
 
 4.  En el panel de tareas, haga clic en **Ver las propiedades de la carpeta**.
 
-5.  En **<\> propiedades de nombreDeCarpeta**, haga clic en **compartir**y seleccione el nivel de acceso de usuario adecuado para las cuentas de usuario de la lista y, a continuación, haga clic en **aplicar**.
+5.  En **<\> propiedades de nombreDeCarpeta**, haga clic en **compartir** y seleccione el nivel de acceso de usuario adecuado para las cuentas de usuario de la lista y, a continuación, haga clic en **aplicar**.
 
     > [!NOTE]
     >  No puede modificar los permisos de uso compartido de las carpetas del servidor **Copias de seguridad del Historial de archivos**, **Redirección de carpetas** y **Usuarios**. Por tanto, las propiedades de carpeta de estas carpetas del servidor no incluyen la pestaña **Uso compartido**.
@@ -613,9 +613,9 @@ La página de usuarios de la consola de Windows Server Essentials centraliza la 
 
 3.  En la lista de cuentas de usuario, seleccione la cuenta de usuario a la que quiere conceder permisos de acceso remoto al escritorio.
 
-4.  En el panel ** \> tareas** de la cuenta de usuario de<, haga clic en **propiedades**.
+4.  En el panel **\> tareas** de la cuenta de usuario de<, haga clic en **propiedades**.
 
-5.  En la **<\> propiedades**de la cuenta de usuario, haga clic en la pestaña **acceso al equipo** .
+5.  En la **<\> propiedades** de la cuenta de usuario, haga clic en la pestaña **acceso al equipo** .
 
 6.  Seleccione los equipos a los que quiere que acceda esta cuenta de usuario de forma remota y después haga clic en **Aceptar**.
 

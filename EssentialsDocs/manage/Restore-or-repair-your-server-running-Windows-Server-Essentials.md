@@ -1,18 +1,18 @@
 ---
 title: Restaurar o reparar el servidor que ejecuta Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información acerca de cómo restaurar o reparar un servidor que ejecuta Windows Server Essentials.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 27bf6f24-30c4-4935-9b24-069eb43e22f4
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 00c57fab4ee9689ba8bd760e5c99d87e3e18d130
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 0ad3ff83c028b42e5664548a19caa117257aa2da
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89622958"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97811082"
 ---
 # <a name="restore-or-repair-your-server-running-windows-server-essentials"></a>Restaurar o reparar el servidor que ejecuta Windows Server Essentials
 
@@ -89,7 +89,7 @@ ms.locfileid: "89622958"
 
  Después de restablecer una fábrica, debe realizar las siguientes tareas:
 
--   **Volver a configurar el servidor.** En el servidor, use el asistente de configuración del servidor para volver a especificar las opciones de configuración. Para configurar un servidor de Windows Server Essentials administrado de forma remota desde un equipo cliente, abra un explorador Web y escriba **http://** _<nombreservidor \> _ en la barra de direcciones.
+-   **Volver a configurar el servidor.** En el servidor, use el asistente de configuración del servidor para volver a especificar las opciones de configuración. Para configurar un servidor de Windows Server Essentials administrado de forma remota desde un equipo cliente, abra un explorador Web y escriba **http://** _<nombreservidor \>_ en la barra de direcciones.
 
 -   **Volver a conectar equipos cliente al servidor.** Si un equipo se conectó previamente al servidor, debe desinstalar el software del conector de Windows Server Essentials del equipo antes de volver a conectar el equipo al servidor. Para obtener más información, vea cómo [desinstalar el software del Conector](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_13) y [conectar equipos al servidor](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_9).
 
@@ -117,7 +117,7 @@ ms.locfileid: "89622958"
     > [!NOTE]
     >  Si no se inicia automáticamente el proceso de restauración, compruebe la configuración del BIOS del servidor para asegurarse de que la unidad de DVD aparezca la primera en el menú de arranque.
 
-     -O bien-
+     O bien
 
      Si el fabricante había cargado los medios de instalación en el servidor, presione F8 durante el inicio para arrancar desde los medios de instalación.
 
@@ -226,7 +226,7 @@ ms.locfileid: "89622958"
 
 4.  Escriba un nombre para el recurso compartido en el cuadro **Nombre**.
 
-5.  Haga clic en **examinar**, vaya a *<unidad \> \\<ServerName \> *\carpetasdeservidor (por ejemplo, *d:\Contoso\ServerFolders*), seleccione la carpeta que desea compartir y, a continuación, haga clic en **Aceptar**.
+5.  Haga clic en **examinar**, vaya a *<unidad \> \\<ServerName \>* \carpetasdeservidor (por ejemplo, *d:\Contoso\ServerFolders*), seleccione la carpeta que desea compartir y, a continuación, haga clic en **Aceptar**.
 
 6.  Haga clic en **Next**.
 

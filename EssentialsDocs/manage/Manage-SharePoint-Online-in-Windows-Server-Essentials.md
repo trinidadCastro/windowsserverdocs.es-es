@@ -1,18 +1,18 @@
 ---
 title: Administrar SharePoint Online en Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Obtenga información sobre cómo administrar sus bibliotecas y sitios de grupo de SharePoint Online desde el panel, sin iniciar sesión en Microsoft 365.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 282f3634-6de6-4691-803c-df6c3c16660d
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 66e5a2c8781e5c9602ba667e15ac789732767be3
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 5d7e7e033cbaa625bf9865822cc12f290136e791
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89626089"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97811252"
 ---
 # <a name="manage-sharepoint-online-in-windows-server-essentials"></a>Administrar SharePoint Online en Windows Server Essentials
 

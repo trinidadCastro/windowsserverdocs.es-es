@@ -1,18 +1,18 @@
 ---
 title: AD FS prompt = login
-description: Preguntas más frecuentes sobre AD FS 2016
+description: Obtenga información sobre la compatibilidad nativa para el parámetro prompt = login que está disponible en AD FS.
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 06/27/2017
 ms.topic: article
 ms.custom: it-pro
-ms.openlocfilehash: 0af0d71ad2b373f755653898ab0697b0308faa4b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 4ef4c832dab13f156b5a0bf5b7dc8ea2a07d36c5
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87940308"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97811442"
 ---
 # <a name="active-directory-federation-services-promptlogin-parameter-support"></a>Compatibilidad con el parámetro prompt=login de Servicios de federación de Active Directory
 

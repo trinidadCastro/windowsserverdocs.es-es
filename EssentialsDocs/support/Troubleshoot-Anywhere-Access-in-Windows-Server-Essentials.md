@@ -1,18 +1,18 @@
 ---
 title: Solucionar los problemas de Acceso desde cualquier lugar en Windows Server Essentials
-description: Describe cómo usar Windows Server Essentials
+description: Aprenda a usar el Asistente para reparación del acceso desde cualquier lugar en Windows Server Essentials para solucionar problemas que impiden que los usuarios de red tengan acceso a los recursos del servidor.
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 68f2b05c-09eb-4cba-8db4-a91353b513c6
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: 4de71e30e4dd706a52587dc1c869960c9b83bc5c
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 947b75f6f314fad479f7725d3abc482116755172
+ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625229"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97810230"
 ---
 # <a name="troubleshoot-anywhere-access-in-windows-server-essentials"></a>Solucionar los problemas de Acceso desde cualquier lugar en Windows Server Essentials
 
