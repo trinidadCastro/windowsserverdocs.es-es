@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: d9d9e9ac-4859-4522-89ed-a23092c9e12a
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 1292accf4d19afa7f6a050281b7af373b3c867c3
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 5c92046aaef7f22a2f9553260b009cda6663aa2e
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952090"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97944981"
 ---
 # <a name="configure-nps-on-a-multihomed-computer"></a>Configuración de NPS en un equipo de host múltiple
 
@@ -64,9 +65,9 @@ La pertenencia a **Administradores de dominio**, o equivalente, es lo mínimo ne
 
 ### <a name="to-specify-the-network-adapter-and-udp-ports-that-nps-uses-for-radius-traffic"></a>Para especificar el adaptador de red y puertos UDP que usa NPS para el tráfico RADIUS
 
-1. En Administrador del servidor, haga clic en **herramientas**y, a continuación, haga clic en **servidor de directivas de redes** para abrir la consola NPS.
+1. En Administrador del servidor, haga clic en **herramientas** y, a continuación, haga clic en **servidor de directivas de redes** para abrir la consola NPS.
 
-2. Haga clic con el botón secundario en **servidor de directivas de redes**y, a continuación, haga clic en **propiedades**.
+2. Haga clic con el botón secundario en **servidor de directivas de redes** y, a continuación, haga clic en **propiedades**.
 
 3. Haga clic en la pestaña **puertos** y anteponga la dirección IP del adaptador de red que desea usar para el tráfico RADIUS a los números de Puerto existentes. Por ejemplo, si desea usar la dirección IP 192.168.1.2 y los puertos RADIUS 1812 y 1645 para las solicitudes de autenticación, cambie la configuración de puerto de **1812, 1645** a **192.168.1.2:1812, 1645**. Si los puertos UDP de autenticación y cuentas RADIUS son distintos de los valores predeterminados, cambie la configuración de los puertos según corresponda.
 

@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 366e6fd5-d563-4de3-9551-5614cbb8f2cb
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 76a2847113536020bec6ea9724026c6e297cead2
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 70039e266e2696f69c5eee8077bab81ccee72d35
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952306"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97945461"
 ---
 # <a name="delete-dns-resource-records"></a>Eliminación de registros de recursos DNS
 
@@ -23,7 +24,7 @@ El requisito mínimo para realizar este procedimiento es la pertenencia al grupo
 
 ### <a name="to-delete-dns-resource-records"></a>Para eliminar registros de recursos DNS
 
-1.  En Administrador del servidor, haga clic en **IPAM**. Aparece la consola de cliente de IPAM.
+1.  En Administrador del servidor, haga clic en  **IPAM**. Aparece la consola de cliente de IPAM.
 
 2.  En el panel de navegación, en **supervisión y administración**, haga clic en **zonas DNS**.  El panel de navegación se divide en un panel de navegación superior y un panel de navegación inferior.
 

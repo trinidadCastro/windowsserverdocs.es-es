@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 5b80294a-7325-476b-84eb-69f0d051e8b2
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 5c629c4f05e0eb1198a6dc1a2ac074967765ff7b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 528c3b8e86eb14c8bc5c08408f1326241b6da9fc
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971792"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97945301"
 ---
 # <a name="filter-the-view-of-dns-resource-records"></a>Filtrado de la vista de registros de recursos DNS
 
@@ -23,7 +24,7 @@ El requisito mínimo para realizar este procedimiento es la pertenencia al grupo
 
 ### <a name="to-filter-the-view-of-dns-resource-records"></a>Para filtrar la vista de los registros de recursos DNS
 
-1.  En Administrador del servidor, haga clic en **IPAM**. Aparece la consola de cliente de IPAM.
+1.  En Administrador del servidor, haga clic en  **IPAM**. Aparece la consola de cliente de IPAM.
 
 2.  En el panel de navegación, en **supervisión y administración**, haga clic en **zonas DNS**.  El panel de navegación se divide en un panel de navegación superior y un panel de navegación inferior.
 
@@ -31,7 +32,7 @@ El requisito mínimo para realizar este procedimiento es la pertenencia al grupo
 
 4.  Haga clic en la zona cuyos registros desea ver y filtrar.
 
-5.  En el panel de información, haga clic en **vista actual**y, a continuación, haga clic en **registros de recursos**. Los registros de recursos de la zona se muestran en el panel de información.
+5.  En el panel de información, haga clic en **vista actual** y, a continuación, haga clic en **registros de recursos**. Los registros de recursos de la zona se muestran en el panel de información.
 
 6.  En el panel de información, haga clic en **Agregar criterios**.
 

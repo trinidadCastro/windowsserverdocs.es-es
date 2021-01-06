@@ -7,12 +7,13 @@ author: pronichkin
 ms.author: artemp
 ms.localizationpriority: medium
 ms.date: 02/23/2018
-ms.openlocfilehash: b810eb78055eeeeda62ef9e0f7d6fb82efa99d14
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.topic: conceptual
+ms.openlocfilehash: 388fef573d6c557889caa3b872b79f42cd1cf8a5
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90077772"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97943891"
 ---
 # <a name="roles-role-services-and-features-not-in-windows-server---server-core"></a>Roles, servicios de función y características que no están en Windows Server: Server Core
 
@@ -38,10 +39,10 @@ Tenga en cuenta que algunos servicios de rol de Escritorio remoto se incluyen en
 - Servicios de Escritorio remoto \ Escritorio remoto puerta de enlace (**RDS-Gateway**)
 - Servicios de Escritorio remoto \ Escritorio remoto host de sesión (**RDS-Rd-Server**)
 - Servicios de Escritorio remoto \ Escritorio remoto Web Access (**RDS-Web-Access**)
-- Servicio de rol de servidor Web (IIS) \ herramientas de administración \ consola**de administración de IIS (Web-MGMT-Console**)
+- Servicio de rol de servidor Web (IIS) \ herramientas de administración \ consola **de administración de IIS (Web-MGMT-Console**)
 - Servicio de rol servidor Web (IIS) \ herramientas de administración \ compatibilidad con la administración de IIS 6 \ consola de administración de IIS 6 (**Web-LGCY-MGMT-Console**)
-- Servicios de implementación de Windows \ servidor**de implementación (WDS-implementación**)
-- Servicios de implementación de Windows \ servidor**de transporte (WDS-Transport**) *(antes de la versión 1803 de Windows Server)*
+- Servicios de implementación de Windows \ servidor **de implementación (WDS-implementación**)
+- Servicios de implementación de Windows \ servidor **de transporte (WDS-Transport**) *(antes de la versión 1803 de Windows Server)*
 
 ## <a name="features-not-in-server-core"></a>Características no en Server Core
 - Servicio de transferencia inteligente en segundo plano (BITS) \ extensión del servidor IIS (**bits-IIS-ext**)
@@ -55,28 +56,28 @@ Tenga en cuenta que algunos servicios de rol de Escritorio remoto se incluyen en
 - Herramientas de administración remota del servidor \ herramientas de administración de características \ herramientas del servidor SMTP (**rsat-SMTP**)
 - Herramientas de administración remota del servidor \ herramientas de administración de características \ Cifrado de unidad BitLocker utilidades de administración \ Cifrado de unidad BitLocker herramientas (**rsat-Feature-Tools-BitLocker-RemoteAdminTool**)
 - Herramientas de administración remota del servidor \ herramientas de administración de características \ herramientas de extensiones de servidor BITS (**rsat-bits-servidor**)
-- Herramientas de administración remota del servidor \ herramientas de administración de características \ herramientas de equilibrio**de carga de red (RSAT-NLB**)
-- Herramientas de administración remota del servidor \ herramientas de administración de características \ herramientas**de SNMP (RSAT-SNMP**)
+- Herramientas de administración remota del servidor \ herramientas de administración de características \ herramientas de equilibrio **de carga de red (RSAT-NLB**)
+- Herramientas de administración remota del servidor \ herramientas de administración de características \ herramientas **de SNMP (RSAT-SNMP**)
 - Herramientas de administración remota del servidor \ herramientas de administración de características \ herramientas del servidor WINS (**rsat-WINS**)
 - Herramientas de administración remota del servidor \ herramientas de administración de roles \ herramientas de administración de Hyper-V \ herramientas de administración de GUI de Hyper-V (**Hyper-v-Tools**)
 - Herramientas de administración remota del servidor \ herramientas de administración de roles \ Servicios de Escritorio remoto Tools \ Escritorio remoto Gateway Tools (**rsat-RDS-Tools**)
 - Herramientas de administración remota del servidor \ herramientas de administración de roles \ Servicios de Escritorio remoto Tools \ Escritorio remoto Gateway Tools (**rsat-RDS-Gateway**)
 - Herramientas de administración remota del servidor \ herramientas de administración de roles \ Servicios de Escritorio remoto Tools \ Escritorio remoto herramientas de diagnóstico de licencias (**rsat-RDS-Licensing-Diagnostics-UI**)
 - Herramientas de administración remota del servidor \ herramientas de administración de roles \ Servicios de Escritorio remoto Tools \ Escritorio remoto Licensing Tools (**RDS-Licensing-UI**)
-- Herramientas de administración remota del servidor \ herramientas de administración de roles \ Windows Server Update Services Tools \ consola de administración**de interfaz de usuario (UpdateServices-UI**)
+- Herramientas de administración remota del servidor \ herramientas de administración de roles \ Windows Server Update Services Tools \ consola de administración **de interfaz de usuario (UpdateServices-UI**)
 - Herramientas de administración remota del servidor \ herramientas de administración de roles \ Active Directory herramientas de servicios de certificados (**rsat-ADCS**)
-- Herramientas de administración remota del servidor \ herramientas de administración de roles \ Active Directory herramientas de servicios de certificados \ herramientas**de administración de entidades de certificación (RSAT-ADCS-MGMT**)
+- Herramientas de administración remota del servidor \ herramientas de administración de roles \ Active Directory herramientas de servicios de certificados \ herramientas **de administración de entidades de certificación (RSAT-ADCS-MGMT**)
 - Herramientas de administración remota del servidor \ herramientas de administración de roles \ Active Directory herramientas de servicios de certificados \ herramientas de respuesta en línea (**rsat-online-respondedor**)
 - Herramientas de administración remota del servidor \ herramientas de administración de roles \ Active Directory Rights Management Services Tools (**rsat-ADRMS**)
 - Herramientas de administración remota del servidor \ herramientas de administración de roles \ herramientas del servidor de fax (**rsat-fax**)
 - Herramientas de administración remota del servidor \ herramientas de administración de roles \ herramientas de servicios de archivo (**rsat-File-Services**)
 - Herramientas de administración remota del servidor \ herramientas de administración de roles \ herramientas de servicios de archivos \ herramientas de administración de DFS (**rsat-DFS-MGMT-con**)
-- Herramientas de administración remota del servidor \ herramientas de administración de roles \ herramientas de servicios de archivo \ herramientas**de administrador de recursos de servidor de archivos (RSAT-FSRM-MGMT**)
+- Herramientas de administración remota del servidor \ herramientas de administración de roles \ herramientas de servicios de archivo \ herramientas **de administrador de recursos de servidor de archivos (RSAT-FSRM-MGMT**)
 - Herramientas de administración remota del servidor \ herramientas de administración de roles \ herramientas de servicios de archivo \ servicios para Network File System Management Tools (**rsat-NFS-admin**)
 - Herramientas de administración remota del servidor \ herramientas de administración de roles \ herramientas de servicios de acceso y directivas de redes (**rsat-NPAS**)
 - Herramientas de administración remota del servidor \ herramientas de administración de roles \ Servicios de impresión y documentos herramientas (**rsat-Print-Services**)
 - Herramientas de administración remota del servidor \ herramientas de administración de roles \ herramientas de activación por volumen (**rsat-va-Tools**)
-- Herramientas de administración remota del servidor \ herramientas de administración de roles \ herramientas de servicios**de implementación de Windows (WDS-AdminPack**)
+- Herramientas de administración remota del servidor \ herramientas de administración de roles \ herramientas de servicios **de implementación de Windows (WDS-AdminPack**)
 - Servicios simples de TCP/IP (**simple-TCPIP**)
 - Servidor SMTP (**servidor SMTP**)
 - Cliente TFTP (**TFTP-Client**)

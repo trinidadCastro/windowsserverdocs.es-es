@@ -2,16 +2,16 @@
 description: 'Más información acerca de: emparejamiento de redes virtuales'
 title: Emparejamiento de redes virtuales de Azure
 manager: grcusanz
-ms.topic: get-started-article
+ms.topic: how-to
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/08/2018
-ms.openlocfilehash: 8d7f88c4887a5d571722e2137d32f1088d7a1ace
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 5bd66299271257026504dcff4b5021c0be4ef73a
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97043613"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97945751"
 ---
 # <a name="virtual-network-peering"></a>Emparejamiento de redes virtuales de Azure
 

@@ -1,17 +1,18 @@
 ---
 title: Implementación de un solo servidor de DirectAccess con el Asistente para introducción
-description: Este tema forma parte de la guía de implementación de un único servidor de DirectAccess con el Asistente para Introducción para Windows Server 2016
+description: Obtenga información sobre el escenario de DirectAccess que usa un solo servidor de DirectAccess y le permite implementar DirectAccess en unos pocos pasos sencillos.
 manager: brianlic
 ms.topic: article
 ms.assetid: eb0cf464-0668-40f8-8222-feb6bae6d3d5
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 851b9e7909f6e2373f92d894d4cf67592cb22e15
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: e947f0a4a6c738937a315face5be97f0c509029a
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970372"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97944661"
 ---
 # <a name="deploy-a-single-directaccess-server-using-the-getting-started-wizard"></a>Implementación de un solo servidor de DirectAccess con el Asistente para introducción
 
@@ -139,7 +140,7 @@ Hay varios requisitos para este escenario:
 
     -   Se requiere un grupo de seguridad de Active Directory para contener los equipos que se configurarán como clientes de DirectAccess. Si no se ha especificado un grupo de seguridad al establecer la configuración de cliente de DirectAccess, se aplica de forma predeterminada el GPO de cliente a todos los equipos portátiles en el grupo de seguridad Equipos del dominio. Solo se pueden utilizar como clientes de DirectAccess los siguientes sistemas operativos: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows 8 Enterprise, Windows 7 Enterprise y Windows 7 Ultimate.
 
-## <a name="see-also"></a><a name="BKMK_LINKS"></a>Vea también
+## <a name="see-also"></a><a name="BKMK_LINKS"></a>Otras referencias
 En la siguiente tabla, se proporcionan los vínculos a recursos adicionales:
 
 |Tipo de contenido|Referencias|

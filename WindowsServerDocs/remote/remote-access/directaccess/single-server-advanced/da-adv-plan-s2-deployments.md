@@ -1,17 +1,18 @@
 ---
 title: Paso 2 planear implementaciones de DirectAccess avanzadas
-description: Este tema forma parte de la guía implementar un único servidor de DirectAccess con configuración avanzada para Windows Server 2016
+description: Obtenga información acerca de cómo planear la configuración del Asistente para instalación de acceso remoto.
 manager: brianlic
 ms.topic: article
 ms.assetid: 3bba28d4-23e2-449f-8319-7d2190f68d56
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 5d8182a9777469b8ce3cf37e9b7b4f3cc005d16f
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: c7215b1916816aa02f6767e45973fff6dd05c973
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970392"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97944721"
 ---
 # <a name="step-2-plan-advanced-directaccess-deployments"></a>Paso 2 planear implementaciones de DirectAccess avanzadas
 
