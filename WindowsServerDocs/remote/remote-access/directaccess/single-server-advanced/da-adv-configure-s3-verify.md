@@ -1,17 +1,18 @@
 ---
 title: Paso 3 comprobar la implementación de DirectAccess avanzada
-description: Este tema forma parte de la guía implementar un único servidor de DirectAccess con configuración avanzada para Windows Server 2016
+description: Obtenga información acerca de cómo comprobar que ha configurado correctamente la implementación de DirectAccess avanzada.
 manager: brianlic
 ms.topic: article
 ms.assetid: ae8bbff0-c981-4bc6-8df1-861621d0627f
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 3d5b189d70497ead26f24f43bba9dcfe2d443ce0
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.date: 08/07/2020
+ms.openlocfilehash: 38e93e9c40b1e87557bd077f7b9d2129a2e9bae4
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989768"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949821"
 ---
 # <a name="step-3-verify-the-advanced-directaccess-deployment"></a>Paso 3 comprobar la implementación de DirectAccess avanzada
 
@@ -25,7 +26,7 @@ En este tema se describe cómo comprobar que ha configurado correctamente la imp
 
 2.  Haga clic en el icono **conexiones de red** en el área de notificación para tener acceso al administrador de medios de DirectAccess.
 
-3.  Haga clic en **conexión de DirectAccess**y verá que el estado es **conectado localmente**.
+3.  Haga clic en **conexión de DirectAccess** y verá que el estado es **conectado localmente**.
 
 4.  Conecte el equipo cliente a la red externa e intente tener acceso a recursos internos.
 

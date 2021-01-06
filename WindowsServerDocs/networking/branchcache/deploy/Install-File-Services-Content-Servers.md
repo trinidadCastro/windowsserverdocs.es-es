@@ -2,16 +2,17 @@
 title: Instalar servidores de contenido de Servicios de archivo
 description: Obtenga información acerca de cómo instalar el servicio de rol BranchCache para archivos de red del rol de servidor servicios de archivo y habilitar BranchCache en recursos compartidos de archivos de acuerdo con sus requisitos.
 manager: brianlic
-ms.topic: get-started-article
+ms.topic: how-to
 ms.assetid: 74b0a5ed-dc20-4974-9d4b-2426987a01a1
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 85809057c15e0b62aa2b5fdfbf7a8b8209096343
-ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
+ms.date: 01/05/2021
+ms.openlocfilehash: 57fa39120b31ea2622c3a7d997a62fa671d2455a
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97904880"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949561"
 ---
 # <a name="install-file-services-content-servers"></a>Instalar servidores de contenido de Servicios de archivo
 

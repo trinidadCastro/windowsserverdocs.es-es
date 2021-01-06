@@ -2,16 +2,17 @@
 title: Arquitectura de implementación de puerta de enlace de RAS
 description: Puede usar este tema para obtener información acerca de la implementación del proveedor de servicios en la nube (CSP) de la puerta de enlace de RAS en Windows Server 2016, incluidos los grupos de puerta de enlace RAS, los Reflejadores de ruta e implementación de varias puertas de enlace para inquilinos individuales.
 manager: grcusanz
-ms.topic: get-started-article
+ms.topic: how-to
 ms.assetid: d46e4e91-ece0-41da-a812-af8ab153edc4
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: e15131291f14f8e7affc45d49f1b81e7c8b29ba7
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.date: 08/07/2020
+ms.openlocfilehash: abc36a7e26ab25f7f121538dcadf9761b111a6e2
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87994758"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949371"
 ---
 # <a name="ras-gateway-deployment-architecture"></a>Arquitectura de implementación de puerta de enlace de RAS
 
@@ -41,7 +42,7 @@ En este tema se incluyen las siguientes secciones.
 La puerta de enlace RAS incluye varias características nuevas que cambian y mejoran la manera en que se implementa la infraestructura de puerta de enlace en el centro de recursos.
 
 ### <a name="bgp-route-reflector"></a>Reflector de rutas BGP
-La funcionalidad de reflector de rutas de Protocolo de puerta de enlace de borde (BGP) ahora se incluye con la puerta de enlace de RAS y proporciona una alternativa a la topología de malla completa de BGP que normalmente se requiere para la sincronización de rutas entre los enrutadores. Con la sincronización de malla completa, todos los enrutadores BGP deben conectarse con todos los demás enrutadores en la topología de enrutamiento. Sin embargo, cuando se usa el reflector de rutas, el reflector de rutas es el único enrutador que se conecta con todos los demás enrutadores, denominados clientes de reflector de rutas BGP, lo que simplifica la sincronización de rutas y reduce el tráfico de red. El reflector de rutas aprende todas las rutas, calcula las mejores rutas y redistribuye las mejores rutas a sus clientes BGP.
+La funcionalidad de reflector de rutas de Protocolo de puerta de enlace de borde (BGP) ahora se incluye con la puerta de enlace de RAS y proporciona una alternativa a la topología de malla completa de BGP que normalmente se requiere para la sincronización de rutas entre los enrutadores. Con la sincronización de malla completa, todos los enrutadores de BGP deben conectarse con todos los demás enrutadores de la topología de enrutamiento. Sin embargo, cuando se usa el reflector de rutas, este es el único enrutador que se conecta con todos los demás enrutadores, denominados clientes del reflector de rutas de BGP, lo que simplifica la sincronización de rutas y reduce el tráfico de red. El reflector de rutas aprende todas las rutas, calcula las mejores rutas y redistribuye las mejores rutas a sus clientes de BGP.
 
 Para obtener más información, consulte [novedades de puerta de enlace de Ras](../../../sdn/technologies/network-function-virtualization/What-s-New-in-RAS-Gateway.md).
 
@@ -51,7 +52,7 @@ En Windows Server 2016, puede crear muchos grupos de puertas de enlace de distin
 Para obtener más información, consulte [novedades de puerta de enlace ras](../../../sdn/technologies/network-function-virtualization/What-s-New-in-RAS-Gateway.md) y [alta disponibilidad de puerta de enlace ras](../../../sdn/technologies/network-function-virtualization/RAS-Gateway-High-Availability.md).
 
 ### <a name="gateway-pool-scalability"></a><a name="bkmk_gps"></a>Escalabilidad del grupo de puerta de enlace
-Puede escalar o reducir verticalmente un grupo de puerta de enlace fácilmente agregando o quitando máquinas virtuales de puerta de enlace en el grupo. La eliminación o adición de puertas de enlace no interrumpe los servicios proporcionados por un grupo. También puede Agregar y quitar grupos de puertas de enlace completos.
+Puede escalar o reducir verticalmente un grupo de puertas de enlace fácilmente agregando o quitando máquinas virtuales de puerta de enlace del grupo. La eliminación o adición de puertas de enlace no interrumpe los servicios que proporciona un grupo. También puede agregar y quitar grupos de puertas de enlace completos.
 
 Para obtener más información, consulte [novedades de puerta de enlace ras](../../../sdn/technologies/network-function-virtualization/What-s-New-in-RAS-Gateway.md) y [alta disponibilidad de puerta de enlace ras](../../../sdn/technologies/network-function-virtualization/RAS-Gateway-High-Availability.md).
 

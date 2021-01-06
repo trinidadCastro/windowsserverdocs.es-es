@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: b1b2fe70-7956-46e8-a3e3-43848868df09
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 8cc47a3a94425b4f77e5ed430cffe86429bf9b23
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.date: 08/07/2020
+ms.openlocfilehash: 6a30d4726257c30020a305634fe16d7a6c0d3ef5
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991291"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949781"
 ---
 # <a name="deploy-remote-access-with-otp-authentication"></a>Implementar el acceso remoto con autenticación OTP
 
@@ -68,7 +69,7 @@ En la siguiente tabla, se muestran los roles y características requeridos para 
 
 |Característica de rol \/|Compatibilidad con este escenario|
 |---------|-----------------|
-|*Rol de administración de acceso remoto*|El rol se instala y desinstala mediante la consola del Administrador del servidor. Este rol incluye tanto DirectAccess, que antes era una característica de Windows Server 2008 R2, como los servicios de enrutamiento y acceso remoto, que antes eran un servicio de rol en el rol de servidor NPAS de servicios de acceso y directivas de redes \( \) . El rol de acceso remoto consta de dos componentes:<p>1. DirectAccess y servicios de enrutamiento y acceso remoto \( RRAS \) VPN: DIRECTACCESS y VPN se administran conjuntamente en la consola de administración de acceso remoto.<br />2. enrutamiento RRAS: las características de enrutamiento RRAS se administran en la consola de enrutamiento y acceso remoto heredada.<p>El rol de acceso remoto depende de las siguientes características del servidor:<p>-Internet Information Services \( \) servidor Web de IIS: esta característica es necesaria para configurar el servidor de ubicación de red, para el uso de la autenticación OTP y para configurar el sondeo Web predeterminado.<br />-Windows Internal Database: se usa para las cuentas locales en el servidor de acceso remoto.|
+|*Rol de administración de acceso remoto*|El rol se instala y desinstala mediante la consola del Administrador del servidor. Este rol incluye tanto DirectAccess, que antes era una característica de Windows Server 2008 R2, como los servicios de enrutamiento y acceso remoto, que antes eran un servicio de rol en el rol de servidor NPAS de servicios de acceso y directivas de redes \( \) . El rol de acceso remoto consta de dos componentes:<p>1. los servicios de enrutamiento y acceso remoto \( RRAS \) VPN-DirectAccess y VPN se administran conjuntamente en la consola de administración de acceso remoto.<br />2. enrutamiento RRAS: las características de enrutamiento RRAS se administran en la consola de enrutamiento y acceso remoto heredada.<p>El rol de acceso remoto depende de las siguientes características del servidor:<p>-Internet Information Services \( \) servidor Web de IIS: esta característica es necesaria para configurar el servidor de ubicación de red, para el uso de la autenticación OTP y para configurar el sondeo Web predeterminado.<br />-Database-Used interno de Windows para cuentas locales en el servidor de acceso remoto.|
 |Característica Herramientas de administración de acceso remoto|Esta característica se instala de la siguiente manera:<p>-Se instala de forma predeterminada en un servidor de acceso remoto cuando se instala el rol de acceso remoto y es compatible con la interfaz de usuario de la consola de administración remota.<br />-Se puede instalar opcionalmente en un servidor que no ejecute el rol de servidor de acceso remoto. En este caso, se usa para la administración remota de un equipo de acceso remoto que ejecuta DirectAccess y VPN.<p>La característica de herramientas de administración de acceso remoto consiste de los siguientes elementos:<p>-Herramientas de línea de comandos y GUI de acceso remoto<br />-Módulo de acceso remoto para Windows PowerShell<p>Las dependencias incluyen:<p>-Consola de administración de directivas de grupo<br />-Kit de administración del administrador de conexiones RAS \( CMAK\)<br />-Windows PowerShell 3,0<br />-Infraestructura y herramientas de administración de gráficos|
 
 ## <a name="hardware-requirements"></a><a name="BKMK_HARD"></a>Requisitos de hardware
@@ -126,4 +127,4 @@ Los problemas que se mencionan a continuación son problemas conocidos de la con
 
         -   HKEY \_ local \_ Machine \\ software \\ Microsoft \\ DirectAccess \\ OTP \\ RadiusProbePass
 
--   Si cambias el certificado raíz de IPsec en una implementación de DirectAccess configurada y en ejecución, OTP dejará de funcionar. Para resolver este problema, en cada servidor de DirectAccess, en un símbolo del sistema de Windows PowerShell, ejecute el comando:`iisreset`
+-   Si cambias el certificado raíz de IPsec en una implementación de DirectAccess configurada y en ejecución, OTP dejará de funcionar. Para resolver este problema, en cada servidor de DirectAccess, en un símbolo del sistema de Windows PowerShell, ejecute el comando: `iisreset`

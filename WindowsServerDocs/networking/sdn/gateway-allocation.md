@@ -2,16 +2,16 @@
 description: 'Más información acerca de: asignación de ancho de banda de puerta de enlace'
 title: Asignación de ancho de banda de puerta de enlace
 manager: grcusanz
-ms.topic: get-started-article
+ms.topic: how-to
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/22/2018
-ms.openlocfilehash: 37982fbef7ee56ec65418aa087b631c3d19bec6d
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: c4350636c0977b23c94a73fb8bf7a6179736eb5a
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97044923"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949131"
 ---
 # <a name="gateway-bandwidth-allocation"></a>Asignación de ancho de banda de puerta de enlace
 

@@ -1,18 +1,18 @@
 ---
 title: Implementación de una infraestructura de red definida por software
 description: En este tema se proporcionan vínculos a temas sobre cómo implementar una infraestructura de red definida por software (SDN) de Microsoft mediante scripts en Windows Server 2016.
-ms.topic: get-started-article
+ms.topic: how-to
 ms.assetid: 6c665c88-df28-4150-81d4-a47e9fa5255c
 ms.date: 08/23/2018
 ms.author: anpaul
 author: AnirbanPaul
 manager: grcusanz
-ms.openlocfilehash: affc2a3e75411a210aa1335d797b778fc12a8a7f
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 43bb1af29735dd1bf8ba911690abb78a09f1cf0d
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87993777"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97950121"
 ---
 # <a name="deploy-a-software-defined-network-infrastructure"></a>Implementar una infraestructura de red definida por software
 

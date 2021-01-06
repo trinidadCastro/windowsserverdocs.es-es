@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 78cc2ce3-a48e-45db-b402-e480b493fab1
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 8c1b56292c500cdd56c7fe8830ec4ced8bd0b4e8
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: b6cbf1780e35b1181648761990a344093aaa8f58
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87951440"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97950081"
 ---
 # <a name="border-gateway-protocol-bgp"></a>Protocolo de puerta de enlace de borde (BGP)
 
@@ -34,7 +35,7 @@ Cuando se configura en una puerta de enlace ras del servicio de acceso remoto de
 
 BGP reduce la necesidad de configuración de enrutamiento manual en los enrutadores, ya que es un protocolo de enrutamiento dinámico y aprende automáticamente las rutas entre sitios que están conectados mediante conexiones VPN de sitio a sitio.
 
-Para usar el enrutamiento de BGP, debe instalar el servicio de **acceso remoto \( ras \) ** y/o el servicio de rol de **enrutamiento** del rol de servidor de acceso remoto en un equipo o máquina virtual \( \) (VM). el tipo de sistema que use dependerá de si tiene una implementación multiinquilino:
+Para usar el enrutamiento de BGP, debe instalar el servicio de **acceso remoto \( ras \)** y/o el servicio de rol de **enrutamiento** del rol de servidor de acceso remoto en un equipo o máquina virtual \( \) (VM). el tipo de sistema que use dependerá de si tiene una implementación multiinquilino:
 
 -   Para una implementación multiinquilino, se recomienda instalar la puerta de enlace RAS en una o más máquinas virtuales. El uso de varias máquinas virtuales proporciona alta disponibilidad. La puerta de enlace RAS es capaz de controlar varias conexiones de varios inquilinos y consta de un host de Hyper-V y una máquina virtual que realmente está configurada como puerta de enlace. Esta puerta de enlace se configura con conexiones VPN de sitio a sitio como un enrutador BGP multiinquilino para intercambiar rutas de subred de CSP de proveedor de servicios en la nube y inquilino de Exchange \( \) .
 
@@ -163,9 +164,9 @@ A continuación se muestran las características del enrutador BGP de puerta de 
 
 **Filtrado de rutas**. El enrutador BGP admite el filtrado de anuncios de ruta de entrada o salida en función de varios atributos de ruta como Prefix, ASN-Range, Community y Próximo salto.
 
-**El cliente de ruta-reflector (RR) y RR**. El enrutador BGP puede actuar como un reflector de ruta y un cliente de RR. Esto resulta útil en topologías complejas en las que RR puede simplificar la red mediante la formación de clústeres de RR.
+**El cliente de ruta-reflector (RR) y RR**. El enrutador BGP puede actuar como un Route-Reflector y un cliente de RR. Esto resulta útil en topologías complejas en las que RR puede simplificar la red mediante la formación de clústeres de RR.
 
-**Compatibilidad con Route-Refresh**. El enrutador BGP es compatible con Route-Refresh y anuncia esta capacidad en el emparejamiento de forma predeterminada. Es capaz de enviar un nuevo conjunto de actualizaciones de ruta cuando lo solicite un elemento del mismo nivel a través del mensaje de ruta de actualización, así como de enviar una actualización de ruta para actualizar su tabla de enrutamiento en los eventos, como los cambios de la Directiva de enrutamiento para un elemento del mismo nivel. Esto permite el escenario de cambiar o actualizar las directivas de enrutamiento BGP en Windows Server 2016 sin necesidad de reiniciar el emparejamiento.
+**Compatibilidad con Route-Refresh**. El enrutador BGP es compatible con Route-Refresh y anuncia esta capacidad en el emparejamiento de forma predeterminada. Es capaz de enviar un nuevo conjunto de actualizaciones de ruta cuando lo solicite un elemento del mismo nivel a través del mensaje de ruta de actualización, así como de enviar un Route-Refresh para actualizar su tabla de enrutamiento en los eventos, como los cambios de la Directiva de enrutamiento de un elemento del mismo nivel. Esto permite el escenario de cambiar o actualizar las directivas de enrutamiento BGP en Windows Server 2016 sin necesidad de reiniciar el emparejamiento.
 
 **Compatibilidad con la configuración de ruta estática**. Puede configurar rutas estáticas o interfaces en el enrutador BGP mediante el comando de Windows PowerShell **Add-BgpCustomRoute**. Las rutas estáticas que configure pueden ser los prefijos o el nombre de las interfaces desde las que se deben elegir las rutas. Sin embargo, solamente se conectarán las rutas con próximos saltos que se puedan resolver en las tablas de enrutamiento de BGP y se anunciarán a los pares.
 

@@ -2,16 +2,17 @@
 title: Habilitar la publicación de hash para servidores de archivos que no son miembros del dominio
 description: Obtenga información sobre cómo configurar la publicación de hash para BranchCache mediante el directiva de grupo del equipo local en un servidor de archivos con el servicio de rol BranchCache para archivos de red del rol de servidor servicios de archivo instalado.
 manager: brianlic
-ms.topic: get-started-article
+ms.topic: how-to
 ms.assetid: 11584b73-f9e2-4530-afa5-b8df970e6b24
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: bee22a7cad20fc32bcb2f0384fdaa9a9a2d8ffce
-ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
+ms.date: 01/05/2021
+ms.openlocfilehash: 9da8c5677f3dd137fb682a17adc55da29f973f82
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97904230"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948441"
 ---
 # <a name="enable-hash-publication-for-non-domain-member-file-servers"></a>Habilitar la publicación de hash para servidores de archivos que no son miembros del dominio
 

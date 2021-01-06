@@ -6,12 +6,13 @@ ms.assetid: 04fdfa54-6600-43d4-8945-35f75e15275a
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 1eff6763ac00ea63e386e2774814221b01956b97
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 32ee4b774119d3494c38eeec51cc9106373ae7ae
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953851"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948281"
 ---
 # <a name="manage-qos-policy"></a>Administrar la directiva QoS
 
@@ -97,7 +98,7 @@ Opcionalmente, puede especificar la ruta de acceso de la aplicación. Para espec
 >[!NOTE]
 >La ruta de acceso de la aplicación no puede incluir una ruta de acceso que se resuelva como un vínculo simbólico.
 
-La dirección URL debe ajustarse a [RFC 1738](https://tools.ietf.org/html/rfc1738), con el formato `http[s]://<hostname\>:<port\>/<url-path>` . Puede usar un carácter comodín, `‘*'` , para `<hostname>` y/o `<port>` , por ejemplo `https://training.\*/, https://\*.\*` ,, pero el carácter comodín no puede indicar una subcadena de `<hostname>` o `<port>` .
+La dirección URL debe ajustarse a  [RFC 1738](https://tools.ietf.org/html/rfc1738), con el formato `http[s]://<hostname\>:<port\>/<url-path>` . Puede usar un carácter comodín, `‘*'` , para `<hostname>` y/o `<port>` , por ejemplo `https://training.\*/, https://\*.\*` ,, pero el carácter comodín no puede indicar una subcadena de `<hostname>` o `<port>` .
 
 En otras palabras, `https://my\*site/` ni ni `https://\*training\*/` son válidos.
 
@@ -121,13 +122,13 @@ En la tercera página del Asistente para directivas de QoS puede especificar las
 
 Si selecciona **Sólo para el siguiente prefijo o dirección IP de origen:** o **Sólo para el siguiente prefijo o dirección IP de destino:**, debe escribir una de las siguientes opciones:
 
-- Una dirección IPv4, como`192.168.1.1`
+- Una dirección IPv4, como `192.168.1.1`
 
-- Un prefijo de dirección IPv4 mediante la notación de longitud de prefijo de red, como`192.168.1.0/24`
+- Un prefijo de dirección IPv4 mediante la notación de longitud de prefijo de red, como `192.168.1.0/24`
 
-- Una dirección IPv6, como`3ffe:ffff::1`
+- Una dirección IPv6, como `3ffe:ffff::1`
 
-- Un prefijo de dirección IPv6, como`3ffe:ffff::/48`
+- Un prefijo de dirección IPv6, como `3ffe:ffff::/48`
 
 Si selecciona **solo para la siguiente dirección IP de origen** y **solo para la siguiente dirección IP de destino**, ambas direcciones o prefijos de dirección deben estar basadas en IPv4 o IPv6.
 
@@ -234,11 +235,11 @@ La configuración avanzada de QoS proporciona controles adicionales para los adm
 
 #### <a name="to-configure-advanced-qos-settings"></a>Para configurar opciones avanzadas de QoS
 
-1.  Haga clic en **configuración del equipo**y, a continuación, en **configuración de Windows en Directiva de grupo**.
+1.  Haga clic en **configuración del equipo** y, a continuación, en **configuración de Windows en Directiva de grupo**.
 
-2.  Haga clic con el botón secundario en **Directiva de QoS**y, a continuación, haga clic en **Configuración avanzada de QoS**.
+2.  Haga clic con el botón secundario en **Directiva de QoS** y, a continuación, haga clic en **Configuración avanzada de QoS**.
 
-     En la ilustración siguiente se muestran las dos pestañas de configuración avanzada de QoS: **invalidación del marcado de DSCP**y el **tráfico TCP entrante** .
+     En la ilustración siguiente se muestran las dos pestañas de configuración avanzada de QoS: **invalidación del marcado de DSCP** y el **tráfico TCP entrante** .
 
 > [!NOTE]
 >  La configuración avanzada de QoS es una configuración de directiva de grupo de nivel de equipo.
@@ -254,17 +255,17 @@ La ventana de recepción TCP ha cambiado en Windows Server 2012, Windows 8, Wind
 |Nivel de rendimiento de entrada|Máxima|
 |------------------------|-------|
 |0|64 KB|
-|1|256 KB|
-|2|1 MB|
+|1|256 KB|
+|2|1 MB|
 |3|16 MB|
 
 El tamaño de la ventana real puede ser un valor igual o menor que el máximo, dependiendo de las condiciones de la red.
 
 ###### <a name="to-set-the-tcp-receive-side-window"></a>Para establecer la ventana de recepción de TCP
 
-1. En Editor de objetos de directiva de grupo, haga clic en **Directiva de equipo local**, en **configuración de Windows**, haga clic con el botón secundario en **Directiva de QoS**y, a continuación, haga clic en **Configuración avanzada de QoS**.
+1. En Editor de objetos de directiva de grupo, haga clic en **Directiva de equipo local**, en **configuración de Windows**, haga clic con el botón secundario en **Directiva de QoS** y, a continuación, haga clic en **Configuración avanzada de QoS**.
 
-2. En **rendimiento de recepción de TCP**, seleccione **configurar el rendimiento de recepción TCP**y, a continuación, seleccione el nivel de rendimiento que desee.
+2. En **rendimiento de recepción de TCP**, seleccione **configurar el rendimiento de recepción TCP** y, a continuación, seleccione el nivel de rendimiento que desee.
 
 3.  Vincule el GPO a la unidad organizativa.
 

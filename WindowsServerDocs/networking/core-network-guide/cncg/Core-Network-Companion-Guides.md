@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: d57af0bd-9301-4f62-9888-f528cd10451d
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: e7595cc91f1bf3c4b2b631398bc97accba8930cc
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.date: 08/07/2020
+ms.openlocfilehash: ffcfbecfa47c39f0bb6e76a6e34953a2ef9140e7
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997118"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97950241"
 ---
 # <a name="core-network-companion-guidance"></a>Orientación complementaria de red principal
 
@@ -36,7 +37,7 @@ Los certificados de servidor son necesarios al implementar métodos de autentica
 - Capacidad de ampliar el uso de certificados para otros propósitos
 
 Para obtener instrucciones sobre cómo implementar certificados de servidor, consulte [implementación de certificados de servidor para implementaciones cableadas e inalámbricas de 802.1 x](server-certs/Deploy-Server-Certificates-for-802.1X-Wired-and-Wireless-Deployments.md).
-## <a name="core-network-companion-guide-deploy-password-based-8021x-authenticated-wireless-access"></a>Guía complementaria de red principal: implementación del acceso inalámbrico autenticado mediante 802.1 X basado en contraseña
+## <a name="core-network-companion-guide-deploy-password-based-8021x-authenticated-wireless-access"></a>Guía complementaria de red principal: implementación del acceso inalámbrico autenticado en Password-Based 802.1 X
 
 En esta guía complementaria se explica cómo basarse en la red principal proporcionando instrucciones sobre cómo implementar los ingenieros de Institute of Electrical and Electronics Engineers IEEE \( \) 802.1 x \- authenticated IEEE 802,11 Wireless Access mediante el protocolo de autenticación extensible protegido (Protocolo de autenticación por desafío mutuo de Microsoft versión 2 \( PEAP \- MS \- CHAP v2) \) .
 
@@ -49,7 +50,7 @@ Antes de usar esta guía para implementar el acceso inalámbrico con el \- méto
 1. Siga las instrucciones de la guía de red principal para implementar la infraestructura de red principal, o ya tiene las tecnologías que se presentan en esa guía implementadas en la red.
 2. Siga las instrucciones de la guía complementaria de red principal implementación de certificados de servidor para las implementaciones cableadas e inalámbricas de 802.1 X, o ya tiene las tecnologías que se presentan en esa guía implementadas en la red.
 
-Para obtener instrucciones sobre cómo implementar el acceso inalámbrico con PEAP \- MS \- CHAP V2, consulte [implementación de acceso inalámbrico autenticado mediante 802.1 x basado en contraseña](wireless/a-deploy-8021X-wireless-access.md).
+Para obtener instrucciones sobre cómo implementar el acceso inalámbrico con PEAP \- MS \- CHAP V2, consulte [implementación de acceso inalámbrico autenticado de Password-Based 802.1 x](wireless/a-deploy-8021X-wireless-access.md).
 
 ## <a name="core-network-companion-guide-deploy-branchcache-hosted-cache-mode"></a>Guía complementaria de red principal: implementar el modo caché hospedada de BranchCache
 

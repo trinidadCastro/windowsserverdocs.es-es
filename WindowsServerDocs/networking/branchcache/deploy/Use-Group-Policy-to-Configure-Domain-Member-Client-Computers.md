@@ -2,17 +2,17 @@
 title: Usar directiva de grupo para configurar equipos cliente miembros del dominio
 description: Obtenga información acerca de cómo usar directiva de grupo para configurar equipos cliente pertenecientes a un dominio.
 manager: dougkim
-ms.topic: get-started-article
+ms.topic: how-to
 ms.assetid: 911c1538-f79d-42e9-ba38-f4618f87b008
 ms.author: lizross
 author: eross-msft
 ms.date: 06/02/2018
-ms.openlocfilehash: 281e67777ce54f1e03741f9d2120e0d4cafbb91f
-ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
+ms.openlocfilehash: cc212a899c1fe0cce24ab8a1a6aea9aa232c6e82
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97904659"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948901"
 ---
 # <a name="use-group-policy-to-configure-domain-member-client-computers"></a>Usar directiva de grupo para configurar equipos cliente miembros del dominio
 

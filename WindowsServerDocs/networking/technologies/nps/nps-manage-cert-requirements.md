@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 2af0a1df-5c44-496b-ab11-5bc340dc96f0
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 114b64b7bdcaae0643ee03ecc2ee0a67c3e24fba
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.date: 08/07/2020
+ms.openlocfilehash: 4f1680c37510a0a45dfc4ce1ce34ca62859a8f09
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87992691"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948991"
 ---
 # <a name="configure-certificate-templates-for-peap-and-eap-requirements"></a>Configurar plantillas de certificado para los requisitos de PEAP y EAP
 
@@ -85,7 +86,7 @@ Con EAP-TLS o PEAP-TLS, el servidor acepta el intento de autenticación del clie
     1. Abra las plantillas de certificado.
     2. En el panel de detalles, haga clic con el botón secundario en la plantilla de certificado que desea cambiar y, a continuación, haga clic en **propiedades**.
     3. Haga clic en la pestaña **nombre de sujeto** y, a continuación, haga clic en **compilar a partir de esta información Active Directory**.
-    4. En **incluir esta información en un nombre de sujeto alternativo**, seleccione **nombre principal de usuario \( UPN \) **.
+    4. En **incluir esta información en un nombre de sujeto alternativo**, seleccione **nombre principal de usuario \( UPN \)**.
 
 - En el caso de los certificados de equipo, la extensión SubjectAltName del nombre alternativo del sujeto del \( \) certificado debe contener el FQDN del nombre de dominio completo \( \) del cliente, que también se denomina *nombre DNS*. Para configurar este nombre en la plantilla de certificado:
 

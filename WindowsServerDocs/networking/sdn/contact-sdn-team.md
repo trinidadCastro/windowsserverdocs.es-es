@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: f9945c55-c2d0-448f-86dd-8c734e1b2987
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: d9bba302c80a810e44c41079d7041b49741fd5b4
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.date: 08/07/2020
+ms.openlocfilehash: 6acfb6cbd3a8eaa528dd7457d5de008209b99ad3
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87995246"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948401"
 ---
 # <a name="contact-the-datacenter-and-cloud-networking-team"></a>Contacto con el equipo de centros de datos y redes de nube
 
@@ -38,7 +39,7 @@ Nuestra [documentación sobre redes de contenedor](/virtualization/windowscontai
 >
 > *En general, si se trata de un tema sobre Microsoft Docs que Spark una pregunta o deja que quiera más, deje un Comentario en esa página para compartir sus comentarios con el equipo de Microsoft que puede ayudarle.*
 
-## <a name="container-specific-forums"></a>Foros específicos de contenedor
+## <a name="container-specific-forums"></a>Foros de Container-Specific
 No dude en usar cualquier vía en esta página para proporcionar comentarios relacionados con contenedores y redes de contenedores. Sin embargo, si busca los foros principales de Microsoft para la comunidad de contenedores específicamente, consulte lo siguiente:
 - [User Voice](https://windowsserver.uservoice.com/forums/304624-containers) : mejor para *las solicitudes de características*
 - [GitHub (repositorio de virtualización)](https://github.com/Microsoft/Virtualization-Documentation) : ideal para buscar *problemas de ayuda* y notificación de *errores*

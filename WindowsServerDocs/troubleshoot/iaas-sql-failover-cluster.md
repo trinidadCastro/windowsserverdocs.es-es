@@ -4,12 +4,13 @@ description: En este artículo se presentan soluciones para ajustar el umbral de
 ms.date: 05/28/2020
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: 9f28aa9c10fe64e0b86a405c1feb480396bcb76b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.topic: troubleshooting
+ms.openlocfilehash: 39469ef6b36af20a2fd8fdab8f3400d5991c2446
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87965812"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948561"
 ---
 # <a name="iaas-with-sql-alwayson---tuning-failover-cluster-network-thresholds"></a>IaaS con SQL AlwaysOn: Ajuste de umbrales de red de clústeres de conmutación por error
 
@@ -75,7 +76,7 @@ Hay dos opciones de configuración que se usan para configurar el estado de Cone
 
 De forma predeterminada, Windows Server 2016 establece **SameSubnetThreshold** en 10 y **SameSubnetDelay** en 1000 ms. Por ejemplo, si se produce un error en la supervisión de la conectividad durante 10 segundos, se alcanza el umbral de conmutación por error, lo que da lugar a que el nodo se quite de la pertenencia al clúster. Esto hace que los recursos se muevan a otro nodo disponible en el clúster. Se informará de los errores del clúster, incluido el error 1135 del clúster (anterior).
 
-## <a name="resolution"></a>Resolución
+## <a name="resolution"></a>Solución
 
 En un entorno de IaaS, relajar las opciones de configuración de red de clústeres.
 

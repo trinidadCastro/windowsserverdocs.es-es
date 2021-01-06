@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 6cfb50e0-7088-4295-97c5-14ff8776cbf8
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: e83e71e87ae9cb442299861125ffb524ef3c1c81
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.date: 08/07/2020
+ms.openlocfilehash: 379ad808223a94abda2367a3e2184a5ff6d93f74
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996846"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949891"
 ---
 # <a name="deploy-network-policy-server"></a>Implementar el servidor de directivas de redes
 
@@ -33,7 +34,7 @@ Si desea implementar métodos de autenticación como EAP de protocolo de autenti
 
 ## <a name="deploy-nps-for-8021x-wireless-access"></a>Implementación de NPS para acceso inalámbrico de 802.1 X
 
-Para implementar NPS para el acceso inalámbrico, puede usar la guía de [implementación de acceso inalámbrico autenticado mediante 802.1 x basada en contraseña](../../core-network-guide/cncg/wireless/a-deploy-8021x-wireless-access.md).
+Para implementar NPS para el acceso inalámbrico, puede usar la guía [implementar Password-Based el acceso inalámbrico autenticado mediante 802.1 x](../../core-network-guide/cncg/wireless/a-deploy-8021x-wireless-access.md).
 
 ## <a name="deploy-nps-for-windows-10-vpn-access"></a>Implementación de NPS para acceso VPN de Windows 10
 

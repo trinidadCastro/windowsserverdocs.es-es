@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 150976f0-ccd5-487a-a458-92261444a846
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: 896a14d9a912ec5296151af8186e1f5e165512b5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 03931f7e149776abcb6a21a0bb2f033dc43b31b7
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952565"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949941"
 ---
 # <a name="hyper-v-network-virtualization"></a>Virtualización de red de Hyper-V
 

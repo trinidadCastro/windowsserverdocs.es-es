@@ -2,16 +2,17 @@
 title: Habilitar la publicación de hash para servidores de archivos que son miembros del dominio
 description: Obtenga información acerca de cómo habilitar la publicación de hash de BranchCache para varios servidores de archivos.
 manager: brianlic
-ms.topic: get-started-article
+ms.topic: how-to
 ms.assetid: a3f1f7c4-d9b2-43e6-8bfa-fac707bbd4d3
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: beb6c20cf9f750ed0296b96acb6253b5352385fb
-ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
+ms.date: 01/05/2021
+ms.openlocfilehash: f09b26b76cfdf343773767067d33a39fbd458736
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97904820"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948461"
 ---
 # <a name="enable-hash-publication-for-domain-member-file-servers"></a>Habilitar la publicación de hash para servidores de archivos que son miembros del dominio
 

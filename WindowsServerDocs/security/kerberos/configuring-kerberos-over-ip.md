@@ -3,12 +3,14 @@ title: Configuración de Kerberos para la dirección IP
 description: Compatibilidad con Kerberos para SPN basados en IP
 author: daveba
 ms.author: daveba
-ms.openlocfilehash: 16feb7045508a854657834fcbb4ab850f9b8ac3b
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.date: 07/27/2020
+ms.topic: article
+ms.openlocfilehash: d7203711e1d1eb42c7e9b06fe2b8a4cc66e7d74b
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181921"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949721"
 ---
 # <a name="kerberos-clients-allow-ipv4-and-ipv6-address-hostnames-in-service-principal-names-spns"></a>Los clientes Kerberos permiten nombres de host de direcciones IPv4 e IPv6 en nombres de entidad de seguridad de servicio (SPN)
 

@@ -3,16 +3,16 @@ title: Replicación de almacenamiento de servidor a servidor
 description: Cómo configurar y usar réplica de almacenamiento para la replicación de servidor a servidor en Windows Server, incluido el centro de administración de Windows y PowerShell.
 manager: siroy
 ms.author: nedpyle
-ms.topic: get-started-article
+ms.topic: how-to
 author: nedpyle
 ms.date: 03/26/2020
 ms.assetid: 61881b52-ee6a-4c8e-85d3-702ab8a2bd8c
-ms.openlocfilehash: bba3de78076227a441321ea7cfafb447ecb7c350
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a0f6baeb5632662ce98d408e6352b509f60a73f8
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87961359"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948941"
 ---
 # <a name="server-to-server-storage-replication-with-storage-replica"></a>Replicación de almacenamiento de servidor a servidor con réplica de almacenamiento
 
@@ -44,7 +44,7 @@ Si va a replicar entre servidores locales y máquinas virtuales de Azure, debe c
 
 Muchos de estos requisitos se pueden determinar mediante el cmdlet `Test-SRTopology cmdlet`. Puede obtener acceso a esta herramienta si instala las características Réplica de almacenamiento o Herramientas de administración de réplica de almacenamiento en al menos un servidor. No es necesario configurar Réplica de almacenamiento para utilizar esta herramienta, solo para instalar el cmdlet. Se incluye más información en los pasos siguientes.
 
-## <a name="windows-admin-center-requirements"></a>Requisitos del centro de administración de Windows
+## <a name="windows-admin-center-requirements"></a>Requisitos de Windows Admin Center
 
 Para usar la réplica de almacenamiento y el centro de administración de Windows conjuntamente, necesita lo siguiente:
 
@@ -74,7 +74,7 @@ Si usa el centro de administración de Windows para administrar réplica de alma
 2. Descargue e instale el [herramientas de administración remota del servidor](https://www.microsoft.com/download/details.aspx?id=45520).
     - Si usa Windows 10, versión 1809 o posterior, instale el módulo "RSAT: Storage Replica Module for Windows PowerShell" de características a petición.
 3. Abra una sesión de PowerShell como administrador. para ello, seleccione el botón **Inicio** , escriba **PowerShell**, haga clic con el botón derecho en **Windows PowerShell** y, a continuación, seleccione **Ejecutar como administrador**.
-4. Escriba el siguiente comando para habilitar el protocolo WS-Management en el equipo local y configurar la configuración predeterminada para la administración remota en el cliente.
+4. Escriba el siguiente comando para habilitar el protocolo de WS-Management en el equipo local y configurar la configuración predeterminada para la administración remota en el cliente.
 
     ```PowerShell
     winrm quickconfig
@@ -112,7 +112,7 @@ Si usa el centro de administración de Windows para administrar réplica de alma
     -   **Método del centro de administración de Windows**
         1. En el centro de administración de Windows, vaya a Administrador del servidor y, a continuación, seleccione uno de los servidores.
         2. Vaya a **Roles & características**.
-        3. Seleccione **características**  >  **réplica de almacenamiento**y, a continuación, haga clic en **instalar**.
+        3. Seleccione **características**  >  **réplica de almacenamiento** y, a continuación, haga clic en **instalar**.
         4. Repita el procedimiento en el otro servidor.
     -   **Método Administrador del servidor**
 
@@ -181,7 +181,7 @@ Si usa el centro de administración de Windows para administrar réplica de alma
     ```
 
     > [!IMPORTANT]
-      > Al usar un servidor de prueba sin carga de E/S de escritura en el volumen de origen especificado durante el período de evaluación, considere la posibilidad de agregar una carga de trabajo o no se generará un informe útil. Pruebe con cargas de trabajo del estilo de producción para ver números reales y tamaños de registro recomendados. Como alternativa, solo tiene que copiar algunos archivos en el volumen de origen durante la prueba o descargar y ejecutar [DISKSPD](https://gallery.technet.microsoft.com/DiskSpd-a-robust-storage-6cd2f223) para generar e/s de escritura. Por ejemplo, una muestra con una carga de trabajo de E/S de escritura baja durante diez minutos en el volumen D:
+      > Al usar un servidor de prueba sin carga de E/S de escritura en el volumen de origen especificado durante el período de evaluación, considere la posibilidad de agregar una carga de trabajo o no se generará un informe útil. Pruebe con cargas de trabajo del estilo de producción para ver números reales y tamaños de registro recomendados. Como alternativa, solo tiene que copiar algunos archivos en el volumen de origen durante la prueba o descargar y ejecutar  [DISKSPD](https://gallery.technet.microsoft.com/DiskSpd-a-robust-storage-6cd2f223) para generar e/s de escritura. Por ejemplo, una muestra con una carga de trabajo de E/S de escritura baja durante diez minutos en el volumen D:
       >
       > `Diskspd.exe -c1g -d600 -W5 -C5 -b8k -t2 -o2 -r -w5 -i100 -j100 d:\test`
 
@@ -192,7 +192,7 @@ Si usa el centro de administración de Windows para administrar réplica de alma
     **Figura 2: informe de topología de replicación de almacenamiento**
 
 ## <a name="step-3-set-up-server-to-server-replication"></a>Paso 3: configurar la replicación de servidor a servidor
-### <a name="using-windows-admin-center"></a>Usar el centro de administración de Windows
+### <a name="using-windows-admin-center"></a>Uso de Windows Admin Center
 
 1. Agregue el servidor de origen.
     1. Seleccione el botón **Agregar**.

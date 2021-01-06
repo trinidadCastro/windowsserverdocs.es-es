@@ -1,17 +1,17 @@
 ---
 title: Instalación del rol de Hyper-V en Windows Server
 description: Proporciona instrucciones para la instalación de Hyper-V con Administrador del servidor o Windows PowerShell.
-ms.topic: get-started-article
+ms.topic: how-to
 ms.assetid: 8e871317-09d2-4314-a6ec-ced12b7aee89
 ms.author: benarm
 author: BenjaminArmstrong
 ms.date: 12/02/2016
-ms.openlocfilehash: e8b95d744954d477e33322cad8d20ff3ff8d7258
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 909338b6c2f3d57962d91dbdea3a533579d0354c
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746010"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948101"
 ---
 # <a name="install-the-hyper-v-role-on-windows-server"></a>Instalación del rol de Hyper-V en Windows Server
 
@@ -32,7 +32,7 @@ Si desea instalar solo las herramientas de administración, como el administrado
 
 1. En el menú **Administrador del servidor** del menú **Administrar**, haz clic en **Agregar roles y características**.
 
-2. En la página **Antes de comenzar**, compruebe que el servidor de destino y el entorno de red estén preparados para el rol y la característica que desea instalar. Haga clic en **Siguiente**.
+2. En la página **Antes de comenzar**, compruebe que el servidor de destino y el entorno de red estén preparados para el rol y la característica que desea instalar. Haga clic en **Next**.
 
 3. En la página **Seleccionar tipo de instalación**, seleccione **Instalación basada en características o en roles** y, a continuación, en **Siguiente**.
 
@@ -48,7 +48,7 @@ Si desea instalar solo las herramientas de administración, como el administrado
 
 9. Una vez finalizada la instalación, compruebe que Hyper-V se ha instalado correctamente. Abra la página **todos los servidores** en Administrador del servidor y seleccione un servidor en el que haya instalado Hyper-V. Compruebe el icono **roles y características** en la página del servidor seleccionado.
 
-## <a name="install-hyper-v-by-using-the-install-windowsfeature-cmdlet"></a>Instalación de Hyper-V mediante el cmdlet install-WindowsFeature
+## <a name="install-hyper-v-by-using-the-install-windowsfeature-cmdlet"></a>Instalación de Hyper-V mediante el cmdlet Install-WindowsFeature
 
 1. En el Escritorio de Windows, haga clic en el botón Inicio y escriba cualquier parte del nombre **Windows PowerShell**.
 

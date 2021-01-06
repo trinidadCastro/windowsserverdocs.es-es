@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: a4587cff-c086-49f1-a0bf-cd74b8a44440
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: d03169b3af61dd4925b0ca2f972faff496955b9d
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.date: 08/07/2020
+ms.openlocfilehash: 934b3d7c774e2a61ceae79e1ddfaa9d0922b7164
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989238"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949581"
 ---
 # <a name="branchcache"></a>BranchCache
 
@@ -39,7 +40,7 @@ Si es administrador de un sistema, arquitecto de soluciones de red o almacenamie
 
 - Los equipos cliente de sus sucursales ejecutan Windows 10, Windows 8.1, Windows 8 o Windows 7.
 
-Este tema incluye las siguientes secciones:
+En este tema, se incluyen las siguientes secciones:
 
 -   [¿Qué es la BranchCache?](#bkmk_what)
 
@@ -194,9 +195,9 @@ Para instalar el servicio de rol o la característica, abra el Administrador del
 
 - En la página del asistente **Seleccionar tipo de instalación**, seleccione **Instalación basada en características o en roles**.
 
-- En la página del asistente **Seleccionar roles de servidor**, si va a instalar un servidor de archivos habilitado para BranchCache, expanda **servicios de archivos y almacenamiento** y servicios de **archivos e iSCSI**y, a continuación, seleccione **BranchCache para archivos de red**.  Para ahorrar espacio en disco, también puede seleccionar el servicio de rol **desduplicación de datos** y, a continuación, continuar con el Asistente para la instalación y la finalización. Si no desea instalar un servidor de archivos habilitado para BranchCache, no instale el rol servicios de archivos y almacenamiento con el servicio de rol BranchCache para archivos de red.
+- En la página del asistente **Seleccionar roles de servidor**, si va a instalar un servidor de archivos habilitado para BranchCache, expanda **servicios de archivos y almacenamiento** y servicios de **archivos e iSCSI** y, a continuación, seleccione **BranchCache para archivos de red**.  Para ahorrar espacio en disco, también puede seleccionar el servicio de rol **desduplicación de datos** y, a continuación, continuar con el Asistente para la instalación y la finalización. Si no desea instalar un servidor de archivos habilitado para BranchCache, no instale el rol servicios de archivos y almacenamiento con el servicio de rol BranchCache para archivos de red.
 
-- En la página del asistente **seleccionar características**, si va a instalar un servidor de contenido que no es un servidor de archivos o va a instalar un servidor de caché hospedada, seleccione **BranchCache**y, a continuación, continúe con el Asistente para la instalación y finalización. Si no desea instalar un servidor de contenido que no sea un servidor de archivos o un servidor de caché hospedada, no instale la característica BranchCache.
+- En la página del asistente **seleccionar características**, si va a instalar un servidor de contenido que no es un servidor de archivos o va a instalar un servidor de caché hospedada, seleccione **BranchCache** y, a continuación, continúe con el Asistente para la instalación y finalización. Si no desea instalar un servidor de contenido que no sea un servidor de archivos o un servidor de caché hospedada, no instale la característica BranchCache.
 
 ## <a name="operating-system-versions-for-branchcache"></a><a name="bkmk_os"></a>Versiones de sistemas operativo para BranchCache
 

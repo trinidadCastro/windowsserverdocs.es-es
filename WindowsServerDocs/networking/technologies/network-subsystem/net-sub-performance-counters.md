@@ -6,12 +6,13 @@ ms.assetid: 7ebaa271-2557-4c24-a679-c3d863e6bf9e
 manager: dcscontentpm
 ms.author: v-tea
 author: Teresa-Motiv
-ms.openlocfilehash: e9c4bc76e737c70d3d973e6fa77c57adefc7d5b1
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: df57714980a6dce5187cd01d1da74e703d6cefca
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953931"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949031"
 ---
 # <a name="network-related-performance-counters"></a>Contadores de rendimiento relacionados con la red
 
@@ -25,7 +26,7 @@ En este tema se enumeran los contadores que son relevantes para la administraci�
 
 -   [Rendimiento de fusión del lado de recepción (RSC)](#bkmk_rsc)
 
-##  <a name="resource-utilization"></a><a name="bkmk_ru"></a>Utilización de recursos
+##  <a name="resource-utilization"></a><a name="bkmk_ru"></a> Utilización de recursos
 
 Los siguientes contadores de rendimiento son relevantes para el uso de recursos de red.
 
@@ -67,7 +68,7 @@ Los siguientes contadores de rendimiento son relevantes para el uso de recursos 
 
     Este contador es una velocidad media a la que se agregaron las DPC a la cola de DPC del procesador lógico. Cada procesador lógico tiene su propia cola de DPC. Este contador mide la velocidad a la que se agregan las DPC a la cola, no el número de DPC en la cola. Muestra la diferencia entre los valores observados en las dos últimas muestras, dividida por la duración del intervalo de ejemplo.
 
-##  <a name="potential-network-problems"></a><a name="bkmk_np"></a>Posibles problemas de red
+##  <a name="potential-network-problems"></a><a name="bkmk_np"></a> Posibles problemas de red
 
 Los siguientes contadores de rendimiento son relevantes para posibles problemas de red.
 
@@ -117,7 +118,7 @@ Los siguientes contadores de rendimiento son relevantes para posibles problemas 
 
     -   Conexiones rechazadas/s
 
-##  <a name="receive-side-coalescing-rsc-performance"></a><a name="bkmk_rsc"></a>Rendimiento de fusión del lado de recepción (RSC)
+##  <a name="receive-side-coalescing-rsc-performance"></a><a name="bkmk_rsc"></a> Rendimiento de fusión del lado de recepción (RSC)
 
 Los siguientes contadores de rendimiento son relevantes para el rendimiento de RSC.
 

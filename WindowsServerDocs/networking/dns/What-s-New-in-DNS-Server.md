@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: c9cecb94-3cd5-4da7-9a3e-084148b8226b
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: a2d38b9f9aaac11f5e4e218e24e4428f97ae2c8f
-ms.sourcegitcommit: 8e330f9066097451cd40e840d5f5c3317cbc16c2
+ms.date: 12/18/2020
+ms.openlocfilehash: ccbce13be36e6f4ff673fec27f25df1e653953bb
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97696738"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949491"
 ---
 # <a name="whats-new-in-dns-server-in-windows-server"></a>Novedades del servidor DNS en Windows Server
 
@@ -21,7 +22,7 @@ En este tema se describen las funciones de servidor de sistema de nombres de dom
 
 En Windows Server 2016, el servidor DNS ofrece compatibilidad mejorada en las áreas siguientes.
 
-|Funcionalidad|Nueva o mejorada|Description|
+|Funcionalidad|Nueva o mejorada|Descripción|
 |-----------------|-------------------|---------------|
 |Directivas de DNS|Nuevo|Puede configurar directivas DNS para especificar el modo en que un servidor DNS responde a las consultas DNS. Las respuestas DNS pueden basarse en la dirección IP del cliente (ubicación), la hora del día y otros parámetros. Las directivas de DNS permiten el DNS, la administración del tráfico, el equilibrio de carga, el DNS de cerebro dividido y otros escenarios que tienen en cuenta la ubicación.|
 |Limitación de velocidad de respuesta (RRL)|Nuevo|Puede habilitar la limitación de la velocidad de respuesta en los servidores DNS. Al hacerlo, evita la posibilidad de que los sistemas malintencionados usen los servidores DNS para iniciar un ataque de denegación de servicio en un cliente DNS.|

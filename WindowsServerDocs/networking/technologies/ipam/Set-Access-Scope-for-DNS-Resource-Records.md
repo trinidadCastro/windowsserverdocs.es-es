@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: a96a8752-5678-49c5-b069-d2cce8042a51
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: cccb2da0e88ce2db6e92514d89644d548461f7ed
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: f2ebe0b05baf98317d432efaebfff7f0f4578d16
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87944717"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948341"
 ---
 # <a name="set-access-scope-for-dns-resource-records"></a>Establecer el ámbito de acceso para registros de recursos DNS
 
@@ -23,7 +24,7 @@ El requisito mínimo para realizar este procedimiento es la pertenencia al grupo
 
 ### <a name="to-set-access-scope-for-dns-resource-records"></a>Para establecer el ámbito de acceso para los registros de recursos DNS
 
-1.  En Administrador del servidor, haga clic en **IPAM**. Aparece la consola de cliente de IPAM.
+1.  En Administrador del servidor, haga clic en  **IPAM**. Aparece la consola de cliente de IPAM.
 
 2.  En el panel de navegación, haga clic en **zonas DNS**.  En el panel de navegación inferior, expanda **búsqueda directa** y busque y seleccione la zona que contiene los registros de recursos cuyo ámbito de acceso desea cambiar.
 

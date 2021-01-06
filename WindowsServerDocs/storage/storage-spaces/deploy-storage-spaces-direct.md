@@ -2,18 +2,18 @@
 title: Implementar espacios de almacenamiento directo
 manager: eldenc
 ms.author: stevenek
-ms.topic: get-started-article
+ms.topic: how-to
 ms.assetid: 20fee213-8ba5-4cd3-87a6-e77359e82bc0
 author: stevenek
 ms.date: 12/09/2020
 description: Instrucciones paso a paso para implementar el almacenamiento definido por software con Espacios de almacenamiento directo en Windows Server como infraestructura hiperconvergida o infraestructura convergente (también conocida como desagregada).
 ms.localizationpriority: medium
-ms.openlocfilehash: 649d9154e08dcde0752447d2b8a290dce9dc15d2
-ms.sourcegitcommit: f95a991491ff09260d979078e248e2636bd2db54
+ms.openlocfilehash: 89efc762028fa8a77e8026b0826f5503c3d03478
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "96997852"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948591"
 ---
 # <a name="deploy-storage-spaces-direct"></a>Implementar espacios de almacenamiento directo
 
@@ -27,7 +27,7 @@ En este tema se proporcionan instrucciones paso a paso para implementar [espacio
 > [!Tip]
 > Puede usar máquinas virtuales de Hyper-V, incluido en Microsoft Azure, para [evaluar espacios de almacenamiento directo sin hardware](storage-spaces-direct-in-vm.md). También puede revisar los útiles [scripts de implementación rápida de Windows Server](https://aka.ms/wslab), que se usan con fines de entrenamiento.
 
-## <a name="before-you-start"></a>Antes de empezar
+## <a name="before-you-start"></a>Antes de comenzar
 
 Revise los [requisitos de hardware de espacios de almacenamiento directo](Storage-Spaces-Direct-Hardware-Requirements.md) y consulte este documento para familiarizarse con el enfoque general y con las notas importantes asociadas a algunos pasos.
 

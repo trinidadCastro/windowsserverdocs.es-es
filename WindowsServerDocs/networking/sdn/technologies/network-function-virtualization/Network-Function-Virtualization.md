@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 79df3bbe-48fd-4eff-8df6-35f6317566f3
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: 33d0c9bcde79b6f1fd74de03abfce3fca26a378f
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.date: 08/07/2020
+ms.openlocfilehash: b5b2b4bb93a9d90e9c74f8310430ef3e7d826f1d
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991310"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949091"
 ---
 # <a name="network-function-virtualization"></a>Virtualización de función de red
 
@@ -73,7 +74,7 @@ El Marketplace de las funciones de red virtualizada está creciendo rápidamente
 
     -   Enrutadores
 
-    -   Modificadores
+    -   Conmutadores
 
     -   NAT
 
@@ -84,7 +85,7 @@ El Marketplace de las funciones de red virtualizada está creciendo rápidamente
 ## <a name="why-microsoft-is-a-great-platform-for-virtual-appliances"></a>Por qué Microsoft es una plataforma excelente para aplicaciones virtuales
 ![Pila de red virtual](../../../media/Network-Function-Virtualization/Microsoft-Network-Function-Virtualization.png)
 
-La plataforma de Microsoft se ha diseñado para ser una plataforma excelente para compilar e implementar aplicaciones virtuales. Aquí se detallan los motivos:
+La plataforma de Microsoft se ha diseñado para ser una plataforma excelente para compilar e implementar aplicaciones virtuales. El motivo es el siguiente:
 
 -   Microsoft proporciona funciones clave de red virtualizada con Windows Server 2016.
 

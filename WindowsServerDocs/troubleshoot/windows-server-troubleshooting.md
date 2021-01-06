@@ -4,12 +4,13 @@ description: Obtener vínculos a los artículos de solución de problemas de Win
 ms.date: 1/24/2020
 author: kaushika-msft
 ms.author: kaushika
-ms.openlocfilehash: fbebb44d687bfeb5660eab3b81c164f8cdf6196d
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.topic: troubleshooting
+ms.openlocfilehash: d438f8c2a0e17e13e01c198a55c7dfd3f234da14
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996731"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949661"
 ---
 # <a name="troubleshooting-windows-server-components"></a>Solucionar problemas de componentes de Windows Server
 

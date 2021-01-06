@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: a35164e1-11ad-47c8-9843-580d30c70d07
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 4ee5416bfe416759bc4a190575eb63534ec9b76d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 3c411dc560f8fed2d5138bcb8acc68a9b5f03567
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971802"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948731"
 ---
 # <a name="edit-a-dns-zone"></a>Edición de una zona DNS
 
@@ -43,7 +44,7 @@ El requisito mínimo para realizar este procedimiento es la pertenencia al grupo
 
     ![Editar zona DNS](../../media/Edit-a-DNS-Zone/ipam_EditZone_02.jpg)
 
-6.  Se abre el cuadro de diálogo **Editar zona DNS** con la página **General** seleccionada. Si es necesario, edite las propiedades de la zona general: **servidor DNS**, **categoría de zona**y **tipo de zona**y, a continuación, haga clic en **aplicar** o, si las ediciones están completas, en **Aceptar**.
+6.  Se abre el cuadro de diálogo **Editar zona DNS** con la página **General** seleccionada. Si es necesario, edite las propiedades de la zona general: **servidor DNS**, **categoría de zona** y **tipo de zona** y, a continuación, haga clic en **aplicar** o, si las ediciones están completas, en **Aceptar**.
 
     ![Editar propiedades de la zona y guardar](../../media/Edit-a-DNS-Zone/ipam_EditZone_03a.jpg)
 
@@ -51,7 +52,7 @@ El requisito mínimo para realizar este procedimiento es la pertenencia al grupo
 
     ![Editar propiedades de zona avanzadas](../../media/Edit-a-DNS-Zone/ipam_EditZone_04a.jpg)
 
-8.  Si es necesario, seleccione los nombres de página de propiedades de zona adicionales (servidores de nombres, SOA, transferencias de zona), realice las modificaciones y haga clic en **aplicar** o en **Aceptar**. Para revisar todas las ediciones de la zona, haga clic en **Resumen**y, a continuación, haga clic en **Aceptar**.
+8.  Si es necesario, seleccione los nombres de página de propiedades de zona adicionales (servidores de nombres, SOA, transferencias de zona), realice las modificaciones y haga clic en **aplicar** o en **Aceptar**. Para revisar todas las ediciones de la zona, haga clic en **Resumen** y, a continuación, haga clic en **Aceptar**.
 
 ## <a name="see-also"></a>Consulte también
 Administración de zonas [DNS](DNS-Zone-Management.md) 

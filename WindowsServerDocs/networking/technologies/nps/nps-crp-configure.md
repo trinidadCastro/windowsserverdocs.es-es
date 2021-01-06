@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: f62c6a67-4dda-47f8-8bdf-9b76c37953e6
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 422ef3238aac950b7d2808d8576b186aeb430767
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 65a64ac4fc0a4bc54595bb5ec40da399be92f6dd
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969422"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948661"
 ---
 # <a name="configure-connection-request-policies"></a>Configuración de las directivas de solicitud de conexión
 
@@ -37,9 +38,9 @@ La pertenencia a **Administradores de dominio**, o equivalente, es lo mínimo ne
 
 ### <a name="to-add-a-new-connection-request-policy"></a>Para agregar una nueva Directiva de solicitud de conexión
 
-1. En Administrador del servidor, haga clic en **herramientas**y, a continuación, haga clic en **servidor de directivas de redes** para abrir la consola NPS.
+1. En Administrador del servidor, haga clic en **herramientas** y, a continuación, haga clic en **servidor de directivas de redes** para abrir la consola NPS.
 2. En el árbol de consola, haga doble clic en **directivas**.
-3. Haga clic con el botón secundario en **directivas de solicitud de conexión**y luego haga clic en **nueva Directiva de solicitud de conexión**.
+3. Haga clic con el botón secundario en **directivas de solicitud de conexión** y luego haga clic en **nueva Directiva de solicitud de conexión**.
 4. Use el Asistente para nueva directiva de solicitud de conexión para configurar la directiva de solicitud de conexión y, si no lo hizo anteriormente, un grupo remoto de servidores RADIUS.
 
 

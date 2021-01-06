@@ -2,16 +2,17 @@
 title: Instalar servidores de contenido que utilizan la característica BranchCache
 description: Obtenga información acerca de cómo instalar servidores de contenido que usan la característica BranchCache.
 manager: brianlic
-ms.topic: get-started-article
+ms.topic: how-to
 ms.assetid: 0f00ae6e-ae1b-41e3-8c50-65226b5b9c9e
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 10f21729aeede7316c91c11d0dbfbe49013dedba
-ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
+ms.date: 01/05/2021
+ms.openlocfilehash: e98a2b06ef84238a9cb045e38bdf8f32848b1386
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97904810"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948431"
 ---
 # <a name="install-content-servers-that-use-the-branchcache-feature"></a>Instalar servidores de contenido que utilizan la característica BranchCache
 

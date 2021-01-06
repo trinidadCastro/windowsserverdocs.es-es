@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 8ff610e2-43ca-407f-a828-06d9366e02f0
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: d5220b6468cb7dfa0bb5bf748d0bc6d7e5f1f649
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 4eaeef21e90a3a0a56c6c136363e102948c31b97
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969632"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97950201"
 ---
 # <a name="configure-the-server-certificate-template"></a>Configurar la plantilla de certificado de servidor
 
@@ -30,9 +31,9 @@ El requisito mínimo para completar este procedimiento es la pertenencia al grup
 
 ### <a name="to-configure-the-certificate-template"></a>Para configurar la plantilla de certificado
 
-1.  En CA1, en Administrador del servidor, haga clic en **herramientas**y, a continuación, haga clic en **entidad de certificación**. Se abre Microsoft Management Console (MMC) de la entidad de certificación.
+1.  En CA1, en Administrador del servidor, haga clic en **herramientas** y, a continuación, haga clic en **entidad de certificación**. Se abre Microsoft Management Console (MMC) de la entidad de certificación.
 
-2.  En MMC, haga doble clic en el nombre de la entidad de certificación, haga clic con el botón secundario en **plantillas de certificado**y, a continuación, haga clic en **administrar**.
+2.  En MMC, haga doble clic en el nombre de la entidad de certificación, haga clic con el botón secundario en **plantillas de certificado** y, a continuación, haga clic en **administrar**.
 
 3.  Se abre la consola de plantillas de certificado. Se mostrarán todas las plantillas de certificado en el panel de detalles.
 
@@ -40,15 +41,15 @@ El requisito mínimo para completar este procedimiento es la pertenencia al grup
 
 5.  Haga clic en el menú **acción** y, a continuación, haga clic en **plantilla duplicada**. Se abrirá el cuadro de diálogo **propiedades** de la plantilla.
 
-6.  Haga clic en la pestaña **Seguridad** .
+6.  Haga clic en la pestaña **Security** (Seguridad).
 
 7.  En la pestaña **seguridad** , en **nombres de grupos o usuarios**, haga clic en **servidores RAS e IAS**.
 
-8.  En **permisos para servidores RAS e IAS**, en **permitir**, asegúrese de que la opción **inscribir** está seleccionada y, a continuación, active la casilla **inscripción automática** . Haga clic en **Aceptar**y cierre la MMC plantillas de certificado.
+8.  En **permisos para servidores RAS e IAS**, en **permitir**, asegúrese de que la opción **inscribir** está seleccionada y, a continuación, active la casilla **inscripción automática** . Haga clic en **Aceptar** y cierre la MMC plantillas de certificado.
 
-9.  En MMC de la entidad de certificación, haga clic en **plantillas de certificado**. En el menú **acción** , seleccione **nuevo**y, a continuación, haga clic en **plantilla de certificado que se va a emitir**. Se abre el cuadro de diálogo **Habilitar plantillas de certificados**.
+9.  En MMC de la entidad de certificación, haga clic en **plantillas de certificado**. En el menú **acción** , seleccione **nuevo** y, a continuación, haga clic en **plantilla de certificado que se va a emitir**. Se abre el cuadro de diálogo **Habilitar plantillas de certificados**.
 
-10. En **Habilitar plantillas de certificado**, haga clic en el nombre de la plantilla de certificado que acaba de configurar y, a continuación, haga clic en **Aceptar**. Por ejemplo, si no cambió el nombre de la plantilla de certificado predeterminada, haga clic en **copia de RAS e IAS Server**y, a continuación, haga clic en **Aceptar**.
+10. En **Habilitar plantillas de certificado**, haga clic en el nombre de la plantilla de certificado que acaba de configurar y, a continuación, haga clic en **Aceptar**. Por ejemplo, si no cambió el nombre de la plantilla de certificado predeterminada, haga clic en **copia de RAS e IAS Server** y, a continuación, haga clic en **Aceptar**.
 
 
 

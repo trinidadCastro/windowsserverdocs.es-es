@@ -6,12 +6,13 @@ author: cosmosdarwin
 ms.author: cosdar
 manager: eldenc
 ms.date: 03/10/2020
-ms.openlocfilehash: dccc8d25505fb1ac94af81b23334b7f8639dcc01
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.topic: article
+ms.openlocfilehash: 38ef41ac6cdb35efc72087ad73f08b04c1414c1a
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971082"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948581"
 ---
 # <a name="extending-volumes-in-storage-spaces-direct"></a>Extensión de volúmenes en Espacios de almacenamiento directo
 > Se aplica a: Windows Server 2019, Windows Server 2016

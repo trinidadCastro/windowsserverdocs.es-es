@@ -6,12 +6,13 @@ ms.assetid: 528280e6-b47e-489f-b310-b257d434aa0d
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: ee552c0202bff26cdcc58411b64cb342a4c7409e
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.date: 08/07/2020
+ms.openlocfilehash: c4e94e943fa3759b813c885b65292079ee086868
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996454"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949361"
 ---
 # <a name="nps-proxy-server-load-balancing"></a>Equilibrio de carga del servidor proxy NPS
 
@@ -21,7 +22,7 @@ Los clientes Servicio de autenticación remota telefónica de usuario (RADIUS), 
 
 El equilibrio de carga es especialmente útil para:
 
-- Organizaciones que usan el protocolo de autenticación extensible: seguridad de la capa de transporte \( EAP-TLS \) o protocolo de autenticación extensible protegido \( PEAP \) -TLS para la autenticación. Dado que estos métodos de autenticación usan certificados para la autenticación de servidor y para la autenticación de usuario o de equipo cliente, la carga en servidores proxy RADIUS y servidores es más pesada que cuando se usan métodos de autenticación basados en contraseña.
+- Las organizaciones que usan la autenticación extensible Protocol-Transport seguridad de capa \( EAP-TLS \) o el protocolo de autenticación extensible protegido \( PEAP \) -TLS para la autenticación. Dado que estos métodos de autenticación usan certificados para la autenticación de servidor y para la autenticación de usuario o de equipo cliente, la carga en servidores proxy RADIUS y servidores es más pesada que cuando se usan métodos de autenticación basados en contraseña.
 - Organizaciones que necesitan mantener la disponibilidad continua del servicio.
 - Los proveedores \( de servicios de Internet ISP \) que externalizan el acceso VPN para otras organizaciones. Los servicios VPN de origen pueden generar un gran volumen de tráfico de autenticación.
 
@@ -57,6 +58,6 @@ Para configurar NPS para que actúe como servidor proxy y Reenvíe solicitudes d
 
 3. En el proxy NPS, cree uno o varios grupos de servidores RADIUS remotos. Durante este proceso, agregue servidores RADIUS a los grupos de servidores RADIUS remotos. Para obtener más información, vea [configurar grupos de servidores RADIUS remotos](./nps-crp-rrsg-configure.md).
 
-4. En el proxy NPS, para cada servidor RADIUS que agregue a un grupo de servidores RADIUS remotos, haga clic en la pestaña **equilibrio de carga** del servidor RADIUS y, a continuación, configure la **prioridad**, el **peso**y la **Configuración avanzada**.
+4. En el proxy NPS, para cada servidor RADIUS que agregue a un grupo de servidores RADIUS remotos, haga clic en la pestaña **equilibrio de carga** del servidor RADIUS y, a continuación, configure la **prioridad**, el **peso** y la **Configuración avanzada**.
 
 5. En el proxy NPS, configure las directivas de solicitud de conexión para reenviar las solicitudes de autenticación y cuentas a los grupos de servidores RADIUS remotos. Debe crear una directiva de solicitud de conexión por cada grupo de servidores RADIUS remotos. Para obtener más información, consulte [configurar directivas de solicitud de conexión](./nps-crp-configure.md).

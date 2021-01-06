@@ -2,16 +2,17 @@
 title: Configuración de equipos cliente de BranchCache
 description: Obtenga información sobre cómo configurar los equipos cliente de miembros de dominio y que no son miembros de un dominio como clientes de caché distribuida de BranchCache o de modo caché hospedada.
 manager: brianlic
-ms.topic: get-started-article
+ms.topic: how-to
 ms.assetid: e16dbea9-0f0a-41db-b460-14a1a7ad7540
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 969ec77dfc098a589cf4905f18d8e054f871b455
-ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
+ms.date: 01/05/2021
+ms.openlocfilehash: 326e8b61dbb930588f0ebe8461a6d374c4d418bf
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97904750"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948501"
 ---
 # <a name="configure-branchcache-client-computers"></a>Configuración de equipos cliente de BranchCache
 

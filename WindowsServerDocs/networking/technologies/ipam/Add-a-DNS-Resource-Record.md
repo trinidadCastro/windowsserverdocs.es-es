@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 5379373f-a3d9-4f51-b6fc-bf0f6df1d244
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 66137f2797d04d9a6e3888b7d73187b66177195d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 015a2b9527f00a792c179e64e0ac9c0cda51b2d3
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87962129"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949071"
 ---
 # <a name="add-a-dns-resource-record"></a>Adición de un registro de recursos DNS
 
@@ -23,7 +24,7 @@ El requisito mínimo para realizar este procedimiento es la pertenencia al grupo
 
 ### <a name="to-add-a-dns-resource-record"></a>Para agregar un registro de recursos DNS
 
-1.  En Administrador del servidor, haga clic en **IPAM**. Aparece la consola de cliente de IPAM.
+1.  En Administrador del servidor, haga clic en  **IPAM**. Aparece la consola de cliente de IPAM.
 
 2.  En el panel de navegación, en **supervisión y administración**, haga clic en **zonas DNS**.  El panel de navegación se divide en un panel de navegación superior y un panel de navegación inferior.
 

@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: dc20b1a0-540d-4531-a176-50b87c071600
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 753af61939c50e225aea09714f46cba22d3b31cb
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 88f85d230b26566a0053eb508a1dc8a696a95d6a
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87939846"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97950031"
 ---
 # <a name="step-2-install-and-configure-router1"></a>Paso 2 Instalación y configuración de ENRUTADOR1
 
@@ -45,33 +46,33 @@ Configure los valores de TCP/IP en el enrutador y cambie el nombre del equipo a 
 
 ### <a name="to-configure-tcpip-properties-and-rename-the-computer"></a>Para configurar las propiedades de TCP/IP y cambiar el nombre del equipo
 
-1.  En la consola de Administrador del servidor, haga clic en **servidor local**y, a continuación, en el área **propiedades** , junto a **conexión cableada Ethernet**, haga clic en el vínculo.
+1.  En la consola de Administrador del servidor, haga clic en **servidor local** y, a continuación, en el área **propiedades** , junto a **conexión cableada Ethernet**, haga clic en el vínculo.
 
-2.  En la ventana **conexiones de red** , haga clic con el botón secundario en el adaptador de red que está conectado a CorpNet, haga clic en **cambiar nombre**, escriba **CorpNet**y presione Entrar.
+2.  En la ventana **conexiones de red** , haga clic con el botón secundario en el adaptador de red que está conectado a CorpNet, haga clic en **cambiar nombre**, escriba **CorpNet** y presione Entrar.
 
-3.  Haga clic con el botón secundario en **CorpNet**y, a continuación, haga clic en **propiedades**.
+3.  Haga clic con el botón secundario en **CorpNet** y, a continuación, haga clic en **propiedades**.
 
 4.  Haga clic en **Protocolo de Internet versión 4 (TCP/IPv4)** y, a continuación, en **Propiedades**.
 
-5.  Haga clic en **Usar la siguiente dirección IP**. En **dirección IP**, escriba **10.0.0.254**. En **máscara de subred**, escriba **255.255.255.0**y, a continuación, haga clic en **Aceptar**.
+5.  Haga clic en **Usar la siguiente dirección IP**. En **dirección IP**, escriba **10.0.0.254**. En **máscara de subred**, escriba **255.255.255.0** y, a continuación, haga clic en **Aceptar**.
 
 6.  Haga clic en **Protocolo de Internet versión 6 (TCP/IPv6)** y, a continuación, haga clic en **Propiedades**.
 
-7.  Haga clic en **usar la siguiente dirección IPv6**. En **dirección IPv6**, escriba **2001: db8:1:: fe**. En **longitud del prefijo de subred**, escriba **64**y, a continuación, haga clic en **Aceptar**.
+7.  Haga clic en **usar la siguiente dirección IPv6**. En **dirección IPv6**, escriba **2001: db8:1:: fe**. En **longitud del prefijo de subred**, escriba **64** y, a continuación, haga clic en **Aceptar**.
 
 8.  En el cuadro de diálogo **propiedades de CorpNet** , haga clic en **cerrar**.
 
-9. En la ventana **conexiones de red** , haga clic con el botón secundario en el adaptador de red que está conectado a 2-CorpNet, haga clic en **cambiar nombre**, escriba **2-CorpNet**y presione Entrar.
+9. En la ventana **conexiones de red** , haga clic con el botón secundario en el adaptador de red que está conectado a 2-CorpNet, haga clic en **cambiar nombre**, escriba **2-CorpNet** y presione Entrar.
 
-10. Haga clic con el botón secundario en **2-CorpNet**y, a continuación, haga clic en **propiedades**.
+10. Haga clic con el botón secundario en **2-CorpNet** y, a continuación, haga clic en **propiedades**.
 
 11. Haga clic en **Protocolo de Internet versión 4 (TCP/IPv4)** y, a continuación, en **Propiedades**.
 
-12. Haga clic en **Usar la siguiente dirección IP**. En **dirección IP**, escriba **10.2.0.254**. En **máscara de subred**, escriba **255.255.255.0**y, a continuación, haga clic en **Aceptar**.
+12. Haga clic en **Usar la siguiente dirección IP**. En **dirección IP**, escriba **10.2.0.254**. En **máscara de subred**, escriba **255.255.255.0** y, a continuación, haga clic en **Aceptar**.
 
 13. Haga clic en **Protocolo de Internet versión 6 (TCP/IPv6)** y, a continuación, haga clic en **Propiedades**.
 
-14. Haga clic en **usar la siguiente dirección IPv6**. En **dirección IPv6**, escriba **2001: db8:2:: fe**. En **longitud del prefijo de subred**, escriba **64**y, a continuación, haga clic en **Aceptar**.
+14. Haga clic en **usar la siguiente dirección IPv6**. En **dirección IPv6**, escriba **2001: db8:2:: fe**. En **longitud del prefijo de subred**, escriba **64** y, a continuación, haga clic en **Aceptar**.
 
 15. En el cuadro de diálogo **2-propiedades de la red corporativa,** haga clic en **cerrar**.
 
@@ -81,7 +82,7 @@ Configure los valores de TCP/IP en el enrutador y cambie el nombre del equipo a 
 
 18. En el cuadro de diálogo **Propiedades del sistema**, en la pestaña **Nombre de equipo** haz clic en **Cambiar**.
 
-19. En el cuadro de diálogo cambios en el **dominio o el nombre del equipo** , en **nombre de equipo**, escriba **ENRUTADOR1**y, a continuación, haga clic en **Aceptar**.
+19. En el cuadro de diálogo cambios en el **dominio o el nombre del equipo** , en **nombre de equipo**, escriba **ENRUTADOR1** y, a continuación, haga clic en **Aceptar**.
 
 20. Cuando se le indique que debe reiniciar el equipo, haga clic en **Aceptar**.
 
@@ -96,7 +97,7 @@ Este equipo está configurado solo para proporcionar enrutamiento entre las subr
 
 ### <a name="to-turn-off-the-firewall"></a>Para desactivar el Firewall
 
-1.  En la pantalla **Inicio** , escriba**WF. msc**y, a continuación, presione Entrar.
+1.  En la pantalla **Inicio** , escriba **WF. msc** y, a continuación, presione Entrar.
 
 2.  En firewall de Windows con seguridad avanzada, en el panel **acciones** , haga clic en **propiedades**.
 
@@ -104,7 +105,7 @@ Este equipo está configurado solo para proporcionar enrutamiento entre las subr
 
 4.  En el cuadro de diálogo **firewall de Windows con seguridad avanzada** , en la pestaña **perfil privado** , en **Estado de Firewall**, haga clic en **desactivado**.
 
-5.  En el cuadro de diálogo **firewall de Windows con seguridad avanzada** , en la ficha **perfil público** , en **Estado de Firewall**, haga clic en **desactivado**y, a continuación, haga clic en **Aceptar**.
+5.  En el cuadro de diálogo **firewall de Windows con seguridad avanzada** , en la ficha **perfil público** , en **Estado de Firewall**, haga clic en **desactivado** y, a continuación, haga clic en **Aceptar**.
 
 6.  Cierre Firewall de Windows con seguridad avanzada.
 
@@ -113,7 +114,7 @@ Para proporcionar servicios de enrutamiento y reenvío entre las subredes corpor
 
 ### <a name="to-configure-static-routes"></a>Para configurar rutas estáticas
 
-1.  En la pantalla **Inicio** , escriba**cmd.exe**y, a continuación, presione Entrar.
+1.  En la pantalla **Inicio** , escriba **cmd.exe** y, a continuación, presione Entrar.
 
 2.  Habilite el reenvío en las interfaces IPv4 e IPv6 de ambos adaptadores de red mediante los comandos siguientes. Después de escribir cada comando, presione Entrar.
 

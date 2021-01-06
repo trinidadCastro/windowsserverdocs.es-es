@@ -4,12 +4,13 @@ description: En este artículo se aborda el problema de buscar nodos quitados de
 ms.date: 05/28/2020
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: da46b39f853476676a06bcaaa20338dd1a178586
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.topic: troubleshooting
+ms.openlocfilehash: f367575cf828e23c6f1624176d359b4590cf4728
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87935575"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948181"
 ---
 # <a name="nodes-being-removed-from-failover-cluster-membership-on-vmware-esx"></a>Nodos que se quitan de la pertenencia al clúster de conmutación por error en VMWare ESX
 
@@ -21,7 +22,7 @@ Cuando se produce el problema, verá en el registro de eventos del sistema del V
 
 ![Evento 1135](media/nodes-failover-cluster-vmware/1135.png)
 
-## <a name="resolution"></a>Resolución
+## <a name="resolution"></a>Solución
 
 Un problema específico se debe a que los adaptadores de VMXNET3 quitan los paquetes de red entrantes porque el búfer de entrada es demasiado bajo para administrar grandes cantidades de tráfico. Podemos averiguar fácilmente si se trata de un problema mediante el monitor de rendimiento para ver el contador "red Interface\Packets recibida descartada".
 

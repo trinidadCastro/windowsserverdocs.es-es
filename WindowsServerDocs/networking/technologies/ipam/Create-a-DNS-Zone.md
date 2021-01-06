@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: a030ff51-a815-4fc4-b26d-aae41c3e4ce5
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 0635c91b3dd61db6df41c2836cc5efc65d9de520
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 7131e1334330206dba31830d5966f878ee846bce
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970792"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949051"
 ---
 # <a name="create-a-dns-zone"></a>Creación de un alias DNS
 
@@ -23,15 +24,15 @@ El requisito mínimo para realizar este procedimiento es la pertenencia al grupo
 
 ### <a name="to-create-a-dns-zone"></a>Creación de una zona DNS
 
-1.  En Administrador del servidor, haga clic en **IPAM**. Aparece la consola de cliente de IPAM.
+1.  En Administrador del servidor, haga clic en  **IPAM**. Aparece la consola de cliente de IPAM.
 
-2.  En el panel de navegación, en **supervisión y administración**, haga clic en **servidores DNS y DHCP**. En el panel de información, haga clic en **tipo de servidor**y, a continuación, haga clic en **DNS**. Todos los servidores DNS administrados por IPAM se enumeran en los resultados de la búsqueda.
+2.  En el panel de navegación, en **supervisión y administración**, haga clic en **servidores DNS y DHCP**. En el panel de información, haga clic en **tipo de servidor** y, a continuación, haga clic en **DNS**. Todos los servidores DNS administrados por IPAM se enumeran en los resultados de la búsqueda.
 
 3.  Busque el servidor en el que desea agregar una zona y haga clic con el botón secundario en el servidor.  Haga clic en **crear zona DNS**.
 
     ![Creación de una zona DNS](../../media/Create-a-DNS-Zone/ipam_CreateDNSZone_01a.jpg)
 
-4.  Se abre el cuadro de diálogo **crear zona DNS** . En **propiedades generales**, seleccione una categoría de zona, un tipo de zona y escriba un nombre en **nombre de zona**. Seleccione también los valores adecuados para la implementación en **propiedades avanzadas**y, a continuación, haga clic en **Aceptar**.
+4.  Se abre el cuadro de diálogo **crear zona DNS** . En **propiedades generales**, seleccione una categoría de zona, un tipo de zona y escriba un nombre en **nombre de zona**. Seleccione también los valores adecuados para la implementación en **propiedades avanzadas** y, a continuación, haga clic en **Aceptar**.
 
     ![Propiedades avanzadas](../../media/Create-a-DNS-Zone/ipam_CreateDNSZone_02a.jpg)
 

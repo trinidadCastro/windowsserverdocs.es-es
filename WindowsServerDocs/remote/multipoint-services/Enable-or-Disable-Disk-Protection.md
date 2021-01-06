@@ -6,12 +6,13 @@ ms.assetid: 00aba4c4-0244-4b39-8c85-c46fd96e1d6a
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: 49207358fae8c3a0df647cbef866e23fb31e6700
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: a0e0d1e85cd8212963da802fc7104f12da24f498
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87966412"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97950101"
 ---
 # <a name="enable-or-disable-disk-protection"></a>Habilitar o deshabilitar la protección de disco
 La característica Protección de disco permite restablecer el sistema MultiPoint Services a un estado específico cada vez que se reinicia el sistema. Con Protección de disco, los usuarios pueden realizar cambios temporales en el sistema MultiPoint Services, que se descartan al reiniciarse el servidor. Entre los ejemplos de cambios que se descartarán cuando se reinicie el servidor se incluyen personalizar el perfil de un usuario, guardar archivos, cambiar la configuración o instalar aplicaciones.

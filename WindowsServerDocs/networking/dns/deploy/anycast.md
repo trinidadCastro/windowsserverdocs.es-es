@@ -5,12 +5,13 @@ ms.topic: article
 ms.assetid: f9c313ac-bb86-4e48-b9b9-de5004393e06
 ms.author: greglin
 author: greg-lindsay
-ms.openlocfilehash: 0944b8a825d10dc1338a698d511af27b8502f776
-ms.sourcegitcommit: 554d274fea48a4d47c19845d969a9ec93dec82de
+ms.date: 10/23/2020
+ms.openlocfilehash: 28241fbcde12070ac1e1c3df42db2813db368df9
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92524860"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949461"
 ---
 # <a name="anycast-dns-overview"></a>Introducción a DNS de difusión por proximidad
 
@@ -212,12 +213,12 @@ Add-BgpCustomRoute -Network 51.51.51.0/24
     Bucle invertido<br>
     Ethernet 2<br>
     PS C: \> Disable-NetAdapter "Ethernet 2"<br>
-    Confirmar<br>
+    Confirm<br>
     ¿Está seguro de que desea realizar esta acción?<br>
     Disable-NetAdapter ' Ethernet 2 '<br>
     [Y] sí [A] sí a todos [N] no [L] no a todas [S] suspender [?] Ayuda (el valor predeterminado es "Y"):<br>
     PS C: \> (get-NetAdapter). Estatus<br>
-    Arriba<br>
+    Subir<br>
     Disabled
 
 5.  Confirme que los clientes DNS que estaban recibiendo respuestas de DC001 han cambiado a DC002.

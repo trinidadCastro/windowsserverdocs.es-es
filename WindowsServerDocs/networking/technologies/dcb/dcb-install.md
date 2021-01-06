@@ -6,12 +6,13 @@ ms.assetid: b89213d8-143a-45f3-a609-bc6a7027204c
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: fe9ef94784baf88ac4871c679d83eec3bbe30ecb
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 5499751f44aaa8b361d166e42907b8f380418c84
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87954011"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948361"
 ---
 # <a name="install-data-center-bridging-dcb-in-windows-server-2016-or-windows-10"></a>Instalar el \( DCB de puente \) del centro de datos en windows Server 2016 o Windows 10
 
@@ -56,7 +57,7 @@ Para llevar a cabo estos procedimientos, debe ser miembro de **los administrador
 
 Puede usar el siguiente procedimiento para instalar DCB mediante Windows PowerShell.
 
-1. En un equipo que ejecute Windows Server 2016, haga clic en **Inicio**y, a continuación, haga clic con el botón secundario en el icono de Windows PowerShell. Aparece un menú. En el menú, haga clic en **más**y, a continuación, haga clic en **Ejecutar como administrador**. Si se le solicita, escriba las credenciales de una cuenta que tenga privilegios de administrador en el equipo. Windows PowerShell se abre con privilegios de administrador.
+1. En un equipo que ejecute Windows Server 2016, haga clic en **Inicio** y, a continuación, haga clic con el botón secundario en el icono de Windows PowerShell. Aparece un menú. En el menú, haga clic en **más** y, a continuación, haga clic en **Ejecutar como administrador**. Si se le solicita, escriba las credenciales de una cuenta que tenga privilegios de administrador en el equipo. Windows PowerShell se abre con privilegios de administrador.
 2. Escriba el siguiente comando y presione ENTRAR.
 
 ````
@@ -70,7 +71,7 @@ Puede usar el siguiente procedimiento para instalar DCB mediante Administrador d
 >[!NOTE]
 >Después de realizar el primer paso de este procedimiento, no se muestra la página **antes de comenzar** del Asistente para agregar roles y características si ya ha seleccionado **omitir esta página de forma predeterminada** cuando se ejecutó el Asistente para agregar roles y características. Si no se muestra la página **antes de comenzar** , vaya del paso 1 al paso 3.
 
-1. En DC1, en Administrador del servidor, haga clic en **administrar**y, a continuación, haga clic en **Agregar roles y características**. Se abre el Asistente para agregar roles y características.
+1. En DC1, en Administrador del servidor, haga clic en **administrar** y, a continuación, haga clic en **Agregar roles y características**. Se abre el Asistente para agregar roles y características.
 2. En **Antes de comenzar**, haga clic en **Siguiente**.
 3. En **Seleccionar tipo de instalación**, asegúrese de que la opción **Instalación basada en características o en roles** está seleccionada y, a continuación, haga clic en **Siguiente**.
 4. En **Seleccionar servidor de destino**, asegúrese de que la opción **Seleccionar un servidor del grupo de servidores** está seleccionada. En **Grupo de servidores**, asegúrese de que el equipo local está seleccionado. Haga clic en **Next**.
@@ -97,10 +98,10 @@ Para llevar a cabo este procedimiento, debe ser miembro de **los administradores
 
 1. Haga clic en **Inicio**, desplácese hacia abajo hasta y haga clic en **sistema de Windows**.
 2. Haga clic en **Panel de control**. Se abrirá el cuadro de diálogo **Panel de control** .
-3. En el **Panel de control**, haga clic en **ver por**y, a continuación, haga clic en **iconos grandes** o iconos **pequeños**.
+3. En el **Panel de control**, haga clic en **ver por** y, a continuación, haga clic en **iconos grandes** o iconos **pequeños**.
 4. Haga clic en **Programas y características**. Se abre el cuadro de diálogo programas y características.
 5. En **programas y características**, en el panel izquierdo, haga clic en **activar o desactivar las características de Windows**. Se abrirá el cuadro de diálogo **características de Windows** .
-6. En **características de Windows**, haga clic en protocolo de **puente del centro de datos**y, a continuación, en **Aceptar**.
+6. En **características de Windows**, haga clic en protocolo de **puente del centro de datos** y, a continuación, en **Aceptar**.
 
 ![Cuadro de diálogo activar o desactivar las características de Windows](../../media/Dcb-Scripting/Dcb-Scripting.jpg)
 

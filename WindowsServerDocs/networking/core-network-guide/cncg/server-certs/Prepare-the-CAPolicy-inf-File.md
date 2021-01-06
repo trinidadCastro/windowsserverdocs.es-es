@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 65b36794-bb09-4c1b-a2e7-8fc780893d97
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 83e2acbc9edfd9ca236f01b1fef3474ffe1bbb51
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 70921e660383eaf572ee3eae10817287a8bf29f2
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87949459"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97950171"
 ---
 # <a name="capolicyinf-syntax"></a>Sintaxis de CAPolicy. inf
 >   Se aplica a: Windows Server (canal semianual), Windows Server 2016
@@ -75,7 +76,7 @@ OID=1.1.1.1.1.1.2
 URL=https://pki.wingtiptoys.com/policies/legalpolicy.asp
 ```
 
-Además:
+Asimismo:
 
 -   Se admiten varias claves de URL y aviso.
 
@@ -228,7 +229,7 @@ Antes de instalar AD CS, configure el archivo CAPolicy. inf con la configuració
    [CRLDistributionPoint]
    [AuthorityInformationAccess]
    ```
-4. Haga clic en **archivo**y, a continuación, en **Guardar como**.
+4. Haga clic en **archivo** y, a continuación, en **Guardar como**.
 
 5. Navegue hasta la carpeta% SystemRoot%.
 

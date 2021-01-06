@@ -2,17 +2,17 @@
 title: Implementar una infraestructura de red definida por software mediante scripts
 description: En este tema se explica cómo implementar una infraestructura de red definida por software de Microsoft (SDN) mediante scripts en Windows Server 2016.
 manager: grcusanz
-ms.topic: get-started-article
+ms.topic: how-to
 ms.assetid: 5ba5bb37-ece0-45cb-971b-f7149f658d19
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/23/2018
-ms.openlocfilehash: 244f18baefa0be9b9b392682e48931e7d4e195b8
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: ed8327dd53fa75ccb864207d430c8c863940f090
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865624"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97950111"
 ---
 # <a name="deploy-a-software-defined-network-infrastructure-using-scripts"></a>Implementación de una infraestructura de red definida por software con scripts
 
@@ -86,7 +86,7 @@ Para empezar, configure el conmutador virtual de Hyper-v (servidores físicos) y
 
    a. Haga clic con el botón secundario en **Inicio**, seleccione **sistema** y, a continuación, haga clic en **Cambiar configuración**.
    b. Haga clic en **Cambiar**.
-   c. Haga clic en **dominio** y especifique el nombre de dominio.  "" "" d. Haga clic en **OK**.
+   c. Haga clic en **dominio** y especifique el nombre de dominio.  "" "" d. Haga clic en **Aceptar**.
    e. Escriba las credenciales de nombre de usuario y contraseña cuando se le solicite.
    f. Reinicie el servidor.
 
@@ -135,7 +135,7 @@ Siga los pasos siguientes para validar que la red de host está configurada corr
 
 4. Comparta la `C:\SDNExpress` carpeta como "**SDNExpress**" con permiso para que **todos los usuarios** **lean y escriban**.
 
-5. Ve a la carpeta `C:\SDNExpress`.<p>Verá las siguientes carpetas:
+5. Vaya a la carpeta `C:\SDNExpress`.<p>Verá las siguientes carpetas:
 
    | Nombre de carpeta | Descripción |
    |--|--|

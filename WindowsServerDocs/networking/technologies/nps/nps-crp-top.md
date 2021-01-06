@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 849d661a-42c1-4f93-b669-6009d52aad39
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 9b50fe9a3adce7967a555237446e77e4d4080221
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 228eebc3ad3d81868e13137ab9803d04b15df238
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955602"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949901"
 ---
 # <a name="connection-request-processing"></a>Procesamiento de solicitudes de conexión
 
@@ -52,21 +53,21 @@ Cuando se usa NPS como un servidor RADIUS, los mensajes RADIUS proporcionan aute
 
 1. Los servidores de acceso, como los servidores de acceso telefónico a la red, los servidores VPN y los puntos de acceso inalámbrico reciben solicitudes de conexión de clientes de acceso.
 
-2. El servidor de acceso, configurado para usar RADIUS como protocolo de autenticación, autorización y cuentas, crea un mensaje de solicitud de acceso y lo envía al NPS.
+2. El servidor de acceso, configurado para usar RADIUS como protocolo de autenticación, autorización y cuentas, crea un mensaje de Access-Request y lo envía al NPS.
 
-3. NPS evalúa el mensaje de solicitud de acceso.
+3. El NPS evalúa el mensaje de Access-Request.
 
-4. Si es necesario, el NPS envía un mensaje de desafío de acceso al servidor de acceso. El servidor de acceso procesa el desafío y envía una solicitud de acceso actualizada al NPS.
+4. Si es necesario, el NPS envía un mensaje de Access-Challenge al servidor de acceso. El servidor de acceso procesa el desafío y envía una Access-Request actualizada al NPS.
 
 5. Las credenciales de usuario se comprueban y las propiedades de acceso telefónico de la cuenta de usuario se obtienen por medio de una conexión segura con un controlador de dominio.
 
 6. El intento de conexión se autoriza con las propiedades de acceso telefónico de la cuenta de usuario y las directivas de red.
 
-7. Si el intento de conexión se autentica y autoriza, el NPS envía un mensaje de aceptación de acceso al servidor de acceso. Si el intento de conexión no se autentica o no está autorizado, el NPS envía un mensaje de rechazo de acceso al servidor de acceso.
+7. Si el intento de conexión se autentica y autoriza, el NPS envía un mensaje de Access-Accept al servidor de acceso. Si el intento de conexión no se ha autenticado o no está autorizado, el NPS envía un mensaje de Access-Reject al servidor de acceso.
 
-8. El servidor de acceso completa el proceso de conexión con el cliente de acceso y envía un mensaje de solicitud de contabilidad al NPS, donde se registra el mensaje.
+8. El servidor de acceso completa el proceso de conexión con el cliente de acceso y envía un mensaje de Accounting-Request al NPS, donde se registra el mensaje.
 
-9. El NPS envía una respuesta de cuenta al servidor de acceso.
+9. NPS envía una Accounting-Response al servidor de acceso.
 
 >[!NOTE]
 >Asimismo, el servidor de acceso envía mensajes de solicitud de registro de actividad cuando la conexión se establece, cuando la conexión del cliente de acceso se cierra y cuando el servidor de acceso se inicia y detiene.
@@ -77,7 +78,7 @@ Cuando NPS se usa como proxy RADIUS entre un cliente RADIUS y un servidor RADIUS
 
 1. Los servidores de acceso, tales como los servidores de acceso telefónico a la red, los servidores de red privada virtual (VPN) y los puntos de acceso inalámbrico, reciben las solicitudes de conexión de los clientes de acceso.
 
-2. El servidor de acceso, configurado para usar RADIUS como protocolo de autenticación, autorización y cuentas, crea un mensaje de solicitud de acceso y lo envía al NPS que se usa como el proxy RADIUS NPS.
+2. El servidor de acceso, configurado para usar RADIUS como protocolo de autenticación, autorización y cuentas, crea un mensaje de Access-Request y lo envía al NPS que se usa como el proxy RADIUS NPS.
 
 3. El proxy RADIUS NPS recibe el mensaje de solicitud de acceso y, basándose en las directivas de solicitud de conexión configuradas localmente, determina adónde reenviar el mensaje de solicitud de acceso.
 

@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: bc44a7db-f7a5-4e95-9d95-ab8d334e885f
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 476aa5f87436cd777ae6aa6fa2db70ace623deb7
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 71b4988c488eca5c9cc371b2f3a7e4e5ecc2a145
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87956022"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949511"
 ---
 # <a name="branchcache-hosted-cache-mode-deployment-planning"></a>Información general de implementación de modo de caché hospedada de BranchCache
 

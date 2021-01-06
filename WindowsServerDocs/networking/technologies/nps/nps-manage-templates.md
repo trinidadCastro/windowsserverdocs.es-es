@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 989b00c5-4767-4081-ace5-6321f8b2c55e
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 7380f5a712294b1583a7d552ef695811f8cebef4
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 9e86c545fb467e7e6e381f0be5e0d12e43ce775c
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952121"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949351"
 ---
 # <a name="manage-nps-templates"></a>Administrar plantillas NPS
 
@@ -46,9 +47,9 @@ La pertenencia al grupo **administradores**, o equivalente, es lo mínimo necesa
 ### <a name="to-create-an-nps-template"></a>Para crear una plantilla de NPS
 
 
-1. En el NPS, en Administrador del servidor, haga clic en **herramientas**y, a continuación, haga clic en **servidor de directivas de redes**. Se abre la consola NPS.
+1. En el NPS, en Administrador del servidor, haga clic en **herramientas** y, a continuación, haga clic en **servidor de directivas de redes**. Se abre la consola NPS.
 
-2. En la consola de NPS, expanda **Administración de plantillas**, haga clic con el botón secundario en un tipo de plantilla, como **clientes RADIUS**y, a continuación, haga clic en **nuevo**.
+2. En la consola de NPS, expanda **Administración de plantillas**, haga clic con el botón secundario en un tipo de plantilla, como **clientes RADIUS** y, a continuación, haga clic en **nuevo**.
 
 3. Se abre un cuadro de diálogo nuevas propiedades de plantilla que puede usar para configurar la plantilla.
 
@@ -60,9 +61,9 @@ La pertenencia al grupo **administradores**, o equivalente, es lo mínimo necesa
 
 ### <a name="to-apply-an-nps-template"></a>Para aplicar una plantilla de NPS
 
-1. En el NPS, en Administrador del servidor, haga clic en **herramientas**y, a continuación, haga clic en **servidor de directivas de redes**. Se abre la consola NPS.
+1. En el NPS, en Administrador del servidor, haga clic en **herramientas** y, a continuación, haga clic en **servidor de directivas de redes**. Se abre la consola NPS.
 
-2. En la consola NPS, expanda **clientes y servidores RADIUS**y, a continuación, expanda **clientes RADIUS**.
+2. En la consola NPS, expanda **clientes y servidores RADIUS** y, a continuación, expanda **clientes RADIUS**.
 
 3.In **clientes RADIUS**, en el panel de detalles, haga clic con el botón secundario en el cliente RADIUS al que desea aplicar la plantilla de NPS y, a continuación, haga clic en **propiedades**.
 
@@ -76,8 +77,8 @@ La pertenencia al grupo **administradores**, o equivalente, es lo mínimo necesa
 
 ### <a name="to-export-or-import-nps-templates"></a>Para exportar o importar plantillas de NPS
 
-1. Para exportar plantillas NPS, en la consola NPS, haga clic con el botón derecho en **Administración de plantillas**y, a continuación, haga clic en **exportar plantillas a un archivo**.
+1. Para exportar plantillas NPS, en la consola NPS, haga clic con el botón derecho en **Administración de plantillas** y, a continuación, haga clic en **exportar plantillas a un archivo**.
 
-2. Para importar plantillas NPS, en la consola NPS, haga clic con el botón derecho en **Administración de plantillas**y, a continuación, haga clic en **importar plantillas de un equipo** o **importar plantillas desde un archivo**.
+2. Para importar plantillas NPS, en la consola NPS, haga clic con el botón derecho en **Administración de plantillas** y, a continuación, haga clic en **importar plantillas de un equipo** o **importar plantillas desde un archivo**.
 
 

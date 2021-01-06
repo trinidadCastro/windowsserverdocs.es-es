@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 82f8f382-246e-4164-8306-437f7a019e0f
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: ccfe766651600da146843c8db947df0f61c667dc
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 073e187435dabdc328c0549e072865b5d2978765
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964071"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948351"
 ---
 # <a name="manage-resources-in-multiple-active-directory-forests"></a>Administración de recursos en varios bosques de Active Directory
 
@@ -21,7 +22,7 @@ Puede usar este tema para obtener información sobre cómo usar IPAM para admini
 
 Para usar IPAM para administrar recursos en bosques de Active Directory remotos, cada bosque que desee administrar debe tener una relación de confianza bidireccional con el bosque en el que está instalado IPAM.
 
-Para iniciar el proceso de detección de distintos bosques de Active Directory, abra Administrador del servidor y haga clic en IPAM. En la consola de cliente de IPAM, haga clic en **configurar detección de servidores**y, a continuación, en **obtener bosques**. Esto inicia una tarea en segundo plano que detecta bosques de confianza y sus dominios. Una vez completado el proceso de detección, haga clic en **configurar detección de servidores**, que abre el siguiente cuadro de diálogo.
+Para iniciar el proceso de detección de distintos bosques de Active Directory, abra Administrador del servidor y haga clic en IPAM. En la consola de cliente de IPAM, haga clic en **configurar detección de servidores** y, a continuación, en **obtener bosques**. Esto inicia una tarea en segundo plano que detecta bosques de confianza y sus dominios. Una vez completado el proceso de detección, haga clic en **configurar detección de servidores**, que abre el siguiente cuadro de diálogo.
 
 ![Configurar la detección de servidores](../../media/Manage-Resources-in-Multiple-Active-Directory-Forests/ipam_serverdiscovery.jpg)
 
@@ -32,9 +33,9 @@ Para iniciar el proceso de detección de distintos bosques de Active Directory, 
     Invoke-IpamGpoProvisioning -Domain fabrikam.COM -GpoPrefixName IPAMSERVER -IpamServerFqdn IPAM.CORP.CONTOSO.COM
 ```
 
-En el cuadro de diálogo **configurar detección de servidores** , haga clic en **seleccionar el bosque**y, a continuación, elija el bosque que desea administrar con IPAM. Seleccione también los dominios que desea administrar y, a continuación, haga clic en **Agregar**.
+En el cuadro de diálogo **configurar detección de servidores** , haga clic en **seleccionar el bosque** y, a continuación, elija el bosque que desea administrar con IPAM. Seleccione también los dominios que desea administrar y, a continuación, haga clic en **Agregar**.
 
-En **Seleccione los roles de servidor que se van a detectar**, para cada dominio que desee administrar, especifique el tipo de servidores que desea detectar. Las opciones son **controlador de dominio**, **servidor DHCP**y **servidor DNS**.
+En **Seleccione los roles de servidor que se van a detectar**, para cada dominio que desee administrar, especifique el tipo de servidores que desea detectar. Las opciones son **controlador de dominio**, **servidor DHCP** y **servidor DNS**.
 
 De forma predeterminada, se detectan los controladores de dominio, los servidores DHCP y los servidores DNS, por lo que si no desea detectar uno de estos tipos de servidores, asegúrese de anular la selección de la casilla correspondiente a esa opción.
 

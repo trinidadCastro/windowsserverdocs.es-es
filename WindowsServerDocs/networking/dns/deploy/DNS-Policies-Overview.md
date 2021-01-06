@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 566bc270-81c7-48c3-a904-3cba942ad463
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: d913905fe5b40e4e3e24828a0c6b392c1691043d
-ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
+ms.date: 01/05/2021
+ms.openlocfilehash: ce4b991dcda83d6448d4a085dcf9e7dc08e04b1d
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97904670"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949481"
 ---
 # <a name="dns-policies-overview"></a>Información general de las directivas DNS
 
@@ -47,7 +48,7 @@ Las directivas de DNS se dividen por nivel y tipo. Puede usar las directivas de 
 
 Puede usar las directivas de resolución de consultas DNS para especificar cómo se administran las consultas de resolución de entrada por un servidor DNS. Cada directiva de resolución de consultas DNS contiene los siguientes elementos:
 
-|Campo|Description|Valores posibles|
+|Campo|Descripción|Valores posibles|
 |---------|---------------|-------------------|
 |**Nombre**|Nombre de la directiva|-Hasta 256 caracteres<br />-Puede contener cualquier carácter válido para un nombre de archivo|
 |**Estado**|Estado de directiva|-Enable (valor predeterminado)<br />-Deshabilitado|

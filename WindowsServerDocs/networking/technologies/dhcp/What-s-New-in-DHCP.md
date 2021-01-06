@@ -2,16 +2,17 @@
 title: Novedades del DHCP
 description: En este tema se proporciona información general sobre las nuevas características del Protocolo de configuración dinámica de host (DHCP) en Windows Server 2016.
 manager: brianlic
-ms.topic: get-started-article
+ms.topic: how-to
 ms.assetid: c6f36998-5b64-45d1-b1f0-0f0d6604dbe3
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 5dee105eaf14c92145e1fe70fe4627d37b2baa82
-ms.sourcegitcommit: b0c73df80d7b4ff0c332d77e0cc07f7e6e061600
+ms.date: 12/09/2020
+ms.openlocfilehash: 19d36c075ca6059e9fb39556d89322f222139359
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96925564"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949911"
 ---
 # <a name="whats-new-in-dhcp"></a>Novedades del DHCP
 

@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: a92e61c3-f7d4-4e42-8575-79d75d05a218
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 2c79c0bb73e7e460f59d9131cbd7ba4cff737d89
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 52d0214732d5317d4885415d9764ff77d924a272
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87946158"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948171"
 ---
 # <a name="create-security-policies-with-extended-port-access-control-lists"></a>Creación de directivas de seguridad con listas de control de acceso de puerto extendido
 

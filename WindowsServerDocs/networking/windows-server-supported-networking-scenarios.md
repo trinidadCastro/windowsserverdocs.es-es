@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 6de4232d-b0b3-4e43-8735-ebae35ae4f9f
 author: dcuomo
 ms.author: dacuo
-ms.openlocfilehash: 0059e04b79754a3fb183a51cbd75bc03e9a89ae5
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.date: 08/07/2020
+ms.openlocfilehash: b8d6b0c3f983ca4798569b06f0a08c95e82106d4
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997552"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949311"
 ---
 # <a name="windows-server-supported-networking-scenarios"></a>Escenarios de redes que admite Windows Server
 
@@ -113,7 +114,7 @@ Para obtener más información, vea [acceso directo a memoria remota &#40;RDMA&#
 
 Los escenarios de servidor DNS permiten:
 
--   Especificación de la administración del tráfico basada en la ubicación geográfica mediante directivas DNS
+-   Especificación de la administración del tráfico basada en Geo-Location mediante directivas DNS
 
 -   Configuración de DNS de cerebro dividido mediante directivas DNS
 
@@ -162,13 +163,13 @@ Los escenarios de formación de equipos NIC permiten:
 -   Quitar adaptadores de red del equipo NIC
 
 > [!NOTE]
-> En Windows Server 2016, puede usar la formación de equipos NIC en Hyper-V; sin embargo, en algunos casos, es posible que las colas de máquinas virtuales (VMQ) no se habiliten automáticamente en los adaptadores de red subyacentes al crear un equipo NIC. Si esto ocurre, puede usar el siguiente comando de Windows PowerShell para asegurarse de que VMQ está habilitado en los adaptadores de miembros del equipo NIC:`Set-NetAdapterVmq -Name <NetworkAdapterName> -Enable`
+> En Windows Server 2016, puede usar la formación de equipos NIC en Hyper-V; sin embargo, en algunos casos, es posible que las colas de máquinas virtuales (VMQ) no se habiliten automáticamente en los adaptadores de red subyacentes al crear un equipo NIC. Si esto ocurre, puede usar el siguiente comando de Windows PowerShell para asegurarse de que VMQ está habilitado en los adaptadores de miembros del equipo NIC: `Set-NetAdapterVmq -Name <NetworkAdapterName> -Enable`
 
 Para obtener más información, consulte [formación de equipos NIC](technologies/nic-teaming/NIC-Teaming.md).
 
 ### <a name="switch-embedded-teaming-set-scenarios"></a><a name="bkmk_set"></a>Cambiar escenarios de conjuntos de formación de equipos incrustados \( \)
 
-SET es una solución alternativa para la formación de equipos NIC que puede usar en entornos que incluyen Hyper-V y la pila de redes definidas por software (SDN) en Windows Server 2016. El conjunto integra la funcionalidad de formación de equipos NIC en el conmutador virtual de Hyper-V.
+SET es una solución alternativa para la formación de equipos NIC que puede usar en entornos que incluyen Hyper-V y la pila de redes definidas por software (SDN) en Windows Server 2016. SET integra la funcionalidad de formación de equipos de NIC en el conmutador virtual de Hyper-V.
 
 Para obtener más información, vea [acceso directo a memoria remota (RDMA) y switch Embedded Teaming (Set)](../virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming.md) .
 

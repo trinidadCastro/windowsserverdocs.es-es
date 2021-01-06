@@ -1,17 +1,18 @@
 ---
 title: Implementación del acceso inalámbrico autenticado mediante 802.1X basado en contraseña
-description: Este tema forma parte de la guía de redes de Windows Server 2016 "implementación de acceso inalámbrico autenticado mediante 802.1 X basado en contraseña".
+description: Este tema forma parte de la guía de redes de Windows Server 2016 "implementación de acceso inalámbrico autenticado de Password-Based 802.1 X"
 manager: brianlic
 ms.topic: article
 ms.assetid: ff06ba23-9c0f-49ec-8f7b-611cf8d73a1b
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 252c687d3ea42254edc81d1ea1e6019a4bad69fe
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.date: 08/07/2020
+ms.openlocfilehash: 2b6a04f10814a077ab1b8aefa612c9fbe6e153a6
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997648"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948421"
 ---
 # <a name="deploy-password-based-8021x-authenticated-wireless-access"></a>Implementación del \- acceso inalámbrico autenticado mediante 802.1 x basado en contraseña
 
@@ -152,7 +153,7 @@ En la tabla siguiente se muestran las velocidades y frecuencias de transmisión 
 |802.11b|\-ISM de banda S|11 Mbps|Se suele usar.|
 |802.11a|\-Banda de C \( de ISM 5,725 a 5,875 GHz\)|54 Mbps|No se usa normalmente debido a gastos y a un intervalo limitado.|
 |802.11g|\-ISM de banda S|54 Mbps|Ampliamente utilizado. los dispositivos 802.11 g son compatibles con los dispositivos 802.11 b.|
-|802.11 n \ 2,4 y 5,0 GHz|\-Banda de C y de banda de S \-|250 Mbps|Los dispositivos basados en el estándar de la versión preliminar \- IEEE 802.11 n están disponibles en agosto de 2007. Muchos dispositivos 802.11 n son compatibles con los dispositivos 802.11 a, b y g.|
+|802.11 n \ 2,4 y 5,0 GHz|\-Banda de C y de banda de S \-|250 MBps|Los dispositivos basados en el estándar de la versión preliminar \- IEEE 802.11 n están disponibles en agosto de 2007. Muchos dispositivos 802.11 n son compatibles con los dispositivos 802.11 a, b y g.|
 |802.11ac |5 GHz |6,93 Gbps |802.11 AC, aprobado por el IEEE en 2014, es más escalable y más rápido que 802.11 n, y se implementa donde APs y los clientes inalámbricos lo admiten.|
 
 ### <a name="wireless-network-security-methods"></a>Métodos de seguridad de red inalámbrica
@@ -161,7 +162,7 @@ En la tabla siguiente se muestran las velocidades y frecuencias de transmisión 
 Al configurar las opciones de seguridad inalámbrica en las directivas de red inalámbrica de directiva de grupo, hay varias combinaciones entre las que elegir. Sin embargo, solo \- \- se admiten los estándares de autenticación WPA2 Enterprise, WPA Enterprise y Open with 802.1 x para las implementaciones inalámbricas autenticadas de 802.1 x.
 
 >[!NOTE]
->Al configurar las directivas de red inalámbrica, debe seleccionar **WPA2 \- Enterprise**, **WPA \- Enterprise**o **abrir con 802.1 x** para obtener acceso a la configuración de EAP necesaria para las implementaciones inalámbricas autenticadas de 802.1 x.
+>Al configurar las directivas de red inalámbrica, debe seleccionar **WPA2 \- Enterprise**, **WPA \- Enterprise** o **abrir con 802.1 x** para obtener acceso a la configuración de EAP necesaria para las implementaciones inalámbricas autenticadas de 802.1 x.
 
 #### <a name="wireless-authentication"></a>Autenticación inalámbrica
 En esta guía se recomienda el uso de los siguientes estándares de autenticación inalámbrica para las implementaciones inalámbricas autenticadas mediante 802.1 X.
@@ -193,7 +194,7 @@ En Windows Server 2016, los siguientes \- métodos de cifrado inalámbrico basad
 > [!IMPORTANT]
 > Wired Equivalent Privacy \( WEP \) era el estándar de seguridad inalámbrica original que se usaba para cifrar el tráfico de red. No debe implementar WEP en la red porque existen \- vulnerabilidades conocidas en esta forma de seguridad obsoleta.
 
-### <a name="active-directorydoman-services-adds"></a>Active Directory dominio Services \( AD DS\)
+### <a name="active-directory-doman-services-ad-ds"></a>Active Directory dominio Services \( AD DS\)
 AD DS proporciona una base de datos distribuida que almacena y administra información acerca de los recursos de red y los \- datos específicos de la aplicación en \- las aplicaciones habilitadas para el directorio. Los administradores pueden usar AD DS para organizar los elementos de una red (por ejemplo, los usuarios, los equipos y otros dispositivos) en una estructura de contención jerárquica. La estructura de contención jerárquica incluye el Active Directory bosque, los dominios de las unidades organizativas del bosque y las unidades organizativas \( \) de cada dominio. Un servidor que ejecuta AD DS se denomina controlador de *dominio*.
 
 AD DS contiene las cuentas de usuario, las cuentas de equipo y las propiedades de cuenta que requieren IEEE 802.1 X y PEAP \- MS \- CHAP v2 para autenticar las credenciales de usuario y evaluar la autorización para las conexiones inalámbricas.
@@ -213,7 +214,7 @@ Un certificado de servidor es un documento digital que se usa normalmente para l
 
 Una entidad de \( certificación \) es una entidad responsable de establecer y garantizar la autenticidad de las claves públicas que pertenecen a asuntos \( normalmente usuarios o equipos \) u otras CA. Las actividades de una entidad de certificación pueden incluir el enlace de claves públicas a nombres distintivos a través de certificados firmados, la administración de números de serie de certificados y la revocación de certificados.
 
-Active Directory servicios de Certificate \( Server AD CS \) es un rol de servidor que emite certificados como una CA de red. Una infraestructura de certificados de AD CS, también conocida como * \( PKI \) de infraestructura de clave pública*, proporciona servicios personalizables para la emisión y administración de certificados para la empresa.
+Active Directory servicios de Certificate \( Server AD CS \) es un rol de servidor que emite certificados como una CA de red. Una infraestructura de certificados de AD CS, también conocida como *\( PKI \) de infraestructura de clave pública*, proporciona servicios personalizables para la emisión y administración de certificados para la empresa.
 
 ### <a name="eap-peap-and-peap-ms-chap-v2"></a>EAP, PEAP y PEAP \- MS \- CHAP V2
 El protocolo de autenticación extensible \( EAP \) extiende el \- Protocolo punto a \- punto \( PPP \) al permitir métodos de autenticación adicionales que usan intercambios de credenciales y de información de longitudes arbitrarias. Con la autenticación EAP, tanto el cliente de acceso a redes como el autenticador \( , como el NPS, \) deben admitir el mismo tipo de EAP para que se produzca la autenticación correcta. Windows Server 2016 incluye una infraestructura EAP, admite dos tipos de EAP y la capacidad de pasar mensajes EAP a NPSs. Mediante el uso de EAP, puede admitir esquemas de autenticación adicionales, conocidos como *tipos de EAP*. Los tipos de EAP que son compatibles con Windows Server 2016 son los siguientes:
@@ -244,7 +245,7 @@ El NPS del servidor de directivas de redes \( \) permite configurar y administra
 
 Cuando se configuran los puntos de acceso inalámbricos de 802.1 X como clientes RADIUS en NPS, NPS procesa las solicitudes de conexión enviadas por el APs. Durante el procesamiento de solicitudes de conexión, NPS realiza la autenticación y la autorización. La autenticación determina si el cliente ha presentado credenciales válidas. Si NPS autentica correctamente el cliente que realiza la solicitud, NPS determina si el cliente está autorizado para realizar la conexión solicitada y permite o deniega la conexión. Esto se explica con más detalle de la manera siguiente:
 
-#### <a name="authentication"></a>Autenticación
+#### <a name="authentication"></a>Authentication
 
 La autenticación de \- MS CHAP v2 de PEAP mutua correcta \- tiene dos partes principales:
 
@@ -256,11 +257,11 @@ La autenticación de \- MS CHAP v2 de PEAP mutua correcta \- tiene dos partes pr
 
 Si las credenciales son válidas y la autenticación se realiza correctamente, el NPS comienza la fase de autorización de procesamiento de la solicitud de conexión. Si las credenciales no son válidas y se produce un error en la autenticación, NPS envía un mensaje de rechazo de acceso y se deniega la solicitud de conexión.
 
-#### <a name="authorization"></a>Autorización
+#### <a name="authorization"></a>Authorization
 
 El servidor que ejecuta NPS realiza la autorización de la siguiente manera:
 
-1. NPS comprueba las restricciones en las propiedades de acceso telefónico de la cuenta de usuario o equipo \- en AD DS. Cada cuenta de usuario y equipo de Active Directory usuarios y equipos incluye varias propiedades, incluidas las que se encuentran en la pestaña **marcado \- ** . En esta pestaña, en **permiso de acceso a la red**, si el valor es **permitir el acceso**, el usuario o el equipo está autorizado para conectarse a la red. Si el valor es **denegar el acceso**, el usuario o el equipo no está autorizado para conectarse a la red. Si el valor es **controlar el acceso a través de la Directiva de red NPS**, NPS evalúa las directivas de red configuradas para determinar si el usuario o el equipo tiene autorización para conectarse a la red.
+1. NPS comprueba las restricciones en las propiedades de acceso telefónico de la cuenta de usuario o equipo \- en AD DS. Cada cuenta de usuario y equipo de Active Directory usuarios y equipos incluye varias propiedades, incluidas las que se encuentran en la pestaña **marcado \-** . En esta pestaña, en **permiso de acceso a la red**, si el valor es **permitir el acceso**, el usuario o el equipo está autorizado para conectarse a la red. Si el valor es **denegar el acceso**, el usuario o el equipo no está autorizado para conectarse a la red. Si el valor es **controlar el acceso a través de la Directiva de red NPS**, NPS evalúa las directivas de red configuradas para determinar si el usuario o el equipo tiene autorización para conectarse a la red.
 
 2. Después, NPS procesa sus directivas de red para encontrar una directiva que coincida con la solicitud de conexión. Si se encuentra una directiva de coincidencia, NPS concede o deniega la conexión en función de la configuración de la Directiva.
 

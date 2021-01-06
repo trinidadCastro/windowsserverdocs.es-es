@@ -1,17 +1,18 @@
 ---
 title: Implementación de acceso inalámbrico
-description: Este tema forma parte de la guía de redes de Windows Server 2016 "implementación de acceso inalámbrico autenticado mediante 802.1 X basado en contraseña".
+description: Este tema forma parte de la guía de redes de Windows Server 2016 "implementación de acceso inalámbrico autenticado de Password-Based 802.1 X"
 manager: brianlic
 ms.topic: article
 ms.assetid: 4b66f517-b17d-408c-828f-a3793086bc1f
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 32e54b5129bf2215758adf35bd23c4d99ab2d8e9
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.date: 08/07/2020
+ms.openlocfilehash: 7904476686c8e929876cf2ad574c8e09f4f351f1
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996972"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949161"
 ---
 # <a name="wireless-access-deployment"></a>Implementación de acceso inalámbrico
 
@@ -77,7 +78,7 @@ En este procedimiento se enumeran los elementos que se configuran normalmente en
 
 - **Dirección IP del servidor RADIUS**. Escriba la dirección IP del servidor que ejecuta NPS.
 
-- ** \( Puertos \) UDP**. De forma predeterminada, NPS usa los puertos UDP 1812 y 1645 para los mensajes de autenticación y los puertos UDP 1813 y 1646 para los mensajes de cuentas. Se recomienda que use estos mismos puertos UDP en los AP, pero si tiene una razón válida para usar puertos diferentes, asegúrese de que no solo configura los APs con los nuevos números de puerto, sino que también vuelve a configurar todos los NPSs para que usen los mismos números de puerto que el APs. Si el APs y NPSs no están configurados con los mismos puertos UDP, NPS no puede recibir ni procesar las solicitudes de conexión de los AP y se producirá un error en todos los intentos de conexión inalámbrica en la red.
+- **\( Puertos \) UDP**. De forma predeterminada, NPS usa los puertos UDP 1812 y 1645 para los mensajes de autenticación y los puertos UDP 1813 y 1646 para los mensajes de cuentas. Se recomienda que use estos mismos puertos UDP en los AP, pero si tiene una razón válida para usar puertos diferentes, asegúrese de que no solo configura los APs con los nuevos números de puerto, sino que también vuelve a configurar todos los NPSs para que usen los mismos números de puerto que el APs. Si el APs y NPSs no están configurados con los mismos puertos UDP, NPS no puede recibir ni procesar las solicitudes de conexión de los AP y se producirá un error en todos los intentos de conexión inalámbrica en la red.
 
 - **VSA**. Algunos AP inalámbricos requieren \- los atributos específicos del proveedor \( VSA \) para proporcionar la funcionalidad de AP inalámbrico completa. Los VSA se agregan en la Directiva de red de NPS.
 
@@ -103,7 +104,7 @@ El requisito mínimo para llevar a cabo este procedimiento consiste en pertenece
 
 1. Haga clic en **Inicio**, luego en **Herramientas administrativas** y, a continuación, haga clic en **Usuarios y equipos de Active Directory**. Se abre el complemento Active Directory usuarios y equipos \- . Haga clic en el nodo de su dominio si no está seleccionado. Por ejemplo, si el dominio es ejemplo.com, haga clic en **ejemplo.com**.
 
-2. En el panel de detalles, haga clic con el botón secundario en \- la carpeta en la que desea agregar un grupo nuevo, \( por ejemplo, haga clic con el botón secundario \- en **usuarios** \) , seleccione **nuevo**y, a continuación, haga clic en **Grupo**.
+2. En el panel de detalles, haga clic con el botón secundario en \- la carpeta en la que desea agregar un grupo nuevo, \( por ejemplo, haga clic con el botón secundario \- en **usuarios** \) , seleccione **nuevo** y, a continuación, haga clic en **Grupo**.
 
 3. En **Nuevo objeto: grupo**, en **Nombre de grupo**, escriba un nombre para el nuevo grupo. Por ejemplo, escriba **Grupo inalámbrico**.
 
@@ -121,7 +122,7 @@ El requisito mínimo para llevar a cabo este procedimiento consiste en pertenece
 
 Si necesita más de un grupo de seguridad para los usuarios inalámbricos, repita estos pasos para crear grupos de usuarios inalámbricos adicionales. Más adelante, puede crear directivas de red individuales en NPS para aplicar diferentes condiciones y restricciones a cada grupo, proporcionándoles diferentes permisos de acceso y reglas de conectividad.
 
-### <a name="add-users-to-the-wireless-users-security-group"></a><a name="bkmk_addusers"></a>Agregar usuarios al grupo de seguridad usuarios inalámbricos
+### <a name="add-users-to-the-wireless-users-security-group"></a><a name="bkmk_addusers"></a> Agregar usuarios al grupo de seguridad usuarios inalámbricos
 
 Puede usar este procedimiento para agregar un usuario, equipo o grupo al grupo de seguridad inalámbrica en el complemento MMC de Microsoft Management Console de usuarios y equipos de Active Directory \( \) \- .
 
@@ -135,11 +136,11 @@ El requisito mínimo para realizar este procedimiento es la pertenencia al grupo
 
 3. En el panel de detalles, haga clic con el botón secundario \- en el grupo de seguridad inalámbrica y, a continuación, haga clic en **propiedades**. Se abre el cuadro de diálogo **propiedades** del grupo de seguridad.
 
-4. En la pestaña **miembros** , haga clic en **Agregar**y, a continuación, complete uno de los procedimientos siguientes para agregar un equipo o agregar un usuario o grupo.
+4. En la pestaña **miembros** , haga clic en **Agregar** y, a continuación, complete uno de los procedimientos siguientes para agregar un equipo o agregar un usuario o grupo.
 
 ##### <a name="to-add-a-user-or-group"></a>Para agregar un usuario o grupo
 
-1. En **Escriba los nombres de objeto**que desea seleccionar, escriba el nombre del usuario o grupo que desea agregar y, a continuación, haga clic en **Aceptar**.
+1. En **Escriba los nombres de objeto** que desea seleccionar, escriba el nombre del usuario o grupo que desea agregar y, a continuación, haga clic en **Aceptar**.
 
 2. Para asignar la pertenencia a grupos a otros usuarios o grupos, repita el paso 1 de este procedimiento.
 
@@ -147,7 +148,7 @@ El requisito mínimo para realizar este procedimiento es la pertenencia al grupo
 
 1. Haga clic en **Tipos de objeto**. Se abre el cuadro de diálogo **tipos de objeto** .
 
-2. En **tipos de objeto**, seleccione **equipos**y, a continuación, haga clic en **Aceptar**.
+2. En **tipos de objeto**, seleccione **equipos** y, a continuación, haga clic en **Aceptar**.
 
 3. En **Escriba los nombres de objeto que desea seleccionar**, escriba el nombre del equipo que desea agregar y, a continuación, haga clic en **Aceptar**.
 
@@ -171,13 +172,13 @@ El requisito mínimo para llevar a cabo este procedimiento consiste en pertenece
 
 #### <a name="to-open-or-add-and-open-a-group-policy-object"></a>Para abrir o agregar y abrir un objeto directiva de grupo
 
-1. En el controlador de dominio, haga clic en **Inicio**, en **herramientas administrativas de Windows**y, a continuación, en **Administración de directiva de grupo**. Se abre la Consola de administración de directivas de grupo.
+1. En el controlador de dominio, haga clic en **Inicio**, en **herramientas administrativas de Windows** y, a continuación, en **Administración de directiva de grupo**. Se abre la Consola de administración de directivas de grupo.
 
 2. En el panel izquierdo, \- haga doble clic en el bosque. Por ejemplo, \- haga doble clic en **bosque: example.com**.
 
-3. En el panel izquierdo, \- haga doble clic en **dominios**y, a continuación, haga doble \- clic en el dominio para el que desea administrar un objeto de directiva de grupo. Por ejemplo, \- haga doble clic en **example.com**.
+3. En el panel izquierdo, \- haga doble clic en **dominios** y, a continuación, haga doble \- clic en el dominio para el que desea administrar un objeto de directiva de grupo. Por ejemplo, \- haga doble clic en **example.com**.
 
-4. Lleve a cabo una de las siguientes acciones:
+4. Realice una de las siguientes acciones:
 
     - **Para abrir un \- GPO de nivel de dominio existente para editarlo**, haga doble clic en el dominio que contiene el Directiva de grupo objeto que desea administrar, haga clic con el botón secundario \- en la Directiva de dominio que desea administrar, como la directiva predeterminada de dominio y, a continuación, haga clic en **Editar**. Se abre **Editor de administración de directivas de grupo** .
 
@@ -194,7 +195,7 @@ En la siguiente sección usará Editor de administración de directivas de grupo
 En este procedimiento se describe cómo activar las directivas IEEE 802,11 de red inalámbrica predeterminada mediante \( \) el editor de administración de directivas de grupo \( GPME \) .
 
 >[!NOTE]
->Después de activar la versión de **Windows Vista y versiones posteriores** de las \( directivas IEEE 802,11 de red inalámbrica o de \) la versión de **Windows XP** , la opción versión se quita automáticamente de la lista de opciones cuando se hace clic con el botón secundario \- en ** \( \) directivas IEEE 802,11 de red inalámbrica**. Esto se debe a que, después de seleccionar una versión de Directiva, la Directiva se agrega en el panel de detalles de GPME cuando se selecciona el nodo de ** \( \) directivas IEEE 802,11 de red inalámbrica** . Este estado permanece a menos que elimine la Directiva inalámbrica, momento en el que la versión de la Directiva inalámbrica vuelve al menú contextual \- de ** \( \) las directivas de red inalámbrica IEEE 802,11** en GPME. Además, las directivas inalámbricas solo se muestran en el panel de detalles de GPME cuando se selecciona el nodo de ** \( \) directivas IEEE 802,11 de red inalámbrica** .
+>Después de activar la versión de **Windows Vista y versiones posteriores** de las \( directivas IEEE 802,11 de red inalámbrica o de \) la versión de **Windows XP** , la opción versión se quita automáticamente de la lista de opciones cuando se hace clic con el botón secundario \- en **\( \) directivas IEEE 802,11 de red inalámbrica**. Esto se debe a que, después de seleccionar una versión de Directiva, la Directiva se agrega en el panel de detalles de GPME cuando se selecciona el nodo de **\( \) directivas IEEE 802,11 de red inalámbrica** . Este estado permanece a menos que elimine la Directiva inalámbrica, momento en el que la versión de la Directiva inalámbrica vuelve al menú contextual \- de **\( \) las directivas de red inalámbrica IEEE 802,11** en GPME. Además, las directivas inalámbricas solo se muestran en el panel de detalles de GPME cuando se selecciona el nodo de **\( \) directivas IEEE 802,11 de red inalámbrica** .
 
 El requisito mínimo para llevar a cabo este procedimiento consiste en pertenecer a **Admins. del dominio** o grupo equivalente.
 
@@ -202,15 +203,15 @@ El requisito mínimo para llevar a cabo este procedimiento consiste en pertenece
 
 1. Siga el procedimiento anterior **para abrir o agregar y abrir un objeto Directiva de grupo** para abrir el GPME.
 
-2. En el panel izquierdo del GPME, \- haga doble clic en **configuración del equipo**, haga doble \- clic en **directivas**, haga doble \- clic en **configuración de Windows**y, a continuación, haga doble \- clic en **configuración de seguridad**.
+2. En el panel izquierdo del GPME, \- haga doble clic en **configuración del equipo**, haga doble \- clic en **directivas**, haga doble \- clic en **configuración de Windows** y, a continuación, haga doble \- clic en **configuración de seguridad**.
 
 ![directiva de grupo inalámbrica 802.1 x](../../../media/Wireless-GP/Wireless-GP.jpg)
 
-3. En **configuración de seguridad**, haga clic con el botón secundario \- en **directivas de red inalámbrica \( IEEE \) 802,11**y, a continuación, haga clic en **crear una nueva Directiva inalámbrica para Windows Vista y versiones posteriores**.
+3. En **configuración de seguridad**, haga clic con el botón secundario \- en **directivas de red inalámbrica \( IEEE \) 802,11** y, a continuación, haga clic en **crear una nueva Directiva inalámbrica para Windows Vista y versiones posteriores**.
 
 ![Directiva inalámbrica de 802.1 x](../../../media/Wireless-Policy/Wireless-Policy.jpg)
 
-4. Se abre el cuadro de diálogo **propiedades de nueva Directiva de red inalámbrica** . En **nombre**de la Directiva, escriba un nombre nuevo para la Directiva o mantenga el nombre predeterminado. Haga clic en **Aceptar** para guardar la directiva. La directiva predeterminada se activa y se muestra en el panel de detalles del GPME con el nuevo nombre que proporcionó o con el nombre predeterminado **nueva Directiva de red inalámbrica**.
+4. Se abre el cuadro de diálogo **propiedades de nueva Directiva de red inalámbrica** . En **nombre** de la Directiva, escriba un nombre nuevo para la Directiva o mantenga el nombre predeterminado. Haga clic en **Aceptar** para guardar la directiva. La directiva predeterminada se activa y se muestra en el panel de detalles del GPME con el nuevo nombre que proporcionó o con el nombre predeterminado **nueva Directiva de red inalámbrica**.
 
 ![Propiedades de nueva Directiva de red inalámbrica](../../../media/Wireless-Policy-Properties/Wireless-Policy-Properties.jpg)
 
@@ -240,11 +241,11 @@ La pertenencia a **Administradores de dominio**, o equivalente, es lo mínimo ne
 
 2. Para especificar que se use la configuración automática de WLAN para configurar el adaptador de red inalámbrica, asegúrese de que esté seleccionada la opción **usar el servicio de configuración automática de WLAN de Windows para clientes** .
 
-3. En **conectarse a las redes disponibles en el orden de los siguientes perfiles**, haga clic en **Agregar**y, a continuación, seleccione **infraestructura**. Se abrirá el cuadro de diálogo **propiedades del nuevo perfil** .
+3. En **conectarse a las redes disponibles en el orden de los siguientes perfiles**, haga clic en **Agregar** y, a continuación, seleccione **infraestructura**. Se abrirá el cuadro de diálogo **propiedades del nuevo perfil** .
 
-4. En el cuadro de diálogo**propiedades de nuevo perfil** , en la pestaña **conexión** , en el campo **nombre del perfil** , escriba un nuevo nombre para el perfil. Por ejemplo, escriba **example.com WLAN Profile para Windows 10**.
+4. En el cuadro de diálogo **propiedades de nuevo perfil** , en la pestaña **conexión** , en el campo **nombre del perfil** , escriba un nuevo nombre para el perfil. Por ejemplo, escriba **example.com WLAN Profile para Windows 10**.
 
-5. En **nombre de \( red \) \( SSID \) **, escriba el SSID correspondiente al SSID configurado en los AP inalámbricos y, a continuación, haga clic en **Agregar**.
+5. En **nombre de \( red \) \( SSID \)**, escriba el SSID correspondiente al SSID configurado en los AP inalámbricos y, a continuación, haga clic en **Agregar**.
 
     Si tu implementación utiliza varios SSID y cada AP inalámbrico usa la misma configuración de seguridad inalámbrica, repite este paso para agregar el SSID a cada AP inalámbrico al que desees aplicar este perfil.
 
@@ -261,7 +262,7 @@ La pertenencia a **Administradores de dominio**, o equivalente, es lo mínimo ne
 
     1. Para configurar las opciones avanzadas de 802.1X, en **IEEE 802.1X**, activa la opción **Aplicar configuración 802.1X avanzada**.
 
-        Cuando se aplica la configuración avanzada de 802.1 X, los valores predeterminados de ** \- mensajes de inicio de EAPOL máx**., **período de retención**, período de **Inicio**y **período de autenticación** son suficientes para las implementaciones inalámbricas típicas. Por este motivo, no es necesario cambiar los valores predeterminados a menos que tenga una razón concreta para hacerlo.
+        Cuando se aplica la configuración avanzada de 802.1 X, los valores predeterminados de **\- mensajes de inicio de EAPOL máx**., **período de retención**, período de **Inicio** y **período de autenticación** son suficientes para las implementaciones inalámbricas típicas. Por este motivo, no es necesario cambiar los valores predeterminados a menos que tenga una razón concreta para hacerlo.
 
     2. Para habilitar el inicio de sesión único, activa la opción **Habilitar inicio de sesión único en esta red**.
 
@@ -276,9 +277,9 @@ La pertenencia a **Administradores de dominio**, o equivalente, es lo mínimo ne
 11. En **cifrado**, si los adaptadores de red de AP inalámbrico y cliente inalámbrico lo admiten, seleccione **AES-CCMP**. Si usa puntos de acceso y adaptadores de red inalámbrica compatibles con 802.11 AC, seleccione **AES-GCMP**. Si no lo es, selecciona **TKIP**.
 
     > [!NOTE]
-    > La configuración de **autenticación** y **cifrado** debe coincidir con la configuración establecida en los AP inalámbricos. La configuración predeterminada para el **modo de autenticación**, máximo de errores de **autenticación**y **almacenar en caché información de usuario para conexiones posteriores a esta red** es suficiente para las implementaciones inalámbricas típicas.
+    > La configuración de **autenticación** y **cifrado** debe coincidir con la configuración establecida en los AP inalámbricos. La configuración predeterminada para el **modo de autenticación**, máximo de errores de **autenticación** y **almacenar en caché información de usuario para conexiones posteriores a esta red** es suficiente para las implementaciones inalámbricas típicas.
 
-12. En **Seleccione un método de autenticación de red**, seleccione **EAP \( PEAP \) protegido**y, a continuación, haga clic en **propiedades**. Se abre el cuadro de diálogo **propiedades de EAP protegido** .
+12. En **Seleccione un método de autenticación de red**, seleccione **EAP \( PEAP \) protegido** y, a continuación, haga clic en **propiedades**. Se abre el cuadro de diálogo **propiedades de EAP protegido** .
 
 13. En **propiedades de EAP protegido**, confirme que está seleccionada **la opción comprobar la identidad del servidor validando el certificado** .
 
@@ -287,7 +288,7 @@ La pertenencia a **Administradores de dominio**, o equivalente, es lo mínimo ne
     > [!NOTE]
     > Esta configuración limita las CA raíz en las que confían los clientes a las CA seleccionadas. Si no se selecciona ninguna CA raíz de confianza, los clientes confiarán en todas las CA raíz que se enumeran en su almacén de certificados de entidades de certificación raíz de confianza.
 
-15. En la lista **Seleccionar método de autenticación** , selecciona **EAP de contraseña segura \( \- MS \- CHAP V2 \) **.
+15. En la lista **Seleccionar método de autenticación** , selecciona **EAP de contraseña segura \( \- MS \- CHAP V2 \)**.
 
 16. Haga clic en **Configurar**. En el cuadro de diálogo **propiedades de EAP MSCHAPv2** , compruebe que la opción **usar automáticamente mi nombre de inicio de sesión y contraseña \( y \) dominio de Windows si** está seleccionada y haga clic en **Aceptar**.
 
@@ -295,15 +296,15 @@ La pertenencia a **Administradores de dominio**, o equivalente, es lo mínimo ne
 
 18. Para requerir el TLV de cryptobinding de servidor en los intentos de conexión, seleccione **desconectar si el servidor no presenta TLV de cryptobinding**.
 
-19. Para especificar que la identidad del usuario se enmascara en la fase uno de la autenticación, seleccione **Habilitar privacidad de identidad**y, en el cuadro de texto, escriba un nombre de identidad anónima o deje el cuadro de texto en blanco.
+19. Para especificar que la identidad del usuario se enmascara en la fase uno de la autenticación, seleccione **Habilitar privacidad de identidad** y, en el cuadro de texto, escriba un nombre de identidad anónima o deje el cuadro de texto en blanco.
 
     > [! APUNTE
-    > - La Directiva NPS para la red inalámbrica 802.1 X debe crearse mediante la **Directiva de solicitud de conexión**NPS. Si la Directiva NPS se crea con la **Directiva de red**NPS, la privacidad de la identidad no funcionará.
+    > - La Directiva NPS para la red inalámbrica 802.1 X debe crearse mediante la **Directiva de solicitud de conexión** NPS. Si la Directiva NPS se crea con la **Directiva de red** NPS, la privacidad de la identidad no funcionará.
     > - Determinados métodos EAP proporcionan la privacidad de identidad EAP, donde se envía una identidad vacía o anónima \( distinta de la identidad real \) en respuesta a la solicitud de identidad EAP. PEAP envía la identidad dos veces durante la autenticación. En la primera fase, la identidad se envía en texto sin formato y esta identidad se usa para fines de enrutamiento, no para la autenticación de cliente. La identidad real, que se usa para la autenticación, se envía durante la segunda fase de la autenticación, dentro del túnel seguro que se establece en la primera fase. Si la casilla **Habilitar la privacidad de identidad** está activada, el nombre de usuario se reemplaza por la entrada especificada en el cuadro de texto. Por ejemplo, supongamos que está seleccionada la opción **Habilitar privacidad de identidad** y que el alias de privacidad de identidad **anónimo** se especifica en el cuadro de texto. Para un usuario con un alias de identidad real <strong>jdoe@example.com</strong> , la identidad enviada en la primera fase de autenticación se cambiará a <strong>anonymous@example.com</strong> . La parte del dominio Kerberos de la identidad de la primera fase no se modifica, ya que se usa para el enrutamiento.
 
 20. Haga clic en **Aceptar** para cerrar el cuadro de diálogo **propiedades de EAP protegido** .
 21. Haga clic en **Aceptar** para cerrar la pestaña **seguridad** .
-22. Si desea crear perfiles adicionales, haga clic en **Agregar**y, a continuación, repita los pasos anteriores, con distintas opciones para personalizar cada perfil de la red y los clientes inalámbricos a los que desea aplicar el perfil. Cuando haya terminado de agregar perfiles, haga clic en **Aceptar** para cerrar el cuadro de diálogo Propiedades de directiva de red inalámbrica.
+22. Si desea crear perfiles adicionales, haga clic en **Agregar** y, a continuación, repita los pasos anteriores, con distintas opciones para personalizar cada perfil de la red y los clientes inalámbricos a los que desea aplicar el perfil. Cuando haya terminado de agregar perfiles, haga clic en **Aceptar** para cerrar el cuadro de diálogo Propiedades de directiva de red inalámbrica.
 
 En la sección siguiente, puede ordenar los perfiles de directiva para obtener una seguridad óptima.
 
@@ -355,7 +356,7 @@ El requisito mínimo para completar estos procedimientos es la pertenencia al gr
 
 2. En la pestaña **permisos de red** , haga clic en **Agregar**. Se abrirá el cuadro de diálogo **nueva entrada de permisos** .
 
-3. En el cuadro de diálogo **nueva entrada de permiso** , en el campo **nombre de red \( SSID \) ** , escriba el SSID de la red para el que desea definir los permisos.
+3. En el cuadro de diálogo **nueva entrada de permiso** , en el campo **nombre de red \( SSID \)** , escriba el SSID de la red para el que desea definir los permisos.
 
 4.  En **tipo de red**, seleccione **infraestructura** o **ad hoc**.
 
@@ -364,7 +365,7 @@ El requisito mínimo para completar estos procedimientos es la pertenencia al gr
 
 5. En **permiso**, seleccione **permitir** o **denegar**.
 
-6. Haga clic en **Aceptar**para volver a la pestaña **permisos de red** .
+6. Haga clic en **Aceptar** para volver a la pestaña **permisos de red** .
 
 ##### <a name="to-specify-additional-network-permissions-optional"></a>Para especificar los permisos de red adicionales \( opcionales\)
 
@@ -376,7 +377,7 @@ El requisito mínimo para completar estos procedimientos es la pertenencia al gr
 
     - Para permitir a los miembros del dominio ver los tipos de red \( ad hoc o \) la infraestructura a la que se les deniega el acceso, seleccione **permitir al usuario ver las redes denegadas**.
 
-    - Para permitir que los usuarios creen perfiles que se aplican a todos los usuarios, seleccione **permitir a todos crear perfiles de todos**los usuarios.
+    - Para permitir que los usuarios creen perfiles que se aplican a todos los usuarios, seleccione **permitir a todos crear perfiles de todos** los usuarios.
 
     - Para especificar que los usuarios solo pueden conectarse a redes permitidas mediante el uso de perfiles de directiva de grupo, seleccione **usar solo perfiles de directiva de grupo para redes permitidas**.
 
@@ -403,14 +404,14 @@ La pertenencia a **Administradores de dominio**, o equivalente, es lo mínimo ne
 
 #### <a name="to-register-an-nps-in-its-default-domain"></a>Para registrar un NPS en su dominio predeterminado
 
-1. En el NPS, en **Administrador del servidor**, haga clic en **herramientas**y, a continuación, haga clic en **servidor de directivas de redes**. Se abre el complemento NPS \- .
+1. En el NPS, en **Administrador del servidor**, haga clic en **herramientas** y, a continuación, haga clic en **servidor de directivas de redes**. Se abre el complemento NPS \- .
 
-2. Haga clic con el botón secundario \- en **NPS \( \) local**y, a continuación, haga clic en **registrar servidor en Active Directory**. Se abrirá el cuadro de diálogo **Servidor de directivas de redes**.
+2. Haga clic con el botón secundario \- en **NPS \( \) local** y, a continuación, haga clic en **registrar servidor en Active Directory**. Se abrirá el cuadro de diálogo **Servidor de directivas de redes**.
 
 3. En **Servidor de directivas de redes**, haga clic en **Aceptar** y, a continuación, en **Aceptar** de nuevo.
 
 ### <a name="configure-a-wireless-ap-as-an-nps-radius-client"></a><a name="bkmk_radiusclient"></a>Configuración de un punto de conexión inalámbrico como un cliente RADIUS NPS
-Puede usar este procedimiento para configurar un punto de conexión, también conocido como *servidor \( NAS \) de acceso*a la red, como un \- cliente RADIUS de servicio de usuario de acceso telefónico de autenticación remota mediante \( \) el complemento NPS \- .
+Puede usar este procedimiento para configurar un punto de conexión, también conocido como *servidor \( NAS \) de acceso* a la red, como un \- cliente RADIUS de servicio de usuario de acceso telefónico de autenticación remota mediante \( \) el complemento NPS \- .
 
 >[!IMPORTANT]
 >Los equipos cliente, como los equipos portátiles inalámbricos y otros equipos que ejecutan sistemas operativos cliente, no son clientes RADIUS. Los clientes RADIUS son servidores de acceso a la red, como puntos de acceso inalámbricos, \- conmutadores compatibles con 802.1 x, servidores VPN de red privada virtual \( \) y servidores de acceso telefónico, \- porque usan el protocolo RADIUS para comunicarse con servidores RADIUS como NPSs.
@@ -419,9 +420,9 @@ La pertenencia a **Administradores de dominio**, o equivalente, es lo mínimo ne
 
 #### <a name="to-add-a-network-access-server-as-a-radius-client-in-nps"></a>Para agregar un servidor de acceso a la red como cliente RADIUS en NPS
 
-1. En el NPS, en **Administrador del servidor**, haga clic en **herramientas**y, a continuación, haga clic en **servidor de directivas de redes**. Se abre el complemento NPS \- .
+1. En el NPS, en **Administrador del servidor**, haga clic en **herramientas** y, a continuación, haga clic en **servidor de directivas de redes**. Se abre el complemento NPS \- .
 
-2. En el complemento NPS \- , haga doble \- clic en **clientes y servidores RADIUS**. Haga clic con el botón secundario \- en **clientes RADIUS**y, a continuación, haga clic en **nuevo**.
+2. En el complemento NPS \- , haga doble \- clic en **clientes y servidores RADIUS**. Haga clic con el botón secundario \- en **clientes RADIUS** y, a continuación, haga clic en **nuevo**.
 
 3. En **nuevo cliente RADIUS**, compruebe que la casilla **habilitar este cliente RADIUS** está activada.
 
@@ -431,13 +432,13 @@ La pertenencia a **Administradores de dominio**, o equivalente, es lo mínimo ne
 
 5. En **dirección \( IP o DNS \) de dirección**, escriba la dirección IP o el FQDN del nombre de dominio completo \( \) para el NAS.
 
-    Si escribe el FQDN, para comprobar que el nombre es correcto y se asigna a una dirección IP válida, haga clic en **comprobar**y, a continuación, en **Comprobar dirección**, en el campo **Dirección** , haga clic en **resolver**. Si el nombre de FQDN se asigna a una dirección IP válida, la dirección IP de ese NAS aparecerá automáticamente en **dirección IP**. Si el FQDN no se resuelve en una dirección IP, recibirá un mensaje que indica que no se conoce dicho host. Si esto ocurre, compruebe que tiene el nombre de AP correcto y que el AP está encendido y conectado a la red.
+    Si escribe el FQDN, para comprobar que el nombre es correcto y se asigna a una dirección IP válida, haga clic en **comprobar** y, a continuación, en **Comprobar dirección**, en el campo **Dirección** , haga clic en **resolver**. Si el nombre de FQDN se asigna a una dirección IP válida, la dirección IP de ese NAS aparecerá automáticamente en **dirección IP**. Si el FQDN no se resuelve en una dirección IP, recibirá un mensaje que indica que no se conoce dicho host. Si esto ocurre, compruebe que tiene el nombre de AP correcto y que el AP está encendido y conectado a la red.
 
     Haga clic en **Aceptar** para cerrar **Comprobar dirección**.
 
 6. En **nuevo cliente RADIUS**, en **secreto compartido**, realice una de las acciones siguientes:
 
-    - Para configurar manualmente un secreto compartido de RADIUS, seleccione **manual**y, a continuación, en **secreto compartido**, escriba la contraseña segura que se ha escrito también en el servidor NAS. Vuelva a escribir el secreto compartido en **confirmar secreto compartido**.
+    - Para configurar manualmente un secreto compartido de RADIUS, seleccione **manual** y, a continuación, en **secreto compartido**, escriba la contraseña segura que se ha escrito también en el servidor NAS. Vuelva a escribir el secreto compartido en **confirmar secreto compartido**.
 
     - Para generar automáticamente un secreto compartido, active la casilla **generar** y, a continuación, haga clic en el botón **generar** . Guarde el secreto compartido generado y, a continuación, use ese valor para configurar el servidor NAS para que pueda comunicarse con el NPS.
 
@@ -471,23 +472,23 @@ La pertenencia a **Administradores de dominio**, o equivalente, es lo mínimo ne
 
 3. Haga clic en **configurar 802.1 x**. Se abre el Asistente para configurar 802.1 X.
 
-4.  En la página del asistente **Seleccionar tipo de conexión de 802.1 x** , en **tipo de conexiones de 802.1 x**, seleccione **conexiones inalámbricas seguras**y, en **nombre**, escriba un nombre para la Directiva o deje el nombre predeterminado **conexiones inalámbricas seguras**. Haga clic en **Next**.
+4.  En la página del asistente **Seleccionar tipo de conexión de 802.1 x** , en **tipo de conexiones de 802.1 x**, seleccione **conexiones inalámbricas seguras** y, en **nombre**, escriba un nombre para la Directiva o deje el nombre predeterminado **conexiones inalámbricas seguras**. Haga clic en **Next**.
 
 5.  En la página **especificar modificadores de 802.1 x** del asistente, en **clientes RADIUS**, se muestran todos los conmutadores 802.1 x y los puntos de acceso inalámbrico que ha agregado como clientes RADIUS en el complemento NPS \- . Realice alguna de las acciones siguientes:
 
-    - Para agregar servidores de acceso a la red (NAS) adicionales \( \) , como AP inalámbricos, en **clientes RADIUS**, haga clic en **Agregar**y, a continuación, en **nuevo cliente RADIUS**, escriba la información de: **nombre descriptivo**, **dirección \( IP o DNS \) **y **secreto compartido**.
+    - Para agregar servidores de acceso a la red (NAS) adicionales \( \) , como AP inalámbricos, en **clientes RADIUS**, haga clic en **Agregar** y, a continuación, en **nuevo cliente RADIUS**, escriba la información de: **nombre descriptivo**, **dirección \( IP o DNS \)** y **secreto compartido**.
 
     - Para modificar la configuración de cualquier NAS, en **clientes RADIUS**, seleccione el AP para el que desea modificar la configuración y, a continuación, haga clic en **Editar**. Modifique la configuración según sea necesario.
 
     - Para quitar un NAS de la lista, en **clientes RADIUS**, seleccione el NAS y, a continuación, haga clic en **quitar**.
 
         >[!WARNING]
-        >Al quitar un cliente RADIUS en el Asistente para **configurar 802.1 x** , se elimina el cliente de la configuración de NPS. Todas las adiciones, modificaciones y eliminaciones que realice en el Asistente para **configurar 802.1 x** a clientes RADIUS se reflejan en el complemento NPS \- , en el nodo **clientes RADIUS** en **NPS** \/ **servidores y clientes RADIUS**NPS. Por ejemplo, si usa el Asistente para quitar un conmutador 802.1 X, el conmutador también se quita del complemento NPS \- .
+        >Al quitar un cliente RADIUS en el Asistente para **configurar 802.1 x** , se elimina el cliente de la configuración de NPS. Todas las adiciones, modificaciones y eliminaciones que realice en el Asistente para **configurar 802.1 x** a clientes RADIUS se reflejan en el complemento NPS \- , en el nodo **clientes RADIUS** en  \/ **servidores y clientes RADIUS** NPS. Por ejemplo, si usa el Asistente para quitar un conmutador 802.1 X, el conmutador también se quita del complemento NPS \- .
 
-6. Haga clic en **Next**. En la página del asistente **configurar un método de autenticación** , en **tipo \( según el método de acceso y \) configuración de red**, seleccione **Microsoft: EAP protegido \( PEAP \) **y, a continuación, haga clic en **configurar**.
+6. Haga clic en **Next**. En la página del asistente **configurar un método de autenticación** , en **tipo \( según el método de acceso y \) configuración de red**, seleccione **Microsoft: EAP protegido \( PEAP \)** y, a continuación, haga clic en **configurar**.
 
     >[!TIP]
-    >Si recibe un mensaje de error que indica que no se puede encontrar un certificado para su uso con el método de autenticación, y ha configurado Active Directory servicios de Certificate Server para emitir automáticamente certificados para los servidores RAS e IAS de la red. en primer lugar, asegúrese de que ha seguido los pasos para registrar NPS en Active Directory Domain Services. a continuación, siga estos pasos para actualizar directiva de grupo: haga clic en **Inicio**, en **sistema de Windows**, en **Ejecutar**y, en **abrir**, escriba **gpupdate**y presione Entrar. Cuando el comando devuelva resultados que indiquen que el usuario y el equipo directiva de grupo han actualizado correctamente, seleccione **Microsoft: protected EAP \( \) PEAP** de nuevo y, a continuación, haga clic en **configurar**.
+    >Si recibe un mensaje de error que indica que no se puede encontrar un certificado para su uso con el método de autenticación, y ha configurado Active Directory servicios de Certificate Server para emitir automáticamente certificados para los servidores RAS e IAS de la red. en primer lugar, asegúrese de que ha seguido los pasos para registrar NPS en Active Directory Domain Services. a continuación, siga estos pasos para actualizar directiva de grupo: haga clic en **Inicio**, en **sistema de Windows**, en **Ejecutar** y, en **abrir**, escriba **gpupdate** y presione Entrar. Cuando el comando devuelva resultados que indiquen que el usuario y el equipo directiva de grupo han actualizado correctamente, seleccione **Microsoft: protected EAP \( \) PEAP** de nuevo y, a continuación, haga clic en **configurar**.
     >
     >Si después de actualizar directiva de grupo sigue recibiendo el mensaje de error que indica que no se puede encontrar un certificado para su uso con el método de autenticación, el certificado no se muestra porque no cumple los requisitos mínimos de certificados de servidor, como se documenta en la guía complementaria de red principal: [implementación de certificados de servidor para implementaciones cableadas e inalámbricas de 802.1 x](../server-certs/deploy-server-certificates-for-802.1x-wired-and-wireless-deployments.md). Si esto ocurre, debe interrumpir la configuración de NPS, revocar el certificado emitido para los NPS \( \) y, a continuación, seguir las instrucciones para configurar un certificado nuevo mediante la guía de implementación de certificados de servidor.
 
@@ -504,7 +505,7 @@ La pertenencia a **Administradores de dominio**, o equivalente, es lo mínimo ne
 
 8.  Haga clic en **Aceptar**. El cuadro de diálogo Editar propiedades de EAP protegido se cierra y vuelve al Asistente para **configurar 802.1 x** . Haga clic en **Next**.
 
-9. En **especificar grupos de usuarios**, haga clic en **Agregar**y, a continuación, escriba el nombre del grupo de seguridad que configuró para los clientes inalámbricos en el complemento Active Directory usuarios y equipos \- . Por ejemplo, si se denomina Grupo inalámbrico de grupo de seguridad inalámbrica, escriba **Grupo inalámbrico**. Haga clic en **Next**.
+9. En **especificar grupos de usuarios**, haga clic en **Agregar** y, a continuación, escriba el nombre del grupo de seguridad que configuró para los clientes inalámbricos en el complemento Active Directory usuarios y equipos \- . Por ejemplo, si se denomina Grupo inalámbrico de grupo de seguridad inalámbrica, escriba **Grupo inalámbrico**. Haga clic en **Next**.
 
 10. Haga clic en **configurar** para configurar los atributos estándar \- de RADIUS y los atributos específicos del proveedor para la VLAN de LAN virtual \( \) según sea necesario, y según se especifica en la documentación proporcionada por el proveedor de hardware de AP inalámbrico. Haga clic en **Next**.
 
@@ -573,7 +574,7 @@ Cuando el usuario inicia el equipo, Windows solicita al usuario que escriba su n
 5. En **Contraseña**, escriba la contraseña del dominio y, a continuación, haga clic en la flecha o presione Entrar.
 
 >[!NOTE]
->Si la pantalla de **otro usuario** no incluye el **Inicio de sesión** de texto en: y el nombre de dominio, debe escribir el nombre de usuario en el formato * \\ usuario del dominio*. Por ejemplo, para iniciar sesión en el dominio example.com con una cuenta denominada **usuario \- 01**, escriba **example \\ User \- 01**.
+>Si la pantalla de **otro usuario** no incluye el **Inicio de sesión** de texto en: y el nombre de dominio, debe escribir el nombre de usuario en el formato *\\ usuario del dominio*. Por ejemplo, para iniciar sesión en el dominio example.com con una cuenta denominada **usuario \- 01**, escriba **example \\ User \- 01**.
 
 ### <a name="join-the-domain-and-log-on-by-using-bootstrap-wireless-profile-configuration-by-users"></a><a name="bkmk_userbootstrap"></a>Unir el dominio e iniciar sesión mediante la configuración de perfil inalámbrico de bootstrap por parte de los usuarios
 Con este método, complete los pasos de la sección de pasos generales y, a continuación, proporcione a los \- usuarios miembros del dominio instrucciones sobre cómo configurar manualmente un equipo inalámbrico con un perfil inalámbrico de bootstrap. El perfil inalámbrico de Bootstrap permite al usuario establecer una conexión inalámbrica y luego unirse al dominio. Una vez que el equipo se ha unido al dominio y se ha reiniciado, el usuario puede iniciar sesión en el dominio a través de una conexión inalámbrica.
@@ -592,9 +593,9 @@ Con este método, complete los pasos de la sección de pasos generales y, a cont
 
 1. Use las credenciales proporcionadas por el administrador de red o el profesional de soporte técnico de TI para iniciar sesión en el equipo con la cuenta de administrador del equipo local.
 
-2. Haga clic con el botón secundario en \- el icono de red en el escritorio y haga clic en **abrir centro de redes y recursos compartidos**. Se abre **Centro de redes y recursos compartidos**. En **cambiar la configuración de red**, haga clic en **configurar una nueva conexión o red**. Se abre el cuadro de diálogo **configurar una conexión o red** .
+2. Haga clic con el botón secundario en \- el icono de red en el escritorio y haga clic en **abrir centro de redes y recursos compartidos**. Se abre **Centro de redes y recursos compartidos**. En **cambiar la configuración de red**, haga clic en  **configurar una nueva conexión o red**. Se abre el cuadro de diálogo **configurar una conexión o red** .
 
-3. Haga clic en **conectarse manualmente a una red inalámbrica**y, a continuación, haga clic en **siguiente**.
+3. Haga clic en **conectarse manualmente a una red inalámbrica** y, a continuación, haga clic en **siguiente**.
 
 4. En **conectarse manualmente a una red inalámbrica**, en **nombre de red**, escriba el nombre de SSID del punto de conexión.
 
@@ -602,25 +603,25 @@ Con este método, complete los pasos de la sección de pasos generales y, a cont
 
 6. En **tipo de cifrado** y **clave de seguridad**, seleccione o escriba la configuración proporcionada por el administrador.
 
-7. Seleccione **iniciar esta conexión automáticamente**y, a continuación, haga clic en **siguiente**.
+7. Seleccione **iniciar esta conexión automáticamente** y, a continuación, haga clic en **siguiente**.
 
-8. En * se*agregó correctamente * * * el SSID de la red*, haga clic en **Cambiar configuración de conexión**.
+8. En _el SSID de la red_ **agregado correctamente**, haga clic en **Cambiar configuración de conexión**.
 
 9. Haga clic en **Cambiar configuración de conexión**. Se abre el cuadro de diálogo propiedad de red inalámbrica *de SSID de red* .
 
-10. Haga clic en la pestaña **seguridad** y, a continuación, en **elegir un método de autenticación de red**, seleccione **EAP protegido \( PEAP \) **.
+10. Haga clic en la pestaña **seguridad** y, a continuación, en **elegir un método de autenticación de red**, seleccione **EAP protegido \( PEAP \)**.
 
-11. Haga clic en **Configuración**. Se abre la página de ** \( \) propiedades de EAP PEAP protegido** .
+11. Haga clic en **Configuración**. Se abre la página de **\( \) propiedades de EAP PEAP protegido** .
 
-12. En la página de ** \( \) propiedades de EAP protegido PEAP** , asegúrese de que la opción **validar certificado de servidor** no está seleccionada, haga clic en **Aceptar** dos veces y, a continuación, haga clic en **cerrar**.
+12. En la página de **\( \) propiedades de EAP protegido PEAP** , asegúrese de que la opción **validar certificado de servidor** no está seleccionada, haga clic en **Aceptar** dos veces y, a continuación, haga clic en **cerrar**.
 
-13. A continuación, Windows intenta conectarse a la red inalámbrica. La configuración del perfil inalámbrico de bootstrap especifica que debe proporcionar sus credenciales de dominio. Cuando Windows le solicite un nombre de cuenta y una contraseña, escriba las credenciales de la cuenta de dominio de la siguiente manera: nombre de dominio nombre de * \\ usuario*, *contraseña de dominio*.
+13. A continuación, Windows intenta conectarse a la red inalámbrica. La configuración del perfil inalámbrico de bootstrap especifica que debe proporcionar sus credenciales de dominio. Cuando Windows le solicite un nombre de cuenta y una contraseña, escriba las credenciales de la cuenta de dominio de la siguiente manera: nombre de dominio nombre de  *\\ usuario*,  *contraseña de dominio*.
 
 ##### <a name="to-join-a-computer-to-the-domain"></a>Para unir un equipo al dominio
 
 1. Inicie sesión en el equipo con la cuenta de administrador local.
 
-2. En el cuadro de texto buscar, escriba **PowerShell**. En resultados de la búsqueda, haga clic con el botón derecho en **Windows PowerShell**y, a continuación, haga clic en **Ejecutar como administrador**. Windows PowerShell se abre con un símbolo del sistema con privilegios elevados.
+2. En el cuadro de texto buscar, escriba **PowerShell**. En resultados de la búsqueda, haga clic con el botón derecho en **Windows PowerShell** y, a continuación, haga clic en **Ejecutar como administrador**. Windows PowerShell se abre con un símbolo del sistema con privilegios elevados.
 
 3. En Windows PowerShell, escriba el siguiente comando y presione ENTRAR. Asegúrese de reemplazar la variable DomainName por el nombre del dominio al que desea unirse.
 

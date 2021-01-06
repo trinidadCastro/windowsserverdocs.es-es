@@ -1,16 +1,17 @@
 ---
 title: Novedades de redes
 description: En este tema se proporciona información general sobre las nuevas características y tecnologías de las funciones de red en Windows Server 2016
-ms.topic: get-started-article
+ms.topic: how-to
 ms.assetid: 08fb7563-d319-48a9-b181-ca0ca3032c18
 author: dcuomo
 ms.author: dacuo
-ms.openlocfilehash: 69e1fee1a8ae0ff1c878c64790650290b4804351
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.date: 08/07/2020
+ms.openlocfilehash: 45654f1c75705bf4b1cc8b773527c37f11fb7f72
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87993822"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949231"
 ---
 # <a name="whats-new-in-networking"></a>Novedades de redes
 
@@ -47,7 +48,7 @@ A continuación se indican las tecnologías de infraestructura de SDN nuevas o m
 
     -   **Puerta de enlace ras**. Puede usar la puerta de enlace RAS para enrutar el tráfico entre las redes virtuales y las redes físicas, incluidas las conexiones VPN de sitio a sitio desde el centro de servicios en la nube a los sitios remotos de los inquilinos. En concreto, puede implementar Intercambio de claves por red redes privadas virtuales (VPN) de sitio a sitio de la versión 2 (IKEv2), VPN de nivel 3 (L3) y de encapsulación de enrutamiento genérico (GRE). Además, ahora se admiten los grupos de puertas de enlace y la redundancia M + N de las puertas de enlace; y Protocolo de puerta de enlace de borde (BGP) con capacidades de reflector de rutas proporciona enrutamiento dinámico entre redes para todos los escenarios de puerta de enlace (VPN IKEv2, VPN GRE y VPN L3).
 
-        Para obtener más información, consulte [novedades de puerta de enlace ras](sdn/technologies/network-function-virtualization/What-s-New-in-RAS-Gateway.md) y [puerta de enlace ras para Sdn](sdn/technologies/network-function-virtualization/RAS-Gateway-for-SDN.md).
+        Para obtener más información, consulte  [novedades de puerta de enlace ras](sdn/technologies/network-function-virtualization/What-s-New-in-RAS-Gateway.md) y [puerta de enlace ras para Sdn](sdn/technologies/network-function-virtualization/RAS-Gateway-for-SDN.md).
 
     - **Load balancer de software (SLB) y traducción de direcciones de red (NAT)**. El equilibrador de carga de nivel 4 norte-sur y este-oeste de Europa mejora el rendimiento al admitir Direct Server Return, con el que el tráfico de red devuelto puede omitir el multiplexor de equilibrio de carga.
        Para obtener más información, consulte [equilibrio de carga de Software &#40;SLB&#41; para Sdn](./sdn/technologies/network-function-virtualization/software-load-balancing-for-sdn.md).
@@ -116,7 +117,7 @@ A continuación se indican las tecnologías de servidor DNS nuevas o mejoradas.
 
 Para obtener más información, consulta [What's New in DNS Server in Windows server 2016](dns/What-s-New-in-DNS-Server.md)
 
-## <a name="gre-tunneling"></a><a name="bkmk_GRE"></a>Túnel GRE
+## <a name="gre-tunneling"></a><a name="bkmk_GRE"></a>Tunelización de GRE
 La puerta de enlace RAS admite ahora túneles de encapsulación de enrutamiento genérico (GRE) de alta disponibilidad para las conexiones de sitio a sitio y la redundancia M + N de las puertas de enlace. GRE es un protocolo de túnel ligero que puede encapsular una amplia variedad de protocolos de capa de red dentro de los vínculos de punto a punto virtuales en una conexión entre redes de protocolo de Internet.
 
 Para obtener más información, consulte [tunelización de GRE en Windows Server 2016](../remote/remote-access/ras-gateway/gre-tunneling-windows-server.md).

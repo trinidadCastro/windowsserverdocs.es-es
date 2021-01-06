@@ -2,16 +2,17 @@
 title: Alta disponibilidad de la puerta de enlace de RAS
 description: Puede usar este tema para obtener información sobre las configuraciones de alta disponibilidad para la puerta de enlace multiinquilino de RAS para redes definidas por software (SDN) en Windows Server 2016.
 manager: grcusanz
-ms.topic: get-started-article
+ms.topic: how-to
 ms.assetid: 34d826c9-65bc-401f-889d-cf84e12f0144
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: 0bdf116aeb8f154290b528b9ba96fbb4a8b34426
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 81eab7d646626d705ae8c57b022309c4864bf6d7
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969562"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948841"
 ---
 # <a name="ras-gateway-high-availability"></a>Alta disponibilidad de la puerta de enlace de RAS
 
@@ -55,7 +56,7 @@ Cada grupo tiene las siguientes propiedades.
 
 -   Puede asignar una sola dirección IP pública a todos los grupos o a un subconjunto de grupos. Al hacerlo, se reduce en gran medida el número de direcciones IP públicas que se deben usar, ya que es posible que todos los inquilinos se conecten a la nube en una única dirección IP. En la sección siguiente sobre alta disponibilidad y equilibrio de carga se describe cómo funciona esto.
 
--   Puede escalar o reducir verticalmente un grupo de puerta de enlace fácilmente agregando o quitando máquinas virtuales de puerta de enlace en el grupo. La eliminación o adición de puertas de enlace no interrumpe los servicios proporcionados por un grupo. También puede Agregar y quitar grupos de puertas de enlace completos.
+-   Puede escalar o reducir verticalmente un grupo de puertas de enlace fácilmente agregando o quitando máquinas virtuales de puerta de enlace del grupo. La eliminación o adición de puertas de enlace no interrumpe los servicios que proporciona un grupo. También puede agregar y quitar grupos de puertas de enlace completos.
 
 -   Las conexiones de un solo inquilino pueden finalizar en varios grupos y en varias puertas de enlace de un grupo. Sin embargo, si un inquilino tiene conexiones finalizando en un grupo de puerta de enlace de **todos los** tipos, no se puede suscribir a otros grupos de puerta de enlace **de tipo o** de tipo individual.
 

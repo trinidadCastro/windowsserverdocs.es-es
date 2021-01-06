@@ -3,16 +3,16 @@ description: Más información acerca de la calidad de servicio de almacenamient
 title: Calidad de servicio de almacenamiento
 manager: dongill
 ms.author: JGerend
-ms.topic: get-started-article
+ms.topic: how-to
 ms.assetid: 8dcb8cf9-0e08-4fdd-9d7e-ec577ce8d8a0
 author: kumudd
 ms.date: 10/10/2016
-ms.openlocfilehash: f4cb836cd76933b400e472d10adfeda47b717c0b
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 238c7df7b3c821721c259a266016a3edc21a2a34
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97050393"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948931"
 ---
 # <a name="storage-quality-of-service"></a>Calidad de servicio de almacenamiento
 

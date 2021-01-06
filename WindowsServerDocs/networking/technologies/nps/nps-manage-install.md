@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 4842a4ab-70bb-4744-bea7-70f2ac892ad1
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 8335c4a5a7f42fa33182a78e3dcb6777f76f6483
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: d982ddfe05ec9df3429de4997aaddc4d0b850072
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953941"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948301"
 ---
 # <a name="install-network-policy-server"></a>Instalación del servidor de directivas de redes
 
@@ -43,7 +44,7 @@ Para llevar a cabo este procedimiento con Windows PowerShell, ejecute Windows Po
 
 4.  En **Seleccionar servidor de destino**, asegúrese de que la opción **Seleccionar un servidor del grupo de servidores** está seleccionada. En **Grupo de servidores**, asegúrese de que el equipo local está seleccionado. Haga clic en **Next**.
 
-5.  En **Seleccionar roles de servidor**, en **roles**, seleccione **servicios de acceso y directivas de redes**. Se abre un cuadro de diálogo en el que se pregunta si debe agregar características necesarias para servicios de acceso y directivas de redes. Haga clic en **Agregar características**y, a continuación, en **siguiente** .
+5.  En **Seleccionar roles de servidor**, en **roles**, seleccione **servicios de acceso y directivas de redes**. Se abre un cuadro de diálogo en el que se pregunta si debe agregar características necesarias para servicios de acceso y directivas de redes. Haga clic en **Agregar características** y, a continuación, en **siguiente** .
 
 6.  En **Seleccionar características**, haga clic en **Siguiente**. En **Servicios de acceso y directivas de redes**, repase la información proporcionada y haga clic en **Siguiente**.
 

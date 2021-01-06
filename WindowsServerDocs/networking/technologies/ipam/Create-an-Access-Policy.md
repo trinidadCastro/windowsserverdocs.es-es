@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 854bd064-2f86-4678-a940-a04b3e48ae10
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: d454bef1a6bc15b5f8a6f2e6f78773785ad5af69
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: be09d4a056482f7506d7f6d8f79443e8589877c5
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87966572"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949061"
 ---
 # <a name="create-an-access-policy"></a>Crear una directiva de acceso
 
@@ -26,9 +27,9 @@ El requisito mínimo para realizar este procedimiento es la pertenencia al grupo
 
 ### <a name="to-create-an-access-policy"></a>Para crear una directiva de acceso
 
-1.  En Administrador del servidor, haga clic en **IPAM**. Aparece la consola de cliente de IPAM.
+1.  En Administrador del servidor, haga clic en  **IPAM**. Aparece la consola de cliente de IPAM.
 
-2.  En el panel de navegación, haga clic en **control de acceso**. En el panel de navegación inferior, haga clic con el botón secundario en **directivas de acceso**y, a continuación, haga clic en **Agregar Directiva de acceso**.
+2.  En el panel de navegación, haga clic en **control de acceso**. En el panel de navegación inferior, haga clic con el botón secundario en **directivas de acceso** y, a continuación, haga clic en **Agregar Directiva de acceso**.
 
     ![Agregar Directiva de acceso](../../media/Create-an-Access-Policy/ipam_CreateAP_01.jpg)
 
@@ -62,7 +63,7 @@ El requisito mínimo para realizar este procedimiento es la pertenencia al grupo
 
     ![Agregar nueva configuración](../../media/Create-an-Access-Policy/ipam_CreateAP_08.jpg)
 
-11. El rol se agrega a la Directiva de acceso. Para crear directivas de acceso adicionales, haga clic en **aplicar**y repita estos pasos para cada una de las directivas que desee crear. Si no desea crear directivas adicionales, haga clic en **Aceptar**.
+11. El rol se agrega a la Directiva de acceso. Para crear directivas de acceso adicionales, haga clic en **aplicar** y repita estos pasos para cada una de las directivas que desee crear. Si no desea crear directivas adicionales, haga clic en **Aceptar**.
 
     ![Haga clic en aplicar o en Aceptar.](../../media/Create-an-Access-Policy/ipam_CreateAP_09.jpg)
 

@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 0115b7ad-d229-4c69-9d7e-a3f5fbaa3b2f
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: f2d005b6fde9d0e0f5bc41d96d2bc0fe4276ab46
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.date: 08/07/2020
+ms.openlocfilehash: 7e4483218c35a99f898701fbdd7fdbe86b021206
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990221"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949101"
 ---
 # <a name="hyper-v-network-virtualization-overview-in-windows-server-2016"></a>Información general de virtualización de red de Hyper-V en Windows Server 2016
 
@@ -129,12 +130,12 @@ A continuación se muestra una lista de la funcionalidad, las ventajas y las cap
 ## <a name="software-requirements"></a><a name="BKMK_SOFT"></a>Requisitos de software
 La virtualización de red de Hyper-V que usa la controladora de red de Microsoft requiere Windows Server 2016 y el rol Hyper-V.
 
-## <a name="see-also"></a><a name="BKMK_LINKS"></a>Vea también
+## <a name="see-also"></a><a name="BKMK_LINKS"></a>Otras referencias
 Para obtener más información acerca de la virtualización de red de Hyper-V en Windows Server 2016, consulte los siguientes vínculos:
 
 
 |       Tipo de contenido       |                                                                                                                                Referencias                                                                                                                                |
 |--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Recursos de la comunidad**  |     -   [Blog de arquitectura de nube privada](/archive/blogs/privatecloud/cloud-datacenter-network-architecture-in-the-windows-server-8-era)<br />-Formule preguntas:[cloudnetfb@microsoft.com](mailto:%20cloudnetfb@microsoft.com)     |
+| **Recursos de la comunidad**  |     -   [Blog de arquitectura de nube privada](/archive/blogs/privatecloud/cloud-datacenter-network-architecture-in-the-windows-server-8-era)<br />-Formule preguntas: [cloudnetfb@microsoft.com](mailto:%20cloudnetfb@microsoft.com)     |
 |         **RFC**          |                                                                                                     -VXLAN- [RFC 7348](https://www.rfc-editor.org/info/rfc7348)                                                                                                      |
 | **Tecnologías relacionadas** | -   [Controladora de red](../../../sdn/technologies/network-controller/../../../sdn/technologies/network-controller/Network-Controller.md)<br />-   [Información general de virtualización de red de Hyper-V](assetId:///bf1dba9d-1960-4dd2-a5e2-99466a02044b) (Windows Server 2012 R2) |

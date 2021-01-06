@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 70357156-fcb0-4346-a61e-4ea963e3ffb0
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 165db880f36f4cf4559d746ed99f7e6a2d87c21d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: b2381f72a8ca2c65c1a80f01788d33a81c83e8ad
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969162"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948221"
 ---
 # <a name="step-5-configure-dc1"></a>Paso 5 configurar DC1
 
@@ -29,17 +30,17 @@ Para configurar el acceso remoto para que use una topología multisitio, es nece
 
 ## <a name="to-configure-the-default-gateway-on-the-domain-controller"></a>Para configurar la puerta de enlace predeterminada en el controlador de dominio
 
-1.  En la consola de Administrador del servidor, haga clic en **servidor local**y, a continuación, en el área **propiedades** , junto a **conexión cableada Ethernet**, haga clic en el vínculo.
+1.  En la consola de Administrador del servidor, haga clic en **servidor local** y, a continuación, en el área **propiedades** , junto a **conexión cableada Ethernet**, haga clic en el vínculo.
 
-2.  En la ventana conexiones de red, haga clic con el botón secundario en **conexión cableada Ethernet**y, a continuación, haga clic en **propiedades**.
+2.  En la ventana conexiones de red, haga clic con el botón secundario en **conexión cableada Ethernet** y, a continuación, haga clic en **propiedades**.
 
 3.  Haga clic en **Protocolo de Internet versión 4 (TCP/IPv4)** y, a continuación, en **Propiedades**.
 
-4.  En **puerta de enlace predeterminada**, escriba **10.0.0.254**y, en **servidor DNS alternativo**, escriba **10.2.0.1**y, a continuación, haga clic en **Aceptar**.
+4.  En **puerta de enlace predeterminada**, escriba **10.0.0.254** y, en **servidor DNS alternativo**, escriba **10.2.0.1** y, a continuación, haga clic en **Aceptar**.
 
 5.  Haga clic en **Protocolo de Internet versión 6 (TCP/IPv6)** y, a continuación, haga clic en **Propiedades**.
 
-6.  En **puerta de enlace predeterminada**, escriba **2001: db8:1:: fe**y, en **servidor DNS alternativo**, escriba **2001: db8:2:: 1**y, a continuación, haga clic en **Aceptar**.
+6.  En **puerta de enlace predeterminada**, escriba **2001: db8:1:: fe** y, en **servidor DNS alternativo**, escriba **2001: db8:2:: 1** y, a continuación, haga clic en **Aceptar**.
 
 7.  En el cuadro de diálogo **propiedades de conexión cableada Ethernet** , haga clic en **cerrar**.
 
@@ -52,9 +53,9 @@ Cree los grupos de seguridad de DirectAccess para Windows 7 con el procedimiento
 
 ### <a name="create-security-groups"></a>Crear grupos de seguridad
 
-1.  En la pantalla **Inicio** , escriba**DSA. msc**y, a continuación, presione Entrar.
+1.  En la pantalla **Inicio** , escriba **DSA. msc** y, a continuación, presione Entrar.
 
-2.  En el panel izquierdo, expanda **Corp.contoso.com**, haga clic en **usuarios**, haga clic con el botón secundario en **usuarios**, seleccione **nuevo**y, a continuación, haga clic en **Grupo**.
+2.  En el panel izquierdo, expanda **Corp.contoso.com**, haga clic en **usuarios**, haga clic con el botón secundario en **usuarios**, seleccione **nuevo** y, a continuación, haga clic en **Grupo**.
 
 3.  En el cuadro de diálogo **nuevo objeto-grupo** , en **nombre de grupo**, escriba **Win7_Clients_Site1**.
 
@@ -64,11 +65,11 @@ Cree los grupos de seguridad de DirectAccess para Windows 7 con el procedimiento
 
 6.  En la pestaña **Miembros**, haga clic en **Agregar**.
 
-7.  En el cuadro de diálogo **Seleccionar usuarios, contactos, equipos o cuentas de servicio** , haga clic en **tipos de objeto**. En el cuadro de diálogo **tipos de objeto** , seleccione **equipos**y, a continuación, haga clic en **Aceptar**.
+7.  En el cuadro de diálogo **Seleccionar usuarios, contactos, equipos o cuentas de servicio** , haga clic en **tipos de objeto**. En el cuadro de diálogo **tipos de objeto** , seleccione **equipos** y, a continuación, haga clic en **Aceptar**.
 
-8.  En **Escriba los nombres de objeto que desea seleccionar**, escriba **cliente2**y, a continuación, haga clic en **Aceptar**y, a continuación, en el cuadro de diálogo **propiedades de Win7_Clients_Site1** , haga clic en **Aceptar**.
+8.  En **Escriba los nombres de objeto que desea seleccionar**, escriba **cliente2** y, a continuación, haga clic en **Aceptar** y, a continuación, en el cuadro de diálogo **propiedades de Win7_Clients_Site1** , haga clic en **Aceptar**.
 
-9. En la consola de **Active Directory usuarios y equipos** , en el panel izquierdo, haga clic con el botón secundario en **usuarios**, seleccione **nuevo**y, a continuación, haga clic en **Grupo**.
+9. En la consola de **Active Directory usuarios y equipos** , en el panel izquierdo, haga clic con el botón secundario en **usuarios**, seleccione **nuevo** y, a continuación, haga clic en **Grupo**.
 
 10. En el cuadro de diálogo **nuevo objeto-grupo** , en **nombre de grupo**, escriba **Win7_Clients_Site2**.
 
@@ -78,29 +79,29 @@ Cree los grupos de seguridad de DirectAccess para Windows 7 con el procedimiento
 
 ## <a name="to-add-a-new-ad-ds-site"></a>Para agregar un nuevo sitio AD DS
 
-1.  En la pantalla **Inicio** , escriba**Dssite. msc**y, a continuación, presione Entrar.
+1.  En la pantalla **Inicio** , escriba **Dssite. msc** y, a continuación, presione Entrar.
 
-2.  En la consola sitios y servicios de Active Directory, en el árbol de consola, haga clic con el botón secundario en **sitios**y, a continuación, haga clic en **nuevo sitio**.
+2.  En la consola sitios y servicios de Active Directory, en el árbol de consola, haga clic con el botón secundario en **sitios** y, a continuación, haga clic en **nuevo sitio**.
 
 3.  En el cuadro de diálogo **nuevo objeto-sitio** , en el cuadro **nombre** , escriba **segundo-sitio**.
 
-4.  En el cuadro de lista, haga clic en **DEFAULTIPSITELINK**y, a continuación, haga clic en **Aceptar** dos veces.
+4.  En el cuadro de lista, haga clic en **DEFAULTIPSITELINK** y, a continuación, haga clic en **Aceptar** dos veces.
 
-5.  En el árbol de consola, expanda **sitios**, haga clic con el botón secundario en **subredes**y, a continuación, haga clic en **nueva subred**.
+5.  En el árbol de consola, expanda **sitios**, haga clic con el botón secundario en **subredes** y, a continuación, haga clic en **nueva subred**.
 
-6.  En el cuadro de diálogo **nuevo objeto-subred** , en **prefijo**, escriba **10.0.0.0/24**, en la lista **Seleccione un objeto de sitio para este prefijo** , haga clic en **Default-First-Site-Name**y, a continuación, haga clic en **Aceptar**.
+6.  En el cuadro de diálogo **nuevo objeto-subred** , en **prefijo**, escriba **10.0.0.0/24**, en la lista **Seleccione un objeto de sitio para este prefijo** , haga clic en **Default-First-Site-Name** y, a continuación, haga clic en **Aceptar**.
 
-7.  En el árbol de consola, haga clic con el botón secundario en **subredes**y, a continuación, haga clic en **nueva subred**.
+7.  En el árbol de consola, haga clic con el botón secundario en **subredes** y, a continuación, haga clic en **nueva subred**.
 
-8.  En el cuadro de diálogo **nuevo objeto-subred** , en **prefijo**, escriba **2001: db8:1::/64**, en la lista **Seleccione un objeto de sitio para este prefijo** , haga clic en **Default-First-Site-Name**y, a continuación, haga clic en **Aceptar**.
+8.  En el cuadro de diálogo **nuevo objeto-subred** , en **prefijo**, escriba **2001: db8:1::/64**, en la lista **Seleccione un objeto de sitio para este prefijo** , haga clic en **Default-First-Site-Name** y, a continuación, haga clic en **Aceptar**.
 
-9. En el árbol de consola, haga clic con el botón secundario en **subredes**y, a continuación, haga clic en **nueva subred**.
+9. En el árbol de consola, haga clic con el botón secundario en **subredes** y, a continuación, haga clic en **nueva subred**.
 
-10. En el cuadro de diálogo **nuevo objeto-subred** , en **prefijo**, escriba **10.2.0.0/24**, en la lista **Seleccione un objeto de sitio para este prefijo** , haga clic en **segundo sitio**y, a continuación, haga clic en **Aceptar**.
+10. En el cuadro de diálogo **nuevo objeto-subred** , en **prefijo**, escriba **10.2.0.0/24**, en la lista **Seleccione un objeto de sitio para este prefijo** , haga clic en **segundo sitio** y, a continuación, haga clic en **Aceptar**.
 
-11. En el árbol de consola, haga clic con el botón secundario en **subredes**y, a continuación, haga clic en **nueva subred**.
+11. En el árbol de consola, haga clic con el botón secundario en **subredes** y, a continuación, haga clic en **nueva subred**.
 
-12. En el cuadro de diálogo **nuevo objeto-subred** , en **prefijo**, escriba **2001: db8:2::/64**, en la lista **Seleccione un objeto de sitio para este prefijo** , haga clic en **segundo sitio**y, a continuación, haga clic en **Aceptar**.
+12. En el cuadro de diálogo **nuevo objeto-subred** , en **prefijo**, escriba **2001: db8:2::/64**, en la lista **Seleccione un objeto de sitio para este prefijo** , haga clic en **segundo sitio** y, a continuación, haga clic en **Aceptar**.
 
 13. Cierre Sitios y servicios de Active Directory.
 

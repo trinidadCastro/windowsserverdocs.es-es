@@ -2,16 +2,17 @@
 title: Configurar el rol de servidor de Servicios de archivo
 description: Obtenga información sobre cómo implementar servidores de contenido basados en servidor de archivos de BranchCache en equipos que ejecutan Windows Server 2016 y el rol de servidor servicios de archivo con el servicio de rol BranchCache para archivos de red instalado.
 manager: brianlic
-ms.topic: get-started-article
+ms.topic: how-to
 ms.assetid: 68b0f5a0-1ae8-489e-b8f8-1190267a0e1d
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: d0d54417f46855be6da0f155540f7e3096a7e84e
-ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
+ms.date: 01/05/2021
+ms.openlocfilehash: d54749ba59e31715f01e06611bd5980f878c8c39
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97904701"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948481"
 ---
 # <a name="configure-the-file-services-server-role"></a>Configurar el rol de servidor de Servicios de archivo
 

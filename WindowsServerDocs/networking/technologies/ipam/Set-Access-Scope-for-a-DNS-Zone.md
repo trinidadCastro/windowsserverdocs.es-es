@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 6a211dde-80eb-4888-b5bb-4e28fe8dc7df
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 155e21bae4045f094696a8193966469f09a8b6ea
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 168bb1be14d51b2728c2a2c258a7fad55362bfb9
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87944667"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948721"
 ---
 # <a name="set-access-scope-for-a-dns-zone"></a>Establecer el ámbito de acceso para una zona DNS
 
@@ -23,7 +24,7 @@ El requisito mínimo para realizar este procedimiento es la pertenencia al grupo
 
 ### <a name="to-set-the-access-scope-for-a-dns-zone"></a>Para establecer el ámbito de acceso para una zona DNS
 
-1.  En Administrador del servidor, haga clic en **IPAM**. Aparece la consola de cliente de IPAM.
+1.  En Administrador del servidor, haga clic en  **IPAM**. Aparece la consola de cliente de IPAM.
 
 2.  En el panel de navegación, haga clic en **zonas DNS**. En el panel de información, haga clic con el botón secundario en la zona DNS cuyo ámbito de acceso desea cambiar y, a continuación, haga clic en **establecer ámbito de acceso**.
 

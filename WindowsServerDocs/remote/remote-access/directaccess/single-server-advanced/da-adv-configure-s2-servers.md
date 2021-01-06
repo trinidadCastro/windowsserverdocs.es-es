@@ -1,17 +1,18 @@
 ---
 title: Paso 2 configuración de servidores de DirectAccess avanzados
-description: Este tema forma parte de la guía implementar un único servidor de DirectAccess con configuración avanzada para Windows Server 2016
+description: Obtenga información sobre cómo configurar las opciones de cliente y servidor necesarias para una implementación de acceso remoto avanzado que use un único servidor de acceso remoto en un entorno mixto de IPv4 e IPv6.
 manager: brianlic
 ms.topic: article
 ms.assetid: 35afec8e-39a4-463b-839a-3c300ab01174
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 8b2ae3691ff0181dc4559692829febbbdba94c86
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.date: 08/07/2020
+ms.openlocfilehash: 163437c8e78c5c6753b7d7db82ded5cc263e0d15
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989820"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949831"
 ---
 # <a name="step-2-configure-advanced-directaccess-servers"></a>Paso 2 configuración de servidores de DirectAccess avanzados
 
@@ -50,7 +51,7 @@ Para implementar acceso remoto debes instalar el rol de acceso remoto en un serv
 
 6.  En la página **Progreso de la instalación**, comprueba que la instalación se ha completado correctamente y haz clic en **Cerrar**.
 
-![Progreso de la instalación correctos](../../../media/Step-2-Configuring-DirectAccess-Servers/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***
+![Progreso de la instalación correctos ](../../../media/Step-2-Configuring-DirectAccess-Servers/PowerShellLogoSmall.gif) * *_<em>comandos equivalentes de Windows PowerShell</em>_* _
 
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.
 
@@ -71,7 +72,7 @@ Esta guía usa una implementación de solo DirectAccess en los procedimientos de
 
 #### <a name="to-configure-the-deployment-type"></a>Para configurar el tipo de implementación
 
-1.  En el servidor de acceso remoto, abra la consola de administración de acceso remoto: en la pantalla **Inicio** , escriba**RAMgmtUI.exe**y, a continuación, presione Entrar. Si aparece el cuadro de diálogo **Control de cuentas de usuario**, confirme que la acción que se muestra es la esperada y, a continuación, haga clic en **Sí**.
+1.  En el servidor de acceso remoto, abra la consola de administración de acceso remoto: en la pantalla _ *iniciar**, escriba **RAMgmtUI.exe** y, a continuación, presione Entrar. Si aparece el cuadro de diálogo **Control de cuentas de usuario**, confirme que la acción que se muestra es la esperada y, a continuación, haga clic en **Sí**.
 
 2.  En el panel central de la consola de administración de acceso remoto, haz clic en **Ejecutar el Asistente para la instalación de acceso remoto**.
 
@@ -202,7 +203,7 @@ Cuando completes la configuración de acceso remoto verás el cuadro de diálogo
 
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.
 
-Para realizar una instalación completa en una topología perimetral de acceso remoto para DirectAccess solo en un dominio con el **Corp.contoso.com** raíz y con los parámetros siguientes: GPO de servidor: **configuración de servidor de DirectAccess**, GPO de cliente: configuración de cliente de DirectAccess, adaptador de red interno: **CorpNet**, adaptador de red externo: **Internet**, dirección ConnectTo: **edge1.contoso.com**y servidor de ubicación de red: **NLS.Corp.contoso.com**:
+Para realizar una instalación completa en una topología perimetral de acceso remoto para DirectAccess solo en un dominio con el **Corp.contoso.com** raíz y con los parámetros siguientes: GPO de servidor: **configuración de servidor de DirectAccess**, GPO de cliente: configuración de cliente de DirectAccess, adaptador de red interno: **CorpNet**, adaptador de red externo: **Internet**, dirección ConnectTo: **edge1.contoso.com** y servidor de ubicación de red: **NLS.Corp.contoso.com**:
 
 ```
 Install-RemoteAccess -Force -PassThru -ServerGpoName 'corp.contoso.com\DirectAccess Server Settings' -ClientGpoName 'corp.contoso.com\DirectAccess Client Settings' -DAInstallType 'FullInstall' -InternetInterface 'Internet' -InternalInterface 'Corpnet' -ConnectToAddress 'edge1.contoso.com' -NlsUrl 'https://nls.corp.contoso.com/'

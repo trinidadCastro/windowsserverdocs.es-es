@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 4acdc3ad-078e-45cc-b54c-e9456e0c90f5
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: e93c05f4e4a8709e71ac65195983ab0637fcd547
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.date: 08/07/2020
+ms.openlocfilehash: 512653a98ff887b6d7f7d5c1af59ee5310a4df46
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865384"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97950181"
 ---
 # <a name="install-the-certification-authority"></a>Instalar la entidad de certificación
 
@@ -50,7 +51,7 @@ El requisito mínimo para completar este procedimiento es la pertenencia al grup
 
 4.  En **Seleccionar tipo de instalación**, asegúrese de que la opción **Instalación basada en características o en roles** está seleccionada y, a continuación, haga clic en **Siguiente**.
 
-5.  En **Seleccionar servidor de destino**, asegúrese de que la opción **Seleccionar un servidor del grupo de servidores** está seleccionada. En **Grupo de servidores**, asegúrese de que el equipo local está seleccionado. Haga clic en **Siguiente**.
+5.  En **Seleccionar servidor de destino**, asegúrese de que la opción **Seleccionar un servidor del grupo de servidores** está seleccionada. En **Grupo de servidores**, asegúrese de que el equipo local está seleccionado. Haga clic en **Next**.
 
 6.  En **Seleccionar roles de servidor**, en **roles**, seleccione **Active Directory servicios de Certificate** Server. Cuando se le pida que agregue las características necesarias, haga clic en **Agregar características** y, a continuación, haga clic en **siguiente**.
 
@@ -58,7 +59,7 @@ El requisito mínimo para completar este procedimiento es la pertenencia al grup
 
 8.  En **Active Directory servicios de Certificate Server**, lea la información proporcionada y, a continuación, haga clic en **siguiente**.
 
-9. En **Confirmar selecciones de instalación**, haga clic en **Instalar**. No cierre el asistente durante el proceso de instalación. Una vez finalizada la instalación, haga clic en **configurar servicios de Certificate server Active Directory en el servidor de destino**. Se abre el Asistente para configuración de AD CS. Lea la información de las credenciales y, si es necesario, proporcione las credenciales de una cuenta que sea miembro del grupo administradores de empresas. Haga clic en **Siguiente**.
+9. En **Confirmar selecciones de instalación**, haga clic en **Instalar**. No cierre el asistente durante el proceso de instalación. Una vez finalizada la instalación, haga clic en **configurar servicios de Certificate server Active Directory en el servidor de destino**. Se abre el Asistente para configuración de AD CS. Lea la información de las credenciales y, si es necesario, proporcione las credenciales de una cuenta que sea miembro del grupo administradores de empresas. Haga clic en **Next**.
 
 10. En **servicios de rol**, haga clic en **entidad de certificación** y, a continuación, en **siguiente**.
 
@@ -68,12 +69,12 @@ El requisito mínimo para completar este procedimiento es la pertenencia al grup
 
 13. En la página **especificar el tipo de la clave privada** , compruebe que la opción **crear una nueva clave privada** está seleccionada y, a continuación, haga clic en **siguiente**.
 
-14. En la página **Criptografía para CA** , mantenga la configuración predeterminada de CSP (**RSA # proveedor de almacenamiento de claves de software de Microsoft**) y el algoritmo hash (**sha2**) y determine la mejor longitud de caracteres de clave para la implementación. Las longitudes de caracteres de clave grande proporcionan una seguridad óptima. sin embargo, pueden afectar al rendimiento del servidor y puede que no sean compatibles con las aplicaciones heredadas. Se recomienda que mantenga el valor predeterminado de 2048. Haga clic en **Siguiente**.
+14. En la página **Criptografía para CA** , mantenga la configuración predeterminada de CSP (**RSA # proveedor de almacenamiento de claves de software de Microsoft**) y el algoritmo hash (**sha2**) y determine la mejor longitud de caracteres de clave para la implementación. Las longitudes de caracteres de clave grande proporcionan una seguridad óptima. sin embargo, pueden afectar al rendimiento del servidor y puede que no sean compatibles con las aplicaciones heredadas. Se recomienda que mantenga el valor predeterminado de 2048. Haga clic en **Next**.
 
-15. En la página **nombre de CA** , conserve el nombre común sugerido para la CA o cambie el nombre de acuerdo con sus requisitos. Asegúrese de que el nombre de la entidad de certificación es compatible con las convenciones de nomenclatura y los propósitos, ya que no se puede cambiar el nombre de la entidad de certificación después de haber instalado AD CS. Haga clic en **Siguiente**.
+15. En la página **nombre de CA** , conserve el nombre común sugerido para la CA o cambie el nombre de acuerdo con sus requisitos. Asegúrese de que el nombre de la entidad de certificación es compatible con las convenciones de nomenclatura y los propósitos, ya que no se puede cambiar el nombre de la entidad de certificación después de haber instalado AD CS. Haga clic en **Next**.
 
-16. En la página **período de validez** , en **especifique el período de validez**, escriba el número y seleccione un valor de tiempo (años, meses, semanas o días). Se recomienda el valor predeterminado de cinco años. Haga clic en **Siguiente**.
+16. En la página **período de validez** , en **especifique el período de validez**, escriba el número y seleccione un valor de tiempo (años, meses, semanas o días). Se recomienda el valor predeterminado de cinco años. Haga clic en **Next**.
 
-17. En la página **base de datos de CA** , en **Especifique las ubicaciones de base de datos**, especifique la ubicación de la carpeta para la base de datos de certificados y el registro de base de datos de certificados. Si especifica ubicaciones distintas de las ubicaciones predeterminadas, asegúrese de que las carpetas estén protegidas mediante listas de control de acceso (ACL) que impidan que usuarios o equipos no autorizados tengan acceso a los archivos de registro y la base de datos de la entidad de certificación. Haga clic en **Siguiente**.
+17. En la página **base de datos de CA** , en **Especifique las ubicaciones de base de datos**, especifique la ubicación de la carpeta para la base de datos de certificados y el registro de base de datos de certificados. Si especifica ubicaciones distintas de las ubicaciones predeterminadas, asegúrese de que las carpetas estén protegidas mediante listas de control de acceso (ACL) que impidan que usuarios o equipos no autorizados tengan acceso a los archivos de registro y la base de datos de la entidad de certificación. Haga clic en **Next**.
 
 18. En **confirmación**, haga clic en **configurar** para aplicar las selecciones y, a continuación, haga clic en **cerrar**.

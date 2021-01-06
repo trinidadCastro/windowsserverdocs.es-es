@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: fc77450e-2af1-47ba-bb23-1fd36d9efdbf
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: e178521d47ebcc152853f34ae01e72cb9d2fdd48
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 1bf956a38a15581f1aa2fd257778eccd5e1cf087
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952100"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949881"
 ---
 # <a name="verify-configuration-after-nps-changes"></a>Comprobar la configuración después de que NPS cambie
 
@@ -27,7 +28,7 @@ Si cambia una dirección IP de NPS o proxy, es necesario volver a configurar par
 
 Use las siguientes directrices generales para ayudarle a comprobar que un cambio de dirección IP no interrumpa la autenticación, autorización o cuentas de acceso a la red en la red para los servidores RADIUS NPS y los servidores proxy RADIUS.
 
-Para realizar estos procedimientos, debe ser miembro del **grupo administradores**o equivalente.
+Para realizar estos procedimientos, debe ser miembro del **grupo administradores** o equivalente.
 
 ### <a name="to-verify-configuration-after-an-nps-ip-address-change"></a>Para comprobar la configuración después de un cambio de dirección IP de NPS
 
@@ -49,9 +50,9 @@ Para realizar estos procedimientos, debe ser miembro del **grupo administradores
 
 3. Volver a configurar todos los miembros de todos los grupos de servidores RADIUS remotos con la dirección IP del servidor proxy. Para realizar esta tarea, en cada NPS que tenga el proxy NPS configurado como cliente RADIUS:
 
-    a. Haga doble clic en **NPS (local)**, haga doble clic en **clientes y servidores RADIUS**, haga clic en **clientes RADIUS**y, a continuación, en el panel de detalles, haga doble clic en el cliente RADIUS que desee cambiar.
+    a. Haga doble clic en **NPS (local)**, haga doble clic en **clientes y servidores RADIUS**, haga clic en **clientes RADIUS** y, a continuación, en el panel de detalles, haga doble clic en el cliente RADIUS que desee cambiar.
 
-    b. En **propiedades**de cliente RADIUS, en **dirección \( IP o \) DNS**, escriba la nueva dirección IP del proxy NPS.
+    b. En **propiedades** de cliente RADIUS, en **dirección \( IP o \) DNS**, escriba la nueva dirección IP del proxy NPS.
 
 4. Si ha configurado el proxy NPS para usar el registro de SQL Server, compruebe que la conectividad entre el equipo que ejecuta SQL Server y el proxy NPS siga funcionando correctamente.
 
@@ -63,7 +64,7 @@ Si cambia un nombre de servidor proxy o NPS, es necesario volver a configurar pa
 
 Utilice las siguientes directrices generales para ayudarle a comprobar que un cambio de nombre de servidor no interrumpa la autenticación, autorización o cuentas de acceso a la red.
 
-Para llevar a cabo este procedimiento, debe ser miembro del **grupo administradores**o equivalente.
+Para llevar a cabo este procedimiento, debe ser miembro del **grupo administradores** o equivalente.
 
 ### <a name="to-verify-configuration-after-an-nps-or-proxy-name-change"></a>Para comprobar la configuración después de un cambio de nombre de proxy o NPS
 

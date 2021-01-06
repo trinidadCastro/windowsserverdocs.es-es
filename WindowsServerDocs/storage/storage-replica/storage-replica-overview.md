@@ -3,16 +3,16 @@ description: 'Más información acerca de: Introducción a réplica de almacenam
 title: Información general sobre Réplica de almacenamiento
 manager: siroy
 ms.author: nedpyle
-ms.topic: get-started-article
+ms.topic: how-to
 author: nedpyle
 ms.date: 4/26/2019
 ms.assetid: e9b18e14-e692-458a-a39f-d5b569ae76c5
-ms.openlocfilehash: 9761117c4fe12450d658297edd411094546d883e
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: cd516e6d762df920c7f43843240ea2045a67753b
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97043273"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948601"
 ---
 # <a name="storage-replica-overview"></a>Información general sobre Réplica de almacenamiento
 
@@ -87,23 +87,23 @@ La réplica de almacenamiento incluye las siguientes características:
 | Característica | Detalles |
 | ----------- | ----------- |
 | Tipo | Base en host |
-| Sincrónica | Yes |
-| Asincrónica | Yes |
-| Independiente del hardware de almacenamiento | Yes |
+| Sincrónico | Sí |
+| Asincrónica | Sí |
+| Independiente del hardware de almacenamiento | Sí |
 | Unidad de replicación | Volumen (partición) |
-| Creación de clústeres de stretch de Windows Server | Yes |
-| Replicación de servidor a servidor | Yes |
+| Creación de clústeres de stretch de Windows Server | Sí |
+| Replicación de servidor a servidor | Sí |
 | Replicación de clúster a clúster | Sí |
 | Transporte | SMB3 |
 | Red | TCP/IP o RDMA |
-| Compatibilidad con restricción de red | Yes |
+| Compatibilidad con restricción de red | Sí |
 | RDMA* | iWARP, InfiniBand, RoCE v2 |
 | Requisitos de firewall de puertos de red de replicación | Puerto único de IANA (TCP 445 o 5445) |
 | Múltiples rutas o multicanal | Sí (SMB3) |
 | Compatibilidad con Kerberos | Sí (SMB3) |
 | Cifrado y firma por cable|Sí (SMB3) |
-| Conmutaciones por error permitidas por cada volumen | Yes |
-| Compatibilidad con almacenamiento de aprovisionamiento fino | Yes |
+| Conmutaciones por error permitidas por cada volumen | Sí |
+| Compatibilidad con almacenamiento de aprovisionamiento fino | Sí |
 | Interfaz de usuario de administración incluida | PowerShell, Administrador de clústeres de conmutación por error |
 
 *Puede requerir equipos y cableado adicionales de largo alcance.

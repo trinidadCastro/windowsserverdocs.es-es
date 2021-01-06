@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: d6d1ca5e-bde0-4509-9e14-dc3fa9ff447e
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 7def3b69ca638525f53a8286c5cfdf235b2531e3
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: edfdb534843b7b9b81fffb2d0712c65542e6ed3a
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952080"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949331"
 ---
 # <a name="access-permission"></a>Permiso de acceso
 
@@ -31,7 +32,7 @@ También se concede o se deniega el permiso de acceso en función de la configur
 >[!NOTE]
 >Las cuentas de usuario y sus propiedades, como las propiedades de acceso telefónico, se configuran en el Active Directory usuarios y equipos o en el complemento MMC de Microsoft Management Console usuarios y grupos locales \( \) , en función de si tiene &reg; instalado Active Directory servicios de dominio (AD DS).
 
-El **permiso de acceso a la red**configuración de la cuenta de usuario, que se configura en las propiedades de acceso telefónico de las cuentas de usuario, invalida la configuración de permisos de acceso a la Directiva de red. Cuando el permiso de acceso a la red en una cuenta de usuario se establece en la opción **Controlar acceso a través de la Directiva de red NPS** , el valor de permiso de acceso a la Directiva de red determina si se concede o se deniega el acceso al usuario.
+El **permiso de acceso a la red** configuración de la cuenta de usuario, que se configura en las propiedades de acceso telefónico de las cuentas de usuario, invalida la configuración de permisos de acceso a la Directiva de red. Cuando el permiso de acceso a la red en una cuenta de usuario se establece en la opción **Controlar acceso a través de la Directiva de red NPS** , el valor de permiso de acceso a la Directiva de red determina si se concede o se deniega el acceso al usuario.
 
 >[!NOTE]
 >En Windows Server 2016, el valor predeterminado de **permiso de acceso a la red** en AD DS propiedades de acceso telefónico de la cuenta de usuario es **controlar el acceso a través de la Directiva de red NPS**.

@@ -6,18 +6,19 @@ ms.topic: article
 ms.assetid: f009fdd1-94e6-4ccb-8c6e-609a5394db53
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 48d45189becb9fe874f88d3e43262a86c8762e09
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 28c612e3e4b2df5095dcf4abe6f081e11d8722dd
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87944335"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97950021"
 ---
 # <a name="step-3-install-and-configure-client2"></a>Paso 3 instalación y configuración de cliente2
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Cliente2 es un equipo de Windows 7 &reg; que se usa para mostrar la compatibilidad con versiones anteriores de acceso remoto que se ejecuta en servidores de Windows Server 2016.
+Cliente2 es un equipo de Windows 7 &reg;  que se usa para mostrar la compatibilidad con versiones anteriores de acceso remoto que se ejecuta en servidores de Windows Server 2016.
 
 1. Para instalar el sistema operativo en cliente2. Instale Windows &reg; 7 Enterprise o Windows &reg; 7 Ultimate en cliente2.
 
@@ -50,7 +51,7 @@ Al configurar el sistema operativo Windows 7, es necesario hacer clic en **conti
 
 3.  En el cuadro de diálogo **Propiedades del sistema**, en la pestaña **Nombre de equipo** haz clic en **Cambiar**.
 
-4.  En el cuadro de diálogo cambios en el **dominio o el nombre del equipo** , haga clic en **dominio**, escriba **Corp.contoso.com**y, a continuación, haga clic en **Aceptar**.
+4.  En el cuadro de diálogo cambios en el **dominio o el nombre del equipo** , haga clic en **dominio**, escriba **Corp.contoso.com** y, a continuación, haga clic en **Aceptar**.
 
 5.  Cuando se le pida un nombre de usuario y una contraseña, escriba el nombre de usuario y la contraseña de la cuenta de dominio user1 y, a continuación, haga clic en **Aceptar**.
 
@@ -58,6 +59,6 @@ Al configurar el sistema operativo Windows 7, es necesario hacer clic en **conti
 
 7.  Cuando vea un cuadro de diálogo que le pida que reinicie el equipo, haga clic en **Aceptar**.
 
-8.  En el cuadro de diálogo **propiedades del sistema** , haga clic en **cerrar**y, cuando vea un cuadro de diálogo que le pide que reinicie el equipo, haga clic en **reiniciar ahora**.
+8.  En el cuadro de diálogo **propiedades del sistema** , haga clic en **cerrar** y, cuando vea un cuadro de diálogo que le pide que reinicie el equipo, haga clic en **reiniciar ahora**.
 
 9. Una vez reiniciado el equipo, inicie sesión como CORP\User1.

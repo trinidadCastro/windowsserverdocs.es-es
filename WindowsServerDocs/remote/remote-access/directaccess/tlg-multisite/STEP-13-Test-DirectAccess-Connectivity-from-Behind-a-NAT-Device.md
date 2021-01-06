@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 796825c3-5e3e-4745-a921-25ab90b95ede
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 2dde684d81d898f1c6327c60c3f10112641991ee
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 3ad38999df70c7ed8e6088687723090911dccbff
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955232"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97950041"
 ---
 # <a name="step-13-test-directaccess-connectivity-from-behind-a-nat-device"></a>Paso 13 probar la conectividad de DirectAccess desde detrás de un dispositivo NAT
 
@@ -34,13 +35,13 @@ Antes de realizar estas pruebas, desconecte CLIENT1 y cliente2 del conmutador de
 
 1. En CLIENT1, abra una ventana de Windows PowerShell con privilegios elevados.
 
-2. Habilite el adaptador de Teredo, escriba **netsh interface Teredo Set State enterpriseclient**y, a continuación, presione Entrar.
+2. Habilite el adaptador de Teredo, escriba **netsh interface Teredo Set State enterpriseclient** y, a continuación, presione Entrar.
 
 3. En la ventana de Windows PowerShell, escriba **ipconfig/all** y presione Entrar.
 
 4. Examina el resultado del comando ipconfig.
 
-   El equipo está ahora conectado a Internet desde detrás de un dispositivo NAT y se le ha asignado una dirección IPv4 privada. Cuando el cliente de DirectAccess está detrás de un dispositivo NAT y se le asigna una dirección IPv4 privada, la tecnología de transición IPv6 preferida es Teredo. Si observa la salida del comando ipconfig, debería ver una sección para la Pseudointerfaz de tunelización Teredo del adaptador de túnel y, a continuación, una descripción del adaptador de túnel Teredo de Microsoft, con una dirección IP que empieza por 2001:0 coherente y que es una dirección Teredo. Debería ver la puerta de enlace predeterminada indicada para el adaptador de túnel Teredo como "::".
+   El equipo está ahora conectado a Internet desde detrás de un dispositivo NAT y se le ha asignado una dirección IPv4 privada. Cuando el cliente de DirectAccess está detrás de un dispositivo NAT y se le asigna una dirección IPv4 privada, la tecnología de transición IPv6 preferida es Teredo. Si observa la salida del comando ipconfig, debería ver una sección para la tunelización Teredo del adaptador de túnel Pseudo-Interface y, a continuación, una descripción del adaptador de túnel Teredo de Microsoft, con una dirección IP que empieza por 2001:0 coherente y que es una dirección Teredo. Debería ver la puerta de enlace predeterminada indicada para el adaptador de túnel Teredo como "::".
 
 5. En la ventana de Windows PowerShell, escriba **ipconfig/flushdns** y presione Entrar.
 
@@ -48,7 +49,7 @@ Antes de realizar estas pruebas, desconecte CLIENT1 y cliente2 del conmutador de
 
 6. En la ventana de Windows PowerShell, escriba **ping app1** y presione Entrar. Deberías ver respuestas de la dirección IPv6 de APP1, 2001:db8:1::3.
 
-7. En la ventana de Windows PowerShell, escriba **ping App2** y presione Entrar. Debería ver las respuestas de la dirección NAT64 asignada por EDGE1 a APP2, que en este caso es FD**C9:9f4e: eb1b**: South:: A00:4. Tenga en cuenta que los valores en negrita variarán debido a cómo se genera la dirección.
+7. En la ventana de Windows PowerShell, escriba **ping App2** y presione Entrar. Debería ver las respuestas de la dirección NAT64 asignada por EDGE1 a APP2, que en este caso es FD **C9:9f4e: eb1b**: South:: A00:4. Tenga en cuenta que los valores en negrita variarán debido a cómo se genera la dirección.
 
 8. En la ventana de Windows PowerShell, escriba **ping 2-app1** y presione Entrar. Debería ver las respuestas de la dirección IPv6 de 2 a APP1, 2001: db8:2:: 3.
 
@@ -56,7 +57,7 @@ Antes de realizar estas pruebas, desconecte CLIENT1 y cliente2 del conmutador de
 
 10. En la barra de direcciones de Internet Explorer, escriba **https://app2/** y presione Entrar. Verás el sitio web predeterminado en APP2.
 
-11. En la pantalla **Inicio** , escriba<strong> \\ \App2\Files</strong>y, a continuación, presione Entrar. Haz doble clic en el archivo Nuevo documento de texto. Esto demuestra que has sido capaz de conectarte a un servidor solo IPv4 utilizando SMB para obtener un recurso en un host solo IPv4.
+11. En la pantalla **Inicio** , escriba <strong> \\ \App2\Files</strong>y, a continuación, presione Entrar. Haz doble clic en el archivo Nuevo documento de texto. Esto demuestra que has sido capaz de conectarte a un servidor solo IPv4 utilizando SMB para obtener un recurso en un host solo IPv4.
 
 12. Repita este procedimiento en cliente2.
 
@@ -72,7 +73,7 @@ Antes de realizar estas pruebas, desconecte CLIENT1 y cliente2 del conmutador de
 
 5. En la ventana de Windows PowerShell, escriba **ping app1** y presione Entrar. Deberías ver respuestas de la dirección IPv6 de APP1, 2001:db8:1::3.
 
-6. En la ventana de Windows PowerShell, escriba **ping App2** y presione Entrar. Debería ver las respuestas de la dirección NAT64 asignada por EDGE1 a APP2, que en este caso es FD**C9:9f4e: eb1b**: South:: A00:4. Tenga en cuenta que los valores en negrita variarán debido a cómo se genera la dirección.
+6. En la ventana de Windows PowerShell, escriba **ping App2** y presione Entrar. Debería ver las respuestas de la dirección NAT64 asignada por EDGE1 a APP2, que en este caso es FD **C9:9f4e: eb1b**: South:: A00:4. Tenga en cuenta que los valores en negrita variarán debido a cómo se genera la dirección.
 
 7. En la ventana de Windows PowerShell, escriba **ping 2-app1** y presione Entrar. Debería ver las respuestas de la dirección IPv6 de 2 a APP1, 2001: db8:2:: 3.
 
@@ -80,7 +81,7 @@ Antes de realizar estas pruebas, desconecte CLIENT1 y cliente2 del conmutador de
 
 9. En la barra de direcciones de Internet Explorer, escriba **https://app2/** y presione Entrar. Verás el sitio web predeterminado en APP2.
 
-10. En la pantalla **Inicio** , escriba<strong> \\ \App2\Files</strong>y, a continuación, presione Entrar. Haz doble clic en el archivo Nuevo documento de texto. Esto demuestra que has sido capaz de conectarte a un servidor solo IPv4 utilizando SMB para obtener un recurso en un host solo IPv4.
+10. En la pantalla **Inicio** , escriba <strong> \\ \App2\Files</strong>y, a continuación, presione Entrar. Haz doble clic en el archivo Nuevo documento de texto. Esto demuestra que has sido capaz de conectarte a un servidor solo IPv4 utilizando SMB para obtener un recurso en un host solo IPv4.
 
 11. Repita este procedimiento en cliente2.
 

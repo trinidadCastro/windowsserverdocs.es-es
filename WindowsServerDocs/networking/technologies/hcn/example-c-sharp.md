@@ -4,12 +4,13 @@ description: Ejemplo de código C# generado para el objeto de subred & IPAM de n
 ms.author: daschott
 author: daschott
 ms.date: 11/05/2018
-ms.openlocfilehash: 915105b62ad1b42aeb24f9389ff247d5cb491485
-ms.sourcegitcommit: 0b3d6661c44aa1a697087e644437279142726d84
+ms.topic: article
+ms.openlocfilehash: 8852e09751116fa53286913045d6ffb0502a93e1
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90083716"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948781"
 ---
 # <a name="example-of-c-generated-code"></a>Ejemplo de código generado C#
 

@@ -1,17 +1,18 @@
 ---
 title: Paso 1 configurar la infraestructura de DirectAccess
-description: Este tema forma parte de la guía agregar DirectAccess a una implementación de acceso remoto (VPN) existente para Windows Server 2016
+description: Obtenga información acerca de cómo configurar la infraestructura necesaria para habilitar DirectAccess en una implementación de VPN existente.
 manager: brianlic
 ms.topic: article
 ms.assetid: 5dc529f7-7bc3-48dd-b83d-92a09e4055c4
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: a93302ee89bf8c4b9a78fc6651e77fb566d1e9c6
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.date: 08/07/2020
+ms.openlocfilehash: 340ba7eb9862931a8ad89ccbe5a719413558777a
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996998"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949851"
 ---
 # <a name="step-1-configure-the-directaccess-infrastructure"></a>Paso 1 configurar la infraestructura de DirectAccess
 
@@ -82,7 +83,7 @@ Si usas firewalls adicionales, aplica las siguientes excepciones del firewall co
 
 Si usa firewalls adicionales, aplique las siguientes excepciones de firewall de la red interna para el tráfico de acceso remoto:
 
--   ISATAP-protocolo 41 entrante y saliente
+-   ISATAP-Protocol 41 de entrada y de salida
 
 -   TCP/UDP para todo el tráfico IPv4/IPv6
 
@@ -138,7 +139,7 @@ Asegúrate de que el certificado de sitio web utilizado para la autenticación I
 
 ##### <a name="to-install-the-ip-https-certificate-from-an-internal-ca"></a>Cómo instalar el certificado IP-HTTPS desde una CA interna
 
-1.  En el servidor de acceso remoto: en la pantalla **Inicio** , escriba**mmc.exe**y, a continuación, presione Entrar.
+1.  En el servidor de acceso remoto: en la pantalla **Inicio** , escriba **mmc.exe** y, a continuación, presione Entrar.
 
 2.  En el menú **Archivo** de la consola MMC, haga clic en **Agregar o quitar complemento**.
 
@@ -181,9 +182,9 @@ Debes configurar manualmente una entrada DNS para el sitio web del servidor de u
 
 4.  En el cuadro de diálogo **Host nuevo**, en el cuadro **Nombre (si se deja en blanco, se usa el nombre del dominio primario)**, escribe el nombre DNS del sondeo web (el nombre del sondeo web predeterminado es directaccess-webprobehost). En el cuadro **Dirección IP**, escribe la dirección IPv4 del sondeo web y haz clic en **Agregar host**. Repite este proceso para directaccess-corpconnectivityhost y todos los comprobadores de conectividad creados manualmente. En el cuadro de diálogo **DNS**, haz clic en **Aceptar**.
 
-5.  Haga clic en **Done**(Listo).
+5.  Haga clic en **Listo**.
 
-![](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)***<em>Comandos equivalentes</em> de Windows PowerShell Windows PowerShell***
+![](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif) * *_<em>Comandos equivalentes</em>_* de Windows PowerShell para Windows PowerShell _
 
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.
 
@@ -194,7 +195,7 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
 
 También debes configurar entradas DNS para los siguiente:
 
--   **El servidor IP-https**: los clientes de DirectAccess deben ser capaces de resolver el nombre DNS del servidor de acceso remoto desde Internet.
+-   _ * El servidor IP-HTTPS * *: los clientes de DirectAccess deben ser capaces de resolver el nombre DNS del servidor de acceso remoto desde Internet.
 
 -   **Comprobación de revocación de CRL**: DirectAccess usa la comprobación de revocación de certificados para la conexión IP-https entre los clientes de DirectAccess y el servidor de acceso remoto, y para la conexión basada en https entre el cliente de DirectAccess y el servidor de ubicación de red. En ambos casos, los clientes de DirectAccess deben ser capaces de resolver y acceder a la ubicación del punto de distribución de CRL.
 
@@ -209,7 +210,7 @@ El servidor de acceso remoto y todos los equipos cliente de DirectAccess deben e
 
 #### <a name="to-join-client-computers-to-the-domain"></a>Cómo unir equipos cliente al dominio
 
-1.  En la pantalla **Inicio** , escriba **explorer.exe**y, a continuación, presione Entrar.
+1.  En la pantalla **Inicio** , escriba **explorer.exe** y, a continuación, presione Entrar.
 
 2.  Haz clic con el botón secundario en el icono del equipo y, a continuación, haz clic en **Propiedades**.
 
@@ -227,7 +228,7 @@ El servidor de acceso remoto y todos los equipos cliente de DirectAccess deben e
 
 9. En el cuadro de diálogo **Propiedades del sistema**, haga clic en Cerrar. Haz clic en **Reiniciar ahora** cuando se te solicite.
 
-![](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)***<em>Comandos equivalentes</em> de Windows PowerShell Windows PowerShell***
+![](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif) * *_<em>Comandos equivalentes</em>_* de Windows PowerShell para Windows PowerShell _
 
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.
 
@@ -259,7 +260,7 @@ La configuración de DirectAccess contenida en el objeto de directiva de grupo e
 
 ### <a name="to-create-a-security-group-for-directaccess-clients"></a><a name="Sec_Group"></a>Cómo crear un grupo de seguridad para clientes de DirectAccess
 
-1.  En la pantalla **Inicio** , escriba**DSA. msc**y, a continuación, presione Entrar. En la consola **Usuarios y equipos de Active Directory**, en el panel izquierdo, expande el dominio que contendrá el grupo de seguridad, haz clic con el botón secundario en **Usuarios**, elige **Nuevo** y haz clic en **Grupo**.
+1.  En la pantalla _ *iniciar**, escriba **DSA. msc** y, a continuación, presione Entrar. En la consola **Usuarios y equipos de Active Directory**, en el panel izquierdo, expande el dominio que contendrá el grupo de seguridad, haz clic con el botón secundario en **Usuarios**, elige **Nuevo** y haz clic en **Grupo**.
 
 2.  En el cuadro de diálogo **Nuevo objeto: Grupo**, en **Nombre de grupo**, escribe el nombre de grupo de seguridad.
 
@@ -301,7 +302,7 @@ El servidor de ubicación de red debe encontrarse en un servidor con alta dispon
 
 #### <a name="to-install-the-network-location-server-certificate-from-an-internal-ca"></a>Cómo instalar el certificado de servidor de ubicación de red desde una CA interna
 
-1.  En el servidor que hospedará el sitio web del servidor de ubicación de red: en la pantalla **Inicio** , escriba**mmc.exe**y, a continuación, presione Entrar.
+1.  En el servidor que hospedará el sitio web del servidor de ubicación de red: en la pantalla **Inicio** , escriba **mmc.exe** y, a continuación, presione Entrar.
 
 2.  En el menú **Archivo** de la consola MMC, haga clic en **Agregar o quitar complemento**.
 

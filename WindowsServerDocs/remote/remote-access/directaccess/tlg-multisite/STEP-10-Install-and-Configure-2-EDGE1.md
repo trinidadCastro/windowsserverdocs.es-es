@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: d98d6f7a-a2e6-45b1-9c63-08e2986a5c03
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: d8e91a2a56234435b29198daf9dc90de8d39c659
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 5d23399ac8eb3836dc7054f1e64311ca022a6fd4
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87958553"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949211"
 ---
 # <a name="step-10-install-and-configure-2-edge1"></a>PASO 10: instalación y configuración de 2-EDGE1
 
@@ -47,33 +48,33 @@ ms.locfileid: "87958553"
 
 ## <a name="configure-tcpip-properties"></a><a name="tcpip"></a>Configurar las propiedades TCP/IP
 
-1.  En la consola de Administrador del servidor, haga clic en **servidor local**y, a continuación, en el área **propiedades** , junto a **conexión cableada Ethernet**, haga clic en el vínculo.
+1.  En la consola de Administrador del servidor, haga clic en **servidor local** y, a continuación, en el área **propiedades** , junto a **conexión cableada Ethernet**, haga clic en el vínculo.
 
-2.  En **conexiones de red**, haga clic con el botón secundario en la conexión de red que está conectada a la subred 2-CorpNet, haga clic en **cambiar nombre**, escriba **2-CorpNet**y, a continuación, presione Entrar.
+2.  En **conexiones de red**, haga clic con el botón secundario en la conexión de red que está conectada a la subred 2-CorpNet, haga clic en **cambiar nombre**, escriba **2-CorpNet** y, a continuación, presione Entrar.
 
-3.  Haga clic con el botón secundario en **2-CorpNet**y, a continuación, haga clic en **propiedades**.
+3.  Haga clic con el botón secundario en **2-CorpNet** y, a continuación, haga clic en **propiedades**.
 
 4.  Haga clic en **Protocolo de Internet versión 4 (TCP/IPv4)** y, a continuación, en **Propiedades**.
 
 5.  Haga clic en **Usar la siguiente dirección IP**. En **dirección IP**, escriba **10.2.0.20**, en **máscara de subred**, escriba **255.255.255.0**.
 
-6.  Haga clic en **Usar las siguientes direcciones de servidor DNS**. En **servidor DNS preferido**, escriba **10.2.0.1**y, en **servidor DNS alternativo**, escriba **10.0.0.1**.
+6.  Haga clic en **Usar las siguientes direcciones de servidor DNS**. En **servidor DNS preferido**, escriba **10.2.0.1** y, en **servidor DNS alternativo**, escriba **10.0.0.1**.
 
-7.  Haga clic en ** Opciones avanzadas** y, a continuación, haga clic en la pestaña **DNS**.
+7.  Haga clic en **Opciones avanzadas** y, a continuación, haga clic en la pestaña **DNS**.
 
-8.  En **sufijo DNS para esta conexión**, escriba **Corp2.Corp.contoso.com**y, a continuación, haga clic en **Aceptar** dos veces.
+8.  En **sufijo DNS para esta conexión**, escriba **Corp2.Corp.contoso.com** y, a continuación, haga clic en **Aceptar** dos veces.
 
 9. Haga clic en **Protocolo de Internet versión 6 (TCP/IPv6)** y, a continuación, haga clic en **Propiedades**.
 
-10. Haga clic en **usar la siguiente dirección IPv6**. En **dirección IPv6**, escriba **2001: db8:2:: 20**, en **longitud de prefijo de subred**, escriba **64**. Haga clic en **usar las siguientes direcciones de servidor DNS**y, en **servidor DNS preferido**, escriba **2001: db8:2:: 1**, en **servidor DNS alternativo**, escriba **2001: db8:1:: 1**.
+10. Haga clic en **usar la siguiente dirección IPv6**. En **dirección IPv6**, escriba **2001: db8:2:: 20**, en **longitud de prefijo de subred**, escriba **64**. Haga clic en **usar las siguientes direcciones de servidor DNS** y, en **servidor DNS preferido**, escriba **2001: db8:2:: 1**, en **servidor DNS alternativo**, escriba **2001: db8:1:: 1**.
 
-11. Haga clic en ** Opciones avanzadas** y, a continuación, haga clic en la pestaña **DNS**.
+11. Haga clic en **Opciones avanzadas** y, a continuación, haga clic en la pestaña **DNS**.
 
-12. En **sufijo DNS para esta conexión**, escriba **Corp2.Corp.contoso.com**y, a continuación, haga clic en **Aceptar** dos veces.
+12. En **sufijo DNS para esta conexión**, escriba **Corp2.Corp.contoso.com** y, a continuación, haga clic en **Aceptar** dos veces.
 
 13. En el cuadro de diálogo **2-propiedades de la red corporativa** , haga clic en **cerrar**.
 
-14. En la ventana **conexiones de red** , haga clic con el botón secundario en la conexión de red que está conectada a la subred de Internet, haga clic en **cambiar nombre**, escriba **Internet**y, a continuación, presione Entrar.
+14. En la ventana **conexiones de red** , haga clic con el botón secundario en la conexión de red que está conectada a la subred de Internet, haga clic en **cambiar nombre**, escriba **Internet** y, a continuación, presione Entrar.
 
 15. Haga clic con el botón secundario en **Internet** y, a continuación, haga clic en **Propiedades**.
 
@@ -81,7 +82,7 @@ ms.locfileid: "87958553"
 
 17. Haga clic en **Usar la siguiente dirección IP**. En **dirección IP**, escriba **131.107.0.20**. En **Máscara de subred**, escriba **255.255.255.0**.
 
-18. Haga clic en **Avanzado**. En la ficha **Configuración de IP**, en el área **Direcciones IP**, haga clic en **Agregar**. En el cuadro de diálogo **Dirección TCP/IP** , en tipo de **dirección IP** **131.107.0.21**, en **máscara de subred** , escriba **255.255.255.0**y, a continuación, haga clic en **Agregar**.
+18. Haga clic en **Avanzadas**. En la ficha **Configuración de IP**, en el área **Direcciones IP**, haga clic en **Agregar**. En el cuadro de diálogo **Dirección TCP/IP** , en tipo de **dirección IP** **131.107.0.21**, en **máscara de subred** , escriba **255.255.255.0** y, a continuación, haga clic en **Agregar**.
 
 19. Haga clic en la pestaña **DNS**.
 
@@ -91,7 +92,7 @@ ms.locfileid: "87958553"
 
 ## <a name="configure-routing-between-subnets"></a><a name="routing"></a>Configurar el enrutamiento entre subredes
 
-1.  En la pantalla **Inicio** , escriba**cmd.exe**y, a continuación, presione Entrar.
+1.  En la pantalla **Inicio** , escriba **cmd.exe** y, a continuación, presione Entrar.
 
 2.  En la ventana del símbolo del sistema, escriba los siguientes comandos. Después de escribir cada comando, presione Entrar.
 
@@ -112,7 +113,7 @@ ms.locfileid: "87958553"
 
 2.  En el cuadro de diálogo **Propiedades del sistema**, en la pestaña **Nombre de equipo** haz clic en **Cambiar**.
 
-3.  En el cuadro de diálogo cambios en el **dominio o el nombre del equipo** , en **nombre de equipo**, escriba **2-EDGE1**. En **miembro de**, haga clic en **dominio**, escriba **Corp2.Corp.contoso.com**y, a continuación, haga clic en **Aceptar**.
+3.  En el cuadro de diálogo cambios en el **dominio o el nombre del equipo** , en **nombre de equipo**, escriba **2-EDGE1**. En **miembro de**, haga clic en **dominio**, escriba **Corp2.Corp.contoso.com** y, a continuación, haga clic en **Aceptar**.
 
 4.  Si se le pide un nombre de usuario y una contraseña, escriba **Administrador** y su contraseña y, a continuación, haga clic en **Aceptar**.
 
@@ -124,11 +125,11 @@ ms.locfileid: "87958553"
 
 8.  Cuando se le pida que reinicie el equipo, haga clic en **Reiniciar ahora**.
 
-9. Una vez reiniciado el equipo, haga clic en **cambiar de usuario**y, a continuación, haga clic en **otro usuario** e inicie sesión en el dominio CORP2 con la cuenta de administrador.
+9. Una vez reiniciado el equipo, haga clic en **cambiar de usuario** y, a continuación, haga clic en **otro usuario** e inicie sesión en el dominio CORP2 con la cuenta de administrador.
 
 ## <a name="obtain-certificates-on-2-edge1"></a><a name="certs"></a>Obtención de certificados en 2 EDGE1
 
-1.  En la pantalla **Inicio** , escriba**mmc.exe**y, a continuación, presione Entrar.
+1.  En la pantalla **Inicio** , escriba **mmc.exe** y, a continuación, presione Entrar.
 
 2.  En el menú **Archivo** de la consola MMC, haga clic en **Agregar o quitar complemento**.
 
@@ -136,7 +137,7 @@ ms.locfileid: "87958553"
 
 4.  En el árbol de consola del complemento certificados, Abra **certificados (equipo local) \Personal**.
 
-5.  Haga clic con el botón secundario en **personal**, seleccione **todas las tareas**y, a continuación, haga clic en **solicitar nuevo certificado**.
+5.  Haga clic con el botón secundario en **personal**, seleccione **todas las tareas** y, a continuación, haga clic en **solicitar nuevo certificado**.
 
 6.  Haga clic en **Siguiente** dos veces.
 
@@ -144,11 +145,11 @@ ms.locfileid: "87958553"
 
 8.  En el cuadro de diálogo **propiedades de certificado** , en la pestaña **sujeto** , en el área **nombre de sujeto** , en **tipo**, seleccione **nombre común**.
 
-9. En **valor**, escriba **2-edge1.contoso.com**y, a continuación, haga clic en **Agregar**.
+9. En **valor**, escriba **2-edge1.contoso.com** y, a continuación, haga clic en **Agregar**.
 
 10. En la zona **Nombre alternativo**, en **Tipo**, selecciona **DNS**.
 
-11. En **valor**, escriba **2-edge1.contoso.com**y, a continuación, haga clic en **Agregar**.
+11. En **valor**, escriba **2-edge1.contoso.com** y, a continuación, haga clic en **Agregar**.
 
 12. En la pestaña **General** , en **nombre descriptivo**, escriba **certificado IP-https**.
 
@@ -160,21 +161,21 @@ ms.locfileid: "87958553"
 
 ## <a name="provide-access-to-corpuser1"></a><a name="Access"></a>Proporcionar acceso a CORP\User1
 
-1.  En la pantalla **Inicio** , escriba**compmgmt. msc**y, a continuación, presione Entrar.
+1.  En la pantalla **Inicio** , escriba **compmgmt. msc** y, a continuación, presione Entrar.
 
 2.  En el panel izquierdo, haga clic en **usuarios y grupos locales**.
 
-3.  Haga doble clic en **grupos**y, a continuación, haga doble clic en **administradores**.
+3.  Haga doble clic en **grupos** y, a continuación, haga doble clic en **administradores**.
 
-4.  En el cuadro de diálogo **propiedades de administradores** , haga clic en **Agregar**y, en el cuadro de diálogo **Seleccionar usuarios, equipos, cuentas de servicio o grupos** , haga clic en **ubicaciones**.
+4.  En el cuadro de diálogo **propiedades de administradores** , haga clic en **Agregar** y, en el cuadro de diálogo **Seleccionar usuarios, equipos, cuentas de servicio o grupos** , haga clic en **ubicaciones**.
 
-5.  En el cuadro de diálogo **ubicaciones** , en el árbol **Ubicación** , haga clic en **Corp.contoso.com**y, a continuación, haga clic en **Aceptar**.
+5.  En el cuadro de diálogo **ubicaciones** , en el árbol **Ubicación** , haga clic en **Corp.contoso.com** y, a continuación, haga clic en **Aceptar**.
 
-6.  En **Escriba los nombres de objeto que desea seleccionar** , escriba **user1**y, a continuación, haga clic en **Aceptar**.
+6.  En **Escriba los nombres de objeto que desea seleccionar** , escriba **user1** y, a continuación, haga clic en **Aceptar**.
 
 7.  En el cuadro de diálogo **propiedades de administradores** , haga clic en **Aceptar**.
 
-8.  Cierre la ventana Administración de equipos.
+8.  Cierre la ventana Administración de equipos .
 
 ## <a name="install-the-remote-access-role-on-2-edge1"></a><a name="InstallDA"></a>Instalar el rol de acceso remoto en 2-EDGE1
 

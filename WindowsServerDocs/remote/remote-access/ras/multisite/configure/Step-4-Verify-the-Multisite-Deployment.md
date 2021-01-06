@@ -1,17 +1,18 @@
 ---
 title: Paso 4 comprobación de la implementación multisitio
-description: Este tema forma parte de la guía de implementación de varios servidores de acceso remoto en una implementación multisitio en Windows Server 2016.
+description: Obtenga información acerca de cómo comprobar que ha configurado correctamente la implementación multisitio de acceso remoto.
 manager: brianlic
 ms.topic: article
 ms.assetid: 345b676a-a397-4d51-9973-8b25bc05fa55
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 43b4c1ddacbb4263fff0f1b8b57223abf2a9aa68
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 29c4c65673399b017716b2bfc299742f1d0c1307
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87937074"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949201"
 ---
 # <a name="step-4-verify-the-multisite-deployment"></a>Paso 4 comprobación de la implementación multisitio
 
@@ -31,7 +32,7 @@ En este tema se describe cómo comprobar que ha configurado correctamente la imp
 
     Debe poder tener acceso a todos los recursos corporativos a través de cada servidor multisitio.
 
-4.  Conecte un &reg; equipo cliente de Windows 7 a la red corporativa y obtenga la Directiva de grupo.
+4.  Conecte un &reg;  equipo cliente de Windows 7 a la red corporativa y obtenga la Directiva de grupo.
 
 5.  Conecte el equipo cliente de Windows 7 a la red externa e intente acceder a los recursos internos.
 

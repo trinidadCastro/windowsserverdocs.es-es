@@ -2,17 +2,17 @@
 title: Requisitos de implementación de Controladora de red
 description: Prepare su centro de información para la implementación de la controladora de red, que requiere uno o varios equipos o máquinas virtuales, y un equipo o máquina virtual. Para poder implementar la controladora de red, debe configurar los grupos de seguridad, las ubicaciones de los archivos de registro (si es necesario) y el registro de DNS dinámico.
 manager: grcusanz
-ms.topic: get-started-article
+ms.topic: how-to
 ms.assetid: 7f899e62-6e5b-4fca-9a59-130d4766ee2f
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/10/2018
-ms.openlocfilehash: 8339987e1862272d7254d94e403fc10e4827596b
-ms.sourcegitcommit: 28b5ab74cb0b40539ccc1a83998d6391e87fe51f
+ms.openlocfilehash: 74e449b51cb5513e353067e64d41aeedf6652672
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96614897"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948381"
 ---
 # <a name="requirements-for-deploying-network-controller"></a>Requisitos de implementación de Controladora de red
 
@@ -44,14 +44,14 @@ Cree grupos para los usuarios que tienen permiso para:
 > [!NOTE]
 > Todos los usuarios que agregue deben ser miembros del grupo usuarios del dominio en Active Directory usuarios y equipos.
 
-### <a name="step-2-configure-log-file-locations-if-needed"></a>Paso 2. Configurar las ubicaciones del archivo de registro si es necesario
+### <a name="step-2-configure-log-file-locations-if-needed"></a>Paso 2. Configurar las ubicaciones del archivo de registro si es necesario
 
 Lo siguiente que desea hacer es configurar las ubicaciones de archivo para almacenar los registros de depuración de la controladora de red en el equipo o la máquina virtual de la controladora de red o en un recurso compartido de archivos remoto.
 
 > [!NOTE]
 > Si almacena los registros en un recurso compartido de archivos remoto, asegúrese de que el recurso compartido es accesible desde el controlador de red.
 
-### <a name="step-3-configure-dynamic-dns-registration-for-network-controller"></a>Paso 3. Configurar el registro de DNS dinámico para la controladora de red
+### <a name="step-3-configure-dynamic-dns-registration-for-network-controller"></a>Paso 3. Configurar el registro de DNS dinámico para la controladora de red
 
 Por último, lo siguiente que desea hacer es implementar nodos de clúster de controladora de red en la misma subred o en subredes diferentes.
 
