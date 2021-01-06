@@ -3,16 +3,16 @@ description: Más información acerca de la replicación de clústeres de stretc
 title: Replicación de clúster extendido con almacenamiento compartido
 manager: eldenc
 ms.author: nedpyle
-ms.topic: get-started-article
+ms.topic: how-to
 author: nedpyle
 ms.date: 04/26/2019
 ms.assetid: 6c5b9431-ede3-4438-8cf5-a0091a8633b0
-ms.openlocfilehash: 096d1258cd74dec51e93b4b26266478206742beb
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 9d7153b5147d576f54fa90efc5724f994618cfc5
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97043763"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97941731"
 ---
 # <a name="stretch-cluster-replication-using-shared-storage"></a>Replicación de clúster extendido con almacenamiento compartido
 
@@ -37,7 +37,7 @@ En este tutorial se utiliza como ejemplo el siguiente entorno:
 
 **ILUSTRACIÓN 1: replicación de almacenamiento en un clúster extendido**
 
-## <a name="prerequisites"></a>Prerrequisitos
+## <a name="prerequisites"></a>Requisitos previos
 -   Bosque de Active Directory Domain Services (no es necesario ejecutar Windows Server 2016).
 -   2-64 servidores que ejecutan Windows Server 2019 o Windows Server 2016, Datacenter Edition. Si está ejecutando Windows Server 2019, en su lugar, puede usar la edición Standard si es correcto replicando un solo volumen de hasta 2 TB de tamaño.
 -   Dos conjuntos de almacenamiento compartido, con JBOD de SAS (como con espacios de almacenamiento), Canal de fibra SAN, VHDX compartido o destino iSCSI. El almacenamiento debe contener una combinación de medios de HDD y SSD y debe ser compatible con la reserva persistente. Pondrá cada conjunto de almacenamiento a disposición de solo dos de los servidores (modo asimétrico).

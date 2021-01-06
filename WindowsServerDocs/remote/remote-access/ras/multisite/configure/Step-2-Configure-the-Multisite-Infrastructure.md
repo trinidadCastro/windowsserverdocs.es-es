@@ -1,17 +1,18 @@
 ---
 title: Paso 2 configuración de la infraestructura multisitio
-description: Este tema forma parte de la guía de implementación de varios servidores de acceso remoto en una implementación multisitio en Windows Server 2016.
+description: Obtenga información acerca de cómo configurar una implementación multisitio. hay una serie de pasos necesarios para modificar la configuración de la infraestructura de red.
 manager: brianlic
 ms.topic: article
 ms.assetid: faec70ac-88c0-4b0a-85c7-f0fe21e28257
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: a1ff721bf65810772af9b70858dbd6f09d912c15
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 04181093bac2bb70d9832e88dd90df79155ad5d9
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87937232"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97941741"
 ---
 # <a name="step-2-configure-the-multisite-infrastructure"></a>Paso 2 configuración de la infraestructura multisitio
 
@@ -38,15 +39,15 @@ Para obtener más información, consulte [Agregar un sitio al bosque](/previous-
 
 ### <a name="to-configure-additional-active-directory-sites"></a>Para configurar sitios de Active Directory adicionales
 
-1.  En el controlador de dominio principal, haga clic en **Inicio**y, a continuación, haga clic en **Active Directory sitios y servicios**.
+1.  En el controlador de dominio principal, haga clic en **Inicio** y, a continuación, haga clic en **Active Directory sitios y servicios**.
 
-2.  En la consola sitios y servicios de Active Directory, en el árbol de consola, haga clic con el botón secundario en **sitios**y, a continuación, haga clic en **nuevo sitio**.
+2.  En la consola sitios y servicios de Active Directory, en el árbol de consola, haga clic con el botón secundario en **sitios** y, a continuación, haga clic en **nuevo sitio**.
 
 3.  En el cuadro de diálogo **nuevo objeto-sitio** , en el cuadro **nombre** , escriba un nombre para el nuevo sitio.
 
 4.  En **nombre de vínculo**, haga clic en un objeto de vínculo a sitios y, a continuación, haga clic en **Aceptar** dos veces.
 
-5.  En el árbol de consola, expanda **sitios**, haga clic con el botón secundario en **subredes**y, a continuación, haga clic en **nueva subred**.
+5.  En el árbol de consola, expanda **sitios**, haga clic con el botón secundario en **subredes** y, a continuación, haga clic en **nueva subred**.
 
 6.  En el cuadro de diálogo **nuevo objeto-subred** , en **prefijo**, escriba el prefijo de subred IPv4 o IPv6, en la lista **Seleccione un objeto de sitio para este prefijo** , haga clic en el sitio para asociarlo a esta subred y, a continuación, haga clic en **Aceptar**.
 
@@ -54,7 +55,7 @@ Para obtener más información, consulte [Agregar un sitio al bosque](/previous-
 
 8.  Cierre Sitios y servicios de Active Directory.
 
-![](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif)***<em>Comandos equivalentes</em> de Windows PowerShell Windows PowerShell***
+:::image type="icon" source="../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif":::**_<em>Comandos equivalentes de Windows PowerShell</em>_* _
 
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.
 
@@ -95,7 +96,7 @@ Para obtener más información, consulte [instalación de un controlador de domi
 
 ### <a name="to-configure-additional-domain-controllers"></a>Para configurar controladores de dominio adicionales
 
-1.  En el servidor que actuará como controlador de dominio, en **Administrador del servidor**, en el **Panel**, haga clic en **Agregar roles y características**.
+1.  En el servidor que actuará como controlador de dominio, en _ * Administrador del servidor * *, en el **Panel**, haga clic en **Agregar roles y características**.
 
 2.  Haga clic en **siguiente** tres veces para ir a la pantalla de selección de roles de servidor
 
@@ -147,13 +148,13 @@ Una implementación multisitio requiere un grupo de seguridad adicional para equ
 
 ### <a name="to-configure-additional-security-groups"></a>Para configurar grupos de seguridad adicionales
 
-1.  En el controlador de dominio principal, haga clic en **Inicio**y, a continuación, en **Active Directory usuarios y equipos**.
+1.  En el controlador de dominio principal, haga clic en **Inicio** y, a continuación, en **Active Directory usuarios y equipos**.
 
 2.  En el árbol de consola, haga clic con el botón secundario en la carpeta en la que desea agregar un nuevo grupo, por ejemplo, corp.contoso.com/Users. Elija **Nuevo** y haga clic en **Grupo**.
 
 3.  En el cuadro de diálogo **nuevo objeto-grupo** , en **nombre de grupo**, escriba el nombre del nuevo grupo, por ejemplo, Win7_Clients_Entrypoint1.
 
-4.  En **ámbito de grupo**, haga clic en **universal**, en **tipo de grupo**, haga clic en **seguridad**y, a continuación, haga clic en **Aceptar**.
+4.  En **ámbito de grupo**, haga clic en **universal**, en **tipo de grupo**, haga clic en **seguridad** y, a continuación, haga clic en **Aceptar**.
 
 5.  Para agregar equipos al nuevo grupo de seguridad, haga doble clic en el grupo de seguridad y, en el<cuadro de diálogo **propiedades de Group_Name>** , haga clic en la pestaña **miembros** .
 
@@ -163,7 +164,7 @@ Una implementación multisitio requiere un grupo de seguridad adicional para equ
 
 8.  Repita este procedimiento para crear un grupo de seguridad para cada punto de entrada según sea necesario.
 
-![](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif)***<em>Comandos equivalentes</em> de Windows PowerShell Windows PowerShell***
+:::image type="icon" source="../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif":::**_<em>Comandos equivalentes de Windows PowerShell</em>_* _
 
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.
 
@@ -220,14 +221,14 @@ Para cargar o modificar la configuración de acceso remoto, puede transferir el 
 
 #### <a name="to-transfer-the-pdc-emulator-role"></a><a name="TransferPDC"></a>Para transferir el rol de emulador de PDC
 
-1.  En la pantalla **Inicio** , escriba**DSA. msc**y, a continuación, presione Entrar.
+1.  En la pantalla _ *iniciar**, escriba **DSA. msc** y, a continuación, presione Entrar.
 
-2.  En el panel izquierdo de la consola de Active Directory usuarios y equipos, haga clic con el botón secundario en **Active Directory usuarios y equipos**y, a continuación, haga clic en **cambiar controlador de dominio**. En el cuadro de diálogo cambiar servidor de directorio, haga clic en **este controlador de dominio o en AD LDS instancia**, en la lista, haga clic en el controlador de dominio que será el nuevo titular de la función y, a continuación, haga clic en **Aceptar**.
+2.  En el panel izquierdo de la consola de Active Directory usuarios y equipos, haga clic con el botón secundario en **Active Directory usuarios y equipos** y, a continuación, haga clic en **cambiar controlador de dominio**. En el cuadro de diálogo cambiar servidor de directorio, haga clic en **este controlador de dominio o en AD LDS instancia**, en la lista, haga clic en el controlador de dominio que será el nuevo titular de la función y, a continuación, haga clic en **Aceptar**.
 
     > [!NOTE]
     > Debe realizar este paso si no está en el controlador de dominio al que desea transferir el rol. No lleve a cabo este paso si ya está conectado al controlador de dominio al que desea transferir el rol.
 
-3.  En el árbol de consola, haga clic con el botón secundario en **Active Directory usuarios y equipos**, seleccione **todas las tareas**y, a continuación, haga clic en **maestros de operaciones**.
+3.  En el árbol de consola, haga clic con el botón secundario en **Active Directory usuarios y equipos**, seleccione **todas las tareas** y, a continuación, haga clic en **maestros de operaciones**.
 
 4.  En el cuadro de diálogo maestros de operaciones, haga clic en la pestaña **PDC** y, a continuación, haga clic en **cambiar**.
 
@@ -235,7 +236,7 @@ Para cargar o modificar la configuración de acceso remoto, puede transferir el 
 
 #### <a name="to-change-the-domain-controller-that-manages-server-gpos"></a><a name="ChangeDC"></a>Para cambiar el controlador de dominio que administra los GPO de servidor
 
--   Ejecute el cmdlet de Windows PowerShell [set-DAEntryPointDC](/powershell/module/remoteaccess/set-daentrypointdc) en el servidor de acceso remoto y especifique el nombre del controlador de dominio inaccesible para el parámetro *ExistingDC* . Este comando modifica la Asociación del controlador de dominio para los GPO de servidor de los puntos de entrada administrados actualmente por ese controlador de dominio.
+-   Ejecute el cmdlet de Windows PowerShell  [set-DAEntryPointDC](/powershell/module/remoteaccess/set-daentrypointdc) en el servidor de acceso remoto y especifique el nombre del controlador de dominio inaccesible para el parámetro *ExistingDC* . Este comando modifica la Asociación del controlador de dominio para los GPO de servidor de los puntos de entrada administrados actualmente por ese controlador de dominio.
 
     -   Para reemplazar el controlador de dominio inaccesible "dc1.corp.contoso.com" con el controlador de dominio "dc2.corp.contoso.com", haga lo siguiente:
 
@@ -271,7 +272,7 @@ La información de asociación del controlador de dominio se almacena en el regi
 
     La configuración resultante se muestra en el diagrama siguiente.
 
-    ![Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/DCAssoc2.png)
+    ![Diagrama que muestra la configuración resultante.](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/DCAssoc2.png)
 
 2.  Para reemplazar el controlador de dominio no disponible "DC1" por el controlador de dominio "DC3", ejecute el siguiente comando:
 
@@ -281,7 +282,7 @@ La información de asociación del controlador de dominio se almacena en el regi
 
     Este comando actualiza la Asociación del controlador de dominio para el GPO de servidor "punto de entrada 1" en el registro de DA1 y en los GPO de servidor "punto de entrada 1" y "punto de entrada 2". La configuración resultante se muestra en el diagrama siguiente.
 
-    ![Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/DCAssoc3.png)
+    ![Diagrama que muestra la Asociación de controladores de dominio de actualización.](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/DCAssoc3.png)
 
 3.  Para sincronizar la Asociación del controlador de dominio para el GPO de servidor "punto de entrada 2" en el GPO de servidor "punto de entrada 1", ejecute el comando para reemplazar "DC2" por "DC3" y especifique el servidor de acceso remoto cuyo GPO de servidor no esté sincronizado, en este caso "DA1", para el parámetro *ComputerName* .
 
@@ -291,7 +292,7 @@ La información de asociación del controlador de dominio se almacena en el regi
 
     La configuración final se muestra en el diagrama siguiente.
 
-    ![Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/DCAssocFinal.png)
+    ![Diagrama que muestra la configuración final.](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/DCAssocFinal.png)
 
 ### <a name="optimization-of-configuration-distribution"></a><a name="ConfigDistOptimization"></a>Optimización de la distribución de la configuración
 Al realizar cambios de configuración, los cambios se aplican solo después de que los GPO de servidor se propaguen a los servidores de acceso remoto. Para reducir el tiempo de distribución de la configuración, el acceso remoto selecciona automáticamente un controlador de dominio de escritura [más cercano al servidor de acceso remoto](/previous-versions/windows/it-pro/windows-2000-server/cc978016(v=technet.10)) al crear su GPO de servidor.
@@ -326,7 +327,7 @@ Para optimizar el tiempo de distribución de la configuración, realice una de l
     > [!NOTE]
     > Al modificar el controlador de dominio asociado a un punto de entrada específico, debe especificar un servidor de acceso remoto que sea miembro de ese punto de entrada para el parámetro *ComputerName* .
 
-## <a name="see-also"></a><a name="BKMK_Links"></a>Vea también
+## <a name="see-also"></a><a name="BKMK_Links"></a>Otras referencias
 
 -   [Paso 3: configurar la implementación multisitio](Step-3-Configure-the-Multisite-Deployment.md)
 -   [Paso 1: implementar una implementación de acceso remoto de un solo servidor](Step-1-Implement-a-Single-Server-Remote-Access-Deployment.md)

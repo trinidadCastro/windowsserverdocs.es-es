@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: d011eaad-f72a-4a83-8099-8589c4ee8994
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: e219169ba3132a18c0a76219fa8da96e30902090
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 0ddd8ab58bcb78a7bf679b4f97b0fff116eabfae
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969402"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97943191"
 ---
 # <a name="realm-names"></a>Nombres de dominio kerberos
 
@@ -21,7 +22,7 @@ Puede usar este tema para obtener información general sobre el uso de nombres d
 
 El atributo RADIUS de nombre de usuario es una cadena de caracteres que normalmente contiene una ubicación de cuenta de usuario y un nombre de cuenta de usuario. La ubicación de cuenta de usuario también se denomina dominio kerberos o nombre de dominio kerberos, y es sinónimo del concepto de dominio, incluidos los dominios DNS, los dominios de Active Directory® y los dominios de Windows NT 4.0. Por ejemplo, si una cuenta de usuario está ubicada en la base de datos de cuentas de usuarios para un dominio llamado ejemplo.com, ejemplo.com es el nombre de dominio kerberos.
 
-En otro ejemplo, si el atributo RADIUS de nombre de usuario contiene el nombre de usuario user1@example.com , user1 es el nombre de la cuenta de usuario y example.com es el nombre de dominio Kerberos. Los nombres de dominio kerberos se pueden presentar en el nombre de usuario como un prefijo o como un sufijo:
+En otro ejemplo, si el atributo RADIUS User-Name contiene el nombre de usuario user1@example.com , user1 es el nombre de la cuenta de usuario y example.com es el nombre de dominio Kerberos. Los nombres de dominio kerberos se pueden presentar en el nombre de usuario como un prefijo o como un sufijo:
 
 - **Example\user1**. En este ejemplo, el **ejemplo** de nombre de dominio Kerberos es un prefijo; Además, es el nombre de un dominio de &reg; AD DS de Active Directory Domain Services \( \) .
 
@@ -45,13 +46,13 @@ Además, si crea un paquete personalizado de conexiones de acceso telefónico co
 
 Durante el proceso de autenticación, después de que los usuarios escriban las credenciales basadas en contraseña, el nombre de usuario pasa del cliente de acceso al servidor de acceso a la red. El servidor de acceso a la red crea una solicitud de conexión e incluye el nombre de dominio kerberos dentro del atributo RADIUS de nombre de usuario en el mensaje de solicitud de acceso que se envía al servidor o al proxy RADIUS.
 
-Si el servidor RADIUS es un NPS, el mensaje de solicitud de acceso se evalúa con el conjunto de directivas de solicitud de conexión configuradas. Las condiciones de la directiva de solicitud de conexión pueden incluir la especificación del contenido del atributo de nombre de usuario.
+Si el servidor RADIUS es un NPS, el mensaje de Access-Request se evalúa con el conjunto de directivas de solicitud de conexión configuradas. Las condiciones de la directiva de solicitud de conexión pueden incluir la especificación del contenido del atributo de nombre de usuario.
 
 Puede configurar un conjunto de directivas de solicitud de conexión que sean específicas del nombre de dominio kerberos dentro del atributo de nombre de usuario de los mensajes entrantes. Esto permite crear reglas de enrutamiento que reenvían mensajes RADIUS con un nombre de dominio kerberos específico a un conjunto determinado de servidores RADIUS cuando se usa NPS como proxy RADIUS.
 
 ## <a name="attribute-manipulation-rules"></a>Reglas de manipulación de atributos
 
-Antes de que el mensaje RADIUS se procese localmente (cuando se usa NPS como servidor RADIUS) o se reenvíe a otro servidor RADIUS (cuando se usa NPS como proxy RADIUS), el atributo de nombre de usuario incluido en el mensaje se puede modificar mediante reglas de manipulación de atributos. Para configurar las reglas de manipulación de atributos para el atributo de nombre de usuario, seleccione **nombre de usuario** en la pestaña **condiciones** en las propiedades de una directiva de solicitud de conexión. Las reglas de manipulación de atributos de NPS usan una sintaxis de expresión regular.
+Antes de que el mensaje RADIUS se procese localmente (cuando se usa NPS como servidor RADIUS) o se reenvíe a otro servidor RADIUS (cuando se usa NPS como proxy RADIUS), el atributo de nombre de usuario incluido en el mensaje se puede modificar mediante reglas de manipulación de atributos. Puede configurar reglas de manipulación de atributos para el atributo User-Name seleccionando **nombre de usuario** en la pestaña **condiciones** en las propiedades de una directiva de solicitud de conexión. Las reglas de manipulación de atributos de NPS usan una sintaxis de expresión regular.
 
 Puede configurar reglas de manipulación de atributos para el atributo de nombre de usuario y cambiar lo siguiente:
 
@@ -63,7 +64,7 @@ Puede configurar reglas de manipulación de atributos para el atributo de nombre
 
 Una vez que el atributo de nombre de usuario se modifica según las reglas de manipulación de atributos que ha configurado, la configuración adicional de la primera directiva de solicitud de conexión coincidente se usa para determinar si:
 
-- NPS procesa el mensaje de solicitud de acceso localmente (cuando se usa NPS como un servidor RADIUS).
+- NPS procesa el mensaje de Access-Request localmente (cuando se usa NPS como servidor RADIUS).
 
 - NPS reenvía el mensaje a otro servidor RADIUS (cuando se usa NPS como proxy RADIUS).
 

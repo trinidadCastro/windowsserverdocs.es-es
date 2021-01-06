@@ -1,17 +1,18 @@
 ---
 title: Información general de implementación de acceso inalámbrico
-description: Este tema forma parte de la guía de redes de Windows Server 2016 "implementación de acceso inalámbrico autenticado mediante 802.1 X basado en contraseña".
+description: Este tema forma parte de la guía de redes de Windows Server 2016 "implementación de acceso inalámbrico autenticado de Password-Based 802.1 X"
 manager: brianlic
 ms.topic: article
 ms.assetid: 29ae0f54-f045-465a-a08e-5867979345f2
 author: eross-msft
 ms.author: lizross
-ms.openlocfilehash: ab135c7a30a1930fef58fae357a38510eab711eb
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 336f8af276e14d0f54702f04539f041cf1c71400
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969622"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97943281"
 ---
 # <a name="wireless-access-deployment-overview"></a>Información general de implementación de acceso inalámbrico
 
@@ -46,7 +47,7 @@ Use el complemento usuarios y equipos \- de Active Directory para crear y admini
 
 Puede usar la \( \) extensión de directivas IEEE 802,11 de red inalámbrica de administración de directiva de grupo para configurar las directivas que se aplican a los equipos inalámbricos cuando intentan acceder a la red.
 
-En Editor de administración de directivas de grupo, al hacer clic con el botón secundario \- en ** \( \) directivas IEEE 802,11 de red inalámbrica**, tiene las dos opciones siguientes para el tipo de directiva inalámbrica que cree.
+En Editor de administración de directivas de grupo, al hacer clic con el botón secundario \- en **\( \) directivas IEEE 802,11 de red inalámbrica**, tiene las dos opciones siguientes para el tipo de directiva inalámbrica que cree.
 
 - **Crear una nueva Directiva de red inalámbrica para Windows Vista y versiones posteriores**
 
@@ -93,9 +94,9 @@ Para habilitar la conectividad inalámbrica en equipos que ejecutan sistemas ope
 
 Al instalar la característica de **servicio de LAN inalámbrica** , la **configuración automática** del nuevo servicio WLAN se instala en los **servicios**. Una vez completada la instalación, debe reiniciar el servidor.
 
-Una vez reiniciado el servidor, puede tener acceso a la configuración automática de WLAN al hacer clic en **Inicio**, **herramientas administrativas de Windows**y **servicios**.
+Una vez reiniciado el servidor, puede tener acceso a la configuración automática de WLAN al hacer clic en **Inicio**, **herramientas administrativas de Windows** y **servicios**.
 
-Después de instalar y reiniciar el servidor, el servicio de configuración automática de WLAN se encuentra en estado detenido con un tipo de inicio **automático**. Para iniciar el servicio, haga doble clic en **configuración automática de WLAN**. En la pestaña **General** , haga clic en **Inicio**y, a continuación, haga clic en **Aceptar**.
+Después de instalar y reiniciar el servidor, el servicio de configuración automática de WLAN se encuentra en estado detenido con un tipo de inicio **automático**. Para iniciar el servicio, haga doble clic en **configuración automática de WLAN**. En la pestaña **General** , haga clic en **Inicio** y, a continuación, haga clic en **Aceptar**.
 
 El servicio de configuración automática de WLAN enumera los adaptadores inalámbricos y administra las conexiones inalámbricas y los perfiles inalámbricos que contienen la configuración necesaria para configurar el servidor para conectarse a una red inalámbrica.
 

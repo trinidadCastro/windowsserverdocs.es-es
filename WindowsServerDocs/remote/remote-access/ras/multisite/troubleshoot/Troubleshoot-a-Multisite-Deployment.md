@@ -1,17 +1,18 @@
 ---
 title: Solucionar problemas relacionados con una implementación multisitio
-description: Este tema forma parte de la guía de implementación de varios servidores de acceso remoto en una implementación multisitio en Windows Server 2016.
+description: Obtenga información acerca de cómo solucionar los errores más comunes que se pueden producir al configurar una implementación de acceso remoto multisitio.
 manager: brianlic
 ms.topic: article
 ms.assetid: f92b1335-ac4a-4501-a5ec-d1851e6f0fc7
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: d4ec26b02d7ceb0f28b8697088b21316dac4e374
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 466b9f46263387f7d8c990e02f7e3970bfdc68e0
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87958523"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97941601"
 ---
 # <a name="troubleshoot-a-multisite-deployment"></a>Solucionar problemas relacionados con una implementación multisitio
 

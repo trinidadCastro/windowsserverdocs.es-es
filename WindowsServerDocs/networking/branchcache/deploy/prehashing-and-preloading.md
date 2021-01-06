@@ -2,16 +2,17 @@
 title: Aplicación de hash previo y carga previa de contenido en servidores de caché hospedada (opcional)
 description: Obtenga información sobre cómo forzar la creación de información de contenido (también denominada hashes) en servidores web y de archivos habilitados para BranchCache.
 manager: brianlic
-ms.topic: get-started-article
+ms.topic: how-to
 ms.assetid: 5a09d9f1-1049-447f-a9bf-74adf779af27
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 744290fd22295b3a931ba39e53ef4f8f89c1fab6
-ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
+ms.date: 01/05/2021
+ms.openlocfilehash: d903338f58cd7a01967902243f79f4eb28e58882
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97904380"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97942511"
 ---
 # <a name="prehashing-and-preloading-content-on-hosted-cache-servers-optional"></a>Aplicación de hash previo y carga previa de contenido en servidores de caché hospedada (opcional)
 

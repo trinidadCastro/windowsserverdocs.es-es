@@ -1,17 +1,18 @@
 ---
 title: Paso 3 planeación de la implementación multisitio
-description: Este tema forma parte de la guía de implementación de varios servidores de acceso remoto en una implementación multisitio en Windows Server 2016.
+description: Obtenga información acerca de cómo planear los requisitos de certificado adicionales, cómo los equipos cliente seleccionan puntos de entrada y las direcciones IPv6 asignadas en la implementación.
 manager: brianlic
 ms.topic: article
 ms.assetid: e5ea9d22-a503-4ed4-96b3-0ee2ccf4fd17
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 14b86d8e3b87c033be2407bf6fc44665818b8893
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 2758efb07b6dd601bfca8789ddf5ec430e418325
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87937024"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97941681"
 ---
 # <a name="step-3-plan-the-multisite-deployment"></a>Paso 3 planeación de la implementación multisitio
 
@@ -186,7 +187,7 @@ Cuando un equipo cliente que ejecuta Windows 10 o Windows 8 está conectado a un
 
 Si su organización usa una topología de Active Directory con prefijos IPv6 específicos del sitio (por ejemplo, un nombre de dominio completo (FQDN) app.corp.com se hospeda en Norteamérica y Europa con una dirección IP específica del sitio en cada ubicación), no se configura de forma predeterminada mediante la consola de acceso remoto y los prefijos IPv6 específicos del sitio no se configuran para cada punto de entrada. Si desea habilitar este escenario opcional, debe configurar cada punto de entrada con los prefijos IPv6 específicos que deberían ser preferidos por los equipos cliente que se conectan a un punto de entrada específico. Para ello, realice lo siguiente:
 
-1.  Para cada GPO usado para equipos cliente de Windows 10 o Windows 8, ejecute el cmdlet de PowerShell Set-DAEntryPointTableItem.
+1.  Para cada GPO usado para equipos cliente de Windows 10 o Windows 8, ejecute el cmdlet Set-DAEntryPointTableItem PowerShell.
 
 2.  Establezca el parámetro EntryPointRange para el cmdlet con los prefijos IPv6 específicos del sitio. Por ejemplo, para agregar los prefijos específicos del sitio 2001: db8:1: 1::/64 y 2001: DB: 1:2::/64 a un punto de entrada denominado Europe, ejecute lo siguiente
 

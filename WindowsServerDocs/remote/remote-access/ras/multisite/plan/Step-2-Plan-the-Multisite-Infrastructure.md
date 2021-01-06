@@ -1,17 +1,18 @@
 ---
 title: Paso 2 planear la infraestructura multisitio
-description: Este tema forma parte de la guía de implementación de varios servidores de acceso remoto en una implementación multisitio en Windows Server 2016.
+description: Obtenga información acerca de cómo completar la planeación de la infraestructura multisitio; incluye, Active Directory, grupos de seguridad y objetos directiva de grupo.
 manager: brianlic
 ms.topic: article
 ms.assetid: 64c10107-cb03-41f3-92c6-ac249966f574
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: e411db1eef92b26a2d44051123361a5ac674bb3c
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 460cf6c921e50ae0026f742fa92ed252f9eb773b
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87937086"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97941711"
 ---
 # <a name="step-2-plan-the-multisite-infrastructure"></a>Paso 2 planear la infraestructura multisitio
 
@@ -48,7 +49,7 @@ Tenga en cuenta las siguientes recomendaciones y restricciones para la implement
 
     1.  Si el servidor que se ejecuta como el emulador de PDC no está disponible, debe designar un controlador de dominio disponible que tenga GPO actualizados como el emulador de PDC.
 
-    2.  Si el controlador de dominio que administra un GPO de servidor no está disponible, use el cmdlet de PowerShell Set-DAEntryPointDC para asociar un nuevo controlador de dominio al punto de entrada. El nuevo controlador de dominio debe tener GPO actualizados antes de ejecutar el cmdlet.
+    2.  Si el controlador de dominio que administra un GPO de servidor no está disponible, use el cmdlet Set-DAEntryPointDC PowerShell para asociar un nuevo controlador de dominio al punto de entrada. El nuevo controlador de dominio debe tener GPO actualizados antes de ejecutar el cmdlet.
 
 ## <a name="22-plan-security-groups"></a><a name="bkmk_2_2_SG"></a>2,2 planear grupos de seguridad
 Durante la implementación de un solo servidor con la configuración avanzada, todos los equipos cliente que tienen acceso a la red interna a través de DirectAccess se recopilaron en un grupo de seguridad. En una implementación multisitio, este grupo de seguridad solo se usa para equipos cliente de Windows 8. En una implementación multisitio, los equipos cliente de Windows 7 se recopilarán en grupos de seguridad independientes para cada punto de entrada de la implementación multisitio. Por ejemplo, si anteriormente ha agrupado todos los equipos cliente del grupo DA_Clients, ahora debe quitar todos los equipos con Windows 7 de ese grupo y colocarlos en un grupo de seguridad diferente. Por ejemplo, en la topología de varios sitios de Active Directory, varios puntos de entrada, cree un grupo de seguridad para el punto de entrada de Estados Unidos (DA_Clients_US) y otro para el punto de entrada de Europa (DA_Clients_Europe). Coloque los equipos cliente de Windows 7 ubicados en el Estados Unidos en el grupo de DA_Clients_US y en los que se encuentren en Europa en el grupo de DA_Clients_Europe. Si no tiene ningún equipo cliente de Windows 7, no es necesario planear los grupos de seguridad para equipos con Windows 7.

@@ -5,12 +5,13 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 8b72ea800f63110904af80a178f96af232507344
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.topic: article
+ms.openlocfilehash: fde64c200e8035336320d590bcb11c69b2616d38
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96864354"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97943531"
 ---
 # <a name="server-performance-advisor-pack-development-guide"></a>Guía de desarrollo de Server Performance Advisor Pack
 
@@ -235,7 +236,7 @@ Windows registry editor version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\User\PowerSchemes\db310065-829b-4671-9647-2261c00e86ef]
 "Description"=
- FriendlyName = Power Source Optimized 
+ FriendlyName = Power Source Optimized
 
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\User\PowerSchemes\db310065-829b-4671-9647-2261c00e86ef \0012ee47-9041-4b5d-9b77-535fba8b1442\6738e2c4-e8a5-4a42-b16a-e040e769756e
 "ACSettingIndex"=dword:000000b4
@@ -259,7 +260,7 @@ Ejemplo 2: devuelve todos los pares clave-valor en esta ruta de acceso:
 
 Todos los datos recopilados se importarán en una tabla temporal denominada **\# registryKeys** antes de que se ejecute un script de informe de SQL. En la tabla siguiente se muestran los resultados del ejemplo 2:
 
-KeyName | KeytypeId | Value
+KeyName | KeytypeId | Valor
 ------ | ----- | -------
 HKEY_LOCAL_MACHINE. ..\PowerSchemes | 1 | db310065-829b-4671-9647-2261c00e86ef
 \db310065-829b-4671-9647-2261c00e86ef\Description | 2 | |
@@ -273,18 +274,18 @@ Nombre de la columna | Tipo de datos de SQL | Descripción
 -------- | -------- | --------
 KeyName | Nvarchar (300) NOT NULL | Nombre de la ruta de acceso completa de la clave del registro
 KeytypeId | Smallint NOT NULL | Identificador de tipo interno
-Value | Nvarchar (4000) NOT NULL | Todos los valores
+Valor | Nvarchar (4000) NOT NULL | Todos los valores
 
 La columna **KeytypeID** puede tener uno de los siguientes tipos:
 
-Id. | Tipo
+ID | Tipo
 --- | ---
-1 | String
+1 | Cadena
 2 | expandString
-3 | Binary
+3 | Binario
 4 | DWord
 5 | DWordBigEndian
-6 | Vínculo
+6 | Link
 7 | MultipleString
 8 | Resourcelist
 9 | FullResourceDescriptor
@@ -301,7 +302,7 @@ Puede agregar cualquier consulta de WMI. Para obtener más información acerca d
 
 La consulta del ejemplo anterior devuelve un registro:
 
-Caption | Nombre | PeakUsage
+Título | Nombre | PeakUsage
 ----- | ----- | -----
 C:\pagefile.sys | C:\pagefile.sys | 215
 
@@ -315,13 +316,13 @@ SequenceID | Espacio de nombres | ClassName | Dan | WmiqueryID
 
 **\#Tabla WmiObjectsProperties**
 
-Id. | Query
+ID | Query
 --- | ---
 1 | Root\Cimv2: SELECT * FROM Win32_PageFileUsage
 
 **\#Tabla WmiQueries**
 
-Id. | Query
+ID | Query
 --- | ---
 1 | Root\Cimv2: SELECT * FROM Win32_PageFileUsage
 
@@ -341,7 +342,7 @@ Nombre de la columna | Tipo de datos de SQL | Descripción
 --- | --- | ---
 SequenceId | Int NOT NULL | Correlacionar la fila y sus propiedades
 Nombre | Nvarchar (1000) NOT NULL | Nombre de propiedad
-Value | Nvarchar (4000) NULL | Valor de la propiedad actual.
+Valor | Nvarchar (4000) NULL | Valor de la propiedad actual.
 
 **\#Esquema de la tabla WmiQueries**
 
@@ -375,7 +376,7 @@ timestamp | nombreDeCategoría | CounterName | Valor de instancia de _Total | Va
 
 Para importar los datos en la base de datos, los datos se normalizarán en una tabla denominada **\# PerformanceCounters**.
 
-CategoryDisplayName | InstanceName | CounterdisplayName | Value
+CategoryDisplayName | InstanceName | CounterdisplayName | Valor
 ---- | ---- | ---- | ----
 Disco físico | _Total | Prom. Segundos de disco/transferencias | 0.00100008362473995
 Disco físico | 0 C: D: | Prom. Segundos de disco/transferencias | 0.00100008362473995
@@ -398,7 +399,7 @@ CategoryDisplayName | Nvarchar (200) NOT NULL | Nombre de categoría localizado
 InstanceName | Nvarchar (200) NULL | Nombre de instancia
 CounterName | Nvarchar (200) NOT NULL | Nombre del contador
 CounterdisplayName | Nvarchar (200) NOT NULL | Nombre de contador localizado
-Value | Float NOT NULL | Valor recopilado
+Valor | Float NOT NULL | Valor recopilado
 
 ### <a name="collect-files"></a>Recopilar archivos
 
@@ -516,10 +517,10 @@ Una vez definidas las reglas, los administradores del sistema pueden ver el resu
 
 Siguiendo con el ejemplo anterior, el usuario sabe si hay suficiente espacio libre en disco en la unidad del sistema. Los usuarios también pueden estar interesados en el tamaño real del espacio libre. Se usa un único grupo de valores para almacenar y mostrar estos resultados. Se pueden agrupar y mostrar varios valores únicos en una tabla en la consola de SPA. La tabla solo tiene dos columnas, nombre y valor, como se muestra aquí.
 
-Nombre | Value
+Nombre | Valor
 ---- | ----
 Tamaño de disco libre en la unidad del sistema (GB) | 100
-Tamaño total del disco instalado (GB) | 500 
+Tamaño total del disco instalado (GB) | 500
 
 Si un usuario desea ver una lista de todas las unidades de disco duro instaladas en el servidor y su tamaño de disco, podríamos llamar a un valor de lista, que tiene tres columnas y varias filas, como se muestra aquí.
 
@@ -532,7 +533,7 @@ En un paquete de Advisor, podría haber muchas tablas (grupos de valores únicos
 
 En Resumen, hay tres tipos de elementos de la interfaz de usuario:
 
-* [Secciones](#bkmk-ui-section)
+* [Sección](#bkmk-ui-section)
 
 * [Grupos de valor único](#bkmk-ui-svg)
 
@@ -562,7 +563,7 @@ Este es un ejemplo que muestra los elementos de la interfaz de usuario:
 </advisorPack>
 ```
 
-### <a name="sections"></a><a href="" id="bkmk-ui-section"></a>Secciones
+### <a name="sections"></a><a href="" id="bkmk-ui-section"></a>Sección
 
 Una sección es exclusivamente para el diseño de la interfaz de usuario. No participa en los cálculos lógicos. Cada informe único contiene un conjunto de secciones de nivel superior que no tienen una sección principal. Las secciones de nivel superior se presentan como pestañas en el informe. Las secciones pueden tener subsecciones, con un máximo de 10 niveles. Todas las subsecciones de las secciones de nivel superior se muestran en áreas expansibles. Una sección puede contener varias subsecciones, grupos de valores únicos y tablas de valores de lista. Los grupos de valores únicos y las tablas de valores de lista se presentan como tablas.
 
@@ -673,7 +674,7 @@ Puede definir un tipo de datos para cada valor único. La entrada permitida para
 
 **Hechos**
 
-Nombre | Value
+Nombre | Valor
 --- | ---
 Sistema operativo | &lt;_un valor se establecerá mediante el script de informe_&gt;
 Versión del SO | &lt;_un valor se establecerá mediante el script de informe_&gt;
@@ -714,7 +715,7 @@ El atributo **Caption** de &lt; Column/ &gt; se muestra como un nombre de column
 En algunos casos, una tabla puede tener una gran cantidad de columnas y solo unas pocas filas, por lo que el intercambio de las columnas y las filas haría que la tabla fuera mucho mejor. Para intercambiar las columnas y filas, puede Agregar el siguiente atributo de estilo:
 
 ``` syntax
-<listValue style="Transpose"  
+<listValue style="Transpose"
 ```
 
 ### <a name="defining-charting-elements"></a>Definir elementos de gráficos
@@ -734,7 +735,7 @@ SPA usa un solo grupo de valores para admitir estadísticas estáticas y una tab
 Como se mencionó anteriormente, una estadística estática es un valor único. Lógicamente, cualquier valor único podría definirse como una estadística estática. Sin embargo, no tiene sentido ver un valor único que no se pueda convertir en un tipo de número. Para definir una estadística estática, basta con agregar el atributo **trendable** a la clave de valor único correspondiente, como se muestra a continuación:
 
 ``` syntax
-<value name="freediskSize" type="int" trendable="true"  
+<value name="freediskSize" type="int" trendable="true"
 ```
 
 ### <a name="dynamic-statistics"></a>Estadísticas dinámicas
@@ -770,7 +771,7 @@ Como se indica en el ejemplo siguiente, se admiten varias columnas de **valor** 
 CounterName | InstanceName | Average | Sum
 --- | :---: | :---: | :---:
 % de tiempo de procesador | _Total | 10 | 20
-% de tiempo de procesador | CPU0 | 20 | 30 
+% de tiempo de procesador | CPU0 | 20 | 30
 
 En este ejemplo, tiene dos columnas de **clave** y dos columnas de **valor** . SPA genera dos claves de estadísticas para la columna Average y otras dos claves para la columna sum. Las claves de estadísticas son:
 
@@ -811,7 +812,7 @@ Una vez definidos los metadatos de aprovisionamiento, podemos empezar a escribir
 Hay atributos **Name** y **reportScript** en el encabezado provision metadata, como se muestra aquí:
 
 ``` syntax
-<advisorPack name="Microsoft.ServerPerformanceAdvisor.CoreOS.V1" reportScript="ReportScript"  
+<advisorPack name="Microsoft.ServerPerformanceAdvisor.CoreOS.V1" reportScript="ReportScript"
 ```
 
 El script del informe principal se denomina mediante la combinación de los atributos **Name** y **reportScript** . En el ejemplo siguiente, será \[ Microsoft. ServerPerformanceAdvisor. coreos. V2 \] . \[ ReportScript \] .
@@ -905,7 +906,7 @@ END
 ELSE
 BEGIN
     exec dbo.SetNotification N'freediskSize', N'SuccessAdvice'
-END 
+END
 ```
 
 ### <a name="get-threshold-value"></a>Obtiene el valor de umbral
@@ -968,9 +969,9 @@ En el ejemplo siguiente se muestran algunos valores únicos definidos:
 Después, puede establecer el valor único como se muestra aquí:
 
 ``` syntax
-exec dbo.SetSingleValue N OsName ,  Windows 7 
-exec dbo.SetSingleValue N Osversion ,  6.1.7601 
-exec dbo.SetSingleValue N OsLocation ,  c:\ 
+exec dbo.SetSingleValue N OsName ,  Windows 7
+exec dbo.SetSingleValue N Osversion ,  6.1.7601
+exec dbo.SetSingleValue N OsLocation ,  c:\
 ```
 
 En raras ocasiones, puede que desee quitar el resultado que estableció anteriormente mediante \[ DBO \] . \[ API de removeSingleValue \] .
@@ -980,7 +981,7 @@ En raras ocasiones, puede que desee quitar el resultado que estableció anterior
 Puede usar el siguiente script para quitar el valor establecido anteriormente.
 
 ``` syntax
-exec dbo.removeSingleValue N Osversion 
+exec dbo.removeSingleValue N Osversion
 ```
 
 ### <a name="get-data-collection-information"></a>Obtener información de recopilación de datos
@@ -1046,7 +1047,7 @@ VALUES (
 Si hay más información que desee comunicar con los administradores del sistema, puede escribir registros. Si hay algún registro para un informe determinado, se mostrará un banner amarillo en el encabezado del informe. En el ejemplo siguiente se muestra cómo se puede escribir un registro:
 
 ``` syntax
-exec dbo.WriteSystemLog N'Any information you want to show to the system administrators , N Warning 
+exec dbo.WriteSystemLog N'Any information you want to show to the system administrators , N Warning
 ```
 
 El primer parámetro es el mensaje que desea mostrar en el registro. El segundo parámetro es el nivel de registro. La entrada válida para el segundo parámetro podría ser **informativa**, **ADVERTENCIA** o **error**.
@@ -1080,7 +1081,7 @@ La consola de SPA puede ejecutarse en dos modos, depurar o liberar. El modo de l
 
     Por ejemplo, la salida podría ser:
 
-    Id | SessionId | AdvisoryPackageId | ReportStatusId | LastUpdatetime | ThresholdversionId
+    Identificador | SessionId | AdvisoryPackageId | ReportStatusId | LastUpdatetime | ThresholdversionId
     :---: | :---: | :---: | :---: | :---: | :---:
     12 | 17 | 1 | 2 | 2011-05-11 05:35:24.387 | 1
 
@@ -1238,7 +1239,7 @@ SPA admite el restablecimiento y las actualizaciones de versión secundaria. Est
 
 Esta característica es principalmente para las actualizaciones secundarias. No se pueden cambiar drásticamente los elementos de visualización de la interfaz de usuario. Si desea realizar cambios importantes, tendrá que crear un paquete de Advisor diferente. Debe incluir la versión principal en el nombre del módulo de Advisor.
 
-Las limitaciones de las modificaciones de la versión secundaria **CANNOT** son las siguientes:
+Las limitaciones de las modificaciones de la versión secundaria  son las siguientes:
 
 * Cambiar el nombre del esquema
 
@@ -1315,7 +1316,7 @@ Los siguientes atributos de proveedor se pueden usar para recopilar ETW:
 Atributo | Tipo | Descripción
 --- | --- | ---
 guid | GUID | GUID de proveedor
-hora de sesión | cadena | Nombre de sesión de ETW (opcional, solo es necesario para eventos de kernel)
+hora de sesión | string | Nombre de sesión de ETW (opcional, solo es necesario para eventos de kernel)
 keywordsany | Hex | Cualquier palabra clave (opcional, sin prefijo 0x)
 keywordsAll | Hex | Todas las palabras clave (opcional)
 properties | Hex | Propiedades (opcional)
@@ -1345,7 +1346,7 @@ Nombre de la columna | Tipo de datos de SQL | Descripción
 --- | --- | ---
 SequenceID | Int NOT NULL | IDENTIFICADOR de secuencia de correlación
 Nombre | Nvarchar (100) | Nombre de propiedad
-Value | Nvarchar(4000) | Value
+Valor | Nvarchar(4000) | Valor
 
 ### <a name="etw-schema"></a>Esquema ETW
 

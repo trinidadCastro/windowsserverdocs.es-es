@@ -7,12 +7,13 @@ author: pronichkin
 ms.author: artemp
 ms.localizationpriority: medium
 ms.date: 02/20/2018
-ms.openlocfilehash: 42a016a95d24f6ec0abc560a54f8589ab4c65ab1
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.topic: conceptual
+ms.openlocfilehash: 6bfcd16ed8e4c834cfb32eea4774eb08da2f12b4
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90077552"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97943631"
 ---
 # <a name="what-is-the-server-core-installation-option-in-windows-server"></a>¿Qué es la opción de instalación Server Core en Windows Server?
 

@@ -1,17 +1,18 @@
 ---
 title: Proceso de implementación de acceso inalámbrico
-description: Este tema forma parte de la guía de redes de Windows Server 2016 "implementación de acceso inalámbrico autenticado mediante 802.1 X basado en contraseña".
+description: Este tema forma parte de la guía de redes de Windows Server 2016 "implementación de acceso inalámbrico autenticado de Password-Based 802.1 X"
 manager: brianlic
 ms.topic: article
 ms.assetid: 2555f238-926e-4b20-9bfb-9774831062da
 author: eross-msft
 ms.author: lizross
-ms.openlocfilehash: 9c2326df824288b6adf4453d6ef272ba632eb6c2
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: d8573992748402911a7366cb6e9059ef7b31966a
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969602"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97943221"
 ---
 # <a name="wireless-access-deployment-process"></a>Proceso de implementación de acceso inalámbrico
 
@@ -23,7 +24,7 @@ El proceso que se usa para implementar el acceso inalámbrico se produce en esta
 
 Planee, implemente y configure los AP para la conectividad de clientes inalámbricos y para su uso con NPS. En función de sus preferencias y de las dependencias de red, puede \- configurar previamente los valores de los puntos de conexión inalámbricos antes de instalarlos en la red, o bien puede configurarlos de forma remota después de la instalación.
 
-## <a name="stage-2--adds-group-configuration"></a>Fase 2: configuración de grupo de AD DS
+## <a name="stage-2--ad-ds-group-configuration"></a>Fase 2: configuración de grupo de AD DS
 
 En AD DS, debe crear uno o más grupos de seguridad de usuarios inalámbricos.
 

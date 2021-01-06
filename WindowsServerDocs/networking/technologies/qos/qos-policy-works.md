@@ -6,12 +6,13 @@ ms.assetid: 25097cb8-b9b1-41c9-b3c7-3610a032e0d8
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: fe91bba99000be307ed011cb5636dc49d65c389a
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 41bbf2245143281cd80a46c23c2c6bf704ea3ccc
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87942535"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97943171"
 ---
 # <a name="how-qos-policy-works"></a>Cómo funciona la Directiva de QoS
 
@@ -21,9 +22,9 @@ Al iniciar o obtener la configuración actualizada de directiva de grupo de usua
 
 1. El motor de directiva de grupo recupera la configuración del usuario o del equipo directiva de grupo de Active Directory.
 
-2. El motor de directiva de grupo informa a la extensión del lado cliente de QoS de que hubo cambios en las directivas de QoS.
+2. El motor de directiva de grupo informa a la extensión QoS Client-Side de que se produjeron cambios en las directivas QoS.
 
-3. La extensión del lado cliente QoS envía una notificación de eventos de directiva QoS al módulo de inspección de QoS.
+3. La extensión QoS Client-Side envía una notificación de eventos de directiva QoS al módulo de inspección de QoS.
 
 4. El módulo de inspección de QoS recupera las directivas QoS de usuario o equipo y las almacena.
 

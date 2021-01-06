@@ -2,17 +2,17 @@
 title: Replicación de almacenamiento de clúster a clúster
 manager: siroy
 ms.author: nedpyle
-ms.topic: get-started-article
+ms.topic: how-to
 ms.assetid: 834e8542-a67a-4ba0-9841-8a57727ef876
 author: nedpyle
 ms.date: 04/26/2019
 description: Cómo usar réplica de almacenamiento para replicar volúmenes en un clúster en otro clúster que ejecuta Windows Server.
-ms.openlocfilehash: 5de25151f0b49ac9cbf9d6be793c2ba0c6efb165
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c980c48ab23c7e46ead47babe06055008056e763
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87950479"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97941471"
 ---
 # <a name="cluster-to-cluster-storage-replication"></a>Replicación de almacenamiento de clúster a clúster
 
@@ -147,13 +147,13 @@ Muchos de estos requisitos se pueden determinar mediante el cmdlet `Test-SRTopol
    ```
 
      > [!IMPORTANT]
-     > Al usar un servidor de prueba sin carga de E/S de escritura en el volumen de origen especificado durante el período de evaluación, considere la posibilidad de agregar una carga de trabajo o no se generará un informe útil. Pruebe con cargas de trabajo del estilo de producción para ver números reales y tamaños de registro recomendados. Como alternativa, solo tiene que copiar algunos archivos en el volumen de origen durante la prueba o descargar y ejecutar [DISKSPD](https://gallery.technet.microsoft.com/DiskSpd-a-robust-storage-6cd2f223) para generar e/s de escritura. Por ejemplo, una muestra con una carga de trabajo de e/s de escritura baja durante cinco minutos en el volumen D:`Diskspd.exe -c1g -d300 -W5 -C5 -b8k -t2 -o2 -r -w5 -h d:\test.dat`
+     > Al usar un servidor de prueba sin carga de E/S de escritura en el volumen de origen especificado durante el período de evaluación, considere la posibilidad de agregar una carga de trabajo o no se generará un informe útil. Pruebe con cargas de trabajo del estilo de producción para ver números reales y tamaños de registro recomendados. Como alternativa, solo tiene que copiar algunos archivos en el volumen de origen durante la prueba o descargar y ejecutar [DISKSPD](https://gallery.technet.microsoft.com/DiskSpd-a-robust-storage-6cd2f223) para generar e/s de escritura. Por ejemplo, una muestra con una carga de trabajo de e/s de escritura baja durante cinco minutos en el volumen D: `Diskspd.exe -c1g -d300 -W5 -C5 -b8k -t2 -o2 -r -w5 -h d:\test.dat`
 
 4. Examine el informe **TestSrTopologyReport.html** para asegurarse de que cumple los requisitos de la Réplica de almacenamiento.
 
    ![Pantalla donde se muestran los resultados de informes de topología de replicación](./media/Cluster-to-Cluster-Storage-Replication/SRTestSRTopologyReport.png)
 
-## <a name="step-2-configure-two-scale-out-file-server-failover-clusters"></a>Paso 2: configurar dos clústeres de conmutación por error de Servidor de archivos de escalabilidad horizontal
+## <a name="step-2-configure-two-scale-out-file-server-failover-clusters"></a>Paso 2: configurar dos clústeres de conmutación por error de servidor de archivos Scale-Out
 Ahora creará dos clústeres de conmutación por error normal. Después de la configuración, la validación y las pruebas, los replicará con Réplica de almacenamiento. Puede realizar todos los pasos siguientes en los nodos del clúster directamente o desde un equipo de administración remota que contenga el Herramientas de administración remota del servidor de Windows Server.
 
 ### <a name="graphical-method"></a>Método gráfico
