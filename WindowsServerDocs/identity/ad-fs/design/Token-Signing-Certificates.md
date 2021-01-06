@@ -7,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 428d87c8707ca80110f926b4e81d4c43794986da
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: b9fdfa0dddabd96623532d1b67dc2a189cde66d9
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97049363"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97946251"
 ---
 # <a name="token-signing-certificates"></a>Certificados de firma de tokens
 
@@ -54,7 +54,7 @@ Hay dos opciones de granja de servidores que puede considerar al obtener \- los 
 
     Como se muestra en la siguiente ilustración, la clave privada de un certificado de firma de token único \- se puede compartir con todos los servidores de Federación de una granja. Esta opción, en comparación con la opción "único \- certificado de firma de tokens", reduce los costos si tiene previsto obtener un \- certificado de firma de tokens de una CA pública.
 
-![firma de tokens](media/adfs2_fedserver_certstory_3.gif)
+    ![La ilustración que muestra la clave privada de un solo certificado de firma de tokens \- puede compartirse en todos los servidores de Federación de una granja.](media/adfs2_fedserver_certstory_3.gif)
 
 -   Hay un \- certificado de firma de tokens único para cada servidor de Federación de una granja.
 
@@ -62,7 +62,7 @@ Hay dos opciones de granja de servidores que puede considerar al obtener \- los 
 
     Como se muestra en la siguiente ilustración, puede obtener un \- certificado de firma de tokens independiente para cada servidor de Federación de la granja. Esta opción es más costosa si tiene previsto obtener los \- certificados de firma de tokens de una CA pública.
 
-![firma de tokens](media/adfs2_fedserver_certstory_4.gif)
+    ![firma de tokens](media/adfs2_fedserver_certstory_4.gif)
 
 Para obtener información acerca de cómo instalar un certificado al usar los servicios de Certificate Server de Microsoft como entidad de certificación empresarial, vea [iis 7,0: crear un certificado de servidor de dominio en iis 7,0](https://go.microsoft.com/fwlink/?LinkId=108548).
 

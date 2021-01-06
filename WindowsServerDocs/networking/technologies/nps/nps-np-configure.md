@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: fe77655a-e2be-4949-92e1-aaaa215d86ea
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 88c35f983ae998312ad3353245927c943869d7f0
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 3b14d290a1bf80b0f72abb2b2043be2e5e53516a
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952060"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97946691"
 ---
 # <a name="configure-network-policies"></a>Configurar las directivas de red
 
@@ -50,7 +51,7 @@ La pertenencia a **Administradores de dominio**, o equivalente, es lo mínimo ne
 
 1. Abra la consola de NPS y, a continuación, haga doble clic en **directivas**.
 
-2. En el árbol de consola, haga clic con el botón secundario en **directivas de red**y haga clic en **nuevo**. Se abre el asistente para nueva directiva de red.
+2. En el árbol de consola, haga clic con el botón secundario en **directivas de red** y haga clic en **nuevo**. Se abre el asistente para nueva directiva de red.
 
 3. Use este asistente para crear una directiva.
 
@@ -103,7 +104,7 @@ La pertenencia a **Administradores de dominio**, o equivalente, es lo mínimo ne
 
 ### <a name="to-create-policies-for-8021x-wired-or-wireless-with-a-wizard"></a>Para crear directivas para conexiones cableadas o inalámbricas 802.1X con un asistente
 
-1. En el NPS, en Administrador del servidor, haga clic en **herramientas**y, a continuación, haga clic en **servidor de directivas de redes**. Se abre la consola NPS.
+1. En el NPS, en Administrador del servidor, haga clic en **herramientas** y, a continuación, haga clic en **servidor de directivas de redes**. Se abre la consola NPS.
 
 2. Si aún no está seleccionada, haga clic **en \( NPS \) local**. Si desea crear directivas en un NPS remoto, seleccione el servidor.
 
@@ -127,9 +128,9 @@ Puede usar este procedimiento para configurar NPS para omitir las propiedades de
 
 La pertenencia al grupo **administradores**, o equivalente, es lo mínimo necesario para completar este procedimiento.
 
-1. En el NPS, en Administrador del servidor, haga clic en **herramientas**y, a continuación, haga clic en **servidor de directivas de redes**. Se abre la consola NPS.
+1. En el NPS, en Administrador del servidor, haga clic en **herramientas** y, a continuación, haga clic en **servidor de directivas de redes**. Se abre la consola NPS.
 
-2. Haga doble clic en **directivas**, haga clic en **directivas de red**y, a continuación, en el panel de detalles, haga doble clic en la Directiva que desea configurar.
+2. Haga doble clic en **directivas**, haga clic en **directivas de red** y, a continuación, en el panel de detalles, haga doble clic en la Directiva que desea configurar.
 
 3. En el cuadro de diálogo **propiedades** de Directiva, en la ficha **información general** , en **permiso de acceso**, active la casilla **omitir las propiedades de acceso telefónico de cuentas de usuario** y, a continuación, haga clic en **Aceptar**.
 
@@ -149,7 +150,7 @@ También puede usar VLAN cuando desee separar una red entre diferentes grupos de
 
 Puede usar este procedimiento para configurar una directiva de red que asigne usuarios a una VLAN. Al usar hardware de red compatible con VLAN, como enrutadores, conmutadores y controladores de acceso, puede configurar la Directiva de red para indicar a los servidores de acceso que coloquen miembros de grupos de Active Directory específicos en VLAN específicas. Esta capacidad de agrupar los recursos de red de forma lógica con VLAN proporciona flexibilidad a la hora de diseñar e implementar soluciones de red.
 
-Al configurar las opciones de una directiva de red de NPS para su uso con VLAN, debe configurar los atributos **Tunnel-Medium-Type**, **Tunnel-Pvt-Group-ID**, **Tunnel-Type**y **Tunnel-Tag**.
+Al configurar las opciones de una directiva de red de NPS para su uso con VLAN, debe configurar los atributos **Tunnel-Medium-Type**, **Tunnel-Pvt-Group-ID**, **Tunnel-Type** y **Tunnel-Tag**.
 
 Este procedimiento se proporciona como una directriz; la configuración de red puede requerir una configuración diferente a la que se describe a continuación.
 
@@ -157,13 +158,13 @@ La pertenencia al grupo **administradores**, o equivalente, es lo mínimo necesa
 
 ### <a name="to-configure-a-network-policy-for-vlans"></a>Para configurar una directiva de red para VLAN
 
-1. En el NPS, en Administrador del servidor, haga clic en **herramientas**y, a continuación, haga clic en **servidor de directivas de redes**. Se abre la consola NPS.
+1. En el NPS, en Administrador del servidor, haga clic en **herramientas** y, a continuación, haga clic en **servidor de directivas de redes**. Se abre la consola NPS.
 
-2. Haga doble clic en **directivas**, haga clic en **directivas de red**y, a continuación, en el panel de detalles, haga doble clic en la Directiva que desea configurar.
+2. Haga doble clic en **directivas**, haga clic en **directivas de red** y, a continuación, en el panel de detalles, haga doble clic en la Directiva que desea configurar.
 
 3. En el cuadro de diálogo **propiedades** de la Directiva, haga clic en la pestaña **configuración** .
 
-4. En **propiedades**de la Directiva, en **configuración**, en **atributos RADIUS**, asegúrese de que está seleccionado **estándar** .
+4. En **propiedades** de la Directiva, en **configuración**, en **atributos RADIUS**, asegúrese de que está seleccionado **estándar** .
 
 5. En el panel de detalles, en **atributos**, el atributo **de tipo de servicio** se configura con un valor predeterminado de **entramado**. De forma predeterminada, para las directivas con métodos de acceso de VPN y de acceso telefónico, el atributo **Framed-Protocol** se configura con un valor de **PPP**. Para especificar los atributos de conexión adicionales necesarios para las VLAN, haga clic en **Agregar**. Se abre el cuadro de diálogo **Agregar atributo RADIUS estándar** .
 
@@ -180,11 +181,11 @@ La pertenencia al grupo **administradores**, o equivalente, es lo mínimo necesa
 
 8. Si el servidor de acceso a la red (NAS) requiere el uso del atributo de la **etiqueta de túnel** , siga estos pasos para agregar el atributo de **etiqueta de túnel** a la Directiva de red. Si la documentación de NAS no menciona este atributo, no lo agregue a la Directiva. Si es necesario, agregue los atributos de la siguiente manera:
 
-    - En **propiedades**de la Directiva, en **configuración**, en **atributos RADIUS**, haga clic en **específico del proveedor**.
+    - En **propiedades** de la Directiva, en **configuración**, en **atributos RADIUS**, haga clic en **específico del proveedor**.
 
     - En el panel de detalles, haga clic en **Agregar**. Se abre el cuadro de diálogo **Agregar atributo específico del proveedor** .
 
-    - En **atributos**, desplácese hacia abajo hasta y seleccione **tuneliza-etiqueta**y, a continuación, haga clic en **Agregar**. Se abre el cuadro de diálogo **información de atributos** .
+    - En **atributos**, desplácese hacia abajo hasta y seleccione **tuneliza-etiqueta** y, a continuación, haga clic en **Agregar**. Se abre el cuadro de diálogo **información de atributos** .
 
     - En **valor de atributo**, escriba el valor que obtuvo de la documentación del hardware.
 
@@ -202,17 +203,17 @@ La pertenencia al grupo **administradores**, o equivalente, es lo mínimo necesa
 
 ### <a name="to-configure-the-framed-mtu-attribute"></a>Para configurar el atributo Framed-MTU
 
-1. En el NPS, en Administrador del servidor, haga clic en **herramientas**y, a continuación, haga clic en **servidor de directivas de redes**. Se abre la consola NPS.
+1. En el NPS, en Administrador del servidor, haga clic en **herramientas** y, a continuación, haga clic en **servidor de directivas de redes**. Se abre la consola NPS.
 
-2. Haga doble clic en **directivas**, haga clic en **directivas de red**y, a continuación, en el panel de detalles, haga doble clic en la Directiva que desea configurar.
+2. Haga doble clic en **directivas**, haga clic en **directivas de red** y, a continuación, en el panel de detalles, haga doble clic en la Directiva que desea configurar.
 
 3. En el cuadro de diálogo **propiedades** de la Directiva, haga clic en la pestaña **configuración** .
 
 4. En **configuración**, en **atributos RADIUS**, haga clic en **estándar**. En el panel de detalles, haga clic en **Agregar**. Se abre el cuadro de diálogo **Agregar atributo RADIUS estándar** .
 
-5. En **atributos**, desplácese hacia abajo y haga clic en **tramad-MTU**y, a continuación, haga clic en **Agregar**. Se abre el cuadro de diálogo **información de atributos** .
+5. En **atributos**, desplácese hacia abajo y haga clic en **tramad-MTU** y, a continuación, haga clic en **Agregar**. Se abre el cuadro de diálogo **información de atributos** .
 
-6. En **valor de atributo**, escriba un valor igual o menor que **1344**. Haga clic en **Aceptar**, en **cerrar**y, a continuación, en **Aceptar**.
+6. En **valor de atributo**, escriba un valor igual o menor que **1344**. Haga clic en **Aceptar**, en **cerrar** y, a continuación, en **Aceptar**.
 
 
 

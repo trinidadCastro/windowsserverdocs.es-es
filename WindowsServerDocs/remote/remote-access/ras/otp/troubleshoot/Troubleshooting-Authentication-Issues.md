@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 71307757-f8f4-4f82-b8b3-ffd4fd8c5d6d
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 0cd438e26b014db9d051cd78e91f1a0a4bdf0a31
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 9717b4c12579564d2c3e567fdce17ac105804217
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87958313"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947241"
 ---
 # <a name="troubleshooting-authentication-issues"></a>Solucionar problemas relacionados con la autenticación
 
@@ -32,11 +33,11 @@ El usuario proporcionó una contraseña de un solo tiempo válida y el servidor 
 
 En el servidor de DirectAccess, ejecute los siguientes comandos de Windows PowerShell:
 
-1.  Obtiene la lista de entidades de certificación de emisión de OTP configuradas y comprueba el valor de "CAServer":`Get-DAOtpAuthentication`
+1.  Obtiene la lista de entidades de certificación de emisión de OTP configuradas y comprueba el valor de "CAServer": `Get-DAOtpAuthentication`
 
-2.  Asegúrese de que las CA estén configuradas como servidores de administración:`Get-DAMgmtServer -Type All`
+2.  Asegúrese de que las CA estén configuradas como servidores de administración: `Get-DAMgmtServer -Type All`
 
-3.  Asegúrese de que el equipo cliente ha establecido el túnel de infraestructura: en la consola Firewall de Windows con seguridad avanzada, expanda **supervisión/asociaciones de seguridad**, haga clic en **modo principal**y asegúrese de que las asociaciones de seguridad de IPSec aparecen con las direcciones remotas correctas para la configuración de DirectAccess.
+3.  Asegúrese de que el equipo cliente ha establecido el túnel de infraestructura: en la consola Firewall de Windows con seguridad avanzada, expanda **supervisión/asociaciones de seguridad**, haga clic en **modo principal** y asegúrese de que las asociaciones de seguridad de IPSec aparecen con las direcciones remotas correctas para la configuración de DirectAccess.
 
 ## <a name="directaccess-server-connectivity-issues"></a>Problemas de Conectividad del servidor de DirectAccess
 **Escenario**. El usuario no se puede autenticar mediante OTP con el error: "error de autenticación debido a un error interno"
@@ -136,7 +137,7 @@ Asegúrese de que la configuración más reciente está implementada en el equip
 
 **Causa**
 
-Hay dos causas posibles de este error:
+Hay dos causas posibles para este error:
 
 -   El usuario no tiene permiso para leer la plantilla de inicio de sesión de OTP.
 
@@ -155,7 +156,7 @@ Hay dos causas posibles de este error:
 
 **Causa**
 
-Hay dos causas posibles de este error:
+Hay dos causas posibles para este error:
 
 -   El equipo del usuario no tiene conectividad de red.
 
@@ -267,7 +268,7 @@ El protocolo de autenticación Kerberos no funciona cuando el certificado de ini
 
 **Solución**
 
-1.  Para confirmar la causa de este error, en la consola de administración de acceso remoto, en **paso 2 servidor de acceso remoto**, haga clic en **Editar**y, a continuación, en el Asistente para la **instalación del servidor de acceso remoto** , haga clic en **plantillas de certificado de OTP**. Tome nota de la plantilla de certificado que se usa para la inscripción de certificados que se emiten para la autenticación de OTP. Abra la consola entidad de certificación, en el panel izquierdo, haga clic en **plantillas de certificado**y, a continuación, haga doble clic en el certificado de inicio de sesión OTP para ver las propiedades de la plantilla de certificado.
+1.  Para confirmar la causa de este error, en la consola de administración de acceso remoto, en **paso 2 servidor de acceso remoto**, haga clic en **Editar** y, a continuación, en el Asistente para la **instalación del servidor de acceso remoto** , haga clic en **plantillas de certificado de OTP**. Tome nota de la plantilla de certificado que se usa para la inscripción de certificados que se emiten para la autenticación de OTP. Abra la consola entidad de certificación, en el panel izquierdo, haga clic en **plantillas de certificado** y, a continuación, haga doble clic en el certificado de inicio de sesión OTP para ver las propiedades de la plantilla de certificado.
 
     Para solucionar este problema, configure un certificado para el certificado de inicio de sesión de OTP y no active la casilla no **incluir información de revocación en los certificados emitidos** en la pestaña **servidor** del cuadro de diálogo Propiedades de la plantilla.
 

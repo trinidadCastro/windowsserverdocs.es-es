@@ -6,13 +6,13 @@ ms.topic: article
 ms.assetid: bc22d29c-678c-462d-88b3-1c737dceca75
 ms.author: jgerend
 author: jasongerend
-msdate: 08/16/2019
-ms.openlocfilehash: b2df170153e2848239a8846e58a84981bc9ad12e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/16/2019
+ms.openlocfilehash: b1c1acd5feb39304a7c507aa88ea15156fb5e8dd
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969392"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947101"
 ---
 # <a name="use-regular-expressions-in-nps"></a>Usar expresiones regulares de NPS
 
@@ -53,7 +53,7 @@ Use la tabla siguiente como referencia cuando vaya a crear expresiones regulares
 |    `\v`     |                                                                      Coincide con un carácter de tabulación vertical.                                                                       |                                                                 &nbsp;                                                                  |
 |    `\w`     |                                              Coincide con cualquier carácter de palabra, incluido el carácter de subrayado \( equivalente a `[A-Za-z0-9_]` \) .                                              |                                                                 &nbsp;                                                                  |
 |    `\W`     |                                           Coincide con cualquier carácter que no sea \- de palabra, excepto el carácter de subrayado \( equivalente a `[^A-Za-z0-9_]` \) .                                           |                                                                 &nbsp;                                                                  |
-|   `\num`    | Hace referencia a las coincidencias recordadas \( `?num` , donde NUM es un entero positivo \) .  Esta opción solo se puede usar en el cuadro de texto **reemplazar** al configurar la manipulación de atributos. |                                       `\1`reemplaza lo que se almacena en la primera coincidencia memorizada.                                       |
+|   `\num`    | Hace referencia a las coincidencias recordadas \( `?num` , donde NUM es un entero positivo \) .  Esta opción solo se puede usar en el cuadro de texto **reemplazar** al configurar la manipulación de atributos. |                                       `\1` reemplaza lo que se almacena en la primera coincidencia memorizada.                                       |
 |   `/n/ `    |                      Permite la inserción de códigos ASCII en expresiones regulares \( `?n` , donde n es un valor de escape octal, hexadecimal o decimal \) .                       |                                                                 &nbsp;                                                                  |
 
 ## <a name="examples-for-network-policy-attributes"></a>Ejemplos de atributos de directiva de red
@@ -96,7 +96,7 @@ En un escenario de acceso telefónico de origen en el que un proveedor de servic
 
 
 
-<strong>Para reemplazar el *usuario* por*user@specific_domain</strong>*
+<strong>Para reemplazar el *usuario* por *user@specific_domain</strong>*
 
 - Localización`$`
 
@@ -106,14 +106,14 @@ En un escenario de acceso telefónico de origen en el que un proveedor de servic
 
 Puede crear reglas de enrutamiento que reenvíen mensajes RADIUS con un nombre de territorio específico a un conjunto determinado de servidores RADIUS cuando NPS se use como un proxy RADIUS. A continuación, se indica la sintaxis recomendada para el enrutamiento de solicitudes en función del nombre de territorio.
 
-- **Nombre NetBIOS**:`WCOAST`
-- **Patrón**:`^wcoast\\`
+- **Nombre NetBIOS**: `WCOAST`
+- **Patrón**:      `^wcoast\\`
 
 En el ejemplo siguiente, wcoast.microsoft.com es un sufijo de nombre principal de usuario (UPN) único para DNS o Active Directory dominio wcoast.microsoft.com. Con el patrón proporcionado, el proxy NPS puede enrutar los mensajes según el nombre NetBIOS o el sufijo UPN del dominio.
 
-- **Nombre NetBIOS**:`WCOAST`
-- **Sufijo UPN**:`wcoast.microsoft.com`
-- **Patrón**:`^wcoast\\|@wcoast\.microsoft\.com$`
+- **Nombre NetBIOS**: `WCOAST`
+- **Sufijo UPN**:   `wcoast.microsoft.com`
+- **Patrón**:      `^wcoast\\|@wcoast\.microsoft\.com$`
 
 
 Para obtener más información sobre la administración de NPS, consulte [administrar el servidor de directivas de redes](nps-manage-top.md).

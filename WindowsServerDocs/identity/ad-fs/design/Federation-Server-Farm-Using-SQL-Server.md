@@ -7,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 781c3d99fdd063d094b85032e1ccaca0860cba9a
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 985ef6fe09433b843b3e67445045b68449036e24
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97046993"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947131"
 ---
 # <a name="legacy-ad-fs-federation-server-farm-using-sql-server"></a>Granja de servidores de Federación de AD FS heredada mediante SQL Server
 
@@ -61,7 +61,7 @@ De forma similar a la granja de servidores de Federación con la topología WID,
 
 En la siguiente ilustración se muestra cómo la empresa ficticia contoso Pharmaceuticals implementó su granja de servidores de Federación con SQL Server topología en la red corporativa. También muestra cómo la empresa configuró la red perimetral con acceso a un servidor DNS, un host de NLB adicional que usa el mismo nombre DNS del clúster \( FS.contoso.com \) que se usa en el clúster NLB de la red corporativa, y con dos servidores proxy de aplicación Web \( wap1 y WAP2 \) .
 
-![granja de servidores con SQL](media/SQLFarmADFSBlue.gif)
+![Ilustración que muestra cómo la empresa ficticia contoso Pharmaceuticals implementó su granja de servidores de Federación con SQL Server topología en la red corporativa.](media/SQLFarmADFSBlue.gif)
 
 Para obtener más información acerca de cómo configurar el entorno de red para su uso con servidores de Federación o proxy de aplicación Web, consulte la sección "requisitos de resolución de nombres" en [AD FS requisitos](AD-FS-Requirements.md) y [planear la infraestructura del proxy de aplicación web (WAP)](/previous-versions/orphan-topics/ws.11/dn383648(v=ws.11)).
 
@@ -100,7 +100,7 @@ Desde la perspectiva de los nodos de una AD FS SQL Server granja, el grupo de di
 
 En el diagrama siguiente se muestra un AD FS granja de SQL Server con el grupo de disponibilidad AlwaysOn.
 
-![granja de servidores con SQL](media/alwaysonavailabilitygroups.jpg)
+![Diagrama que muestra una AD FS SQL Server granja con el grupo de disponibilidad AlwaysOn.](media/alwaysonavailabilitygroups.jpg)
 
 > [!NOTE]
 > Los grupos de disponibilidad AlwaysOn requieren que las instancias de SQL Server residan en los nodos WSFC de clústeres de conmutación por error de Windows Server \( \) .

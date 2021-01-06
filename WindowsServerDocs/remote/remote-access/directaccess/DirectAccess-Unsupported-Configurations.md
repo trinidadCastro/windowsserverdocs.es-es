@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 23d05e61-95c3-4e70-aa83-b9a8cae92304
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 6d10b0bcef354bc1746d05d212d47f836d9c28c2
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 827af9315a73bb67cdb017b62150a5fb42c5d69a
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87951300"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97946641"
 ---
 # <a name="directaccess-unsupported-configurations"></a>Configuraciones no compatibles de DirectAccess
 
@@ -75,8 +76,8 @@ Cuando se usa IPHTTPS, la conexión IPHTTPS debe finalizar en el servidor de Dir
 ## <a name="force-tunnel-with-otp-authentication"></a><a name="bkmk_ft"></a>Forzar túnel con autenticación OTP
 No implemente un servidor de DirectAccess con autenticación en dos fases con OTP y tunelización forzada, o se producirá un error en la autenticación de OTP. Se requiere una conexión de Capa de sockets seguros fuera de banda (SSL) entre el servidor de DirectAccess y el cliente de DirectAccess. Esta conexión requiere una exención para enviar el tráfico fuera del túnel de DirectAccess. En una configuración de túnel forzado, todo el tráfico debe fluir a través de un túnel de DirectAccess y no se permite ninguna exención una vez establecido el túnel. Por este motivo, no se admite la autenticación de OTP en una configuración de túnel forzada.
 
-## <a name="deploying-directaccess-with-a-read-only-domain-controller"></a><a name="bkmk_rodc"></a>Implementación de DirectAccess con un controlador de dominio de solo lectura
-Los servidores de DirectAccess deben tener acceso a un controlador de dominio de lectura y escritura y no funcionar correctamente con un controlador de dominio de solo lectura (RODC).
+## <a name="deploying-directaccess-with-a-read-only-domain-controller"></a><a name="bkmk_rodc"></a>Implementación de DirectAccess con un controlador de dominio de Read-Only
+Los servidores de DirectAccess deben tener acceso a un controlador de dominio de lectura y escritura y no funcionan correctamente con un controlador de dominio de Read-Only (RODC).
 
 Se requiere un controlador de dominio de lectura y escritura por muchos motivos, incluidos los siguientes:
 

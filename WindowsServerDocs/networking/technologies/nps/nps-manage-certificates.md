@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 204a4ef4-9d78-4a62-9940-43cc0e1c39d0
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 0641b78a15a8d8464dd1993b62439f495391f8b1
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 60b31be2cd4716b0672899d4fcccc3c9429f2713
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87962039"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97946811"
 ---
 # <a name="manage-certificates-used-with-nps"></a>Administrar los certificados que se usan con NPS
 
@@ -61,11 +62,11 @@ La pertenencia al grupo **administradores**, o equivalente, es lo mínimo necesa
 
 2. Vaya a la clave del registro **HKEY \_ local \_ MACHINE\System\CurrentControlSet\Control\SecurityProviders\SCHANNEL**
 
-3. En el menú **edición** , haga clic en **nuevo**y, a continuación, haga clic en **clave**.
+3. En el menú **edición** , haga clic en **nuevo** y, a continuación, haga clic en **clave**.
 
-4. Escriba **ClientCacheTime**y, a continuación, presione Entrar.
+4. Escriba **ClientCacheTime** y, a continuación, presione Entrar.
 
-5. Haga clic con el botón secundario en **ClientCacheTime**, haga clic en **nuevo**y, a continuación, haga clic en **valor DWORD (32 bits)**.
+5. Haga clic con el botón secundario en **ClientCacheTime**, haga clic en **nuevo** y, a continuación, haga clic en **valor DWORD (32 bits)**.
 
 6. Escriba la cantidad de tiempo, en milisegundos, que desea que los equipos cliente almacenen en caché el identificador de TLS de un NPS después del primer intento de autenticación correcto del NPS.
 
@@ -84,11 +85,11 @@ La pertenencia al grupo **administradores**, o equivalente, es lo mínimo necesa
 
 2. Vaya a la clave del registro **HKEY \_ local \_ MACHINE\System\CurrentControlSet\Control\SecurityProviders\SCHANNEL**
 
-3. En el menú **edición** , haga clic en **nuevo**y, a continuación, haga clic en **clave**.
+3. En el menú **edición** , haga clic en **nuevo** y, a continuación, haga clic en **clave**.
 
-4. Escriba **ServerCacheTime**y, a continuación, presione Entrar.
+4. Escriba **ServerCacheTime** y, a continuación, presione Entrar.
 
-5. Haga clic con el botón secundario en **ServerCacheTime**, haga clic en **nuevo**y, a continuación, haga clic en **valor DWORD (32 bits)**.
+5. Haga clic con el botón secundario en **ServerCacheTime**, haga clic en **nuevo** y, a continuación, haga clic en **valor DWORD (32 bits)**.
 
 6. Escriba la cantidad de tiempo, en milisegundos, que desea que NPSs almacene en caché el identificador de TLS de un equipo cliente después del primer intento de autenticación correcta del cliente.
 
@@ -104,11 +105,11 @@ Para completar este procedimiento, debe ser miembro del grupo **usuarios** en el
 
 ### <a name="to-obtain-the-sha-1-hash-of-a-trusted-root-ca-certificate"></a>Para obtener el hash SHA-1 de un certificado de CA raíz de confianza
 
-1. En el cuadro de diálogo Ejecutar o Windows PowerShell, escriba **MMC**y, a continuación, presione Entrar. Se abre MMC de Microsoft Management Console \( \) . En MMC, haga clic en **archivo**y, a continuación, haga clic en **Agregar o quitar Snap\in**. Se abre el cuadro de diálogo **Agregar o quitar complementos**.
+1. En el cuadro de diálogo Ejecutar o Windows PowerShell, escriba **MMC** y, a continuación, presione Entrar. Se abre MMC de Microsoft Management Console \( \) . En MMC, haga clic en **archivo** y, a continuación, haga clic en **Agregar o quitar Snap\in**. Se abre el cuadro de diálogo **Agregar o quitar complementos**.
 
 2. En **Agregar o quitar complementos**, en **Complementos disponibles**, haga doble clic en **Certificados**. Se abre el Asistente para complementos de certificados. Haga clic en **Cuenta de equipo** y, a continuación, en **Siguiente**.
 
-3. En **seleccionar equipo**, asegúrese de que está seleccionado **equipo local (el equipo en el que se está ejecutando esta consola)** , haga clic en **Finalizar**y, a continuación, haga clic en **Aceptar**.
+3. En **seleccionar equipo**, asegúrese de que está seleccionado **equipo local (el equipo en el que se está ejecutando esta consola)** , haga clic en **Finalizar** y, a continuación, haga clic en **Aceptar**.
 
 4. En el panel izquierdo, haga doble clic en **certificados (equipo local)** y, a continuación, haga doble clic en la carpeta **entidades de certificación raíz de confianza** .
 

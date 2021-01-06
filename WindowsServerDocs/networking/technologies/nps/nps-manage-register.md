@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 2de954fd-a7d8-4cc6-85b1-b0c3c06f788f
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 871e1f2563564e1c85287393cd4b587692a44db6
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 15cdd18b6b6e5baffc47e1f4ecac7daaf580602a
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952152"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947091"
 ---
 # <a name="register-an-nps-in-an-active-directory-domain"></a>Registrar un NPS en un dominio de Active Directory
 
@@ -30,7 +31,7 @@ El requisito mínimo para realizar este procedimiento es la pertenencia al grupo
 ### <a name="to-register-an-nps-in-its-default-domain"></a>Para registrar un NPS en su dominio predeterminado
 
 
-1. En el NPS, en Administrador del servidor, haga clic en **herramientas**y, a continuación, haga clic en **servidor de directivas de redes**. Se abre la consola del servidor de directivas de redes.
+1. En el NPS, en Administrador del servidor, haga clic en **herramientas** y, a continuación, haga clic en **servidor de directivas de redes**. Se abre la consola del servidor de directivas de redes.
 
 2. Haga clic con el botón secundario en **NPS (local)** y, a continuación, haga clic en **registrar servidor en Active Directory**. Se abrirá el cuadro de diálogo **Servidor de directivas de redes**.
 
@@ -46,11 +47,11 @@ El requisito mínimo para realizar este procedimiento es la pertenencia al grupo
 
 ### <a name="to-register-an-nps-in-another-domain"></a>Para registrar un NPS en otro dominio
 
-1. En el controlador de dominio, en Administrador del servidor, haga clic en **herramientas**y, a continuación, haga clic en **Active Directory usuarios y equipos**. Se abre la Consola de usuarios y equipos de Active Directory.
+1. En el controlador de dominio, en Administrador del servidor, haga clic en **herramientas** y, a continuación, haga clic en **Active Directory usuarios y equipos**. Se abre la Consola de usuarios y equipos de Active Directory.
 
 2. En el árbol de consola, navegue hasta el dominio en el que desea que el NPS Lea la información de la cuenta de usuario y, a continuación, haga clic en la carpeta **usuarios** .
 
-3. En el panel de detalles, haga clic con el botón secundario en **servidores RAS e IAS**y, a continuación, haga clic en **propiedades**. Se abrirá el cuadro de diálogo **propiedades de servidor RAS e IAS** .
+3. En el panel de detalles, haga clic con el botón secundario en **servidores RAS e IAS** y, a continuación, haga clic en **propiedades**. Se abrirá el cuadro de diálogo **propiedades de servidor RAS e IAS** .
 
 4. En el cuadro de diálogo **propiedades de servidores RAS e IAS** , haga clic en la pestaña **miembros** , agregue cada uno de los NPSs que desee registrar en el dominio y, a continuación, haga clic en **Aceptar**.
 
@@ -59,7 +60,7 @@ El requisito mínimo para realizar este procedimiento es la pertenencia al grupo
 
 1. Abra el símbolo del sistema o Windows PowerShell.
 
-2. Escriba lo siguiente en el símbolo del sistema: **netsh NPS Add registeredserver** &nbsp; *Domain* &nbsp; *Server*y, a continuación, presione Entrar.
+2. Escriba lo siguiente en el símbolo del sistema: **netsh NPS Add registeredserver** &nbsp; *Domain* &nbsp; *Server* y, a continuación, presione Entrar.
 
 >[!NOTE]
 >En el comando anterior, *Domain* es el nombre de dominio DNS del dominio en el que desea registrar el NPS y *Server* es el nombre del equipo NPS.

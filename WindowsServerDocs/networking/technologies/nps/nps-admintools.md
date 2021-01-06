@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 5de80dc0-53be-42b7-8e5b-24d213bf2b25
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: f963e849f2ae23869431de30de983c02b87d4f9c
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.date: 12/08/2020
+ms.openlocfilehash: 7c20cbdf58a2994a7681a44c67503f0b6a775479
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865544"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947511"
 ---
 # <a name="network-policy-server-management-with-administration-tools"></a>Administración del Servidor de directivas de redes con Herramientas de administración
 
@@ -65,7 +66,7 @@ Para completar este procedimiento, debe pertenecer al grupo Administradores.
 3. En **agregar \- o quitar complementos**, en **Complementos \- disponibles**, desplácese hacia abajo en la lista, haga clic en **servidor de directivas de redes** y, a continuación, haga clic en **Agregar**. Se abre el cuadro de diálogo **Seleccionar equipo**.
 4. En **seleccionar equipo**, compruebe que está seleccionado **equipo local \( en el que se está ejecutando \) esta consola** y, a continuación, haga clic en **Aceptar**. El complemento \- para el NPS local se agrega a la lista de **Complementos seleccionados \-**.
 5. En **agregar \- o quitar complementos**, en **Complementos \- disponibles**, asegúrese de que el **servidor de directivas de redes** sigue seleccionado y, a continuación, haga clic en **Agregar**. Se volverá a abrir el cuadro de diálogo **seleccionar equipo** .
-6. En **seleccionar equipo**, haga clic en **otro equipo** y, a continuación, escriba la dirección IP o el \( FQDN del nombre de dominio completo \) del NPS remoto que desea administrar mediante el complemento NPS \- . Opcionalmente, puede hacer clic en **Examinar para explorar** el directorio del equipo que desea agregar. Haga clic en **OK**.
+6. En **seleccionar equipo**, haga clic en **otro equipo** y, a continuación, escriba la dirección IP o el \( FQDN del nombre de dominio completo \) del NPS remoto que desea administrar mediante el complemento NPS \- . Opcionalmente, puede hacer clic en **Examinar para explorar** el directorio del equipo que desea agregar. Haga clic en **Aceptar**.
 7. Repita los pasos 5 y 6 para agregar más NPSs al complemento NPS \- . Cuando haya agregado todas las NPSs que desea administrar, haga clic en **Aceptar**.
 8. Para guardar el complemento NPS para su uso posterior, haga clic en **archivo** y, a continuación, haga clic en **Guardar**. En el cuadro de diálogo **Guardar como** , vaya a la ubicación del disco duro donde desea guardar el archivo, escriba un nombre para el archivo. msc de Microsoft Management Console \( y, \) a continuación, haga clic en **Guardar**.
 
@@ -94,7 +95,7 @@ Para completar este procedimiento, debe ser miembro del grupo administradores en
     2. Para habilitar Conexión a Escritorio remoto para todas las conexiones de red en el equipo, haga clic en **Aceptar**.
 3. En **propiedades del sistema**, en **escritorio remoto**, decida si desea habilitar **permitir conexiones solo desde equipos que ejecutan escritorio remoto con autenticación a nivel de red** y realice la selección.
 4. Haga clic en **Seleccionar usuarios**. Se abre el cuadro de diálogo **escritorio remoto usuarios** .
-5. En **escritorio remoto usuarios**, para conceder permiso a un usuario para conectarse de forma remota al NPS, haga clic en **Agregar** y, a continuación, escriba el nombre de usuario de la cuenta de usuario. Haga clic en **OK**.
+5. En **escritorio remoto usuarios**, para conceder permiso a un usuario para conectarse de forma remota al NPS, haga clic en **Agregar** y, a continuación, escriba el nombre de usuario de la cuenta de usuario. Haga clic en **Aceptar**.
 6. Repita el paso 5 para cada usuario para el que desea conceder permiso de acceso remoto al NPS. Cuando haya terminado de agregar usuarios, haga clic en **Aceptar** para cerrar el cuadro de diálogo **escritorio remoto usuarios** y en **Aceptar** de nuevo para cerrar el cuadro de diálogo **propiedades del sistema** .
 7. Para conectarse a un NPS remoto que ha configurado mediante los pasos anteriores, haga clic en **Inicio**, desplácese hacia abajo en la lista alfabética, haga clic en **accesorios de Windows** y, a continuación, haga clic en **conexión a escritorio remoto**. Se abrirá el cuadro de diálogo **conexión a escritorio remoto** .
 8. En el cuadro de diálogo **conexión a escritorio remoto** , en **equipo**, escriba el nombre o la dirección IP de NPS. Si lo prefiere, haga clic en **Opciones**, configure opciones de conexión adicionales y, a continuación, haga clic en **Guardar** para guardar la conexión para su uso repetido.

@@ -1,16 +1,17 @@
 ---
 title: Implementación del acceso remoto en un clúster
-description: Este tema forma parte de la guía deploy Remote Access in a Cluster in Windows Server 2016.
+description: Obtenga información sobre el escenario empresarial para implementar varios servidores de acceso remoto en una carga de clúster equilibrada con el equilibrio de carga de red de Windows o con un equilibrador de carga externo.
 manager: dougkim
 ms.topic: article
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: c1d0a9490a2b2ef6efbd15f39ec95f1b482efd5e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 81a4e3ff98daed83ba69834d91d8633db2dc6487
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87944175"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97946991"
 ---
 # <a name="deploy-remote-access-in-a-cluster"></a>Implementación del acceso remoto en un clúster
 
@@ -65,7 +66,7 @@ En la siguiente tabla, se muestran los roles y características requeridos para 
 
 |Característica de rol \/|Compatibilidad con este escenario|
 |---------|-----------------|
-|Rol de acceso remoto|El rol se instala y desinstala mediante la consola del Administrador del servidor. Engloba tanto DirectAccess, que antes era una característica de Windows Server 2008 R2, como los servicios de enrutamiento y acceso remoto \( RRAS \) , que antes era un servicio de rol en el rol de servidor NPAS de servicios de acceso y directivas de redes \( \) . El rol de acceso remoto consta de dos componentes:<p>-Always On VPN y servicios de enrutamiento y acceso remoto \( RRAS \) VPN: DIRECTACCESS y VPN se administran conjuntamente en la consola de administración de acceso remoto.<br />-Enrutamiento RRAS: las características de enrutamiento RRAS se administran en la consola de enrutamiento y acceso remoto heredada.<p>Las dependencias son las siguientes:<p>-Internet Information Services \( \) servidor Web de IIS: esta característica es necesaria para configurar el servidor de ubicación de red y el sondeo Web predeterminado.<br />-Windows Internal Database: se usa para las cuentas locales en el servidor de acceso remoto.|
+|Rol de acceso remoto|El rol se instala y desinstala mediante la consola del Administrador del servidor. Engloba tanto DirectAccess, que antes era una característica de Windows Server 2008 R2, como los servicios de enrutamiento y acceso remoto \( RRAS \) , que antes era un servicio de rol en el rol de servidor NPAS de servicios de acceso y directivas de redes \( \) . El rol de acceso remoto consta de dos componentes:<p>-Always On VPN y los servicios de enrutamiento y acceso remoto \( RRAS \) VPN-DirectAccess y VPN se administran conjuntamente en la consola de administración de acceso remoto.<br />-Enrutamiento RRAS: las características de enrutamiento RRAS se administran en la consola de enrutamiento y acceso remoto heredada.<p>Las dependencias son las siguientes:<p>-Internet Information Services \( \) servidor Web de IIS: esta característica es necesaria para configurar el servidor de ubicación de red y el sondeo Web predeterminado.<br />-Database-Used interno de Windows para cuentas locales en el servidor de acceso remoto.|
 |Característica Herramientas de administración de acceso remoto|Esta característica se instala de la siguiente manera:<p>-Se instala de forma predeterminada en un servidor de acceso remoto cuando se instala el rol de acceso remoto y es compatible con la interfaz de usuario de la consola de administración remota.<br />-Se puede instalar opcionalmente en un servidor que no ejecute el rol de servidor de acceso remoto. En este caso, se usa para la administración remota de un equipo de acceso remoto que ejecuta DirectAccess y VPN.<p>La característica de herramientas de administración de acceso remoto consiste de los siguientes elementos:<p>-Herramientas de línea de comandos y GUI de acceso remoto<br />-Módulo de acceso remoto para Windows PowerShell<p>Las dependencias incluyen:<p>-Consola de administración de directivas de grupo<br />-Kit de administración del administrador de conexiones RAS \( CMAK\)<br />-Windows PowerShell 3,0<br />-Infraestructura y herramientas de administración de gráficos|
 |Equilibrio de carga de red|Esta característica ofrece equilibrio de carga en un clúster con Windows NLB.|
 

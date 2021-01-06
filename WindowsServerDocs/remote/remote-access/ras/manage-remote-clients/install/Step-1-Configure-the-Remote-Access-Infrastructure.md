@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 0e7d1f5b-c939-47ca-892f-5bb285027fbc
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 6b7047e60fe56717c5acf58419bea09c8dab35cd
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: df58a68da0eedebe0b21fd1b0a4651f342c12434
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87966332"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947721"
 ---
 # <a name="step-1-configure-the-remote-access-infrastructure"></a>Paso 1 configurar la infraestructura de acceso remoto
 
@@ -157,11 +158,11 @@ Después de preparar las plantillas, puede usarlas para configurarlas. Consulte 
 ### <a name="configure-the-ip-https-certificate"></a><a name="BKMK_IPHTTPS"></a>Configurar el certificado IP-HTTPS
 El acceso remoto requiere que un certificado IP-HTTPS autentique las conexiones IP-HTTPS con el servidor de acceso remoto. Hay tres opciones de certificado para el certificado IP-HTTPS:
 
--   **Pública**
+-   **Público**
 
     Proporcionado por terceros.
 
--   **Privada**
+-   **Privado**
 
     El certificado se basa en la plantilla de certificado que creó en [configuración de plantillas de certificado](assetId:///6a5ec5c1-d653-47b1-a567-cc485004e7bc#ConfigCertTemp). Requiere un punto de distribución de lista de revocación de certificados (CRL) que sea accesible desde un FQDN que pueda resolverse públicamente.
 
@@ -192,7 +193,7 @@ Asegúrate de que el certificado de sitio web utilizado para la autenticación I
 
 ##### <a name="to-install-the-ip-https-certificate-from-an-internal-ca"></a>Cómo instalar el certificado IP-HTTPS desde una CA interna
 
-1.  En el servidor de acceso remoto: en la pantalla **Inicio** , escriba**mmc.exe**y, a continuación, presione Entrar.
+1.  En el servidor de acceso remoto: en la pantalla **Inicio** , escriba **mmc.exe** y, a continuación, presione Entrar.
 
 2.  En el menú **Archivo** de la consola MMC, haga clic en **Agregar o quitar complemento**.
 
@@ -200,7 +201,7 @@ Asegúrate de que el certificado de sitio web utilizado para la autenticación I
 
 4.  En el árbol de consola del complemento Certificados, abre **Certificados (equipo local)\Personal\Certificados**.
 
-5.  Haga clic con el botón secundario en **certificados**, seleccione **todas las tareas**, haga clic en **solicitar nuevo certificado**y, a continuación, haga clic en **siguiente** dos veces.
+5.  Haga clic con el botón secundario en **certificados**, seleccione **todas las tareas**, haga clic en **solicitar nuevo certificado** y, a continuación, haga clic en **siguiente** dos veces.
 
 6.  En la página **solicitar certificados** , active la casilla de la plantilla de certificado que creó en configuración de plantillas de certificado y, si es necesario, haga clic en **se necesita más información para inscribirse en este certificado**.
 
@@ -225,19 +226,19 @@ Debes configurar manualmente una entrada DNS para el sitio web del servidor de u
 
 ### <a name="to-add-the-network-location-server-and-web-probe"></a><a name="NLS_DNS"></a>Para agregar el servidor de ubicación de red y el sondeo Web
 
-1.  En el servidor DNS de la red interna: en la pantalla **Inicio** , escriba**DNSMgmt. msc**y, a continuación, presione Entrar.
+1.  En el servidor DNS de la red interna: en la pantalla **Inicio** , escriba **DNSMgmt. msc** y, a continuación, presione Entrar.
 
 2.  En el panel izquierdo de la consola del **Administrador del DNS**, expande la zona de búsqueda directa de tu dominio. Haga clic con el botón secundario en el dominio y haga clic en **nuevo host (A o aaaa)**.
 
-3.  En el cuadro de diálogo **host nuevo** , en el cuadro **nombre (si está en blanco, se usa el nombre del dominio primario)** , escriba el nombre DNS del sitio web del servidor de ubicación de red (este es el nombre que los clientes de DirectAccess usan para conectarse al servidor de ubicación de red). En el cuadro **dirección IP** , escriba la dirección IPv4 del servidor de ubicación de red, haga clic en **Agregar host**y, a continuación, haga clic en **Aceptar**.
+3.  En el cuadro de diálogo **host nuevo** , en el cuadro **nombre (si está en blanco, se usa el nombre del dominio primario)** , escriba el nombre DNS del sitio web del servidor de ubicación de red (este es el nombre que los clientes de DirectAccess usan para conectarse al servidor de ubicación de red). En el cuadro **dirección IP** , escriba la dirección IPv4 del servidor de ubicación de red, haga clic en **Agregar host** y, a continuación, haga clic en **Aceptar**.
 
 4.  En el cuadro de diálogo **nuevo host** , en el cuadro **nombre (si está en blanco se usa el nombre del dominio primario)** , escriba el nombre DNS del sondeo web (el nombre del sondeo Web predeterminado es DirectAccess-webprobehost). En el cuadro **Dirección IP**, escribe la dirección IPv4 del sondeo web y haz clic en **Agregar host**.
 
 5.  Repite este proceso para directaccess-corpconnectivityhost y todos los comprobadores de conectividad creados manualmente. En el cuadro de diálogo **DNS** , haga clic en **Aceptar**.
 
-6.  Haga clic en **Done**(Listo).
+6.  Haga clic en **Listo**.
 
-![](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)***<em>Comandos equivalentes</em> de Windows PowerShell Windows PowerShell***
+![](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif) * *_<em>Comandos equivalentes</em>_* de Windows PowerShell para Windows PowerShell _
 
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.
 
@@ -248,7 +249,7 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
 
 También debes configurar entradas DNS para los siguiente:
 
--   **Servidor IP-HTTPS**
+-   _ *El servidor IP-https**
 
     Los clientes de DirectAccess deben ser capaces de resolver el nombre DNS del servidor de acceso remoto desde Internet.
 
@@ -275,7 +276,7 @@ El servidor de acceso remoto y todos los equipos cliente de DirectAccess deben e
 
 2.  En el cuadro de diálogo **Propiedades del sistema**, haga clic en la ficha **Nombre del equipo** y, a continuación, en **Cambiar**.
 
-3.  En el cuadro **nombre de equipo** , escriba el nombre del equipo si también va a cambiar el nombre del equipo al unir el servidor al dominio. En **miembro de**, haga clic en **dominio**y, a continuación, escriba el nombre del dominio al que desea unir el servidor (por ejemplo, Corp.contoso.com) y, a continuación, haga clic en **Aceptar**.
+3.  En el cuadro **nombre de equipo** , escriba el nombre del equipo si también va a cambiar el nombre del equipo al unir el servidor al dominio. En **miembro de**, haga clic en **dominio** y, a continuación, escriba el nombre del dominio al que desea unir el servidor (por ejemplo, Corp.contoso.com) y, a continuación, haga clic en **Aceptar**.
 
 4.  Cuando se le pida un nombre de usuario y una contraseña, escriba el nombre de usuario y la contraseña de un usuario con permisos para unir equipos al dominio y, a continuación, haga clic en **Aceptar**.
 
@@ -289,7 +290,7 @@ El servidor de acceso remoto y todos los equipos cliente de DirectAccess deben e
 
 #### <a name="to-join-client-computers-to-the-domain"></a>Cómo unir equipos cliente al dominio
 
-1.  En la pantalla **Inicio** , escriba**explorer.exe**y, a continuación, presione Entrar.
+1.  En la pantalla **Inicio** , escriba **explorer.exe** y, a continuación, presione Entrar.
 
 2.  Haz clic con el botón secundario en el icono del equipo y, a continuación, haz clic en **Propiedades**.
 
@@ -309,7 +310,7 @@ El servidor de acceso remoto y todos los equipos cliente de DirectAccess deben e
 
 10. Haz clic en **Reiniciar ahora** cuando se te solicite.
 
-![](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)***<em>Comandos equivalentes</em> de Windows PowerShell Windows PowerShell***
+![](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif) * *_<em>Comandos equivalentes</em>_* de Windows PowerShell para Windows PowerShell _
 
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.
 
@@ -326,7 +327,7 @@ Para implementar el acceso remoto, se requiere un mínimo de dos objetos directi
 
 Para crear directiva de grupo objetos, vea [crear y editar un objeto Directiva de grupo](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754740(v=ws.11)).
 
-Un administrador puede vincular manualmente los objetos de directiva de grupo de DirectAccess a una unidad organizativa (OU). Considere el siguiente caso:
+Un administrador puede vincular manualmente los objetos de directiva de grupo de DirectAccess a una unidad organizativa (OU). Tenga en cuenta lo siguiente.
 
 1.  Vincule los GPO creados a las unidades organizativas correspondientes antes de configurar DirectAccess.
 
@@ -350,7 +351,7 @@ La configuración de DirectAccess contenida en el equipo cliente directiva de gr
 
 ### <a name="to-create-a-security-group-for-directaccess-clients"></a><a name="Sec_Group"></a>Cómo crear un grupo de seguridad para clientes de DirectAccess
 
-1.  En la pantalla **Inicio** , escriba**DSA. msc**y, a continuación, presione Entrar.
+1.  En la pantalla _ *iniciar**, escriba **DSA. msc** y, a continuación, presione Entrar.
 
 2.  En la consola **Usuarios y equipos de Active Directory**, en el panel izquierdo, expande el dominio que contendrá el grupo de seguridad, haz clic con el botón secundario en **Usuarios**, elige **Nuevo** y haz clic en **Grupo**.
 
@@ -381,7 +382,7 @@ El servidor de ubicación de red debe encontrarse en un servidor con alta dispon
 
 Hay dos opciones de certificados para el certificado de servidor de ubicación de red:
 
--   **Privada**
+-   **Privado**
 
     > [!NOTE]
     > El certificado se basa en la plantilla de certificado que creó en [configuración de plantillas de certificado](assetId:///6a5ec5c1-d653-47b1-a567-cc485004e7bc#ConfigCertTemp).
@@ -399,7 +400,7 @@ Tanto si usa un certificado privado como un certificado autofirmado, requiere lo
 
 #### <a name="to-install-the-network-location-server-certificate-from-an-internal-ca"></a>Cómo instalar el certificado de servidor de ubicación de red desde una CA interna
 
-1.  En el servidor que hospedará el sitio web del servidor de ubicación de red: en la pantalla **Inicio** , escriba**mmc.exe**y, a continuación, presione Entrar.
+1.  En el servidor que hospedará el sitio web del servidor de ubicación de red: en la pantalla **Inicio** , escriba **mmc.exe** y, a continuación, presione Entrar.
 
 2.  En el menú **Archivo** de la consola MMC, haga clic en **Agregar o quitar complemento**.
 
@@ -407,7 +408,7 @@ Tanto si usa un certificado privado como un certificado autofirmado, requiere lo
 
 4.  En el árbol de consola del complemento Certificados, abre **Certificados (equipo local)\Personal\Certificados**.
 
-5.  Haga clic con el botón secundario en **certificados**, seleccione **todas las tareas**, haga clic en **solicitar nuevo certificado**y, a continuación, haga clic en **siguiente** dos veces.
+5.  Haga clic con el botón secundario en **certificados**, seleccione **todas las tareas**, haga clic en **solicitar nuevo certificado** y, a continuación, haga clic en **siguiente** dos veces.
 
 6.  En la página **solicitar certificados** , active la casilla de la plantilla de certificado que creó en configuración de plantillas de certificado y, si es necesario, haga clic en **se necesita más información para inscribirse en este certificado**.
 
@@ -439,7 +440,7 @@ Tanto si usa un certificado privado como un certificado autofirmado, requiere lo
 
     Puedes acceder a los puntos de distribución CRL mediante:
 
-    -   Servidores web que utilizan una dirección URL basada en HTTP, como:https://crl.corp.contoso.com/crld/corp-APP1-CA.crl
+    -   Servidores web que utilizan una dirección URL basada en HTTP, como: https://crl.corp.contoso.com/crld/corp-APP1-CA.crl
 
     -   Servidores de archivos a los que se accede a través de una ruta de acceso UNC (Convención de nomenclatura universal), como \\ \crl.Corp.contoso.com\crld\corp-app1-CA.CRL
 
@@ -447,6 +448,6 @@ Tanto si usa un certificado privado como un certificado autofirmado, requiere lo
 
 4.  Asegúrese de que los clientes de DirectAccess de la red interna pueden resolver el nombre del servidor de ubicación de red y que los clientes de DirectAccess en Internet no pueden resolver el nombre.
 
-## <a name="see-also"></a><a name="BKMK_Links"></a>Vea también
+## <a name="see-also"></a><a name="BKMK_Links"></a>Otras referencias
 
 -   [Paso 2: Configurar el servidor de acceso remoto](Step-2-Configure-the-Remote-Access-Server.md)

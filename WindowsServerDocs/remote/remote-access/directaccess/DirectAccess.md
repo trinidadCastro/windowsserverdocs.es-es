@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 6b71d18e-1939-4fc0-bb42-29e0e5ffc8da
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 317d52a1a9127966b1fd9eeafce3d39ea3510d3a
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 166d56da7127c19636e08b4ac8fe5912530d0c37
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955322"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947071"
 ---
 # <a name="directaccess"></a>DirectAccess
 

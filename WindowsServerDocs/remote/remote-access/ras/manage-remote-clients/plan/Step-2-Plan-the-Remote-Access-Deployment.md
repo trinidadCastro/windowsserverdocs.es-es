@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: cc9f02b9-8ddd-4cae-b397-a832996144dd
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 0de2e1fa0d5dcb6c7ed2bd5ea8c6a65048296315
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 070bc4968638d6fcb0d5e63350fdbed0323df05b
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970252"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947671"
 ---
 # <a name="step-2-plan-the-remote-access-deployment"></a>Paso 2 planear la implementación de acceso remoto
 
@@ -92,7 +93,7 @@ Entre las decisiones que debe tomar cuando planea implementar el servidor de acc
 
     -   **Autenticación de usuario**: puede permitir a los usuarios autenticarse con credenciales de Active Directory o con la autenticación en dos fases.
 
-    -   **Autenticación**del equipo: puede configurar la autenticación del equipo para usar certificados. O bien, el servidor de acceso remoto puede actuar como un proxy para la autenticación Kerberos sin necesidad de certificados.
+    -   **Autenticación** del equipo: puede configurar la autenticación del equipo para usar certificados. O bien, el servidor de acceso remoto puede actuar como un proxy para la autenticación Kerberos sin necesidad de certificados.
 
     -   **Clientes de Windows 7** De forma predeterminada, los equipos cliente que ejecutan Windows 7 no pueden conectarse a una implementación de acceso remoto que ejecute Windows Server 2012. Si tiene clientes que ejecutan Windows 7 en su organización que requieren acceso remoto a recursos internos, puede permitirles conectarse. Los equipos cliente que quieras que tengan acceso a los recursos internos deben ser miembros de un grupo de seguridad que especifiques en el Asistente para la instalación del cliente de DirectAccess.
 

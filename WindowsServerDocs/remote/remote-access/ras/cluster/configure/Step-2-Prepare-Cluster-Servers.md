@@ -1,17 +1,18 @@
 ---
 title: Paso 2 preparación de los servidores de clúster
-description: Este tema forma parte de la guía deploy Remote Access in a Cluster in Windows Server 2016.
+description: Obtenga información sobre cómo preparar servidores adicionales para agregarlos al clúster.
 manager: brianlic
 ms.topic: article
 ms.assetid: 35d68abb-6914-42e0-91e8-803933cf785e
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: ddd14a0244ce4c788a617f1fa6ff07fdfd859947
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 09c2a1a05d6800a3497bc6b8b15536eb73466770
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87937289"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947391"
 ---
 # <a name="step-2-prepare-cluster-servers"></a>Paso 2 preparación de los servidores de clúster
 
@@ -45,13 +46,13 @@ Para configurar un clúster de acceso remoto, debe instalar el rol de acceso rem
 
 2.  Haga clic en **Siguiente** tres veces para ir a la pantalla de selección de roles del servidor.
 
-3.  En el cuadro de diálogo **Seleccionar roles de servidor** , seleccione **acceso remoto**y, a continuación, haga clic en **siguiente**.
+3.  En el cuadro de diálogo **Seleccionar roles de servidor** , seleccione **acceso remoto** y, a continuación, haga clic en **siguiente**.
 
 4.  Haga clic en **siguiente** tres veces.
 
 5.  En el cuadro de diálogo **seleccionar servicios de rol** , seleccione **DirectAccess y VPN (RAS)** y, a continuación, haga clic en **Agregar características**.
 
-6.  Seleccione **enrutamiento**, **proxy de aplicación web**, haga clic en **Agregar características**y, a continuación, haga clic en **siguiente**.
+6.  Seleccione **enrutamiento**, **proxy de aplicación web**, haga clic en **Agregar características** y, a continuación, haga clic en **siguiente**.
 
 7. Haga clic en **Siguiente** y, después, en **Instalar**.
 
@@ -71,13 +72,13 @@ Para configurar un clúster de acceso remoto, debe instalar la característica d
 
 2.  Haga clic en **siguiente** cuatro veces para ir a la pantalla de selección de características del servidor.
 
-3.  En el cuadro de diálogo **seleccionar características** , seleccione **equilibrio de carga de red**, haga clic en **Agregar características**, haga clic en **siguiente**y, a continuación, haga clic en **instalar**.
+3.  En el cuadro de diálogo **seleccionar características** , seleccione **equilibrio de carga de red**, haga clic en **Agregar características**, haga clic en **siguiente** y, a continuación, haga clic en **instalar**.
 
 4.  En el cuadro de diálogo **Progreso de la instalación**, compruebe que la instalación se ha realizado correctamente y, a continuación, haga clic en **Cerrar**.
 
 5.  Repita este procedimiento en todos los servidores que desee que sean miembros del clúster.
 
-## <a name="see-also"></a><a name="BKMK_Links"></a>Vea también
+## <a name="see-also"></a><a name="BKMK_Links"></a>Otras referencias
 
 -   [Paso 3: configurar un clúster con equilibrio de carga](Step-3-Configure-a-Load-Balanced-Cluster.md)
 

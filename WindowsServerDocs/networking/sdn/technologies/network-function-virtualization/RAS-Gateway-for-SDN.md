@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: a32357a5-ab1a-4a4c-848a-7a4ed65b1921
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: 52f0118f6e9636329fe75e9e8ac008d22dcd1cda
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: d8bd138599001bdf31aa52c817b64d2475e9b783
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952318"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97946031"
 ---
 # <a name="ras-gateway-for-sdn"></a>Puerta de enlace RAS para SDN
 
@@ -27,9 +28,9 @@ Multiinquilino es la capacidad de una infraestructura de nube para admitir las c
 > Además de este tema, están disponibles los siguientes temas de puerta de enlace RAS.
 >
 > -   [Novedades de puerta de enlace RAS](../../../sdn/technologies/network-function-virtualization/What-s-New-in-RAS-Gateway.md)
-> -   [Arquitectura de implementación de puerta de enlace RAS](../../../sdn/technologies/network-function-virtualization/RAS-Gateway-Deployment-Architecture.md)
+> -   [Arquitectura de implementación de la puerta de enlace de RAS](../../../sdn/technologies/network-function-virtualization/RAS-Gateway-Deployment-Architecture.md)
 > -   [Alta disponibilidad de puerta de enlace RAS](../../../sdn/technologies/network-function-virtualization/RAS-Gateway-High-Availability.md)
-> -   [Protocolo de puerta de enlace de borde &#40;&#41;BGP](../../../../remote/remote-access/bgp/Border-Gateway-Protocol-BGP.md)
+> -   [Protocolo de puerta de enlace de borde &#40;&#41;BGP ](../../../../remote/remote-access/bgp/Border-Gateway-Protocol-BGP.md)
 > -   [Referencia de comandos de Windows PowerShell de BGP](../../../../remote/remote-access/bgp/BGP-Windows-PowerShell-Command-Reference.md)
 
 

@@ -3,15 +3,15 @@ title: Solución de problemas en el servidor DHCP
 description: Este artilce presenta cómo solucionar problemas en el servidor DHCP y recopilar datos.
 manager: dcscontentpm
 ms.date: 5/26/2020
-ms.topic: article
+ms.topic: troubleshooting
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: a6b5e4128c2e07e51ab8a9c07155a8c0212fcad8
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.openlocfilehash: 8ff76377dcfaefa556b9d2df676210ae55fd0f1d
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90078592"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947181"
 ---
 # <a name="troubleshoot-problems-on-the-dhcp-server"></a>Solución de problemas en el servidor DHCP
 
@@ -45,10 +45,10 @@ Utilice la siguiente configuración:
 
 Compruebe los registros de eventos del sistema y del servicio del servidor DHCP (**registros de aplicaciones y servicios** , \> **Microsoft** \> **Windows** \> **DHCP-Server**) en busca de problemas detectados relacionados con el problema observado.
 En función del tipo de problema, se registra un evento en uno de los siguientes canales de eventos: [eventos de funcionamiento del servidor](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\))DHCP eventos administrativos del servidor DHCP eventos del sistema de servidor DHCP eventos de 
- [DHCP Server Administrative Events](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\)) 
- [DHCP Server System Events](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\)) 
+ [](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\)) 
+ [](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\)) 
  [notificación](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\)) 
- [DHCP Server Audit Events](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\)) del servidor DHCP eventos de auditoría
+ [](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\)) del servidor DHCP eventos de auditoría
 
 ## <a name="data-collection"></a>Recopilación de datos
 

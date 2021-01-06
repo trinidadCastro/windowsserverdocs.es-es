@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: ed49a0a3-1c45-42e5-8f13-cad20c1c1d68
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 69b6eb36e888df99888d3dbb4ad2992ef0a51606
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: c122eb1113d7d4bb63c5e03c3b047b2d88d53be4
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969032"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97946451"
 ---
 # <a name="step-4-verify-directaccess-with-otp"></a>Paso 4 comprobar DirectAccess con OTP
 
@@ -42,7 +43,7 @@ En este tema se describe cómo comprobar que ha configurado correctamente Direct
 
 4.  Haga clic en el icono **Conexiones de red** del área de notificación para tener acceso al Administrador de medios de DA.
 
-5.  Haga clic en la **conexión de DirectAccess**y haga clic en **continuar**.
+5.  Haga clic en la **conexión de DirectAccess** y haga clic en **continuar**.
 
 6.  Escriba el código de token indicado anteriormente y haga clic en **Aceptar**. Espere a que se complete la autenticación. El estado de la conexión del área de trabajo de DirectAccess ahora estará **conectado**.
 

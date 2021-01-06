@@ -1,19 +1,20 @@
 ---
-title: tipo
+title: type
 description: Artículo de referencia para el comando Type, que muestra el contenido de un archivo de texto.
 ms.topic: reference
 ms.assetid: c44fe905-a865-4c97-8cc5-fb95fec7d4d5
 ms.author: lizross
 author: eross-msft
 manager: mtillman
-ms.openlocfilehash: 879cd68b4995c65d623d56e97c0680587eda15b4
-ms.sourcegitcommit: f45640cf4fda621b71593c63517cfdb983d1dc6a
+ms.date: 10/16/2020
+ms.openlocfilehash: 911a7bc36f3aa4cc1be9dbbcba58432abed9bb14
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92156363"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947301"
 ---
-# <a name="type"></a>tipo
+# <a name="type"></a>type
 
 En el shell de comandos de Windows, **Escriba** es un comando integrado que muestra el contenido de un archivo de texto. Use el comando **Type** para ver un archivo de texto sin modificarlo.
 

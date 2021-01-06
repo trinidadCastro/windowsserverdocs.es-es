@@ -7,12 +7,13 @@ author: pronichkin
 ms.author: artemp
 ms.localizationpriority: medium
 ms.date: 05/07/2018
-ms.openlocfilehash: 8b81ae6dc86ad9fd3a8650ca22ba9f3a42af4d3f
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.topic: conceptual
+ms.openlocfilehash: 058a976a20e09cf46b57ec39af6c7f5b0cc30fdf
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90077862"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947171"
 ---
 # <a name="roles-role-services-and-features-not-in-server-core-containers---windows-server-version-1803"></a>Roles, servicios de rol y características no en los contenedores Server Core: Windows Server, versión 1803
 
@@ -29,40 +30,40 @@ Esta es la lista completa de las características y los roles que se han quitado
 
 <br>ADCertificateServicesRole
 <br>AuthManager
-<br>BitLocker-utilidades
+<br>Bitlocker-Utilities
 <br>BitLocker
 <br>BITS
-<br>BITSExtensions: carga
+<br>BITSExtensions-Upload
 <br>CCFFilter
 <br>CertificateEnrollmentPolicyServer
 <br>CertificateEnrollmentServer
 <br>CertificateServices
-<br>Infraestructura de ClientForNFS
+<br>ClientForNFS-Infrastructure
 <br>Contenedores
 <br>CoreFileServer
 <br>DataCenterBridging-LLDP-herramientas
 <br>DataCenterBridging
-<br>Desduplicación: núcleo
+<br>Dedup-Core
 <br>DeviceHealthAttestationService
-<br>DFSN: servidor
+<br>DFSN-Server
 <br>DFSR-Infrastructure-ServerEdition
 <br>DirectoryServices: ADAM
 <br>DirectoryServices-DomainController
-<br>Desmontaje-QoS
+<br>DiskIo-QoS
 <br>EnhancedStorage
 <br>FailoverCluster-AdminPak
 <br>FailoverCluster-AutomationServer
 <br>FailoverCluster-CmdInterface
 <br>FailoverCluster-FullServer
-<br>FailoverCluster: PowerShell
-<br>Servicios de archivo
+<br>FailoverCluster-PowerShell
+<br>File-Services
 <br>FileServerVSSAgent
-<br>Infraestructura de FRS
+<br>FRS-Infrastructure
 <br>FSRM-Infrastructure-Services
-<br>FSRM-infraestructura
+<br>FSRM-Infrastructure
 <br>HardenedFabricEncryptionTask
 <br>HostGuardian
-<br>Paquete HostGuardianService
+<br>HostGuardianService-Package
 <br>IdentityServer-SecurityTokenService
 <br>IPAMClientFeature
 <br>IPAMServerFeature
@@ -79,7 +80,7 @@ Esta es la lista completa de las características y los roles que se han quitado
 <br>Paquete Microsoft-Windows-FCI-Client-
 <br>Microsoft-Windows-GroupPolicy-ServerAdminTools-Update
 <br>Microsoft-Windows-Subsystem-Linux
-<br>Infraestructura de MSRDC
+<br>MSRDC-Infrastructure
 <br>MultipathIo
 <br>NetworkController
 <br>NetworkControllerTools
@@ -90,7 +91,7 @@ Esta es la lista completa de las características y los roles que se han quitado
 <br>P2P-PnrpOnly
 <br>PeerDist
 <br>Impresión: cliente-GUI
-<br>Impresión: LPDPrintService
+<br>Printing-LPDPrintService
 <br>Impresión-Server-Foundation-Features
 <br>Impresión: rol de servidor
 <br>QWAVE
@@ -101,30 +102,30 @@ Esta es la lista completa de las características y los roles que se han quitado
 <br>RemoteAccessPowerShell
 <br>RemoteAccessServer
 <br>ResumeKeyFilter
-<br>RightsManagementServices: rol
+<br>RightsManagementServices-Role
 <br>RightsManagementServices
-<br>RMS-Federación
+<br>RMS-Federation
 <br>SBMgr-UI
 <br>ServerCore-drivers-general-WOW64
 <br>ServerCore-drivers-general
-<br>Infraestructura de ServerForNFS
+<br>ServerForNFS-Infrastructure
 <br>ServerManager-Core-RSAT-Feature-Tools
 <br>ServerMediaFoundation
 <br>ServerMigration
 <br>SessionDirectory
 <br>SetupAndBootEventCollection
 <br>ShieldedVMToolsAdminPack
-<br>SMB1Protocol: servidor
+<br>SMB1Protocol-Server
 <br>SmbDirect
 <br>SMBHashGeneration
 <br>SmbWitness
 <br>SNMP
 <br>SoftwareLoadBalancer
 <br>Storage-réplica-AdminPack
-<br>Réplica de almacenamiento
+<br>Storage-Replica
 <br>TPM-PSH-cmdlets
-<br>UpdateServices-base de datos
-<br>UpdateServices-servicios
+<br>UpdateServices-Database
+<br>UpdateServices-Services
 <br>UpdateServices-WidDatabase
 <br>UpdateServices
 <br>VmHostAgent
@@ -137,7 +138,7 @@ Esta es la lista completa de las características y los roles que se han quitado
 <br>WindowsStorageManagementService
 <br>WINSRuntime
 <br>WMISnmpProvider
-<br>WorkFolders: servidor
+<br>WorkFolders-Server
 <br>WSS-Product-Package
 
 </div>

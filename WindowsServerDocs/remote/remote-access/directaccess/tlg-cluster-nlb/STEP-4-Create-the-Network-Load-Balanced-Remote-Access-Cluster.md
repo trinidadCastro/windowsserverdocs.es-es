@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 509eaa08-c49d-448d-a71e-c1c45519ccd5
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: b18531c3704d9240ecfa2c3d411158a7ef7a97df
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 01c4593bcd99c3e7e68a434f73fde74d5f01aafc
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971712"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97946571"
 ---
 # <a name="step-4-create-the-network-load-balanced-remote-access-cluster"></a>Paso 4 crear el clúster de acceso remoto con equilibrio de carga de red
 
@@ -54,7 +55,7 @@ Para configurar EDGE1 y EDGE2 en un clúster, debe instalar la característica d
 
 2.  Haga clic en **siguiente** cuatro veces para ir a la pantalla de selección de características del servidor.
 
-3.  En el cuadro de diálogo **seleccionar características** , seleccione **equilibrio de carga de red**, haga clic en **Agregar características**, haga clic en **siguiente**y, a continuación, haga clic en **instalar**.
+3.  En el cuadro de diálogo **seleccionar características** , seleccione **equilibrio de carga de red**, haga clic en **Agregar características**, haga clic en **siguiente** y, a continuación, haga clic en **instalar**.
 
 4.  En el cuadro de diálogo **Progreso de la instalación**, compruebe que la instalación se ha realizado correctamente y, a continuación, haga clic en **Cerrar**.
 
@@ -65,15 +66,15 @@ Use este procedimiento para habilitar el equilibrio de carga y configurar las nu
 
 ### <a name="enable-load-balancing"></a>Habilitar el equilibrio de carga
 
-1.  En EDGE1, haga clic en **Inicio**, escriba **RAMgmtUI.exe**y, a continuación, presione Entrar. Si aparece el cuadro de diálogo **Control de cuentas de usuario**, confirme que la acción que se muestra es la esperada y, a continuación, haga clic en **Sí**.
+1.  En EDGE1, haga clic en **Inicio**, escriba **RAMgmtUI.exe** y, a continuación, presione Entrar. Si aparece el cuadro de diálogo **Control de cuentas de usuario**, confirme que la acción que se muestra es la esperada y, a continuación, haga clic en **Sí**.
 
-2.  En el panel izquierdo de la consola de administración de acceso remoto, haga clic en **configuración**y, a continuación, en el panel **tareas** , haga clic en **Habilitar equilibrio de carga**.
+2.  En el panel izquierdo de la consola de administración de acceso remoto, haga clic en **configuración** y, a continuación, en el panel **tareas** , haga clic en **Habilitar equilibrio de carga**.
 
 3.  En el Asistente para habilitar equilibrio de carga, haga clic en **siguiente**.
 
-4.  En la página **método de equilibrio de carga** , haga clic en **usar equilibrio de carga de red (NLB) de Windows**y, a continuación, en **siguiente**.
+4.  En la página **método de equilibrio de carga** , haga clic en **usar equilibrio de carga de red (NLB) de Windows** y, a continuación, en **siguiente**.
 
-5.  En la página **direcciones IP dedicadas externas** , en el cuadro **dirección IPv4** , **Escriba, 131.107.0.10**, en el cuadro **máscara de subred** , compruebe que el prefijo de subred es **255.255.255.0**y, a continuación, haga clic en **siguiente**.
+5.  En la página **direcciones IP dedicadas externas** , en el cuadro **dirección IPv4** , **Escriba, 131.107.0.10**, en el cuadro **máscara de subred** , compruebe que el prefijo de subred es **255.255.255.0** y, a continuación, haga clic en **siguiente**.
 
 6.  En la página **direcciones IP dedicadas internas** , realice lo siguiente y, a continuación, haga clic en **siguiente**:
 
@@ -99,9 +100,9 @@ Use este procedimiento para agregar EDGE2 al clúster de NLB.
 
 2.  En el cuadro de diálogo **Agregar o quitar servidores** , haga clic en **Agregar servidor**.
 
-3.  En el Asistente para **Agregar un servidor** , en la página **Seleccionar servidor** , escriba **EDGE2**y, a continuación, haga clic en **siguiente**.
+3.  En el Asistente para **Agregar un servidor** , en la página **Seleccionar servidor** , escriba **EDGE2** y, a continuación, haga clic en **siguiente**.
 
-4.  En la página **adaptadores de red** , en **adaptador externo**, asegúrese de que está seleccionado Internet y, en **adaptador interno**, asegúrese de que está seleccionada la opción **red** **corporativa** . Haga clic en **examinar**, en el cuadro de diálogo **seguridad de Windows** , asegúrese de que está seleccionado **certificado IP-https** , haga clic en **Aceptar**y, a continuación, haga clic en **siguiente**.
+4.  En la página **adaptadores de red** , en **adaptador externo**, asegúrese de que está seleccionado Internet y, en **adaptador interno**, asegúrese de que está seleccionada la opción **red** **corporativa** . Haga clic en **examinar**, en el cuadro de diálogo **seguridad de Windows** , asegúrese de que está seleccionado **certificado IP-https** , haga clic en **Aceptar** y, a continuación, haga clic en **siguiente**.
 
 5.  En la página **Resumen** , haga clic en **Agregar**.
 
@@ -111,12 +112,12 @@ Use este procedimiento para agregar EDGE2 al clúster de NLB.
 
 8.  En el cuadro de diálogo **Agregar y quitar servidores** , haga clic en **cerrar**.
 
-9. En la pantalla **Inicio** , escriba**nlbmgr.exe**y presione Entrar. Si aparece el cuadro de diálogo **Control de cuentas de usuario**, confirme que la acción que se muestra es la esperada y, a continuación, haga clic en **Sí**.
+9. En la pantalla **Inicio** , escriba **nlbmgr.exe** y presione Entrar. Si aparece el cuadro de diálogo **Control de cuentas de usuario**, confirme que la acción que se muestra es la esperada y, a continuación, haga clic en **Sí**.
 
 10. En el **Administrador de equilibrio de carga de red**, haga clic en **clúster de das interno**. En el panel de detalles, asegúrese de que tanto **EDGE1 (CorpNet)** como **EDGE2 (CorpNet)** tienen el estado **convergido**.
 
-11. Si un servidor no **converge**, en el árbol de consola, haga clic con el botón secundario en el servidor, seleccione **controlar host**y, a continuación, haga clic en **iniciar**.
+11. Si un servidor no **converge**, en el árbol de consola, haga clic con el botón secundario en el servidor, seleccione **controlar host** y, a continuación, haga clic en **iniciar**.
 
 12. En el **Administrador de equilibrio de carga de red**, haga clic en **clúster de das de Internet**. Asegúrese de que en el panel de detalles, tanto **EDGE1 (Internet)** como **EDGE2 (Internet)** tienen el estado **convergido**.
 
-13. Si un servidor no **converge**, en el árbol de consola, haga clic con el botón secundario en el servidor, seleccione **controlar host**y, a continuación, haga clic en **iniciar**.
+13. Si un servidor no **converge**, en el árbol de consola, haga clic con el botón secundario en el servidor, seleccione **controlar host** y, a continuación, haga clic en **iniciar**.

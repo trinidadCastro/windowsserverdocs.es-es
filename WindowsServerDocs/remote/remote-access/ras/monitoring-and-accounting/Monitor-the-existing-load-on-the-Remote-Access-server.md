@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 62fa2895-62ae-42cf-817c-53e06ac2a26c
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 9a04cdff7214fd4d7ef64fba930f282e48dbfa01
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 29964baa521b61fed229140898785acb37ddf124
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970222"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947331"
 ---
 # <a name="monitor-the-existing-load-on-the-remote-access-server"></a>Supervisar la carga existente en el servidor de acceso remoto
 
@@ -38,7 +39,7 @@ Puede usar el panel de supervisión que está disponible en la consola de admini
 
 #### <a name="to-use-the-performance-monitor-tool-to-monitor-performance-counters-on-the-remote-access-server"></a>Para usar la herramienta Monitor de rendimiento con el fin de supervisar los contadores de rendimiento en el servidor de acceso remoto
 
-1.  Haga clic en **Inicio**, en **herramientas administrativas**y, a continuación, haga doble clic en **monitor de rendimiento**.
+1.  Haga clic en **Inicio**, en **herramientas administrativas** y, a continuación, haga doble clic en **monitor de rendimiento**.
 
 2.  En **rendimiento**, haga clic en **monitor de rendimiento**.
 
@@ -52,7 +53,7 @@ Puede usar el panel de supervisión que está disponible en la consola de admini
 
 El **monitor de rendimiento** mostrará ahora gráficamente las estadísticas de carga del servidor seleccionado.
 
-![](../../../media/Monitor-the-existing-load-on-the-Remote-Access-server/PowerShellLogoSmall.gif)***<em>Comandos equivalentes</em> de Windows PowerShell Windows PowerShell***
+![](../../../media/Monitor-the-existing-load-on-the-Remote-Access-server/PowerShellLogoSmall.gif)**_<em>Comandos equivalentes</em> de Windows PowerShell Windows PowerShell_**
 
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.
 

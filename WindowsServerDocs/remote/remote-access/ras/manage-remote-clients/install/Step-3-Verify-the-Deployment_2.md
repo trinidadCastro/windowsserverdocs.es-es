@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 6a78a078-d2e7-4cbd-b8d5-20cfb6d1524b
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 7e8b7e037c0c98c62daf9abdf743ae4c1153f054
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 9a3555364690228ec8723ee8c3123edaa4606c06
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87950850"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947701"
 ---
 # <a name="step-3-verify-the-deployment"></a>Paso 3 comprobación de la implementación
 
@@ -25,7 +26,7 @@ En este tema se describe cómo comprobar que ha configurado correctamente la imp
 
 2.  En el equipo cliente, haga clic en el icono **conexiones de red** del área de notificación para tener acceso al administrador de medios de DirectAccess.
 
-3.  Haga clic en **conexión de DirectAccess**y verá que el estado es **conectado localmente**.
+3.  Haga clic en **conexión de DirectAccess** y verá que el estado es **conectado localmente**.
 
 4.  Quite el equipo de la red corporativa y conéctelo a una red pública.
 

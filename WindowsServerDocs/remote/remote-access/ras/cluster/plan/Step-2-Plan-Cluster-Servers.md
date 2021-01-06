@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 673c5bfb-b590-4932-8e54-ca0a466d90cc
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 762093c1cd9c4a8782274e796b5b82fd24d94855
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: cca4e4483875b5a9e8eaebc2b5983087ee8fbbc6
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87963841"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947761"
 ---
 # <a name="step-2-plan-cluster-servers"></a>Paso 2 planear los servidores de clúster
 
@@ -44,6 +45,6 @@ Al equilibrar la carga del clúster mediante Windows NLB se aplica la siguiente 
 
 3.  Modo de filtrado: se equilibrará la carga del tráfico entre varios hosts.
 
-4.  Affinity: se define la afinidad única.
+4.  Se define Affinity-Single Affinity.
 
-5.  Protocolos: ambos
+5.  Protocols-Both

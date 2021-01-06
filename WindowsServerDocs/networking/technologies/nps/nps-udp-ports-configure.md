@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 70569958-d7a7-474e-a817-6b7b5134784a
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: c522206fe701d47f8f0c07e7c7a64d7e6fc7074c
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 94a8e67056dff497f1adc18d898a6c87f4ab665c
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87944515"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947441"
 ---
 # <a name="configure-nps-udp-port-information"></a>Configurar la información del puerto UDP de NPS
 
@@ -33,7 +34,7 @@ La pertenencia a **Administradores de dominio**, o equivalente, es lo mínimo ne
 ## <a name="to-configure-nps-udp-port-information"></a>Para configurar la información del puerto UDP de NPS
 
 1. Abra la consola de NPS.
-2. Haga clic con el botón secundario en **servidor de directivas de redes**y, a continuación, haga clic en **propiedades**.
+2. Haga clic con el botón secundario en **servidor de directivas de redes** y, a continuación, haga clic en **propiedades**.
 3. Haga clic en la pestaña **puertos** y examine la configuración de puertos. Si los puertos UDP de autenticación y cuentas RADIUS son distintos de los valores predeterminados proporcionados (1812 y 1645 para la autenticación, y 1813 y 1646 para cuentas), escriba la configuración del puerto en **autenticación** y **cuentas**.
 4. Para usar varios valores de puertos para las solicitudes de autenticación y cuentas, separe los números de puerto con comas.
 

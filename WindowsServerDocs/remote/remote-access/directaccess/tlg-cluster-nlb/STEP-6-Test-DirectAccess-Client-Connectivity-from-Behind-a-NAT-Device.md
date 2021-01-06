@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: aded2881-99ed-4f18-868b-b765ab926597
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 2ff8b054aef6755b4c98c423471c22fe45aa1866
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 083905f03a9a8f021d223f2ab0e7f0a5141f0e42
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87951140"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97946551"
 ---
 # <a name="step-6-test-directaccess-client-connectivity-from-behind-a-nat-device"></a>Paso 6 probar la Conectividad del cliente de DirectAccess desde detrás de un dispositivo NAT
 
@@ -64,7 +65,7 @@ Inicia EDGE1 y EDGE2 si todavía no se están ejecutando.
 
 9. En la barra de direcciones de Internet Explorer, escriba **https://app2/** y presione Entrar. Verás el sitio web predeterminado en APP2.
 
-10. En la pantalla **Inicio** , escriba<strong> \\ \App2\Files</strong>y, a continuación, presione Entrar. Haz doble clic en el archivo Nuevo documento de texto. Esto demuestra que has sido capaz de conectarte a un servidor solo IPv4 utilizando SMB para obtener un recurso en un host solo IPv4.
+10. En la pantalla **Inicio** , escriba <strong> \\ \App2\Files</strong>y, a continuación, presione Entrar. Haz doble clic en el archivo Nuevo documento de texto. Esto demuestra que has sido capaz de conectarte a un servidor solo IPv4 utilizando SMB para obtener un recurso en un host solo IPv4.
 
 ## <a name="test-ip-https-connectivity"></a>Probar la conectividad IP-HTTPS
 
@@ -84,4 +85,4 @@ Inicia EDGE1 y EDGE2 si todavía no se están ejecutando.
 
 8. En la barra de direcciones de Internet Explorer, escriba **https://app2/** y presione Entrar. Verás el sitio web predeterminado en APP2.
 
-9. En la pantalla **Inicio** , escriba<strong> \\ \App2\Files</strong>y, a continuación, presione Entrar. Haz doble clic en el archivo Nuevo documento de texto. Esto demuestra que has sido capaz de conectarte a un servidor solo IPv4 utilizando SMB para obtener un recurso en un host solo IPv4.
+9. En la pantalla **Inicio** , escriba <strong> \\ \App2\Files</strong>y, a continuación, presione Entrar. Haz doble clic en el archivo Nuevo documento de texto. Esto demuestra que has sido capaz de conectarte a un servidor solo IPv4 utilizando SMB para obtener un recurso en un host solo IPv4.

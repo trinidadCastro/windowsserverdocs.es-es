@@ -1,17 +1,18 @@
 ---
 title: Planear una implementación de DirectAccess avanzada
-description: Este tema forma parte de la guía implementar un único servidor de DirectAccess con configuración avanzada para Windows Server 2016
+description: Obtenga información sobre los pasos de planeación necesarios para implementar un único servidor de DirectAccess que ejecute Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012 con una gama completa de características básicas y avanzadas.
 manager: brianlic
 ms.topic: article
 ms.assetid: d486735e-71fe-4443-9878-4b784cd588a7
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: f672b74ad9c88484ea32d1d097d72ca75777a213
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: a125584b040437a515f3879890cc0787434f8864
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970402"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97946591"
 ---
 # <a name="plan-an-advanced-directaccess-deployment"></a>Planear una implementación de DirectAccess avanzada
 

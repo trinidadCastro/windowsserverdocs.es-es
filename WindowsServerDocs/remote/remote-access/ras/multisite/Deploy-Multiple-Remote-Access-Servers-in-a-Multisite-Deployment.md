@@ -1,17 +1,18 @@
 ---
 title: Implementación de varios servidores de acceso remoto en una implementación multisitio
-description: Este tema forma parte de la guía de implementación de varios servidores de acceso remoto en una implementación multisitio en Windows Server 2016.
+description: Obtenga información sobre el escenario empresarial para implementar servidores de acceso remoto en una configuración multisitio.
 manager: brianlic
 ms.topic: article
 ms.assetid: ac2f6015-50a5-4909-8f67-8565f9d332a2
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 8f0d8b4416c8480921d43fd4e705b837082152fb
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.date: 08/07/2020
+ms.openlocfilehash: 1d7ca177a2fe9483fef40d9f173b8ee4ce450db6
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991348"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97946481"
 ---
 # <a name="deploy-multiple-remote-access-servers-in-a-multisite-deployment"></a>Implementación de varios servidores de acceso remoto en una implementación multisitio
 
@@ -70,7 +71,7 @@ En la tabla siguiente se enumeran los roles y las características que se usan e
 
 |Rol/característica|Compatibilidad con este escenario|
 |---------|-----------------|
-|Rol de acceso remoto|El rol se instala y desinstala mediante la consola del Administrador del servidor. Incluye tanto DirectAccess, que antes era una característica de Windows Server 2008 R2, como los servicios de enrutamiento y acceso remoto (RRAS), que antes eran un servicio de roles de los Servicios de acceso y directivas de redes (NPAS). El rol de acceso remoto consta de dos componentes:<p>-DirectAccess y VPN de servicios de enrutamiento y acceso remoto (RRAS): DirectAccess y VPN se administran juntos en la consola de administración de acceso remoto.<br />-Enrutamiento RRAS: las características de enrutamiento RRAS se administran en la consola de enrutamiento y acceso remoto heredada.<p>Las dependencias son las siguientes:<p>-Servidor web-Internet Information Services (IIS): esta característica es necesaria para configurar el servidor de ubicación de red y el sondeo Web predeterminado.<br />-Windows Internal Database: se usa para las cuentas locales en el servidor de acceso remoto.|
+|Rol de acceso remoto|El rol se instala y desinstala mediante la consola del Administrador del servidor. Incluye tanto DirectAccess, que antes era una característica de Windows Server 2008 R2, como los servicios de enrutamiento y acceso remoto (RRAS), que antes eran un servicio de roles de los Servicios de acceso y directivas de redes (NPAS). El rol de acceso remoto consta de dos componentes:<p>-DirectAccess y los servicios de enrutamiento y acceso remoto (RRAS) VPN-DirectAccess y VPN se administran juntos en la consola de administración de acceso remoto.<br />-Enrutamiento RRAS: las características de enrutamiento RRAS se administran en la consola de enrutamiento y acceso remoto heredada.<p>Las dependencias son las siguientes:<p>-Servidor web-Internet Information Services (IIS): esta característica es necesaria para configurar el servidor de ubicación de red y el sondeo Web predeterminado.<br />-Database-Used interno de Windows para cuentas locales en el servidor de acceso remoto.|
 |Característica Herramientas de administración de acceso remoto|Esta característica se instala de la siguiente manera:<p>-Se instala de forma predeterminada en un servidor de acceso remoto cuando se instala el rol de acceso remoto y es compatible con la interfaz de usuario de la consola de administración remota.<br />-Se puede instalar opcionalmente en un servidor que no ejecute el rol de servidor de acceso remoto. En este caso, se usa para la administración remota de un equipo de acceso remoto que ejecuta DirectAccess y VPN.<p>La característica de herramientas de administración de acceso remoto consiste de los siguientes elementos:<p>-Herramientas de línea de comandos y GUI de acceso remoto<br />-Módulo de acceso remoto para Windows PowerShell<p>Las dependencias incluyen:<p>-Consola de administración de directivas de grupo<br />-Kit de administración del administrador de conexiones RAS (CMAK)<br />-Windows PowerShell 3,0<br />-Infraestructura y herramientas de administración de gráficos|
 
 ## <a name="hardware-requirements"></a><a name="BKMK_HARD"></a>Requisitos de hardware
@@ -122,7 +123,7 @@ A continuación se indican problemas conocidos al configurar un escenario de mul
 
 -   Si la dirección pública especificada para que los clientes de DirectAccess se conecten al servidor de acceso remoto tiene un sufijo incluido en NRPT, es posible que DirectAccess no funcione según lo esperado. Asegúrese de que la NRPT tiene una exención para el nombre público. En una implementación multisitio, se deben agregar exenciones para los nombres públicos de todos los puntos de entrada. Tenga en cuenta que si está habilitado el túnel forzado, estas exenciones se agregan automáticamente. Se quitan si la tunelización forzada está deshabilitada.
 
--   Al usar el cmdlet **Disable-DAMultiSite**de Windows PowerShell, los parámetros Whatif y CONFIRM no tienen ningún efecto, y se deshabilitará multisitio y se quitarán los GPO de Windows 7.
+-   Al usar el cmdlet **Disable-DAMultiSite** de Windows PowerShell, los parámetros Whatif y CONFIRM no tienen ningún efecto, y se deshabilitará multisitio y se quitarán los GPO de Windows 7.
 
 -   Cuando los clientes de Windows 7 que usan DCA en una implementación multisitio se actualizan a Windows 8, el Asistente para la conectividad de red no funcionará. Este problema se puede resolver antes de la actualización del cliente mediante la modificación de los GPO de Windows 7 mediante los siguientes cmdlets de Windows PowerShell:
 

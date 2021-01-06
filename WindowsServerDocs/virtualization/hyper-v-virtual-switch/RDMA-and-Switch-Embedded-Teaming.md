@@ -2,16 +2,17 @@
 title: Acceso directo a memoria remota (RDMA) y Switch Embedded Teaming (SET)
 description: En este tema se proporciona información sobre cómo configurar las interfaces de acceso directo a memoria remota (RDMA) con Hyper-V en Windows Server 2016, además de información sobre cómo cambiar la formación de equipos incrustados (SET).
 manager: brianlic
-ms.topic: get-started-article
+ms.topic: how-to
 ms.assetid: 68c35b64-4d24-42be-90c9-184f2b5f19be
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 9b8d1470b3e146625d794697231291c1f8156402
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.date: 12/08/2020
+ms.openlocfilehash: f671496cab42cc24c35539d5adbfaff7fb90bea7
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96866194"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97946911"
 ---
 # <a name="remote-direct-memory-access-rdma-and-switch-embedded-teaming-set"></a>Acceso directo a memoria remota \( RDMA \) y switch conjunto de formación de equipos incrustado \(\)
 

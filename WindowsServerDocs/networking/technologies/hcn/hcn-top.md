@@ -4,12 +4,13 @@ description: La API de servicio de proceso de host (HCN) es una API de Win32 ori
 ms.author: daschott
 author: daschott
 ms.date: 11/05/2018
-ms.openlocfilehash: 5f30dfe4c7a373459b8b8ea3915eaaafa9bf517e
-ms.sourcegitcommit: 0b3d6661c44aa1a697087e644437279142726d84
+ms.topic: article
+ms.openlocfilehash: 48e7492809e7ef83faea32824cc816cec83ed955
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90083636"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947531"
 ---
 # <a name="host-compute-network-hcn-service-api-for-vms-and-containers"></a>API de servicio de Compute Network (HCN) para máquinas virtuales y contenedores
 

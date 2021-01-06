@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: df1e87f2-6a0f-433b-8e42-816ae75395f9
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: e0b03bfd06c693674e10e9eb9fba0a0dfd30b167
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: c5b4cde212da9c585c4d9afdb068147f406beb51
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969082"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97946461"
 ---
 # <a name="step-3-configure-the-remote-access-server-for-otp"></a>Paso 3 configurar el servidor de acceso remoto para OTP
 
@@ -52,7 +53,7 @@ Para configurar el acceso remoto para que use la autenticación en dos fases y O
 
 2.  En la ventana **configuración de DirectAccess** , en **paso 2: servidor de acceso remoto**, haga clic en **Editar**.
 
-3.  Haga clic en **siguiente** tres veces y, en la sección **autenticación** , seleccione **dos factores de autenticación** y **uso de OTP**y asegúrese de que la opción **usar certificados de equipo** está activada.
+3.  Haga clic en **siguiente** tres veces y, en la sección **autenticación** , seleccione **dos factores de autenticación** y **uso de OTP** y asegúrese de que la opción **usar certificados de equipo** está activada.
 
     > [!NOTE]
     > Una vez que se haya habilitado OTP en el servidor de acceso remoto, si se deshabilita OTP mediante la anulación de la selección de **usar OTP**, se desinstalarán las extensiones ISAPI y CGI en el servidor.
@@ -93,7 +94,7 @@ Para configurar el acceso remoto para que use la autenticación en dos fases y O
 
 17. En el cuadro de diálogo **revisión de acceso remoto** , haga clic en **aplicar**, espere a que se actualice la Directiva de DirectAccess y haga clic en **cerrar**.
 
-18. En la pantalla **Inicio** , escriba**powershell.exe**, haga clic con el botón derecho en **PowerShell**, haga clic en **Opciones avanzadas**y haga clic en **Ejecutar como administrador**. Si aparece el cuadro de diálogo **Control de cuentas de usuario**, confirme que la acción que se muestra es la esperada y, a continuación, haga clic en **Sí**.
+18. En la pantalla **Inicio** , escriba **powershell.exe**, haga clic con el botón derecho en **PowerShell**, haga clic en **Opciones avanzadas** y haga clic en **Ejecutar como administrador**. Si aparece el cuadro de diálogo **Control de cuentas de usuario**, confirme que la acción que se muestra es la esperada y, a continuación, haga clic en **Sí**.
 
 19. En la ventana de Windows PowerShell, escriba **gpupdate/force** y presione Entrar.
 

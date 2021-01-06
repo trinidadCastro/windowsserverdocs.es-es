@@ -3,15 +3,15 @@ title: Guía de solución de problemas del Protocolo de configuración dinámica
 description: En este artilce se presenta la guía de solución de problemas de DHCP.
 manager: dcscontentpm
 ms.date: 5/26/2020
-ms.topic: article
+ms.topic: troubleshooting
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: 92a7984fe2070ac194aa01a5a9aa63e85b7aa45d
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.openlocfilehash: 7d82eaca3f1ab13326b5af442abc0c9232d39122
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90078622"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947211"
 ---
 # <a name="troubleshooting-guide-for-dynamic-host-configuration-protocol-dhcp"></a>Guía de solución de problemas del Protocolo de configuración dinámica de host (DHCP)
 

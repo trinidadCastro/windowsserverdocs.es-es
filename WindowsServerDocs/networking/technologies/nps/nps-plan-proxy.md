@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: ca77d64a-065b-4bf2-8252-3e75f71b7734
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 9cdc28eae61acb0d8548627e48a882435cd7da81
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: feb67b757119fd69ea312845d878322f222da50d
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952030"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947491"
 ---
 # <a name="plan-nps-as-a-radius-proxy"></a>Planear NPS como proxy RADIUS
 
@@ -51,7 +52,7 @@ Durante la planeación de la configuración del proxy NPS, puede seguir estos pa
 
 - Determine los tipos de eventos que desea que NPS registre en el registro de eventos. Puede registrar solicitudes de conexión rechazadas, solicitudes de conexión correctas o ambas.
 
-- Determine si va a implementar más de un proxy NPS. Para proporcionar tolerancia a errores, utilice al menos dos servidores proxy NPS. Se usa un proxy NPS como proxy RADIUS principal y el otro como copia de seguridad. Después, cada cliente RADIUS se configura en ambos servidores proxy NPS. Si el proxy NPS principal deja de estar disponible, los clientes RADIUS enviarán mensajes de solicitud de acceso al proxy NPS alternativo.
+- Determine si va a implementar más de un proxy NPS. Para proporcionar tolerancia a errores, utilice al menos dos servidores proxy NPS. Se usa un proxy NPS como proxy RADIUS principal y el otro como copia de seguridad. Después, cada cliente RADIUS se configura en ambos servidores proxy NPS. Si el proxy NPS principal deja de estar disponible, los clientes RADIUS envían Access-Request mensajes al proxy NPS alternativo.
 
 - Planee el script usado para copiar una configuración de proxy NPS en otros proxies NPS para ahorrar en la sobrecarga administrativa y para evitar la configuración incorrecta de un servidor. NPS proporciona los comandos Netsh que permiten copiar la configuración de un proxy NPS o parte de ella para su importación en otro proxy NPS. Puede ejecutar los comandos manualmente en el símbolo del sistema de Netsh. Sin embargo, si guarda la secuencia de comandos como un script, puede ejecutar el script en una fecha posterior si decide cambiar las configuraciones de proxy.
 
@@ -97,7 +98,7 @@ Durante la planeación de los grupos de servidores RADIUS remotos, puede usar lo
 
 ## <a name="plan-attribute-manipulation-rules-for-message-forwarding"></a>Planear reglas de manipulación de atributos para el reenvío de mensajes
 
-Las reglas de manipulación de atributos, que están configuradas en directivas de solicitud de conexión, le permiten identificar los mensajes de solicitud de acceso que desea reenviar a un grupo de servidores RADIUS remotos específico.
+Las reglas de manipulación de atributos, que están configuradas en directivas de solicitud de conexión, le permiten identificar los mensajes de Access-Request que desea reenviar a un grupo de servidores RADIUS remotos específico.
 
 Puede configurar NPS para que reenvíe todas las solicitudes de conexión a un grupo de servidores remotos RADIUS sin usar reglas de manipulación de atributos.
 
@@ -109,9 +110,9 @@ Puede crear reglas para los siguientes atributos.
 
 - IDENTIFICADOR de la estación de llamada. Número de teléfono usado por el autor de la llamada. El valor de este atributo es una cadena de caracteres. Puede usar una sintaxis de coincidencia de patrón para especificar códigos de área.
 
-- Nombre del usuario. El nombre de usuario proporcionado por el cliente de acceso y que el NAS incluye en el mensaje de solicitud de acceso de RADIUS. El valor de este atributo es una cadena de caracteres que normalmente contiene un nombre de dominio Kerberos y un nombre de cuenta de usuario.
+- Nombre del usuario. El nombre de usuario proporcionado por el cliente de acceso y que el NAS incluye en el mensaje de Access-Request RADIUS. El valor de este atributo es una cadena de caracteres que normalmente contiene un nombre de dominio Kerberos y un nombre de cuenta de usuario.
 
-Para reemplazar o convertir correctamente nombres de dominio Kerberos en el nombre de usuario de una solicitud de conexión, debe configurar reglas de manipulación de atributos para el atributo de nombre de usuario en la Directiva de solicitud de conexión adecuada.
+Para reemplazar o convertir correctamente nombres de dominio Kerberos en el nombre de usuario de una solicitud de conexión, debe configurar reglas de manipulación de atributos para el atributo de User-Name en la Directiva de solicitud de conexión adecuada.
 
 ### <a name="key-steps"></a>Pasos clave
 

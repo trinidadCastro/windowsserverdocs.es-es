@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: cd1e9efd-19e9-49e7-8432-881f661c9792
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: a4e575c6c977fa429e650e001a05d0c90cb48f59
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: e13c630bae539aadd01828d8e3eaa5524a05aa6f
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87951070"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97946521"
 ---
 # <a name="overview-of-the-directaccess-cluster-nlb-test-lab-scenario"></a>Información general sobre el escenario de laboratorio de prueba de NLB de clúster de DirectAccess
 

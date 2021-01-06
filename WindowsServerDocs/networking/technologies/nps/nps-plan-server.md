@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 2900dd2c-0f70-4f8d-9650-ed83d51d509a
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 73e85d9582e447466115ce30047a3968a8f457d8
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 3c843f4fd5bb7ed88b316fb756534b23af8007c8
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952010"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97946671"
 ---
 # <a name="plan-nps-as-a-radius-server"></a>Planear NPS como servidor RADIUS
 
@@ -49,7 +50,7 @@ Durante la planeación de la configuración de NPS, puede seguir estos pasos.
 
 - Determine los tipos de eventos que desea que NPS registre en el registro de eventos. Puede registrar solicitudes de autenticación rechazadas, solicitudes de autenticación correctas o ambos tipos de solicitudes.
 
-- Determine si va a implementar más de un NPS. Para proporcionar tolerancia a errores para la autenticación y las cuentas basadas en RADIUS, use al menos dos NPSs. Un NPS se usa como el servidor RADIUS principal y el otro se usa como copia de seguridad. Después, cada cliente RADIUS se configura en ambos NPSs. Si el NPS principal deja de estar disponible, los clientes RADIUS enviarán mensajes de solicitud de acceso al NPS alternativo.
+- Determine si va a implementar más de un NPS. Para proporcionar tolerancia a errores para la autenticación y las cuentas basadas en RADIUS, use al menos dos NPSs. Un NPS se usa como el servidor RADIUS principal y el otro se usa como copia de seguridad. Después, cada cliente RADIUS se configura en ambos NPSs. Si el NPS principal deja de estar disponible, los clientes RADIUS envían Access-Request mensajes al NPS alternativo.
 
 - Planee el script usado para copiar una configuración de NPS en otros NPSs para ahorrar en la sobrecarga administrativa y para evitar el configuración incorrecto de un servidor. NPS proporciona los comandos Netsh que le permiten copiar toda o parte de una configuración de NPS para la importación en otro NPS. Puede ejecutar los comandos manualmente en el símbolo del sistema de Netsh. Sin embargo, si guarda la secuencia de comandos como un script, puede ejecutar el script en una fecha posterior si decide cambiar las configuraciones de servidor.
 
@@ -211,7 +212,7 @@ Durante el planeamiento de cuentas NPS mediante el registro de SQL Server de NPS
 
 - Determinar la aplicación o aplicaciones que desea usar para ver los datos de cuentas y generar informes.
 
-- Planear el uso de servidores de acceso a la red que envían el atributo de clase en todas las solicitudes de cuentas. El atributo de clase se envía al cliente RADIUS en un mensaje de aceptación de acceso y es útil para correlacionar mensajes de solicitud de cuentas con sesiones de autenticación. Si el servidor de acceso a la red envía el atributo de clase en los mensajes de solicitud de cuentas, se puede usar para hacer coincidir los registros de cuentas y de autenticación. La combinación de los atributos Unique-serial-number, Service-reboot-Time y Server-Address debe ser una identificación única para cada autenticación que el servidor acepte.
+- Planear el uso de servidores de acceso a la red que envían el atributo de clase en todas las solicitudes de cuentas. El atributo de clase se envía al cliente RADIUS en un mensaje de Access-Accept y es útil para correlacionar Accounting-Request mensajes con sesiones de autenticación. Si el servidor de acceso a la red envía el atributo de clase en los mensajes de solicitud de cuentas, se puede usar para hacer coincidir los registros de cuentas y de autenticación. La combinación de los atributos Unique-serial-number, Service-reboot-Time y Server-Address debe ser una identificación única para cada autenticación que el servidor acepte.
 
 - Planear el uso de servidores de acceso a la red que admiten cuentas provisionales.
 

@@ -1,19 +1,20 @@
 ---
-title: 'Paso 3: planear la implementación de un clúster con equilibrio de carga'
+title: Paso 3 planeación de una implementación de clúster de Load-Balanced
 description: Este tema forma parte de la guía deploy Remote Access in a Cluster in Windows Server 2016.
 manager: brianlic
 ms.topic: article
 ms.assetid: 7540c17b-81de-47de-a04f-3247afa26f70
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 6c590fd99715e49034592358f65c468c6a46dfb9
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 46c607497192844cf9dc7221db0b78086402dc4c
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87963891"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947751"
 ---
-# <a name="step-3-plan-a-load-balanced-cluster-deployment"></a>Paso 3: planear la implementación de un clúster con equilibrio de carga
+# <a name="step-3-plan-a-load-balanced-cluster-deployment"></a>Paso 3 planeación de una implementación de clúster de Load-Balanced
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
@@ -33,7 +34,7 @@ El acceso remoto se puede implementar en un solo servidor o en un clúster de se
 
 -   **Equilibrador de carga externo**: el uso de un equilibrador de carga externo requiere hardware externo para administrar la carga de tráfico entre los servidores del clúster de acceso remoto. Además, el uso de un equilibrador de carga externo admite un máximo de 32 servidores de acceso remoto en un clúster. Algunos aspectos que hay que tener en cuenta al configurar el equilibrio de carga externo son:
 
-    -   El administrador debe asegurarse de que las direcciones IP virtuales configuradas mediante el Asistente para el equilibrio de carga de acceso remoto se usan en los equilibradores de carga externos (como F5 BIG-IP local Traffic Manager sistema). Cuando se habilita el equilibrio de carga externo, las direcciones IP de las interfaces externas e internas se promocionarán a direcciones IP virtuales y deben estar sondeadas en los equilibradores de carga. Esto se hace para que el administrador no tenga que cambiar la entrada DNS para el nombre público de la implementación del clúster. Además, los extremos del túnel IPsec se derivan de las direcciones IP del servidor. Si el administrador proporciona direcciones IP virtuales independientes, el cliente no podrá conectarse al servidor. Vea el ejemplo de configuración de DirectAccess con equilibrio de carga externo en 3.1.1 external Load Balancer Configuration example.
+    -   El administrador debe asegurarse de que las direcciones IP virtuales configuradas mediante el Asistente para equilibrio de carga de acceso remoto se usan en los equilibradores de carga externos (como F5 Big-Ip sistema de Traffic Manager local). Cuando se habilita el equilibrio de carga externo, las direcciones IP de las interfaces externas e internas se promocionarán a direcciones IP virtuales y deben estar sondeadas en los equilibradores de carga. Esto se hace para que el administrador no tenga que cambiar la entrada DNS para el nombre público de la implementación del clúster. Además, los extremos del túnel IPsec se derivan de las direcciones IP del servidor. Si el administrador proporciona direcciones IP virtuales independientes, el cliente no podrá conectarse al servidor. Vea el ejemplo de configuración de DirectAccess con equilibrio de carga externo en 3.1.1 external Load Balancer Configuration example.
 
     -   Muchos equilibradores de carga externos (incluido F5) no admiten el equilibrio de carga de 6to4 e ISATAP. Si el servidor de acceso remoto es un enrutador ISATAP, la función ISATAP debe moverse a un equipo diferente. Además, cuando la función ISATAP está en un equipo diferente, los servidores de DirectAccess deben tener conectividad IPv6 nativa con el enrutador ISATAP. Tenga en cuenta que esta conectividad debe estar presente antes de configurar DirectAccess.
 

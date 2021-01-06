@@ -4,12 +4,13 @@ description: En este artículo se describen los problemas que se producen al qui
 ms.date: 05/28/2020
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: e69b110db8f631b74c89e046f724367b4d60dbad
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.topic: troubleshooting
+ms.openlocfilehash: aaecdeca4ec875a86c795438ba0c121932b4123b
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970042"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947221"
 ---
 # <a name="having-a-problem-with-nodes-being-removed-from-active-failover-cluster-membership"></a>Problema con los nodos que se quitan de la pertenencia al clúster de conmutación por error activa
 

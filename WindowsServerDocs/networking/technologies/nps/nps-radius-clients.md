@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: d3a09ac9-75f8-4f57-aab4-b0fdfe110118
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: c8a3fbb1845bf6faf14688019a3c27169d293151
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 2f664ad42781846ea44cb6b382b0078cbf403a4f
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953881"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947461"
 ---
 # <a name="radius-clients"></a>Clientes RADIUS
 
@@ -53,7 +54,7 @@ NPS actúa como un cliente RADIUS cuando se configura como un proxy RADIUS para 
 
 ## <a name="radius-client-properties"></a>Propiedades del cliente RADIUS
 
-Al agregar un cliente RADIUS a la configuración de NPS a través de la consola de NPS o mediante el uso de los comandos Netsh para NPS o comandos de Windows PowerShell, está configurando NPS para recibir mensajes de solicitud de acceso RADIUS desde un servidor de acceso a la red o un proxy RADIUS.
+Al agregar un cliente RADIUS a la configuración de NPS a través de la consola de NPS o mediante el uso de los comandos Netsh para NPS o comandos de Windows PowerShell, está configurando NPS para recibir mensajes de Access-Request RADIUS de un servidor de acceso a la red o un proxy RADIUS.
 
 Cuando se configura un cliente RADIUS en NPS, se pueden designar las siguientes propiedades:
 
@@ -65,7 +66,7 @@ Cuando se configura un cliente RADIUS en NPS, se pueden designar las siguientes 
 
 La dirección IPv4 del Protocolo de Internet versión 4 \( \) o el \( nombre DNS del sistema de nombres de dominio \) del cliente RADIUS.
 
-### <a name="client-vendor"></a>Cliente-proveedor
+### <a name="client-vendor"></a>Client-Vendor
 
 Proveedor del cliente RADIUS. De lo contrario, se puede usar el valor estándar de RADIUS para el proveedor del cliente.
 

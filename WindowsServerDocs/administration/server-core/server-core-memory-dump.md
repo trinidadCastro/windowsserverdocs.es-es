@@ -7,12 +7,13 @@ author: pronichkin
 ms.author: artemp
 ms.localizationpriority: medium
 ms.date: 10/17/2017
-ms.openlocfilehash: e3ef6076465bc7d165b58f1205ff8d0cf25014b7
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.topic: how-to
+ms.openlocfilehash: 786e636f2dd175840ef0a7667bed853e3fe876ce
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90077782"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947161"
 ---
 # <a name="configure-memory-dump-files-for-server-core-installation"></a>Configurar archivos de volcado de memoria para la instalación Server Core
 
@@ -35,18 +36,18 @@ wmic computersystem set AutomaticManagedPagefile=False
 No es necesario tener el archivo de paginación en la partición en la que está instalado el sistema operativo. Para colocar el archivo de paginación en otra partición, debe crear una nueva entrada del registro denominada **DedicatedDumpFile**. Puede definir el tamaño del archivo de paginación mediante la entrada del registro **DumpFileSize** . Para crear las entradas del registro DedicatedDumpFile y DumpFileSize, siga estos pasos:
 
 1. En el símbolo del sistema, ejecute el comando **regedit** para abrir el editor del registro.
-2. Busque y haga clic en la siguiente subclave del registro: HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\CrashControl
+2. Busque la siguiente subclave del registro y haga clic en ella: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CrashControl
 3. Haga clic en **editar > nuevo > valor de cadena**.
-4. Asigne al nuevo valor el nombre **DedicatedDumpFile**y, a continuación, presione Entrar.
-5. Haga clic con el botón secundario en **DedicatedDumpFile**y, a continuación, haga clic en **modificar**.
-6. En tipo de **datos del valor** ** \<Drive\> \\ \<Dedicateddumpfile.sys\> :**, y, a continuación, haga clic en **Aceptar**.
+4. Asigne al nuevo valor el nombre **DedicatedDumpFile** y, a continuación, presione Entrar.
+5. Haga clic con el botón secundario en **DedicatedDumpFile** y, a continuación, haga clic en **modificar**.
+6. En tipo de **datos del valor** **\<Drive\> \\ \<Dedicateddumpfile.sys\> :**, y, a continuación, haga clic en **Aceptar**.
 
    >[!NOTE]
    > Reemplace \<Drive\> por una unidad que tenga suficiente espacio en disco para el archivo de paginación y reemplace \<Dedicateddumpfile.dmp\> por la ruta de acceso completa al archivo dedicado.
 
 7. Haga clic en **editar > nuevo valor DWORD >**.
-8. Escriba **DumpFileSize**y, a continuación, presione Entrar.
-9. Haga clic con el botón secundario en **DumpFileSize**y, a continuación, haga clic en **modificar**.
+8. Escriba **DumpFileSize** y, a continuación, presione Entrar.
+9. Haga clic con el botón secundario en **DumpFileSize** y, a continuación, haga clic en **modificar**.
 10. En **Editar valor DWORD**, en **base**, haga clic en **decimal**.
 11. En **información del valor**, escriba el valor adecuado y, a continuación, haga clic en **Aceptar**.
     >[!NOTE]

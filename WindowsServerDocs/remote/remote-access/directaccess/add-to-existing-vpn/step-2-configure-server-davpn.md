@@ -1,17 +1,18 @@
 ---
 title: 'Paso 2: configurar el servidor VPN de DirectAccess'
-description: Este tema forma parte de la guía agregar DirectAccess a una implementación de acceso remoto (VPN) existente para Windows Server 2016
+description: Obtenga información sobre cómo configurar las opciones de cliente y servidor necesarias para una implementación de acceso remoto básica mediante el Asistente para habilitar DirectAccess.
 manager: brianlic
 ms.topic: article
 ms.assetid: fe221fc9-c7d9-4508-b8a1-000d2515283c
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: a9206ca86f9b64036b9a16d29e6c442268c3d4ed
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: e0419184c07f23faf458af4c37efb7761cc93f47
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953731"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947051"
 ---
 #  <a name="step-2-configure-the-directaccess-vpn-server"></a>Paso 2: configurar el servidor VPN de DirectAccess
 
@@ -30,7 +31,7 @@ En la tabla siguiente se proporciona información general sobre los pasos que pu
 
 ## <a name="to-start-the-enable-directacces-wizard"></a>Cómo iniciar el asistente para habilitar DirectAcces
 
-1. En Administrador del servidor, haga clic en **herramientas**y, a continuación, haga clic en **acceso remoto**. El Asistente para habilitar DirectAccess se inicia automáticamente a menos que haya seleccionado no **volver a mostrar esta pantalla**.
+1. En Administrador del servidor, haga clic en **herramientas** y, a continuación, haga clic en **acceso remoto**. El Asistente para habilitar DirectAccess se inicia automáticamente a menos que haya seleccionado no **volver a mostrar esta pantalla**.
 
 2. Si el asistente no se inicia automáticamente, haz clic con el botón secundario en el nodo de servidores en el árbol Enrutamiento y acceso remoto y haz clic en **Habilitar DirectAccess**.
 

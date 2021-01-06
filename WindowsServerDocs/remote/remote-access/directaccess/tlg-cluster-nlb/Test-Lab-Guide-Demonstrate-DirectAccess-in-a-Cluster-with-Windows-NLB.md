@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: db15dcf5-4d64-48d7-818a-06c2839e1289
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: c39111755af922a477475de180302da226966859
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 39d23a08cdf24cbf8c229e45c99e81330c353e79
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87951080"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97946531"
 ---
 # <a name="test-lab-guide-demonstrate-directaccess-in-a-cluster-with-windows-nlb"></a>Guía del laboratorio de prueba: mostrar DirectAccess en un clúster con Windows NLB
 

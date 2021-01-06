@@ -6,12 +6,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 05/05/2020
 ms.topic: article
-ms.openlocfilehash: f57a47dc936bd1f5ab7e96e13eb7f5cf3cf91d97
-ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
+ms.openlocfilehash: a13938e19ffe7eef8e5c9f23fd6525b815d3387f
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97904450"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947931"
 ---
 # <a name="build-plug-ins-with-ad-fs-2019-risk-assessment-model"></a>Compilación de complementos con el modelo de evaluación de riesgos 2019 de AD FS
 
@@ -23,7 +23,7 @@ El modelo de evaluación de riesgos es un conjunto de interfaces y clases que pe
 
 El modelo permite el código de complemento en cualquiera de las tres fases de AD FS canalización de autenticación, como se muestra a continuación:
 
-![model](media/ad-fs-risk-assessment-model/risk1.png)
+![Diagrama que muestra las tres fases de una autenticación D F S.](media/ad-fs-risk-assessment-model/risk1.png)
 
 1. **Fase de solicitud recibida** : permite compilar complementos para permitir o bloquear solicitudes cuando AD FS recibe la solicitud de autenticación, es decir, antes de que el usuario escriba las credenciales. Puede usar el contexto de la solicitud (por ejemplo: IP del cliente, método http, DNS del servidor proxy, etc.) disponible en esta fase para realizar la evaluación de riesgos. Por ejemplo, puede crear un complemento para leer la dirección IP desde el contexto de la solicitud y bloquear la solicitud de autenticación si la dirección IP está en la lista predefinida de direcciones IP de riesgo.
 
@@ -69,51 +69,50 @@ El siguiente procedimiento le guiará a través de la creación de un archivo dl
 3. Abra el proyecto `ThreatDetectionModule.sln` con Visual Studio.
 
 4. Quite del `Microsoft.IdentityServer.dll` Explorador de soluciones como se muestra a continuación:</br>
-
-   ![model](media/ad-fs-risk-assessment-model/risk2.png)
+   ![Captura de pantalla que resalta la opción de menú quitar.](media/ad-fs-risk-assessment-model/risk2.png)
 
 5. Agregue una referencia al `Microsoft.IdentityServer.dll` de su AD FS como se muestra a continuación:
 
    a. Haga clic con el botón derecho en **referencias** en el **Explorador de soluciones** y seleccione **Agregar referencia..**..</br>
 
-   ![model](media/ad-fs-risk-assessment-model/risk3.png)
+   ![Captura de pantalla que resalta la opción de menú Agregar referencia.](media/ad-fs-risk-assessment-model/risk3.png)
 
    b. En la ventana **Administrador de referencias** , seleccione **examinar**. En el, **Seleccione los archivos a los que se va a hacer referencia...** , seleccione en `Microsoft.IdentityServer.dll` la carpeta de instalación de AD FS (en mi caso **C:\Windows\ADFS**) y haga clic en **Agregar**.
 
    > [!NOTE]
    > En mi caso, voy a crear el complemento en el propio servidor de AD FS. Si el entorno de desarrollo está en un servidor diferente, copie el `Microsoft.IdentityServer.dll` de la carpeta de instalación de AD FS en AD FS Server en el cuadro de desarrollo.</br>
 
-   ![model](media/ad-fs-risk-assessment-model/risk4.png)
+   ![Captura de pantalla que muestra el archivo que debe copiar.](media/ad-fs-risk-assessment-model/risk4.png)
 
    c. Haga clic en **Aceptar** en la ventana **Administrador de referencias** después de asegurarse de que la `Microsoft.IdentityServer.dll` casilla está activada.</br>
 
-   ![model](media/ad-fs-risk-assessment-model/risk5.png)
+   ![Captura de pantalla que muestra la casilla punto d l de Microsoft DOT Identity Server.](media/ad-fs-risk-assessment-model/risk5.png)
 
 6. Todas las clases y referencias están ahora en su lugar para realizar una compilación. Sin embargo, puesto que la salida de este proyecto es un archivo dll, tendrá que instalarse en la **caché global de ensamblados**(GAC) del servidor de AD FS y la dll debe estar firmada en primer lugar. Se puede hacer de la forma siguiente:
 
    a. **Haga clic con el botón derecho** en el nombre del proyecto, ThreatDetectionModule. En el menú, haga clic en **propiedades**.</br>
 
-   ![model](media/ad-fs-risk-assessment-model/risk6.png)
+   ![Captura de pantalla que resalta la opción de menú Propiedades.](media/ad-fs-risk-assessment-model/risk6.png)
 
    b. En la página **propiedades** , haga clic en **firma**, a la izquierda y, a continuación, active la casilla **firmar el ensamblado**. En el menú seleccionar **un archivo de clave de nombre seguro:** , seleccione **<nuevo... >**.</br>
 
-   ![model](media/ad-fs-risk-assessment-model/risk7.png)
+   ![Captura de pantalla que muestra la casilla firmar el ensamblado.](media/ad-fs-risk-assessment-model/risk7.png)
 
    c. En el cuadro de **diálogo crear clave de nombre seguro**, escriba un nombre (puede elegir cualquier nombre) para la clave, desactive la casilla **proteger mi archivo de clave con la contraseña**. A continuación, haga clic en **Aceptar**.</br>
 
-   ![model](media/ad-fs-risk-assessment-model/risk8.png)
+   ![Captura de pantalla que muestra la casilla proteger mi archivo de clave con contraseña.](media/ad-fs-risk-assessment-model/risk8.png)
 
    d. Guarde el proyecto como se muestra a continuación:</br>
 
-   ![model](media/ad-fs-risk-assessment-model/risk9.png)
+   ![Captura de pantalla que muestra dónde guardar el proyecto.](media/ad-fs-risk-assessment-model/risk9.png)
 
 7. Compile el proyecto haciendo clic en **compilar** y, a continuación, **vuelva a generar la solución** como se muestra a continuación:</br>
 
-   ![model](media/ad-fs-risk-assessment-model/risk10.png)
+   ![Captura de pantalla que muestra la opción de menú recompilar solución.](media/ad-fs-risk-assessment-model/risk10.png)
 
    Compruebe la **ventana de salida** en la parte inferior de la pantalla para ver si se ha producido algún error.</br>
 
-   ![model](media/ad-fs-risk-assessment-model/risk11.png)
+   ![Captura de pantalla que muestra la salida de la solución regenerada.](media/ad-fs-risk-assessment-model/risk11.png)
 
 
 El complemento (dll) ya está listo para su uso y se encuentra en la carpeta **\bin\debug** de la carpeta del proyecto (en mi caso, eso es **C:\extensions\ThreatDetectionModule\bin\Debug\ThreatDetectionModule.dll**).
@@ -128,11 +127,11 @@ Necesitamos registrar el archivo dll en AD FS mediante el `Register-AdfsThreatDe
 
 2. Inicie el **símbolo del sistema para desarrolladores** para Visual Studio y vaya al directorio que contiene el **sn.exe** (en mi caso, el directorio es **c:\Archivos de programa (x86) \Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.7.2 Tools**).
 
-   ![model](media/ad-fs-risk-assessment-model/risk12.png)
+   ![Captura de pantalla que muestra el Símbolo del sistema para desarrolladores de Visual Studio.](media/ad-fs-risk-assessment-model/risk12.png)
 
 3. Ejecute el comando **SN** con el parámetro **-T** y la ubicación del archivo (en mi caso `SN -T "C:\extensions\ThreatDetectionModule.dll"` ).
 
-   ![model](media/ad-fs-risk-assessment-model/risk13.png)</br>
+   ![Captura de pantalla que muestra cómo ejecutar el comando S N.](media/ad-fs-risk-assessment-model/risk13.png)</br>
 
    El comando le proporcionará el token de clave pública (para mí, el **token de clave pública es 714697626ef96b35**)
 
@@ -142,7 +141,7 @@ Necesitamos registrar el archivo dll en AD FS mediante el `Register-AdfsThreatDe
 
    b. Ejecute el comando **Gacutil** (en mi caso `Gacutil /IF C:\extensions\ThreatDetectionModule.dll` ):
 
-   ![model](media/ad-fs-risk-assessment-model/risk14.png)
+   ![Captura de pantalla que muestra cómo ejecutar el comando Gacutil.](media/ad-fs-risk-assessment-model/risk14.png)
 
    > [!NOTE]
    > Si tiene una granja de AD FS, se debe ejecutar lo anterior en cada servidor AD FS de la granja.
@@ -183,7 +182,7 @@ Eso es, el archivo dll se ha registrado con AD FS y está listo para su uso.
 
 1. Abra el archivo de **authconfig.csv** que hemos creado anteriormente (en mi caso, en la ubicación **C:\extensions**) y agregue las **direcciones IP de extranet** que quiera bloquear. Cada IP debe estar en una línea independiente y no debe haber espacios al final.</br>
 
-   ![model](media/ad-fs-risk-assessment-model/risk18.png)
+   ![Captura de pantalla que muestra cómo agregar las líneas de extranet I P.](media/ad-fs-risk-assessment-model/risk18.png)
 
 2. Guarde y cierre el archivo.
 
@@ -204,11 +203,11 @@ Eso es, el archivo dll se ha registrado con AD FS y está listo para su uso.
 
    Escriba la instancia de servidor de Federación y el botón de **autenticación de prueba** de posicionamiento.</br>
 
-   ![model](media/ad-fs-risk-assessment-model/risk15.png)
+   ![Captura de pantalla que muestra el botón probar autenticación.](media/ad-fs-risk-assessment-model/risk15.png)
 
 5. La autenticación se bloquea como se muestra a continuación.</br>
 
-   ![model](media/ad-fs-risk-assessment-model/risk16.png)
+   ![Captura de pantalla que muestra que la autenticación está bloqueada.](media/ad-fs-risk-assessment-model/risk16.png)
 
 Ahora que sabemos cómo compilar y registrar el complemento, vamos a guiar el código del complemento para comprender la implementación mediante las nuevas interfaces y clases que se introdujeron con el modelo.
 

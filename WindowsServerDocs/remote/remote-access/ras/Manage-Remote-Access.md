@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 1459819a-b1b6-4800-8770-4a85d02c7a2b
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: eaf64c4c247b1bf06c470627c249f1030a14e41e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 39ea5e34707d2959c1d700019de5a55e7cd2b5ee
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971662"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947401"
 ---
 # <a name="manage-remote-access"></a>Administrar el acceso remoto
 
@@ -50,7 +51,7 @@ Solo hay unos pocos requisitos de equipo y de red para planear este escenario: I
 -   **Clientes de DirectAccess**: Decide qué equipos administrados se configurarán como clientes de DirectAccess.
 
 ### <a name="configure-the-deployment"></a>Configurar la implementación
-La configuración de la implementación consta de una serie de pasos. Estas incluyen:
+La configuración de la implementación consta de una serie de pasos. Entre ellas se incluyen las siguientes:
 
 1.  **Configurar la infraestructura**: configure DNS, una el servidor y los equipos cliente a un dominio si fuera necesario y configure los grupos de seguridad de Active Directory.
 

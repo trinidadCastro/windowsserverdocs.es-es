@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: fdfc0df1-21c7-492c-9fad-38fe9c7d935a
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 84ab593772dc7142b17dc9a6c971f52895df2d14
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 66fb4d0b7d2fc5bd77fb1b943b45a8c75408866e
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953901"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947451"
 ---
 # <a name="nps-templates"></a>Plantillas NPS
 
@@ -33,7 +34,7 @@ Por ejemplo, si configura un cliente RADIUS en la consola de NPS en clientes y s
 
 ## <a name="creating-templates"></a>Creación de plantillas
 
-Para crear una plantilla, abra la consola de NPS, haga clic con el botón secundario en un tipo de plantilla, como **filtros IP**y, a continuación, haga clic en **nuevo**. Se abre un cuadro de diálogo nuevas propiedades de plantilla que le permite configurar la plantilla.
+Para crear una plantilla, abra la consola de NPS, haga clic con el botón secundario en un tipo de plantilla, como **filtros IP** y, a continuación, haga clic en **nuevo**. Se abre un cuadro de diálogo nuevas propiedades de plantilla que le permite configurar la plantilla.
 
 ## <a name="using-templates-locally"></a>Uso de plantillas localmente
 

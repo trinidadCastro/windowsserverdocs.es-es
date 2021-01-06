@@ -1,18 +1,18 @@
 ---
 title: winsat mem
 description: Artículo de referencia de la memoria de WinSAT, que prueba el ancho de banda de la memoria del sistema de forma que se refleje la memoria grande en las copias de búfer de memoria, como se usa en el procesamiento multimedia.
-winms.topic: reference
+ms.topic: reference
 ms.assetid: cda017bf-6193-43c1-b71f-e379c23e1152
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 88a8ff7bf8cac5197532950d59d8c736d229f846
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: f75fda37e87d0e1c6e8783cb5604b864339914ac
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89641103"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947641"
 ---
 # <a name="winsat-mem"></a>winsat mem
 
@@ -54,10 +54,10 @@ winsat mem <parameters>
   winsat mem -mint 4.0 -maxt 12.0 -buffersize 32MB -xml memtest.xml
   ```
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 -   La pertenencia al grupo local Administradores, o equivalente, es lo mínimo necesario para usar **WinSAT**. El comando debe ejecutarse desde una ventana del símbolo del sistema con privilegios elevados.
--   Para abrir una ventana del símbolo del sistema con privilegios elevados, haga clic en **Inicio**, **accesorios**, haga clic con el botón secundario en **símbolo del sistema**y haga clic en **Ejecutar como administrador**.
+-   Para abrir una ventana del símbolo del sistema con privilegios elevados, haga clic en **Inicio**, **accesorios**, haga clic con el botón secundario en **símbolo del sistema** y haga clic en **Ejecutar como administrador**.
 
 ## <a name="additional-references"></a>Referencias adicionales
 

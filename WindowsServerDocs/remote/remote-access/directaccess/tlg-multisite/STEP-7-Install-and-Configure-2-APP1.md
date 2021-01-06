@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 1cc0abc6-be4d-4cbe-bd0c-cc448bf294f6
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: b881f22ab2e2aa5427b0c06f042d4102cccf26fc
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 36973d822f607ac6a62fffc956f1dacee68be60a
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953691"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947981"
 ---
 # <a name="step-7-install-and-configure-2-app1"></a>Paso 7: instalación y configuración 2-APP1
 
@@ -47,9 +48,9 @@ Configure las propiedades TCP/IP en 2-APP1.
 
 #### <a name="to-configure-tcpip-properties"></a>Para configurar las propiedades TCP/IP
 
-1.  En la consola de Administrador del servidor, haga clic en **servidor local**y, a continuación, en el área **propiedades** , junto a **conexión cableada Ethernet**, haga clic en el vínculo.
+1.  En la consola de Administrador del servidor, haga clic en **servidor local** y, a continuación, en el área **propiedades** , junto a **conexión cableada Ethernet**, haga clic en el vínculo.
 
-2.  En la ventana **conexiones de red** , haga clic con el botón secundario en **conexión cableada Ethernet**y, a continuación, haga clic en **propiedades**.
+2.  En la ventana **conexiones de red** , haga clic con el botón secundario en **conexión cableada Ethernet** y, a continuación, haga clic en **propiedades**.
 
 3.  Haga clic en **Protocolo de Internet versión 4 (TCP/IPv4)** y, a continuación, en **Propiedades**.
 
@@ -57,15 +58,15 @@ Configure las propiedades TCP/IP en 2-APP1.
 
 5.  Haga clic en **Usar las siguientes direcciones de servidor DNS**. En **servidor DNS preferido**, escriba **10.2.0.1**.
 
-6.  Haga clic en **Opciones avanzadas**y, a continuación, haga clic en la pestaña **DNS** . En **sufijo DNS para esta conexión**, escriba **Corp2.Corp.contoso.com**y haga clic en **Aceptar** dos veces.
+6.  Haga clic en **Opciones avanzadas** y, a continuación, haga clic en la pestaña **DNS** . En **sufijo DNS para esta conexión**, escriba **Corp2.Corp.contoso.com** y haga clic en **Aceptar** dos veces.
 
 7.  Haga clic en **Protocolo de Internet versión 6 (TCP/IPv6)** y, a continuación, haga clic en **Propiedades**.
 
-8.  Haga clic en **usar la siguiente dirección IPv6**. En **dirección IPv6**, escriba **2001: db8:2:: 3**. En **longitud del prefijo de subred**, escriba **64**. En **puerta de enlace predeterminada**, escriba **2001: db8:2:: fe**. Haga clic en **usar las siguientes direcciones de servidor DNS**y, en **servidor DNS preferido**, escriba **2001: db8:2:: 1**.
+8.  Haga clic en **usar la siguiente dirección IPv6**. En **dirección IPv6**, escriba **2001: db8:2:: 3**. En **longitud del prefijo de subred**, escriba **64**. En **puerta de enlace predeterminada**, escriba **2001: db8:2:: fe**. Haga clic en **usar las siguientes direcciones de servidor DNS** y, en **servidor DNS preferido**, escriba **2001: db8:2:: 1**.
 
-9. Haga clic en ** Opciones avanzadas** y, a continuación, haga clic en la pestaña **DNS**.
+9. Haga clic en **Opciones avanzadas** y, a continuación, haga clic en la pestaña **DNS**.
 
-10. En **sufijo DNS para esta conexión**, escriba **Corp2.Corp.contoso.com**y, a continuación, haga clic en **Aceptar** dos veces.
+10. En **sufijo DNS para esta conexión**, escriba **Corp2.Corp.contoso.com** y, a continuación, haga clic en **Aceptar** dos veces.
 
 11. En el cuadro de diálogo **propiedades de conexión cableada Ethernet** , haga clic en **cerrar**.
 
@@ -80,7 +81,7 @@ Configure las propiedades TCP/IP en 2-APP1.
 
 2.  En el cuadro de diálogo **Propiedades del sistema**, en la pestaña **Nombre de equipo** haz clic en **Cambiar**.
 
-3.  En **nombre de equipo**, escriba **2-app1**. En **miembro de**, haga clic en **dominio**, escriba **Corp2.Corp.contoso.com**y, a continuación, haga clic en **Aceptar**.
+3.  En **nombre de equipo**, escriba **2-app1**. En **miembro de**, haga clic en **dominio**, escriba **Corp2.Corp.contoso.com** y, a continuación, haga clic en **Aceptar**.
 
 4.  Cuando se le pida un nombre de usuario y una contraseña, escriba **Administrador** y su contraseña y, a continuación, haga clic en **Aceptar**.
 
@@ -92,7 +93,7 @@ Configure las propiedades TCP/IP en 2-APP1.
 
 8.  Cuando se le pida que reinicie el equipo, haga clic en **Reiniciar ahora**.
 
-9. Una vez reiniciado el equipo, haga clic en **cambiar de usuario**y, a continuación, haga clic en **otro usuario** e inicie sesión en el dominio CORP2 con la cuenta de administrador.
+9. Una vez reiniciado el equipo, haga clic en **cambiar de usuario** y, a continuación, haga clic en **otro usuario** e inicie sesión en el dominio CORP2 con la cuenta de administrador.
 
 ## <a name="install-the-web-server-iis-role-on-2-app1"></a><a name="bkmk_IIS"></a>Instalar el rol de servidor Web (IIS) en 2-APP1
 Instale el rol de servidor Web (IIS) para hacer que 2-APP1 sea un servidor Web.
@@ -114,25 +115,25 @@ Cree una carpeta compartida y un archivo de texto dentro de la carpeta en 2-APP1
 
 #### <a name="to-create-a-shared-folder"></a>Para crear una carpeta compartida
 
-1.  En la pantalla **Inicio** , escriba**explorer.exe**y, a continuación, presione Entrar.
+1.  En la pantalla **Inicio** , escriba **explorer.exe** y, a continuación, presione Entrar.
 
-2.  Haga clic en **equipo**y, a continuación, haga doble clic en **disco local (C:)**.
+2.  Haga clic en **equipo** y, a continuación, haga doble clic en **disco local (C:)**.
 
-3.  Haga clic en **nueva carpeta**, escriba **archivos**y, a continuación, presione Entrar. Deje abierta la ventana **disco local** .
+3.  Haga clic en **nueva carpeta**, escriba **archivos** y, a continuación, presione Entrar. Deje abierta la ventana **disco local** .
 
-4.  En la pantalla **Inicio** , escriba**notepad.exe**, haga clic con el botón secundario en **Bloc de notas**, haga clic en **Opciones avanzadas**y, a continuación, haga clic en **Ejecutar como administrador**.
+4.  En la pantalla **Inicio** , escriba **notepad.exe**, haga clic con el botón secundario en **Bloc de notas**, haga clic en **Opciones avanzadas** y, a continuación, haga clic en **Ejecutar como administrador**.
 
 5.  En la ventana sin **Título: Bloc de notas** , escriba **este es un archivo compartido en 2-app1**.
 
 6.  Haga clic en **archivo**, haga clic en **Guardar**, haga clic en **equipo**, haga doble clic en **disco local (C:)** y, a continuación, haga doble clic en la carpeta **archivos** .
 
-7.  En **nombre de archivo**, escriba **example.txt**y, a continuación, haga clic en **Guardar**. Cierre el Bloc de notas.
+7.  En **nombre de archivo**, escriba **example.txt** y, a continuación, haga clic en **Guardar**. Cierre el Bloc de notas.
 
-8.  En la ventana **disco local** , haga clic con el botón secundario en la carpeta **archivos** , seleccione **compartir con**y, a continuación, haga clic en **personas específicas**.
+8.  En la ventana **disco local** , haga clic con el botón secundario en la carpeta **archivos** , seleccione **compartir con** y, a continuación, haga clic en **personas específicas**.
 
-9. En el cuadro de diálogo **uso compartido de archivos** , en la lista desplegable, haga clic en **todos**y, a continuación, haga clic en **Agregar**. En **nivel de permiso** para **todos**, haga clic en **lectura/escritura**.
+9. En el cuadro de diálogo **uso compartido de archivos** , en la lista desplegable, haga clic en **todos** y, a continuación, haga clic en **Agregar**. En **nivel de permiso** para **todos**, haga clic en **lectura/escritura**.
 
-10. Haga clic en **compartir**y, a continuación, en **listo**.
+10. Haga clic en **compartir** y, a continuación, en **listo**.
 
 11. Cierre la ventana **disco local** .
 

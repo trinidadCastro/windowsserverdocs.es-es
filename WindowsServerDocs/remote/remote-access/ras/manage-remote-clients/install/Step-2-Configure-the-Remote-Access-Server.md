@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: c0257b98-5633-4264-9df6-b6ffae80592c
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: a39317c8a47de36d1cdabeac2c08dbaef7ae4fb4
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 5fb19aeed8cd390693b0d62516191e920e4d879b
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87966322"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947711"
 ---
 # <a name="step-2-configure-the-remote-access-server"></a>Paso 2 configurar el servidor de acceso remoto
 
@@ -43,19 +44,19 @@ Debe instalar el rol de acceso remoto en un servidor de su organización que act
 
 2.  Haga clic en **Siguiente** tres veces para ir a la pantalla de selección de roles del servidor.
 
-3.  En el cuadro de diálogo **Seleccionar roles de servidor** , seleccione **acceso remoto**y, a continuación, haga clic en **siguiente**.
+3.  En el cuadro de diálogo **Seleccionar roles de servidor** , seleccione **acceso remoto** y, a continuación, haga clic en **siguiente**.
 
 4.  Haga clic en **siguiente** tres veces.
 
 5.  En el cuadro de diálogo **seleccionar servicios de rol** , seleccione **DirectAccess y VPN (RAS)** y, a continuación, haga clic en **Agregar características**.
 
-6.  Seleccione **enrutamiento**, **proxy de aplicación web**, haga clic en **Agregar características**y, a continuación, haga clic en **siguiente**.
+6.  Seleccione **enrutamiento**, **proxy de aplicación web**, haga clic en **Agregar características** y, a continuación, haga clic en **siguiente**.
 
 7. Haga clic en **Siguiente** y, después, en **Instalar**.
 
 8.  En el cuadro de diálogo **Progreso de la instalación**, compruebe que la instalación se ha realizado correctamente y, a continuación, haga clic en **Cerrar**.
 
-![](../../../../media/Step-2-Configure-the-Remote-Access-Server/PowerShellLogoSmall.gif)***<em>Comandos equivalentes</em> de Windows PowerShell Windows PowerShell***
+![](../../../../media/Step-2-Configure-the-Remote-Access-Server/PowerShellLogoSmall.gif) * *_<em>Comandos equivalentes</em>_* de Windows PowerShell para Windows PowerShell _
 
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.
 
@@ -77,7 +78,7 @@ Hay tres opciones que puede usar para implementar el acceso remoto desde la cons
 
 #### <a name="to-configure-the-deployment-type"></a>Para configurar el tipo de implementación
 
-1.  En el servidor de acceso remoto, abra la consola de administración de acceso remoto: en la pantalla **Inicio** , escriba, escriba **consola de administración de acceso remoto**y, a continuación, presione Entrar. Si aparece el cuadro de diálogo **Control de cuentas de usuario**, confirme que la acción que se muestra es la esperada y, a continuación, haga clic en **Sí**.
+1.  En el servidor de acceso remoto, abra la consola de administración de acceso remoto: en la pantalla _ *Inicio**, escriba, escriba **consola de administración de acceso remoto** y, a continuación, presione Entrar. Si aparece el cuadro de diálogo **Control de cuentas de usuario**, confirme que la acción que se muestra es la esperada y, a continuación, haga clic en **Sí**.
 
 2.  En el panel central de la consola de administración de acceso remoto, haz clic en **Ejecutar el Asistente para la instalación de acceso remoto**.
 
@@ -90,7 +91,7 @@ Para que un equipo cliente se aprovisione para el uso de DirectAccess, este debe
 
 1.  En el área **Paso 1: Clientes remotos** del panel central de la consola de administración de acceso remoto, haz clic en **Configurar**.
 
-2.  En el Asistente para la instalación del cliente de DirectAccess, en la página **escenario de implementación** , haga clic en **implementar DirectAccess solo para la administración remota**y, a continuación, haga clic en **siguiente**.
+2.  En el Asistente para la instalación del cliente de DirectAccess, en la página **escenario de implementación** , haga clic en **implementar DirectAccess solo para la administración remota** y, a continuación, haga clic en **siguiente**.
 
 3.  En la página **Seleccionar grupos**, haz clic en **Agregar**.
 
@@ -197,7 +198,7 @@ Cuando completes la configuración de acceso remoto verás el cuadro de diálogo
 
     Esta lista contiene la URL del servidor de ubicación de red, los sufijos DNS usados por clientes de DirectAccess e información sobre el servidor de administración.
 
-## <a name="see-also"></a><a name="BKMK_Links"></a>Vea también
+## <a name="see-also"></a><a name="BKMK_Links"></a>Otras referencias
 
 -   [Paso 3: Comprobar la implementación](Step-3-Verify-the-Deployment_2.md)
 

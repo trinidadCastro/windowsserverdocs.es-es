@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 4ec45e0c-6b37-4dfb-8158-5f40677b0157
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: f3f6aa743f592ae9336a5b8a20a13ff9e1048621
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: a4fc6b2e7342f59f971ee42848f75e6598c1c263
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969412"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947801"
 ---
 # <a name="connection-request-policies"></a>Directivas de solicitud de conexión
 
@@ -35,7 +36,7 @@ Con las directivas de solicitud de conexión, puede usar NPS como un servidor RA
 - El tipo de conexión que se solicita
 - La dirección IP del cliente RADIUS
 
-NPS procesa o reenvía los mensajes de solicitud de acceso RADIUS solo si la configuración del mensaje entrante coincide con al menos una de las directivas de solicitud de conexión configuradas en el NPS.
+NPS procesa o reenvía los mensajes de Access-Request RADIUS solo si la configuración del mensaje entrante coincide con al menos una de las directivas de solicitud de conexión configuradas en el NPS.
 
 Si la configuración de la Directiva coincide y la Directiva requiere que el NPS procese el mensaje, NPS actúa como un servidor RADIUS, autenticando y autorizando la solicitud de conexión. Si la configuración de la Directiva coincide y la Directiva requiere que NPS reenvíe el mensaje, NPS actúa como proxy RADIUS y reenvía la solicitud de conexión a un servidor RADIUS remoto para su procesamiento.
 
@@ -119,20 +120,20 @@ El grupo de atributos Nombre de usuario contiene el atributo Nombre de usuario. 
 
 La configuración de la directiva de solicitud de conexión es un conjunto de propiedades que se aplican a un mensaje RADIUS entrante. La configuración consta de los siguientes grupos de propiedades.
 
-- Autenticación
+- Authentication
 - Control
 - Manipulación de atributos
 - Reenviando solicitud
-- Avanzadas
+- Avanzado
 
 En las secciones siguientes se proporcionan detalles adicionales acerca de esta configuración.
 
-### <a name="authentication"></a>Autenticación
+### <a name="authentication"></a>Authentication
 
 Al usar esta opción, puede invalidar la configuración de autenticación que se configura en todas las directivas de red y puede designar los métodos y tipos de autenticación que se necesitan para conectarse a la red.
 
 >[!IMPORTANT]
->Si configura un método de autenticación en una directiva de solicitud de conexión que sea menos segura que el método de autenticación que configure en la Directiva de red, se invalidará el método de autenticación más seguro que configure en la Directiva de red. Por ejemplo, si tiene una directiva de red que requiere el uso del Protocolo de autenticación extensible protegido-protocolo de autenticación por desafío mutuo de Microsoft versión 2 \( PEAP-MS-CHAP V2 \) , que es un método de autenticación basado en contraseña para una red inalámbrica segura y también se configura una directiva de solicitud de conexión para permitir el acceso no autenticado, el resultado es que no es necesario que los clientes se autentiquen mediante PEAP-MS-CHAP v2. En este ejemplo, se concede a todos los clientes que se conectan a la red un acceso no autenticado.
+>Si configura un método de autenticación en una directiva de solicitud de conexión que sea menos segura que el método de autenticación que configure en la Directiva de red, se invalidará el método de autenticación más seguro que configure en la Directiva de red. Por ejemplo, si tiene una directiva de red que requiere el uso de la autenticación extensible protegida Protocol-Microsoft protocolo de autenticación por desafío mutuo versión 2 \( PEAP-MS-CHAP V2 \) , que es un método de autenticación basado en contraseña para una red inalámbrica segura y también se configura una directiva de solicitud de conexión para permitir el acceso no autenticado, el resultado es que no es necesario que los clientes se autentiquen mediante PEAP-MS-CHAP v2. En este ejemplo, se concede a todos los clientes que se conectan a la red un acceso no autenticado.
 
 ### <a name="accounting"></a>Control
 
@@ -166,16 +167,16 @@ Puede establecer las siguientes opciones de reenvío de solicitud que se usan pa
 
 - **Autenticar solicitudes en este servidor**. Con esta configuración, NPS usa un dominio de Windows NT 4,0, Active Directory o la base de datos de cuentas de usuario del administrador de cuentas de seguridad (SAM) local para autenticar la solicitud de conexión. Esta configuración también especifica que la directiva de red coincidente que se configura en NPS, junto con las propiedades de marcado de la cuenta de usuario, sean usadas por NPS para autorizar la solicitud de conexión. En este caso, el NPS está configurado para ejecutarse como un servidor RADIUS.
 
-- **Reenviar solicitudes al siguiente grupo de servidores RADIUS remotos**. Al usar esta configuración, NPS reenvía las solicitudes de conexión al grupo de servidores RADIUS remoto que especifique. Si el NPS recibe un mensaje de aceptación de acceso válido que corresponde al mensaje de solicitud de acceso, el intento de conexión se considera autenticado y autorizado. En este caso, el NPS actúa como un proxy RADIUS.
+- **Reenviar solicitudes al siguiente grupo de servidores RADIUS remotos**. Al usar esta configuración, NPS reenvía las solicitudes de conexión al grupo de servidores RADIUS remoto que especifique. Si el NPS recibe un mensaje de Access-Accept válido que corresponde al mensaje de Access-Request, el intento de conexión se considera autenticado y autorizado. En este caso, el NPS actúa como un proxy RADIUS.
 
 - **Aceptar usuarios sin validar credenciales**. Con esta configuración, NPS no comprueba la identidad del usuario que intenta conectarse a la red y NPS no intenta comprobar si el usuario o el equipo tiene derecho a conectarse a la red. Cuando NPS se configura para permitir el acceso no autenticado y recibe una solicitud de conexión, NPS envía de inmediato un mensaje de aceptación de acceso al cliente RADIUS y se concede al usuario o el equipo acceso a la red. Esta configuración se utiliza para algunos tipos de tunelización obligatoria en los que el cliente de acceso se tuneliza antes de que se autentiquen las credenciales de usuario.
 
 >[!NOTE]
->Esta opción de autenticación no se puede usar cuando el protocolo de autenticación del cliente de acceso es MS-CHAP V2 o protocolo de autenticación extensible-seguridad de la capa de transporte (EAP-TLS), y ambos proporcionan autenticación mutua. En la autenticación mutua, el cliente de acceso demuestra que es un cliente de acceso válido al servidor de autenticación (NPS) y el servidor de autenticación demuestra que es un servidor de autenticación válido para el cliente de acceso. Cuando se usa esta opción de autenticación, se devuelve el mensaje de aceptación de acceso. Sin embargo, el servidor de autenticación no proporciona validación al cliente de acceso y se produce un error en la autenticación mutua.
+>Esta opción de autenticación no se puede usar cuando el protocolo de autenticación del cliente de acceso es MS-CHAP V2 o la autenticación extensible Protocol-Transport la seguridad de la capa (EAP-TLS), y ambas proporcionan autenticación mutua. En la autenticación mutua, el cliente de acceso demuestra que es un cliente de acceso válido al servidor de autenticación (NPS) y el servidor de autenticación demuestra que es un servidor de autenticación válido para el cliente de acceso. Cuando se usa esta opción de autenticación, se devuelve el mensaje de aceptación de acceso. Sin embargo, el servidor de autenticación no proporciona validación al cliente de acceso y se produce un error en la autenticación mutua.
 
 Para obtener ejemplos de cómo usar expresiones regulares para crear reglas de enrutamiento que reenvían mensajes RADIUS con un nombre de dominio Kerberos especificado a un grupo de servidores RADIUS remotos, consulte la sección "ejemplo de reenvío de mensajes RADIUS por un servidor proxy" en el tema [uso de expresiones regulares en NPS](nps-crp-reg-expressions.md).
 
-### <a name="advanced"></a>Avanzadas
+### <a name="advanced"></a>Avanzado
 
 Puede configurar propiedades avanzadas para especificar la serie de atributos RADIUS que son:
 

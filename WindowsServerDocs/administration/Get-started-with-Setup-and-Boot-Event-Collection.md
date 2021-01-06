@@ -1,25 +1,24 @@
 ---
 title: Introducción a la configuración y la recopilación de eventos de arranque
 description: Configuración de recopiladores y destinos de la recopilación de eventos de instalación y arranque
-manager: DonGill
 ms.localizationpriority: medium
 ms.date: 10/16/2017
-ms.topic: get-started-article
+ms.topic: how-to
 ms.assetid: fc239aec-e719-47ea-92fc-d82a7247b3f8
 author: jaimeo
 ms.author: jaimeo
-ms.openlocfilehash: e5275937e12542e16c40273d69d9684d72a4ee82
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 2b59dcd2d65f3c2971c6dfdf13aab07e33820423
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87992447"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97946771"
 ---
 # <a name="get-started-with-setup-and-boot-event-collection"></a>Introducción a la configuración y la recopilación de eventos de arranque
 
 > Se aplica a: Windows Server
 
-## <a name="overview"></a>Introducción
+## <a name="overview"></a>Información general
 La configuración y la recopilación de eventos de arranque es una característica nueva de Windows Server 2016 que le permite designar un equipo recopilador que puede recopilar diversos eventos importantes que se producen en otros equipos cuando arrancan o pasan por el proceso de instalación. Puedes analizar, más adelante, los eventos recopilados con Visor de eventos, Analizador de mensajes, Wevtutil o cmdlets de Windows PowerShell.
 
 Anteriormente, estos eventos han sido imposibles de supervisar porque la infraestructura necesaria para recopilarlos no existe hasta que un equipo ya está configurado. Entre los tipos de eventos de instalación y de arranque que puede supervisar se incluyen los siguientes:
@@ -41,7 +40,7 @@ El equipo del recopilador debe ejecutar Windows Server 2016 (puede estar en cual
 |Host de virtualización|Máquina virtual del recopilador|Máquina virtual de destino|
 |-----------------------|-----------------------------|--------------------------|
 |Windows 8.1|sí|sí|
-|Windows 10|sí|sí|
+|Windows 10|Sí.|sí|
 |Windows Server 2016|sí|sí|
 |Windows Server 2012 R2|sí|No|
 
@@ -77,7 +76,7 @@ Puede habilitar el transporte de eventos de forma remota (con Windows PowerShell
 
     winrm quickconfig
 
-2.  Responda a los mensajes y, a continuación, reinicie el equipo de destino. Si los equipos de destino no están en el mismo dominio que el equipo del recopilador, es posible que tenga que definirlos como hosts de confianza. Para ello:
+2.  Responda a los mensajes y, a continuación, reinicie el equipo de destino. Si los equipos de destino no están en el mismo dominio que el equipo del recopilador, es posible que tenga que definirlos como hosts de confianza. Para hacerlo:
 
 3.  En el equipo del recopilador, ejecute cualquiera de estos comandos:
 
@@ -90,7 +89,7 @@ Puede habilitar el transporte de eventos de forma remota (con Windows PowerShell
 
 4.  Pruebe la conexión remota; para ello, vaya al equipo del recopilador y ejecute uno de estos comandos de Windows PowerShell:
 
-    Si el equipo de destino está en el mismo dominio que el equipo del recopilador, ejecute`New-PSSession -Computer <target> | Remove-PSSession`
+    Si el equipo de destino está en el mismo dominio que el equipo del recopilador, ejecute `New-PSSession -Computer <target> | Remove-PSSession`
 
     Si el equipo de destino no está en el mismo dominio, ejecute `New-PSSession -Computer  <target>  -Credential Administrator | Remove-PSSession` , lo que le solicitará las credenciales.
 
@@ -100,7 +99,7 @@ Puede habilitar el transporte de eventos de forma remota (con Windows PowerShell
 
     `Enable-SbecBcd -ComputerName <target_name> -CollectorIP <ip> -CollectorPort <port> -Key <a.b.c.d>`
 
-    Aquí <target_name> es el nombre del equipo de destino, \<ip> es la dirección IP del equipo del recopilador. \<port>es el número de puerto en el que se ejecutará el recopilador. La clave <a. b. c. d> es una clave de cifrado necesaria para la comunicación, que consta de cuatro cadenas alfanuméricas separadas por puntos. Esta misma clave se usa en el equipo del recopilador. Si no especifica una clave, el sistema genera una clave aleatoria; lo necesitará para el equipo del recopilador, por lo que debe anotarlo.
+    Aquí <target_name> es el nombre del equipo de destino, \<ip> es la dirección IP del equipo del recopilador. \<port> es el número de puerto en el que se ejecutará el recopilador. La clave <a. b. c. d> es una clave de cifrado necesaria para la comunicación, que consta de cuatro cadenas alfanuméricas separadas por puntos. Esta misma clave se usa en el equipo del recopilador. Si no especifica una clave, el sistema genera una clave aleatoria; lo necesitará para el equipo del recopilador, por lo que debe anotarlo.
 
 6.  Si ya tiene un equipo del recopilador configurado, actualice el archivo de configuración en el equipo del recopilador con la información del nuevo equipo de destino. Consulte la sección configuración del equipo del recopilador para obtener más información.
 
@@ -130,11 +129,11 @@ Si no puede configurar la comunicación remota de Windows PowerShell, siempre pu
 
 1.  En el equipo de destino, inicie Regedit.exe y busque esta clave del registro:
 
-    **HKEY_LOCAL_MACHINE \system\currentcontrolset\control\wmi\autologger**. Las distintas sesiones de registro se enumeran como subclaves en esta clave. La **plataforma de instalación**, el **registrador de kernel de NT**y **Microsoft-Windows-Setup** son opciones posibles para su uso con la configuración y la recopilación de eventos de arranque, pero la opción recomendada es **EventLog-System**. Estas claves se detallan en [configurar e iniciar una sesión de registrador automático](/windows/win32/etw/configuring-and-starting-an-autologger-session).
+    **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\AutoLogger**. Las distintas sesiones de registro se enumeran como subclaves en esta clave. La **plataforma de instalación**, el **registrador de kernel de NT** y **Microsoft-Windows-Setup** son opciones posibles para su uso con la configuración y la recopilación de eventos de arranque, pero la opción recomendada es **EventLog-System**. Estas claves se detallan en [configurar e iniciar una sesión de registrador automático](/windows/win32/etw/configuring-and-starting-an-autologger-session).
 
 2.  En la clave EventLog-System, cambie el valor de **LogFileMode** de **0x10000180** a **0x10080180**. Para obtener más información sobre los detalles de esta configuración, vea [constantes del modo de registro](/windows/win32/etw/logging-mode-constants).
 
-3.  Opcionalmente, también puede habilitar el reenvío de los datos de comprobación de errores al equipo del recopilador. Para ello, busque la clave del registro HKEY_LOCAL_MACHINE administrador de \SYSTEM\CurrentControlSet\Control\Session y cree el **filtro de impresión de depuración** de clave con un valor de **0x1**.
+3.  Opcionalmente, también puede habilitar el reenvío de los datos de comprobación de errores al equipo del recopilador. Para ello, busque la clave del registro HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager y cree el **filtro de impresión de depuración** de clave con un valor de **0x1**.
 
 4.  Reinicie el equipo de destino.
 
@@ -145,11 +144,11 @@ Si el equipo de destino tiene más de un adaptador de red, el controlador KDNET 
 
 1.  En el equipo de destino, abra Device Manager, expanda **adaptadores de red**, busque el adaptador de red que desea usar y haga clic con el botón secundario en él.
 
-2.  En el menú que se abre, haga clic en **propiedades**y, a continuación, haga clic en la pestaña **detalles** . Expanda el menú del campo de **propiedad** , desplácese para buscar **información de ubicación** (la lista probablemente no esté en orden alfabético) y haga clic en ella. El valor será una cadena con el formato **PCI bus X, dispositivo Y, función Z**. Tome nota de X. Y. Z; Estos son los parámetros de bus que necesita para el siguiente comando.
+2.  En el menú que se abre, haga clic en **propiedades** y, a continuación, haga clic en la pestaña **detalles** . Expanda el menú en el campo de **propiedad** , desplácese para buscar **información de ubicación** (es probable que la lista no esté en orden alfabético) y, a continuación, haga clic en ella. El valor será una cadena con el formato **PCI bus X, dispositivo Y, función Z**. Tome nota de X. Y. Z; Estos son los parámetros de bus que necesita para el siguiente comando.
 
 3.  Ejecute uno de estos comandos:
 
-    Desde un símbolo del sistema de Windows PowerShell con privilegios elevados:`Enable-SbecBcd -ComputerName <target_name> -CollectorIP <ip> -CollectorPort <port> -Key <a.b.c.d> -BusParams <X.Y.Z>`
+    Desde un símbolo del sistema de Windows PowerShell con privilegios elevados: `Enable-SbecBcd -ComputerName <target_name> -CollectorIP <ip> -CollectorPort <port> -Key <a.b.c.d> -BusParams <X.Y.Z>`
 
     Desde un símbolo del sistema con privilegios elevados: **bcdedit/eventsettings net HostIP: AAA Puerto: 50000 Key: BBB busparams: X. Y. Z**
 
@@ -160,7 +159,7 @@ Para comprobar la configuración en el equipo de destino, abra un símbolo del s
 
 -   Debugtype = NET
 
--   HostIP =\<IP address of the collector>
+-   HostIP = \<IP address of the collector>
 
 -   Puerto = \<port number you specified for the collector to use>
 
@@ -266,13 +265,13 @@ Puede realizar una comprobación de validez en el archivo de configuración con 
 
 Aunque el comando de Windows PowerShell para aplicar una nueva configuración actualiza automáticamente el servicio sin que sea necesario reiniciarlo, siempre puede reiniciar el servicio con cualquiera de estos comandos:
 
-- Con Windows PowerShell:`Restart-Service BootEventCollector`
+- Con Windows PowerShell: `Restart-Service BootEventCollector`
 
 - En un símbolo del sistema normal: **SC STOP BootEventCollector; SC Start BootEventCollector**
 
 ## <a name="configuring-nano-server-as-a-target-computer"></a>Configuración de nano Server como un equipo de destino
 
-A veces, la interfaz mínima que ofrece nano Server puede dificultar el diagnóstico de problemas con ella. Puede configurar la imagen de nano Server para que participe en el programa de instalación y la recopilación de eventos de arranque automáticamente, enviando datos de diagnóstico a un equipo del recopilador sin necesidad de intervención del usuario. Para ello, realice los pasos siguientes:
+A veces, la interfaz mínima que ofrece nano Server puede dificultar el diagnóstico de problemas con ella. Puede configurar la imagen de nano Server para que participe en el programa de instalación y la recopilación de eventos de arranque automáticamente, enviando datos de diagnóstico a un equipo del recopilador sin necesidad de intervención del usuario. Para ello, siga estos pasos.
 
 ### <a name="to-configure-nano-server-as-a-target-computer"></a>Para configurar nano Server como un equipo de destino
 
@@ -286,9 +285,9 @@ A veces, la interfaz mínima que ofrece nano Server puede dificultar el diagnós
 
     2. Inicie una consola de Windows PowerShell con permisos elevados y ejecute `Import-Module BootEventCollector` .
 
-    3. Actualice el registro de VHD de nano Server para habilitar los registradores automáticos. Para ello, ejecute `Enable-SbecAutoLogger -Path C:\NanoServer\Workloads\IncludingWorkloads.vhd` . Esto agrega una lista básica de los eventos de instalación e inicio más habituales. puede investigar otros usuarios en el [control de sesiones de seguimiento de eventos](/windows/win32/etw/controlling-event-tracing-sessions).
+    3. Actualice el registro de VHD de nano Server para habilitar los registradores automáticos. Para ello, ejecute `Enable-SbecAutoLogger -Path C:\NanoServer\Workloads\IncludingWorkloads.vhd`. Esto agrega una lista básica de los eventos de instalación e inicio más habituales. puede investigar otros usuarios en el [control de sesiones de seguimiento de eventos](/windows/win32/etw/controlling-event-tracing-sessions).
 
-4. Actualice la configuración de BCD en la imagen de nano Server para habilitar la marca de eventos y establecer el equipo del recopilador para asegurarse de que los eventos de diagnóstico se envían al servidor correcto. Tenga en cuenta la dirección IPv4 del equipo del recopilador, el puerto TCP y la clave de cifrado que configuró en el archivo de Active.XML del recopilador (descrito en otro lugar de este tema). Use este comando en una consola de Windows PowerShell con permisos elevados:`Enable-SbecBcd -Path C:\NanoServer\Workloads\IncludingWorkloads.vhd -CollectorIp 192.168.100.1 -CollectorPort 50000 -Key a.b.c.d`
+4. Actualice la configuración de BCD en la imagen de nano Server para habilitar la marca de eventos y establecer el equipo del recopilador para asegurarse de que los eventos de diagnóstico se envían al servidor correcto. Tenga en cuenta la dirección IPv4 del equipo del recopilador, el puerto TCP y la clave de cifrado que configuró en el archivo de Active.XML del recopilador (descrito en otro lugar de este tema). Use este comando en una consola de Windows PowerShell con permisos elevados: `Enable-SbecBcd -Path C:\NanoServer\Workloads\IncludingWorkloads.vhd -CollectorIp 192.168.100.1 -CollectorPort 50000 -Key a.b.c.d`
 
 5. Actualice el equipo del recopilador para recibir el evento enviado por el equipo de nano Server agregando el intervalo de direcciones IPv4, la dirección IPv4 específica o la dirección MAC de nano Server al archivo Active.XML en el equipo del recopilador (consulte la sección configuración del equipo del recopilador de este tema).
 
@@ -296,9 +295,9 @@ A veces, la interfaz mínima que ofrece nano Server puede dificultar el diagnós
 
 Una vez que se guarda un archivo de configuración válido en el equipo del recopilador y se configura un equipo de destino, tan pronto como se reinicia el equipo de destino, se establece la conexión con el recopilador y se recopilan los eventos.
 
-El registro del servicio Recopilador en sí (que es diferente de los datos de configuración y arranque recopilados por el servicio) se puede encontrar en Microsoft-Windows-BootEvent-Collector/admin. Para una interfaz gráfica para los eventos, use Visor de eventos. Crear una nueva vista; expanda **registros de aplicaciones y servicios**y, a continuación, expanda **Microsoft** y **Windows**. Busque **BootEvent-Collector**, expándalo y busque **admin**.
+El registro del servicio Recopilador en sí (que es diferente de los datos de configuración y arranque recopilados por el servicio) se puede encontrar en Microsoft-Windows-BootEvent-Collector/admin. Para una interfaz gráfica para los eventos, use Visor de eventos. Crear una nueva vista; expanda **registros de aplicaciones y servicios** y, a continuación, expanda **Microsoft** y **Windows**. Busque **BootEvent-Collector**, expándalo y busque **admin**.
 
-- Con Windows PowerShell:`Get-WinEvent -LogName Microsoft-Windows-BootEvent-Collector/Admin`
+- Con Windows PowerShell: `Get-WinEvent -LogName Microsoft-Windows-BootEvent-Collector/Admin`
 
 - En un símbolo del sistema normal: **wevtutil qe Microsoft-Windows-BootEvent-Collector/admin**
 
@@ -313,7 +312,7 @@ El registro del servicio Recopilador en sí (que es diferente de los datos de co
 
 ### <a name="troubleshooting-the-collector"></a>Solución de problemas del recopilador
 
-**Registro:** El recopilador registra sus propios eventos como proveedor ETW Microsoft-Windows-BootEvent-Collector. Es el primer lugar donde debe buscar la solución de problemas con el recopilador. Puede encontrarlos en Visor de eventos en registros de aplicaciones y servicios > Microsoft > Windows > BootEvent-Collector > admin, o puede leerlos en una ventana de comandos con cualquiera de estos comandos:
+**Registro:** El recopilador registra sus propios eventos como proveedor ETW Microsoft-Windows-BootEvent-Collector. Es el primer lugar donde debe buscar la solución de problemas con el recopilador. Puede encontrarlos en Visor de eventos en registros de aplicaciones y servicios > Microsoft > Windows > BootEvent-Collector > administrador, o puede leerlos en una ventana de comandos con cualquiera de estos comandos:
 
 En un símbolo del sistema normal: **wevtutil qe Microsoft-Windows-BootEvent-Collector/admin**
 
@@ -337,9 +336,9 @@ En el nivel de depuración, puede ser útil escribir el registro en un archivo e
    ```
    Si devuelve una conexión desde este destino, el problema podría estar en la configuración del registrador automático. Si no devuelve nada, el problema se debe a la conexión KDNET para empezar. Para diagnosticar problemas de conexión de KDNET, pruebe a comprobar la conexión desde ambos extremos (es decir, desde el recopilador y desde el destino).
 
-2. Para ver los diagnósticos extendidos del recopilador, agréguelo al \<collector> elemento del archivo de configuración:\<collector ... minlog=verbose>
+2. Para ver los diagnósticos extendidos del recopilador, agréguelo al \<collector> elemento del archivo de configuración: \<collector ... minlog=verbose>
    Esto habilitará los mensajes sobre cada paquete recibido.
-3. Compruebe si se ha recibido algún paquete. Opcionalmente, puede que desee escribir el registro en modo detallado directamente en un archivo en lugar de usar ETW. Para ello, agregue esto al \<collector> elemento del archivo de configuración:\<collector ... minlog=verbose log=c:\ProgramData\Microsoft\BootEventCollector\Logs\log.txt>
+3. Compruebe si se ha recibido algún paquete. Opcionalmente, puede que desee escribir el registro en modo detallado directamente en un archivo en lugar de usar ETW. Para ello, agregue esto al \<collector> elemento del archivo de configuración: \<collector ... minlog=verbose log=c:\ProgramData\Microsoft\BootEventCollector\Logs\log.txt>
 
 4. Compruebe los registros de eventos en busca de mensajes sobre los paquetes recibidos. Compruebe si se ha recibido algún paquete. Si los paquetes se han recibido pero son incorrectos, consulte los mensajes de eventos para obtener más información.
 5. En el lado de destino, KDNET escribe información de diagnóstico en el registro. Busque mensajes en **HKLM\SYSTEM\CurrentControlSet\Services\kdnet** .
@@ -374,5 +373,5 @@ Como alternativa, si no desea guardar el resultado en una variable, puede usar `
 |--|--|--|
 | Equipo de destino | El destino no se está conectando al recopilador | El equipo de destino no se reinició después de configurarlo. Reinicie el equipo de destino. El equipo de destino tiene una configuración de BCD incorrecta. Compruebe la configuración en la sección validar la configuración del equipo de destino. Corríjalo según sea necesario y, a continuación, reinicie el equipo de destino.<p>El controlador KDNET/EVENT-NET no pudo conectarse a un adaptador de red o está conectado al adaptador de red equivocado. En Windows PowerShell, ejecute `gwmi Win32_NetworkAdapter` y Compruebe la salida de una con ServiceName **kdnic**. Si se ha seleccionado el adaptador de red equivocado, vuelva a realizar los pasos de para especificar un adaptador de red. Si el adaptador de red no aparece en absoluto, podría deberse a que el controlador no es compatible con ninguno de los adaptadores de red.<p>**Vea también:** Un enfoque sugerido para solucionar problemas del recopilador anterior, especialmente los pasos 5 a 8. |
 | Recopilador | Ya no veo eventos después de migrar la máquina virtual en la que se hospeda el recopilador. | Compruebe que la dirección IP del equipo del recopilador no ha cambiado. Si es así, revise para habilitar el envío de eventos ETW a través del transporte de forma remota. |
-| Recopilador | Los archivos ETL no se crean. | `Get-SbecForwarding`muestra que el destino se ha conectado, sin errores, pero no se han creado los archivos ETL. | Es probable que el equipo de destino no haya enviado todavía ningún dato; Los archivos ETL solo se crean cuando se reciben datos. |
+| Recopilador | Los archivos ETL no se crean. | `Get-SbecForwarding` muestra que el destino se ha conectado, sin errores, pero no se han creado los archivos ETL. | Es probable que el equipo de destino no haya enviado todavía ningún dato; Los archivos ETL solo se crean cuando se reciben datos. |
 | Recopilador | Un evento no se muestra en el archivo ETL. | El equipo de destino ha enviado un evento, pero cuando el archivo ETL se lee con Visor de eventos del analizador de mensajes, el evento no está presente. El evento aún puede estar en el búfer. Los eventos no se escriben en el archivo ETL hasta que se recopila un búfer de 64 KB completo o un tiempo de espera de aproximadamente 10-15 segundos sin eventos nuevos. Espere a que el tiempo de espera expire o vacíe los búferes con `Save-SbecInstance` .<p>El manifiesto de eventos no está disponible en el equipo del recopilador o en el equipo en el que se ejecuta el analizador de Visor de eventos o de mensajes.  En este caso, es posible que el recopilador no pueda procesar el evento (Compruebe el registro del recopilador) o que el visor no pueda mostrarlo.  Es recomendable que todos los manifiestos estén instalados en el equipo del recopilador e instale las actualizaciones en el equipo del recopilador antes de instalarlos en los equipos de destino. |

@@ -4,12 +4,13 @@ description: Este artículo es una guía de referencia rápida sobre cómo calcu
 ms.date: 06/10/2020
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: 581b485f219e960ecd467baa1f7dff7742c3acf8
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.topic: troubleshooting
+ms.openlocfilehash: c15dd18c5c479ea2e280a333f8b4ec808ab70f90
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87965792"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97946931"
 ---
 # <a name="how-to-determine-the-minimum-staging-area-dfsr-needs-for-a-replicated-folder"></a>Cómo determinar el área de ensayo mínima que necesita DFSR para una carpeta replicada
 
@@ -36,20 +37,20 @@ PowerShell se incluye en Windows 2008 y versiones posteriores. Debe instalar Pow
 
 Use un script de PowerShell para buscar los archivos de mayor tamaño 32 o 9 y determinar cuántos gigabytes agrega hasta (gracias a tendrá Pyle para los comandos de PowerShell). En realidad, voy a presentar tres scripts de PowerShell. Cada es útil por sí solo; sin embargo, el número 3 es el más útil.
 
-1. Ejecute el comando siguiente:
+1. Ejecute el siguiente comando:
    ```Powershell
    Get-ChildItem c:\\temp -recurse | Sort-Object length -descending | select-object -first 32 | ft name,length -wrap –auto
    ```
 
    Este comando devolverá los nombres de archivo y el tamaño de los archivos en bytes. Resulta útil si desea saber qué archivos de 32 son los más grandes en la carpeta replicada para que pueda "visitar" sus propietarios.
 
-2. Ejecute el comando siguiente:
+2. Ejecute el siguiente comando:
    ```Poswershell
    Get-ChildItem c:\\temp -recurse | Sort-Object length -descending | select-object -first 32 | measure-object -property length –sum
    ```
    Este comando devolverá el número total de bytes de los archivos 32 de mayor tamaño de la carpeta sin enumerar los nombres de archivo.
 
-3. Ejecute el comando siguiente:
+3. Ejecute el siguiente comando:
    ```Poswershell
    $big32 = Get-ChildItem c:\\temp -recurse | Sort-Object length -descending | select-object -first 32 | measure-object -property length –sum
 
@@ -69,7 +70,7 @@ Al ejecutar el comando 1 se devolverán resultados similares a la salida siguien
 <tbody>
 <tr class="odd">
 <td>Nombre</td>
-<td>Longitud</td>
+<td>Length</td>
 </tr>
 <tr class="even">
 <td><strong>File5.zip</strong></td>
@@ -84,7 +85,7 @@ Al ejecutar el comando 1 se devolverán resultados similares a la salida siguien
 <td>5751522304</td>
 </tr>
 <tr class="odd">
-<td> <strong>file9.zip</strong></td>
+<td> <strong>file9.zip</strong></td>
 <td>5472683008</td>
 </tr>
 <tr class="even">

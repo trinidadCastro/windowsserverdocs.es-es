@@ -6,12 +6,13 @@ ms.assetid: 3266328c-ca82-40d2-90ca-854b7088ccaa
 manager: dcscontentpm
 ms.author: v-tea
 author: Teresa-Motiv
-ms.openlocfilehash: 8e2188fd0a1cd1d07212c4eed216570eb8023a72
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.date: 08/07/2020
+ms.openlocfilehash: bc52a1c3d1ea01708cb1cac7f2feda8bdc61daa2
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87993702"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97946851"
 ---
 # <a name="configure-the-order-of-network-interfaces"></a>Configuración del orden de las interfaces de red
 

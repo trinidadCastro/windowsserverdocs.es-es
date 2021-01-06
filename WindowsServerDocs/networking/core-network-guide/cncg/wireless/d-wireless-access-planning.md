@@ -1,17 +1,18 @@
 ---
 title: Planificación de la implementación de acceso inalámbrico
-description: Este tema forma parte de la guía de redes de Windows Server 2016 "implementación de acceso inalámbrico autenticado mediante 802.1 X basado en contraseña".
+description: Este tema forma parte de la guía de redes de Windows Server 2016 "implementación de acceso inalámbrico autenticado de Password-Based 802.1 X"
 manager: brianlic
 ms.topic: article
 ms.assetid: 8c632d02-2270-4a82-8fc4-74ea3747f079
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 803fd90b2ad790375da0408a3bf1303b97e84cee
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.date: 08/07/2020
+ms.openlocfilehash: db628c68048032432935415928636e052be4ea83
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87995532"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97946701"
 ---
 # <a name="wireless-access-deployment-planning"></a>Planificación de la implementación de acceso inalámbrico
 
@@ -111,7 +112,7 @@ En la lista siguiente se resumen los elementos que se configuran normalmente en 
 > [!NOTE]
 > Los nombres de elemento pueden variar según la marca y el modelo, y pueden ser diferentes de los de la lista siguiente. Consulte la documentación de AP inalámbricos para obtener \- detalles específicos de configuración.
 
-- Identificador del conjunto de ** \( servicios SSID \) **. Este es el nombre de la red inalámbrica, \( por ejemplo, ExampleWlan \) , y el nombre que se anuncia a los clientes inalámbricos. Para reducir la confusión, el SSID que decida anunciar no debe coincidir con el SSID que emiten las redes inalámbricas que se encuentran dentro del intervalo de recepción de la red inalámbrica.
+- Identificador del conjunto de **\( servicios SSID \)**. Este es el nombre de la red inalámbrica, \( por ejemplo, ExampleWlan \) , y el nombre que se anuncia a los clientes inalámbricos. Para reducir la confusión, el SSID que decida anunciar no debe coincidir con el SSID que emiten las redes inalámbricas que se encuentran dentro del intervalo de recepción de la red inalámbrica.
 
     En los casos en que se implementan varios AP inalámbricos como parte de la misma red inalámbrica, configure cada AP inalámbrico con el mismo SSID. En los casos en que se implementan varios AP inalámbricos como parte de la misma red inalámbrica, configure cada AP inalámbrico con el mismo SSID.
 
@@ -138,7 +139,7 @@ En la lista siguiente se resumen los elementos que se configuran normalmente en 
 
 - **Dirección IP del servidor RADIUS**. Escriba la dirección IP del NPS que desea usar para autenticar y autorizar las solicitudes de conexión a este punto de acceso.
 
-- ** \( Puertos \) UDP**. De forma predeterminada, NPS usa los puertos UDP 1812 y 1645 para los mensajes de autenticación RADIUS y los puertos UDP 1813 y 1646 para los mensajes de cuentas RADIUS. Se recomienda que no cambie la configuración predeterminada de los puertos UDP de RADIUS.
+- **\( Puertos \) UDP**. De forma predeterminada, NPS usa los puertos UDP 1812 y 1645 para los mensajes de autenticación RADIUS y los puertos UDP 1813 y 1646 para los mensajes de cuentas RADIUS. Se recomienda que no cambie la configuración predeterminada de los puertos UDP de RADIUS.
 
 - **VSA**. Algunos AP inalámbricos requieren \- los atributos específicos del proveedor \( VSA \) para proporcionar la funcionalidad de AP inalámbrico completa.
 
@@ -158,7 +159,7 @@ Al planear la implementación de \- acceso inalámbrico autenticado por 802.1 x,
 
 - **Planeamiento del modo de autenticación del cliente**. Los modos de autenticación definen cómo los clientes de Windows procesan las credenciales de dominio. Puede seleccionar entre los siguientes tres modos de autenticación de red en las directivas de red inalámbrica.
 
-    1. ** \- Autenticación de usuario**. Este modo especifica que la autenticación siempre se realiza mediante el uso de credenciales de seguridad basadas en el estado actual del equipo. Cuando ningún usuario ha iniciado sesión en el equipo, la autenticación se realiza mediante las credenciales del equipo. Cuando un usuario inicia sesión en el equipo, la autenticación siempre se realiza mediante las credenciales de usuario.
+    1. **\- Autenticación de usuario**. Este modo especifica que la autenticación siempre se realiza mediante el uso de credenciales de seguridad basadas en el estado actual del equipo. Cuando ningún usuario ha iniciado sesión en el equipo, la autenticación se realiza mediante las credenciales del equipo. Cuando un usuario inicia sesión en el equipo, la autenticación siempre se realiza mediante las credenciales de usuario.
 
     2. **Sólo equipo**. Modo de solo equipo especifica que la autenticación siempre se realiza utilizando las credenciales del equipo.
 

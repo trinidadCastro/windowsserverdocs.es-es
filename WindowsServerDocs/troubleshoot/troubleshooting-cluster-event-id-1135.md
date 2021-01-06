@@ -4,12 +4,13 @@ description: Describe cómo solucionar el problema de inicio del servicio de Clu
 ms.date: 05/28/2020
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: 2836fc9385d57ff076828ab5cf6a1e341a7d88a8
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.topic: troubleshooting
+ms.openlocfilehash: f75e6bcca3a4447920d3b3f571fc606ad68752e6
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409836"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947191"
 ---
 # <a name="troubleshooting-cluster-issue-with-event-id-1135"></a>Solución de problemas de clúster con el id. de evento 1135
 
@@ -162,7 +163,7 @@ Nombre del servicio de sistema: **ClusSvc**
 |Administrador de clústeres|UDP|137|
 |Kerberos|UDP\TCP|464 *|
 |SMB|TCP|445|
-|Puertos UDP altos asignados aleatoriamente * *|UDP|Número de Puerto aleatorio entre 1024 y 65535<br/>Número de Puerto aleatorio entre 49152 y 65535 * * *|
+|Puertos UDP altos asignados aleatoriamente * *|UDP|Número de Puerto aleatorio entre 1024 y 65535<br/>Número de Puerto aleatorio entre 49152 y 65535 * * _|
 ||||
 
 > [!NOTE]
@@ -202,9 +203,9 @@ En la pestaña adaptadores y enlaces se enumeran las conexiones en el orden en e
 
 Siga los pasos que se indican a continuación para cambiar el orden de enlace de los adaptadores de red:
 
-1. Haga clic en **Inicio**, haga clic en **ejecutar**, escriba ncpa.cpl y, a continuación, haga clic en **Aceptar**. Puede ver las conexiones disponibles en la sección **LAN y Internet de alta velocidad** de la ventana **conexiones de red** .
+1. Haga clic en _ * iniciar * *, haga clic en **Ejecutar**, escriba ncpa.cpl y, a continuación, haga clic en **Aceptar**. Puede ver las conexiones disponibles en la sección **LAN y High-Speed Internet** de la ventana **conexiones de red** .
 
-2. En el menú **Opciones avanzadas** , haga clic en **Configuración avanzada**y, a continuación, haga clic en la pestaña **adaptadores y enlaces** .
+2. En el menú **Opciones avanzadas** , haga clic en **Configuración avanzada** y, a continuación, haga clic en la pestaña **adaptadores y enlaces** .
 
 3. En el área **conexiones** , seleccione la conexión que desea que se mueva hacia arriba en la lista. Use los botones de flecha para trasladar la conexión. Como norma general, la tarjeta que se comunica con la red (conectividad de dominio, enrutamiento a otras redes, etc.) debe ser la primera tarjeta enlazada (parte superior de la lista).
 

@@ -6,12 +6,13 @@ ms.assetid: a4caaa86-5799-4580-8775-03ee213784a3
 ms.author: lizross
 author: eross-msft
 ms.date: 09/13/2018
-ms.openlocfilehash: 6e6406471957c4637a556678031b6c4de9b6d08e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.topic: article
+ms.openlocfilehash: b7a75a610695348d7a42a2fea92fd24bb565966e
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952410"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97946861"
 ---
 # <a name="create-a-new-nic-team-on-a-host-computer-or-vm"></a>Crear un nuevo equipo NIC en un equipo host o una máquina virtual
 
@@ -41,7 +42,7 @@ En este procedimiento, creará dos conmutadores virtuales de Hyper-V externos, c
 
 ### <a name="prerequisites"></a>Requisitos previos
 
-Debe ser miembro de **los administradores**o un grupo equivalente.
+Debe ser miembro de **los administradores** o un grupo equivalente.
 
 ### <a name="procedure"></a>Procedimiento
 
@@ -100,7 +101,7 @@ Debe ser miembro de **los administradores**o un grupo equivalente.
 
     Se abre el cuadro de diálogo **configuración** de VM.
 
-14. En **agregar hardware**, haga clic en **adaptador de red**y, a continuación, haga clic en **Agregar**.
+14. En **agregar hardware**, haga clic en **adaptador de red** y, a continuación, haga clic en **Agregar**.
 
    ![Incorporación de un adaptador de red](../../media/Create-a-New-NIC-Team-in-a-VM/nict_hvs_06.jpg)
 
@@ -110,11 +111,11 @@ Debe ser miembro de **los administradores**o un grupo equivalente.
 
 16. En **hardware**, haga clic para expandir el signo más (+) junto a **adaptador de red**.
 
-17. Haga clic en **características avanzadas**, desplácese hacia abajo hasta **formación de equipos NIC**y haga clic para seleccionar **habilitar este adaptador de red para que forme parte de un equipo en el sistema operativo invitado**.
+17. Haga clic en **características avanzadas**, desplácese hacia abajo hasta **formación de equipos NIC** y haga clic para seleccionar **habilitar este adaptador de red para que forme parte de un equipo en el sistema operativo invitado**.
 
 18. Haga clic en **Aceptar**.
 
-_**Finaliza!**_  Ha configurado la red física y virtual.  Ahora puede continuar con la creación de un nuevo equipo NIC.
+_**¡Enhorabuena!**_  Ha configurado la red física y virtual.  Ahora puede continuar con la creación de un nuevo equipo NIC.
 
 ## <a name="step-2-create-a-new-nic-team"></a>Paso 2. Crear un nuevo equipo NIC
 
@@ -136,13 +137,13 @@ Para obtener más información sobre estas opciones, consulte Configuración de 
 
 ### <a name="prerequisites"></a>Requisitos previos
 
-Debe ser miembro de **los administradores**o un grupo equivalente.
+Debe ser miembro de **los administradores** o un grupo equivalente.
 
 ### <a name="procedure"></a>Procedimiento
 
 1. En el Administrador del servidor, haga clic en **Servidor local**.
 
-2. En el panel **propiedades** , en la primera columna, busque **formación de equipos NIC**y, a continuación, haga clic en el vínculo **deshabilitado** .
+2. En el panel **propiedades** , en la primera columna, busque **formación de equipos NIC** y, a continuación, haga clic en el vínculo **deshabilitado** .
 
    Se abre el cuadro de diálogo **formación de equipos NIC** .
 
@@ -150,7 +151,7 @@ Debe ser miembro de **los administradores**o un grupo equivalente.
 
 3. En **adaptadores e interfaces**, seleccione uno o más adaptadores de red que desee agregar a un equipo NIC.
 
-4. Haga clic en **tareas**y haga clic en **Agregar al nuevo equipo**.
+4. Haga clic en **tareas** y haga clic en **Agregar al nuevo equipo**.
 
    Se abrirá el cuadro de diálogo **nuevo equipo** y se mostrarán los adaptadores de red y los miembros del equipo.
 
@@ -172,7 +173,7 @@ Debe ser miembro de **los administradores**o un grupo equivalente.
 
        ---
 
-   - **Modo de equilibrio de carga**. Las opciones del modo de distribución de equilibrio de carga son **hash de dirección**, **Puerto de Hyper-V**y **dinámico**.
+   - **Modo de equilibrio de carga**. Las opciones del modo de distribución de equilibrio de carga son **hash de dirección**, **Puerto de Hyper-V** y **dinámico**.
 
      - **Hash de dirección.** [!INCLUDE [address-hash-shortdesc-include](../../includes/address-hash-shortdesc-include.md)]
 
@@ -199,7 +200,7 @@ Debe ser miembro de **los administradores**o un grupo equivalente.
 
 9. Haga clic en **Aceptar**.
 
-_**Finaliza!**_  Ha creado un nuevo equipo NIC en un equipo host o máquina virtual.
+_**¡Enhorabuena!**_  Ha creado un nuevo equipo NIC en un equipo host o máquina virtual.
 
 ## <a name="related-topics"></a>Temas relacionados
 

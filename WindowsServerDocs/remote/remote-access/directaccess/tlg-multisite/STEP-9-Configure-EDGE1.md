@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: f6e8d85b-de65-43b3-bf3e-ec84471a1fcc
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: a0e21b9b0a0d926d2d4d166fbe3c87fee6c340fc
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: ef161f7e8db4cb63d84efbf78e8733d3f24c22ae
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955211"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947961"
 ---
 # <a name="step-9-configure-edge1"></a>Paso 9 configurar EDGE1
 
@@ -25,9 +26,9 @@ Los procedimientos siguientes se realizan en el servidor de EDGE1:
 
 ## <a name="configure-the-dns-servers-on-edge1"></a><a name="IPv6"></a>Configurar los servidores DNS en EDGE1
 
-1.  En la consola de Administrador del servidor, haga clic en **servidor local**y, a continuación, en el área **propiedades** , junto a **CorpNet**, haga clic en el vínculo.
+1.  En la consola de Administrador del servidor, haga clic en **servidor local** y, a continuación, en el área **propiedades** , junto a **CorpNet**, haga clic en el vínculo.
 
-2.  En la ventana conexiones de red, haga clic con el botón secundario en **CorpNet**y, a continuación, haga clic en **propiedades**.
+2.  En la ventana conexiones de red, haga clic con el botón secundario en **CorpNet** y, a continuación, haga clic en **propiedades**.
 
 3.  Haga clic en **Protocolo de Internet versión 4 (TCP/IPv4)** y, a continuación, en **Propiedades**.
 
@@ -43,7 +44,7 @@ Los procedimientos siguientes se realizan en el servidor de EDGE1:
 
 ## <a name="configure-routing-between-subnets"></a><a name="ConfigRouting"></a>Configurar el enrutamiento entre subredes
 
-1.  En la pantalla **Inicio** , escriba**cmd.exe**, haga clic con el botón secundario en **cmd**, haga clic en **Opciones avanzadas**y, a continuación, haga clic en **Ejecutar como administrador**. Si aparece el cuadro de diálogo **Control de cuentas de usuario**, confirme que la acción que se muestra es la esperada y, a continuación, haga clic en **Sí**.
+1.  En la pantalla **Inicio** , escriba **cmd.exe**, haga clic con el botón secundario en **cmd**, haga clic en **Opciones avanzadas** y, a continuación, haga clic en **Ejecutar como administrador**. Si aparece el cuadro de diálogo **Control de cuentas de usuario**, confirme que la acción que se muestra es la esperada y, a continuación, haga clic en **Sí**.
 
 2.  En la ventana del símbolo del sistema, escriba los siguientes comandos. Después de escribir cada comando, presione Entrar.
 

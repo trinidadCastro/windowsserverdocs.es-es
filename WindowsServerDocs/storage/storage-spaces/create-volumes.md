@@ -6,12 +6,13 @@ author: cosmosdarwin
 ms.author: cosdar
 manager: eldenc
 ms.date: 02/25/2020
-ms.openlocfilehash: 417deaf61b111b6ba54939505c65e8e0f854e604
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.topic: article
+ms.openlocfilehash: e781afdef06c7cd965e53f0103cfc02f4e20aedc
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87960948"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97946941"
 ---
 # <a name="creating-volumes-in-storage-spaces-direct"></a>Crear volúmenes en Espacios de almacenamiento directo
 
@@ -68,7 +69,7 @@ Para abrir un volumen y agregarle archivos en Windows Admin Center:
 4. En la parte superior de la página, seleccione **Open** (Abrir). Se inicia la herramienta Files (Archivos) en Windows Admin Center.
 5. Vaya a la ruta de acceso del volumen. Aquí puede examinar los archivos del volumen.
 6. Seleccione **Upload** (Cargar) y, a continuación, seleccione un archivo para cargarlo.
-7. Use el botón**Back** (Atrás) del explorador para volver al panel Tools (Herramientas) de Windows Admin Center.
+7. Use el botón **Back** (Atrás) del explorador para volver al panel Tools (Herramientas) de Windows Admin Center.
 
 Vea un vídeo rápido sobre cómo abrir un volumen y agregar archivos.
 

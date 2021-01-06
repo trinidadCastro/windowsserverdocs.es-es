@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 3c8feff2-cae1-4376-9dfa-21ad3e4d5d99
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: a4459cbe1e61352be762ea3b699235325f91b5bb
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: f64df3e7879f54e56b2a4365af9f0d7c2d8376e8
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970192"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97946981"
 ---
 # <a name="configure-a-multi-forest-deployment"></a>Configure a Multi-Forest Deployment
 
@@ -59,13 +60,13 @@ En este escenario, DirectAccess está implementado en una configuración multisi
 ## <a name="configure-otp-in-a-multi-forest-deployment"></a><a name="OTPMultiForest"></a>Configurar OTP en una implementación con varios bosques
 Tenga en cuenta los siguientes términos al configurar OTP en una implementación con varios bosques:
 
--   CA raíz: la CA de árbol PKI principal del bosque (s).
+-   Raíz del árbol de PKI principal del bosque (s) raíz CA-The.
 
--   CA empresarial: el resto de CA.
+-   Enterprise CA-All otras CA.
 
--   Bosque de recursos: el bosque que contiene la CA raíz y se considera que es la "administración de bosque/dominio".
+-   Forest-The bosque de recursos que contiene la CA raíz y se considera que es la "administración de bosque/dominio".
 
--   Bosque de cuenta: todos los demás bosques en la topología.
+-   Cuenta Forest-All otros bosques en la topología.
 
 En este procedimiento se necesita el script de PowerShell PKISync.ps1. Vea [AD CS: script PKISync.ps1 para la inscripción de certificados entre bosques](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff961506(v=ws.10)).
 
@@ -94,7 +95,7 @@ En este procedimiento se necesita el script de PowerShell PKISync.ps1. Vea [AD C
     certutil -config <Computer-Name>\<Root-CA-Name> -ca.cert <root-ca-cert-filename.cer>
     ```
 
-    (Si ejecuta el comando en la CA raíz, puede omitir la información de conexión,-config <nombre de equipo>\\<raíz-CA-name>).
+    (Si ejecuta el comando en la CA raíz, puede omitir la información de conexión,-config <Computer-Name>\\<raíz-CA-Name>)
 
     1.  Ejecute el siguiente comando desde un símbolo del sistema con privilegios elevados para importar el certificado de CA raíz del paso anterior en la CA del bosque de cuenta:
 
@@ -110,7 +111,7 @@ En este procedimiento se necesita el script de PowerShell PKISync.ps1. Vea [AD C
         certutil -config <Computer-Name>\<Enterprise-CA-Name> -ca.cert <enterprise-ca-cert-filename.cer>
         ```
 
-        (Si ejecuta el comando en la CA raíz, puede omitir la información de conexión,-config <nombre de equipo>\\<raíz-CA-name>).
+        (Si ejecuta el comando en la CA raíz, puede omitir la información de conexión,-config <Computer-Name>\\<raíz-CA-Name>)
 
     4.  Ejecute los siguientes comandos desde un símbolo del sistema con privilegios elevados para importar los certificados de CA empresariales del paso anterior en la CA del bosque de cuenta:
 
@@ -196,7 +197,7 @@ Acceso remoto administra una lista de prefijos IPv6 para los recursos corporativ
 
 2.  En el Asistente para instalación de acceso remoto, haga clic en **Configuración de prefijo**.
 
-3.  En **Prefijos IPv6 de la red interna** en dicha**** página, agregue prefijos IPv6 separados por puntos y coma (por ejemplo, 2001:db8:1::/64;2001:db8:2::/64). A continuación, haga clic en **Siguiente**.
+3.  En **Prefijos IPv6 de la red interna** en dichapágina, agregue prefijos IPv6 separados por puntos y coma (por ejemplo, 2001:db8:1::/64;2001:db8:2::/64). A continuación, haga clic en **Siguiente**.
 
 4.  En la página **Autenticación**, haga clic en **Finalizar**.
 

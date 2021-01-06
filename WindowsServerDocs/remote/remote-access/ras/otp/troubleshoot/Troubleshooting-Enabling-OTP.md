@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: b58252ca-4c1d-4664-a3c4-7301e2121517
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: a01a52be4ce755c57297ba825be249b9b6853c7d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: cf2ec60923415e3fafc253a14c8da0d624e72bf1
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87958303"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947231"
 ---
 # <a name="troubleshooting-enabling-otp"></a>Solucionar problemas relacionados con la activación de OTP
 
@@ -59,7 +60,7 @@ Desinstale el rol de WebDAV:
 
 2.  En el panel principal, desplácese a **roles y características**.
 
-3.  Haga clic con el botón secundario en **publicación WebDAV**y, a continuación, haga clic en **quitar rol o característica**.
+3.  Haga clic con el botón secundario en **publicación WebDAV** y, a continuación, haga clic en **quitar rol o característica**.
 
 4.  Complete el Asistente para quitar roles y características.
 
@@ -70,7 +71,7 @@ Desinstale el rol de WebDAV:
 
 **Causa**
 
-Hay dos causas posibles de este error:
+Hay dos causas posibles para este error:
 
 -   La plantilla no se configura según los requisitos de OTP de DirectAccess y, por tanto, no se puede seleccionar.
 
@@ -86,7 +87,7 @@ Hay dos causas posibles de este error:
 
     2.  En el panel izquierdo, expanda el servidor de CA elegido.
 
-    3.  Haga clic en **plantillas de certificado** y asegúrese de que las plantillas necesarias estén habilitadas. Si no es así, haga clic con el botón secundario en **plantillas de certificado**, haga clic en **nuevo**, haga clic en **plantilla de certificado para emitir**y, a continuación, seleccione las plantillas que desea habilitar.
+    3.  Haga clic en **plantillas de certificado** y asegúrese de que las plantillas necesarias estén habilitadas. Si no es así, haga clic con el botón secundario en **plantillas de certificado**, haga clic en **nuevo**, haga clic en **plantilla de certificado para emitir** y, a continuación, seleccione las plantillas que desea habilitar.
 
 ## <a name="cannot-set-renewal-period-of-otp-template-to-1-hour"></a>No se puede establecer el período de renovación de la plantilla OTP en 1 hora
 **Escenario**. Al configurar la plantilla de inicio de sesión OTP de DirectAccess con la CA de Windows 2003, no es posible establecer el período de renovación de la plantilla en 1 hora.

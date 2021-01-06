@@ -6,12 +6,13 @@ ms.assetid: 1e113666-e45f-48b6-aad8-42c361c9046d
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: f6f4a7b6b59dc78e7670084912f2cb6939036022
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.date: 09/14/2020
+ms.openlocfilehash: cb3557234115f2e8733d6d3b8ddb74872e32529a
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90077572"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947081"
 ---
 # <a name="create-a-standard-user-account"></a>Crear una cuenta de usuario estándar
 Cree *cuentas de usuario estándar* para los usuarios que obtienen acceso a menudo a las estaciones, pero que no administran el sistema MultiPoint Services. Los usuarios con cuentas de usuario estándar pueden ejecutar la mayoría de las aplicaciones y guardar archivos, pero no pueden ejecutar Multipoint Manager. Para ver quién tiene acceso de usuario estándar, en Multipoint Manager, haga clic en la pestaña **usuarios** . Las cuentas de usuario estándar se muestran en la columna **tipo de cuenta** como **estándar**.

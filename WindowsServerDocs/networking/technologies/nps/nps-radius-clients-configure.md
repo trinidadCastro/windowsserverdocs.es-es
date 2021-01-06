@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: cde37849-ce79-4c26-aa14-cd0ef31cae18
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 1992470a643a1633479940c1a0f98f8e7e67f5c1
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 5f7be2a73fe5bcecad7bee870a96627cacf36a07
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87951966"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947471"
 ---
 # <a name="configure-radius-clients"></a>Configurar clientes RADIUS
 
@@ -54,14 +55,14 @@ Para completar este procedimiento, debe pertenecer al grupo **Administradores**.
 
 ### <a name="to-add-a-network-access-server-as-a-radius-client-in-nps"></a>Para agregar un servidor de acceso a la red como cliente RADIUS en NPS
 
-1. En el NPS, en Administrador del servidor, haga clic en **herramientas**y, a continuación, haga clic en **servidor de directivas de redes**. Se abre la consola NPS.
-2. En la consola de NPS, haga doble clic en **clientes y servidores RADIUS**. Haga clic con el botón secundario en **clientes RADIUS**y, a continuación, haga clic en **nuevo cliente RADIUS**.
+1. En el NPS, en Administrador del servidor, haga clic en **herramientas** y, a continuación, haga clic en **servidor de directivas de redes**. Se abre la consola NPS.
+2. En la consola de NPS, haga doble clic en **clientes y servidores RADIUS**. Haga clic con el botón secundario en **clientes RADIUS** y, a continuación, haga clic en **nuevo cliente RADIUS**.
 3. En **nuevo cliente RADIUS**, compruebe que la casilla **habilitar este cliente RADIUS** está activada.
 4. En **nuevo cliente RADIUS**, en **nombre descriptivo**, escriba un nombre para mostrar para el NAS. En **dirección (IP o DNS)**, escriba la dirección IP de NAS o el nombre de dominio completo (FQDN). Si escribe el FQDN, haga clic en **comprobar** si desea comprobar que el nombre es correcto y se asigna a una dirección IP válida.
 5. En **nuevo cliente RADIUS**, en **proveedor**, especifique el nombre del fabricante de NAS. Si no está seguro del nombre del fabricante de NAS, seleccione **RADIUS estándar**.
 6. En **nuevo cliente RADIUS**, en **secreto compartido**, realice una de las acciones siguientes:
     - Asegúrese de que la opción **manual** está seleccionada y, a continuación, en **secreto compartido**, escriba la contraseña segura que se ha escrito también en el NAS. Vuelva a escribir el secreto compartido en **confirmar secreto compartido**.
-    - Seleccione **generar**y, a continuación, haga clic en **generar** para generar automáticamente un secreto compartido. Guarde el secreto compartido generado para la configuración en el servidor NAS para que pueda comunicarse con el NPS.
+    - Seleccione **generar** y, a continuación, haga clic en **generar** para generar automáticamente un secreto compartido. Guarde el secreto compartido generado para la configuración en el servidor NAS para que pueda comunicarse con el NPS.
 7. En el **nuevo cliente RADIUS**, en **opciones adicionales**, si usa métodos de autenticación que no sean EAP y PEAP, y si el NAS admite el uso del atributo de autenticador de mensaje, seleccione **los mensajes de solicitud de acceso deben contener el atributo de autenticador de mensaje**.
 8. Haga clic en **Aceptar**. El NAS aparece en la lista de clientes RADIUS configurados en el NPS.
 
@@ -79,14 +80,14 @@ Para completar este procedimiento, debe pertenecer al grupo **Administradores**.
 
 ### <a name="to-set-up-radius-clients-by-ip-address-range"></a>Para configurar clientes RADIUS por intervalo de direcciones IP
 
-1. En el NPS, en Administrador del servidor, haga clic en **herramientas**y, a continuación, haga clic en **servidor de directivas de redes**. Se abre la consola NPS.
-2. En la consola de NPS, haga doble clic en **clientes y servidores RADIUS**. Haga clic con el botón secundario en **clientes RADIUS**y, a continuación, haga clic en **nuevo cliente RADIUS**.
+1. En el NPS, en Administrador del servidor, haga clic en **herramientas** y, a continuación, haga clic en **servidor de directivas de redes**. Se abre la consola NPS.
+2. En la consola de NPS, haga doble clic en **clientes y servidores RADIUS**. Haga clic con el botón secundario en **clientes RADIUS** y, a continuación, haga clic en **nuevo cliente RADIUS**.
 3. En **nuevo cliente RADIUS**, en **nombre descriptivo**, escriba un nombre para mostrar para la colección de NAS.
-4. En **dirección \( IP o DNS \) de dirección**, escriba el intervalo de direcciones IP para los clientes RADIUS mediante la notación CIDR de enrutamiento de interdominios sin clases \( \) . Por ejemplo, si el intervalo de direcciones IP de los NAS es 10.10.0.0, escriba **10.10.0.0/16**.
+4. En **dirección \( IP o DNS \) de dirección**, escriba el intervalo de direcciones IP para los clientes RADIUS mediante la notación CIDR de enrutamiento de Inter-Domain sin clases \( \) . Por ejemplo, si el intervalo de direcciones IP de los NAS es 10.10.0.0, escriba **10.10.0.0/16**.
 5. En **nuevo cliente RADIUS**, en **proveedor**, especifique el nombre del fabricante de NAS. Si no está seguro del nombre del fabricante de NAS, seleccione **RADIUS estándar**.
 6. En **nuevo cliente RADIUS**, en **secreto compartido**, realice una de las acciones siguientes:
     - Asegúrese de que la opción **manual** está seleccionada y, a continuación, en **secreto compartido**, escriba la contraseña segura que se ha escrito también en el NAS. Vuelva a escribir el secreto compartido en **confirmar secreto compartido**.
-    - Seleccione **generar**y, a continuación, haga clic en **generar** para generar automáticamente un secreto compartido. Guarde el secreto compartido generado para la configuración en el servidor NAS para que pueda comunicarse con el NPS.
+    - Seleccione **generar** y, a continuación, haga clic en **generar** para generar automáticamente un secreto compartido. Guarde el secreto compartido generado para la configuración en el servidor NAS para que pueda comunicarse con el NPS.
 7. En el **nuevo cliente RADIUS**, en **opciones adicionales**, si usa métodos de autenticación que no sean EAP y PEAP, y si todos los NAS admiten el uso del atributo de autenticador de mensaje, seleccione **los mensajes de solicitud de acceso deben contener el atributo de autenticador de mensaje**.
 8. Haga clic en **Aceptar**. Los NAS aparecen en la lista de clientes RADIUS configurados en el NPS.
 

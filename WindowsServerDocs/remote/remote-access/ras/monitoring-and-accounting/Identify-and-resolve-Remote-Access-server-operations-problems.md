@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 7ce84c9f-fd1f-4463-8fc7-d2f33344a2c9
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: de0937ffdf1c7c3d626b9100c1e02af3f2ded969
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: cae96d3034cb650b84b40a1a35364400b182a619
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970242"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947371"
 ---
 # <a name="identify-and-resolve-remote-access-server-operations-problems"></a>Identificar y resolver los problemas de operaciones del servidor de acceso remoto
 
@@ -41,9 +42,9 @@ El servicio auxiliar de IP (IPHlpSvc) hospeda las tecnologías de transición IP
 
 ##### <a name="to-stop-the-ip-helper-service"></a>Para detener el servicio auxiliar de IP
 
-1.  En la pantalla **Inicio** del servidor de acceso remoto, haga clic en **herramientas administrativas**y, a continuación, haga doble clic en **servicios**.
+1.  En la pantalla **Inicio** del servidor de acceso remoto, haga clic en **herramientas administrativas** y, a continuación, haga doble clic en **servicios**.
 
-2.  En la lista de **servicios**, desplácese hacia abajo y haga clic con el botón secundario en **aplicación auxiliar de IP**y, a continuación, haga clic en **detener**.
+2.  En la lista de **servicios**, desplácese hacia abajo y haga clic con el botón secundario en **aplicación auxiliar de IP** y, a continuación, haga clic en **detener**.
 
 ### <a name="identify-the-operations-issue-and-take-corrective-action"></a><a name="BKMK_Identify"></a>Identificar el problema de las operaciones y tomar medidas correctivas
 La desactivación del servicio auxiliar de IP producirá un error grave en el servidor de acceso remoto. El panel de supervisión mostrará el estado de las operaciones del servidor y los detalles del problema.
@@ -81,14 +82,14 @@ Para restaurar el servicio auxiliar de IP en el servidor de acceso remoto, puede
 
 ##### <a name="to-restart-the-ip-helper-service-on-the-remote-access-server"></a>Para reiniciar el servicio auxiliar de IP en el servidor de acceso remoto
 
-1.  En la pantalla **Inicio** , haga clic en **herramientas administrativas**y, a continuación, haga doble clic en **servicios**.
+1.  En la pantalla **Inicio** , haga clic en **herramientas administrativas** y, a continuación, haga doble clic en **servicios**.
 
-2.  En la lista de **servicios**, desplácese hacia abajo y haga clic con el botón secundario en **aplicación auxiliar de IP**y, a continuación, haga clic en **iniciar**.
+2.  En la lista de **servicios**, desplácese hacia abajo y haga clic con el botón secundario en **aplicación auxiliar de IP** y, a continuación, haga clic en **iniciar**.
 
-![](../../../media/Identify-and-resolve-Remote-Access-server-operations-problems/PowerShellLogoSmall.gif)***<em>Comandos equivalentes</em> de Windows PowerShell Windows PowerShell***
+![](../../../media/Identify-and-resolve-Remote-Access-server-operations-problems/PowerShellLogoSmall.gif) * *_<em>Comandos equivalentes</em>_* de Windows PowerShell para Windows PowerShell _
 
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.
 
 ```PowerShell
-PS> Get-RemoteAccessHealth | Where-Object {$_.Component -eq "IP-HTTPS"} | Format-List -Property *
+PS> Get-RemoteAccessHealth | Where-Object {$_.Component -eq "IP-HTTPS"} | Format-List -Property _
 ```

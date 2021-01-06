@@ -1,18 +1,18 @@
 ---
 title: Migración de la base de datos de WSUS desde WID de (Windows Internal Database) a SQL
 description: 'Tema de Windows Server Update Service (WSUS): Cómo migrar la base de datos de WSUS (SUSDB) de una instancia de Windows Internal Database a una instancia local o remota de SQL Server.'
-ms.topic: get-started article
+ms.topic: how-to
 ms.assetid: 90e3464c-49d8-4861-96db-ee6f8a09g7dr
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 07/25/2018
-ms.openlocfilehash: 54f7eb0464d4454bd2929aace44eb37567973154
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 7da500d797e3aead8d731bf6a313d5cbea193cb7
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89624468"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97946921"
 ---
 # <a name="migrating-the-wsus-database-from-wid-to-sql"></a>Migración de la base de datos de WSUS de WID a SQL
 
@@ -50,7 +50,7 @@ Desde PowerShell (elevado), ejecute:
 
 > [!IMPORTANT]
 > En estos pasos se muestra cómo desasociar la base de datos de WSUS (SUSDB) de la instancia de Windows Internal Database mediante la utilidad **sqlcmd** . Para obtener más información acerca de la utilidad **sqlcmd** , vea [sqlcmd (utilidad](https://go.microsoft.com/fwlink/?LinkId=81183)).
-> 1. Abra un símbolo del sistema con privilegios elevados
+> 1. Abra un símbolo del sistema con privilegios elevados.
 > 2. Ejecute el siguiente comando SQL para desasociar la base de datos de WSUS (SUSDB) de la instancia de Windows Internal Database mediante la utilidad **sqlcmd** :
 
 ```batchfile
@@ -72,7 +72,7 @@ Desde PowerShell (elevado), ejecute:
 
 ### <a name="attach-susdb-to-the-sql-instance"></a>Adjuntar SUSDB a la instancia de SQL
 
-1. En **SQL Server Management Studio**, en el nodo **instancia** , haga clic con el botón secundario en **bases**de datos y, a continuación, haga clic en **asociar**.
+1. En **SQL Server Management Studio**, en el nodo **instancia** , haga clic con el botón secundario en **bases** de datos y, a continuación, haga clic en **asociar**.
     ![image3](images/image3.png)
 2. En el cuadro **adjuntar bases de datos** , en **bases de datos que se van a adjuntar**, haga clic en el botón **Agregar** y busque el archivo **SUSDB. MDF** (copiado de la carpeta WID) y, a continuación, haga clic en **Aceptar**.
     ![archivo image4 ](images/image4.png) ![ image5](images/image5.png)
@@ -106,7 +106,7 @@ Después de adjuntar el SUSDB, compruebe que **NT Authority\Network Service** ti
 Se debe mostrar la cuenta **NT Authority\Network Service** . Si no es así, debe agregarlo agregando un nuevo nombre de inicio de sesión.
 
 > [!IMPORTANT]
-> Si la instancia de SQL está en un equipo diferente de WSUS, la cuenta de equipo del servidor WSUS debe aparecer en el formato **[FQDN] \\ [WSUSComputerName] $**.  Si no es así, se pueden usar los pasos siguientes para agregarlo, reemplazando **NT Authority\Network Service** con la cuenta de equipo del servidor de WSUS (**[FQDN] \\ [WSUSComputerName] $**) esto sería ***además de*** conceder derechos a **NT Authority\Network Service** .
+> Si la instancia de SQL está en un equipo diferente de WSUS, la cuenta de equipo del servidor WSUS debe aparecer en el formato **[FQDN] \\ [WSUSComputerName] $**.  Si no es así, se pueden usar los pasos siguientes para agregarlo, reemplazando **NT Authority\Network Service** con la cuenta de equipo del servidor WSUS (**[FQDN] \\ [WSUSComputerName] $**). esto sería **_además de_*_ conceder derechos a _* NT Authority\Network Service**
 
 ##### <a name="adding-nt-authoritynetwork-service-and-granting-it-rights"></a>Incorporación de NT AUTHORITY\NETWORK SERVICE y concesión de derechos de ti
 
@@ -156,9 +156,9 @@ Se debe mostrar la cuenta **NT Authority\Network Service** .
 > Sigue meticulosamente los pasos que se describen en esta sección. Pueden producirse problemas graves si modifica el Registro de manera incorrecta. Antes de modificarlo, [haz una copia de seguridad del registro para restaurarlo](https://support.microsoft.com/help/322756), por si se produjeran problemas.
 
 1. Haga clic en **Inicio**, en **Ejecutar**, escriba **regedit&** y, después, haga clic en **Aceptar**.
-2. Busque la clave siguiente: **HKEY_LOCAL_MACHINE \software\microsoft\updateservices\server\setup\sqlservername**
+2. Busque la clave siguiente: **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\UpdateServices\Server\Setup\SqlServerName**
 3. En el cuadro de texto **valor** , escriba **[ServerName] \\ [nombreDeInstancia]** y, a continuación, haga clic en **Aceptar**. Si el nombre de la instancia es la instancia predeterminada, escriba **[ServerName]**.
-4. Busque la clave siguiente: **HKEY_LOCAL_MACHINE \Software\microsoft\update Services\Server\Setup\Installed role Services\UpdateServices-WidDatabase** ![ image13](images/image13.png)
+4. Busque la clave siguiente: **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Update Services\Server\Setup\Installed Role Services\UpdateServices-WidDatabase** ![ image13](images/image13.png)
 5. Cambie el nombre de la clave a **UpdateServices-Database** ![ image41](images/image14.png)
 
     > [!NOTE]
@@ -187,4 +187,4 @@ Con PowerShell:
 Uninstall-WindowsFeature -Name 'Windows-Internal-Database'
 ```
 
-Una vez quitado el rol WID, compruebe que la siguiente clave del registro está presente: **HKEY_LOCAL_MACHINE \Software\microsoft\update Services\Server\Setup\Installed role Services\UpdateServices-Database**
+Una vez quitado el rol WID, compruebe que la siguiente clave del registro está presente: **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Update Services\Server\Setup\Installed Role Services\UpdateServices-Database**

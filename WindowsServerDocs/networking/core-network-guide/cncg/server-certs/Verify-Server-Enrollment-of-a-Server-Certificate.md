@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: bd80a018-5a30-47c3-89fc-aacb9f5ad298
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: b1a2739bf658892eaea2c14dcfe840f7fcd7eff3
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 174100f1886492f70fb98abbfcab61e687418133
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87949299"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947811"
 ---
 # <a name="verify-server-enrollment-of-a-server-certificate"></a>Comprobar la inscripción de servidor de un certificado de servidor
 
@@ -32,13 +33,13 @@ Para comprobar que un certificado de servidor está configurado correctamente y 
 
 1.  En el Administrador del servidor, haga clic en **Herramientas** y, a continuación, haga clic en **Servidor de directivas de redes**. Se abre Microsoft Management Console (MMC) del servidor de directivas de redes.
 
-2.  Haga doble clic en **directivas**, haga clic con el botón secundario en **directivas de red**y haga clic en **nuevo**. Se abre el asistente para nueva directiva de red.
+2.  Haga doble clic en **directivas**, haga clic con el botón secundario en **directivas de red** y haga clic en **nuevo**. Se abre el asistente para nueva directiva de red.
 
-3.  En **especificar el nombre de la Directiva de red y el tipo de conexión**, en **nombre de directiva**, escriba Directiva de **prueba**. Asegúrese de que el **tipo de servidor de acceso a la red** tiene el valor **sin especificar**y, a continuación, haga clic en **siguiente**.
+3.  En **especificar el nombre de la Directiva de red y el tipo de conexión**, en **nombre de directiva**, escriba Directiva de **prueba**. Asegúrese de que el **tipo de servidor de acceso a la red** tiene el valor **sin especificar** y, a continuación, haga clic en **siguiente**.
 
-4.  En **especificar condiciones**, haga clic en **Agregar**. En **seleccionar condición**, haga clic en **grupos de Windows**y, a continuación, haga clic en **Agregar**.
+4.  En **especificar condiciones**, haga clic en **Agregar**. En **seleccionar condición**, haga clic en **grupos de Windows** y, a continuación, haga clic en **Agregar**.
 
-5.  En **grupos**, haga clic en **agregar grupos**. En **Seleccionar grupo**, escriba **usuarios del dominio**y, a continuación, presione Entrar. Haga clic en **Aceptar** y luego en **Siguiente**.
+5.  En **grupos**, haga clic en **agregar grupos**. En **Seleccionar grupo**, escriba **usuarios del dominio** y, a continuación, presione Entrar. Haga clic en **Aceptar** y luego en **Siguiente**.
 
 6.  En **especificar permiso de acceso**, asegúrese de que está seleccionada la opción **acceso concedido** y, a continuación, haga clic en **siguiente**.
 

@@ -1,17 +1,18 @@
 ---
 title: Paso 1 configurar la infraestructura de DirectAccess básica
-description: Este tema forma parte de la guía de implementación de un único servidor de DirectAccess con el Asistente para Introducción para Windows Server 2016
+description: Obtenga información sobre cómo configurar la infraestructura necesaria para una implementación básica de DirectAccess con un solo servidor de DirectAccess en un entorno mixto de IPv4 e IPv6.
 manager: brianlic
 ms.topic: article
 ms.assetid: ba4de2a4-f237-4b14-a8a7-0b06bfcd89ad
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: d0f9655a7ed06190d80718a8c5bbdebfedf07499
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 41009608862a21987097ad2a58f4fb524b535f06
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970352"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947261"
 ---
 # <a name="step-1-configure-the-basic-directaccess-infrastructure"></a>Paso 1 configurar la infraestructura de DirectAccess básica
 
@@ -113,9 +114,9 @@ Debes configurar manualmente una entrada DNS para el sitio web del servidor de u
 
 4.  En el cuadro de diálogo **Host nuevo**, en el cuadro **Nombre (si se deja en blanco, se usa el nombre del dominio primario)**, escribe el nombre DNS del sondeo web (el nombre del sondeo web predeterminado es directaccess-webprobehost). En el cuadro **Dirección IP**, escribe la dirección IPv4 del sondeo web y haz clic en **Agregar host**. Repite este proceso para directaccess-corpconnectivityhost y todos los comprobadores de conectividad creados manualmente. En el cuadro de diálogo **DNS**, haz clic en **Aceptar**.
 
-5.  Haga clic en **Done**(Listo).
+5.  Haga clic en **Listo**.
 
-![](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>Comandos equivalentes</em> de Windows PowerShell Windows PowerShell***
+![](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif) * *_<em>Comandos equivalentes</em>_* de Windows PowerShell para Windows PowerShell _
 
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.
 
@@ -126,7 +127,7 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
 
 También debes configurar entradas DNS para los siguiente:
 
--   **El servidor IP-https** : los clientes de DirectAccess deben ser capaces de resolver el nombre DNS del servidor de acceso remoto desde Internet.
+-   _ *El servidor IP-https**: los clientes de DirectAccess deben ser capaces de resolver el nombre DNS del servidor de acceso remoto desde Internet.
 
 -   **Comprobación de revocación de CRL** : DirectAccess usa la comprobación de revocación de certificados para la conexión IP-https entre los clientes de DirectAccess y el servidor de acceso remoto, y para la conexión basada en https entre el cliente de DirectAccess y el servidor de ubicación de red. En ambos casos, los clientes de DirectAccess deben ser capaces de resolver y acceder a la ubicación del punto de distribución de CRL.
 
@@ -177,7 +178,7 @@ El servidor de acceso remoto y todos los equipos cliente de DirectAccess deben e
 
 9. En el cuadro de diálogo **Propiedades del sistema**, haga clic en Cerrar. Haz clic en **Reiniciar ahora** cuando se te solicite.
 
-![](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>Comandos equivalentes</em> de Windows PowerShell Windows PowerShell***
+![](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif) * *_<em>Comandos equivalentes</em>_* de Windows PowerShell para Windows PowerShell _
 
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.
 
@@ -212,7 +213,7 @@ La configuración de DirectAccess contenida en los objetos de directiva de grupo
 
 ### <a name="to-create-a-security-group-for-directaccess-clients"></a><a name="Sec_Group"></a>Cómo crear un grupo de seguridad para clientes de DirectAccess
 
-1.  Ejecute **DSA. msc**. En la consola **Usuarios y equipos de Active Directory**, en el panel izquierdo, expande el dominio que contendrá el grupo de seguridad, haz clic con el botón secundario en **Usuarios**, elige **Nuevo** y haz clic en **Grupo**.
+1.  Ejecute _ * DSA. msc * *. En la consola **Usuarios y equipos de Active Directory**, en el panel izquierdo, expande el dominio que contendrá el grupo de seguridad, haz clic con el botón secundario en **Usuarios**, elige **Nuevo** y haz clic en **Grupo**.
 
 2.  En el cuadro de diálogo **Nuevo objeto: Grupo**, en **Nombre de grupo**, escribe el nombre de grupo de seguridad.
 

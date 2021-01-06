@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 3d66901a-c40b-474c-9948-f989f399cfea
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: a35980b629fbda30026fde9fda5376a7b13614e3
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 7ef27699d1dbc402937c5ca4ef8c7ac62af8392a
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955222"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947991"
 ---
 # <a name="step-6-install-and-configure-2-dc1"></a>Paso 6: instalación y configuración de 2-DC1
 
@@ -55,25 +56,25 @@ Configure el protocolo TCP/IP con direcciones IP estáticas.
 
 ### <a name="to-configure-tcpip-on-2-dc1"></a>Para configurar TCP/IP en 2-DC1
 
-1.  En la consola de Administrador del servidor, haga clic en **servidor local**y, a continuación, en el área **propiedades** , junto a **conexión cableada Ethernet**, haga clic en el vínculo.
+1.  En la consola de Administrador del servidor, haga clic en **servidor local** y, a continuación, en el área **propiedades** , junto a **conexión cableada Ethernet**, haga clic en el vínculo.
 
 2.  En **Conexiones de red**, haga clic con el botón secundario en **Conexión cableada Ethernet** y, a continuación, haga clic en **Propiedades**.
 
 3.  Haga clic en **Protocolo de Internet versión 4 (TCP/IPv4)** y, a continuación, en **Propiedades**.
 
-4.  Haga clic en **Usar la siguiente dirección IP**. En **dirección IP**, escriba **10.2.0.1**. En **Máscara de subred**, escriba **255.255.255.0**. En **puerta de enlace predeterminada**, escriba **10.2.0.254**. Haga clic en **usar las siguientes direcciones de servidor DNS**, en **servidor DNS preferido**, escriba **10.2.0.1**y, en **servidor DNS alternativo**, escriba **10.0.0.1**.
+4.  Haga clic en **Usar la siguiente dirección IP**. En **dirección IP**, escriba **10.2.0.1**. En **Máscara de subred**, escriba **255.255.255.0**. En **puerta de enlace predeterminada**, escriba **10.2.0.254**. Haga clic en **usar las siguientes direcciones de servidor DNS**, en **servidor DNS preferido**, escriba **10.2.0.1** y, en **servidor DNS alternativo**, escriba **10.0.0.1**.
 
-5.  Haga clic en ** Opciones avanzadas** y, a continuación, haga clic en la pestaña **DNS**.
+5.  Haga clic en **Opciones avanzadas** y, a continuación, haga clic en la pestaña **DNS**.
 
-6.  En **sufijo DNS para esta conexión**, escriba **Corp2.Corp.contoso.com**y, a continuación, haga clic en **Aceptar** dos veces.
+6.  En **sufijo DNS para esta conexión**, escriba **Corp2.Corp.contoso.com** y, a continuación, haga clic en **Aceptar** dos veces.
 
 7.  Haga clic en **Protocolo de Internet versión 6 (TCP/IPv6)** y, a continuación, haga clic en **Propiedades**.
 
-8.  Haga clic en **usar la siguiente dirección IPv6**. En **dirección IPv6**, escriba **2001: db8:2:: 1**. En **longitud del prefijo de subred**, escriba **64**. En **puerta de enlace predeterminada**, escriba **2001: db8:2:: fe**. Haga clic en **usar las siguientes direcciones de servidor DNS**, en **servidor DNS preferido**, escriba **2001: db8:2:: 1**y, en **servidor DNS alternativo**, escriba **2001: db8:1:: 1**.
+8.  Haga clic en **usar la siguiente dirección IPv6**. En **dirección IPv6**, escriba **2001: db8:2:: 1**. En **longitud del prefijo de subred**, escriba **64**. En **puerta de enlace predeterminada**, escriba **2001: db8:2:: fe**. Haga clic en **usar las siguientes direcciones de servidor DNS**, en **servidor DNS preferido**, escriba **2001: db8:2:: 1** y, en **servidor DNS alternativo**, escriba **2001: db8:1:: 1**.
 
-9. Haga clic en ** Opciones avanzadas** y, a continuación, haga clic en la pestaña **DNS**.
+9. Haga clic en **Opciones avanzadas** y, a continuación, haga clic en la pestaña **DNS**.
 
-10. En **sufijo DNS para esta conexión**, escriba **Corp2.Corp.contoso.com**y, a continuación, haga clic en **Aceptar** dos veces.
+10. En **sufijo DNS para esta conexión**, escriba **Corp2.Corp.contoso.com** y, a continuación, haga clic en **Aceptar** dos veces.
 
 11. En el cuadro de diálogo **propiedades de conexión cableada Ethernet** , haga clic en **cerrar**.
 
@@ -83,7 +84,7 @@ Configure el protocolo TCP/IP con direcciones IP estáticas.
 
 14. En el cuadro de diálogo **Propiedades del sistema**, en la pestaña **Nombre de equipo** haz clic en **Cambiar**.
 
-15. En el cuadro de diálogo cambios en el **dominio o el nombre del equipo** , en **nombre de equipo**, escriba **2-DC1**y, a continuación, haga clic en **Aceptar**.
+15. En el cuadro de diálogo cambios en el **dominio o el nombre del equipo** , en **nombre de equipo**, escriba **2-DC1** y, a continuación, haga clic en **Aceptar**.
 
 16. Cuando se le indique que debe reiniciar el equipo, haga clic en **Aceptar**.
 
@@ -112,7 +113,7 @@ Configure 2-DC1 como controlador de dominio para el dominio corp2.corp.contoso.c
 
 7.  En **nombre de dominio primario**, escriba **Corp.contoso.com**, en **nuevo nombre de dominio**, escriba **Corp2**.
 
-8.  En **proporcione las credenciales para realizar esta operación**, haga clic en **cambiar**. En el cuadro de diálogo **seguridad de Windows** , en **nombre de usuario**, escriba **Corp. contoso. com\Administrator**y, en **contraseña**, escriba la contraseña de corp\administrador, haga clic en **Aceptar**y, a continuación, haga clic en **siguiente**.
+8.  En **proporcione las credenciales para realizar esta operación**, haga clic en **cambiar**. En el cuadro de diálogo **seguridad de Windows** , en **nombre de usuario**, escriba **Corp. contoso. com\Administrator** y, en **contraseña**, escriba la contraseña de corp\administrador, haga clic en **Aceptar** y, a continuación, haga clic en **siguiente**.
 
 9. En la página **Opciones del controlador de dominio** , asegúrese de que el nombre del **sitio** sea el **segundo sitio**. En **Escriba la contraseña de modo de restauración de servicios de directorio (DSRM)**, en **contraseña** y **Confirmar contraseña**, escriba una contraseña segura dos veces y, a continuación, haga clic en **siguiente** cinco veces.
 
@@ -127,33 +128,33 @@ Utilice este procedimiento para proporcionar al usuario CORP\User1 permisos comp
 
 ### <a name="to-provide-group-policy-permissions"></a>Para proporcionar permisos de directiva de grupo
 
-1.  En la pantalla **Inicio** , escriba**GPMC. msc**y, a continuación, presione Entrar.
+1.  En la pantalla **Inicio** , escriba **GPMC. msc** y, a continuación, presione Entrar.
 
 2.  En la consola de administración de directiva de grupo, Abra **Forest: Corp.contoso.com/Domains/Corp2.Corp.contoso.com**.
 
 3.  En el panel de detalles, haga clic en la pestaña **delegación** . En la lista desplegable **permiso** , haga clic en **vincular GPO**.
 
-4.  Haga clic en **Agregar**y, en el cuadro de diálogo **Seleccionar usuarios, equipos o grupos** , haga clic en **ubicaciones**.
+4.  Haga clic en **Agregar** y, en el cuadro de diálogo **Seleccionar usuarios, equipos o grupos** , haga clic en **ubicaciones**.
 
-5.  En el cuadro de diálogo **ubicaciones** , en el árbol **Ubicación** , haga clic en **Corp.contoso.com**y, a continuación, haga clic en **Aceptar**.
+5.  En el cuadro de diálogo **ubicaciones** , en el árbol **Ubicación** , haga clic en **Corp.contoso.com** y, a continuación, haga clic en **Aceptar**.
 
-6.  En **Escriba el nombre del objeto para seleccionar el** tipo **user1**, haga clic en **Aceptar**y, en el cuadro de diálogo **Agregar grupo o usuario** , haga clic en **Aceptar**.
+6.  En **Escriba el nombre del objeto para seleccionar el** tipo **user1**, haga clic en **Aceptar** y, en el cuadro de diálogo **Agregar grupo o usuario** , haga clic en **Aceptar**.
 
-7.  En la consola de administración de directiva de grupo, en el árbol, haga clic en **Directiva de grupo objetos**y, en el panel de detalles, haga clic en la pestaña **delegación** .
+7.  En la consola de administración de directiva de grupo, en el árbol, haga clic en **Directiva de grupo objetos** y, en el panel de detalles, haga clic en la pestaña **delegación** .
 
-8.  Haga clic en **Agregar**y, en el cuadro de diálogo **Seleccionar usuarios, equipos o grupos** , haga clic en **ubicaciones**.
+8.  Haga clic en **Agregar** y, en el cuadro de diálogo **Seleccionar usuarios, equipos o grupos** , haga clic en **ubicaciones**.
 
-9. En el cuadro de diálogo **ubicaciones** , en el árbol **Ubicación** , haga clic en **Corp.contoso.com**y, a continuación, haga clic en **Aceptar**.
+9. En el cuadro de diálogo **ubicaciones** , en el árbol **Ubicación** , haga clic en **Corp.contoso.com** y, a continuación, haga clic en **Aceptar**.
 
 10. En **Escriba el nombre del objeto para seleccionar el** tipo **user1**, haga clic en **Aceptar**.
 
-11. En la consola de administración de directiva de grupo, en el árbol, haga clic en **filtros WMI**y, en el panel de detalles, haga clic en la pestaña **delegación** .
+11. En la consola de administración de directiva de grupo, en el árbol, haga clic en **filtros WMI** y, en el panel de detalles, haga clic en la pestaña **delegación** .
 
-12. Haga clic en **Agregar**y, en el cuadro de diálogo **Seleccionar usuarios, equipos o grupos** , haga clic en **ubicaciones**.
+12. Haga clic en **Agregar** y, en el cuadro de diálogo **Seleccionar usuarios, equipos o grupos** , haga clic en **ubicaciones**.
 
-13. En el cuadro de diálogo **ubicaciones** , en el árbol **Ubicación** , haga clic en **Corp.contoso.com**y, a continuación, haga clic en **Aceptar**.
+13. En el cuadro de diálogo **ubicaciones** , en el árbol **Ubicación** , haga clic en **Corp.contoso.com** y, a continuación, haga clic en **Aceptar**.
 
-14. En **Escriba el nombre del objeto para seleccionar el** tipo **user1**, haga clic en **Aceptar**. En el cuadro de diálogo **Agregar grupo o usuario** , asegúrese de que **los permisos** estén establecidos en **control total**y, a continuación, haga clic en **Aceptar**.
+14. En **Escriba el nombre del objeto para seleccionar el** tipo **user1**, haga clic en **Aceptar**. En el cuadro de diálogo **Agregar grupo o usuario** , asegúrese de que **los permisos** estén establecidos en **control total** y, a continuación, haga clic en **Aceptar**.
 
 15. Cierre la consola de Administración de directivas de grupo.
 
@@ -163,21 +164,21 @@ Los equipos del dominio CORP2 deben obtener certificados de equipo de la entidad
 
 ### <a name="to-allow-corp2-computers-to-automatically-obtain-computer-certificates"></a>Para permitir que los equipos CORP2 obtengan automáticamente certificados de equipo
 
-1.  En APP1, haga clic en **Inicio**, escriba **certtmpl. msc**y, a continuación, presione Entrar.
+1.  En APP1, haga clic en **Inicio**, escriba **certtmpl. msc** y, a continuación, presione Entrar.
 
 2.  En la **consola de plantillas de certificados**, en el panel central, haga doble clic en **autenticación de cliente y servidor**.
 
 3.  En el cuadro de diálogo **propiedades de autenticación cliente-servidor** , haga clic en la pestaña **seguridad** .
 
-4.  Haga clic en **Agregar**y, en el cuadro de diálogo **Seleccionar usuarios, equipos, cuentas de servicio o grupos** , haga clic en **ubicaciones**.
+4.  Haga clic en **Agregar** y, en el cuadro de diálogo **Seleccionar usuarios, equipos, cuentas de servicio o grupos** , haga clic en **ubicaciones**.
 
-5.  En el cuadro de diálogo **ubicaciones** , en **Ubicación**, expanda **corp.contoso.com**, haga clic en **Corp2.Corp.contoso.com**y, a continuación, haga clic en **Aceptar**.
+5.  En el cuadro de diálogo **ubicaciones** , en **Ubicación**, expanda **corp.contoso.com**, haga clic en **Corp2.Corp.contoso.com** y, a continuación, haga clic en **Aceptar**.
 
 6.  En **Escriba los nombres de objeto que desea seleccionar**, escriba **Admins. del dominio; Equipos del dominio** y, a continuación, haga clic en **Aceptar**.
 
 7.  En el cuadro de diálogo **propiedades de autenticación cliente-servidor** , en **nombres de grupos o usuarios**, haga clic en **Admins. del dominio (administradores de CORP2\Domain)** y, en **permisos de administradores de dominio**, en la columna **permitir** , seleccione **escribir** e **inscribir**.
 
-8.  En **nombres de grupos o usuarios**, haga clic en **equipos del dominio (equipos CORP2\Domain)** y, en **permisos de equipos del dominio**, en la columna **permitir** , seleccione **inscribir** e **inscripción automática**y, a continuación, haga clic en **Aceptar**.
+8.  En **nombres de grupos o usuarios**, haga clic en **equipos del dominio (equipos CORP2\Domain)** y, en **permisos de equipos del dominio**, en la columna **permitir** , seleccione **inscribir** e **inscripción automática** y, a continuación, haga clic en **Aceptar**.
 
 9. Cierra la Consola de plantillas de certificado.
 
@@ -186,19 +187,19 @@ Para poder inscribirse en los certificados en 2-EDGE1, debe forzar la replicaci�
 
 ### <a name="to-force-replication"></a>Para forzar la replicación
 
-1.  En DC1, haga clic en **Inicio**y, a continuación, haga clic en **sitios y servicios de Active Directory**.
+1.  En DC1, haga clic en **Inicio** y, a continuación, haga clic en **sitios y servicios de Active Directory**.
 
-2.  En la consola sitios y servicios de Active Directory, en el árbol, expanda **transportes entre sitios**y, a continuación, haga clic en **IP**.
+2.  En la consola sitios y servicios de Active Directory, en el árbol, expanda **transportes entre sitios** y, a continuación, haga clic en **IP**.
 
 3.  En el panel de detalles, haga doble clic en **DEFAULTIPSITELINK**.
 
-4.  En el cuadro de diálogo **propiedades de DEFAULTIPSITELINK** , en **costo**, escriba **1**, en **replicar cada**, escriba **15**y, a continuación, haga clic en **Aceptar**. Espere 15 minutos para que se complete la replicación.
+4.  En el cuadro de diálogo **propiedades de DEFAULTIPSITELINK** , en **costo**, escriba **1**, en **replicar cada**, escriba **15** y, a continuación, haga clic en **Aceptar**. Espere 15 minutos para que se complete la replicación.
 
-5.  Para forzar la replicación ahora en el árbol de consola, expanda **configuración de Sites\Default-First-Site-name\Servers\DC1\NTDS**, en el panel de detalles, haga clic con el botón secundario en, haga clic en **<automatically generated>** **Replicar ahora**y, a continuación, en el cuadro de diálogo **Replicar ahora** , haga clic en **Aceptar**.
+5.  Para forzar la replicación ahora en el árbol de consola, expanda **configuración de Sites\Default-First-Site-name\Servers\DC1\NTDS**, en el panel de detalles, haga clic con el botón secundario en, haga clic en **<automatically generated>** **Replicar ahora** y, a continuación, en el cuadro de diálogo **Replicar ahora** , haga clic en **Aceptar**.
 
 6.  Para asegurarse de que la replicación se ha completado correctamente, haga lo siguiente:
 
-    1.  En la pantalla **Inicio** , escriba**cmd.exe**y, a continuación, presione Entrar.
+    1.  En la pantalla **Inicio** , escriba **cmd.exe** y, a continuación, presione Entrar.
 
     2.  Escriba el siguiente comando y presione ENTRAR.
 

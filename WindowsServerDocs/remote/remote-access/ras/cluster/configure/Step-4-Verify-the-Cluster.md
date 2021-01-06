@@ -1,17 +1,18 @@
 ---
 title: Paso 4 comprobación del clúster
-description: Este tema forma parte de la guía deploy Remote Access in a Cluster in Windows Server 2016.
+description: Obtenga información acerca de cómo comprobar que ha configurado correctamente la implementación del clúster de DirectAccess.
 manager: brianlic
 ms.topic: article
 ms.assetid: f22dcf10-b453-4664-a9ef-e40e95c72f63
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 4fa053519116ddadbe1469223001a33384aebe91
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 92f51a3b6fa00a06006223abe4f6d28bc40d744f
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87963901"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947781"
 ---
 # <a name="step-4-verify-the-cluster"></a>Paso 4 comprobación del clúster
 

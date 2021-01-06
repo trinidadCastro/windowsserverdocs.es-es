@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 55528736-6c19-40bd-99e8-5668169ef3c7
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: ed4c2525c9d0832dae580bcbc764ce576c8dd3c6
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: d18d643d6c614a90f4c9ab43b59c0b8777b2f6e8
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87951310"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97946791"
 ---
 # <a name="directaccess-offline-domain-join"></a>Unión a dominio sin conexión de DirectAccess
 
@@ -76,9 +77,9 @@ La pertenencia al grupo **Admins**. del dominio, o equivalente, es lo mínimo ne
 
 1.  Haga clic en **Inicio**, en **Herramientas administrativas** y, a continuación, en **Administración de directivas de grupo**.
 
-2.  Haga doble clic en el nombre del bosque, haga doble clic en **dominios**, haga doble clic en el nombre del dominio al que desea unirse un equipo, haga clic con el botón secundario en **directiva predeterminada de dominio**y, a continuación, haga clic en **Editar**.
+2.  Haga doble clic en el nombre del bosque, haga doble clic en **dominios**, haga doble clic en el nombre del dominio al que desea unirse un equipo, haga clic con el botón secundario en **directiva predeterminada de dominio** y, a continuación, haga clic en **Editar**.
 
-3.  En el árbol de consola, haga doble clic en **configuración del equipo**, haga doble clic en **directivas**, haga doble clic en **configuración de Windows**, haga doble clic en **configuración de seguridad**, haga doble clic en **Directivas locales**y, a continuación, haga doble clic en **asignación de derechos de usuario**.
+3.  En el árbol de consola, haga doble clic en **configuración del equipo**, haga doble clic en **directivas**, haga doble clic en **configuración de Windows**, haga doble clic en **configuración de seguridad**, haga doble clic en **Directivas locales** y, a continuación, haga doble clic en **asignación de derechos de usuario**.
 
 4.  En el panel de detalles, haga doble clic en **Agregar estaciones de trabajo al dominio**.
 
@@ -130,7 +131,7 @@ Complete los pasos siguientes para realizar la Unión a un dominio sin conexión
 
 2.  Expanda el árbol bajo su dominio y seleccione el contenedor **usuarios** .
 
-3.  En el panel de detalles, haga clic con el botón secundario en **clientesdirectaccess**y haga clic en **propiedades**.
+3.  En el panel de detalles, haga clic con el botón secundario en **clientesdirectaccess** y haga clic en **propiedades**.
 
 4.  En la pestaña **Miembros**, haga clic en **Agregar**.
 

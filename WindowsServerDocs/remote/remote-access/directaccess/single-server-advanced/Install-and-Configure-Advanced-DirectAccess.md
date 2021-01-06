@@ -1,17 +1,18 @@
 ---
 title: Instalar y configurar una implementación avanzada de DirectAccess
-description: Este tema forma parte de la guía implementar un único servidor de DirectAccess con configuración avanzada para Windows Server 2016
+description: Obtenga información sobre los pasos de configuración necesarios para implementar un único servidor de DirectAccess que ejecute Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012 con IPv4 e IPv6.
 manager: brianlic
 ms.topic: article
 ms.assetid: f45e5b6f-fc66-4deb-bed4-a1baa3cc6dae
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 130d63122080b08df5ea77ee9f7749cda88f4aee
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 2bfa3a274b20d728ad321ded1a7040f1cef2cb9d
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953711"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97946601"
 ---
 # <a name="install-and-configure-advanced-directaccess"></a>Instalar y configurar una implementación avanzada de DirectAccess
 

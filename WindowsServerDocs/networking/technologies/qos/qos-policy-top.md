@@ -6,12 +6,13 @@ ms.assetid: 16918506-102c-482e-89d3-004ad8d6aabe
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 31509fe9795e10bd138420414469efa4d282c729
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: dd43c38e44a02b3d50bff952b8a174b049c585d8
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964041"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97946661"
 ---
 # <a name="quality-of-service-qos-policy"></a>Directiva QoS de calidad de servicio \( \)
 
@@ -42,7 +43,7 @@ Puede usar la directiva QoS para administrar el ancho de banda de los equipos o 
 - Windows 8
 - Windows Server 2008 R2
 - Windows 7
-- Windows Server 2008
+- Windows Server 2008
 - Windows Vista
 
 ### <a name="location-of-qos-policy-in-group-policy"></a>Ubicación de la Directiva de QoS en directiva de grupo

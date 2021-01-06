@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: e4a9b134-6d1d-40d7-a49c-5f46d5fdb419
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: f499de643a2460696305ef1ab35f695236849035
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 8277b757ce5f4d8459ba39c9f29e8d47720b6e03
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952050"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97946681"
 ---
 # <a name="network-policies"></a>Directivas de red
 
@@ -45,7 +46,7 @@ Cada directiva de red tiene una configuración de **Estado de directiva** que le
 
 Existen cuatro categorías de propiedades para cada directiva de red:
 
-### <a name="overview"></a>Introducción
+### <a name="overview"></a>Información general
 
  Estas propiedades permiten especificar si la Directiva está habilitada, si la Directiva concede o deniega el acceso y si se requiere un método de conexión de red específico, o un tipo de servidor de acceso a la red (NAS), para las solicitudes de conexión. Las propiedades de Introducción también le permiten especificar si se ignorarán las propiedades de marcado de cuentas de usuario en AD DS. Si selecciona esta opción, NPS sólo usará los valores de configuración de la directiva de red para determinar si la conexión está autorizada.
 
