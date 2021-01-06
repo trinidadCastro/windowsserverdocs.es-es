@@ -1,17 +1,17 @@
 ---
 title: Instalar servidores de contenido de Servicios de archivo
-description: Este tema forma parte de la guía de implementación de BranchCache para Windows Server 2016, que muestra cómo implementar BranchCache en los modos de caché distribuida y hospedada para optimizar el uso del ancho de banda WAN en las sucursales.
+description: Obtenga información acerca de cómo instalar el servicio de rol BranchCache para archivos de red del rol de servidor servicios de archivo y habilitar BranchCache en recursos compartidos de archivos de acuerdo con sus requisitos.
 manager: brianlic
 ms.topic: get-started-article
 ms.assetid: 74b0a5ed-dc20-4974-9d4b-2426987a01a1
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 1b62e18a1ca90008a2fb9b0d52d5a634f13c6dd5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 85809057c15e0b62aa2b5fdfbf7a8b8209096343
+ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952649"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97904880"
 ---
 # <a name="install-file-services-content-servers"></a>Instalar servidores de contenido de Servicios de archivo
 

@@ -1,17 +1,17 @@
 ---
 title: Guía de implementación de BranchCache
-description: Este tema forma parte de la guía de implementación de BranchCache para Windows Server 2016, que muestra cómo implementar BranchCache en los modos de caché distribuida y hospedada para optimizar el uso del ancho de banda WAN en las sucursales.
+description: Obtenga información sobre cómo implementar BranchCache en Windows Server 2016.
 manager: brianlic
 ms.topic: get-started-article
 ms.assetid: 3830b356-36d3-44f9-a1d7-990ff3e57403
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 2868bfcca87f44ee9c29aa4c36de3486c660ee62
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 63262b483b4a57b4095a7c99b29b63b2da145247
+ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989170"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97904770"
 ---
 # <a name="branchcache-deployment-guide"></a>Guía de implementación de BranchCache
 
@@ -80,4 +80,4 @@ BranchCache se presentó por primera vez en Windows 7 &reg; y Windows server &re
 > Si está implementando BranchCache en sistemas operativos distintos de Windows Server 2016, están disponibles los siguientes recursos de la documentación.
 >
 > - Para obtener información sobre BranchCache en Windows 8, Windows 8.1, Windows Server 2012 y Windows Server 2012 R2, consulte [información general sobre BranchCache](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831696(v=ws.11)).
-> - Para obtener información sobre BranchCache en Windows 7 y Windows Server 2008 R2, vea [BranchCache para Windows server 2008 R2](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd996634(v=ws.10)).
+> - Para obtener información sobre BranchCache en Windows 7 y Windows Server 2008 R2, vea  [BranchCache para Windows server 2008 R2](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd996634(v=ws.10)).

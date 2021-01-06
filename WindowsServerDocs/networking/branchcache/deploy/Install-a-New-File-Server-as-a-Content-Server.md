@@ -1,17 +1,17 @@
 ---
 title: Instalar un nuevo servidor de archivos como servidor de contenido
-description: Este tema forma parte de la guía de implementación de BranchCache para Windows Server 2016, que muestra cómo implementar BranchCache en los modos de caché distribuida y hospedada para optimizar el uso del ancho de banda WAN en las sucursales.
+description: Obtenga información acerca de cómo instalar el rol de servidor servicios de archivo y el servicio de rol BranchCache para archivos de red en un equipo que ejecuta Windows Server 2016.
 manager: brianlic
 ms.topic: get-started-article
 ms.assetid: 1f49fc3c-28a6-4d3d-b787-1be9e61e792f
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 9808f21d971ec2a3b6610c7c0c279af00947d813
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 43ff032d90b8ebc99b6f79675ef755d29e038773
+ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87954141"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97904790"
 ---
 # <a name="install-a-new-file-server-as-a-content-server"></a>Instalar un nuevo servidor de archivos como servidor de contenido
 

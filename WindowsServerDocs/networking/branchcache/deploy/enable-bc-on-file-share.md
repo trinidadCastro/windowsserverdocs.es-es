@@ -1,17 +1,17 @@
 ---
 title: Habilitar BranchCache en un recurso compartido de archivos (opcional)
-description: Este tema forma parte de la guía de implementación de BranchCache para Windows Server 2016, que muestra cómo implementar BranchCache en los modos de caché distribuida y hospedada para optimizar el uso del ancho de banda WAN en las sucursales.
+description: Obtenga información sobre cómo habilitar BranchCache en un recurso compartido de archivos.
 manager: brianlic
 ms.topic: get-started-article
 ms.assetid: 9c465a9e-c504-44ec-9ebc-4e06ba54db30
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 7528c00633c17d33dd1d09b23db8a56a3eba5a65
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 8b55f38d332cb462b61503f8494f6662dd290a5c
+ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971822"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97904780"
 ---
 # <a name="enable-branchcache-on-a-file-share-optional"></a>Habilitar BranchCache en un recurso compartido de archivos (opcional)
 
@@ -30,7 +30,7 @@ El requisito mínimo para realizar este procedimiento es la pertenencia al grupo
 
 2.  En MMC, en el menú **Archivo**, haga clic en **Agregar o quitar complemento**. Se abre el cuadro de diálogo **Agregar o quitar complementos**.
 
-3.  En **Agregar o quitar complementos**, en **complementos disponibles**, haga doble clic en **carpetas compartidas**. Se abre el Asistente para carpetas compartidas con el objeto equipo local seleccionado. Configure la vista que prefiera, haga clic en **Finalizar**y, a continuación, haga clic en **Aceptar**.
+3.  En **Agregar o quitar complementos**, en **complementos disponibles**, haga doble clic en **carpetas compartidas**. Se abre el Asistente para carpetas compartidas con el objeto equipo local seleccionado. Configure la vista que prefiera, haga clic en **Finalizar** y, a continuación, haga clic en **Aceptar**.
 
 4.  Haga doble clic en **carpetas compartidas (local)** y, a continuación, haga clic en **recursos compartidos**.
 

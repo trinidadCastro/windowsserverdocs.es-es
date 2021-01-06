@@ -1,18 +1,18 @@
 ---
 title: Usar directiva de grupo para configurar equipos cliente miembros del dominio
-description: Este tema forma parte de la guía de implementación de BranchCache para Windows Server 2016, que muestra cómo implementar BranchCache en los modos de caché distribuida y hospedada para optimizar el uso del ancho de banda WAN en las sucursales.
+description: Obtenga información acerca de cómo usar directiva de grupo para configurar equipos cliente pertenecientes a un dominio.
 manager: dougkim
 ms.topic: get-started-article
 ms.assetid: 911c1538-f79d-42e9-ba38-f4618f87b008
 ms.author: lizross
 author: eross-msft
 ms.date: 06/02/2018
-ms.openlocfilehash: e36fd1b8884ea899156f2f413162efe14cce52be
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 281e67777ce54f1e03741f9d2120e0d4cafbb91f
+ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964341"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97904659"
 ---
 # <a name="use-group-policy-to-configure-domain-member-client-computers"></a>Usar directiva de grupo para configurar equipos cliente miembros del dominio
 
@@ -35,7 +35,7 @@ Debe ser miembro de **Admins**. del dominio o equivalente para realizar estos pr
 
 ## <a name="to-create-a-group-policy-object-and-configure-branchcache-modes"></a><a name="bkmk_gp"></a>Para crear un objeto directiva de grupo y configurar los modos de BranchCache
 
-1.  En un equipo en el que esté instalado el rol de servidor Active Directory Domain Services, en Administrador del servidor, haga clic en **herramientas**y, a continuación, haga clic en **Administración de directiva de grupo**. Se abre la Consola de administración de directivas de grupo.
+1.  En un equipo en el que esté instalado el rol de servidor Active Directory Domain Services, en Administrador del servidor, haga clic en **herramientas** y, a continuación, haga clic en **Administración de directiva de grupo**. Se abre la Consola de administración de directivas de grupo.
 
 2.  En la consola de administración de directiva de grupo, expanda la siguiente ruta de acceso: **bosque:** *example.com*, **dominios**, *example.com* **Directiva de grupo objetos**, donde *example.com* es el nombre del dominio donde se encuentran las cuentas de equipo cliente de BranchCache que desea configurar.
 
@@ -55,7 +55,7 @@ Debe ser miembro de **Admins**. del dominio o equivalente para realizar estos pr
 
 10. Si tiene una o más sucursales donde va a implementar BranchCache en modo caché hospedada y ha implementado servidores de caché hospedada en esas oficinas, haga doble clic en **Habilitar detección automática de caché hospedada por punto de conexión de servicio**. Se abre el cuadro de diálogo Configuración de directiva.
 
-11. En el cuadro de diálogo **Habilitar detección automática de caché hospedada por punto de conexión de servicio** , haga clic en **habilitado**y, a continuación, haga clic en **Aceptar**.
+11. En el cuadro de diálogo **Habilitar detección automática de caché hospedada por punto de conexión de servicio** , haga clic en **habilitado** y, a continuación, haga clic en **Aceptar**.
 
     > [!NOTE]
     > Cuando se habilita la configuración de directiva **establecer caché distribuida de BranchCache** y **Habilitar detección de caché hospedada automática por punto de conexión de servicio** , los equipos cliente operan en el modo caché distribuida de BranchCache a menos que encuentren un servidor de caché hospedada en la sucursal, momento en el que operan en modo caché hospedada.

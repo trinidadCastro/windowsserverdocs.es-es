@@ -1,17 +1,17 @@
 ---
 title: Instalar y configurar servidores de contenido
-description: Este tema forma parte de la guía de implementación de BranchCache para Windows Server 2016, que muestra cómo implementar BranchCache en los modos de caché distribuida y hospedada para optimizar el uso del ancho de banda WAN en las sucursales.
+description: Obtenga información acerca de cómo instalar y configurar servidores de contenido.
 manager: brianlic
 ms.topic: get-started-article
 ms.assetid: e753c56b-8902-4610-9c53-381e77bf29ab
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: c1efeb5d63be8ce5b91c814825b68f9f43ae4049
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 559f9dd3ca3cb388169ee002d9f99f39708047a9
+ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87954121"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97904660"
 ---
 # <a name="install-and-configure-content-servers"></a>Instalar y configurar servidores de contenido
 

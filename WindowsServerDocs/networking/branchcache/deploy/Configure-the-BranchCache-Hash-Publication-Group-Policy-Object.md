@@ -1,17 +1,17 @@
 ---
 title: Configurar el objeto de directiva de grupo Publicación de hash para BranchCache
-description: Este tema forma parte de la guía de implementación de BranchCache para Windows Server 2016, que muestra cómo implementar BranchCache en los modos de caché distribuida y hospedada para optimizar el uso del ancho de banda WAN en las sucursales.
+description: Aprenda a configurar el objeto de directiva de grupo de publicación de hash de BranchCache (GPO) para que todos los servidores de archivos que ha agregado a la unidad organizativa tengan aplicada la misma configuración de directiva de publicación de hash.
 manager: brianlic
 ms.topic: get-started-article
 ms.assetid: da74fea7-52b2-4d6d-9d21-19184eedbe3c
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: c139a85e73bcb1f64e752cb2763032003486843a
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c9648165836660ab5d132e95147f6e0233e9c983
+ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971912"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97904690"
 ---
 # <a name="configure-the-branchcache-hash-publication-group-policy-object"></a>Configurar el objeto de directiva de grupo Publicación de hash para BranchCache
 
@@ -26,7 +26,7 @@ El requisito mínimo para realizar este procedimiento es la pertenencia al grupo
 
 ### <a name="to-configure-the-branchcache-hash-publication-group-policy-object"></a>Para configurar el objeto de directiva de grupo de publicación de hash de BranchCache
 
-1.  Ejecute Windows PowerShell como administrador, escriba **MMC**y, a continuación, presione Entrar. Se abrirá Microsoft Management Console (MMC).
+1.  Ejecute Windows PowerShell como administrador, escriba **MMC** y, a continuación, presione Entrar. Se abrirá Microsoft Management Console (MMC).
 
 2.  En MMC, en el menú **Archivo**, haga clic en **Agregar o quitar complemento**. Se abre el cuadro de diálogo **Agregar o quitar complementos**.
 
@@ -42,7 +42,7 @@ El requisito mínimo para realizar este procedimiento es la pertenencia al grupo
 
 8.  En el cuadro de diálogo **Publicación de hash para BranchCache**, haga clic en **Habilitado**.
 
-9. En **Opciones**, haga clic en **permitir la publicación de hash para todas las carpetas compartidas**y, a continuación, haga clic en una de las opciones siguientes:
+9. En **Opciones**, haga clic en **permitir la publicación de hash para todas las carpetas compartidas** y, a continuación, haga clic en una de las opciones siguientes:
 
     1.  Para habilitar la publicación de hash para todas las carpetas compartidas de todos los servidores de archivos que ha agregado a la unidad organizativa, haga clic en **permitir publicación de hash para todas las carpetas compartidas**.
 

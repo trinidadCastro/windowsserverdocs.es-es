@@ -1,17 +1,17 @@
 ---
 title: Implementar BranchCache
-description: Este tema forma parte de la guía de implementación de BranchCache para Windows Server 2016, que muestra cómo implementar BranchCache en los modos de caché distribuida y hospedada para optimizar el uso del ancho de banda WAN en las sucursales.
+description: Obtenga información sobre cómo implementar BranchCache en los modos de caché distribuida y hospedada.
 manager: brianlic
 ms.topic: get-started-article
 ms.assetid: 30b0a6d9-d6d5-4019-b8dc-ed5365d9921f
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 9d8426bbaf2b3439ad3347cb08aa64b7deb2206c
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 044e5281f40f8358354607d9c182ce8c037ea1da
+ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971872"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97904840"
 ---
 # <a name="deploy-branchcache"></a>Implementar BranchCache
 
@@ -21,9 +21,9 @@ En las secciones siguientes se proporciona información sobre cómo implementar 
 
 -   [Instalar y configurar servidores de contenido](Install-and-Configure-Content-Servers.md)
 
--   [Implementar servidores de caché hospedada &#40;&#41;opcional](deploy-hosted-cache-servers.md)
+-   [Implementar servidores de caché hospedada &#40;&#41;opcional ](deploy-hosted-cache-servers.md)
 
--   [Aplicar hash y precargar contenido en servidores de caché hospedada &#40;&#41;opcional](prehashing-and-preloading.md)
+-   [Aplicar hash y precargar contenido en servidores de caché hospedada &#40;&#41;opcional ](prehashing-and-preloading.md)
 
 -   [Configurar los equipos cliente de BranchCache](Configure-BranchCache-Client-Computers.md)
 

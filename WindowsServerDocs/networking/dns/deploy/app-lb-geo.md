@@ -1,17 +1,17 @@
 ---
 title: Uso de la directiva de DNS para equilibrio de carga de aplicación con reconocimiento de ubicación geográfica
-description: Este tema forma parte de la guía del escenario de la Directiva DNS para Windows Server 2016
+description: Obtenga información sobre cómo configurar la Directiva de DNS para equilibrar la carga de una aplicación con reconocimiento de ubicación geográfica.
 manager: brianlic
 ms.topic: article
 ms.assetid: b6e679c6-4398-496c-88bc-115099f3a819
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 5f250a2ca008ab11177338d71c69d7c5b54086d3
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 05ba48daff7a1d1f313108f803d4165d2fb1b79f
+ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865374"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97904600"
 ---
 # <a name="use-dns-policy-for-application-load-balancing-with-geo-location-awareness"></a>Uso de la directiva de DNS para equilibrio de carga de aplicación con reconocimiento de ubicación geográfica
 

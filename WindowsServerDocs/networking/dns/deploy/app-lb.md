@@ -1,17 +1,17 @@
 ---
 title: Uso de la directiva de DNS para el equilibrio de carga de aplicación
-description: Este tema forma parte de la guía del escenario de la Directiva DNS para Windows Server 2016
+description: Obtenga información sobre cómo configurar la Directiva de DNS para realizar el equilibrio de carga de la aplicación.
 manager: brianlic
 ms.topic: article
 ms.assetid: f9c313ac-bb86-4e48-b9b9-de5004393e06
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: fa415f6c1b7065b0e5da6e83999ed425d9f6b28e
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 849baf9e95af51d5bd3c3bd4460f181fa8836691
+ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865361"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97904920"
 ---
 # <a name="use-dns-policy-for-application-load-balancing"></a>Uso de la directiva de DNS para el equilibrio de carga de aplicación
 
@@ -27,7 +27,7 @@ Una vez que haya implementado varias instancias de una aplicación, puede usar l
 
 A continuación se describe un ejemplo de cómo se puede usar la Directiva de DNS para el equilibrio de carga de la aplicación.
 
-En este ejemplo se usa una empresa ficticia-servicios de regalos de Contoso, que proporciona servicios de gifing en línea y que tiene un sitio web denominado **contosogiftservices.com**.
+En este ejemplo se usa una empresa ficticia-servicios de regalos de Contoso, que proporciona servicios de regalos en línea y que tiene un sitio web denominado **contosogiftservices.com**.
 
 El sitio web de contosogiftservices.com se hospeda en varios centros de recursos, cada uno con distintas direcciones IP.
 

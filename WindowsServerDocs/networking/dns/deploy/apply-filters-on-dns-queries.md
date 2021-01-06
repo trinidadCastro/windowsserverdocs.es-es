@@ -1,17 +1,17 @@
 ---
 title: Uso de la directiva de DNS para aplicar filtros en las consultas DNS
-description: Este tema forma parte de la guía del escenario de la Directiva DNS para Windows Server 2016
+description: Obtenga información sobre cómo configurar la Directiva de DNS en Windows Server 2016 para crear filtros de consulta basados en los criterios que proporcione.
 manager: brianlic
 ms.topic: article
 ms.assetid: b86beeac-b0bb-4373-b462-ad6fa6cbedfa
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 4f309a304e4457b27eec0ae41d581c5a7bf9bd50
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 056211f2753c4c9d445e04d5031ab48d1e18a216
+ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865344"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97904581"
 ---
 # <a name="use-dns-policy-for-applying-filters-on-dns-queries"></a>Uso de la directiva de DNS para aplicar filtros en las consultas DNS
 

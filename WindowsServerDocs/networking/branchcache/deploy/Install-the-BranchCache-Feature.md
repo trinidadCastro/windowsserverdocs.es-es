@@ -1,17 +1,17 @@
 ---
 title: Instalar la característica BranchCache
-description: Este tema forma parte de la guía de implementación de BranchCache para Windows Server 2016, que muestra cómo implementar BranchCache en los modos de caché distribuida y hospedada para optimizar el uso del ancho de banda WAN en las sucursales.
+description: Obtenga información acerca de cómo instalar la característica BranchCache e iniciar el servicio BranchCache en un equipo que ejecute Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012.
 manager: brianlic
 ms.topic: get-started-article
 ms.assetid: 4f31dc61-2dbe-4c7e-b3f9-85ae49a45049
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 64fa6dea8d93d0e152b0cf795251aec0d9f52bc5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: abbc7fe051cda1f18b0baa6ec334ee3b339b2925
+ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952627"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97904170"
 ---
 # <a name="install-the-branchcache-feature"></a>Instalar la característica BranchCache
 
@@ -40,7 +40,7 @@ Antes de realizar este procedimiento, se recomienda que instale y configure su a
 
 4.  En **Seleccionar roles de servidor**, haz clic en **Siguiente**.
 
-5.  En **seleccionar características**, haga clic en **BranchCache**y, a continuación, haga clic en **siguiente**.
+5.  En **seleccionar características**, haga clic en **BranchCache** y, a continuación, haga clic en **siguiente**.
 
 6.  En **Confirmar selecciones de instalación**, haga clic en **Instalar**. En el progreso de la **instalación**, la instalación de la característica BranchCache continúa. Una vez finalizada la instalación, haga clic en **cerrar**.
 

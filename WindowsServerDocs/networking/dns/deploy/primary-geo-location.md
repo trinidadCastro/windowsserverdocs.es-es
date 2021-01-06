@@ -1,17 +1,17 @@
 ---
 title: Uso de directiva DNS para la administración del tráfico basada en la ubicación geográfica con servidores principales
-description: Este tema forma parte de la guía del escenario de la Directiva DNS para Windows Server 2016
+description: Obtenga información acerca de cómo configurar la Directiva de DNS para permitir que los servidores DNS principales respondan a las consultas de cliente DNS en función de la ubicación geográfica del cliente y el recurso al que el cliente intenta conectarse, proporcionando el cliente con la dirección IP del recurso más cercano.
 manager: brianlic
 ms.topic: article
 ms.assetid: ef9828f8-c0ad-431d-ae52-e2065532e68f
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 36089433b9168e8c49e443b77317c29366c6b9e5
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 2aa9e1392f133c5f076eac3b508851ae88c41d03
+ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96866524"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97904200"
 ---
 # <a name="use-dns-policy-for-geo-location-based-traffic-management-with-primary-servers"></a>Uso de directiva DNS para la administración del tráfico basada en la ubicación geográfica con servidores principales
 

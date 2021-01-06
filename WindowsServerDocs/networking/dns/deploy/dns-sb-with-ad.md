@@ -1,17 +1,17 @@
 ---
 title: Usar la Directiva de DNS para Split-Brain DNS en Active Directory
-description: Puede usar este tema para aprovechar las capacidades de administración del tráfico de las directivas DNS para implementaciones de cerebro dividido con Active Directory zonas DNS integradas en Windows Server 2016.
+description: Obtenga información sobre cómo aprovechar las capacidades de administración del tráfico de las directivas DNS para implementaciones de cerebro dividido con Active Directory zonas DNS integradas en Windows Server 2016.
 manager: brianlic
 ms.topic: article
 ms.assetid: f9533204-ad7e-4e49-81c1-559324a16aeb
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 423debd6538e2de8de7e2919e18e7da39fe8c733
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: a942407a3b15d13f2a7200a3180484e69630982d
+ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865334"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97904250"
 ---
 # <a name="use-dns-policy-for-split-brain-dns-in-active-directory"></a>Usar la Directiva de DNS para Split-Brain DNS en Active Directory
 

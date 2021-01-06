@@ -1,17 +1,17 @@
 ---
 title: Configurar un servidor de archivos existente como servidor de contenido
-description: Este tema forma parte de la guía de implementación de BranchCache para Windows Server 2016, que muestra cómo implementar BranchCache en los modos de caché distribuida y hospedada para optimizar el uso del ancho de banda WAN en las sucursales.
+description: Obtenga información acerca de cómo instalar el servicio de rol BranchCache para archivos de red del rol de servidor servicios de archivo en un equipo que ejecuta Windows Server 2016.
 manager: brianlic
 ms.topic: get-started-article
 ms.assetid: bdac7d2a-25b4-4f61-bed1-b290700c18f3
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: ddb6a9d8ad14146d6f4aca27171649fde3b227eb
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 83223ab3f565b3b00fc77accf0da67e82ecce630
+ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971922"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97904740"
 ---
 # <a name="configure-an-existing-file-server-as-a-content-server"></a>Configurar un servidor de archivos existente como servidor de contenido
 

@@ -7,12 +7,12 @@ ms.topic: article
 author: JasonGerend
 ms.date: 01/18/2019
 description: 'Cómo usar Microsoft Azure para hospedar el testigo para un clúster de conmutación por error de Windows Server en la nube: también se ha aprendido a implementar un testigo en la nube.'
-ms.openlocfilehash: fa0fee044b0a5e702cb56816bf9a878f209d6117
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: fe613492f290cbcee1ee176fc42b54b4e1f38883
+ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87993014"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97904360"
 ---
 # <a name="deploy-a-cloud-witness-for-a-failover-cluster"></a>Implementación de un testigo en la nube para un clúster de conmutación por error
 
@@ -46,6 +46,7 @@ Este enfoque tiene importantes ventajas:
 Como se muestra en la figura 2, no hay ningún tercer sitio independiente que sea necesario. El testigo en la nube, como cualquier otro testigo de cuórum, obtiene un voto y puede participar en los cálculos de cuórum.
 
 ## <a name="cloud-witness-supported-scenarios-for-single-witness-type"></a><a name="CloudWitnessSupportedScenarios"></a>Testigo en la nube: escenarios admitidos para el tipo de testigo único
+
 Si tiene una implementación de clúster de conmutación por error, donde todos los nodos pueden tener acceso a Internet (por extensión de Azure), se recomienda configurar un testigo en la nube como recurso de testigo de cuórum.
 
 Algunos de los escenarios compatibles con el uso del testigo en la nube como testigo de quórum son los siguientes:
@@ -58,54 +59,57 @@ Algunos de los escenarios compatibles con el uso del testigo en la nube como tes
 
 A partir de Windows Server 2012 R2, se recomienda configurar siempre un testigo, ya que el clúster administra automáticamente el voto del testigo y los nodos votan con el Cuórum dinámico.
 
-## <a name="set-up-a-cloud-witness-for-a-cluster"></a><a name="CloudWitnessSetUp"></a>Configuración de un testigo en la nube para un clúster
+## <a name="set-up-a-cloud-witness-for-a-cluster"></a><a name="CloudWitnessSetUp"></a> Configuración de un testigo en la nube para un clúster
+
 Para configurar un testigo en la nube como testigo de quórum para el clúster, siga estos pasos:
-1. Creación de una cuenta de Azure Storage para usarla como un testigo en la nube
+1. Creación de una cuenta de Azure Storage para su uso como testigo en la nube
 2. Configure el testigo de nube como testigo de quórum para el clúster.
 
-## <a name="create-an-azure-storage-account-to-use-as-a-cloud-witness"></a>Creación de una cuenta de Azure Storage para usarla como un testigo en la nube
+## <a name="create-an-azure-storage-account-to-use-as-a-cloud-witness"></a>Creación de una cuenta de Azure Storage para su uso como testigo en la nube
 
-En esta sección se describe cómo crear una cuenta de almacenamiento y ver y copiar las direcciones URL del extremo y las claves de acceso para esa cuenta.
+En esta sección se describe cómo crear una cuenta de almacenamiento y cómo ver y copiar las direcciones URL del punto de conexión y las claves de acceso de esa cuenta.
 
-Para configurar el testigo de la nube, debe tener una cuenta de Azure Storage válida que se pueda usar para almacenar el archivo de BLOB (se usa para el arbitraje). El testigo en la nube crea un contenedor conocido **msft-Cloud-Witness** en la cuenta de almacenamiento de Microsoft. El testigo en la nube escribe un único archivo de BLOB con el identificador único del clúster correspondiente que se usa como nombre de archivo del archivo de BLOB en este contenedor **msft-Cloud-Witness** . Esto significa que puede usar la misma cuenta de Microsoft Azure Storage para configurar un testigo en la nube para varios clústeres diferentes.
+Para configurar el testigo en la nube, debe tener una cuenta de Azure Storage válida que se pueda usar para almacenar el archivo de blob (usado para el arbitraje). El testigo en la nube crea un contenedor conocido **msft-cloud-witness** en la cuenta de almacenamiento de Microsoft. El testigo en la nube escribe un único archivo de blob con el identificador único del clúster correspondiente que se usa como nombre de archivo del archivo de blob en este contenedor **msft-cloud-witness**. Esto significa que puede usar la misma cuenta de Microsoft Azure Storage para configurar un testigo en la nube para varios clústeres diferentes.
 
-Cuando se usa la misma cuenta de Azure Storage para configurar el testigo de nube para varios clústeres diferentes, se crea automáticamente un solo contenedor **msft-Cloud-Witness** . Este contenedor contendrá un archivo de un solo BLOB por clúster.
+Cuando se usa la misma cuenta de Azure Storage para configurar el testigo en la nube para varios clústeres diferentes, se crea automáticamente un solo contenedor **msft-cloud-witness**. Este contenedor contendrá un archivo de un blob por clúster.
 
-### <a name="to-create-an-azure-storage-account"></a>Para crear una cuenta de almacenamiento de Azure
+### <a name="to-create-an-azure-storage-account"></a>Para crear una cuenta de Azure Storage
 
 1. Inicie sesión en [Azure Portal](https://portal.azure.com).
 2. En el menú del concentrador, seleccione Nuevo -> Datos y almacenamiento -> Cuenta de almacenamiento.
-3. En la página crear una cuenta de almacenamiento, haga lo siguiente:
+3. En la página Crear una cuenta de almacenamiento, haga lo siguiente:
     1. Escriba un nombre para la cuenta de almacenamiento.
-    <br>Los nombres de las cuentas de almacenamiento deben tener entre 3 y 24 caracteres, y solo pueden incluir números y letras en minúscula. El nombre de la cuenta de almacenamiento también debe ser único en Azure.
+    <br>Los nombres de las cuentas de almacenamiento deben tener entre 3 y 24 caracteres, y solo pueden incluir números y letras en minúscula. El nombre de la cuenta de almacenamiento también debe ser único dentro de Azure.
 
-    2. En **tipo de cuenta**, seleccione **uso general**.
+    2. En **Tipo de cuenta** seleccione **Uso general**.
     <br>No se puede usar una cuenta de almacenamiento de blobs para un testigo en la nube.
     3. En **Rendimiento**, seleccione **Estándar**.
     <br>No se puede usar Azure Premium Storage para un testigo en la nube.
-    2. En **replicación**, seleccione **almacenamiento con redundancia local (LRS)** .
-    <br>Los clústeres de conmutación por error usan el archivo de BLOB como punto de arbitraje, lo que requiere algunas garantías de coherencia al leer los datos. Por lo tanto, debe seleccionar **el almacenamiento con redundancia local para el** tipo de **replicación** .
+    2. En **Replicación**, seleccione **Almacenamiento con redundancia local (LRS)** .
+    <br>Los clústeres de conmutación por error usan el archivo de blob como punto de arbitraje, lo cual requiere algunas garantías de coherencia al leer los datos. Por tanto, debe seleccionar **Almacenamiento con redundancia local (LRS)** como tipo de **Replicación**.
 
 ### <a name="view-and-copy-storage-access-keys-for-your-azure-storage-account"></a>Visualización y copia de las claves de acceso de almacenamiento de la cuenta de Azure Storage
 
-Cuando se crea una cuenta de Microsoft Azure Storage, está asociada a dos claves de acceso que se generan automáticamente: la clave de acceso principal y la clave de acceso secundaria. Para crear por primera vez un testigo en la nube, use la **clave de acceso principal**. No hay ninguna restricción respecto a la clave que se va a usar para el testigo en la nube.
+Cuando se crea una cuenta de Microsoft Azure Storage, esta se asocia a dos claves de acceso que se generan automáticamente: la clave de acceso primaria y la secundaria. Para crear por primera vez un testigo en la nube, use la **clave de acceso primaria**. No hay ninguna restricción respecto a la clave que se va a usar para el testigo en la nube.
 
-#### <a name="to-view-and-copy-storage-access-keys"></a>Para ver y copiar las claves de acceso de almacenamiento
+#### <a name="to-view-and-copy-storage-access-keys"></a>Visualización y copia de las claves de acceso de almacenamiento
 
 En Azure portal, vaya a la cuenta de almacenamiento, haga clic en **toda la configuración** y luego haga clic en **claves de acceso** para ver, copiar y regenerar las claves de acceso de la cuenta. La hoja claves de acceso también incluye cadenas de conexión preconfiguradas con las claves principal y secundaria que se pueden copiar para usarlas en las aplicaciones (consulte la figura 4).
 
 ![Instantánea del cuadro de diálogo administrar claves de acceso en Microsoft Azure ](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_4.png)
  **figura 4: claves de acceso de almacenamiento**
 
-### <a name="view-and-copy-endpoint-url-links"></a>Ver y copiar vínculos de URL de punto de conexión
-Al crear una cuenta de almacenamiento, se generan las siguientes direcciones URL con el formato:`https://<Storage Account Name>.<Storage Type>.<Endpoint>`
+### <a name="view-and-copy-endpoint-url-links"></a>Visualización y copia de los vínculos de las direcciones URL del punto de conexión
 
-El testigo de la nube siempre usa el **BLOB** como el tipo de almacenamiento. Azure usa **. Core.Windows.net** como punto de conexión. Al configurar el testigo de la nube, es posible que se configure con un punto de conexión diferente según el escenario (por ejemplo, el centro de recursos de Microsoft Azure en China tiene un punto de conexión diferente).
+Al crear una cuenta de almacenamiento, se generan las siguientes direcciones URL con el formato: `https://<Storage Account Name>.<Storage Type>.<Endpoint>`
+
+El testigo de la nube siempre usa **Blob** como tipo de almacenamiento. Azure usa **.core.windows.net** como punto de conexión. Al configurar el testigo de la nube, es posible que se configure con un punto de conexión diferente según el escenario (por ejemplo, el centro de datos de Microsoft Azure en China tiene un punto de conexión diferente).
 
 > [!NOTE]
-> El recurso de testigo en la nube genera automáticamente la dirección URL del punto de conexión y no hay ningún paso adicional de configuración necesario para la dirección URL.
+> El recurso del testigo en la nube genera automáticamente la dirección URL del punto de conexión y no hay ningún paso adicional de configuración que sea necesario para ello.
 
-#### <a name="to-view-and-copy-endpoint-url-links"></a>Para ver y copiar los vínculos de la dirección URL del extremo
+#### <a name="to-view-and-copy-endpoint-url-links"></a>Visualización y copia de los vínculos de las direcciones URL del punto de conexión
+
 En Azure portal, vaya a la cuenta de almacenamiento, haga clic en **toda la configuración** y, luego, haga clic en **propiedades** para ver y copiar las direcciones URL del punto de conexión (consulte la figura 5).
 
 ![Instantánea de los vínculos de punto de conexión de testigo de nube ](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_5.png)
@@ -114,16 +118,20 @@ En Azure portal, vaya a la cuenta de almacenamiento, haga clic en **toda la conf
 Para obtener más información acerca de la creación y administración de cuentas de Azure Storage, consulte [acerca de las cuentas de Azure Storage](/azure/storage/common/storage-account-create)
 
 ## <a name="configure-cloud-witness-as-a-quorum-witness-for-your-cluster"></a>Configuración de un testigo de nube como testigo de quórum para el clúster
+
 La configuración del testigo en la nube está bien integrada en el Asistente para configuración de Cuórum existente integrado en el Administrador de clústeres de conmutación por error.
 
 ### <a name="to-configure-cloud-witness-as-a-quorum-witness"></a>Para configurar el testigo de nube como testigo de Cuórum
+
 1. Inicie Administrador de clústeres de conmutación por error.
+
 2. Haga clic con el botón derecho en el clúster: > **más acciones**  ->  **configurar el cuórum de clúster** (consulte la figura 6). Se inicia el Asistente para configurar Cuórum de clúster.
-    ![Instantánea de la ruta de acceso del menú a la configuración del Cuórum de clúster de configurar en la Administrador de clústeres de conmutación por error UI ](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_7.png) **figura 6. Configuración de Cuórum de clúster**
+
+    ![Instantánea de la ruta de acceso del menú para configurar los valores del Cuórum de clúster en la Administrador de clústeres de conmutación por error UI ](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_7.png) **figura 6. Configuración de Cuórum de clúster**
 
 3. En la página **seleccionar configuraciones de cuórum** , seleccione **seleccionar el testigo de cuórum** (consulte la figura 7).
 
-    ![Instantánea del botón de radio "seleccionar el testigo de quotrum" en el Asistente para Cuórum de clúster ](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_8.png) **figura 7. Seleccionar la configuración de Cuórum**
+    ![Instantánea del botón de radio ' seleccionar el testigo de cuórum ' en el Asistente para Cuórum de clúster ](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_8.png) **figura 7. Seleccionar la configuración de Cuórum**
 
 4. En la página **seleccionar testigo de quórum** , seleccione **configurar un testigo en la nube** (consulte la figura 8).
 
@@ -144,9 +152,10 @@ La configuración del testigo en la nube está bien integrada en el Asistente pa
     ![Configuración correcta del testigo en la nube ](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_11.png) **figura 10: configuración correcta del testigo en la nube**
 
 ### <a name="configuring-cloud-witness-using-powershell"></a>Configuración de un testigo en la nube con PowerShell
-El comando de PowerShell Set-ClusterQuorum existente tiene nuevos parámetros adicionales correspondientes al testigo en la nube.
 
-Puede configurar el testigo en la nube con el [`Set-ClusterQuorum`](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee461013(v=technet.10)) siguiente comando de PowerShell:
+El comando de PowerShell de Set-ClusterQuorum existente tiene nuevos parámetros adicionales correspondientes al testigo en la nube.
+
+Puede configurar el testigo de nube con el cmdlet [`Set-ClusterQuorum`](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum) mediante el siguiente comando de PowerShell:
 
 ```PowerShell
 Set-ClusterQuorum -CloudWitness -AccountName <StorageAccountName> -AccessKey <StorageAccountAccessKey>
@@ -159,13 +168,16 @@ Set-ClusterQuorum -CloudWitness -AccountName <StorageAccountName> -AccessKey <St
 ```
 
 ### <a name="azure-storage-account-considerations-with-cloud-witness"></a>Consideraciones de Azure Storage cuenta con el testigo en la nube
+
 Al configurar un testigo en la nube como testigo de quórum para el clúster de conmutación por error, tenga en cuenta lo siguiente:
-* En lugar de almacenar la clave de acceso, el clúster de conmutación por error generará y almacenará de forma segura un token de seguridad de acceso compartido (SAS).
-* El token de SAS generado es válido siempre y cuando la clave de acceso siga siendo válida. Al rotar la clave de acceso principal, es importante actualizar primero el testigo en la nube (en todos los clústeres que usen esa cuenta de almacenamiento) con la clave de acceso secundaria antes de volver a generar la clave de acceso principal.
-* El testigo en la nube usa la interfaz de REST de HTTPS del servicio de cuenta de Azure Storage. Esto significa que requiere que el Puerto HTTPS esté abierto en todos los nodos del clúster.
+- En lugar de almacenar la clave de acceso, el clúster de conmutación por error generará y almacenará de forma segura un token de seguridad de acceso compartido (SAS).
+- El token de SAS generado es válido siempre y cuando la clave de acceso siga siendo válida. Al rotar la clave de acceso principal, es importante actualizar primero el testigo en la nube (en todos los clústeres que usen esa cuenta de almacenamiento) con la clave de acceso secundaria antes de volver a generar la clave de acceso principal.
+- El testigo en la nube usa la interfaz de REST de HTTPS del servicio de cuenta de Azure Storage. Esto significa que requiere que el Puerto HTTPS esté abierto en todos los nodos del clúster.
 
 ### <a name="proxy-considerations-with-cloud-witness"></a>Consideraciones del proxy con el testigo en la nube
-El testigo en la nube usa HTTPS (puerto predeterminado 443) para establecer la comunicación con el servicio BLOB de Azure. Asegúrese de que el Puerto HTTPS es accesible a través del proxy de red.
+
+El testigo en la nube usa HTTPS (puerto predeterminado 443) para establecer la comunicación con Azure Blob service. Asegúrese de que se puede acceder al puerto HTTPS a través del proxy.
 
 ## <a name="see-also"></a>Consulte también
+
 - [Novedades de los clústeres de conmutación por error de Windows Server](whats-new-in-failover-clustering.md)

@@ -1,17 +1,17 @@
 ---
 title: Habilitar la publicación de hash para servidores de archivos que no son miembros del dominio
-description: Este tema forma parte de la guía de implementación de BranchCache para Windows Server 2016, que muestra cómo implementar BranchCache en los modos de caché distribuida y hospedada para optimizar el uso del ancho de banda WAN en las sucursales.
+description: Obtenga información sobre cómo configurar la publicación de hash para BranchCache mediante el directiva de grupo del equipo local en un servidor de archivos con el servicio de rol BranchCache para archivos de red del rol de servidor servicios de archivo instalado.
 manager: brianlic
 ms.topic: get-started-article
 ms.assetid: 11584b73-f9e2-4530-afa5-b8df970e6b24
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 80c65b20dcbae89ecccb67af22e3f569cd0d5c31
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: bee22a7cad20fc32bcb2f0384fdaa9a9a2d8ffce
+ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969662"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97904230"
 ---
 # <a name="enable-hash-publication-for-non-domain-member-file-servers"></a>Habilitar la publicación de hash para servidores de archivos que no son miembros del dominio
 
@@ -40,7 +40,7 @@ El requisito mínimo para realizar este procedimiento es la pertenencia al grupo
 
 6.  En el cuadro de diálogo **Publicación de hash para BranchCache**, haga clic en **Habilitado**.
 
-7.  En **Opciones**, haga clic en **permitir la publicación de hash para todas las carpetas compartidas**y, a continuación, haga clic en una de las opciones siguientes:
+7.  En **Opciones**, haga clic en **permitir la publicación de hash para todas las carpetas compartidas** y, a continuación, haga clic en una de las opciones siguientes:
 
     1.  Para habilitar la publicación de hash para todas las carpetas compartidas de este equipo, haga clic en **permitir publicación de hash para todas las carpetas compartidas**.
 

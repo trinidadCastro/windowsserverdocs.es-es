@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 4caa619c248a30c48cdfc291f2fde25ba51d85f7
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: b7eb1128a34f366d5a096558118f43473252c8d4
+ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766288"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97904090"
 ---
 # <a name="repair-bde"></a>repair-bde
 
@@ -29,10 +29,13 @@ Intenta reconstruir partes críticas de una unidad gravemente dañada y salvar l
 repair-bde <inputvolume> <outputvolumeorimage> [-rk] [–rp] [-pw] [–kp] [–lf] [-f] [{-?|/?}]
 ```
 
+> [!WARNING]
+> El contenido del volumen de salida se **eliminará por completo y se sobrescribirá** con el contenido descifrado de la unidad BitLocker dañada. Si desea guardar los datos existentes en la unidad de destino seleccionada, mueva primero los datos existentes a otros medios de copia de seguridad de confianza antes de ejecutar el `repair-bde` comando.
+
 ### <a name="parameters"></a>Parámetros
 
-| Parámetro | Descripción |
-|--|--|
+| Parámetro | Description |
+| --- | --- |
 | `<inputvolume>` | Identifica la letra de unidad de la unidad cifrada con BitLocker que desea reparar. La letra de unidad debe incluir un signo de dos puntos. por ejemplo: **C:**. Si no se especifica la ruta de acceso a un paquete de claves, este comando busca un paquete de claves en la unidad. En caso de que la unidad de disco duro esté dañada, es posible que este comando no pueda encontrar el paquete y le pedirá que proporcione la ruta de acceso. |
 | `<outputvolumeorimage>` | Identifica la unidad en la que se va a almacenar el contenido de la unidad reparada. Se sobrescribirá toda la información de la unidad de salida. |
 | -RK | Identifica la ubicación de la clave de recuperación que se debe usar para desbloquear el volumen. Este comando también se puede especificar como **-RecoveryKey**. |
@@ -65,7 +68,7 @@ Para intentar reparar la unidad C: y escribir el contenido de la unidad C: en la
 repair-bde C: D: -rp 111111-222222-333333-444444-555555-666666-777777-888888
 ```
 
->[!NOTE]
+> [!NOTE]
 > La contraseña de recuperación debe escribirse en ocho bloques de seis dígitos con un guion separando cada bloque.
 
 Para forzar la unidad C: a desmontar, intente reparar la unidad C: y, a continuación, escriba el contenido de la unidad C: en la unidad D: con el paquete de claves de recuperación y el archivo de clave de recuperación (RecoveryKey. Bek) almacenados en la unidad F:, escriba:

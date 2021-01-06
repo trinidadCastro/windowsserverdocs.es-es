@@ -1,17 +1,17 @@
 ---
 title: Uso de la directiva de DNS para la implementación de DNS de cerebro dividido
-description: Este tema forma parte de la guía del escenario de la Directiva DNS para Windows Server 2016
+description: 'Obtenga información sobre cómo configurar la Directiva de DNS en Windows Server 2016 para implementaciones de DNS de cerebro dividido, en las que hay dos versiones de una sola zona: una para los usuarios internos de la intranet de la organización y otra para los usuarios externos, que suelen ser usuarios de Internet.'
 manager: brianlic
 ms.topic: article
 ms.assetid: a255a4a5-c1a0-4edc-b41a-211bae397e3c
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 5e9187fd549f9982ab8d0bea5ffa9b45d6e1e3c7
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: fa4e2d5c5c6cedc33ceb4cc9ff2521fb75fe9af9
+ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865284"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97904870"
 ---
 # <a name="use-dns-policy-for-split-brain-dns-deployment"></a>Uso de la Directiva de DNS para la \- implementación de DNS de cerebro dividido
 

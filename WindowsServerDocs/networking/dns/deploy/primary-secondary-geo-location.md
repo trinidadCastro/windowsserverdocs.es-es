@@ -1,17 +1,17 @@
 ---
 title: Uso de directiva DNS para la administración del tráfico basada en la ubicación geográfica con implementaciones primarias-secundarias
-description: Este tema forma parte de la guía del escenario de la Directiva DNS para Windows Server 2016
+description: Obtenga información sobre cómo crear una directiva DNS para la administración del tráfico basada en la ubicación geográfica cuando la implementación de DNS incluye servidores DNS principales y secundarios.
 manager: brianlic
 ms.topic: article
 ms.assetid: a9ee7a56-f062-474f-a61c-9387ff260929
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 5c03f2257a60d2d3a5b566014568be1650b42b94
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 2254b2bfea9949cb14e610ff6e5b08864beb20cb
+ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96864014"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97904900"
 ---
 # <a name="use-dns-policy-for-geo-location-based-traffic-management-with-primary-secondary-deployments"></a>Uso de directiva DNS para la administración del tráfico basada en la ubicación geográfica con implementaciones primarias-secundarias
 

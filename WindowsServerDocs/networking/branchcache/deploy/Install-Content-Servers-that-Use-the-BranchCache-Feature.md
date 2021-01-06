@@ -1,17 +1,17 @@
 ---
 title: Instalar servidores de contenido que utilizan la característica BranchCache
-description: Este tema forma parte de la guía de implementación de BranchCache para Windows Server 2016, que muestra cómo implementar BranchCache en los modos de caché distribuida y hospedada para optimizar el uso del ancho de banda WAN en las sucursales.
+description: Obtenga información acerca de cómo instalar servidores de contenido que usan la característica BranchCache.
 manager: brianlic
 ms.topic: get-started-article
 ms.assetid: 0f00ae6e-ae1b-41e3-8c50-65226b5b9c9e
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 53763db23bc82e90d81bc493e8d02670a5e6e451
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 10f21729aeede7316c91c11d0dbfbe49013dedba
+ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952659"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97904810"
 ---
 # <a name="install-content-servers-that-use-the-branchcache-feature"></a>Instalar servidores de contenido que utilizan la característica BranchCache
 

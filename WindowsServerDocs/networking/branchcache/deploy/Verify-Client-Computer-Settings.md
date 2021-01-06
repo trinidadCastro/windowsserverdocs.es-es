@@ -1,17 +1,17 @@
 ---
 title: Comprobar la configuración del equipo cliente
-description: Este tema forma parte de la guía de implementación de BranchCache para Windows Server 2016, que muestra cómo implementar BranchCache en los modos de caché distribuida y hospedada para optimizar el uso del ancho de banda WAN en las sucursales.
+description: Obtenga información acerca de cómo comprobar que el equipo cliente está configurado correctamente para BranchCache.
 manager: brianlic
 ms.topic: get-started-article
 ms.assetid: 31ea58b0-d407-4f62-8ec6-6a1b19174042
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 14fcc91fc1fcf419a81dd5d774486dc5e0800f4e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 1aeaf2bc86b1a71d0d58be7dce72ba36a63fac01
+ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87937554"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97904460"
 ---
 # <a name="verify-client-computer-settings"></a>Comprobar la configuración del equipo cliente
 
@@ -22,7 +22,7 @@ Puede usar este procedimiento para comprobar que el equipo cliente está configu
 > [!NOTE]
 > En este procedimiento se incluyen los pasos para actualizar manualmente directiva de grupo y para reiniciar el servicio BranchCache. No es necesario realizar estas acciones si se reinicia el equipo, ya que se producirán automáticamente en este caso.
 
-Debe ser miembro de **los administradores**o equivalente para realizar este procedimiento.
+Debe ser miembro de **los administradores** o equivalente para realizar este procedimiento.
 
 ### <a name="to-verify-branchcache-client-computer-settings"></a>Para comprobar la configuración del equipo cliente de BranchCache
 

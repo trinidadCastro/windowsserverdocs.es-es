@@ -1,23 +1,23 @@
 ---
 title: Información general de las directivas DNS
-description: Este tema forma parte de la guía del escenario de la Directiva DNS para Windows Server 2016
+description: Aprenda a usar la Directiva de DNS para la administración del tráfico basada en Geo-Location, las respuestas de DNS inteligentes basadas en la hora del día, para administrar un solo servidor DNS configurado para la \- implementación de cerebro dividido, aplicar filtros en consultas DNS, etc.
 manager: brianlic
 ms.topic: article
 ms.assetid: 566bc270-81c7-48c3-a904-3cba942ad463
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: ef2917f59ff0e5f5bf5566b662f5463b2984261f
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d913905fe5b40e4e3e24828a0c6b392c1691043d
+ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964261"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97904670"
 ---
 # <a name="dns-policies-overview"></a>Información general de las directivas DNS
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Puede usar este tema para obtener información acerca de la Directiva de DNS, que es nueva en Windows Server 2016. Puede usar la Directiva de DNS para la administración del tráfico basada en la ubicación geográfica, las respuestas de DNS inteligentes basadas en la hora del día, para administrar un solo servidor DNS configurado para la \- implementación de cerebro dividido, aplicar filtros en consultas DNS, etc. Los elementos siguientes proporcionan más detalles acerca de estas capacidades.
+Puede usar este tema para obtener información acerca de la Directiva de DNS, que es nueva en Windows Server 2016. Puede usar la Directiva de DNS para la administración del tráfico basada en Geo-Location, las respuestas de DNS inteligentes basadas en la hora del día, para administrar un solo servidor DNS configurado para la \- implementación de cerebro dividido, aplicar filtros en consultas DNS, etc. Los elementos siguientes proporcionan más detalles acerca de estas capacidades.
 
 -   **Equilibrio de carga de la aplicación.** Cuando haya implementado varias instancias de una aplicación en diferentes ubicaciones, puede usar la Directiva de DNS para equilibrar la carga de tráfico entre las distintas instancias de aplicación, asignando dinámicamente la carga de tráfico para la aplicación.
 
@@ -47,10 +47,10 @@ Las directivas de DNS se dividen por nivel y tipo. Puede usar las directivas de 
 
 Puede usar las directivas de resolución de consultas DNS para especificar cómo se administran las consultas de resolución de entrada por un servidor DNS. Cada directiva de resolución de consultas DNS contiene los siguientes elementos:
 
-|Campo|Descripción|Valores posibles|
+|Campo|Description|Valores posibles|
 |---------|---------------|-------------------|
 |**Nombre**|Nombre de la directiva|-Hasta 256 caracteres<br />-Puede contener cualquier carácter válido para un nombre de archivo|
-|**State**|Estado de directiva|-Enable (valor predeterminado)<br />-Deshabilitado|
+|**Estado**|Estado de directiva|-Enable (valor predeterminado)<br />-Deshabilitado|
 |**Level**|Nivel de Directiva|-Servidor<br />-Zona|
 |**Orden de procesamiento**|Una vez que una consulta se clasifica por nivel y se aplica en, el servidor encuentra la primera Directiva para la que la consulta coincide con los criterios y la aplica a la consulta.|-Valor numérico<br />-Valor único por directiva que contiene el mismo nivel y se aplica al valor|
 |**Acción**|Acción que va a realizar el servidor DNS|-Allow (valor predeterminado para el nivel de zona)<br />-Deny (valor predeterminado en el nivel de servidor)<br />-Ignore|
@@ -69,7 +69,7 @@ El campo criterios de la Directiva de DNS se compone de dos elementos:
 |     **Protocolo de transporte**      |        Protocolo de transporte utilizado en la consulta. Las entradas posibles son **UDP** y **TCP**        |                                                                                                                    -   **EQ, TCP**<br />-   **EQ, UDP**                                                                                                                     |
 |      **Protocolo de Internet**      |        Protocolo de red utilizado en la consulta. Las entradas posibles son **IPv4** e **IPv6**        |                                                                                                                   -   **EQ, IPv4**<br />-   **EQ, IPv6**                                                                                                                    |
 | **Dirección IP de la interfaz de servidor** |                   Dirección IP de la interfaz de red del servidor DNS entrante                   |                                                                                                              -   **EQ, 10.0.0.1**<br />-   **EQ, 192.168.1.1**                                                                                                              |
-|            **FQDN**             |            FQDN del registro en la consulta, con la posibilidad de usar un carácter comodín            | -   **EQ, www. contoso. com** : se resuelve como true solo si la consulta está intentando resolver el FQDN de <em>www.contoso.com</em><br />-   **EQ, \* . contoso.com, \* . Woodgrove.com** : se resuelve como true si la consulta es para cualquier registro que termine en *contoso.com***o***Woodgrove.com* |
+|            **FQDN**             |            FQDN del registro en la consulta, con la posibilidad de usar un carácter comodín            | -   **EQ, www. contoso. com** : se resuelve como true solo si la consulta está intentando resolver el FQDN de <em>www.contoso.com</em><br />-   **EQ, \* . contoso.com, \* . Woodgrove.com** : se resuelve como true si la consulta es para cualquier registro que termine en * contoso.com ***o**_Woodgrove.com_ |
 |         **Tipo de consulta**          |                          Tipo de registro que se consulta (A, SRV, TXT)                          |                                                  -   **EQ, txt, SRV** : se resuelve como true si la consulta solicita un registro TXT **o** SRV<br />-   **EQ, mx** : se resuelve como true si la consulta solicita un registro MX                                                   |
 |         **Hora del día**         |                              Hora del día en que se recibe la consulta                               |                                                                    -   **EQ, 10:00-12:00, 22:00-23:00** -se resuelve como true si la consulta se recibe entre 10 AM y mediodía, **o** entre 10PM y 11 p.m.                                                                    |
 
@@ -189,12 +189,12 @@ Para obtener información sobre cómo usar la Directiva de DNS para escenarios e
 - [Uso de directiva DNS para la administración del tráfico basada en la ubicación geográfica con implementaciones primarias-secundarias](primary-secondary-geo-location.md)
 - [Uso de la directiva de DNS para las respuestas DNS inteligentes basadas en la hora del día](dns-tod-intelligent.md)
 - [Respuestas DNS basadas en la hora del día con un servidor de aplicaciones en la nube de Azure](dns-tod-azure-cloud-app-server.md)
-- [Uso de la Directiva de DNS para la implementación de DNS de cerebro dividido](split-brain-DNS-deployment.md)
-- [Usar la Directiva de DNS para DNS de cerebro dividido en Active Directory](dns-sb-with-ad.md)
+- [Usar la Directiva DNS para la implementación de DNS de Split-Brain](split-brain-DNS-deployment.md)
+- [Usar la Directiva de DNS para Split-Brain DNS en Active Directory](dns-sb-with-ad.md)
 - [Usar la Directiva de DNS para aplicar filtros en consultas DNS](apply-filters-on-dns-queries.md)
 - [Uso de la directiva de DNS para el equilibrio de carga de aplicación](app-lb.md)
 - [Uso de la directiva de DNS para equilibrio de carga de aplicación con reconocimiento de ubicación geográfica](app-lb-geo.md)
 
-## <a name="using-dns-policy-on-read-only-domain-controllers"></a>Usar la Directiva DNS en controladores de dominio de solo lectura
+## <a name="using-dns-policy-on-read-only-domain-controllers"></a>Uso de la Directiva DNS en controladores de dominio de Read-Only
 
-La Directiva DNS es compatible con los controladores de dominio de solo lectura. Tenga en cuenta que es necesario reiniciar el servicio servidor DNS para que se carguen las nuevas directivas DNS en los controladores de dominio de solo lectura. Esto no es necesario en los controladores de dominio de escritura.
+La Directiva DNS es compatible con los controladores de dominio de Read-Only. Tenga en cuenta que es necesario reiniciar el servicio servidor DNS para que se carguen las nuevas directivas DNS en Read-Only controladores de dominio. Esto no es necesario en los controladores de dominio de escritura.
