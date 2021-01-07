@@ -6,12 +6,13 @@ ms.assetid: c4306f06-a117-4f65-b78b-9fd0d1133f95
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: d777824d8e88cdb4e96f669fba9a96269783443b
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.date: 08/07/2020
+ms.openlocfilehash: f1a3b76c0939e0b6dbe445799bdc9c96c4f16f1f
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997262"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97950391"
 ---
 # <a name="qos-policy-scenarios"></a>Escenarios de directivas QoS
 
@@ -48,7 +49,7 @@ Con tres objetivos independientes para lograr, el administrador de ti decide cre
 
 #### <a name="qos-policy-for-lob-app-servers"></a>Directiva QoS para servidores de aplicaciones LOB
 
-La primera \- aplicación crítica para la que el Departamento de ti crea una directiva de QoS es una \- aplicación ERP de planeamiento de recursos empresariales de toda la empresa \( \) . La aplicación ERP se hospeda en varios equipos que ejecutan Windows Server 2016. En Active Directory Domain Services, estos equipos son miembros de la unidad organizativa de unidades organizativas \( \) que se creó para \( los servidores de aplicaciones LOB de línea de negocio \) . El \- componente del lado cliente de la aplicación ERP se instala en los equipos que ejecutan Windows 10 y Windows 8.1.
+La primera \- aplicación crítica para la que el Departamento de ti crea una directiva de QoS es una \- aplicación ERP de planeamiento de recursos empresariales de toda la empresa \( \) . La aplicación ERP se hospeda en varios equipos que ejecutan Windows Server 2016. En Active Directory Domain Services, estos equipos son miembros de la unidad organizativa de unidades organizativas \( \) que se creó para \( los servidores de aplicaciones LOB de línea de negocio \)  . El \- componente del lado cliente de la aplicación ERP se instala en los equipos que ejecutan Windows 10 y Windows 8.1.
 
 En directiva de grupo, un administrador de ti selecciona el GPO de objeto directiva de grupo en \( \) el que se aplicará la directiva QoS. Mediante el Asistente para directivas de QoS, el administrador de ti crea una directiva de QoS denominada "Directiva de LOB del servidor" que especifica un \- valor de DSCP de alta prioridad de 44 para todas las aplicaciones, cualquier dirección IP, TCP, UDP y número de puerto.
 
@@ -161,11 +162,11 @@ Todas las direcciones URL siguientes son válidas y se pueden especificar en la 
 
 Los detalles son los siguientes:
 
-####  <a name="1-url-scheme"></a><a name="bkmk_QoS_UrlScheme"></a>1. esquema de dirección URL
+####  <a name="1-url-scheme"></a><a name="bkmk_QoS_UrlScheme"></a> 1. esquema de dirección URL
 
- `https://`tiene una prioridad mayor que `https://` .
+ `https://` tiene una prioridad mayor que `https://` .
 
-####  <a name="2-url-host"></a><a name="bkmk_QoS_UrlHost"></a>2. host de dirección URL
+####  <a name="2-url-host"></a><a name="bkmk_QoS_UrlHost"></a> 2. host de dirección URL
 
  De la prioridad más alta a la más baja, son:
 
@@ -189,11 +190,11 @@ En el caso del nombre de host, un nombre de host con más elementos de puntos (m
 
   **video.Internal.Training.hr.mycompany.com** tiene la prioridad más alta y **selfguide.Training.mycompany.com** tiene la siguiente prioridad más alta. El **entrenamiento** y el recurso compartido de **biblioteca** tienen la misma prioridad mínima.
 
-####  <a name="3-url-port"></a><a name="bkmk_QoS_UrlPort"></a>3. Puerto de dirección URL
+####  <a name="3-url-port"></a><a name="bkmk_QoS_UrlPort"></a> 3. Puerto de dirección URL
 
 Un número de puerto específico o implícito tiene una prioridad más alta que un puerto comodín.
 
-####  <a name="4-url-path"></a><a name="bkmk_QoS_UrlPath"></a>4. ruta de acceso URL
+####  <a name="4-url-path"></a><a name="bkmk_QoS_UrlPath"></a> 4. ruta de acceso URL
 
 Al igual que un nombre de host, una ruta de dirección URL puede constar de varios elementos. El que tiene más elementos siempre tiene una prioridad más alta que la que tiene menos. Por ejemplo, las siguientes rutas de acceso se enumeran por prioridad:
 

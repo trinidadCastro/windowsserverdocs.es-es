@@ -2,16 +2,17 @@
 title: Implementar BranchCache
 description: Obtenga información sobre cómo implementar BranchCache en los modos de caché distribuida y hospedada.
 manager: brianlic
-ms.topic: get-started-article
+ms.topic: how-to
 ms.assetid: 30b0a6d9-d6d5-4019-b8dc-ed5365d9921f
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 044e5281f40f8358354607d9c182ce8c037ea1da
-ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
+ms.date: 01/05/2021
+ms.openlocfilehash: f90f54147aadd550acb495e1e98e4159de7ab27e
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97904840"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97950561"
 ---
 # <a name="deploy-branchcache"></a>Implementar BranchCache
 

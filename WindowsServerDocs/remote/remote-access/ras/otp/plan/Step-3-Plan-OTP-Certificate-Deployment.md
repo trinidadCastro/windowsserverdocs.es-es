@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: eca02eeb-d92d-463e-aae0-1f7038ba26fe
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 2653d316d3407604b2d1034eb71aeae87bd6c112
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 8c6898b6447e5d8c3a72653435028a7413fbb9c9
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87968942"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97950451"
 ---
 # <a name="step-3-plan-otp-certificate-deployment"></a>Paso 3 planear la implementación de certificados OTP
 
@@ -67,7 +68,7 @@ Cada cliente de DirectAccess requiere un certificado de autenticación de OTP pa
 ## <a name="33-plan-the-registration-authority-certificate"></a><a name="bkmk_33RACert"></a>3,3 planear el certificado de la autoridad de registro
 Cuando los clientes de DirectAccess solicitan un certificado OTP, el servidor de acceso remoto recibe la solicitud del cliente. El servidor de acceso remoto firma todas las solicitudes de certificados OTP de los clientes que usan el certificado de la entidad de registro. La CA emite certificados solo si la solicitud está firmada por el certificado de la autoridad de registro en el servidor de acceso remoto. El certificado debe estar emitido por una CA interna, el certificado no se puede firmar automáticamente. No es necesario que lo emita la CA que emitió los certificados OTP, pero la CA que emite los certificados OTP debe confiar en la CA que emite el certificado de firma de autoridad de registro.
 
-## <a name="see-also"></a><a name="BKMK_Links"></a>Vea también
+## <a name="see-also"></a><a name="BKMK_Links"></a>Otras referencias
 
 -   [Paso 4: planear la OTP para el servidor de acceso remoto](Step-4-Plan-for-OTP-on-the-Remote-Access-Server.md)
 

@@ -7,12 +7,12 @@ manager: femila
 ms.date: 05/31/2017
 ms.topic: article
 ms.author: billmath
-ms.openlocfilehash: 096a6fe94d408e5b44e329b3db9faa4f8f84bebd
-ms.sourcegitcommit: 3247e193d9fe1b57543fff215460a6d9db52f58b
+ms.openlocfilehash: dd21c304535ce9f80a946cf5faede2667284eeb3
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97814974"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97950331"
 ---
 # <a name="checklist-setting-up-a-federation-server-proxy"></a>Lista de comprobación: configurar un servidor proxy de federación
 
@@ -36,5 +36,5 @@ Esta lista de comprobación incluye las tareas de implementación para preparar 
 |Después de obtener un certificado de autenticación del servidor, debe instalarlo en Internet Information Services \( IIS \) en el sitio web predeterminado del servidor proxy de Federación.|![Icono para el vínculo importar un certificado de autenticación de servidor al sitio web predeterminado que puede usar en referencia a la configuración de un servidor proxy de Federación. ](media/15dd35b6-6cc6-421f-93f8-7109920e7144.gif)[Importar un certificado de autenticación del servidor al sitio web predeterminado](Import-a-Server-Authentication-Certificate-to-the-Default-Web-Site.md)|
 |\(Opcional \) como alternativa a obtener un certificado de autenticación de servidor de una CA de entidad de certificación \( \) , puede usar IIS para adquirir un certificado de ejemplo para el servidor proxy de Federación.<p>Dado que IIS genera un \- certificado autofirmado que no se origina en un origen de confianza, úselo para crear un \- certificado autofirmado solo en los siguientes escenarios:<p>-Si tiene que crear un \( \) canal SSL de capa de sockets seguros entre el servidor y un grupo de usuarios limitado.<br />-Cuando tenga que solucionar problemas de certificados de terceros, \- **PRECAUCIÓN:** no es un procedimiento recomendado de seguridad implementar un servidor proxy de Federación en un entorno de producción mediante un \- certificado de autenticación de servidor autofirmado.|![Icono del vínculo IIS: crear un \- certificado de servidor autofirmado que puede usar en referencia para configurar un servidor proxy de Federación.](media/15dd35b6-6cc6-421f-93f8-7109920e7144.gif)[ IIS: crear un \- certificado de servidor autofirmado](https://go.microsoft.com/fwlink/?LinkID=108271)|
 |Instale el servicio de rol de Proxy de Servicio de federación en el equipo que se convertirá en el servidor proxy de Federación.|![Icono del vínculo instalar el servicio de rol de Proxy de Servicio de federación que puede usar en referencia para configurar un servidor proxy de Federación. ](media/15dd35b6-6cc6-421f-93f8-7109920e7144.gif)[Instalación del servicio de rol de proxy de servicio de Federación](Install-the-Federation-Service-Proxy-Role-Service.md)|
-|Configure el software de AD FS en el equipo para que actúe en el rol de servidor proxy de Federación mediante el Asistente para configuración de servidor proxy de AD FSFederation.|![Icono del vínculo configurar un equipo para el rol de servidor proxy de Federación que puede usar en referencia para configurar un servidor proxy de Federación. ](media/15dd35b6-6cc6-421f-93f8-7109920e7144.gif)[Configurar un equipo para el rol de servidor proxy de Federación](Configure-a-Computer-for-the-Federation-Server-Proxy-Role.md)|
+|Configura el software AD FS en el equipo para que tenga el rol de servidor proxy de federación mediante el Asistente para la configuración del servidor proxy de federación de AD FS.|![Icono del vínculo configurar un equipo para el rol de servidor proxy de Federación que puede usar en referencia para configurar un servidor proxy de Federación. ](media/15dd35b6-6cc6-421f-93f8-7109920e7144.gif)[Configurar un equipo para el rol de servidor proxy de Federación](Configure-a-Computer-for-the-Federation-Server-Proxy-Role.md)|
 |En el Visor de eventos, compruebe que el servicio de servidor proxy de federación se ha iniciado.|![configuración de un servidor proxy federado](media/15dd35b6-6cc6-421f-93f8-7109920e7144.gif)[comprobar que un servidor proxy de Federación está operativo](Verify-That-a-Federation-Server-Proxy-Is-Operational.md)|

@@ -1,17 +1,18 @@
 ---
 title: Solucionar problemas generales
-description: Este tema forma parte de la guía de implementación de varios servidores de acceso remoto en una implementación multisitio en Windows Server 2016.
+description: Obtenga información acerca de cómo solucionar problemas generales relacionados con el acceso remoto.
 manager: brianlic
 ms.topic: article
 ms.assetid: 354ae5e3-bae1-44f9-afd7-7eaba70f2346
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 911d12088acc5071e18e7e24000364d9fe539250
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: d0866ca88f109d6304fe7da4e424506c22defc52
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87958483"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97950531"
 ---
 # <a name="troubleshooting-general-issues"></a>Solucionar problemas generales
 

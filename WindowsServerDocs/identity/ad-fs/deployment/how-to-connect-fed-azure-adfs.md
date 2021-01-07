@@ -4,15 +4,15 @@ description: En este documento aprenderá cómo implementar AD FS en Azure para 
 author: billmath
 manager: mtillman
 ms.assetid: 692a188c-badc-44aa-ba86-71c0e8074510
-ms.topic: get-started-article
+ms.topic: how-to
 ms.date: 10/28/2018
 ms.author: billmath
-ms.openlocfilehash: a077a76814cc5ed99d4a1c0eb6c23584b22363e1
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: 9fe31d3cfbed9b81706571c7bc578239453810c9
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766758"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97950501"
 ---
 # <a name="deploying-active-directory-federation-services-in-azure"></a>Implementación de Active Directory Federation Services en Azure
 AD FS proporciona funcionalidades de una federación de identidades simplificada y protegida, así como de inicio de sesión único (SSO) web. La federación con Azure AD u Office 365 permite a los usuarios autenticarse con credenciales locales y acceder a todos los recursos en la nube. Por tanto, es importante disponer de una infraestructura de AD FS de alta disponibilidad para garantizar el acceso a los recursos locales y en la nube. La implementación de AD FS en Azure puede ayudar a lograr la alta disponibilidad necesaria con el mínimo esfuerzo.
@@ -107,7 +107,7 @@ Al crear los conjuntos de disponibilidad, es esencial decidir lo siguiente:
 
 Creación de los siguientes conjuntos de disponibilidad
 
-| Conjunto de disponibilidad | Rol | Dominios de error | Dominios de actualización |
+| Conjunto de disponibilidad | Role | Dominios de error | Dominios de actualización |
 |:---:|:---:|:---:|:--- |
 | contosodcset |DC/ADFS |3 |5 |
 | contosowapset |WAP |3 |5 |
@@ -115,7 +115,7 @@ Creación de los siguientes conjuntos de disponibilidad
 ### <a name="4-deploy-virtual-machines"></a>4. implementación de máquinas virtuales
 El siguiente paso es implementar las máquinas virtuales que hospedarán los distintos roles en su infraestructura. Se recomienda un mínimo de dos máquinas en cada conjunto de disponibilidad. Cree cuatro máquinas virtuales para la implementación básica.
 
-| Máquina | Rol | Subnet | Conjunto de disponibilidad | Cuenta de almacenamiento | Dirección IP |
+| Máquina | Role | Subnet | Conjunto de disponibilidad | Cuenta de almacenamiento | Dirección IP |
 |:---:|:---:|:---:|:---:|:---:|:---:|
 | contosodc1 |DC/ADFS |INT |contosodcset |contososac1 |Estático |
 | contosodc2 |DC/ADFS |INT |contosodcset |contososac2 |Estático |
@@ -131,7 +131,7 @@ Una vez completada la implementación, el panel Máquinas virtuales debe ser sim
 ### <a name="5-configuring-the-domain-controller--ad-fs-servers"></a>5. configurar el controlador de dominio o los servidores de AD FS
  Para autenticar cualquier solicitud entrante, AD FS deberá ponerse en contacto con el controlador de dominio. Para evitar el costoso recorrido de Azure a controlador de dominio local para la autenticación, se recomienda implementar una réplica del controlador de dominio en Azure. Para lograr una alta disponibilidad, se recomienda crear un conjunto de disponibilidad con al menos dos de controladores de dominio.
 
-| Controlador de dominio | Rol | Cuenta de almacenamiento |
+| Controlador de dominio | Role | Cuenta de almacenamiento |
 |:---:|:---:|:---:|
 | contosodc1 |Réplica |contososac1 |
 | contosodc2 |Réplica |contososac2 |
@@ -275,7 +275,7 @@ En general, necesita las siguientes reglas para proteger eficazmente la subred i
 
 | Regla | Descripción | Flujo |
 |:--- |:--- |:---:|
-| AllowHTTPSFromDMZ |Permitir la comunicación HTTPS desde la red perimetral |Entrante |
+| AllowHTTPSFromDMZ |Permitir la comunicación HTTPS desde la red perimetral |Entrada |
 | DenyInternetOutbound |Sin acceso a Internet |Salida |
 
 ![Reglas de acceso INT (entrantes)](./media/how-to-connect-fed-azure-adfs/nsg_int.png)
@@ -284,7 +284,7 @@ En general, necesita las siguientes reglas para proteger eficazmente la subred i
 
 | Regla | Descripción | Flujo |
 |:--- |:--- |:---:|
-| AllowHTTPSFromInternet |Permite HTTPS de Internet a la red perimetral |Entrante |
+| AllowHTTPSFromInternet |Permite HTTPS de Internet a la red perimetral |Entrada |
 | DenyInternetOutbound |No se bloquea nada, excepto HTTPS a Internet |Salida |
 
 ![Reglas de acceso EXT (entrantes)](./media/how-to-connect-fed-azure-adfs/nsg_dmz.png)

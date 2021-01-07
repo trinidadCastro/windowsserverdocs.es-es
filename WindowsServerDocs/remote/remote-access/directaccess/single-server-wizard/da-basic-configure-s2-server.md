@@ -1,17 +1,18 @@
 ---
 title: Paso 2 configurar el servidor de DirectAccess básico
-description: Este tema forma parte de la guía de implementación de un único servidor de DirectAccess con el Asistente para Introducción para Windows Server 2016
+description: Obtenga información sobre cómo configurar las opciones de cliente y servidor necesarias para una implementación básica de DirectAccess.
 manager: brianlic
 ms.topic: article
 ms.assetid: 82bf5fed-93b3-4fa6-8e71-522146eccdb1
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: c70e68d6bdf96cd8493720936121b1ea90a9e971
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.date: 08/07/2020
+ms.openlocfilehash: 5e42d6c73701e7aa07e2f69b3d867258723bc7fd
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87995911"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97950471"
 ---
 # <a name="step-2-configure-the-basic-directaccess-server"></a>Paso 2 configurar el servidor de DirectAccess básico
 
@@ -41,13 +42,13 @@ Para implementar acceso remoto debes instalar el rol de acceso remoto en un serv
 
 4.  En el cuadro de diálogo **Seleccionar características**, haga clic en **Siguiente**.
 
-5.  Haga clic en **siguiente**y, a continuación, en el cuadro de diálogo **seleccionar servicios de rol** , haga clic en la casilla **DirectAccess y VPN (RAS)** .
+5.  Haga clic en **siguiente** y, a continuación, en el cuadro de diálogo **seleccionar servicios de rol** , haga clic en la casilla **DirectAccess y VPN (RAS)** .
 
-6.  Haga clic en **Agregar características**, haga clic en **siguiente**y, a continuación, haga clic en **instalar**.
+6.  Haga clic en **Agregar características**, haga clic en **siguiente** y, a continuación, haga clic en **instalar**.
 
 7.  En el cuadro de diálogo **Progreso de la instalación**, compruebe que la instalación se ha realizado correctamente y, a continuación, haga clic en **Cerrar**.
 
-![](../../../media/Step-2-Configure-the-DirectAccess-Server/PowerShellLogoSmall.gif)***<em>Comandos equivalentes</em> de Windows PowerShell Windows PowerShell***
+![](../../../media/Step-2-Configure-the-DirectAccess-Server/PowerShellLogoSmall.gif) * *_<em>Comandos equivalentes</em>_* de Windows PowerShell para Windows PowerShell _
 
 El siguiente cmdlet o cmdlets de Windows PowerShell instala el rol de acceso remoto:
 
@@ -78,7 +79,7 @@ El siguiente cmdlet o cmdlets de Windows PowerShell instala el rol de acceso rem
 
 #### <a name="to-configure-directaccess-using-the-getting-started-wizard"></a>Para configurar DirectAccess con el Asistente para introducción
 
-1.  En Administrador del servidor haga clic en **Herramientas** y, a continuación, haga clic en **Administración de acceso remoto**.
+1.  En Administrador del servidor haga clic en _ * herramientas * * y, a continuación, haga clic en **Administración de acceso remoto**.
 
 2.  En la consola de administración de acceso remoto, seleccione el servicio de función que desee configurar en el panel de navegación izquierdo y, a continuación, haga clic en **ejecutar el Asistente para introducción**.
 

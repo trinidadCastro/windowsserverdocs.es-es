@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 9afeced4-1a9b-4cb3-9fc4-d7e44c675755
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 5f442608fc21069a400acf0ded8d955e51791111
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 833221ee118c758ffc2ade7419ee75cf82bf9f35
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87950950"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97950351"
 ---
 # <a name="overview-of-the-test-lab-scenario"></a>Información general sobre el escenario de laboratorio de pruebas
 
@@ -35,7 +36,7 @@ En este escenario de laboratorio de pruebas, DirectAccess se implementa con:
 
 -   **NAT1**: un equipo cliente que está configurado como un dispositivo de traductor de direcciones de red (NAT) mediante conexión compartida A Internet.
 
--   **CLIENT1 y cliente2**: dos equipos cliente que están configurados como clientes de DirectAccess que se usarán para probar la conectividad de DirectAccess al moverse entre la red interna, la Internet simulada y una red doméstica. **Cliente2** es un cliente de Windows 7 &reg; .
+-   **CLIENT1 y cliente2**: dos equipos cliente que están configurados como clientes de DirectAccess que se usarán para probar la conectividad de DirectAccess al moverse entre la red interna, la Internet simulada y una red doméstica. **Cliente2** es un cliente de Windows 7 &reg;  .
 
 El laboratorio de pruebas consta de cuatro subredes que simulan lo siguiente:
 

@@ -6,12 +6,13 @@ ms.assetid: 25097cb8-b9b1-41c9-b3c7-3610a032e0d8
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: eca49b5b20e34aca9c5e65b1544f2308295d7445
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: d95ed99889eef110f45f5c672b7491d7bbe1cdcc
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953871"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97950291"
 ---
 # <a name="qos-policy-architecture"></a>Arquitectura de la directiva QoS
 
@@ -37,7 +38,7 @@ La arquitectura de QoS basada en Directiva consta de los siguientes componentes:
 
 - **NDIS 6. x**. Una interfaz estándar entre los controladores de red en modo kernel y el sistema operativo en Windows Server y los sistemas operativos cliente. NDIS 6. x es compatible con los filtros ligeros, que es un modelo de controlador simplificado para controladores intermedios NDIS y controladores de minipuerto que proporcionan un mejor rendimiento.
 
-- Interfaz del proveedor de ** \( red QoS NPI \) **. Interfaz para que los controladores de modo kernel interactúen con Pacer.sys.
+- Interfaz del proveedor de **\( red QoS NPI \)**. Interfaz para que los controladores de modo kernel interactúen con Pacer.sys.
 
 - **Pacer.sys**. Un controlador de filtro ligero de NDIS 6. x que controla la programación de paquetes para QoS basada en directivas y para el tráfico de aplicaciones que usan las \( API de control de tráfico y GQoS de QoS genérico \) \( \) . Pacer.sys reemplaza Psched.sys en Windows Server 2003 y Windows XP. Pacer.sys se instala con el componente programador de paquetes QoS de las propiedades de una conexión de red o adaptador.
 

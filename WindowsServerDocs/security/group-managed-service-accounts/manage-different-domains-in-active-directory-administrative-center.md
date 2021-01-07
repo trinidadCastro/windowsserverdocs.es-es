@@ -6,12 +6,13 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: c793c30c6637a050d2b2cbb055ec289e3c3e8f20
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.topic: article
+ms.openlocfilehash: e3aaf9a999ba2d87e10eaeaace0d39450b1e13bf
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89638033"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97950481"
 ---
 # <a name="manage-different-domains-in-active-directory-administrative-center"></a>Administrar dominios diferentes en Centro de administración de Active Directory
 
@@ -28,12 +29,12 @@ ms.locfileid: "89638033"
 
 ### <a name="windows-server-2012-to-manage-a-foreign-domain-in-the-selected-instance-of-active-directory-administrative-center-using-the-current-set-of-logon-credentials"></a>Windows Server 2012: para administrar un dominio externo en la instancia seleccionada de Centro de administración de Active Directory con el conjunto actual de credenciales de inicio de sesión
 
-1.  Para abrir Centro de administración de Active Directory, en **Administrador del servidor**, haga clic en **herramientas**y, a continuación, haga clic en **centro de administración de Active Directory**.
+1.  Para abrir Centro de administración de Active Directory, en **Administrador del servidor**, haga clic en **herramientas** y, a continuación, haga clic en **centro de administración de Active Directory**.
 
     > [!NOTE]
-    >  Otra manera de abrir Centro de administración de Active Directory es hacer clic en **Inicio**y, a continuación, escribir **dsac.exe**.
+    >  Otra manera de abrir Centro de administración de Active Directory es hacer clic en **Inicio** y, a continuación, escribir **dsac.exe**.
 
-2.  Para abrir **agregar nodos de navegación**, haga clic en **administrar**y, a continuación, haga clic en **agregar nodos de navegación** , tal como se muestra en la siguiente ilustración.
+2.  Para abrir **agregar nodos de navegación**, haga clic en **administrar** y, a continuación, haga clic en **agregar nodos de navegación** , tal como se muestra en la siguiente ilustración.
 
      ![Captura de pantalla que muestra la interfaz de usuario agregar nodos de navegación * *](media/ADDS_ADACAddNavNode.gif)
 

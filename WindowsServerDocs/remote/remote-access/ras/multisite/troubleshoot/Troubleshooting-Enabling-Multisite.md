@@ -1,17 +1,18 @@
 ---
 title: Solucionar problemas relacionados con la activación de multisitio
-description: Este tema forma parte de la guía de implementación de varios servidores de acceso remoto en una implementación multisitio en Windows Server 2016.
+description: Obtenga información sobre cómo solucionar problemas relacionados con el comando Enable-DAMultisite.
 manager: brianlic
 ms.topic: article
 ms.assetid: 570c81d6-c4f4-464c-bee9-0acbd4993584
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 97e33b08d84b4e1aa4a5cb17aca331456e0402d2
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: abbafdb86edb65efff63eda414baca37e16573fc
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87958493"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97950541"
 ---
 # <a name="troubleshooting-enabling-multisite"></a>Solucionar problemas relacionados con la activación de multisitio
 
@@ -134,7 +135,7 @@ No se pudieron guardar los cambios en el GPO de servidor debido a problemas de c
 Asegúrese de que hay conectividad entre el servidor de acceso remoto y el controlador de dominio. Si la hay, compruebe en el controlador de dominio si otro usuario ha bloqueado el archivo registry.pol y, en caso necesario, finalice la sesión de dicho usuario para desbloquearlo.
 
 ## <a name="internal-error-occurred"></a><a name="InternalServerError"></a>Error interno
-**Error recibido**. Se ha producido un error interno.
+**Error recibido**. Error interno.
 
 **Causa**
 

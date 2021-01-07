@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: f04eb11e-ed5f-42a1-a77b-57a248ba2d10
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 03a5d5056db90939c307cd7e23550a8aa000e3a1
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 431e88c552b0df94808ce5ce0069f569c3a87d8f
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969212"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97950381"
 ---
 # <a name="step-3-install-and-configure-edge2"></a>Paso 3 instalación y configuración de EDGE2
 
@@ -33,13 +34,13 @@ Realice los pasos siguientes para configurar EDGE2:
 
 ## <a name="configure-tcpip-properties"></a><a name="TCP"></a>Configurar las propiedades TCP/IP
 
-1.  En la consola de Administrador del servidor, haga clic en **servidor local**y, a continuación, en el área **propiedades** , junto a **conexión cableada Ethernet**, haga clic en el vínculo.
+1.  En la consola de Administrador del servidor, haga clic en **servidor local** y, a continuación, en el área **propiedades** , junto a **conexión cableada Ethernet**, haga clic en el vínculo.
 
 2.  En la ventana **conexiones de red** , haga clic con el botón secundario en la conexión de red que está conectada a la subred corporativa o al conmutador virtual y, a continuación, haga clic en **cambiar nombre**.
 
-3.  Escriba **CorpNet**y presione Entrar.
+3.  Escriba **CorpNet** y presione Entrar.
 
-4.  Haga clic con el botón secundario en **CorpNet**y, a continuación, haga clic en **propiedades**.
+4.  Haga clic con el botón secundario en **CorpNet** y, a continuación, haga clic en **propiedades**.
 
 5.  Haga clic en **Protocolo de Internet versión 4 (TCP/IPv4)** y, a continuación, en **Propiedades**.
 
@@ -47,9 +48,9 @@ Realice los pasos siguientes para configurar EDGE2:
 
 7.  Haga clic en **Usar las siguientes direcciones de servidor DNS**. En **Servidor DNS preferido**, escriba **10.0.0.1**.
 
-8.  Haga clic en ** Opciones avanzadas** y, a continuación, haga clic en la pestaña **DNS**.
+8.  Haga clic en **Opciones avanzadas** y, a continuación, haga clic en la pestaña **DNS**.
 
-9. En **sufijo DNS para esta conexión**, escriba **Corp.contoso.com**y haga clic en **Aceptar** dos veces.
+9. En **sufijo DNS para esta conexión**, escriba **Corp.contoso.com** y haga clic en **Aceptar** dos veces.
 
 10. Haga clic en **Protocolo de Internet versión 6 (TCP/IPv6)** y, a continuación, haga clic en **Propiedades**.
 
@@ -57,13 +58,13 @@ Realice los pasos siguientes para configurar EDGE2:
 
 12. Haga clic en **Usar las siguientes direcciones de servidor DNS**. En **servidor DNS preferido**, escriba **2001: db8:1:: 1**.
 
-13. Haga clic en ** Opciones avanzadas** y, a continuación, haga clic en la pestaña **DNS**.
+13. Haga clic en **Opciones avanzadas** y, a continuación, haga clic en la pestaña **DNS**.
 
 14. En **sufijo DNS para esta conexión**, escriba **Corp.contoso.com**, haga clic en **Aceptar** dos veces y, a continuación, haga clic en **cerrar**.
 
 15. En la ventana **conexiones de red** , haga clic con el botón secundario en la conexión de red que está conectada a la subred de Internet y, a continuación, haga clic en **cambiar nombre**.
 
-16. Escriba **Internet**y, a continuación, presione Entrar.
+16. Escriba **Internet** y, a continuación, presione Entrar.
 
 17. Haga clic con el botón secundario en **Internet** y, a continuación, haga clic en **Propiedades**.
 
@@ -73,11 +74,11 @@ Realice los pasos siguientes para configurar EDGE2:
 
 20. Haga clic en la pestaña **DNS** .
 
-21. En **sufijo DNS para esta conexión**, escriba **ISP.example.com**y, a continuación, haga clic en **Aceptar** dos veces y, a continuación, haga clic en **cerrar**.
+21. En **sufijo DNS para esta conexión**, escriba **ISP.example.com** y, a continuación, haga clic en **Aceptar** dos veces y, a continuación, haga clic en **cerrar**.
 
 22. Cierre la ventana **Conexiones de red**.
 
-23. Para comprobar la comunicación de red entre EDGE2 y DC1, haga clic en **Inicio**, escriba **cmd**y, a continuación, presione Entrar.
+23. Para comprobar la comunicación de red entre EDGE2 y DC1, haga clic en **Inicio**, escriba **cmd** y, a continuación, presione Entrar.
 
 24. En la ventana del símbolo del sistema, escriba **ping DC1.Corp.contoso.com** y presione Entrar. Compruebe que hay cuatro respuestas desde 10.0.0.1 o la dirección IPv6 2001: db8:1:: 1
 
@@ -89,7 +90,7 @@ Realice los pasos siguientes para configurar EDGE2:
 
 2.  En el cuadro de diálogo **Propiedades del sistema**, en la pestaña **Nombre de equipo** haz clic en **Cambiar**.
 
-3.  En el cuadro de diálogo cambios en el **dominio o el nombre del equipo** , en el cuadro **nombre de equipo** , escriba **EDGE2**. En el área **miembro de** , haga clic en **dominio**y, en el cuadro de texto, escriba **Corp.contoso.com**y, a continuación, haga clic en **Aceptar**.
+3.  En el cuadro de diálogo cambios en el **dominio o el nombre del equipo** , en el cuadro **nombre de equipo** , escriba **EDGE2**. En el área **miembro de** , haga clic en **dominio** y, en el cuadro de texto, escriba **Corp.contoso.com** y, a continuación, haga clic en **Aceptar**.
 
 4.  Cuando se le pida un nombre de usuario y una contraseña, escriba **User1** y su contraseña y después haga clic en **Aceptar**.
 
@@ -105,13 +106,13 @@ Realice los pasos siguientes para configurar EDGE2:
 
 ## <a name="install-the-ip-https-certificate"></a><a name="IPHTTPSCert"></a>Instalación del certificado IP-HTTPS
 
-1.  En la pantalla **Inicio** , escriba**mmc.exe**y, a continuación, presione Entrar. Si aparece el cuadro de diálogo **Control de cuentas de usuario**, confirme que la acción que se muestra es la esperada y, a continuación, haga clic en **Sí**.
+1.  En la pantalla **Inicio** , escriba **mmc.exe** y, a continuación, presione Entrar. Si aparece el cuadro de diálogo **Control de cuentas de usuario**, confirme que la acción que se muestra es la esperada y, a continuación, haga clic en **Sí**.
 
 2.  En el menú **Archivo** de la consola MMC, haga clic en **Agregar o quitar complemento**.
 
-3.  En el cuadro de diálogo **Agregar o quitar complementos** , haga clic en **certificados**, en **Agregar**, en **cuenta de equipo**, en **siguiente**, en **Finalizar**y, finalmente, en **Aceptar**.
+3.  En el cuadro de diálogo **Agregar o quitar complementos** , haga clic en **certificados**, en **Agregar**, en **cuenta de equipo**, en **siguiente**, en **Finalizar** y, finalmente, en **Aceptar**.
 
-4.  En el panel izquierdo de la consola, vaya a **certificados (equipo local) \personal\certificados**. Haga clic con el botón secundario en el nodo **certificados** , seleccione **todas las tareas**y, a continuación, haga clic en **solicitar nuevo certificado**.
+4.  En el panel izquierdo de la consola, vaya a **certificados (equipo local) \personal\certificados**. Haga clic con el botón secundario en el nodo **certificados** , seleccione **todas las tareas** y, a continuación, haga clic en **solicitar nuevo certificado**.
 
 5.  En el Asistente para inscripción de certificados, haga clic en **siguiente** dos veces.
 
@@ -119,11 +120,11 @@ Realice los pasos siguientes para configurar EDGE2:
 
 7.  En el cuadro de diálogo **propiedades de certificado** , en la pestaña **sujeto** , en el área **nombre de sujeto** , en la lista **tipo** , haga clic en **nombre común**.
 
-8.  En **valor**, escriba **edge1.contoso.com**y, a continuación, haga clic en **Agregar**.
+8.  En **valor**, escriba **edge1.contoso.com** y, a continuación, haga clic en **Agregar**.
 
 9. En el área **nombre alternativo** , en la lista **tipo** , haga clic en **DNS**.
 
-10. En **valor**, escriba **edge1.contoso.com**y, a continuación, haga clic en **Agregar**.
+10. En **valor**, escriba **edge1.contoso.com** y, a continuación, haga clic en **Agregar**.
 
 11. En la pestaña **General** , en **nombre descriptivo**, escriba **certificado IP-https**.
 

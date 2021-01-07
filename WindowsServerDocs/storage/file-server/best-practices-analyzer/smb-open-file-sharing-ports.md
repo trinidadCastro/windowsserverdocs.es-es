@@ -5,12 +5,13 @@ ms.date: 07/02/2012
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: ca4e8cb86e567786385da0449223b6282347909b
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.topic: article
+ms.openlocfilehash: acd64b9db1c329a66de887851db1d539f2fc4907
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97041063"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97950431"
 ---
 # <a name="smb-file-and-printer-sharing-ports-should-be-open"></a>SMB: Los puertos de compartir archivos e impresoras deben estar abiertos
 
@@ -30,7 +31,7 @@ Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y 
 <tbody>
 <tr class="odd">
 <td><p><strong>Sistema operativo</strong></p></td>
-<td><p>Windows Server</p></td>
+<td><p>Windows Server</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>Producto/Característica</strong></p></td>

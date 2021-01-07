@@ -6,12 +6,13 @@ ms.topic: article
 ms.assetid: 836a2a08-3d22-48d2-873e-80d7e57ebbd6
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 254789f18ca1adeebed227081c8177dc3c706e3d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: 642449e9c0c6524aa053cfb73c57b69507e5f4eb
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971692"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97950461"
 ---
 # <a name="step-3-configure-dc1"></a>Paso 3 configurar DC1
 
@@ -21,7 +22,7 @@ DC1 actúa como controlador de dominio, servidor DNS y servidor DHCP para el dom
 
 ## <a name="verify-user1-has-a-user-principal-name-defined-on-dc1"></a>Comprobar que user1 tiene un nombre principal de usuario definido en DC1
 
-1.  En DC1, abra Administrador del servidor y haga clic en **AD DS** en el panel izquierdo. Haga clic con el botón secundario en **DC1** y seleccione **Active Directory usuarios y equipos**. En el panel izquierdo, expanda **Corp. contoso. com\Users**y haga doble clic en user1.
+1.  En DC1, abra Administrador del servidor y haga clic en **AD DS** en el panel izquierdo. Haga clic con el botón secundario en **DC1** y seleccione **Active Directory usuarios y equipos**. En el panel izquierdo, expanda **Corp. contoso. com\Users** y haga doble clic en user1.
 
 2.  En la pestaña **cuenta** , compruebe que **nombre de inicio de sesión de usuario** está establecido en user1. Si no es así, escriba **user1** en el campo **nombre de inicio de sesión de usuario** .
 
