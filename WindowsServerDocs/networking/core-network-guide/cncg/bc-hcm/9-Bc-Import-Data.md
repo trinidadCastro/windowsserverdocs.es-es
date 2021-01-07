@@ -1,18 +1,18 @@
 ---
 title: Importar paquetes de datos en el servidor de caché hospedada (opcional)
-description: En esta guía se proporcionan instrucciones sobre cómo implementar BranchCache en modo caché hospedada en equipos que ejecutan Windows Server 2016 y Windows 10.
+description: Obtenga información acerca de cómo importar paquetes de datos y cargar previamente el contenido en los servidores de caché hospedada.
 manager: brianlic
 ms.topic: article
 ms.assetid: d6159e91-f77c-42ec-9180-14bbb230ad17
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 8812c3008c2563fb8b436740d9fc0116c87c0154
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 1c0626181ebdca7d6e78bb429a8d127089ad4446
+ms.sourcegitcommit: 605a9b46b74b2c7a9116e631e902467ea02a6e70
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97950221"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97965120"
 ---
 # <a name="import-data-packages-on-the-hosted-cache-server-optional"></a>Importar paquetes de datos en el servidor de caché hospedada \( opcional\)
 

@@ -1,18 +1,18 @@
 ---
 title: Instalar la característica BranchCache y configurar el servidor de caché hospedada mediante el punto de conexión de servicio
-description: En esta guía se proporcionan instrucciones sobre cómo implementar BranchCache en modo caché hospedada en equipos que ejecutan Windows Server 2016 y Windows 10.
+description: Obtenga información acerca de cómo instalar la característica BranchCache en el servidor de caché hospedada, HCS1, y configurar el servidor para registrar un SCP en AD DS.
 manager: brianlic
 ms.topic: article
 ms.assetid: 9adf420b-5a58-4e59-9906-71bd58f757fd
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 4a059cad3bc3faf03882030528d85764eb13959d
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: bfee053492e9c28869ec39cc75bdd8d0c376c256
+ms.sourcegitcommit: 605a9b46b74b2c7a9116e631e902467ea02a6e70
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949501"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97965567"
 ---
 # <a name="install-the-branchcache-feature-and-configure-the-hosted-cache-server-by-service-connection-point"></a>Instalar la característica BranchCache y configurar el servidor de caché hospedada mediante el punto de conexión de servicio
 

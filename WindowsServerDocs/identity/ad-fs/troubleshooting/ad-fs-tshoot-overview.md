@@ -1,17 +1,17 @@
 ---
 title: Solución de problemas de AD FS
-description: En este documento se describe cómo solucionar varios aspectos de AD FS
+description: Obtenga información acerca de cómo solucionar diversos aspectos de AD FS.
 author: billmath
 ms.author: billmath
 manager: mtillman
 ms.date: 01/12/2018
 ms.topic: article
-ms.openlocfilehash: ba18341448720403f1572ee485ec33bec84b4324
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 855d4fd24b0cc991c11241013dabcb2310887dd1
+ms.sourcegitcommit: 605a9b46b74b2c7a9116e631e902467ea02a6e70
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953074"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97965757"
 ---
 # <a name="troubleshooting-ad-fs"></a>Solución de problemas de AD FS
 AD FS tiene muchas piezas móviles, toca muchas cosas diferentes y tiene muchas dependencias diferentes.  Como es lógico, esto puede dar lugar a diversos problemas.  Este documento está diseñado para ayudarle a empezar a solucionar estos problemas.  En este documento se presentan las áreas típicas en las que se debe centrar, cómo habilitar características para obtener información adicional y diversas herramientas que se pueden usar para realizar un seguimiento de los problemas.
@@ -24,7 +24,7 @@ AD FS tiene muchas piezas móviles, toca muchas cosas diferentes y tiene muchas 
 Antes de profundizar en la solución de problemas detallada, hay algunas cosas que debe comprobar en primer lugar.  Son las siguientes:
 - **Configuración de DNS** : ¿se puede resolver el nombre del servicio de Federación?  Esto debe resolverse en la dirección IP del equilibrador de carga o en la dirección IP de uno de los servidores AD FS de la granja.  Para obtener más información [, consulte solución de problemas de AD FS: DNS](ad-fs-tshoot-dns.md).
 - **AD FS puntos de conexión** : ¿puede examinar los puntos de conexión de AD FS?  Al ir a este paso, puede determinar si el servidor Web AD FS responde a las solicitudes.  Si puede obtener acceso a este archivo, sabrá que AD FS está atendiendo solicitudes en 443.  Para obtener más información [, consulte solución de problemas de AD FS: puntos de conexión](ad-fs-tshoot-endpoints.md).
-- **Inicio de sesión iniciado por IDP** : ¿se puede iniciar sesión y autenticarse a través de la página de inicio de sesión iniciada por IDP?  Debe asegurarse de que esta página se ha habilitado porque está deshabilitada de forma predeterminada.  Use `Set-AdfsProperties -EnableIdPInitiatedSignOn $true` para habilitar la página.  Si puede iniciar sesión y autenticarse, sabrá que AD FS funciona en esta área.  Para obtener más información [, consulte solución de problemas de AD FS de inicio de sesión](ad-fs-tshoot-initiatedsignon.md).
+- **Inicio de sesión iniciado por IDP** : ¿puede iniciar sesión y autenticarse a través de la página de inicio de sesión de Idp-Initiated?  Debe asegurarse de que esta página se ha habilitado porque está deshabilitada de forma predeterminada.  Use `Set-AdfsProperties -EnableIdPInitiatedSignOn $true` para habilitar la página.  Si puede iniciar sesión y autenticarse, sabrá que AD FS funciona en esta área.  Para obtener más información [, consulte solución de problemas de AD FS de inicio de sesión](ad-fs-tshoot-initiatedsignon.md).
   ##  <a name="common-troubleshooting-areas"></a>Áreas de solución de problemas comunes
 
 |Nombre|Descripción|
@@ -33,7 +33,7 @@ Antes de profundizar en la solución de problemas detallada, hay algunas cosas q
 |[Conectividad de SQL](ad-fs-tshoot-sql.md)|Información sobre cómo probar la conectividad entre los servidores de AD FS y las bases de datos SQL de back-end|
 |[Emisión de notificaciones](ad-fs-tshoot-claims-issuance.md)|Información sobre cómo determinar si AD FS emite notificaciones correctamente.|
 |[Detección de bucles](ad-fs-tshoot-loop.md)|Información sobre cómo determinar y evitar que los usuarios se devuelvan entre el IDP y el RP.|
-|[Certificados](ad-fs-tshoot-certs.md)|Problemas de certificados Typcial que pueden surgir|
+|[Certificados](ad-fs-tshoot-certs.md)|Problemas de certificados típicos que pueden surgir|
 |[Fiddler](ad-fs-tshoot-fiddler.md)|Información sobre cómo instalar y usar Fiddler|
 |[WS-Federation con Fiddler](ad-fs-tshoot-fiddler-ws-fed.md)|Seguimiento detallado de Fiddler de una interacción de WS-Federation|
 |[Reglas de notificaciones](ad-fs-tshoot-claims-rules.md)|Información sobre la solución de problemas de reglas de notificaciones y su sintaxis|

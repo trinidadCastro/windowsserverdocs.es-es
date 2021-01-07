@@ -1,18 +1,18 @@
 ---
 title: Instalación o desinstalación de roles, servicios de rol o características
-description: Administrador de servidores
+description: Obtenga información acerca de cómo instalar roles y características en servidores locales o remotos o discos duros virtuales (VHD) sin conexión.
 ms.topic: article
 ms.assetid: 04f16d84-45c2-4771-84c1-1cc973d0ee02
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 91cc11133d42168197541e451da27771a377bab9
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 0b82bf3941b64d0a8456c086ce9022aa531ab281
+ms.sourcegitcommit: 605a9b46b74b2c7a9116e631e902467ea02a6e70
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89628408"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97965130"
 ---
 # <a name="install-or-uninstall-roles-role-services-or-features"></a>Instalación o desinstalación de roles, servicios de rol o características
 
@@ -81,7 +81,7 @@ En una sola sesión del Asistente para agregar roles y características, puede i
 
 7.  En la página **Confirmar selecciones de instalación**, revise sus selecciones de rol, característica y servidor. Si está listo para realizar la instalación, haga clic en **Instalar**.
 
-    También puede exportar las selecciones a un archivo de configuración basado en XML que puede usar para instalaciones desatendidas con Windows PowerShell. Para exportar la configuración especificada en esta sesión del Asistente para agregar roles y características, haga clic en **exportar opciones de configuración**y guarde el archivo XML en una ubicación adecuada.
+    También puede exportar las selecciones a un archivo de configuración basado en XML que puede usar para instalaciones desatendidas con Windows PowerShell. Para exportar la configuración especificada en esta sesión del Asistente para agregar roles y características, haga clic en **exportar opciones de configuración** y guarde el archivo XML en una ubicación adecuada.
 
     El comando **Especifique una ruta de acceso de origen alternativa** en la página **Confirmar selecciones de instalación** le permite especificar una ruta de acceso de origen alternativa para los archivos que se requieren para instalar roles y características en el servidor seleccionado. En Windows Server 2012 y versiones posteriores de Windows Server, [características a petición](https://go.microsoft.com/fwlink/p/?LinkID=241573) permite reducir la cantidad de espacio en disco que usa el sistema operativo, quitando los archivos de roles y características de los servidores que se administran exclusivamente de forma remota. Si ha eliminado los archivos de rol y de características desde un servidor mediante el cmdlet `Uninstall-WindowsFeature -remove` , podrá volver a instalarlos más adelante al especificar una ruta de origen alternativa o un recurso compartido donde se almacenan los archivos de características y roles requeridos. La ruta de acceso de origen o el recurso compartido de archivos deben conceder permisos de **lectura** al grupo **todos** (no se recomienda por motivos de seguridad) o a la cuenta de equipo (*dominio* \\ *SERverNAME*$) del servidor de destino; no es suficiente conceder acceso a la cuenta de usuario. Para obtener más información sobre Características a petición, vea [Opciones de instalación de Windows Server](https://go.microsoft.com/fwlink/p/?LinkId=241573).
 
@@ -108,7 +108,7 @@ Los cmdlets de implementación de Administrador del servidor para Windows PowerS
    > [!NOTE]
    > En Windows PowerShell 3,0 y versiones posteriores de Windows PowerShell, no es necesario importar el módulo de cmdlet de Administrador del servidor en la sesión de Windows PowerShell antes de ejecutar los cmdlets que forman parte del módulo. El módulo se importa automáticamente la primera vez que se ejecuta un cmdlet que es parte del módulo. Además, ni los cmdlets de Windows PowerShell ni los nombres de las características que se usan con los cmdlets distinguen mayúsculas de minúsculas.
 
-3. Escriba **Get-Help install-WindowsFeature**y, a continuación, presione **entrar** para ver la sintaxis y los parámetros aceptados para el `Install-WindowsFeature` cmdlet.
+3. Escriba **Get-Help install-WindowsFeature** y, a continuación, presione **entrar** para ver la sintaxis y los parámetros aceptados para el `Install-WindowsFeature` cmdlet.
 
 4. Escriba lo siguiente y, a continuación, presione **entrar**, donde *feature_name* representa el nombre de comando de un rol o característica que desea instalar (obtenido en el paso 2) y *computer_name* representa un equipo remoto en el que desea instalar roles y características. Si hay varios valores para *feature_name*, sepárelos con coma. El parámetro `Restart` reinicia el servidor de destino automáticamente si lo requiere la instalación del rol o la característica.
 
@@ -199,7 +199,7 @@ Los cmdlets de implementación de Administrador del servidor para Windows PowerS
    > [!NOTE]
    > En Windows PowerShell 3,0 y versiones posteriores de Windows PowerShell, no es necesario importar el módulo de cmdlet de Administrador del servidor en la sesión de Windows PowerShell antes de ejecutar los cmdlets que forman parte del módulo. El módulo se importa automáticamente la primera vez que se ejecuta un cmdlet que es parte del módulo. Además, ni los cmdlets de Windows PowerShell ni los nombres de las características que se usan con los cmdlets distinguen mayúsculas de minúsculas.
 
-3. Escriba **Get-Help Uninstall-WindowsFeature**y, a continuación, presione **entrar** para ver la sintaxis y los parámetros aceptados para el `Uninstall-WindowsFeature` cmdlet.
+3. Escriba **Get-Help Uninstall-WindowsFeature** y, a continuación, presione **entrar** para ver la sintaxis y los parámetros aceptados para el `Uninstall-WindowsFeature` cmdlet.
 
 4. Escriba lo siguiente y, a continuación, presione **Entrar**, donde *feature_name* representa el nombre de comando de un rol o característica que se desea quitar (obtenido en el paso 2) y *computer_name* representa un equipo remoto del que se desean quitar roles y características. Si hay varios valores para *feature_name*, sepárelos con coma. El parámetro `Restart` reinicia automáticamente los servidores de destino si así lo requiere la eliminación del rol o la característica.
 
@@ -347,7 +347,7 @@ Para instalar .NET Framework 3.5, realice una de las siguientes acciones.
 
    Para especificar un archivo WIM, agregue un prefijo **WIM:** y el índice de la imagen que se usará en el archivo WIM como sufijo, como se muestra en el siguiente ejemplo.
 
-   **Wim: \\ \\ ** <em>SERVER_NAME</em>**\share\install.Wim: 3**
+   **Wim: \\ \\** <em>SERVER_NAME</em>**\share\install.Wim: 3**
 
 6. Haz clic en **Aceptar** y, a continuación, en **Instalar**.
 
@@ -393,13 +393,13 @@ La configuración de la directiva de grupo descrita en esta sección especifica 
 
    **configuración del Equipo\plantillas Administrativas\sistema\especificar configuración de instalación de componentes opcionales y reparación de componentes**
 
-2. Sselect **habilitada** para habilitar la configuración de Directiva, si aún no está habilitada.
+2. Seleccione **Habilitada** para habilitar la configuración de directiva, si aún no está habilitada.
 
 3. En el cuadro de texto **Ruta de acceso del archivo de origen alternativa**, en el área **Opciones**, especifique una ruta de acceso completa a una carpeta compartida o a un archivo WIM. Para especificar un archivo WIM como ubicación del archivo de origen alternativa, agregue el prefijo **WIM:** a la ruta de acceso y el índice de la imagen que se usará en el archivo WIM como sufijo. Los siguientes son ejemplos de valores que puede especificar.
 
-   - Ruta de acceso a una carpeta compartida: **\\\\** <em>SERVER_NAME</em>**\share \\ **<em>folder_name</em>
+   - Ruta de acceso a una carpeta compartida: **\\\\** <em>SERVER_NAME</em>**\share \\**<em>folder_name</em>
 
-   - Ruta de acceso a un archivo Wim, donde **3** representa el índice de la imagen en la que se encuentran los archivos de características: **Wim: \\ \\ **<em>SERVER_NAME</em>**\share\install.Wim: 3**
+   - Ruta de acceso a un archivo Wim, donde **3** representa el índice de la imagen en la que se encuentran los archivos de características: **Wim: \\ \\**<em>SERVER_NAME</em>**\share\install.Wim: 3**
 
 4. Si no desea que los equipos controlados por esta configuración de directiva busquen los archivos de características que faltan en Windows Update, seleccione no **intentar nunca descargar la carga desde Windows Update**.
 

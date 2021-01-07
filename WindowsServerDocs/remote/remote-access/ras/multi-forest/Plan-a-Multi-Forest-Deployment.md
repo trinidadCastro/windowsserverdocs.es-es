@@ -1,18 +1,18 @@
 ---
 title: Plan a Multi-Forest Deployment
-description: Este tema forma parte de la guía implementar el acceso remoto en un entorno de varios bosques en Windows Server 2016.
+description: Obtenga información sobre los pasos de planeación necesarios al configurar el acceso remoto en una implementación de varios bosques.
 manager: brianlic
 ms.topic: article
 ms.assetid: 8acc260f-d6d1-4d32-9e3a-1fd0b2a71586
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 92e3abcb0d49f4f6d000cb487dbe43d6075bacd8
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 0d6be971cf65763d0b806ea230b13c0d6c2c26b2
+ms.sourcegitcommit: 605a9b46b74b2c7a9116e631e902467ea02a6e70
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97946961"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97965787"
 ---
 # <a name="plan-a-multi-forest-deployment"></a>Plan a Multi-Forest Deployment
 

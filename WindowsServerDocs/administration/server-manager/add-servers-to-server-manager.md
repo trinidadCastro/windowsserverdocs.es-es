@@ -1,6 +1,6 @@
 ---
 title: Add Servers to Server Manager
-description: Administrador de servidores
+description: Obtenga información acerca de cómo agregar servidores al grupo de servidores de Administrador del servidor.
 ms.topic: article
 ms.assetid: aab895f2-fe4d-4408-b66b-cdeadbd8969e
 ms.author: lizross
@@ -8,12 +8,12 @@ author: eross-msft
 manager: mtillman
 ms.localizationpriority: medium
 ms.date: 02/01/2018
-ms.openlocfilehash: f8c3a2088533924f38b49454ab6f810c7cc9aa2e
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: bca7f9025822854ffb7110d3c7a4999f79759861
+ms.sourcegitcommit: 605a9b46b74b2c7a9116e631e902467ea02a6e70
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89628472"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97965747"
 ---
 # <a name="add-servers-to-server-manager"></a>Add Servers to Server Manager
 

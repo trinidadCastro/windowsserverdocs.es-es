@@ -1,18 +1,18 @@
 ---
 title: Implementar el modo de caché hospedada de BranchCache
-description: En esta guía se proporcionan instrucciones sobre cómo implementar BranchCache en modo caché hospedada en equipos que ejecutan Windows Server 2016 y Windows 10.
+description: Obtenga información sobre cómo compilar en la red principal proporcionando instrucciones para implementar BranchCache en modo caché hospedada en una o más sucursales con un controlador de dominio de Read-Only en el que los equipos cliente ejecutan Windows 10, Windows 8.1 o Windows 8 y se unen al dominio.
 manager: brianlic
 ms.topic: article
 ms.assetid: 4235231c-4732-4ea9-9330-2a8c8a616d39
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: e9fe6c660c1f5d173bc6d8292a370f8d18979e24
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 51d8b27d77ccc47d4d7ad1a460da88f6be8339b9
+ms.sourcegitcommit: 605a9b46b74b2c7a9116e631e902467ea02a6e70
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949541"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97965627"
 ---
 # <a name="deploy-branchcache-hosted-cache-mode"></a>Implementar el modo de caché hospedada de BranchCache
 

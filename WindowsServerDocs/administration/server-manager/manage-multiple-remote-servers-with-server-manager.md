@@ -1,18 +1,18 @@
 ---
 title: Administrar varios servidores remotos con Administrador del servidor
-description: Administrador de servidores
+description: Aprenda a usar las características de la consola de Administrador del servidor para administrar varios servidores remotos.
 ms.topic: article
 ms.assetid: 3a17e686-e7f2-47e2-b7af-733777c38b5f
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: c85e9bd4525cc40ddc7e5c77aacb9fd2ab9cf124
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 493570817b0deea7fe8b7b997472c657519ab95b
+ms.sourcegitcommit: 605a9b46b74b2c7a9116e631e902467ea02a6e70
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89627837"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97965060"
 ---
 # <a name="manage-multiple-remote-servers-with-server-manager"></a>Administrar varios servidores remotos con Administrador del servidor
 
@@ -175,7 +175,7 @@ Administrador del servidor se inicia automáticamente de forma predeterminada en
 
 1.  En la consola de Administrador del servidor, en el menú **administrar** , haga clic en **propiedades de administrador del servidor**.
 
-2.  En el cuadro de diálogo **Propiedades del Administrador del servidor**, active la casilla de **No iniciar el Administrador del servidor automáticamente al iniciar sesión**. Haga clic en **OK**.
+2.  En el cuadro de diálogo **Propiedades del Administrador del servidor**, active la casilla de **No iniciar el Administrador del servidor automáticamente al iniciar sesión**. Haga clic en **Aceptar**.
 
 3.  Como alternativa, puede impedir que Administrador del servidor se inicie automáticamente si habilita la configuración de directiva de grupo, **no inicia administrador del servidor automáticamente al iniciar sesión**. La ruta de acceso a esta configuración de Directiva, en la consola del editor de directiva de grupo local, es configuración del Equipo\plantillas Administrativas\sistema\administrador del servidor Manager.
 
@@ -200,7 +200,7 @@ En Administrador del servidor, la lista de servidores administrados, los cambios
 
 -   %*AppData*% \Microsoft\Windows\ServerManager\Serverlist.xml
 
--   %*AppData*% \Local\Microsoft_Corporation\ServerManager.exe_StrongName_*GUID*\6.2.0.0\user.config
+-   %*AppData*% \Local\Microsoft_Corporation\ServerManager.exe_StrongName_ *GUID*\6.2.0.0\user.config
 
 > [!NOTE]
 > -   Las credenciales de Administrar como (o alternativas) de los servidores del grupo de servidores no se almacenan en el perfil móvil. Administrador del servidor los usuarios deben agregarlas en cada equipo desde el que deseen ser administrados.
@@ -226,7 +226,7 @@ Puede exportar la configuración de Administrador del servidor, hacer que Admini
 
         -   %*AppData*% \Microsoft\Windows\ServerManager\Serverlist.xml
 
-        -   %*LocalAppData*% \Microsoft_Corporation\ServerManager.exe_StrongName_*GUID*\6.2.0.0\user.config
+        -   %*LocalAppData*% \Microsoft_Corporation\ServerManager.exe_StrongName_ *GUID*\6.2.0.0\user.config
 
 4.  Haga clic en **Aceptar** para guardar los cambios y cerrar el cuadro de diálogo **Propiedades**.
 
@@ -236,4 +236,4 @@ Puede exportar la configuración de Administrador del servidor, hacer que Admini
 
     -   %*AppData*% \Microsoft\Windows\ServerManager\Serverlist.xml
 
-    -   %*LocalAppData*% \Microsoft_Corporation\ServerManager.exe_StrongName_*GUID*\6.2.0.0\user.config
+    -   %*LocalAppData*% \Microsoft_Corporation\ServerManager.exe_StrongName_ *GUID*\6.2.0.0\user.config

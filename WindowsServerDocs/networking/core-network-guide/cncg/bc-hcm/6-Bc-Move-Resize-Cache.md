@@ -1,18 +1,18 @@
 ---
 title: Mover y cambiar el tamaño de la caché hospedada (opcional)
-description: En esta guía se proporcionan instrucciones sobre cómo implementar BranchCache en modo caché hospedada en equipos que ejecutan Windows Server 2016 y Windows 10.
+description: Obtenga información acerca de cómo trasladar la caché hospedada a la unidad y la carpeta que prefiera, y para especificar la cantidad de espacio en disco que el servidor de caché hospedada puede usar para la caché hospedada.
 manager: brianlic
 ms.topic: article
 ms.assetid: bb0eb349-914d-4596-9140-d3aae7597d55
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 276ab47bc6f4f906aaeafc7779c4e2afdb80b260
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 426a38b0dfb37d6898f8ede9337f912998ec2158
+ms.sourcegitcommit: 605a9b46b74b2c7a9116e631e902467ea02a6e70
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947891"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97965557"
 ---
 # <a name="move-and-resize-the-hosted-cache-optional"></a>Movimiento y cambio de tamaño de la caché hospedada \( opcional\)
 
@@ -37,7 +37,7 @@ Para realizar este procedimiento debe ser miembro del grupo de administradores.
     Set-BCCache -Path C:\datacache –MoveTo D:\datacache
     ```
 
-3.  Escriba el siguiente comando para cambiar el tamaño de la memoria caché hospedada, en concreto, la memoria caché del \- equipo local. Presione ENTRAR.
+3.  Escriba el siguiente comando para cambiar el tamaño de la caché hospedada, en concreto, la memoria caché \- de datos en el equipo local. Presione ENTRAR.
 
     > [!IMPORTANT]
     > Antes de ejecutar el siguiente comando, reemplace los valores de parámetro, como \- porcentaje, por los valores adecuados para su implementación.

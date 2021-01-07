@@ -1,18 +1,18 @@
 ---
 title: Filtrar, ordenar y consultar sobre datos en las ventanas del Administrador del servidor
-description: Administrador de servidores
+description: Aprenda a usar iconos en Administrador del servidor para filtrar y ordenar los datos, así como para crear y guardar consultas personalizadas.
 ms.topic: article
 ms.assetid: 8786f791-73e5-4c75-8d12-46e88a196976
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 0ddaaadbda28b5494ce5ab0a053b70abd5882591
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 7d63d195c075e022ef908df6450960ed5f7b1b3d
+ms.sourcegitcommit: 605a9b46b74b2c7a9116e631e902467ea02a6e70
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89628306"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97965727"
 ---
 # <a name="filter-sort-and-query-data-in-server-manager-tiles"></a>Filtrar, ordenar y consultar sobre datos en las ventanas del Administrador del servidor
 
@@ -67,7 +67,7 @@ Puede crear consultas personalizadas en los iconos eventos, rendimiento, Analiza
 
     Puede agregar duplicados de criterios que ya están en la consulta, pero los duplicados se agregan a la consulta con el operador **o**.
 
-    por ejemplo, para consultar los identificadores de evento 1003 o 1014, primero debe agregar los criterios de identificador a la consulta, hacer que el valor de identificador sea igual a **1003**y, a continuación, agregar un segundo criterio de identificador a la consulta, lo que hace que el valor del segundo identificador sea igual a **1014**. El resultado de la búsqueda es **y el identificador es igual a 1003 o 1014**.
+    por ejemplo, para consultar los identificadores de evento 1003 o 1014, primero debe agregar los criterios de identificador a la consulta, hacer que el valor de identificador sea igual a **1003** y, a continuación, agregar un segundo criterio de identificador a la consulta, lo que hace que el valor del segundo identificador sea igual a **1014**. El resultado de la búsqueda es **y el identificador es igual a 1003 o 1014**.
 
 8.  Cuando haya terminado de agregar los criterios y de especificar los operadores y los valores, haga clic en **Guardar** para guardar la consulta.
 

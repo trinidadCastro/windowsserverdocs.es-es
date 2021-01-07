@@ -1,17 +1,17 @@
 ---
 title: Migrar el servidor de Federación AD FS 2,0 a Windows Server 2012 R2
-description: Proporciona información sobre cómo migrar un servidor de AD FS a Windows Server 2012 R2.
+description: Obtenga información acerca de cómo exportar y hacer una copia de seguridad de los datos de configuración de AD FS, crear una granja de servidores de Federación de Windows Server 2012 R2 e importar los datos de configuración originales en la granja de AD FS de Windows Server 2012 R2.
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 07/10/2017
 ms.topic: article
-ms.openlocfilehash: 3b26687e4c20d4295682ffe81e27317c38efce53
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 318437fbec8e214c3f21eae54dcf3c9da2b6c04f
+ms.sourcegitcommit: 605a9b46b74b2c7a9116e631e902467ea02a6e70
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87938248"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97965677"
 ---
 # <a name="migrate-the-ad-fs-20-federation-server-to-ad-fs-on-windows-server-2012-r2"></a>Migrar el servidor de Federación AD FS 2,0 a AD FS en Windows Server 2012 R2
 
@@ -36,7 +36,7 @@ Para migrar un servidor de Federación de AD FS que pertenezca a una granja de A
 
     -   Todos los certificados de firma de tokens o cifrado y descifrado de tokens de terceros que utiliza la granja de servidores de federación que desea migrar
 
-Para buscar el certificado SSL, abra la consola administración de Internet Information Services (IIS), seleccione **Sitio web predeterminado** en el panel izquierdo, haga clic en **Enlaces…** en el panel **Acción** , busque y seleccione el enlace HTTPS, haga clic en **Editar**y, a continuación, haga clic en **Ver**.
+Para buscar el certificado SSL, abra la consola administración de Internet Information Services (IIS), seleccione **Sitio web predeterminado** en el panel izquierdo, haga clic en **Enlaces…** en el panel **Acción** , busque y seleccione el enlace HTTPS, haga clic en **Editar** y, a continuación, haga clic en **Ver**.
 
 Debe exportar el certificado SSL que utilizará el Servicio de federación y su clave privada a un archivo .pfx. Para obtener más información, consulte [Export the Private Key Portion of a Server Authentication Certificate](export-the-private-key-portion-of-a-server-authentication-certificate.md).
 
@@ -118,15 +118,15 @@ Get-ADFSClaimDescription | Out-File “.\claimtypes.txt”`.
 >
 >   **-ClaimsProviderTrustName <string[]>**: el cmdlet solo exporta las relaciones de confianza para proveedor de notificaciones cuyos nombres se hayan especificado en la matriz de cadena. El valor predeterminado es no exportar ninguna de las relaciones de confianza para proveedor de notificaciones.
 >
->   **-Path <cadena \> ** : ruta de acceso a una carpeta que contendrá los archivos exportados.
+>   **-Path <cadena \>** : ruta de acceso a una carpeta que contendrá los archivos exportados.
 >
->   **-ComputerName <cadena \> ** : especifica el nombre de host del servidor STS. La opción predeterminada es el equipo local. Si realiza la migración de AD FS 2.0 o AD FS en Windows Server 2012 a AD FS en Windows Server 2012 R2, es el nombre de host del servidor de AD FS heredado.
+>   **-ComputerName <cadena \>** : especifica el nombre de host del servidor STS. La opción predeterminada es el equipo local. Si realiza la migración de AD FS 2.0 o AD FS en Windows Server 2012 a AD FS en Windows Server 2012 R2, es el nombre de host del servidor de AD FS heredado.
 >
->   **-Credential <PSCredential \> ** : especifica una cuenta de usuario que tiene permiso para realizar esta acción. El valor predeterminado es el usuario actual.
+>   **-Credential <PSCredential \>** : especifica una cuenta de usuario que tiene permiso para realizar esta acción. El valor predeterminado es el usuario actual.
 >
 >   **-Force**: especifica que no se solicitará confirmación por parte del usuario.
 >
->   **-CertificatePassword <SecureString \> ** : especifica una contraseña para exportar las claves privadas de los certificados de AD FS. Si no se especifica, el script solicitará una contraseña si se debe exportar un certificado de AD FS con una clave privada.
+>   **-CertificatePassword <SecureString \>** : especifica una contraseña para exportar las claves privadas de los certificados de AD FS. Si no se especifica, el script solicitará una contraseña si se debe exportar un certificado de AD FS con una clave privada.
 >
 >   **Entrada**: ninguna
 >
@@ -203,17 +203,17 @@ Set-ADFSProperties –AutoCertificateRollover $false
 >
 >**-ClaimsProviderTrustName <string[]>**: el cmdlet solo importa las relaciones de confianza para proveedor de notificaciones cuyos nombres se hayan especificado en la matriz de cadena. El valor predeterminado es no importar ninguna de las relaciones de confianza para proveedor de notificaciones.
 >
->**-Path <cadena \> ** : ruta de acceso a una carpeta que contiene los archivos de configuración que se van a importar.
+>**-Path <cadena \>** : ruta de acceso a una carpeta que contiene los archivos de configuración que se van a importar.
 >
->**-LogPath <cadena \> ** : ruta de acceso a una carpeta que contendrá el archivo de registro de importación. En esta carpeta se creará un archivo de registro denominado "import.log".
+>**-LogPath <cadena \>** : ruta de acceso a una carpeta que contendrá el archivo de registro de importación. En esta carpeta se creará un archivo de registro denominado "import.log".
 >
->**-ComputerName <cadena \> ** : especifica el nombre de host del servidor STS. La opción predeterminada es el equipo local. Si realiza la migración de AD FS 2.0 o AD FS en Windows Server 2012 a AD FS en Windows Server 2012 R2, este parámetro debe establecerse en el nombre de host del servidor de AD FS heredado.
+>**-ComputerName <cadena \>** : especifica el nombre de host del servidor STS. La opción predeterminada es el equipo local. Si realiza la migración de AD FS 2.0 o AD FS en Windows Server 2012 a AD FS en Windows Server 2012 R2, este parámetro debe establecerse en el nombre de host del servidor de AD FS heredado.
 >
->**-Credential <PSCredential \> ** : especifica una cuenta de usuario que tiene permiso para realizar esta acción. El valor predeterminado es el usuario actual.
+>**-Credential <PSCredential \>** : especifica una cuenta de usuario que tiene permiso para realizar esta acción. El valor predeterminado es el usuario actual.
 >
 >**-Force**: especifica que no se solicitará confirmación por parte del usuario.
 >
->**-CertificatePassword <SecureString \> ** : especifica una contraseña para importar las claves privadas de los certificados de AD FS. Si no se especifica, el script solicitará una contraseña si se debe importar un certificado de AD FS con una clave privada.
+>**-CertificatePassword <SecureString \>** : especifica una contraseña para importar las claves privadas de los certificados de AD FS. Si no se especifica, el script solicitará una contraseña si se debe importar un certificado de AD FS con una clave privada.
 >
 >**Entrada:** cadena; este comando toma la ruta de acceso de la carpeta de importación como entrada. Puede canalizar Export-FederationConfiguration a este comando.
 >
@@ -244,7 +244,7 @@ Deben cambiarse a:
 
 1. Configure todas las opciones personalizadas de los extremos de AD FS. En la consola de administración de AD FS, selecciona **Extremos**. Compare los extremos de AD FS habilitados con la lista de extremos de AD FS habilitados que exportó a un archivo mientras preparaba la migración de AD FS.
 
-    \-Etc
+    \- Etc
 
     Configure las descripciones de notificaciones personalizadas. En la Consola de administración de AD FS, selecciona **Descripciones de notificaciones**. Compara la lista de descripciones de notificaciones de AD FS con la lista de descripciones de notificaciones que exportaste a un archivo mientras preparabas la migración de AD FS. Agregue las descripciones de notificaciones personalizadas incluidas en el archivo que no se estén incluidas en la lista predeterminada de AD FS. Tenga en cuenta que el identificador de la notificación en la consola de administración corresponde a ClaimType en el archivo.
 
@@ -256,11 +256,11 @@ Deben cambiarse a:
 
        -   AD FS en Windows Server 2012 R2 incluye un archivo **% systemroot% \ADFS\Microsoft.IdentityServer.Servicehost.exe.config** . Cree un elemento con la misma sintaxis que el elemento de archivo **web.config** : `<useRelayStateForIdpInitiatedSignOn enabled="true" />` . Incluya este elemento como parte de **<sección>de Microsoft. identityserver. Web** del archivo **Microsoft.IdentityServer.Servicehost.exe.config** .
 
-   -   Si **<persistIdentityProviderInformation Enabled = "true&#124;false" lifetimeInDays = "90" enablewhrPersistence = "true&#124;false"/ \> ** se agregó al archivo de **web.config** en el AD FS 2,0 o AD FS en la granja de Windows Server 2012, debe configurar las siguientes propiedades de servicio en el AD FS en la granja de servidores de Windows Server 2012 R2:
+   -   Si **<persistIdentityProviderInformation Enabled = "true&#124;false" lifetimeInDays = "90" enablewhrPersistence = "true&#124;false"/ \>** se agregó al archivo de **web.config** en el AD FS 2,0 o AD FS en la granja de Windows Server 2012, debe configurar las siguientes propiedades de servicio en el AD FS en la granja de servidores de Windows Server 2012 R2:
 
        1.  En AD FS en Windows Server 2012 R2, ejecute el siguiente comando de Windows PowerShell: `Set-AdfsWebConfig –HRDCookieEnabled –HRDCookieLifetime` .
 
-   -   Si **<singleSignOn Enabled = "true&#124;false"/ \> ** se agregó al archivo **web.config** en el AD FS 2,0 o AD FS en la granja de Windows Server 2012, no es necesario establecer ninguna propiedad del servicio adicional en el AD FS en la granja de servidores de Windows Server 2012 R2. El inicio de sesión único está habilitado de forma predeterminada en AD FS en la granja de servidores de Windows Server 2012 R2.
+   -   Si **<singleSignOn Enabled = "true&#124;false"/ \>** se agregó al archivo **web.config** en el AD FS 2,0 o AD FS en la granja de Windows Server 2012, no es necesario establecer ninguna propiedad del servicio adicional en el AD FS en la granja de servidores de Windows Server 2012 R2. El inicio de sesión único está habilitado de forma predeterminada en AD FS en la granja de servidores de Windows Server 2012 R2.
 
    -   Si se ha agregado la configuración de Localauthenticationtypes al al archivo de **web.config** en el AD FS 2,0 o AD FS en la granja de servidores de windows Server 2012, debe configurar las siguientes propiedades de servicio en la AD FS en la granja de servidores de windows Server 2012 R2:
 
@@ -268,5 +268,5 @@ Deben cambiarse a:
 
    Tras importar los datos de configuración originales, puede personalizar las páginas de inicio de sesión de AD FS como resulte necesario. Para más información, consulte el artículo sobre la [personalización de las páginas de inicio de sesión de AD FS](../operations/ad-fs-customization-in-windows-server.md).
 
-## <a name="next-steps"></a>Pasos a seguir
+## <a name="next-steps"></a>Pasos siguientes
  [Migrar los servicios de rol de servicios de Federación de Active Directory (AD FS) a Windows Server 2012 R2](migrate-ad-fs-service-role-to-windows-server-r2.md) [preparar la migración del servidor de Federación de AD FS](prepare-migrate-ad-fs-server-r2.md) [migrar el servidor proxy de Federación de AD FS](migrate-fed-server-proxy-r2.md) [comprobando la migración de AD FS a Windows Server 2012 R2](verify-ad-fs-migration.md)

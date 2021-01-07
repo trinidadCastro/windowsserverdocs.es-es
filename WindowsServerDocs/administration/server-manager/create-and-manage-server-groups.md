@@ -1,18 +1,18 @@
 ---
 title: Create and Manage Server Groups
-description: Administrador de servidores
+description: Obtenga información sobre cómo crear grupos de servidores personalizados definidos por el usuario en Administrador del servidor en Windows Server.
 ms.topic: article
 ms.assetid: 9d5b1be8-49fd-4ff7-9580-e4ff21fe4b17
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: b9afff5a5080487ee14759d27537b2ce1278f5e1
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: f1c62d0c7fba4dd23512ea5b3100dca9d099abb4
+ms.sourcegitcommit: 605a9b46b74b2c7a9116e631e902467ea02a6e70
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89628335"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97965200"
 ---
 # <a name="create-and-manage-server-groups"></a>crear y administrar grupos de servidores
 
@@ -31,7 +31,7 @@ Los servidores pueden ser miembros de más de un grupo.
 
 2.  En el cuadro de texto **Nombre de grupo de servidores**, escriba un nombre descriptivo para el grupo de servidores, como **Servidores de cuentas**.
 
-3.  Agregue servidores a la lista **seleccionada** desde el grupo de servidores o agregue otros servidores al grupo mediante las pestañas **Active Directory**, **DNS**o **importar** . Para obtener más información sobre cómo usar estas pestañas, consulte [agregar servidores a administrador del servidor](add-servers-to-server-manager.md) en esta guía.
+3.  Agregue servidores a la lista **seleccionada** desde el grupo de servidores o agregue otros servidores al grupo mediante las pestañas **Active Directory**, **DNS** o **importar** . Para obtener más información sobre cómo usar estas pestañas, consulte [agregar servidores a administrador del servidor](add-servers-to-server-manager.md) en esta guía.
 
 4.  Cuando haya terminado de agregar servidores, haga clic en **Aceptar**. El nuevo grupo se muestra en el panel de navegación Administrador del servidor bajo el grupo **todos los servidores** .
 

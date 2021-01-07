@@ -1,18 +1,18 @@
 ---
 title: Configurar la administración remota en Administrador del servidor
-description: Administrador de servidores
+description: Obtenga información acerca de cómo agregar el servidor al grupo de servidores de Administrador del servidor para realizar tareas de administración en servidores remotos.
 ms.topic: article
 ms.assetid: 509182ed-c37d-4b81-84bc-aee43d006873
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 6f709a30a571a43e6c299dabbfa006c12660fb92
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 71df577f4d1e487204ff25d66c9d3155bc1b9e67
+ms.sourcegitcommit: 605a9b46b74b2c7a9116e631e902467ea02a6e70
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89628351"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97965737"
 ---
 # <a name="configure-remote-management-in-server-manager"></a>Configurar la administración remota en Administrador del servidor
 
@@ -28,7 +28,7 @@ Para administrar servidores que ejecutan versiones de Windows Server anteriores 
 |----------|-----------|---------|
 | Windows Server 2012 R2 o Windows Server 2012 |-   [.NET Framework 4,6](https://www.microsoft.com/download/details.aspx?id=45497)<br />-   [Windows Management Framework 5,0](https://go.microsoft.com/fwlink/?LinkID=395058). La descarga de Windows Management Framework 5,0 proveedores de actualizaciones de paquetes Instrumental de administración de Windows (WMI) en Windows Server 2012 R2, Windows Server 2012 y Windows Server 2008 R2. Los proveedores de WMI actualizados permiten a Administrador del servidor recopilar información acerca de los roles y las características que están instalados en los servidores administrados. Hasta que se aplique la actualización, los servidores que ejecutan Windows Server 2012 R2, Windows Server 2012 o Windows Server 2008 R2 tienen un estado de capacidad de administración de **no accesible**.<br />-La actualización de rendimiento asociada con el [artículo 2682011 de Knowledge Base](https://go.microsoft.com/fwlink/p/?LinkID=245487) ya no es necesaria en servidores que ejecutan windows Server 2012 R2 o windows Server 2012.||
 | Windows Server 2008 R2 |-   [.NET Framework 4,5](https://www.microsoft.com/download/details.aspx?id=30653)<br />-   [Windows Management Framework 4,0](https://go.microsoft.com/fwlink/?LinkId=293881). La descarga de Windows Management Framework 4,0 proveedores de actualizaciones de paquetes Instrumental de administración de Windows (WMI) en Windows Server 2008 R2. Los proveedores de WMI actualizados permiten a Administrador del servidor recopilar información acerca de los roles y las características que están instalados en los servidores administrados. Hasta que se aplique la actualización, los servidores que ejecutan Windows Server 2008 R2 tienen un estado de capacidad de administración de **no accesible**.<br />-La actualización de rendimiento asociada con el [artículo 2682011 de Knowledge Base](https://go.microsoft.com/fwlink/p/?LinkID=245487) permite a administrador del servidor recopilar datos de rendimiento de Windows Server 2008 R2.||
-| Windows Server 2008 |-   [.NET Framework 4](https://www.microsoft.com/download/en/details.aspx?id=17718)<br />-   [Windows Management Framework 3,0](https://go.microsoft.com/fwlink/p/?LinkID=229019) La descarga de Windows Management Framework 3,0 proveedores de actualizaciones de paquetes Instrumental de administración de Windows (WMI) en Windows Server 2008. Los proveedores de WMI actualizados permiten a Administrador del servidor recopilar información acerca de los roles y las características que están instalados en los servidores administrados. Hasta que se aplique la actualización, los servidores que ejecutan Windows Server 2008 tienen un estado de capacidad de administración de **no accesible: Compruebe que las versiones anteriores ejecutan Windows Management Framework 3,0**.<br />-La actualización de rendimiento asociada con el [artículo 2682011 de Knowledge Base](https://go.microsoft.com/fwlink/p/?LinkID=245487) permite a administrador del servidor recopilar datos de rendimiento de Windows Server 2008.||
+| Windows Server 2008 |-   [.NET Framework 4](https://www.microsoft.com/download/en/details.aspx?id=17718)<br />-   [Windows Management Framework 3,0](https://go.microsoft.com/fwlink/p/?LinkID=229019) La descarga de Windows Management Framework 3,0 proveedores de actualizaciones de paquetes Instrumental de administración de Windows (WMI) en Windows Server 2008. Los proveedores de WMI actualizados permiten a Administrador del servidor recopilar información acerca de los roles y las características que están instalados en los servidores administrados. Hasta que se aplique la actualización, los servidores que ejecutan Windows Server 2008 tienen un estado de capacidad de administración de **no accesible: Compruebe que las versiones anteriores ejecutan Windows Management Framework 3,0**.<br />-La actualización de rendimiento asociada con el [artículo 2682011 de Knowledge Base](https://go.microsoft.com/fwlink/p/?LinkID=245487) permite a administrador del servidor recopilar datos de rendimiento de Windows Server 2008.||
 
 para obtener información detallada sobre cómo agregar servidores que están en grupos de trabajo para administrar o administrar servidores remotos desde un equipo de grupo de trabajo que ejecuta Administrador del servidor, consulte [agregar servidores a administrador del servidor](add-servers-to-server-manager.md).
 
@@ -81,7 +81,7 @@ En Windows Server 2016, Administrador del servidor se basa en la administración
 
     -   En el escritorio de Windows, haga clic con el botón secundario en **Windows PowerShell** en la barra de tareas y, a continuación, haga clic en **Ejecutar como administrador**.
 
-    -   En la pantalla **Inicio** de Windows, haga clic con el botón derecho en **Windows PowerShell**y, a continuación, en la barra de la aplicación, haga clic en **Ejecutar como administrador**.
+    -   En la pantalla **Inicio** de Windows, haga clic con el botón derecho en **Windows PowerShell** y, a continuación, en la barra de la aplicación, haga clic en **Ejecutar como administrador**.
 
 2.  Escriba lo siguiente y, a continuación, presione **entrar** para habilitar todas las excepciones de reglas de Firewall necesarias.
 
@@ -97,11 +97,11 @@ En Windows Server 2016, Administrador del servidor se basa en la administración
 
 3.  Realice una de las siguientes acciones:
 
-    -   Para deshabilitar la administración remota, escriba **Configure-SMremoting.exe-Disable**y, a continuación, presione **entrar**.
+    -   Para deshabilitar la administración remota, escriba **Configure-SMremoting.exe-Disable** y, a continuación, presione **entrar**.
 
-    -   Para habilitar la administración remota, escriba **Configure-SMremoting.exe-enable**y, a continuación, presione **entrar**.
+    -   Para habilitar la administración remota, escriba **Configure-SMremoting.exe-enable** y, a continuación, presione **entrar**.
 
-    -   Para ver la configuración de administración remota actual, escriba **Configure-SMremoting.exe-Get**y, a continuación, presione Entrar.
+    -   Para ver la configuración de administración remota actual, escriba **Configure-SMremoting.exe-Get** y, a continuación, presione Entrar.
 
 ### <a name="to-enable-server-manager-and-windows-powershell-remote-management-on-earlier-releases-of-windows-server"></a>Para habilitar la administración remota de Windows PowerShell y el Administrador del servidor en versiones anteriores de Windows Server
 
@@ -119,7 +119,7 @@ En Windows Server 2016, Administrador del servidor se basa en la administración
 
     -   En el área **propiedades** de la página **servidor local** de administrador del servidor, haga clic en el valor de hipertexto de la propiedad Firewall de **Windows** y, a continuación, haga clic en **Configuración avanzada**.
 
-    -   En la pantalla **Inicio** , escriba **WF. msc**y, a continuación, haga clic en el icono del complemento cuando aparezca en los resultados de **aplicaciones** .
+    -   En la pantalla **Inicio** , escriba **WF. msc** y, a continuación, haga clic en el icono del complemento cuando aparezca en los resultados de **aplicaciones** .
 
 2.  En el panel de árbol, seleccione **Reglas de entrada**.
 
@@ -141,9 +141,9 @@ En Windows Server 2016, Administrador del servidor se basa en la administración
 
 1.  Realice una de las siguientes acciones para abrir el editor de directiva de grupo local.
 
-    -   En un servidor que ejecute Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012, en la pantalla **Inicio** , escriba **gpedit. msc**y, a continuación, haga clic en el icono **gpedit** cuando se muestre.
+    -   En un servidor que ejecute Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012, en la pantalla **Inicio** , escriba **gpedit. msc** y, a continuación, haga clic en el icono **gpedit** cuando se muestre.
 
-    -   En un servidor que ejecute Windows Server 2008 R2 o Windows Server 2008, en el cuadro de diálogo **Ejecutar** , escriba **gpedit. msc**y, a continuación, presione **entrar**.
+    -   En un servidor que ejecute Windows Server 2008 R2 o Windows Server 2008, en el cuadro de diálogo **Ejecutar** , escriba **gpedit. msc** y, a continuación, presione **entrar**.
 
 2.  Abra **equipo Equipo\plantillas administrativas\Componentes de Windows\Windows Remote Management (WinRM) \Servicio WinRM Service**.
 
@@ -179,7 +179,7 @@ En la siguiente lista se muestra la configuración predeterminada del agente de 
 
 El número de puerto predeterminado es 5985 para WinRM para comunicarse con un equipo remoto.
 
-para obtener más información sobre cómo configurar las opciones del agente de escucha de WinRM, escriba **WinRM Help config**en un símbolo del sistema y, a continuación, presione Entrar.
+para obtener más información sobre cómo configurar las opciones del agente de escucha de WinRM, escriba **WinRM Help config** en un símbolo del sistema y, a continuación, presione Entrar.
 
 ## <a name="see-also"></a>Consulte también
 [Agregar servidores a administrador del servidor](add-servers-to-server-manager.md) 

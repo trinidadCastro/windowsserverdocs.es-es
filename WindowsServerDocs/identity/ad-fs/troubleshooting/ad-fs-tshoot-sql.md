@@ -1,17 +1,17 @@
 ---
 title: Solución de problemas de AD FS-conectividad de SQL
-description: En este documento se describe cómo solucionar varios aspectos de AD FS
+description: Obtenga información acerca de cómo solucionar diversos aspectos de AD FS como se aplica a la conectividad de SQL.
 author: billmath
 ms.author: billmath
 manager: mtillman
 ms.date: 01/12/2017
 ms.topic: article
-ms.openlocfilehash: 2fb32d5b553b4d248c718fac766a83daa5dfedb2
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 0d68e71c4ac4d1e3d03bd3c549ccc6f82e68ebe5
+ms.sourcegitcommit: 605a9b46b74b2c7a9116e631e902467ea02a6e70
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964822"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97965807"
 ---
 # <a name="ad-fs-troubleshooting---sql-connectivity"></a>Solución de problemas de AD FS-conectividad de SQL
 AD FS proporciona la capacidad de usar SQL Server remotos para los datos de la granja de AD FS.  Verá problemas si los servidores de AD FS de la granja no pueden comunicarse con los servidores SQL Server de back-end.  En el siguiente documento se proporcionarán algunos pasos básicos para probar la comunicación con los servidores back-end.
@@ -22,7 +22,7 @@ Lo primero que se debe probar al comprobar la conectividad de SQL es si AD FS ti
 ### <a name="to-acquire-the-sql-connection-string"></a>Para adquirir la cadena de conexión SQL
 1.  Abrir Windows PowerShell
 2. Escriba lo siguiente: `$adfs = gwmi -Namespace root/ADFS -Class SecurityTokenService` y presione Entrar.
-3. Escriba lo siguiente: `$adfs.ConfigurationDatabaseConnectionString` y presione Entrar.
+3. Escriba lo siguiente:  `$adfs.ConfigurationDatabaseConnectionString` y presione Entrar.
 4. Debería ver la información de la cadena de conexión.
 
 ![Pantalla de comandos de PowerShell en ejecución (comando)](media/ad-fs-tshoot-sql/sql2.png)
@@ -30,7 +30,7 @@ Lo primero que se debe probar al comprobar la conectividad de SQL es si AD FS ti
 ## <a name="create-a-universal-data-link-udl-file-to-test-connectivity"></a>Crear un archivo de vínculo de datos universal (UDL) para probar la conectividad
 Un archivo de vínculo de datos universal o un archivo UDL es básicamente un archivo de texto que contiene una cadena de conexión de base de datos.  Mediante el uso de la información que se obtuvo anteriormente, se puede probar si el servidor SQL Server responde a las conexiones.
 
-### <a name="to-create-a-udl-file-to-test-connectivity"></a>Para crear un archivo UDL para probar la conectividad
+### <a name="to-create-a-testudl-file-to-test-connectivity"></a>Para crear un archivo test. udl para probar la conectividad
 
 1. Abra el Bloc de notas y guarde el archivo como test. udl.  Asegúrese de que tiene **todos los archivos** seleccionados en el menú desplegable para **Guardar como tipo**.
 2. Haga doble clic en test. udl
@@ -52,6 +52,6 @@ También puede [Descargar](https://go.microsoft.com/fwlink/?linkid=864329) e ins
 1. Debería ver el lado izquierdo rellenado.  Expanda bases de datos y compruebe que ve las bases de datos de AD FS.
 ![Bases de datos de AD FS](media/ad-fs-tshoot-sql/sql7.png)
 
-## <a name="next-steps"></a>Pasos a seguir
+## <a name="next-steps"></a>Pasos siguientes
 
 - [Solución de problemas de AD FS](ad-fs-tshoot-overview.md)

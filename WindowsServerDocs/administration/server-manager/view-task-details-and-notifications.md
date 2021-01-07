@@ -1,18 +1,18 @@
 ---
 title: Visualización de tareas de detalles y notificaciones
-description: Administrador de servidores
+description: Obtenga información acerca de cómo ver el estado de las tareas de usuario o las solicitudes, vea si se produjo un error en una tarea y solucione problemas al obtener acceso a mensajes de error detallados sobre errores de tareas.
 ms.topic: article
 ms.assetid: 95117407-2dd3-4f9a-841f-4331be3544c3
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 096fdab1cb44f1d71b8db81270396aeea0727fb9
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 3937f3536fbd5751150e3b02e8cb37b9fd0c70c0
+ms.sourcegitcommit: 605a9b46b74b2c7a9116e631e902467ea02a6e70
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89627728"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97965707"
 ---
 # <a name="view-task-details-and-notifications"></a>Visualización de tareas de detalles y notificaciones
 
@@ -42,7 +42,7 @@ Las notificaciones también desempeñan un papel importante en la solución de p
 Para eliminar una notificación que ya no desee ver en la lista de **notificaciones** , mantenga el cursor del mouse sobre la notificación y, a continuación, haga clic en **quitar tarea** (**X**).
 
 ## <a name="viewing-and-troubleshooting-tasks-by-using-task-details"></a>Ver y solucionar problemas de tareas mediante detalles de tarea
-El comando **detalles de tarea** de la parte inferior del menú **notificaciones** abre el cuadro de diálogo **detalles de tarea** , que proporciona descripciones completas de los eventos de tarea (Inicio, detención, advertencias, aciertos o errores). Al igual que los demás controles de lista de Administrador del servidor, como **los eventos, los** **servicios**y los iconos de **analizador de procedimientos recomendados** , puede filtrar y crear consultas para que se ejecuten en las tareas que se muestran en el cuadro de diálogo **detalles de tarea** . (para obtener más información sobre cómo filtrar y crear consultas en controles de lista, vea [filtrar, ordenar y consultar datos en Administrador del servidor mosaicos](filter-sort-and-query-data-in-server-manager-tiles.md)). En el panel superior, puede revisar las notificaciones tal como se han mostrado en el menú **notificaciones** y ver el número de notificaciones que se han generado sobre la misma tarea. al seleccionar una notificación en el panel superior se muestran los detalles completos sobre la notificación en el panel inferior.
+El comando **detalles de tarea** de la parte inferior del menú **notificaciones** abre el cuadro de diálogo **detalles de tarea** , que proporciona descripciones completas de los eventos de tarea (Inicio, detención, advertencias, aciertos o errores). Al igual que los demás controles de lista de Administrador del servidor, como **los eventos, los** **servicios** y los iconos de **analizador de procedimientos recomendados** , puede filtrar y crear consultas para que se ejecuten en las tareas que se muestran en el cuadro de diálogo **detalles de tarea** . (para obtener más información sobre cómo filtrar y crear consultas en controles de lista, vea [filtrar, ordenar y consultar datos en Administrador del servidor mosaicos](filter-sort-and-query-data-in-server-manager-tiles.md)). En el panel superior, puede revisar las notificaciones tal como se han mostrado en el menú **notificaciones** y ver el número de notificaciones que se han generado sobre la misma tarea. al seleccionar una notificación en el panel superior se muestran los detalles completos sobre la notificación en el panel inferior.
 
 El panel inferior es especialmente útil para solucionar los errores de las tareas. Si Administrador del servidor no se puede conectar a un servidor que sea miembro del grupo de servidores ni obtener datos de este, las entradas de este panel contienen a menudo mensajes detallados, incluido el texto completo de los problemas subyacentes de administración remota de Windows (WinRM), redes o seguridad que impiden que Administrador del servidor se comunique con un servidor de destino.
 

@@ -1,18 +1,18 @@
 ---
 title: Métodos abreviados de teclado del Administrador del servidor
-description: Administrador de servidores
+description: Obtenga información sobre los nuevos métodos abreviados de teclado y las teclas de acceso para Administrador del servidor en Windows Server 2012 y versiones más recientes de Windows Server.
 ms.topic: article
 ms.assetid: 96a2a8be-cbeb-4799-9034-284ea057915c
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: d2848398fa232d45f4229238d641db7b858f3032
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 1f21e8f749b91ea93afd964019dd25081fe68444
+ms.sourcegitcommit: 605a9b46b74b2c7a9116e631e902467ea02a6e70
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89627843"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97965717"
 ---
 # <a name="keyboard-shortcuts-for-server-manager"></a>Métodos abreviados de teclado del Administrador del servidor
 
@@ -65,8 +65,8 @@ Para obtener acceso a los comandos que no tengan sus propios métodos abreviados
 |Icono Servicios en una página de rol, grupo o servidor local|**Alt+R**|
 |Icono de Analizador de procedimientos recomendados de página (BPA) del rol, grupo o servidor local|**Alt + B**|
 |Icono Rendimiento en una página de rol, grupo o servidor local|**ALT + O**|
-|Icono Roles y características en una página de rol, grupo o servidor local|**Alt + A**|
-|Icono Servidores de la página Todos los servidores|**Alt + A**|
+|Icono Roles y características en una página de rol, grupo o servidor local|**Alt+A**|
+|Icono Servidores de la página Todos los servidores|**Alt+A**|
 
 **Navegación por el icono Propiedades del servidor local**
 

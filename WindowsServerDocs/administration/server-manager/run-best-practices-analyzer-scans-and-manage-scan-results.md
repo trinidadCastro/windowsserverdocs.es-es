@@ -1,18 +1,18 @@
 ---
 title: Ejecutar análisis y administrar Analizador de procedimientos recomendados Results_1
-description: Administrador de servidores
+description: Aprenda a ejecutar análisis de Analizador de procedimientos recomendados (BPA) desde Administrador del servidor, mediante el uso de la GUI del BPA o mediante cmdlets en Windows PowerShell y aprenda a administrar los resultados del análisis.
 ms.topic: article
 ms.assetid: 232f1c80-88ef-4a39-8014-14be788c2766
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 8b8ef48e81daa9c673f42d43b2f95abadec619a8
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 0541a95ad2fd176ecad8565a66db303a4f609fbc
+ms.sourcegitcommit: 605a9b46b74b2c7a9116e631e902467ea02a6e70
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89627800"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97965070"
 ---
 # <a name="run-best-practices-analyzer-scans-and-manage-scan-results"></a>Ejecución de análisis del Analizador de procedimientos recomendados y administración de los resultados de los análisis
 
@@ -94,7 +94,7 @@ Siga estos pasos para examinar uno o más roles en la GUI del BPA.
 Use los procedimientos siguientes para examinar uno o más roles mediante cmdlets de Windows PowerShell.
 
 > [!NOTE]
-> En los procedimientos de esta sección no se muestran todos los cmdlets y parámetros del BPA. Para obtener más información sobre las operaciones de BPA en Windows PowerShell, en la sesión de Windows PowerShell, escriba **Get-Help***BPACmdlet***-Full**, donde *BPACmdlet* puede ser uno de los siguientes valores. También puede encontrar temas de ayuda de los cmdlets del BPA en [Windows Server TechCenter](https://go.microsoft.com/fwlink/p/?LinkId=240177).
+> En los procedimientos de esta sección no se muestran todos los cmdlets y parámetros del BPA. Para obtener más información sobre las operaciones de BPA en Windows PowerShell, en la sesión de Windows PowerShell, escriba **Get-Help**_BPACmdlet_*_-Full_*, donde *BPACmdlet* puede ser uno de los siguientes valores. También puede encontrar temas de ayuda de los cmdlets del BPA en [Windows Server TechCenter](https://go.microsoft.com/fwlink/p/?LinkId=240177).
 
 -   **Get-BPAmodel**
 
@@ -239,7 +239,7 @@ Para ver y administrar los resultados de exámenes mediante cmdlets de Windows P
 
 1.  Abra una sesión de Windows PowerShell con derechos de usuario elevados.
 
-2.  Obtenga los resultados del examen más reciente para un identificador de modelo especificado. Escriba lo siguiente, en el que el modelo se representa mediante el *identificador de modelo*y, a continuación, presione **entrar**. Puede obtener los resultados de los identificadores de varios modelos al separar los identificadores del modelo con comas.
+2.  Obtenga los resultados del examen más reciente para un identificador de modelo especificado. Escriba lo siguiente, en el que el modelo se representa mediante el *identificador de modelo* y, a continuación, presione **entrar**. Puede obtener los resultados de los identificadores de varios modelos al separar los identificadores del modelo con comas.
 
     `Get-BPAResult <model ID>`
 

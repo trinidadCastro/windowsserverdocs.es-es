@@ -1,18 +1,18 @@
 ---
 title: Manage the Local Server and the Server Manager Console
-description: Administrador de servidores
+description: Obtenga información acerca de cómo administrar el servidor local y los servidores remotos que ejecutan Windows Server 2008 y las versiones más recientes del sistema operativo Windows Server.
 ms.topic: article
 ms.assetid: eeb32f65-d588-4ed5-82ba-1ca37f517139
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: c999e599d565f82f8f1d9f38dfb8ba84ffb3bb9b
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 92434d59abf1373ac87f869b99552409cfeb22b9
+ms.sourcegitcommit: 605a9b46b74b2c7a9116e631e902467ea02a6e70
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89627824"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97965697"
 ---
 # <a name="manage-the-local-server-and-the-server-manager-console"></a>Manage the Local Server and the Server Manager Console
 
@@ -112,7 +112,7 @@ La casilla no **iniciar administrador del servidor automáticamente al iniciar s
 Para acercar o alejar la vista de la consola de Administrador del servidor, puede usar los comandos de **zoom** del menú **Ver** o presionar **Ctrl + más (+)** para acercar y **Ctrl + menos (-)** para alejar.
 
 ## <a name="customize-tools-that-are-displayed-in-the-tools-menu"></a><a name=BKMK_tools></a>Personalizar las herramientas mostradas en el menú Herramientas
-El menú **herramientas** de administrador del servidor incluye vínculos a los accesos directos de la carpeta **herramientas administrativas** del **Panel de control/sistema y seguridad**. La carpeta **herramientas administrativas** contiene una lista de accesos directos o archivos lnk para las herramientas de administración disponibles, como los complementos MMC. Administrador del servidor rellena el menú **herramientas** con vínculos a dichos accesos directos y copia la estructura de carpetas de la carpeta **herramientas administrativas** en el menú **herramientas** . De forma predeterminada, las herramientas de la carpeta Herramientas administrativas están organizadas en una lista plana, ordenadas por tipo y nombre. En el menú**herramientas** de administrador del servidor, los elementos se ordenan solo por nombre, no por tipo.
+El menú **herramientas** de administrador del servidor incluye vínculos a los accesos directos de la carpeta **herramientas administrativas** del **Panel de control/sistema y seguridad**. La carpeta **herramientas administrativas** contiene una lista de accesos directos o archivos lnk para las herramientas de administración disponibles, como los complementos MMC. Administrador del servidor rellena el menú **herramientas** con vínculos a dichos accesos directos y copia la estructura de carpetas de la carpeta **herramientas administrativas** en el menú **herramientas** . De forma predeterminada, las herramientas de la carpeta Herramientas administrativas están organizadas en una lista plana, ordenadas por tipo y nombre. En el menú **herramientas** de administrador del servidor, los elementos se ordenan solo por nombre, no por tipo.
 
 Para personalizar el menú **Herramientas**, copie los accesos directos a herramientas o scripts que desee usar en la carpeta **Herramientas administrativas**. También puede organizar los accesos directos en carpetas, con lo que se crean menús en cascada en el menú **Herramientas**. Además, si desea restringir el acceso a las herramientas personalizadas del menú **herramientas** , puede establecer derechos de acceso de usuario en las carpetas de herramientas personalizadas de herramientas administrativas o directamente en los archivos de herramientas o scripts originales.
 
@@ -120,7 +120,7 @@ Se recomienda no reorganizar las herramientas administrativas y del sistema y la
 
 No obstante, las herramientas de roles y características que se instalan como parte de las Herramientas de administración remota del servidor en un equipo de Windows basado en el cliente, se pueden organizar en carpetas personalizadas. La desinstalación del rol o la característica primarios no tiene ningún efecto en los métodos abreviados de herramientas que están disponibles en un equipo remoto que ejecuta Windows 10.
 
-En el procedimiento siguiente se describe cómo crear una carpeta de ejemplo denominada mis *herramientas*y cómo trasladar los accesos directos de dos scripts de Windows PowerShell a la carpeta a la que se puede tener acceso desde el menú herramientas administrador del servidor.
+En el procedimiento siguiente se describe cómo crear una carpeta de ejemplo denominada mis *herramientas* y cómo trasladar los accesos directos de dos scripts de Windows PowerShell a la carpeta a la que se puede tener acceso desde el menú herramientas administrador del servidor.
 
 #### <a name="to-customize-the-tools-menu-by-adding-shortcuts-in-administrative-tools"></a>Para personalizar el menú Herramientas mediante la adición de accesos directos en Herramientas administrativas
 
@@ -135,14 +135,14 @@ En el procedimiento siguiente se describe cómo crear una carpeta de ejemplo den
 
 4.  En la pestaña **seguridad** del cuadro de diálogo **propiedades** del archivo, haga clic en **Editar**.
 
-5.  para los usuarios para los que desea restringir el acceso a las herramientas, desactive las casillas de los permisos de **lectura & ejecutar**, **leer**y **escribir** . El acceso directo a la herramienta hereda estos permisos en la carpeta **Herramientas administrativas**.
+5.  para los usuarios para los que desea restringir el acceso a las herramientas, desactive las casillas de los permisos de **lectura & ejecutar**, **leer** y **escribir** . El acceso directo a la herramienta hereda estos permisos en la carpeta **Herramientas administrativas**.
 
     Si edita los derechos de acceso de un usuario mientras el usuario usa Administrador del servidor (o mientras el Administrador del servidor está abierto), los cambios no se muestran en el menú **herramientas** hasta que el usuario reinicia administrador del servidor.
 
     > [!NOTE]
-    > Si restringe el acceso a una carpeta completa que ha copiado en herramientas administrativas, los usuarios restringidos no podrán ver ni la carpeta ni su contenido en el menú**herramientas** de administrador del servidor.
+    > Si restringe el acceso a una carpeta completa que ha copiado en herramientas administrativas, los usuarios restringidos no podrán ver ni la carpeta ni su contenido en el menú **herramientas** de administrador del servidor.
     >
-    > Edite los permisos de la carpeta en la carpeta **herramientas administrativas** . Dado que los archivos y carpetas ocultos de las herramientas administrativas siempre se muestran en el menú**herramientas** de administrador del servidor, no use el valor **oculto** en el cuadro de diálogo **propiedades** de un archivo o carpeta para restringir el acceso de los usuarios a los accesos directos a herramientas personalizadas.
+    > Edite los permisos de la carpeta en la carpeta **herramientas administrativas** . Dado que los archivos y carpetas ocultos de las herramientas administrativas siempre se muestran en el menú **herramientas** de administrador del servidor, no use el valor **oculto** en el cuadro de diálogo **propiedades** de un archivo o carpeta para restringir el acceso de los usuarios a los accesos directos a herramientas personalizadas.
     >
     > Los permisos **Denegar** siempre sobrescriben los permisos **Permitir**.
 

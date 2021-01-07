@@ -1,18 +1,18 @@
 ---
 title: Configurar la detección automática de caché hospedada de cliente mediante el punto de conexión de servicio
-description: En esta guía se proporcionan instrucciones sobre cómo implementar BranchCache en modo caché hospedada en equipos que ejecutan Windows Server 2016 y Windows 10.
+description: Obtenga información acerca de cómo usar directiva de grupo para habilitar y configurar el modo caché hospedada de BranchCache en equipos Unidos a un dominio que ejecutan los siguientes sistemas operativos de Windows compatibles con BranchCache.
 manager: brianlic
 ms.topic: article
 ms.assetid: ea1c34fd-5a33-4228-9437-9bb3d44230eb
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 05866d3984dcc8185aca6a40e9402455fb703095
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 00962ad02e78a577e72b4ffd081696b86bbb11b7
+ms.sourcegitcommit: 605a9b46b74b2c7a9116e631e902467ea02a6e70
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947901"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97965617"
 ---
 #  <a name="configure-client-automatic-hosted-cache-discovery-by-service-connection-point"></a>Configurar la detección automática de caché hospedada de cliente mediante el punto de conexión de servicio
 

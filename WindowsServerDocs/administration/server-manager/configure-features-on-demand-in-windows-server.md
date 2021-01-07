@@ -1,18 +1,18 @@
 ---
 title: Configure Features on Demand in Windows Server
-description: Administrador de servidores
+description: Obtenga información sobre cómo quitar archivos de características en una configuración de características a petición mediante el cmdlet Uninstall-WindowsFeature.
 ms.topic: article
 ms.assetid: e663bbea-d025-41fa-b16c-c2bff00a88e8
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 3f35b9cab30dcccbdc364d0fc76ec56aa4326b71
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 8a2737aec1729bc30bba571a222cc659ff04d8af
+ms.sourcegitcommit: 605a9b46b74b2c7a9116e631e902467ea02a6e70
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89628374"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97965100"
 ---
 # <a name="configure-features-on-demand-in-windows-server"></a>Configure Features on Demand in Windows Server
 
@@ -20,7 +20,7 @@ ms.locfileid: "89628374"
 
 En este tema se describe cómo quitar archivos de características en una configuración de Características a petición mediante el cmdlet Uninstall-WindowsFeature.
 
-Características a petición es una característica, introducida en Windows 8 y Windows Server 2012, que permite quitar archivos de roles y características (a veces denominados *carga*de características) del sistema operativo para conservar espacio en disco e instalar roles y características desde ubicaciones remotas o medios de instalación en lugar de desde equipos locales. Puede quitar archivos de características de equipos físicos o virtuales en ejecución. También puede agregar o quitar archivos de características desde archivos de imagen de Windows (WIM) o discos duros virtuales (VHD) sin conexión para crear una copia reproducible de las configuraciones de Características a petición.
+Características a petición es una característica, introducida en Windows 8 y Windows Server 2012, que permite quitar archivos de roles y características (a veces denominados *carga* de características) del sistema operativo para conservar espacio en disco e instalar roles y características desde ubicaciones remotas o medios de instalación en lugar de desde equipos locales. Puede quitar archivos de características de equipos físicos o virtuales en ejecución. También puede agregar o quitar archivos de características desde archivos de imagen de Windows (WIM) o discos duros virtuales (VHD) sin conexión para crear una copia reproducible de las configuraciones de Características a petición.
 
 En una configuración de características a petición, cuando los archivos de características no están disponibles en un equipo, si una instalación requiere esos archivos de características, se puede dirigir a Windows Server 2012 R2 o Windows Server 2012 para obtener los archivos de un almacén de características en paralelo (una carpeta compartida que contiene archivos de características y que está disponible para el equipo en la red), desde Windows Update o desde medios de instalación. De forma predeterminada, cuando los archivos de características no están disponibles en el servidor de destino, Características a petición busca los archivos de características que faltan realizando las tareas siguientes, en el orden mostrado.
 
@@ -51,7 +51,7 @@ En esta sección se describe cómo configurar una carpeta compartida de archivos
 
 #### <a name="to-create-a-feature-file-store"></a>Para crear un almacén de archivos de características
 
-1.  Cree una carpeta compartida en un servidor de la red. Por ejemplo, * \\ \network\share\sxs*.
+1.  Cree una carpeta compartida en un servidor de la red. Por ejemplo, *\\ \network\share\sxs*.
 
 2.  Compruebe que tiene los permisos correctos asignados al almacén de características. La ruta de acceso de origen o el recurso compartido de archivos deben conceder permisos de **lectura** al grupo **todos** (no se recomienda por motivos de seguridad) o a las cuentas de equipo (*dominio* \\ *SERverNAME*$) de los servidores en los que tiene previsto instalar características mediante este almacén de características; la concesión de acceso a la cuenta de usuario no es suficiente.
 
@@ -74,7 +74,7 @@ Dispone de dos métodos para quitar archivos de características de Windows Serv
 -   Los comandos de Administración y mantenimiento de imágenes de implementación (DISM) permiten crear archivos WIM personalizados que conservan espacio en disco mediante la omisión de archivos de características que no son necesarios o que se pueden obtener de otros orígenes remotos. Para obtener más información acerca del uso de DISM para preparar imágenes personalizadas, vea [Cómo habilitar o deshabilitar características de Windows](/previous-versions/windows/it-pro/windows-8.1-and-8/hh824822(v=win.10)).
 
 ## <a name="remove-feature-files-by-using-uninstall-windowsfeature"></a><a name=BKMK_remove></a>Quitar archivos de características mediante Uninstall-WindowsFeature
-Puede usar el cmdlet Uninstall-WindowsFeature para desinstalar roles, servicios de rol y características de los servidores y los VHD sin conexión que ejecutan Windows Server 2012 R2 o Windows Server 2012, y para eliminar los archivos de características. Puede desinstalar y eliminar los mismos roles, servicios de rol y características en el mismo comando si lo desea.
+Puede usar el cmdlet Uninstall-WindowsFeature para desinstalar roles, servicios de rol y características de servidores y VHD sin conexión que ejecutan Windows Server 2012 R2 o Windows Server 2012, y para eliminar archivos de características. Puede desinstalar y eliminar los mismos roles, servicios de rol y características en el mismo comando si lo desea.
 
 > [!IMPORTANT]
 > Al eliminar los archivos de características de un rol, servicio de función o característica, roles, servicios de función y características que dependen de los archivos que se están quitando también se eliminan. Si elimina archivos de características de un servicio de rol o característica secundaria y no permanecen instalados otros servicios de rol o características secundarias para el rol o característica primario, se eliminan los archivos de todo el rol o característica primario. Para ver todos los archivos de características que eliminaría el comando `Uninstall-WindowsFeature -remove`, agregue el parámetro `whatif` al comando para ejecutarlo y ver los resultados sin eliminar los archivos de características.

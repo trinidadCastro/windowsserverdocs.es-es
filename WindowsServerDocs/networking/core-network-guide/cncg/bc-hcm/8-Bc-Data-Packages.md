@@ -1,18 +1,18 @@
 ---
 title: Crear contenido de paquetes de datos de servidor para contenido web y de archivos (opcional)
-description: En esta guía se proporcionan instrucciones sobre cómo implementar BranchCache en modo caché hospedada en equipos que ejecutan Windows Server 2016 y Windows 10.
+description: Obtenga información sobre el hash de contenido en servidores web y de archivos y, a continuación, cree paquetes de datos para importar en el servidor de caché hospedada.
 manager: brianlic
 ms.topic: article
 ms.assetid: 31e8428f-a482-4734-be1b-213912e34825
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: e7b2ba5890eedb6da06977996a58cd67e529fd92
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 638fc98b0d3271918d5d88df9cedd5d33429ad29
+ms.sourcegitcommit: 605a9b46b74b2c7a9116e631e902467ea02a6e70
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947871"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97965452"
 ---
 # <a name="create-content-server-data-packages-for-web-and-file-content-optional"></a>Crear contenido de paquetes de datos de servidor para contenido web y de archivos (opcional)
 

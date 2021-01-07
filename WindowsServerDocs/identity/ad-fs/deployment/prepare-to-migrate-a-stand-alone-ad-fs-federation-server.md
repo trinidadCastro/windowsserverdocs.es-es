@@ -1,17 +1,17 @@
 ---
 title: Preparar la migración de un servidor de Federación de AD FS independiente
-description: Proporciona información sobre cómo preparar la migración de un servidor de AD FS independiente a Windows Server 2012.
+description: Obtenga información acerca de cómo exportar y realizar una copia de seguridad de los datos de configuración de AD FS desde este servidor.
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 06/28/2017
 ms.topic: article
-ms.openlocfilehash: a29b9246b32088ce8dcb63cf342c0fd41c912bc5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 9f48972613e08566adbf2d45beeda315e5bc9862
+ms.sourcegitcommit: 605a9b46b74b2c7a9116e631e902467ea02a6e70
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87940634"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97965647"
 ---
 #  <a name="prepare-to-migrate-a-stand-alone-ad-fs-federation-server-or-a-single-node-ad-fs-farm"></a>Preparar la migración de un servidor de federación de AD FS independiente o una granja de servidores de AD FS de un solo nodo
 
@@ -34,7 +34,7 @@ Para exportar los datos de configuración de AD FS, realiza estas tareas:
 
 ### <a name="to-export-service-settings"></a>Exportar la configuración de servicios
 
-1.  Anota el nombre del sujeto del certificado y el valor de huella digital del certificado SSL usado por el servicio de federación. Para buscar el certificado SSL, abra la consola administración de Internet Information Services (IIS), seleccione **Sitio web predeterminado** en el panel izquierdo, haga clic en **Enlaces…** en el panel **Acción** , busque y seleccione el enlace HTTPS, haga clic en **Editar**y, a continuación, haga clic en **Ver**.
+1.  Anota el nombre del sujeto del certificado y el valor de huella digital del certificado SSL usado por el servicio de federación. Para buscar el certificado SSL, abra la consola administración de Internet Information Services (IIS), seleccione **Sitio web predeterminado** en el panel izquierdo, haga clic en **Enlaces…** en el panel **Acción** , busque y seleccione el enlace HTTPS, haga clic en **Editar** y, a continuación, haga clic en **Ver**.
 
 > [!NOTE]
 >  También puedes exportar el certificado SSL que usará el servicio de federación y su clave privada a un archivo .pfx. Para obtener más información, consulte [Export the Private Key Portion of a Server Authentication Certificate](Export-the-Private-Key-Portion-of-a-Server-Authentication-Certificate.md).
@@ -105,5 +105,5 @@ Para ello, abra Windows PowerShell y ejecute el siguiente comando para agregar l
 ## <a name="step-5-back-up-webpage-customizations"></a>Paso 5: Hacer una copia de seguridad de las personalizaciones de las páginas web
  Para hacer una copia de seguridad de las personalizaciones de las páginas web, copia las páginas web de AD FS y el archivo **web.config** del directorio que está asignado a la ruta virtual **“/adfs/ls”** en IIS. De forma predeterminada, está en el directorio **%systemdrive%\inetpub\adfs\ls**.
 
-## <a name="next-steps"></a>Pasos a seguir
+## <a name="next-steps"></a>Pasos siguientes
  [Preparar la migración del servidor de Federación de AD FS 2,0](prepare-to-migrate-ad-fs-fed-server.md) [preparación para migrar el servidor proxy de federación de AD FS 2,0](prepare-to-migrate-ad-fs-fed-proxy.md) [migrar el servidor de Federación de AD FS 2,0](migrate-the-ad-fs-fed-server.md) [migrar el servidor proxy de Federación de AD FS 2,0](migrate-the-ad-fs-2-fed-server-proxy.md) [migrar los agentes Web de AD FS 1,1](migrate-the-ad-fs-web-agent.md)
