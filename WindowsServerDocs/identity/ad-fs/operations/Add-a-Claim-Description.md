@@ -7,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: bdf57eddd1ad76c5bf9217e9aab97cfef9332b61
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 2890fe14ecd9a4e0b8375475fb740367a36dc01d
+ms.sourcegitcommit: 528bdff90a7c797cdfc6839e5586f2cd5f0506b0
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97044303"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97977420"
 ---
 # <a name="add-a-claim-description"></a>Agregar una descripción de notificación
 
@@ -30,7 +30,7 @@ La pertenencia al grupo **Administradores** o equivalente en el equipo local es 
 1. En el Administrador del servidor, haga clic en **Herramientas** y, luego, seleccione **Administración de AD FS**.
 
 2. Expanda **servicio** y, a la derecha, haga clic en **Agregar Descripción de notificaciones**.
-   ![Agregar Descripción de notificaciones](media/Add-a-Claim-Description/claimdesc1.png)
+   ![Captura de pantalla que resalta agregar Descripción de notificaciones.](media/Add-a-Claim-Description/claimdesc1.png)
 
 3. En el cuadro de diálogo Agregar una descripción de notificaciones, en **nombre para mostrar**, escriba un nombre único que identifique el grupo o el rol para esta demanda.
 

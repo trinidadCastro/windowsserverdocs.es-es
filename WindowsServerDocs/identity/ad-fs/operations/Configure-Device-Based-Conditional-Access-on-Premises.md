@@ -7,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 08/11/2017
 ms.topic: article
-ms.openlocfilehash: 5b840243a7f17dc65db5d3c0605c3e5a321352f2
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 7272a25bac04ab864b44f234c69a1554c86d004a
+ms.sourcegitcommit: 528bdff90a7c797cdfc6839e5586f2cd5f0506b0
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97049723"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97977340"
 ---
 # <a name="configure-on-premises-conditional-access-using-registered-devices"></a>Configuración del acceso condicional local mediante dispositivos registrados
 
@@ -49,7 +49,7 @@ Para poder usar el acceso condicional local con dispositivos registrados, primer
 Para comprobar el nivel de esquema, haga lo siguiente:
 
 1.  Puede usar ADSIEdit o LDP y conectarse al contexto de nomenclatura del esquema.
-2.  Con ADSIEdit, haga clic con el botón derecho en "CN = Schema, CN = Configuration, DC = <domain> , DC = <com> y seleccione Propiedades.  Relpace dominio y las partes com con la información del bosque.
+2.  Con ADSIEdit, haga clic con el botón derecho en "CN = Schema, CN = Configuration, DC = <domain> , DC = <com> y seleccione Propiedades.  Reemplace dominio y las partes com por la información del bosque.
 3.  En el editor de atributos, busque el atributo objectVersion y le indicará la versión.
 
 ![Editor ADSI](media/Configure-Device-Based-Conditional-Access-on-Premises/adsiedit.png)
@@ -82,13 +82,13 @@ Para ello, siga los pasos descritos en [configuración de Azure ad JOIN en su or
 ### <a name="create-ad-objects-for-ad-fs-device-authentication"></a>Crear objetos de AD para la autenticación de AD FS dispositivo
 Si la granja de servidores de AD FS aún no está configurada para la autenticación de dispositivos (puede verla en la consola de administración de AD FS en registro de dispositivos > de servicio), use los pasos siguientes para crear los objetos y la configuración de AD DS correctos.
 
-![Registro de dispositivos](media/Configure-Device-Based-Conditional-Access-on-Premises/device1.png)
+![Captura de pantalla que muestra la pantalla de información general del registro de dispositivos.](media/Configure-Device-Based-Conditional-Access-on-Premises/device1.png)
 
 >Nota: los siguientes comandos requieren herramientas de administración de Active Directory, por lo que si el servidor de Federación no es también un controlador de dominio, instale primero las herramientas con el paso 1 a continuación.  De lo contrario, puede omitir el paso 1.
 
 1.  Ejecute el Asistente para **Agregar roles & características** y seleccione características **herramientas de administración remota del servidor**  ->  **herramientas de administración de roles**  ->  **AD DS y AD LDS herramientas** -> elija el **módulo Active Directory para Windows PowerShell** y las **herramientas de AD DS**.
 
-![Registro de dispositivos](media/Configure-Device-Based-Conditional-Access-on-Premises/device2.png)
+![Captura de pantalla que resalta el módulo de Active Directory para Windows PowerShell y las opciones de herramientas de AD DS.](media/Configure-Device-Based-Conditional-Access-on-Premises/device2.png)
 
 2. En el servidor principal de AD FS, asegúrese de que ha iniciado sesión como AD DS usuario con privilegios de administrador de empresa (EA) y abra un símbolo del sistema de PowerShell con privilegios elevados.  A continuación, ejecute los siguientes comandos de PowerShell:
 
@@ -98,7 +98,7 @@ Si la granja de servidores de AD FS aún no está configurada para la autenticac
 
 >Nota: Si el servicio de AD FS está configurado para usar una cuenta de GMSA, escriba el nombre de la cuenta con el formato "dominio\nombredecuenta $".
 
-![Registro de dispositivos](media/Configure-Device-Based-Conditional-Access-on-Premises/device3.png)
+![Captura de pantalla que muestra cómo usar los comandos de PowerShell enumerados.](media/Configure-Device-Based-Conditional-Access-on-Premises/device3.png)
 
 El PSH anterior crea los siguientes objetos:
 
@@ -107,11 +107,11 @@ El PSH anterior crea los siguientes objetos:
 - Contenedor y objeto del servicio de registro de dispositivos en configuración: > Services--> configuración de registro del dispositivo
 - Contenedor DKM del servicio de registro de dispositivos y objeto en configuración--> Services--> configuración de registro del dispositivo
 
-![Registro de dispositivos](media/Configure-Device-Based-Conditional-Access-on-Premises/device4.png)
+![Captura de pantalla que muestra el progreso de los objetos que se están creando.](media/Configure-Device-Based-Conditional-Access-on-Premises/device4.png)
 
 4. Una vez hecho esto, verá un mensaje de finalización correcta.
 
-![Registro de dispositivos](media/Configure-Device-Based-Conditional-Access-on-Premises/device5.png)
+![Captura de pantalla que muestra el mensaje de finalización correcto.](media/Configure-Device-Based-Conditional-Access-on-Premises/device5.png)
 
 ###        <a name="create-service-connection-point-scp-in-ad"></a>Crear punto de conexión de servicio (SCP) en AD
 Si tiene previsto usar la Unión a un dominio de Windows 10 (con el registro automático en Azure AD) como se describe aquí, ejecute los siguientes comandos para crear un punto de conexión de servicio en AD DS
@@ -121,13 +121,13 @@ Si tiene previsto usar la Unión a un dominio de Windows 10 (con el registro aut
 
 >Nota: si es necesario, copie el archivo AdSyncPrep. psm1 del servidor de Azure AD Connect.  Este archivo se encuentra en archivos de Programa\microsoft Azure Active Directory Connect\AdPrep
 
-![Registro de dispositivos](media/Configure-Device-Based-Conditional-Access-on-Premises/device6.png)
+![Captura de pantalla que muestra la ruta de acceso al archivo AdSyncPrep.](media/Configure-Device-Based-Conditional-Access-on-Premises/device6.png)
 
 2. Proporcione sus credenciales de administrador global de Azure AD
 
     `PS C:>$aadAdminCred = Get-Credential`
 
-![Registro de dispositivos](media/Configure-Device-Based-Conditional-Access-on-Premises/device7.png)
+![Captura de pantalla que muestra dónde proporcionar el Azure AD las credenciales de administrador global.](media/Configure-Device-Based-Conditional-Access-on-Premises/device7.png)
 
 3. Ejecutar el siguiente comando de PowerShell
 

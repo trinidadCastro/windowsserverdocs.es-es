@@ -7,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 3672d80b89738b10bcd0e0ef186b33592d6b53e2
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: d35d56bf2a30e023fccd9ea6e5f47e5c4c949f10
+ms.sourcegitcommit: 528bdff90a7c797cdfc6839e5586f2cd5f0506b0
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97044283"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97977410"
 ---
 # <a name="add-an-attribute-store"></a>Adición de un almacén de atributos
 
@@ -29,7 +29,7 @@ La pertenencia al grupo **Administradores** o equivalente en el equipo local es 
 
 2.  En **acciones** , haga clic en **Agregar un almacén de atributos**.
 
-![Agregar almacén de atributos](media/Add-an-Attribute-Store/addstore1.PNG)
+![Captura de pantalla que resalta la acción Agregar almacén de atributos.](media/Add-an-Attribute-Store/addstore1.PNG)
 
 3. En el cuadro de diálogo **Agregar un almacén de atributos** , configure las siguientes propiedades para el almacén de atributos que desea agregar:
 

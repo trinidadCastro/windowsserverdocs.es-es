@@ -7,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 4ed9370bda7bbad0c38e4b4c30159f91aa924410
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: b768a57d3fa5873ed4e64fe0bf531110ca9333c8
+ms.sourcegitcommit: 528bdff90a7c797cdfc6839e5586f2cd5f0506b0
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97048913"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97977380"
 ---
 # <a name="create-a-claims-provider-trust"></a>Creación de una confianza de proveedor de notificaciones
 
@@ -25,31 +25,31 @@ La pertenencia al grupo **administradores**, o equivalente, en el equipo local e
 1.  En el Administrador del servidor, haga clic en **Herramientas** y, luego, seleccione **Administración de AD FS**.
 
 2.  En **acciones**, haga clic en **Agregar confianza de proveedor de notificaciones**.
-![confianza de proveedor de notificaciones](media/Create-a-Claims-Provider-Trust/addclaim1.PNG)
+![Captura de pantalla que resalta la acción agregar confianza de proveedor de notificaciones.](media/Create-a-Claims-Provider-Trust/addclaim1.PNG)
 
 3.  En la **página principal**, haz clic en **Iniciar**.
-![confianza de proveedor de notificaciones](media/Create-a-Claims-Provider-Trust/addclaim2.PNG)
+![Captura de pantalla que muestra la Página principal del Asistente para agregar confianza de proveedor de notificaciones.](media/Create-a-Claims-Provider-Trust/addclaim2.PNG)
 
 4.  En la página **Seleccionar origen de datos**, haga clic en **Escribir los datos de la confianza del proveedor de notificaciones manualmente** y, a continuación, en **Siguiente**.
-![confianza de proveedor de notificaciones](media/Create-a-Claims-Provider-Trust/addclaim3.PNG)
+![Captura de pantalla que muestra la opción escribir confianza de proveedor de notificaciones manualmente.](media/Create-a-Claims-Provider-Trust/addclaim3.PNG)
 
 5.  En la página **Especificar nombre para mostrar**, escriba un **Nombre para mostrar**, en **Notas** escriba una descripción para esta confianza de proveedor de notificaciones y, después, haga clic en **Siguiente**.
-![confianza de proveedor de notificaciones](media/Create-a-Claims-Provider-Trust/addclaim4.PNG)
+![Captura de pantalla que muestra dónde especificar el nombre para mostrar.](media/Create-a-Claims-Provider-Trust/addclaim4.PNG)
 
 6.  En la página **configurar dirección URL** , especifique la **dirección URL pasiva de WS-Federation** , si procede, y haga clic en **siguiente**.
-![confianza de proveedor de notificaciones](media/Create-a-Claims-Provider-Trust/addclaim5.PNG)
+![Captura de pantalla que muestra dónde especificar el WS-Federation U R L pasivo.](media/Create-a-Claims-Provider-Trust/addclaim5.PNG)
 
 8. En la página **Configurar identificador**, en **Identificador de confianza del proveedor de notificaciones**, escriba el identificador apropiado y haga clic en **Siguiente**.
-![confianza de proveedor de notificaciones](media/Create-a-Claims-Provider-Trust/addclaim6.PNG)
+![Captura de pantalla que muestra dónde agregar el identificador de confianza del proveedor de notificaciones.](media/Create-a-Claims-Provider-Trust/addclaim6.PNG)
 
 9. En la página **Configurar certificados**, haga clic en **Agregar** para buscar un archivo de certificado y agregarlo a la lista de certificados y, después, haga clic en **Siguiente**.
-![confianza de proveedor de notificaciones](media/Create-a-Claims-Provider-Trust/addclaim7.PNG)
+![Captura de pantalla que muestra cómo buscar un archivo de certificado y agregarlo a la lista de certificados.](media/Create-a-Claims-Provider-Trust/addclaim7.PNG)
 
 10. En la página **Listo para agregar confianza**, haga clic en **Siguiente** para guardar la información de la confianza de proveedor de notificaciones.
-![confianza de proveedor de notificaciones](media/Create-a-Claims-Provider-Trust/addclaim8.PNG)
+![Captura de pantalla que muestra cómo guardar la información de confianza del proveedor de notificaciones.](media/Create-a-Claims-Provider-Trust/addclaim8.PNG)
 
 11. En la página **Finalizar**, haz clic en **Cerrar**. Esta acción muestra automáticamente el cuadro de diálogo **Editar reglas de notificaciones**. Para obtener más información sobre cómo continuar agregando reglas de notificaciones para esta confianza de proveedor de notificaciones, vea las siguientes referencias adicionales.
-![confianza de proveedor de notificaciones](media/Create-a-Claims-Provider-Trust/addclaim9.PNG)
+![Captura de pantalla que muestra cómo seleccionar cerrar.](media/Create-a-Claims-Provider-Trust/addclaim9.PNG)
 
 ## <a name="to-create-a-claims-provider-trust-using-federation-metadata"></a>Para crear una confianza de proveedor de notificaciones mediante metadatos de Federación
 Para agregar una nueva confianza de proveedor de notificaciones mediante el complemento de administración de AD FS, importando automáticamente los datos de configuración sobre el socio desde los metadatos de Federación que el asociado ha publicado en una red local o en Internet, realice el siguiente procedimiento en un servidor de Federación de la organización del asociado de recurso.
@@ -60,13 +60,13 @@ Para agregar una nueva confianza de proveedor de notificaciones mediante el comp
 1.  En el Administrador del servidor, haga clic en **Herramientas** y, luego, seleccione **Administración de AD FS**.
 
 2.  En **acciones**, haga clic en **Agregar confianza de proveedor de notificaciones**.
-![confianza de proveedor de notificaciones](media/Create-a-Claims-Provider-Trust/addclaim1.PNG)
+![Captura de pantalla que muestra dónde seleccionar Agregar confianza de proveedor de notificaciones.](media/Create-a-Claims-Provider-Trust/addclaim1.PNG)
 
 3.  En la **página principal**, haz clic en **Iniciar**.
 ![confianza de proveedor de notificaciones](media/Create-a-Claims-Provider-Trust/addclaim2.PNG)
 
 4.  En la página **Seleccionar origen de datos**, haga clic en **Importar los datos acerca del proveedor de notificaciones publicados en línea o en una red local**. En dirección de metadatos de Federación (nombre de host o dirección URL), escriba la **dirección URL de metadatos de Federación** o el nombre de host del asociado y, a continuación, haga clic en **siguiente**.
-![confianza de proveedor de notificaciones](media/Create-a-Claims-Provider-Trust/addclaim10.PNG)
+![Captura de pantalla que muestra los datos de importación sobre el proveedor de notificaciones publicado en línea o en una opción de red local.](media/Create-a-Claims-Provider-Trust/addclaim10.PNG)
 
 5.  En la página especificar nombre para mostrar, escriba un **nombre para mostrar**, en notas escriba una descripción para esta confianza del proveedor de notificaciones y, a continuación, haga clic en **siguiente**.
 

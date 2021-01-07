@@ -7,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 04/24/2019
 ms.topic: article
-ms.openlocfilehash: 4d8313d5a086f2a64ea840da49faa9ca22e46466
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 431f4cd79127758af49d451442d0a62d321abe1a
+ms.sourcegitcommit: 528bdff90a7c797cdfc6839e5586f2cd5f0506b0
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97046623"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97977460"
 ---
 # <a name="ad-fs-rapid-restore-tool"></a>Herramienta de restauración rápida de AD FS
 
@@ -77,7 +77,7 @@ El cmdlet toma los siguientes parámetros:
 
 Conjuntos de parámetros
 
-![Herramienta de restauración rápida de AD FS](media/AD-FS-Rapid-Restore-Tool/parameter1.png)
+![Captura de pantalla que muestra los conjuntos de parámetros que el cmdlet acepta.](media/AD-FS-Rapid-Restore-Tool/parameter1.png)
 
 ### <a name="detailed-description"></a>Descripción detallada
 

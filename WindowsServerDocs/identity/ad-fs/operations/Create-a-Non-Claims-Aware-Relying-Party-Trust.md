@@ -7,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 5238f93656c1d918122fc9cbb3a6b73232fce548
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 7a784f63949fd198272ab2df8d11e1f7b990a473
+ms.sourcegitcommit: 528bdff90a7c797cdfc6839e5586f2cd5f0506b0
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97048873"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97977360"
 ---
 # <a name="create-a-non-claims-aware-relying-party-trust"></a>Crear una relación de confianza para usuario autenticado no compatible con notificaciones
 
@@ -29,22 +29,22 @@ La pertenencia al grupo **Administradores** o equivalente en el equipo local es 
 1. En el Administrador del servidor, haga clic en **Herramientas** y, luego, seleccione **Administración de AD FS**.
 
 2.  En **acciones**, haga clic en **Agregar relación de confianza para usuario autenticado**.
-![usuario de confianza](media/Create-a-Relying-Party-Trust/addtrust1.PNG)
+![Captura de pantalla que resalta la acción Agregar relación de confianza para usuario autenticado.](media/Create-a-Relying-Party-Trust/addtrust1.PNG)
 
 3.  En la página de **bienvenida** , elija **no compatible con notificaciones** y haga clic en **iniciar**.
-![usuario de confianza](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon1.PNG)
+![Captura de pantalla que resalta la opción no compatible con notificaciones.](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon1.PNG)
 
 4.  En la página **Especificar nombre para mostrar**, escriba un nombre en **Nombre para mostrar**, en **Notas** escriba una descripción de esta relación de confianza para usuario autenticado y luego haga clic en **Siguiente**.
-![usuario de confianza](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon2.PNG)
+![Captura de pantalla que muestra dónde especificar el nombre de la relación de confianza para usuario autenticado.](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon2.PNG)
 
 5. En la página **Configurar identificadores**, especifica uno o varios identificadores para este usuario de confianza, haz clic en **Agregar** para agregarlos a la lista y haz clic en **Siguiente**.
-![usuario de confianza](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon3.PNG)
+![Captura de pantalla que muestra dónde especificar uno o varios identificadores para la relación de confianza para usuario autenticado.](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon3.PNG)
 
 6.  En **Choose Access Control Policy** (Elegir directiva de control de acceso), seleccione una directiva y haga clic en **Siguiente**.  Para obtener más información acerca de las directivas de Access Control, consulte [directivas de Access Control en AD FS](Access-Control-Policies-in-AD-FS.md).
-![usuario de confianza](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon4.PNG)
+![Captura de pantalla que muestra dónde seleccionar una directiva de Access Control para la relación de confianza para usuario autenticado.](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon4.PNG)
 
 7. En la página **Ready to Add Trust** (Listo para agregar confianza), revise la configuración y luego haga clic en **Siguiente** para guardar la información de la relación de confianza para usuario autenticado.
-   ![usuario de confianza](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon5.PNG)
+   ![Captura de pantalla que muestra cómo guardar la información de la relación de confianza para usuario autenticado.](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon5.PNG)
 
 8. En la página **Finalizar**, haz clic en **Cerrar**. Esta acción muestra automáticamente el cuadro de diálogo **Editar reglas de notificaciones**.
 ![usuario de confianza](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon6.PNG)

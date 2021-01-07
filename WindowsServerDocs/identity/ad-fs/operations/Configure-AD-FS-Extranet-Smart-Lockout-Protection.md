@@ -7,12 +7,12 @@ ms.author: billmath
 manager: mtilman
 ms.date: 05/20/2019
 ms.topic: article
-ms.openlocfilehash: 182d529ce2cd5bdf8ce0dc833cb43a283f874218
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 415275a0d845191144010293f1a57d8caab77672
+ms.sourcegitcommit: 528bdff90a7c797cdfc6839e5586f2cd5f0506b0
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97040153"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97977320"
 ---
 # <a name="ad-fs-extranet-lockout-and-extranet-smart-lockout"></a>AD FS Extranet Lockout and Extranet Smart Lockout (Bloqueo de extranet de AD FS y bloqueo inteligente de extranet)
 
@@ -62,7 +62,7 @@ Se admiten las direcciones IPv4 e IPv6.
 - **Inicio de sesión correcto**: Si el inicio de sesión se realiza correctamente, las direcciones IP de la solicitud se agregan a la lista de direcciones IP de ubicación conocida del usuario.
 - **Error de inicio de sesión**: si se produce un error en el inicio de sesión, se aumenta el badPwdCount. El usuario pasará a un estado de bloqueo si el atacante envía más contraseñas incorrectas al sistema de las que permite el umbral. (badPwdCount > ExtranetLockoutThreshold)
 
-![configuración](media/configure-ad-fs-extranet-smart-lockout-protection/esl2.png)
+![Diagrama de flujo de trabajo que muestra el proceso de inicio de sesión erróneo.](media/configure-ad-fs-extranet-smart-lockout-protection/esl2.png)
 
 El valor "UnknownLockout" será igual a true cuando se bloquee la cuenta. Esto significa que el badPwdCount del usuario es superior al umbral, es decir, alguien intentó más contraseñas de las permitidas por el sistema. En este estado, hay dos maneras en las que un usuario válido puede iniciar sesión.
 - El usuario debe esperar a que transcurra el tiempo de ObservationWindow o
@@ -250,12 +250,12 @@ AD FS escribirá eventos de bloqueo de extranet en el registro de auditoría de 
 En el modo de solo registro, puede comprobar si hay eventos de bloqueo en el registro de auditoría de seguridad. En el caso de los eventos encontrados, puede comprobar el estado de usuario mediante el cmdlet Get-ADFSAccountActivity para determinar si el bloqueo se ha producido desde direcciones IP conocidas o desconocidas, y para comprobar la lista de direcciones IP conocidas para ese usuario.
 
 
-|Id. de evento|Descripción|
+|Id. de evento|Description|
 |-----|-----|
 |1203|Este evento se escribe para cada intento de contraseña incorrecta. En cuanto el badPwdCount alcance el valor especificado en ExtranetLockoutThreshold, la cuenta se bloqueará en ADFS durante el tiempo especificado en ExtranetObservationWindow.</br>ID. de actividad: %1</br>XML: %2|
 |1201|Este evento se escribe cada vez que se bloquea un usuario. </br>ID. de actividad: %1</br>XML: %2|
 |557 (ADFS 2019)| Error al intentar comunicarse con el servicio Rest del almacén de cuentas en el nodo %1. Si se trata de una granja WID, puede que el nodo principal esté sin conexión. Si se trata de una granja de servidores SQL, ADFS seleccionará automáticamente un nuevo nodo para hospedar el rol de maestro de almacén de usuarios.|
-|562 (ADFS 2019)|Se produjo un error al communcating con el punto de conexión del almacén de cuentas en el servidor %1.</br>Mensaje de excepción: %2|
+|562 (ADFS 2019)|Error al comunicarse con el punto de conexión del almacén de cuentas en el servidor %1.</br>Mensaje de excepción: %2|
 |563 (ADFS 2019)|Error al calcular el estado de bloqueo de la extranet. Debido al valor de la opción %1, se permitirá la autenticación para este usuario y la emisión de tokens continuará. Si se trata de una granja WID, puede que el nodo principal esté sin conexión. Si se trata de una granja de servidores SQL, ADFS seleccionará automáticamente un nuevo nodo para hospedar el rol de maestro de almacén de usuarios.</br>Nombre del servidor de almacén de cuentas: %2</br>ID. de usuario: %3</br>Mensaje de excepción: %4|
 |512|La cuenta para el siguiente usuario está bloqueada. Se permite un intento de inicio de sesión debido a la configuración del sistema.</br>ID. de actividad: %1 </br>Usuario: %2 </br>IP de cliente: %3 </br>Recuento de contraseñas no válidas: %4  </br>Último intento de contraseña incorrecta: %5|
 |515|La siguiente cuenta de usuario se encontraba en un estado bloqueado y se ha proporcionado la contraseña correcta. Esta cuenta puede estar en peligro.</br>Datos adicionales </br>ID. de actividad: %1 </br>Usuario: %2 </br>IP de cliente: %3 |

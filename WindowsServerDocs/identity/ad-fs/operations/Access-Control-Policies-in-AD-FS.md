@@ -7,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: d256266afb99f45ededb3a14687c6164d2de6f8d
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 83f1efb62f3f7910f0866b63186ef97b11966fe5
+ms.sourcegitcommit: 528bdff90a7c797cdfc6839e5586f2cd5f0506b0
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97044473"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97977480"
 ---
 # <a name="access-control-policies-in-windows-server-2016-ad-fs"></a>Directivas de Access Control en Windows Server 2016 AD FS
 
@@ -27,12 +27,12 @@ La canalización de AD FS Core para el procesamiento de directivas tiene tres fa
 
 Las plantillas de directiva de control de acceso usan un modelo de permiso.  Esto significa que, de forma predeterminada, nadie tiene acceso y el acceso se debe conceder explícitamente.  Sin embargo, esto no es solo una concesión de todo o nada.  Los administradores pueden agregar excepciones a la regla de permiso.  Por ejemplo, es posible que un administrador quiera conceder acceso basado en una red específica seleccionando esta opción y especificando el intervalo de direcciones IP.  Pero el administrador puede Agregar una excepción y, por ejemplo, el administrador puede Agregar una excepción de una red específica y especificar ese intervalo de direcciones IP.
 
-![directivas de control de acceso](media/Access-Control-Policies-in-AD-FS/ADFSACP2.PNG)
+![Captura de pantalla que muestra dónde ver las directivas de Access Control.](media/Access-Control-Policies-in-AD-FS/ADFSACP2.PNG)
 
 ## <a name="built-in-access-control-policy-templates-vs-custom-access-control-policy-templates"></a>Plantillas de directiva de control de acceso integradas y plantillas de directiva de control de acceso personalizadas
 AD FS incluye varias plantillas de directiva de control de acceso integradas.  Estos tienen como destino algunos escenarios comunes que tienen el mismo conjunto de requisitos de Directiva, por ejemplo, la Directiva de acceso de cliente para Office 365.  Estas plantillas no se pueden modificar.
 
-![directivas de control de acceso](media/Access-Control-Policies-in-AD-FS/ADFSACP3.PNG)
+![Captura de pantalla que muestra las directivas de Access Control integradas.](media/Access-Control-Policies-in-AD-FS/ADFSACP3.PNG)
 
 Para proporcionar una mayor flexibilidad para satisfacer sus necesidades empresariales, los administradores pueden crear sus propias plantillas de directiva de acceso.  Estos se pueden modificar después de la creación y los cambios en la plantilla de directiva personalizada se aplicarán a todos los RPs que están controlados por esas plantillas de directiva.  Para agregar una plantilla de directiva personalizada, simplemente haga clic en agregar Directiva de Access Control desde la administración de AD FS.
 
@@ -60,11 +60,11 @@ Las directivas de control de acceso se pueden
 
 Una plantilla de directiva con parámetros es una plantilla de directiva que tiene parámetros. Un administrador debe especificar el valor de esos parámetros al asignar esta plantilla a RPs.An administrador no puede realizar cambios en la plantilla de directiva con parámetros una vez creada.  Un ejemplo de una directiva parametrizada es la Directiva integrada, permitir un grupo específico.  Cada vez que se aplica esta directiva a un RP, es necesario especificar este parámetro.
 
-![directivas de control de acceso](media/Access-Control-Policies-in-AD-FS/ADFSACP5.PNG)
+![Captura de pantalla que muestra un ejemplo de una plantilla de directiva parametrizada.](media/Access-Control-Policies-in-AD-FS/ADFSACP5.PNG)
 
 Una plantilla de directiva sin parámetros es una plantilla de directiva que no tiene parámetros. Un administrador puede asignar esta plantilla a RPs sin ninguna entrada necesaria y puede realizar cambios en una plantilla de directiva sin parámetros una vez creada.  Un ejemplo de esto es la Directiva integrada, permitir a todos y requerir MFA.
 
-![directivas de control de acceso](media/Access-Control-Policies-in-AD-FS/ADFSACP4.PNG)
+![Captura de pantalla que muestra un ejemplo de una plantilla de directiva sin parámetros.](media/Access-Control-Policies-in-AD-FS/ADFSACP4.PNG)
 
 ## <a name="how-to-create-a-non-parameterized-access-control-policy"></a>Cómo crear una directiva de control de acceso sin parámetros
 Para crear una directiva de control de acceso sin parámetros, use el procedimiento siguiente:
@@ -83,11 +83,11 @@ Para crear una directiva de control de acceso sin parámetros, use el procedimie
 
 6.  En la ventana que aparece, seleccione **autenticado** en el menú desplegable.  Haga clic en **Aceptar**.
 
-    ![directivas de control de acceso](media/Access-Control-Policies-in-AD-FS/ADFSACP6.PNG)
+    ![Captura de pantalla que muestra cómo seleccionar el nivel de confianza del dispositivo.](media/Access-Control-Policies-in-AD-FS/ADFSACP6.PNG)
 
 7.  Haga clic en **Aceptar**. Haga clic en **Aceptar**.
 
-    ![directivas de control de acceso](media/Access-Control-Policies-in-AD-FS/ADFSACP7.PNG)
+    ![Captura de pantalla que muestra cómo aceptar el cambio de directiva.](media/Access-Control-Policies-in-AD-FS/ADFSACP7.PNG)
 
 ## <a name="how-to-create-a-parameterized-access-control-policy"></a>Creación de una directiva de control de acceso con parámetros
 Para crear una directiva de control de acceso con parámetros, use el procedimiento siguiente:
@@ -106,11 +106,11 @@ Para crear una directiva de control de acceso con parámetros, use el procedimie
 
 6.  En la ventana que aparece, seleccione **el parámetro especificado al asignar la Directiva de control de acceso**.  Haga clic en **Aceptar**.
 
-    ![directivas de control de acceso](media/Access-Control-Policies-in-AD-FS/ADFSACP8.PNG)
+    ![Captura de pantalla que muestra el parámetro especificado cuando se asigna la Directiva de control de acceso.](media/Access-Control-Policies-in-AD-FS/ADFSACP8.PNG)
 
 7.  Haga clic en **Aceptar**. Haga clic en **Aceptar**.
 
-    ![directivas de control de acceso](media/Access-Control-Policies-in-AD-FS/ADFSACP9.PNG)
+    ![Captura de pantalla que muestra cómo aceptar la opción seleccionada.](media/Access-Control-Policies-in-AD-FS/ADFSACP9.PNG)
 
 ## <a name="how-to-create-a-custom-access-control-policy-with-an-exception"></a>Cómo crear una directiva de control de acceso personalizada con una excepción
 Para crear una directiva de control de acceso con una excepción, use el procedimiento siguiente.
@@ -137,7 +137,7 @@ Para crear una directiva de control de acceso con una excepción, use el procedi
 
 10. Haga clic en **Aceptar**. Haga clic en **Aceptar**.
 
-    ![directivas de control de acceso](media/Access-Control-Policies-in-AD-FS/ADFSACP10.PNG)
+    ![Captura de pantalla que muestra el cuadro de diálogo Editor de pantallas.](media/Access-Control-Policies-in-AD-FS/ADFSACP10.PNG)
 
 ## <a name="how-to-create-a-custom-access-control-policy-with-multiple-permit-conditions"></a>Cómo crear una directiva de control de acceso personalizada con varias condiciones de permiso
 Para crear una directiva de control de acceso con varias condiciones de permiso, use el procedimiento siguiente:
@@ -167,16 +167,16 @@ Para crear una directiva de control de acceso con varias condiciones de permiso,
 ## <a name="how-to-assign-an-access-control-policy-to-a-new-application"></a>Asignación de una directiva de control de acceso a una nueva aplicación
 Asignar una directiva de control de acceso a una nueva aplicación es bastante sencillo y ahora se ha integrado en el Asistente para agregar un RP.  En el Asistente para la relación de confianza para usuario autenticado puede seleccionar la Directiva de control de acceso que desea asignar.  Este es un requisito a la hora de crear una nueva relación de confianza para usuario autenticado.
 
-![directivas de control de acceso](media/Access-Control-Policies-in-AD-FS/ADFSACP13.PNG)
+![Captura de pantalla que muestra la pantalla elegir Directiva de Access Control.](media/Access-Control-Policies-in-AD-FS/ADFSACP13.PNG)
 
 ## <a name="how-to-assign-an-access-control-policy-to-an-existing-application"></a>Asignación de una directiva de control de acceso a una aplicación existente
 Asignación de una directiva de control de acceso a una aplicación existente simplemente seleccione la aplicación de las relaciones de confianza para usuario autenticado y, a la derecha, haga clic en **editar Access Control Directiva**.
 
-![directivas de control de acceso](media/Access-Control-Policies-in-AD-FS/ADFSACP14.PNG)
+![Captura de pantalla que muestra la aplicación de confianza de entidades de reintento.](media/Access-Control-Policies-in-AD-FS/ADFSACP14.PNG)
 
 Aquí puede seleccionar la Directiva de control de acceso y aplicarla a la aplicación.
 
-![directivas de control de acceso](media/Access-Control-Policies-in-AD-FS/ADFSACP15.PNG)
+![Captura de pantalla que muestra cómo editar la Directiva de Access Control.](media/Access-Control-Policies-in-AD-FS/ADFSACP15.PNG)
 
 ## <a name="see-also"></a>Consulte también
 [Operaciones de AD FS](../ad-fs-operations.md)

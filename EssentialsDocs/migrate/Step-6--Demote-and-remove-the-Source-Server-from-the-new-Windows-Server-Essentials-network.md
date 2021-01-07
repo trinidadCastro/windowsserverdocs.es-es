@@ -1,75 +1,78 @@
 ---
 title: 'Paso 6: Disminución de nivel y eliminación del servidor de origen de la nueva red de Windows Server Essentials'
-description: Obtenga información acerca de cómo disminuir de nivel y quitar el servidor de origen de la nueva red de Windows Server Essentials.
+description: 'Paso 6: obtener información acerca de cómo disminuir de nivel y quitar el servidor de origen de la nueva red de Windows Server Essentials.'
 ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 86244c66-2c5e-488d-adb8-112e1ca3e2e1
 author: nnamuhcs
 ms.author: geschuma
 manager: mtillman
-ms.openlocfilehash: d842f7cf0b7378254e43fec7b6ed2b7e80b5b9c1
-ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
+ms.openlocfilehash: d9f19ddb0e6d52d2795784563b1b1243f059bac8
+ms.sourcegitcommit: 528bdff90a7c797cdfc6839e5586f2cd5f0506b0
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97810422"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97977270"
 ---
 # <a name="step-6-demote-and-remove-the-source-server-from-the-new-windows-server-essentials-network"></a>Paso 6: Disminución de nivel y eliminación del servidor de origen de la nueva red de Windows Server Essentials
 
->Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials
+> Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials
 
 Después de finalizar la instalación de Windows Server Essentials y completar la migración, debe realizar las siguientes tareas:
 
-1.  [Quitar servicios de certificados de Active Directory](Step-6--Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md#BKMK_ADCS)
+1. [Quitar servicios de certificados de Active Directory](#remove-active-directory-certificate-services)
 
-2.  [Desconectar las impresoras conectadas directamente al servidor de origen](Step-6--Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md#BKMK_PhysicallyDisconnect)
+2. [Desconectar las impresoras conectadas directamente al servidor de origen](#disconnect-printers-directly-connected-to-the-source-server).
 
-3.  [Disminuir de nivel el servidor de origen](Step-6--Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md#BKMK_DemoteTheSourceServer)
+3. [Disminuir el nivel del servidor de origen](#demote-the-source-server).
 
-4.  [Quitar y reasignar el servidor de origen](Step-6--Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md#BKMK_RemoveTheSourceServer)
+4. [Quite el servidor de origen y vuelva a](#remove-and-re-purpose-the-source-server)hacerlo.
 
-##  <a name="remove-active-directory-certificate-services"></a><a name="BKMK_ADCS"></a> Quitar Active Directory servicios de Certificate Server
- El procedimiento es ligeramente distinto si tiene varios servicios de rol de servicios de certificados de Active Directory (AD CS) instalados en un solo servidor. Con el procedimiento siguiente puede desinstalar un servicio de rol de AD CS y conservar los demás.
+## <a name="remove-active-directory-certificate-services"></a>Quitar servicios de certificados de Active Directory
 
- Para completar este procedimiento, inicie sesión con los mismos permisos que el usuario que ha instalado la entidad de certificación (CA). Para desinstalar una CA empresarial, el requisito mínimo es pertenecer al grupo Administradores de organización o equivalente.
+El procedimiento es ligeramente distinto si tiene varios servicios de rol de servicios de certificados de Active Directory (AD CS) instalados en un solo servidor. Con el procedimiento siguiente puede desinstalar un servicio de rol de AD CS y conservar los demás.
 
-#### <a name="to-remove-ad-cs"></a>Para quitar AD CS
+Para completar este procedimiento, inicie sesión con los mismos permisos que el usuario que ha instalado la entidad de certificación (CA). Para desinstalar una CA empresarial, el requisito mínimo es pertenecer al grupo Administradores de organización o equivalente.
 
-1.  Inicie sesión como administrador de dominio en el servidor de origen.
+### <a name="to-remove-ad-cs"></a>Para quitar AD CS
 
-2.  Haga clic en **Inicio**, en **Herramientas administrativas** y, a continuación, en **Administrador del servidor**.
+1. Inicie sesión como administrador de dominio en el servidor de origen.
 
-3.  Haga clic en **Continuar**, en el cuadro de diálogo **Control de cuentas de usuario**.
+2. Haga clic en **Inicio**, en **Herramientas administrativas** y, a continuación, en **Administrador del servidor**.
 
-4.  En la sección **Resumen de roles**, haga clic en **Quitar roles**.
+3. Haga clic en **Continuar**, en el cuadro de diálogo **Control de cuentas de usuario**.
 
-5.  En el Asistente para quitar roles, haga clic en **Siguiente**.
+4. En la sección **Resumen de roles**, haga clic en **Quitar roles**.
 
-6.  Desactive la casilla **Servicios de certificados de Active Directory** y haga clic en **Siguiente**.
+5. En el Asistente para quitar roles, haga clic en **Siguiente**.
 
-7.  En la página **Confirmar opciones de eliminación**, revise la información y haga clic en **Quitar**.
+6. Desactive la casilla **Servicios de certificados de Active Directory** y haga clic en **Siguiente**.
 
-    > [!NOTE]
-    >  Si ejecuta Internet Information Services (IIS), se le solicitará que detenga el servicio antes de continuar. Haga clic en **Aceptar**.
+7. En la página **Confirmar opciones de eliminación**, revise la información y haga clic en **Quitar**.
 
     > [!NOTE]
-    >  En primer lugar, deberá quitar la **Inscripción web de entidad de certificación**, si está instalada.
+    >  Si ejecuta Internet Information Services (IIS), se le solicitará que detenga el servicio antes de continuar. Haga clic en **OK**.
 
-8.  Cuando finalice el Asistente para quitar roles, reinicie el servidor para completar el proceso de desinstalación.
+    > [!NOTE]
+    >  En primer lugar, es posible que tenga que quitar **inscripción Web de entidad de certificación**, si está instalado.
+
+8. Cuando finalice el Asistente para quitar roles, reinicie el servidor para completar el proceso de desinstalación.
 
     > [!IMPORTANT]
     >  Reinicie el servidor aunque no se le solicite.
 
-##  <a name="disconnect-printers-that-are-directly-connected-to-the-source-server"></a><a name="BKMK_PhysicallyDisconnect"></a> Desconectar las impresoras conectadas directamente al servidor de origen
- Antes de disminuir de nivel el servidor de origen, desconecte físicamente las impresoras que están conectadas directamente a este y se comparten a través de él. Asegúrese de que no haya ningún objeto de Active Directory en las impresoras que estaban conectadas directamente al servidor de origen. Las impresoras pueden conectarse directamente al servidor de destino y compartirse con Windows Server Essentials.
+## <a name="disconnect-printers-directly-connected-to-the-source-server"></a>Desconectar las impresoras conectadas directamente al servidor de origen
 
-##  <a name="demote-the-source-server"></a><a name="BKMK_DemoteTheSourceServer"></a> Disminuir de nivel el servidor de origen
- Antes de disminuir de nivel el servidor de origen (desde el rol del controlador de dominio de AD DS hasta el rol de un servidor miembro de dominio), asegúrese de que la configuración de directiva de grupo se aplica a todos los equipos cliente, tal como se describe en el procedimiento siguiente.
+Antes de disminuir de nivel el servidor de origen, desconecte físicamente las impresoras que están conectadas directamente a este y se comparten a través de él. Asegúrese de que no haya ningún objeto de Active Directory en las impresoras que estaban conectadas directamente al servidor de origen. Las impresoras pueden conectarse directamente al servidor de destino y compartirse con Windows Server Essentials.
+
+## <a name="demote-the-source-server"></a>Disminuir de nivel el servidor de origen
+
+Antes de disminuir de nivel el servidor de origen (desde el rol del controlador de dominio de AD DS hasta el rol de un servidor miembro de dominio), asegúrese de que la configuración de directiva de grupo se aplica a todos los equipos cliente, tal como se describe en el procedimiento siguiente.
 
 > [!IMPORTANT]
->  Los servidores de origen y destino deben estar conectados a la red mientras se actualizan los cambios de la directiva de grupo en los equipos cliente.
+> Los servidores de origen y destino deben estar conectados a la red mientras se actualizan los cambios de la directiva de grupo en los equipos cliente.
 
-#### <a name="to-force-a-group-policy-update-on-a-client-computer"></a>Para forzar una actualización de directiva de grupo en un equipo cliente
+### <a name="to-force-a-group-policy-update-on-a-client-computer"></a>Para forzar una actualización de directiva de grupo en un equipo cliente
 
 1. Inicie sesión en el equipo cliente como administrador.
 
@@ -79,30 +82,31 @@ Después de finalizar la instalación de Windows Server Essentials y completar l
 
 4. El proceso puede requerir que cierre la sesión y vuelva a iniciarla para finalizar. Haga clic en **Sí** para continuar.
 
-   Si va a migrar desde Windows Server Essentials o desde sus versiones anteriores, para disminuir de nivel el servidor, consulte [quitar Active Directory Domain Services](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh472163(v=ws.11)). Después de agregar el servidor de origen como miembro de un grupo de trabajo y desconectarlo de la red, debe quitarlo de AD DS en el servidor de destino.
+Si va a migrar desde Windows Server Essentials o desde sus versiones anteriores, para disminuir de nivel el servidor, consulte [quitar Active Directory Domain Services](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh472163(v=ws.11)). Después de agregar el servidor de origen como miembro de un grupo de trabajo y desconectarlo de la red, debe quitarlo de AD DS en el servidor de destino.
 
-   Si va a migrar desde Windows Server Essentials, use Administrador del servidor para quitar el rol de Active Directory Domain Services y, por lo tanto, degradar el controlador de dominio en el servidor de origen mediante el siguiente procedimiento:
+Si va a migrar desde Windows Server Essentials, use Administrador del servidor para quitar el rol de Active Directory Domain Services y, por lo tanto, degradar el controlador de dominio en el servidor de origen mediante el siguiente procedimiento:
 
-#### <a name="to-remove-the-source-server-from-active-directory"></a>Para quitar el servidor de origen de Active Directory
+### <a name="to-remove-the-source-server-from-active-directory"></a>Para quitar el servidor de origen de Active Directory
 
-1.  En el servidor de destino, abra **Equipos y usuarios de Active Directory**.
+1. En el servidor de destino, abra **Equipos y usuarios de Active Directory**.
 
-2.  En el panel de navegación **Usuarios y equipos de Active Directory**, expanda el nombre de dominio y **Equipos**.
+2. En el panel de navegación **Usuarios y equipos de Active Directory**, expanda el nombre de dominio y **Equipos**.
 
-3.  Si el servidor de origen todavía existe en la lista de servidores, haga clic con el botón secundario en su nombre y, con el botón primario, en **Eliminar** y **Sí**.
+3. Si el servidor de origen todavía existe en la lista de servidores, haga clic con el botón secundario en su nombre y, con el botón primario, en **Eliminar** y **Sí**.
 
-4.  Compruebe que el servidor de origen no aparece en la lista y cierre **Usuarios y equipos de Active Directory**.
+4. Compruebe que el servidor de origen no aparece en la lista y cierre **Usuarios y equipos de Active Directory**.
 
-##  <a name="remove-and-repurpose-the-source-server"></a><a name="BKMK_RemoveTheSourceServer"></a> Quitar y reasignar el servidor de origen
- Desactive el servidor de origen y desconéctelo de la red. Se recomienda no volver a formatear el servidor de origen durante al menos una semana para asegurar que todos los datos necesarios se migren al servidor de destino. Después de comprobar que ha migrado todos los datos, puede reinstalar este servidor en la red como servidor secundario para otras tareas si es necesario.
+## <a name="remove-and-re-purpose-the-source-server"></a>Quitar y reasignar el servidor de origen
+
+Desactive el servidor de origen y desconéctelo de la red. Se recomienda no volver a formatear el servidor de origen durante al menos una semana para asegurar que todos los datos necesarios se migren al servidor de destino. Después de comprobar que ha migrado todos los datos, puede reinstalar este servidor en la red como servidor secundario para otras tareas si es necesario.
 
 > [!NOTE]
->  Después de disminuir de nivel y quitar el servidor de origen, reinicie el servidor de destino.
+> Después de disminuir de nivel y quitar el servidor de origen, reinicie el servidor de destino.
 
- Cuando se disminuye de nivel, el servidor de origen no se queda en el estado correcto. Si desea reasignar el servidor de origen, la forma más sencilla es volver a formatearlo, instalar un sistema operativo del servidor y configurarlo como servidor adicional.
+Cuando se disminuye de nivel, el servidor de origen no se queda en el estado correcto. Si desea reasignar el servidor de origen, la forma más sencilla es volver a formatearlo, instalar un sistema operativo del servidor y configurarlo como servidor adicional.
 
 ## <a name="next-steps"></a>Pasos siguientes
- Ha degradado y quitado el servidor de origen de la nueva red de Windows Server Essentials. Ahora, vaya al [paso 7: realizar tareas posteriores a la migración para la migración a Windows Server Essentials](Step-7--Perform-post-migration-tasks-for-the-Windows-Server-Essentials-migration.md).
 
+Ha degradado y quitado el servidor de origen de la nueva red de Windows Server Essentials. Ahora, vaya al [paso 7: realizar tareas posteriores a la migración para la migración a Windows Server Essentials](Step-7--Perform-post-migration-tasks-for-the-Windows-Server-Essentials-migration.md).
 
 Para ver todos los pasos, vea [migrar a Windows Server Essentials](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md).

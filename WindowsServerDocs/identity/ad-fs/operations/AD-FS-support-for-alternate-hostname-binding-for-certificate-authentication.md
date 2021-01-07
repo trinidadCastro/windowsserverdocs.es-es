@@ -7,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 468e6934dc69ef2f6f83f052ad288860d7fed46e
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: c6d2ca57dd7ea48f501525c2e358341e9e12c354
+ms.sourcegitcommit: 528bdff90a7c797cdfc6839e5586f2cd5f0506b0
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97046613"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97977440"
 ---
 # <a name="ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication"></a>Compatibilidad de AD FS con el enlace de nombre de host alternativo para la autenticación de certificado
 
@@ -25,9 +25,9 @@ En AD FS en Windows Server 2016, esto ha cambiado. Ahora se admiten dos modos, e
 ## <a name="how-to-configure-alternate-host-name-binding-for-certificate-authentication"></a>Cómo configurar un enlace de nombre de host alternativo para la autenticación de certificados
 Hay dos maneras de agregar el enlace de nombre de host alternativo para la autenticación de certificados. La primera es cuando se configura una nueva granja de AD FS con AD FS para Windows Server 2016, si el certificado contiene un nombre alternativo del firmante (SAN), se configurará automáticamente para usar el segundo método mencionado anteriormente. Es decir, configurará automáticamente dos hosts diferentes (sts.contoso.com y certauth.sts.contoso.com con el mismo puerto. Si el certificado no contiene una SAN, verá una advertencia que indica que los nombres alternativos del firmante del certificado no admiten certauth. *. Vea las capturas de pantallas siguientes. El primero muestra una instalación donde el certificado tenía una SAN y el segundo muestra un certificado que no lo hizo.
 
-![enlace de nombre de host alternativo](media/AD-FS-support-for-alternate-hostname-binding-for-certificate-authentication/ADFS_CA_1.png)
+![Captura de pantalla que muestra una instalación en la que el certificado tenía una SAN.](media/AD-FS-support-for-alternate-hostname-binding-for-certificate-authentication/ADFS_CA_1.png)
 
-![enlace de nombre de host alternativo](media/AD-FS-support-for-alternate-hostname-binding-for-certificate-authentication/ADFS_CA_2.png)
+![Captura de pantalla que muestra un certificado que no tiene una SAN.](media/AD-FS-support-for-alternate-hostname-binding-for-certificate-authentication/ADFS_CA_2.png)
 
 Del mismo modo, una vez que se haya implementado AD FS en Windows Server 2016, puede usar el cmdlet de PowerShell: set-AdfsAlternateTlsClientBinding.
 
@@ -35,7 +35,7 @@ Del mismo modo, una vez que se haya implementado AD FS en Windows Server 2016, p
 Set-AdfsAlternateTlsClientBinding -Member ADFS1.contoso.com -Thumbprint '<thumbprint of cert>'
 ```
 
-Cuando se le solicite, haga clic en sí para confirmar.  Y eso debe ser.
+Cuando se le indique, haga clic en Sí para confirmar.  Y eso debe ser.
 
 ![enlace de nombre de host alternativo](media/AD-FS-support-for-alternate-hostname-binding-for-certificate-authentication/ADFS_CA_3.png)
 

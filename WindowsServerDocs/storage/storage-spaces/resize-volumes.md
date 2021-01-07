@@ -7,12 +7,12 @@ ms.author: cosdar
 manager: eldenc
 ms.date: 03/10/2020
 ms.topic: article
-ms.openlocfilehash: 38ef41ac6cdb35efc72087ad73f08b04c1414c1a
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 8da7bc43d55a78af66f9e73575f7144fbc1a1709
+ms.sourcegitcommit: 528bdff90a7c797cdfc6839e5586f2cd5f0506b0
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97948581"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97977330"
 ---
 # <a name="extending-volumes-in-storage-spaces-direct"></a>Extensión de volúmenes en Espacios de almacenamiento directo
 > Se aplica a: Windows Server 2019, Windows Server 2016
@@ -48,7 +48,7 @@ Antes de cambiar el tamaño de un volumen, asegúrese de que tiene suficiente ca
 
 En Espacios de almacenamiento directo, cada volumen consta de varios objetos apilados: el volumen compartido del clúster (CSV), que es un volumen; la partición; el disco, que es un disco virtual; y una o más capas de almacenamiento (si procede). Para cambiar el tamaño de un volumen, deberá cambiar el tamaño de varios de estos objetos.
 
-![volumes-in-smapi](media/resize-volumes/volumes-in-smapi.png)
+![Objetos apilados cuyo tamaño puede ser necesario cambiar](media/resize-volumes/volumes-in-smapi.png)
 
 Para familiarizarse con ellos, pruebe a ejecutar **Get-** con el nombre correspondiente en PowerShell.
 
@@ -63,7 +63,7 @@ Para seguir las asociaciones entre los objetos de la pila, canalice un cmdlet **
 Por ejemplo, aquí se muestra cómo obtener un disco virtual hasta su volumen:
 
 ```PowerShell
-Get-VirtualDisk <FriendlyName> | Get-Disk | Get-Partition | Get-Volume
+Get-VirtualDisk [friendly_name] | Get-Disk | Get-Partition | Get-Volume
 ```
 
 ### <a name="step-1--resize-the-virtual-disk"></a>Paso 1: Cambio de tamaño del disco virtual
@@ -73,7 +73,7 @@ El disco virtual puede usar o no capas de almacenamiento, en función de cómo s
 Para comprobarlo, ejecute el siguiente cmdlet:
 
 ```PowerShell
-Get-VirtualDisk <FriendlyName> | Get-StorageTier
+Get-VirtualDisk [friendly_name] | Get-StorageTier
 ```
 
 Si el cmdlet no devuelve nada, el disco virtual no usa capas de almacenamiento.
@@ -85,12 +85,12 @@ Si el disco virtual no tiene capas de almacenamiento, puede cambiar su tamaño d
 Indique el nuevo tamaño en el parámetro **-Size**.
 
 ```PowerShell
-Get-VirtualDisk <FriendlyName> | Resize-VirtualDisk -Size <Size>
+Get-VirtualDisk [friendly_name] | Resize-VirtualDisk -Size [size]
 ```
 
 Cuando se cambia el tamaño de **VirtualDisk**, también se cambia el tamaño de **Disk** automáticamente.
 
-![Resize-VirtualDisk](media/resize-volumes/Resize-VirtualDisk.gif)
+![Animación que muestra el cambio de tamaño automático del disco](media/resize-volumes/Resize-VirtualDisk.gif)
 
 #### <a name="with-storage-tiers"></a>Con capas de almacenamiento
 
@@ -99,13 +99,13 @@ Si el disco virtual usa capas de almacenamiento, puede cambiar el tamaño de cad
 Para obtener los nombres de las capas de almacenamiento, siga las asociaciones desde el disco virtual.
 
 ```PowerShell
-Get-VirtualDisk <FriendlyName> | Get-StorageTier | Select FriendlyName
+Get-VirtualDisk [friendly_name] | Get-StorageTier | Select FriendlyName
 ```
 
 Después, para cada capa, indique el nuevo tamaño en el parámetro **-Size**.
 
 ```PowerShell
-Get-StorageTier <FriendlyName> | Resize-StorageTier -Size <Size>
+Get-StorageTier [friendly_name] | Resize-StorageTier -Size [size]
 ```
 
 > [!TIP]
@@ -113,7 +113,7 @@ Get-StorageTier <FriendlyName> | Resize-StorageTier -Size <Size>
 
 Cuando se cambia el tamaño de **StorageTier**, también se cambia el tamaño de **VirtualDisk** y **Disk** automáticamente.
 
-![Resize-StorageTier](media/resize-volumes/Resize-StorageTier.gif)
+![Animación que muestra la VirtualDisk automática y el cambio de tamaño del disco](media/resize-volumes/Resize-StorageTier.gif)
 
 ### <a name="step-2--resize-the-partition"></a>Paso 2: Cambio de tamaño de la partición
 
@@ -123,7 +123,7 @@ Indique el nuevo tamaño en el parámetro **-Size**. Se recomienda usar el tama�
 
 ```PowerShell
 # Choose virtual disk
-$VirtualDisk = Get-VirtualDisk <FriendlyName>
+$VirtualDisk = Get-VirtualDisk [friendly_name]
 
 # Get its partition
 $Partition = $VirtualDisk | Get-Disk | Get-Partition | Where PartitionNumber -Eq 2
@@ -134,9 +134,7 @@ $Partition | Resize-Partition -Size ($Partition | Get-PartitionSupportedSize).Si
 
 Al cambiar el tamaño de **Partition**, también se cambia el tamaño de **Volume** y **ClusterSharedVolume** automáticamente.
 
-![Resize-Partition](media/resize-volumes/Resize-Partition.gif)
-
-Eso es todo.
+![Animación que muestra el volumen automático y el cambio de tamaño de ClusterSharedVolume](media/resize-volumes/Resize-Partition.gif)
 
 > [!TIP]
 > Para comprobar que el volumen tiene el nuevo tamaño, ejecute **Get-Volume**.

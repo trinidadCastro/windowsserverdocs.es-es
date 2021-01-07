@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: a0d43fce44b7de6ecc5b435b7ed5f2de88ed0b9f
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 12c835071c06255a638e65f0bdb78b0d8816cb4d
+ms.sourcegitcommit: 528bdff90a7c797cdfc6839e5586f2cd5f0506b0
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89629387"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97977250"
 ---
 # <a name="compact"></a>compacto
 
@@ -21,24 +21,27 @@ Muestra o modifica la compresión de archivos o directorios en particiones NTFS.
 ## <a name="syntax"></a>Sintaxis
 
 ```
-compact [/c | /u] [/s[:<dir>]] [/a] [/i] [/f] [/q] [<filename>[...]]
+compact [/C | /U] [/S[:dir]] [/A] [/I] [/F] [/Q] [/EXE[:algorithm]] [/CompactOs[:option] [/windir:dir]] [filename [...]]
 ```
 
 ### <a name="parameters"></a>Parámetros
 
-| Parámetro | Descripción |
+| Parámetro | Description |
 | --------- | ----------- |
-| /C | Comprime el directorio o el archivo especificado. |
-| /U | Descomprime el directorio o el archivo especificado. |
-| /s [: `<dir>` ] | Aplica el comando **Compact** a todos los subdirectorios del directorio especificado (o del directorio actual si no se especifica ninguno). |
-| /a | Muestra los archivos ocultos o del sistema. |
-| /i | Omite los errores. |
-| /f | Fuerza la compresión o descompresión del directorio o archivo especificado. **/f** se usa en el caso de un archivo que se comprimió parcialmente cuando la operación se interrumpió por un bloqueo del sistema. Para forzar que el archivo se comprima íntegramente, use los parámetros **/c** y **/f** y especifique el archivo parcialmente comprimido. |
+| /C | Comprime el directorio o el archivo especificado. Los directorios se marcan para que los archivos agregados posteriormente se compriman, a menos que se especifique el parámetro/EXE. |
+| /U | Descomprime el directorio o el archivo especificado. Los directorios se marcan de modo que los archivos agregados posteriormente no se comprimen. Si se especifica el parámetro/EXE, solo se descomprimen los archivos comprimidos como ejecutables. Si no se especifica el parámetro/EXE, solo se descomprimirán los archivos NTFS comprimidos. |
+| modificado`[:<dir>]` | Realiza la operación elegida en los archivos del directorio especificado y en todos los subdirectorios. De forma predeterminada, se usa el directorio actual como `<dir>` valor. |
+| /a | Muestra los archivos ocultos o del sistema. De forma predeterminada, estos archivos no se incluyen. |
+| /i | Continúa realizando la operación especificada y se omiten los errores. De forma predeterminada, este comando se detiene cuando se encuentra un error. |
+| /f | Fuerza la compresión o descompresión del directorio o archivo especificado. Los archivos ya comprimidos se omiten de forma predeterminada. El parámetro **/f** se usa en el caso de un archivo que se comprimió parcialmente cuando la operación se interrumpió por un bloqueo del sistema. Para forzar que el archivo se comprima íntegramente, use los parámetros **/c** y **/f** y especifique el archivo parcialmente comprimido. |
 | /q | Solo informa de la información más esencial. |
-| `<filename>` | Especifica el archivo o directorio. Puede usar varios nombres de archivo y el **&#42;** y **?** caracteres comodín. |
+| /EXE | Usa la compresión optimizada para los archivos ejecutables que se leen con frecuencia, pero no se modifican. Los algoritmos admitidos son:<ul><li>**XPRESS4K** (valor predeterminado y más rápido)</li><li>**XPRESS8K**</li><li>**XPRESS16K**</li><li>**LZX** (más compacto)</li></ul> |
+| /CompactOs | Establece o consulta el estado de compresión del sistema. Las opciones admitidas son:<ul><li>**query** : consulta el estado **compacto** del sistema.</li><li>**siempre** comprime todos los archivos binarios del sistema operativo y establece el estado del sistema en compacto, que permanece a menos que el administrador lo cambie.</li><li>**nunca** : descomprime todos los archivos binarios del sistema operativo y establece el estado del sistema en no compacto, que permanece a menos que el administrador lo cambie.</li></ul> |
+| /WINDIR | Se usa con el parámetro **/CompactOs: query** cuando se consulta el sistema operativo sin conexión. Especifica el directorio en el que está instalado Windows. |
+| `<filename>` | Especifica un patrón, un archivo o un directorio. Puede usar varios nombres de archivo y el **&#42;** y **?** caracteres comodín. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-#### <a name="remarks"></a>Observaciones
+#### <a name="remarks"></a>Comentarios
 
 - Este comando es la versión de línea de comandos de la característica de compresión del sistema de archivos NTFS. El estado de compresión de un directorio indica si los archivos se comprimen automáticamente cuando se agregan al directorio. Establecer el estado de compresión de un directorio no cambia necesariamente el estado de compresión de los archivos que ya están en el directorio.
 

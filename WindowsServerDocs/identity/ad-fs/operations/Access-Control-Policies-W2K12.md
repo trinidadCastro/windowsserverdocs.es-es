@@ -7,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 06/05/2018
 ms.topic: article
-ms.openlocfilehash: da683cec35c7cf43f5fbf5b29ed7441fadf0b218
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 5a1eecc5290f431702baf3c27ea76827d1a72f73
+ms.sourcegitcommit: 528bdff90a7c797cdfc6839e5586f2cd5f0506b0
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97048673"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97977450"
 ---
 # <a name="access-control-policies-in-windows-server-2012-r2-and-windows-server-2012-ad-fs"></a>Access Control directivas en Windows Server 2012 R2 y Windows Server 2012 AD FS
 
@@ -185,7 +185,7 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
 
 11. Para guardar las nuevas reglas, en el cuadro de diálogo **editar reglas de notificaciones** , haga clic en **Aceptar**. La lista resultante debería tener un aspecto similar al siguiente.
 
-    ![Emisión](media/Access-Control-Policies-W2K12/clientaccess3.png)
+    ![Captura de pantalla que muestra el cuadro de diálogo editar reglas de notificaciones.](media/Access-Control-Policies-W2K12/clientaccess3.png)
 
 ###  <a name="scenario-4-block-all-external-access-to-office-365-except-for-designated-active-directory-groups"></a><a name="scenario4"></a> Escenario 4: bloquear todo el acceso externo a Office 365 excepto los grupos de Active Directory designados
  En el ejemplo siguiente se habilita el acceso desde clientes internos basados en la dirección IP. Bloquea el acceso desde los clientes que se encuentran fuera de la red corporativa que tienen una dirección IP de cliente externa, excepto para las personas de un grupo de Active Directory especificado. Use los pasos siguientes para agregar las reglas de autorización de emisión correctas a la relación de confianza para usuario autenticado de la **plataforma de identidad Microsoft Office 365** mediante el Asistente para reglas de notificaciones:

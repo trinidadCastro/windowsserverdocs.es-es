@@ -7,12 +7,12 @@ manager: femila
 ms.date: 05/31/2017
 ms.topic: article
 ms.author: billmath
-ms.openlocfilehash: 4b3564afacf23096b3e76e528015b0e1f155a324
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 6ce5b9f747e3bbe788a058b3e1cfa36d00530e01
+ms.sourcegitcommit: 528bdff90a7c797cdfc6839e5586f2cd5f0506b0
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97045503"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97977400"
 ---
 # <a name="configure-authentication-policies"></a>Configuración de directivas de autenticación
 
@@ -39,14 +39,14 @@ En AD FS, en Windows Server 2012 R2, puede especificar una directiva de autentic
 2.  En AD FS complemento \- , haga clic en **directivas de autenticación**.
 
 3.  En la sección **autenticación principal** , haga clic en **Editar** junto a **configuración global**. También puede hacer clic con el botón derecho \- en **directivas de autenticación** y seleccionar **Editar autenticación principal global**, o bien, en el panel **acciones** , seleccione **Editar autenticación principal global**.
-![directivas de autenticación](media/Configure-Authentication-Policies/authpolicy1.png)
+![Captura de pantalla que resalta la opción de autenticación principal global.](media/Configure-Authentication-Policies/authpolicy1.png)
 
 4.  En la ventana **Editar Directiva de autenticación global** , en la pestaña **principal** , puede configurar las siguientes opciones como parte de la Directiva de autenticación global:
 
     -   Métodos de autenticación que se usarán para la autenticación principal. Puede seleccionar métodos de autenticación disponibles en la **extranet** y la **intranet**.
 
     -   Autenticación de dispositivos mediante la casilla **Habilitar autenticación de dispositivo** . Para obtener más información, consulte [Join to Workplace from Any Device for SSO and Seamless Second Factor Authentication Across Company Applications](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md).
-![directivas de autenticación](media/Configure-Authentication-Policies/authpolicy2.png)
+![Captura de pantalla que muestra cómo configurar las opciones como parte de la Directiva de autenticación global.](media/Configure-Authentication-Policies/authpolicy2.png)
 
 ## <a name="to-configure-primary-authentication-per-relying-party-trust"></a>Para configurar la autenticación principal por relación de confianza para usuario autenticado
 
@@ -55,12 +55,12 @@ En AD FS, en Windows Server 2012 R2, puede especificar una directiva de autentic
 2.  En AD FS complemento \- , haga clic en **directivas de autenticación** \\ **por relación de confianza para usuario autenticado** y, a continuación, haga clic en la relación de usuario de confianza para la que desea configurar las directivas de autenticación.
 
 3.  Haga clic con el botón derecho \- en la relación de usuario de confianza para la que desea configurar las directivas de autenticación y, después, seleccione **Editar autenticación principal personalizada** o, en el panel **acciones** , seleccione **Editar autenticación principal personalizada**.
-![directivas de autenticación](media/Configure-Authentication-Policies/authpolicy5.png)
+![Captura de pantalla que resalta la opción de menú Editar autenticación principal personalizada.](media/Configure-Authentication-Policies/authpolicy5.png)
 
 4.  En la ventana **Editar Directiva de autenticación para <nombre de la relación de confianza para usuario autenticado \_ \_ \_>** , en la pestaña **principal** , puede configurar la siguiente opción como parte de la Directiva de autenticación **por relación de confianza para usuario autenticado** :
 
     -   Si los usuarios deben proporcionar sus credenciales cada vez que inicie sesión a \- través de los **usuarios deben proporcionar sus credenciales cada vez que \- inicie sesión** .
-![directivas de autenticación](media/Configure-Authentication-Policies/authpolicy6.png)
+![Captura de pantalla que muestra cómo configurar las opciones como parte de la Directiva de autenticación por relación de confianza para usuario autenticado.](media/Configure-Authentication-Policies/authpolicy6.png)
 
 ## <a name="to-configure-multi-factor-authentication-globally"></a>Para configurar la autenticación multifactor globalmente
 
@@ -69,7 +69,7 @@ En AD FS, en Windows Server 2012 R2, puede especificar una directiva de autentic
 2.  En AD FS complemento \- , haga clic en **directivas de autenticación**.
 
 3.  En la sección **multi- \- factor Authentication** , haga clic en **Editar** junto a **configuración global**. También puede hacer clic con el botón derecho \- en **directivas de autenticación** y seleccionar **Editar \- autenticación multifactor global**, o bien, en el panel **acciones** , seleccione **Editar \- autenticación multifactor global**.
-![directivas de autenticación](media/Configure-Authentication-Policies/authpolicy8.png)
+![Captura de pantalla que resalta la \- opción de autenticación multifactor global.](media/Configure-Authentication-Policies/authpolicy8.png)
 
 4.  En la ventana **Editar Directiva de autenticación global** , en la pestaña **multi- \- factor** , puede configurar las siguientes opciones como parte de la \- Directiva de autenticación multifactor global:
 
