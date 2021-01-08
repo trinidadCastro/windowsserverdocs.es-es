@@ -1,18 +1,18 @@
 ---
 title: Establecer el ámbito de acceso para una zona DNS
-description: Este tema forma parte de la guía de administración de la administración de direcciones IP (IPAM) en Windows Server 2016.
+description: Obtenga información sobre cómo establecer el ámbito de acceso para una zona DNS mediante la consola de cliente de IPAM.
 manager: brianlic
 ms.topic: article
 ms.assetid: 6a211dde-80eb-4888-b5bb-4e28fe8dc7df
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 168bb1be14d51b2728c2a2c258a7fad55362bfb9
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 8d679dcc0e16e1dc3e38e11247637463a26ed0f5
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97948721"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040145"
 ---
 # <a name="set-access-scope-for-a-dns-zone"></a>Establecer el ámbito de acceso para una zona DNS
 

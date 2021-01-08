@@ -1,18 +1,18 @@
 ---
 title: Comprobar la inscripción de servidor de un certificado de servidor
-description: Este tema forma parte de la guía de implementación de certificados de servidor para las implementaciones cableadas e inalámbricas de 802.1 X
+description: Obtenga información acerca de cómo comprobar que los servidores del servidor de directivas de redes han inscrito un certificado de servidor de la entidad de certificación.
 manager: brianlic
 ms.topic: article
 ms.assetid: bd80a018-5a30-47c3-89fc-aacb9f5ad298
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 174100f1886492f70fb98abbfcab61e687418133
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 188e75ed58c3adc0249305d669acbb06d0b6c15d
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947811"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98038345"
 ---
 # <a name="verify-server-enrollment-of-a-server-certificate"></a>Comprobar la inscripción de servidor de un certificado de servidor
 

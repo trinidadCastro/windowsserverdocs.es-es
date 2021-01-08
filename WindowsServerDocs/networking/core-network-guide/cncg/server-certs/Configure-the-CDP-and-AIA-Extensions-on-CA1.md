@@ -1,18 +1,18 @@
 ---
 title: Configurar las extensiones AIA y CDP en CA1
-description: Este tema forma parte de la guía de implementación de certificados de servidor para las implementaciones cableadas e inalámbricas de 802.1 X
+description: Obtenga información acerca de cómo configurar el punto de distribución de lista de revocación de certificados (CRL) y la configuración de acceso a la información de entidad (AIA) en CA1.
 manager: dougkim
 ms.topic: article
 ms.assetid: f77a3989-9f92-41ef-92a8-031651dd73a8
 ms.author: lizross
 author: eross-msft
 ms.date: 07/26/2018
-ms.openlocfilehash: 86c6bb664fc011be4f08e792118f3ff232f8410f
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 5e8ac26965bdeae2f46551478561be339bfb0bfc
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969642"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98038745"
 ---
 # <a name="configure-the-cdp-and-aia-extensions-on-ca1"></a>Configurar las extensiones AIA y CDP en CA1
 
@@ -26,7 +26,7 @@ Para llevar a cabo este procedimiento, debe ser miembro del grupo Admins. del do
 
 1.  En Administrador del servidor, haga clic en **Herramientas** y, a continuación, haga clic en **Entidad de certificación**.
 
-2.  En el árbol de la consola entidad de certificación, haga clic con el botón secundario en **Corp-CA1-CA**y, a continuación, haga clic en **propiedades**.
+2.  En el árbol de la consola entidad de certificación, haga clic con el botón secundario en **Corp-CA1-CA** y, a continuación, haga clic en **propiedades**.
 
     > [!NOTE]
     > El nombre de la CA es diferente si no escribió el nombre del equipo CA1 y el nombre de dominio es diferente al de este ejemplo. El nombre de la entidad de certificación está en el formato *dominio* - *nombredeequipoca*-CA.

@@ -1,18 +1,18 @@
 ---
 title: Supervisar la actividad y el estado de los clientes remotos conectados
-description: Este tema forma parte de la guía de supervisión y contabilidad de acceso remoto en Windows Server 2016.
+description: Obtenga información acerca de cómo usar la consola de administración de en el servidor de acceso remoto para supervisar la actividad y el estado de los clientes remotos.
 manager: brianlic
 ms.topic: article
 ms.assetid: beb94475-b21f-46a9-ac51-bf2bb28ca94e
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: d588f01e01ee5d2501cfaa380e93a91641b78d20
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 01d53fee8f5649b1d3fe03a78728ac04da465e87
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947361"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98039885"
 ---
 # <a name="monitor-connected-remote-clients-for-activity-and-status"></a>Supervisar la actividad y el estado de los clientes remotos conectados
 

@@ -1,18 +1,18 @@
 ---
 title: Supervisar el estado de distribución de la configuración del servidor de acceso remoto
-description: Este tema forma parte de la guía de supervisión y contabilidad de acceso remoto en Windows Server 2016.
+description: Obtenga información sobre cómo usar el panel de supervisión para supervisar el estado de distribución de la configuración del servidor de acceso remoto.
 manager: brianlic
 ms.topic: article
 ms.assetid: de285d13-9e54-4c46-88f0-607182e5e3dc
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 2f38ed8abb4869cf7c9a917a27fdbfe37bf7d453
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 380fe2adece450be3b779d083b0f935cffce849b
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947341"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98039855"
 ---
 # <a name="monitor-the-configuration-distribution-status-of-the-remote-access-server"></a>Supervisar el estado de distribución de la configuración del servidor de acceso remoto
 
@@ -32,7 +32,7 @@ La Consola de administración de acceso remoto compara las versiones de configur
 
 La siguiente tabla muestras los mensajes que genera el icono **Estado de configuración**, su significado y las acciones necesarias (si las hay).
 
-|Gravedad|Mensaje|Significado|¿Qué debe hacer?|
+|severity|Mensaje|Significado|¿Qué debe hacer?|
 |--|--|--|
 |Correcto|La configuración se distribuyó correctamente.|La configuración en el GPO se aplicó correctamente al servidor.|No se requiere ninguna acción.|
 |Advertencia|No se recuperó la configuración para el servidor [*nombre del servidor*] desde el controlador de dominio. El GPO no está vinculado.|La configuración en el GPO todavía no ha llegado al servidor. Esto podría deberse a que el GPO no está vinculado al servidor.|Vincula el GPO a un ámbito de administración que esté aplicado al servidor, o en un escenario de GPO de almacenamiento provisional, exporta manualmente la configuración desde el GPO de almacenamiento provisional e impórtala al GPO de producción. Para obtener más información sobre los GPO de almacenamiento provisional, consulte **administrar GPO de acceso remoto con permisos limitados** en [Step-1-plan-The-DirectAccess-Infrastructure](../../directaccess/single-server-advanced/da-adv-plan-s1-infrastructure.md). Para conocer los pasos de almacenamiento provisional de los GPO, consulte **configuración de GPO de acceso remoto con permisos limitados** en [el paso 1: configurar la infraestructura de DirectAccess](../../directaccess/single-server-advanced/da-adv-configure-s1-infrastructure.md).|

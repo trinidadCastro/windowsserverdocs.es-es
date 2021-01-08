@@ -1,18 +1,18 @@
 ---
 title: Copiar el certificado de entidad de certificación y la CRL en el directorio virtual
-description: Este tema forma parte de la guía de implementación de certificados de servidor para las implementaciones cableadas e inalámbricas de 802.1 X
+description: Obtenga información acerca de cómo copiar la lista de revocación de certificados y el certificado de CA raíz de empresa de la entidad de certificación a un directorio virtual del servidor Web y para asegurarse de que AD CS está configurado correctamente.
 manager: dougkim
 ms.topic: article
 ms.assetid: a1b5fa23-9cb1-4c32-916f-2d75f48b42c7
 ms.author: lizross
 author: eross-msft
 ms.date: 07/19/2018
-ms.openlocfilehash: cea33d8328a2233503fda61b4261213bedce0f3a
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 47d0e72b06d60b8865356d74c041a26f62635046
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87949569"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98038565"
 ---
 # <a name="copy-the-ca-certificate-and-crl-to-the-virtual-directory"></a>Copiar el certificado de entidad de certificación y la CRL en el directorio virtual
 
@@ -46,7 +46,7 @@ Para llevar a cabo este procedimiento, debe ser miembro del **grupo Admins**. de
 > [!TIP]
 > Si el **Estado** de algún elemento no es **correcto**, haga lo siguiente:
 > -   Abra el recurso compartido en el servidor web para comprobar que los archivos de lista de revocación de certificados y certificados se copiaron correctamente en el recurso compartido. Si no se copiaron correctamente en el recurso compartido, modifique los comandos de copia con el origen de archivo y el destino de recurso compartido correctos y vuelva a ejecutar los comandos.
-> -   Compruebe que ha escrito las ubicaciones correctas de CDP y AIA en la pestaña extensiones de CA. Asegúrese de que no haya espacios adicionales ni otros caracteres en las ubicaciones que ha proporcionado.
+> -   Compruebe que ha especificado las ubicaciones correctas para el CDP y AIA en la pestaña extensiones de CA. Asegúrese de que no hay espacios adicionales u otros caracteres en las ubicaciones que ha proporcionado.
 > -   Compruebe que ha copiado la CRL y el certificado de CA en la ubicación correcta del servidor Web y que la ubicación coincide con la ubicación que proporcionó para las ubicaciones de CDP y AIA en la CA.
 > -   Compruebe que ha configurado correctamente los permisos para la carpeta virtual donde se almacenan el certificado de CA y la CRL.
 

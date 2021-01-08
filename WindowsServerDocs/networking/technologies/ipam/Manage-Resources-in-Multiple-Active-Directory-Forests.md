@@ -1,18 +1,18 @@
 ---
 title: Administración de recursos en varios bosques de Active Directory
-description: Este tema forma parte de la guía de administración de la administración de direcciones IP (IPAM) en Windows Server 2016.
+description: Obtenga información sobre cómo usar IPAM para administrar controladores de dominio, servidores DHCP y servidores DNS en varios bosques de Active Directory.
 manager: brianlic
 ms.topic: article
 ms.assetid: 82f8f382-246e-4164-8306-437f7a019e0f
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 073e187435dabdc328c0549e072865b5d2978765
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: cf80ca939722a73b3a3de058a483f95ea3760fd4
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97948351"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98039525"
 ---
 # <a name="manage-resources-in-multiple-active-directory-forests"></a>Administración de recursos en varios bosques de Active Directory
 

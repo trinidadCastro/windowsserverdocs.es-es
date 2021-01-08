@@ -1,18 +1,18 @@
 ---
 title: Paso 1 planeación de la infraestructura de acceso remoto
-description: Este tema forma parte de la guía administrar los clientes de DirectAccess de forma remota en Windows Server 2016.
+description: Obtenga información acerca de los pasos para planear una infraestructura que puede usar para configurar un solo servidor de acceso remoto para la administración remota de clientes de DirectAccess.
 manager: brianlic
 ms.topic: article
 ms.assetid: a1ce7af5-f3fe-4fc9-82e8-926800e37bc1
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: add64a49bdc0b4ae0b9cfa0eaece085576013b81
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: d66073b93bbb1f3f73c95443c04900c3e37dd628
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947681"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98039925"
 ---
 # <a name="step-1-plan-the-remote-access-infrastructure"></a>Paso 1 planeación de la infraestructura de acceso remoto
 
@@ -272,7 +272,7 @@ En un entorno DNS que no sea de cerebro dividido, el espacio de nombres de Inter
 ##### <a name="plan-local-name-resolution-behavior-for-directaccess-clients"></a>Planear el comportamiento de la resolución local de nombres para los clientes de DirectAccess
 Si un nombre no se puede resolver con DNS, el servicio cliente DNS en Windows Server 2012, Windows 8, Windows Server 2008 R2 y Windows 7 pueden usar la resolución local de nombres, con los protocolos de resolución de nombres de multidifusión local de vínculo (LLMNR) y NetBIOS sobre TCP/IP, para resolver el nombre en la subred local. La resolución local de nombres suele ser necesaria para la conectividad punto a punto cuando el equipo se encuentra en redes privadas, como redes domésticas de una única subred.
 
-Cuando el servicio cliente DNS realiza la resolución local de nombres de servidores de la intranet y el equipo está conectado a una subred compartida en Internet, los usuarios malintencionados pueden capturar los mensajes de LLMNR y NetBIOS sobre TCP/IP para determinar los nombres de los servidores de la intranet. En la página DNS del Asistente para la instalación del servidor de infraestructura, puede configurar el comportamiento de la resolución local de nombres según los tipos de respuestas recibidos de los servidores DNS de la intranet. Están disponibles las siguientes opciones:
+Cuando el servicio cliente DNS realiza la resolución local de nombres de servidores de la intranet y el equipo está conectado a una subred compartida en Internet, los usuarios malintencionados pueden capturar los mensajes de LLMNR y NetBIOS sobre TCP/IP para determinar los nombres de los servidores de la intranet. En la página DNS del Asistente para la instalación del servidor de infraestructura, puede configurar el comportamiento de la resolución local de nombres según los tipos de respuestas recibidos de los servidores DNS de la intranet. Están disponibles las opciones siguientes:
 
 -   **Usar resolución local de nombres si el nombre no existe en DNS**: esta opción es la más segura porque el cliente de DirectAccess realiza la resolución local de nombres solo para los nombres de servidor que los servidores DNS de la intranet no pueden resolver. Si se puede tener acceso a los servidores DNS de la intranet, se resuelven los nombres de los servidores de la intranet. Si los servidores DNS de la intranet no son accesibles o si hay otros tipos de errores de DNS, los nombres de los servidores de la intranet no se filtran a la subred a través de la resolución local de nombres.
 

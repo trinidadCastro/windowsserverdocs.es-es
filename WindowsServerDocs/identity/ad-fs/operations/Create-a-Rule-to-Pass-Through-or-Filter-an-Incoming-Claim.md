@@ -7,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 235d2bf0572e2b84536d09a1bf9784d635db3ad5
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: b3c3c41b5434913ab5b49d0430fa5269cc10077d
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97048223"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98039157"
 ---
 # <a name="create-a-rule-to-pass-through-or-filter-an-incoming-claim"></a>Crear una regla para pasar a través o filtrar una demanda entrante
 
@@ -27,16 +27,16 @@ La pertenencia al grupo **Administradores** o equivalente en el equipo local es 
 1.  En el Administrador del servidor, haga clic en **Herramientas** y, luego, seleccione **Administración de AD FS**.
 
 2.  En el árbol de consola, en **AD FS**, haga clic en relaciones de confianza para usuario **autenticado**.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)
+![Captura de pantalla que resalta las relaciones de confianza para usuario autenticado en el árbol de consola.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)
 
 3.  \-Haga clic con el botón derecho en la confianza seleccionada y luego haga clic en **Editar Directiva de emisión de notificaciones**.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)
+![Captura de pantalla que resalta la opción de menú Editar Directiva de emisión de notificaciones.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)
 
 4.  En el cuadro de diálogo **Editar Directiva de emisión de notificaciones** , en **reglas de transformación de emisión** , haga clic en **Agregar regla** para iniciar el Asistente para reglas.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)
+![Captura de pantalla que muestra la pestaña reglas de transformación de emisión.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)
 
 5.  En la **página Seleccionar plantilla de regla** , en **plantilla de regla de notificaciones**, seleccione **pasar o filtrar una notificaciones entrantes** de la lista y, a continuación, haga clic en **siguiente**.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule4.PNG)
+![Captura de pantalla que muestra dónde seleccionar el paso a través o filtrar una plantilla de notificaciones entrantes.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule4.PNG)
 
 6.  En la página **configurar regla** , en nombre de la **regla de notificaciones** , escriba el nombre para mostrar de esta regla, en **tipo de notificaciones entrantes** Seleccione un tipo de notificaciones en la lista y, a continuación, seleccione una de las siguientes opciones, según las necesidades de su organización:
 
@@ -47,7 +47,7 @@ La pertenencia al grupo **Administradores** o equivalente en el equipo local es 
     -   **Pasar solo los valores de notificaciones que coinciden con un valor de sufijo de correo electrónico específico**
 
     -   **Pasar solo los valores de notificaciones que empiezan con un valor específico** 
- ![ crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule5.PNG)
+ ![ Captura de pantalla que muestra dónde seleccionar el tipo de notificaciones entrantes.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule5.PNG)
 
 7.  Haga clic en el botón **Finalizar**.
 
@@ -58,16 +58,16 @@ La pertenencia al grupo **Administradores** o equivalente en el equipo local es 
 1.  En el Administrador del servidor, haga clic en **Herramientas** y, luego, seleccione **Administración de AD FS**.
 
 2.  En el árbol de consola, en **AD FS**, haga clic en **confianzas de proveedor de notificaciones**.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)
+![Captura de pantalla que resalta las confianzas de proveedor de notificaciones en el árbol de consola.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)
 
 3.  Haga clic con el botón secundario \- en la confianza seleccionada y, a continuación, haga clic en **editar reglas de notificaciones**.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)
+![Captura de pantalla que resalta la opción de menú editar reglas de notificaciones.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)
 
 4.  En el cuadro de diálogo **editar reglas de notificaciones** , en **reglas de transformación de aceptación** , haga clic en **Agregar regla** para iniciar el Asistente para reglas.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG)
+![Captura de pantalla que muestra la pestaña reglas de transformación de aceptación.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG)
 
 5.  En la **página Seleccionar plantilla de regla** , en **plantilla de regla de notificaciones**, seleccione **pasar o filtrar una notificaciones entrantes** de la lista y, a continuación, haga clic en **siguiente**.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule4.PNG)
+![Captura de pantalla que muestra dónde seleccionar una plantilla de regla.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule4.PNG)
 
 6.  En la página **configurar regla** , en nombre de la **regla de notificaciones** , escriba el nombre para mostrar de esta regla, en **tipo de notificaciones entrantes** Seleccione un tipo de notificaciones en la lista y, a continuación, seleccione una de las siguientes opciones, según las necesidades de su organización:
 
@@ -78,7 +78,7 @@ La pertenencia al grupo **Administradores** o equivalente en el equipo local es 
     -   **Pasar solo los valores de notificaciones que coinciden con un valor de sufijo de correo electrónico específico**
 
     -   **Pasar solo los valores de notificaciones que empiezan con un valor específico** 
- ![ crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule5.PNG)
+ ![ Captura de pantalla que muestra dónde se debe ad el nombre de la regla de notificaciones.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule5.PNG)
 
 7.  Haga clic en el botón **Finalizar**.
 
@@ -91,7 +91,7 @@ La pertenencia al grupo **Administradores** o equivalente en el equipo local es 
 2.  En el árbol de consola, en **relaciones de \\ confianza de ad FSAD FS**, haga clic en **confianzas de proveedor de notificaciones** o en **confianzas para usuario autenticado** y, a continuación, haga clic en una confianza específica en la lista en la que desea crear esta regla.
 
 3.  Haga clic con el botón secundario \- en la confianza seleccionada y, a continuación, haga clic en **editar reglas de notificaciones**.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)
+![Captura de pantalla que muestra dónde seleccionar editar reglas de notificaciones.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)
 
 4.  En el cuadro de diálogo **editar reglas de notificaciones** , seleccione una de las siguientes pestañas, en función de la confianza que esté editando y el conjunto de reglas en el que desee crear esta regla y, a continuación, haga clic en **Agregar regla** para iniciar el Asistente para reglas que está asociado con ese conjunto de reglas:
 
@@ -102,10 +102,10 @@ La pertenencia al grupo **Administradores** o equivalente en el equipo local es 
     -   **Reglas de autorización de emisión**
 
     -   Reglas de autorización de **delegación** 
- ![ crear regla](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)
+ ![ Sceenshot muestra el botón Agregar regla.](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)
 
 5.  En la **página Seleccionar plantilla de regla** , en **plantilla de regla de notificaciones**, seleccione **pasar o filtrar una notificaciones entrantes** de la lista y, a continuación, haga clic en **siguiente**.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule7.PNG)
+![Captura de pantalla que muestra la pantalla elegir tipo de regla.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule7.PNG)
 
 6.  En la página **configurar regla** , en nombre de la **regla de notificaciones** , escriba el nombre para mostrar de esta regla, en **tipo de notificaciones entrantes** Seleccione un tipo de notificaciones en la lista y, a continuación, seleccione una de las siguientes opciones, según las necesidades de su organización:
 

@@ -7,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: dc55613e8060eda42f5f4d47a59fc20246e1684f
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 63baded3b401a6bd79ed56aa1cff231056c4c190
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97040133"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98039165"
 ---
 # <a name="create-a-rule-to-send-an-authentication-method-claim"></a>Crear una regla para enviar una notificación de método de autenticación
 
@@ -32,16 +32,16 @@ En función de los requisitos de su organización, use uno de los procedimientos
 1.  En el Administrador del servidor, haga clic en **Herramientas** y, luego, seleccione **Administración de AD FS**.
 
 2.  En el árbol de consola, en **AD FS**, haga clic en relaciones de confianza para usuario **autenticado**.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)
+![Captura de pantalla que muestra dónde seleccionar las relaciones de confianza para usuario autenticado en el árbol de consola al crear una regla mediante la plantilla de regla enviar pertenencia a grupos como notificaciones.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)
 
 3.  \-Haga clic con el botón derecho en la confianza seleccionada y luego haga clic en **Editar Directiva de emisión de notificaciones**.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)
+![Captura de pantalla que muestra dónde seleccionar la opción de menú Editar Directiva de emisión de notificaciones al crear una regla mediante la plantilla de regla enviar pertenencia a grupos como notificaciones.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)
 
 4.  En el cuadro de diálogo **Editar Directiva de emisión de notificaciones** , en **reglas de transformación de emisión** , haga clic en **Agregar regla** para iniciar el Asistente para reglas.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)
+![Captura de pantalla que muestra cómo agregar una regla al crear una regla mediante la plantilla de regla enviar pertenencia a grupos como notificaciones.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)
 
 5.  En la **página Seleccionar plantilla de regla** , en **plantilla de regla de notificaciones**, seleccione **Enviar pertenencia a grupos como notificaciones** en la lista y, a continuación, haga clic en **siguiente**.
-![crear regla](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group3.PNG)
+![Captura de pantalla que muestra dónde seleccionar la plantilla enviar pertenencia a grupos como notificaciones.](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group3.PNG)
 
 6.  En la página **configurar regla** , escriba un nombre de regla de notificaciones.
 
@@ -58,23 +58,23 @@ En función de los requisitos de su organización, use uno de los procedimientos
 | \( \) Autenticación mutua TLS de seguridad de la capa de transporte que utiliza certificados X. 509 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
 |                  \-Autenticación basada en X. 509 que no usa TLS                  |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
 
-![crear regla](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth2.PNG)
+![Captura de pantalla que muestra dónde seleccionar finalizar al crear una regla mediante la plantilla de regla enviar pertenencia a grupos como notificaciones en Windows Server 2016.](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth2.PNG)
 
 ## <a name="to-create-by-using-the-send-group-membership-as-claims-rule-template-on-a-claims-provider-trust-in-windows-server-2016"></a>Para crear mediante la plantilla de regla enviar pertenencia a grupos como notificaciones en una confianza de proveedor de notificaciones en Windows Server 2016
 
 1.  En el Administrador del servidor, haga clic en **Herramientas** y, luego, seleccione **Administración de AD FS**.
 
 2.  En el árbol de consola, en **AD FS**, haga clic en **confianzas de proveedor de notificaciones**.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)
+![Captura de pantalla que muestra dónde seleccionar las confianzas del proveedor de notificaciones cuando se crea una regla mediante la plantilla de regla enviar pertenencia a grupos como notificaciones en Windows Server 2016.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)
 
 3.  Haga clic con el botón secundario \- en la confianza seleccionada y, a continuación, haga clic en **editar reglas de notificaciones**.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)
+![Captura de pantalla que muestra dónde seleccionar editar reglas de notificación cuando se crea una regla mediante la plantilla de regla enviar pertenencia a grupos como notificaciones en Windows Server 2016.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)
 
 4.  En el cuadro de diálogo **editar reglas de notificaciones** , en **reglas de transformación de aceptación** , haga clic en **Agregar regla** para iniciar el Asistente para reglas.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG)
+![Captura de pantalla que muestra dónde seleccionar el botón Agregar regla al crear una regla mediante la plantilla de regla enviar pertenencia a grupos como notificaciones en Windows Server 2016.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG)
 
 5.  En la **página Seleccionar plantilla de regla** , en **plantilla de regla de notificaciones**, seleccione **Enviar pertenencia a grupos como notificaciones** en la lista y, a continuación, haga clic en **siguiente**.
-![crear regla](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group3.PNG)
+![Captura de pantalla que muestra dónde seleccionar la plantilla enviar pertenencia a grupos como notificaciones al crear una regla en Windows Server 2016.](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group3.PNG)
 
 6.  En la página **configurar regla** , escriba un nombre de regla de notificaciones.
 
@@ -91,7 +91,7 @@ En función de los requisitos de su organización, use uno de los procedimientos
 | \( \) Autenticación mutua TLS de seguridad de la capa de transporte que utiliza certificados X. 509 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
 |                  \-Autenticación basada en X. 509 que no usa TLS                  |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
 
-![crear regla](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth2.PNG)
+![Captura de pantalla que muestra dónde seleccionar finalizar al crear una regla mediante la plantilla de regla enviar pertenencia a grupos como notificaciones en Windows Server 2016.](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth2.PNG)
 
 
 ## <a name="to-create-this-rule-by-using-the-transform-an-incoming-claim-rule-template-on-a-relying-party-trust-in-windows-server-2016"></a>Para crear esta regla mediante la plantilla de regla transformar una notificaciones entrantes en una relación de confianza para usuario autenticado en Windows Server 2016
@@ -99,16 +99,16 @@ En función de los requisitos de su organización, use uno de los procedimientos
 1.  En el Administrador del servidor, haga clic en **Herramientas** y, luego, seleccione **Administración de AD FS**.
 
 2.  En el árbol de consola, en **AD FS**, haga clic en relaciones de confianza para usuario **autenticado**.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)
+![Captura de pantalla que muestra dónde seleccionar las relaciones de confianza para usuario autenticado en el árbol de la consola cuando se crea una regla mediante la plantilla de regla transformar una notificaciones entrantes.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)
 
 3.  \-Haga clic con el botón derecho en la confianza seleccionada y luego haga clic en **Editar Directiva de emisión de notificaciones**.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)
+![Captura de pantalla que muestra dónde seleccionar Editar Directiva de emisión de notificaciones al crear una regla mediante la plantilla de regla transformar una notificaciones entrantes.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)
 
 4.  En el cuadro de diálogo **Editar Directiva de emisión de notificaciones** , en **reglas de transformación de emisión** , haga clic en **Agregar regla** para iniciar el Asistente para reglas.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)
+![Captura de pantalla que muestra dónde seleccionar Agregar regla al crear una regla mediante la plantilla de regla transformar una notificaciones entrantes.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)
 
 5.  En la **página Seleccionar plantilla de regla** , en **plantilla de regla de notificaciones**, seleccione **transformar una notificaciones entrantes** de la lista y, a continuación, haga clic en **siguiente**.
-![crear regla](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform3.PNG)
+![Captura de pantalla que muestra dónde seleccionar la plantilla transformar una notificaciones entrantes al crear una regla.](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform3.PNG)
 
 6.  En la página **configurar regla** , escriba un nombre de regla de notificaciones.
 
@@ -129,7 +129,7 @@ En función de los requisitos de su organización, use uno de los procedimientos
 | Autenticación mutua de TLS que usa certificados X. 509 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
 |   \-Autenticación basada en X. 509 que no usa TLS    |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
 
-![crear regla](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth4.PNG)
+![Captura de pantalla que muestra dónde seleccionar finalizar al crear una regla mediante la plantilla de regla transformar una notificaciones entrantes.](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth4.PNG)
 
 > [!NOTE]
 > Se pueden usar otros valores de URI además de los valores de la tabla. Los valores de URI que se muestran en la tabla anterior reflejan los URI que el usuario de confianza acepta de forma predeterminada.
@@ -139,16 +139,16 @@ En función de los requisitos de su organización, use uno de los procedimientos
 1.  En el Administrador del servidor, haga clic en **Herramientas** y, luego, seleccione **Administración de AD FS**.
 
 2.  En el árbol de consola, en **AD FS**, haga clic en **confianzas de proveedor de notificaciones**.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)
+![Captura de pantalla que muestra dónde seleccionar las confianzas del proveedor de notificaciones en el árbol de la consola cuando se crea una regla mediante la plantilla de regla transformar una notificación entrante en Windows Server 2016.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)
 
 3.  Haga clic con el botón secundario \- en la confianza seleccionada y, a continuación, haga clic en **editar reglas de notificaciones**.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)
+![Captura de pantalla que muestra dónde seleccionar editar reglas de notificaciones al crear una regla mediante la plantilla de regla transformar una notificaciones entrantes en Windows Server 2016.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)
 
 4.  En el cuadro de diálogo **editar reglas de notificaciones** , en **reglas de transformación de aceptación** , haga clic en **Agregar regla** para iniciar el Asistente para reglas.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG)
+![Captura de pantalla que muestra dónde seleccionar Agregar regla al crear una regla mediante la plantilla de regla transformar una notificaciones entrantes en Windows Server 2016.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG)
 
 5.  En la **página Seleccionar plantilla de regla** , en **plantilla de regla de notificaciones**, seleccione **transformar una notificaciones entrantes** de la lista y, a continuación, haga clic en **siguiente**.
-![crear regla](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform3.PNG)
+![Captura de pantalla que muestra dónde seleccionar la plantilla transformar una notificaciones entrantes al crear una regla en Windows Server 2016.](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform3.PNG)
 
 6.  En la página **configurar regla** , escriba un nombre de regla de notificaciones.
 
@@ -169,7 +169,7 @@ En función de los requisitos de su organización, use uno de los procedimientos
 | Autenticación mutua de TLS que usa certificados X. 509 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
 |   \-Autenticación basada en X. 509 que no usa TLS    |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
 
-![crear regla](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth4.PNG)
+![Captura de pantalla que muestra dónde seleccionar finalizar al crear una regla mediante la plantilla de regla transformar una notificaciones entrantes en Windows Server 2016.](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth4.PNG)
 
 
 
@@ -200,7 +200,7 @@ En función de los requisitos de su organización, use uno de los procedimientos
 2.  En el árbol de consola, en **AD FS \\ relaciones de confianza**, haga clic en **confianzas de proveedor de notificaciones** o en **confianzas** de usuario de confianza y, a continuación, haga clic en una confianza específica en la lista en la que desea crear esta regla.
 
 3.  Haga clic con el botón secundario \- en la confianza seleccionada y, a continuación, haga clic en **editar reglas de notificaciones**.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)
+![Captura de pantalla que muestra dónde seleccionar editar reglas de notificación cuando se crea una regla mediante la plantilla de regla enviar pertenencia a grupos como notificaciones.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)
 
 4.  En el cuadro de diálogo **editar reglas de notificaciones** , seleccione una de las siguientes pestañas, en función de la confianza que esté editando y el conjunto de reglas en el que desee crear esta regla y, a continuación, haga clic en **Agregar regla** para iniciar el Asistente para reglas que está asociado con ese conjunto de reglas:
 
@@ -211,10 +211,10 @@ En función de los requisitos de su organización, use uno de los procedimientos
     -   **Reglas de autorización de emisión**
 
     -   Reglas de autorización de **delegación** 
- ![ crear regla](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)
+ ![ Captura de pantalla que muestra dónde seleccionar Agregar regla al crear una regla mediante la plantilla de regla enviar pertenencia a grupos como notificaciones.](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)
 
 5.  En la **página Seleccionar plantilla de regla** , en **plantilla de regla de notificaciones**, seleccione **Enviar pertenencia a grupos como una demanda** de la lista y, a continuación, haga clic en **siguiente**.
-![crear regla](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group1.PNG)
+![Captura de pantalla que muestra dónde seleccionar la pertenencia al grupo de envío como una plantilla de notificaciones cuando se crea una regla.](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group1.PNG)
 
 6.  En la página **configurar regla** , escriba un nombre de regla de notificaciones.
 
@@ -231,7 +231,7 @@ En función de los requisitos de su organización, use uno de los procedimientos
 | \( \) Autenticación mutua TLS de seguridad de la capa de transporte que utiliza certificados X. 509 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
 |                  \-Autenticación basada en X. 509 que no usa TLS                  |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
 
-![crear regla](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth1.PNG)
+![Captura de pantalla que muestra dónde seleccionar finalizar al crear una regla mediante la plantilla de regla enviar pertenencia a grupos como notificaciones.](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth1.PNG)
 
 > [!NOTE]
 > Se pueden usar otros valores de URI además de los valores de la tabla. Los valores de URI que se muestran en la tabla anterior reflejan los URI que el usuario de confianza acepta de forma predeterminada.
@@ -245,7 +245,7 @@ En función de los requisitos de su organización, use uno de los procedimientos
 2.  En el árbol de consola, en **AD FS \\ relaciones de confianza**, haga clic en **confianzas de proveedor de notificaciones** o en **confianzas** de usuario de confianza y, a continuación, haga clic en una confianza específica en la lista en la que desea crear esta regla.
 
 3.  Haga clic con el botón secundario \- en la confianza seleccionada y, a continuación, haga clic en **editar reglas de notificaciones**.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)
+![Captura de pantalla que muestra dónde seleccionar editar reglas de notificaciones al crear una regla mediante la plantilla de regla transformar una notificaciones entrantes en Windows Server 2012 R2.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)
 
 4.  En el cuadro de diálogo **editar reglas de notificaciones** , seleccione una de las siguientes pestañas, que depende de la confianza que está editando y en qué conjunto de reglas desea crear esta regla y, a continuación, haga clic en **Agregar regla** para iniciar el Asistente para reglas que está asociado con ese conjunto de reglas:
 
@@ -256,10 +256,10 @@ En función de los requisitos de su organización, use uno de los procedimientos
     -   **Reglas de autorización de emisión**
 
     -   Reglas de autorización de **delegación** 
- ![ crear regla](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)
+ ![ Captura de pantalla que muestra dónde seleccionar Agregar regla al crear una regla mediante la plantilla de regla transformar una notificaciones entrantes en Windows Server 2012 R2.](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)
 
 5.  En la **página Seleccionar plantilla de regla** , en **plantilla de regla de notificaciones**, seleccione **transformar una notificaciones entrantes** de la lista y, a continuación, haga clic en **siguiente**.
-![crear regla](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform1.PNG)
+![Captura de pantalla que muestra dónde seleccionar la plantilla transformar una notificaciones entrantes al crear una regla en Windows Server 2012 R2.](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform1.PNG)
 
 6.  En la página **configurar regla** , escriba un nombre de regla de notificaciones.
 

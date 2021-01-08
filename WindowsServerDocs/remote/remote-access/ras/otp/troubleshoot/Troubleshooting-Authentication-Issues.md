@@ -1,18 +1,18 @@
 ---
 title: Solucionar problemas relacionados con la autenticación
-description: Este tema forma parte de la guía deploy Remote Access with OTP Authentication in Windows Server 2016.
+description: Obtenga información acerca de cómo solucionar problemas relacionados con los problemas que los usuarios pueden tener al intentar conectarse a DirectAccess mediante la autenticación de OTP.
 manager: brianlic
 ms.topic: article
 ms.assetid: 71307757-f8f4-4f82-b8b3-ffd4fd8c5d6d
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 9717b4c12579564d2c3e567fdce17ac105804217
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 814b48419c394bf42c81ff0f3b05e6442a06a122
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947241"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98039685"
 ---
 # <a name="troubleshooting-authentication-issues"></a>Solucionar problemas relacionados con la autenticación
 

@@ -1,18 +1,18 @@
 ---
 title: Planificación de la implementación de acceso inalámbrico
-description: Este tema forma parte de la guía de redes de Windows Server 2016 "implementación de acceso inalámbrico autenticado de Password-Based 802.1 X"
+description: Obtenga información acerca de cómo planear instalaciones de AP inalámbricos y planear el acceso y la configuración de clientes inalámbricos.
 manager: brianlic
 ms.topic: article
 ms.assetid: 8c632d02-2270-4a82-8fc4-74ea3747f079
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: db628c68048032432935415928636e052be4ea83
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 8a6c651abc7d4a02c402db8845ed442f7d746d05
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97946701"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98038295"
 ---
 # <a name="wireless-access-deployment-planning"></a>Planificación de la implementación de acceso inalámbrico
 

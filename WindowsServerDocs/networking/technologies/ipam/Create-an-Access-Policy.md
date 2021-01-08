@@ -1,18 +1,18 @@
 ---
 title: Crear una directiva de acceso
-description: Este tema forma parte de la guía de administración de la administración de direcciones IP (IPAM) en Windows Server 2016.
+description: Obtenga información sobre cómo crear una directiva de acceso en la consola de cliente de IPAM.
 manager: brianlic
 ms.topic: article
 ms.assetid: 854bd064-2f86-4678-a940-a04b3e48ae10
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: be09d4a056482f7506d7f6d8f79443e8589877c5
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 11494ec838851ffffb6e3eab31cfb462e30e2462
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949061"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98039735"
 ---
 # <a name="create-an-access-policy"></a>Crear una directiva de acceso
 

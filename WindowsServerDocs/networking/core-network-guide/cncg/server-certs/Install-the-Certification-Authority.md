@@ -1,18 +1,18 @@
 ---
 title: Instalar la entidad de certificación
-description: Este tema forma parte de la guía de implementación de certificados de servidor para las implementaciones cableadas e inalámbricas de 802.1 X
+description: Obtenga información acerca de cómo instalar servicios de Certificate Server de Active Directory para poder inscribir un certificado de servidor en servidores que ejecutan el servidor de directivas de redes, el servicio de enrutamiento y acceso remoto, o ambos.
 manager: brianlic
 ms.topic: article
 ms.assetid: 4acdc3ad-078e-45cc-b54c-e9456e0c90f5
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 512653a98ff887b6d7f7d5c1af59ee5310a4df46
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 1e5c093a0c465f1f29cc8fd4606928515ae24091
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97950181"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98038555"
 ---
 # <a name="install-the-certification-authority"></a>Instalar la entidad de certificación
 

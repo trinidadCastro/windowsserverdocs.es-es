@@ -1,18 +1,18 @@
 ---
 title: Administración de redes virtuales de inquilinos
-description: Este tema forma parte de la guía de redes definidas por software sobre cómo administrar cargas de trabajo de inquilinos y redes virtuales en Windows Server 2016.
+description: Obtenga información sobre cómo administrar redes virtuales de virtualización de red de Hyper-V de inquilinos después de haber implementado redes definidas por software.
 manager: grcusanz
 ms.topic: article
 ms.assetid: 5905532b-626d-4b35-99a3-72a063e25809
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/07/2020
-ms.openlocfilehash: 01a78c820098ed58bcbf4690982b8f3a68f63bb5
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 3fc38bf559da74fdbc4ed95da9d384bffcd48194
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949671"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98038255"
 ---
 # <a name="manage-tenant-virtual-networks"></a>Administración de redes virtuales de inquilinos
 

@@ -1,18 +1,18 @@
 ---
 title: Paso 3 configurar el servidor de acceso remoto para OTP
-description: Este tema forma parte de la guía deploy Remote Access with OTP Authentication in Windows Server 2016.
+description: Obtenga información acerca de cómo configurar el servidor de acceso remoto para que admita OTP.
 manager: brianlic
 ms.topic: article
 ms.assetid: df1e87f2-6a0f-433b-8e42-816ae75395f9
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: c5b4cde212da9c585c4d9afdb068147f406beb51
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 51fe01ab53fbad09a0993c84eae97fb8e3ef52ae
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97946461"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98039035"
 ---
 # <a name="step-3-configure-the-remote-access-server-for-otp"></a>Paso 3 configurar el servidor de acceso remoto para OTP
 

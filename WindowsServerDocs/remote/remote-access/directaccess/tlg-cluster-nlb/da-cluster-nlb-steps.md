@@ -1,18 +1,18 @@
 ---
 title: Pasos para configurar el laboratorio de pruebas NLB de clúster de DirectAccess
-description: 'Este tema forma parte de la guía del laboratorio de pruebas: demostración de DirectAccess en un clúster con Windows NLB para Windows Server 2016'
+description: Obtenga información acerca de cómo configurar la infraestructura de acceso remoto, configurar los clientes y servidores de acceso remoto y probar la conectividad de DirectAccess desde las subredes de Internet y HomeNet.
 manager: brianlic
 ms.topic: article
 ms.assetid: e508d3ee-ffa6-463f-a3dd-9e35e745c005
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: d8502b50d54292adbd74209e5dff2d676d105701
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 7b9a5497803464f8bb3fde02785f09c0b99511a9
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97950371"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040225"
 ---
 # <a name="steps-for-configuring-the-directaccess-cluster-nlb-test-lab"></a>Pasos para configurar el laboratorio de pruebas NLB de clúster de DirectAccess
 

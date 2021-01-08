@@ -1,18 +1,18 @@
 ---
 title: Paso 6 probar la Conectividad del cliente de DirectAccess desde detrás de un dispositivo NAT
-description: 'Este tema forma parte de la guía del laboratorio de pruebas: demostración de DirectAccess en un clúster con Windows NLB para Windows Server 2016'
+description: Obtenga información sobre cómo probar la conectividad Teredo de DirectAccess y la conectividad IP-HTTPS desde detrás de un dispositivo NAT.
 manager: brianlic
 ms.topic: article
 ms.assetid: aded2881-99ed-4f18-868b-b765ab926597
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 083905f03a9a8f021d223f2ab0e7f0a5141f0e42
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 4aa5c784b69ba3dd9a7824c77d080a6829e32ebf
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97946551"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040255"
 ---
 # <a name="step-6-test-directaccess-client-connectivity-from-behind-a-nat-device"></a>Paso 6 probar la Conectividad del cliente de DirectAccess desde detrás de un dispositivo NAT
 

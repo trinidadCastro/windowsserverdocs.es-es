@@ -1,18 +1,18 @@
 ---
 title: Paso 3 planear la implementación de certificados OTP
-description: Este tema forma parte de la guía deploy Remote Access with OTP Authentication in Windows Server 2016.
+description: Obtenga información acerca de cómo planear los requisitos de la entidad de certificación, incluida la CA que emitirá certificados de contraseña de un solo uso, la plantilla de certificado OTP y el certificado de autoridad de registro usado por el servidor de acceso remoto para firmar todas las solicitudes de certificado OTP de cliente de DirectAccess.
 manager: brianlic
 ms.topic: article
 ms.assetid: eca02eeb-d92d-463e-aae0-1f7038ba26fe
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 8c6898b6447e5d8c3a72653435028a7413fbb9c9
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: d563356d3c3635255a7fab3fcecef77becab53fb
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97950451"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040155"
 ---
 # <a name="step-3-plan-otp-certificate-deployment"></a>Paso 3 planear la implementación de certificados OTP
 

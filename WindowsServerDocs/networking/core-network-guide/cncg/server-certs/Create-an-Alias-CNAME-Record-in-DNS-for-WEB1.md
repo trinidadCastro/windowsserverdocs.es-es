@@ -1,18 +1,18 @@
 ---
 title: Crear un registro de alias (CNAME) en DNS para WEB1
-description: Este tema forma parte de la guía de implementación de certificados de servidor para las implementaciones cableadas e inalámbricas de 802.1 X
+description: Obtenga información acerca de cómo agregar un registro de recursos de nombre canónico (CNAME) de alias para el servidor Web a una zona en DNS en el controlador de dominio.
 manager: brianlic
 ms.topic: article
 ms.assetid: bfae23f0-ae12-486b-94fe-50a137e141a5
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: c95efd5d9f0cbe7bbdba79d0971581f2c09ac53e
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: c96322a69379524922f40b04dc85731c4dc7ffde
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97950191"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98038608"
 ---
 # <a name="create-an-alias-cname-record-in-dns-for-web1"></a>Crear un \( registro CNAME \) de alias en DNS para web1
 

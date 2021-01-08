@@ -1,18 +1,18 @@
 ---
 title: Implementación de acceso inalámbrico
-description: Este tema forma parte de la guía de redes de Windows Server 2016 "implementación de acceso inalámbrico autenticado de Password-Based 802.1 X"
+description: Obtenga información sobre cómo implementar el acceso inalámbrico en cinco pasos.
 manager: brianlic
 ms.topic: article
 ms.assetid: 4b66f517-b17d-408c-828f-a3793086bc1f
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 7904476686c8e929876cf2ad574c8e09f4f351f1
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: bcd601d97ff8cef77d14691dd510df2679718dda
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949161"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98038275"
 ---
 # <a name="wireless-access-deployment"></a>Implementación de acceso inalámbrico
 

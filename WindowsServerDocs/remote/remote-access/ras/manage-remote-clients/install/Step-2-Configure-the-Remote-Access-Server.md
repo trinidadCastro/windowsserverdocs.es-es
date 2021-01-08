@@ -1,18 +1,18 @@
 ---
 title: Paso 2 configurar el servidor de acceso remoto
-description: Este tema forma parte de la guía administrar los clientes de DirectAccess de forma remota en Windows Server 2016.
+description: Obtenga información sobre cómo configurar las opciones de cliente y servidor necesarias para la administración remota de clientes de DirectAccess.
 manager: brianlic
 ms.topic: article
 ms.assetid: c0257b98-5633-4264-9df6-b6ffae80592c
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 5fb19aeed8cd390693b0d62516191e920e4d879b
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 7d7b2a29ef22f8768861eb456e0ded2c0e9a9432
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947711"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040045"
 ---
 # <a name="step-2-configure-the-remote-access-server"></a>Paso 2 configurar el servidor de acceso remoto
 

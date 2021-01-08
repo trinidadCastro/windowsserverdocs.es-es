@@ -7,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 5c88f4ae94002f436cedae74fa32211f701e270e
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 5bcfa3f73e3aede9917e7f5cb7412cca37728550
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97048203"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98039195"
 ---
 # <a name="create-a-rule-to-permit-or-deny-users-based-on-an-incoming-claim"></a>Crear una regla para permitir o denegar usuarios según una notificación entrante
 
@@ -30,49 +30,49 @@ La pertenencia al grupo **Administradores** o equivalente en el equipo local es 
 1.  En el Administrador del servidor, haga clic en **Herramientas** y, luego, seleccione **Administración de AD FS**.
 
 2.  En el árbol de consola, en **AD FS**, haga clic en **directivas de Access Control**.
-![crear regla](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny3.PNG)
+![Captura de pantalla que resalta Access Control directivas en el árbol de consola.](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny3.PNG)
 
 3. Haga clic con el botón derecho y seleccione **Agregar Directiva de Access Control**.
-![crear regla](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny4.PNG)
+![Captura de pantalla que resalta la opción de menú Agregar Directiva de Access Control.](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny4.PNG)
 
 4. En el cuadro Nombre, escriba un nombre para la Directiva, una descripción y haga clic en **Agregar**.
-![crear regla](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny5.PNG)
+![Captura de pantalla que muestra dónde agregar una directiva de Access Control cuando se crea una regla que permite a los usuarios basarse en una demanda entrante en Windows Server 2016.](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny5.PNG)
 
 5. En el **Editor de reglas**, en usuarios, coloque una inserción en **el repositorio con notificaciones específicas en la solicitud** y haga clic en el subrayado **específico** en la parte inferior.
-![crear regla](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny6.PNG)
+![Captura de pantalla que destaca dónde seleccionar el subrayado específico.](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny6.PNG)
 
 6. En la pantalla **seleccionar notificaciones** , haga clic en el botón de opción **notificaciones** , seleccione el **tipo de notificación**, el **operador** y el **valor de notificación** y, a continuación, haga clic en **Aceptar**.
-![crear regla](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny7.PNG)
+![Captura de pantalla que muestra dónde seleccionar la opción de notificaciones.](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny7.PNG)
 
 7.  En el **Editor de reglas** , haga clic en **Aceptar**.  En la pantalla **Agregar Directiva de Access Control** , haga clic en **Aceptar**.
 
 8. En el árbol de la consola de **Administración de AD FS** , en **AD FS**, haga clic en relaciones de confianza para usuario **autenticado**.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)
+![Captura de pantalla que muestra dónde seleccionar las relaciones de confianza para usuario autenticado.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)
 
 9.  Haz clic con el botón derecho en la relación de confianza para usuario **autenticado** a la que deseas permitir el acceso y selecciona **editar Directiva de Access Control**.
-![crear regla](media/Create-a-Rule-to-Permit-All-Users/permitall2.PNG)
+![Captura de pantalla que muestra dónde seleccionar la opción de menú Editar Directiva de Access Control.](media/Create-a-Rule-to-Permit-All-Users/permitall2.PNG)
 
 10. En la Directiva de control de acceso, seleccione la Directiva y haga clic en **aplicar** y en **Aceptar**.
-![crear regla](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny8.PNG)
+![Captura de pantalla que muestra dónde seleccionar aplicar y aceptar.](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny8.PNG)
 
 ## <a name="to-create-a-rule-to-deny-users-based-on-an-incoming-claim-on-windows-server-2016"></a>Para crear una regla para denegar a los usuarios en función de una demanda entrante en Windows Server 2016
 
 1.  En el Administrador del servidor, haga clic en **Herramientas** y, luego, seleccione **Administración de AD FS**.
 
 2.  En el árbol de consola, en **AD FS**, haga clic en **directivas de Access Control**.
-![crear regla](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny3.PNG)
+![Captura de pantalla que muestra dónde seleccionar las directivas de Access Control.](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny3.PNG)
 
 3. Haga clic con el botón derecho y seleccione **Agregar Directiva de Access Control**.
-![crear regla](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny4.PNG)
+![Captura de pantalla que muestra dónde agregar una directiva de Access Control.](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny4.PNG)
 
 4. En el cuadro Nombre, escriba un nombre para la Directiva, una descripción y haga clic en **Agregar**.
-![crear regla](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny9.PNG)
+![Captura de pantalla que muestra dónde escribir un nombre para la Directiva.](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny9.PNG)
 
 5. En el **Editor de reglas**, asegúrese de que todos los usuarios están seleccionados y, en **excepto** , coloque una inserción en **el repositorio con notificaciones específicas en la solicitud** y haga clic en el subrayado **específico** en la parte inferior.
-![crear regla](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny10.PNG)
+![Captura de pantalla que muestra dónde asegurarse de que está seleccionada la opción todos.](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny10.PNG)
 
 6. En la pantalla **seleccionar notificaciones** , haga clic en el botón de opción **notificaciones** , seleccione el **tipo de notificación**, el **operador** y el **valor de notificación** y, a continuación, haga clic en **Aceptar**.
-![crear regla](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny11.PNG)
+![Captura de pantalla que muestra la pantalla Seleccionar notificaciones.](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny11.PNG)
 
 7.  En el **Editor de reglas** , haga clic en **Aceptar**.  En la pantalla **Agregar Directiva de Access Control** , haga clic en **Aceptar**.
 
@@ -80,10 +80,10 @@ La pertenencia al grupo **Administradores** o equivalente en el equipo local es 
 ![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)
 
 9.  Haz clic con el botón derecho en la relación de confianza para usuario **autenticado** a la que deseas permitir el acceso y selecciona **editar Directiva de Access Control**.
-![crear regla](media/Create-a-Rule-to-Permit-All-Users/permitall2.PNG)
+![Captura de pantalla que muestra dónde hacer clic con el botón secundario en relación de confianza para usuario autenticado para tener acceso a la opción de menú Editar Directiva de Access Control.](media/Create-a-Rule-to-Permit-All-Users/permitall2.PNG)
 
 10. En la Directiva de control de acceso, seleccione la Directiva y haga clic en **aplicar** y en **Aceptar**.
-![crear regla](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny12.PNG)
+![Captura de pantalla que muestra cómo aplicar los cambios a la Directiva de Access Control.](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny12.PNG)
 
 
 ## <a name="to-create-a-rule-to-permit-or-deny-users-based-on-an-incoming-claim-on-windows-server-2012-r2"></a>Para crear una regla para permitir o denegar a los usuarios en función de una demanda entrante en Windows Server 2012 R2
@@ -93,20 +93,20 @@ La pertenencia al grupo **Administradores** o equivalente en el equipo local es 
 2.  En el árbol de consola, en **AD FS \\ relaciones de confianza relaciones de confianza para usuario \\ autenticado**, haga clic en una confianza concreta de la lista en la que desea crear esta regla.
 
 3.  Haga clic con el botón secundario \- en la confianza seleccionada y, a continuación, haga clic en **editar reglas de notificaciones**.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)
+![Captura de pantalla que muestra la opción de menú editar reglas de notificaciones.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)
 
 4.  En el cuadro de diálogo **editar reglas de notificaciones** , haga clic en la pestaña **reglas de autorización de emisión** o en la pestaña reglas de autorización de **delegación** \( según el tipo de regla de autorización que necesite \) y, a continuación, haga clic en **Agregar regla** para iniciar el **Asistente para agregar regla de notificaciones de autorización**.
-![crear regla](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)
+![Captura de pantalla que muestra cómo iniciar el Asistente para agregar regla de notificaciones de autorización.](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)
 
 5.  En la **página Seleccionar plantilla de regla** , en **plantilla de regla de notificaciones**, seleccione **permitir o denegar a los usuarios en función de una notificaciones entrantes** de la lista y, a continuación, haga clic en **siguiente**.
-![crear regla](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny1.PNG)
+![Captura de pantalla que muestra dónde seleccionar permitir o denegar a los usuarios en función de una plantilla de notificaciones entrantes.](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny1.PNG)
 
 6.  En la página **configurar regla** , en nombre de la **regla de notificaciones** , escriba el nombre para mostrar de esta regla, en **tipo de notificaciones entrantes** Seleccione un tipo de demanda en la lista, en **valor de notificaciones entrantes** escriba un valor o haga clic en examinar \( si está disponible, \) Seleccione un valor y, después, seleccione una de las opciones siguientes, según las necesidades de su organización
 
     -   **Permitir acceso a los usuarios con esta notificación entrante**
 
     -   **Denegar el acceso a los usuarios con esta demanda entrante** 
- ![ crear regla](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny2.PNG)
+ ![ Captura de pantalla que muestra dónde seleccionar el tipo de notificaciones entrantes.](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny2.PNG)
 7.  Haga clic en **Finalizar**
 
 8.  En el cuadro de diálogo **editar reglas de notificaciones** , haga clic en **Aceptar** para guardar la regla.

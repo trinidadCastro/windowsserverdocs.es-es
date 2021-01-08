@@ -1,18 +1,18 @@
 ---
 title: Paso 11 configuración de la implementación multisitio
-description: 'Este tema forma parte de la guía del laboratorio de pruebas: demostración de una implementación multisitio de DirectAccess para Windows Server 2016'
+description: Obtenga información sobre cómo realizar cambios en el Asistente para configuración de acceso remoto en EDGE1, habilitar la característica multisitio y, a continuación, agregar 2-EDGE1 como segundo punto de entrada.
 manager: brianlic
 ms.topic: article
 ms.assetid: 8cbdeb1d-5f7c-4360-bcc1-ab40d3cd8040
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 340029665915dd01766becd4bba9b01a66195969
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 7b70ab6e1f8f28fd0fb1a3a546188de1b4b37cbc
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947021"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98039175"
 ---
 # <a name="step-11-configure-the-multisite-deployment"></a>Paso 11 configuración de la implementación multisitio
 

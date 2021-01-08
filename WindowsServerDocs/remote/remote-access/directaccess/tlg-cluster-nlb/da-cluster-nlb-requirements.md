@@ -1,18 +1,18 @@
 ---
 title: Requisitos de configuración de laboratorio de prueba de NLB de clúster de DirectAccess
-description: 'Este tema forma parte de la guía del laboratorio de pruebas: demostración de DirectAccess en un clúster con Windows NLB para Windows Server 2016'
+description: Obtenga información sobre los requisitos de configuración del laboratorio de pruebas de NLB del clúster de DirectAccess.
 manager: brianlic
 ms.topic: article
 ms.assetid: a09ec1a9-38e1-4c6c-8213-cf5b6ae44043
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 70e5415d52373a29b0f929978f015a2f0c838ce9
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 989b35204d31cea2f07e760b2d5b5a92c543e935
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97946511"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040245"
 ---
 # <a name="directaccess-cluster-nlb-test-lab-configuration-requirements"></a>Requisitos de configuración de laboratorio de prueba de NLB de clúster de DirectAccess
 

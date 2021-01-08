@@ -1,18 +1,18 @@
 ---
 title: Información general sobre el escenario de laboratorio de pruebas
-description: 'Este tema forma parte de la guía del laboratorio de pruebas: demostración de una implementación multisitio de DirectAccess para Windows Server 2016'
+description: Obtenga información acerca de la implementación de DirectAccess con y las cuatro subredes que componen el laboratorio de pruebas.
 manager: brianlic
 ms.topic: article
 ms.assetid: 9afeced4-1a9b-4cb3-9fc4-d7e44c675755
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 833221ee118c758ffc2ade7419ee75cf82bf9f35
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 12d6868334bafba881531fd2d5cdaa99d10555f8
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97950351"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040105"
 ---
 # <a name="overview-of-the-test-lab-scenario"></a>Información general sobre el escenario de laboratorio de pruebas
 

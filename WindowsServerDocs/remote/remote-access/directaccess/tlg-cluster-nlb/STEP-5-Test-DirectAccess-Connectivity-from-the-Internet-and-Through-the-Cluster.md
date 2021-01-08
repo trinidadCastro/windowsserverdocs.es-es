@@ -1,18 +1,18 @@
 ---
 title: Paso 5 probar la conectividad de DirectAccess desde Internet y a través del clúster
-description: 'Este tema forma parte de la guía del laboratorio de pruebas: demostración de DirectAccess en un clúster con Windows NLB para Windows Server 2016'
+description: Obtenga información sobre cómo probar la conectividad de DirectAccess desde Internet y a través del clúster.
 manager: brianlic
 ms.topic: article
 ms.assetid: 8399bdfa-809a-45e4-9963-f9b6a631007f
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 20e4895834d56bfc0cb29700dee38fee9c0b9336
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: e301c9786b0d76e45c8417a7a3c9340937f5f529
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97946561"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98039215"
 ---
 # <a name="step-5-test-directaccess-connectivity-from-the-internet-and-through-the-cluster"></a>Paso 5 probar la conectividad de DirectAccess desde Internet y a través del clúster
 

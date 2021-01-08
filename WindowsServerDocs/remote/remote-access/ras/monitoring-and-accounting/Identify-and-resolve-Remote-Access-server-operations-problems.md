@@ -1,18 +1,18 @@
 ---
 title: Identificar y resolver los problemas de operaciones del servidor de acceso remoto
-description: Este tema forma parte de la guía de supervisión y contabilidad de acceso remoto en Windows Server 2016.
+description: Obtenga información acerca de cómo identificar problemas de operaciones del servidor de acceso remoto, sus causas raíz y la solución necesaria para corregir los problemas.
 manager: brianlic
 ms.topic: article
 ms.assetid: 7ce84c9f-fd1f-4463-8fc7-d2f33344a2c9
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: cae96d3034cb650b84b40a1a35364400b182a619
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 23a79e792b7601b4eeadf05e5844d9ca722f3c6d
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947371"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98039895"
 ---
 # <a name="identify-and-resolve-remote-access-server-operations-problems"></a>Identificar y resolver los problemas de operaciones del servidor de acceso remoto
 

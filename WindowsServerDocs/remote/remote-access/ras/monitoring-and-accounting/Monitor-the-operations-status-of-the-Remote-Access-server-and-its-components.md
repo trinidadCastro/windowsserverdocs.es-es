@@ -1,18 +1,18 @@
 ---
 title: Supervisar el estado de las operaciones de acceso remoto y de sus componentes
-description: Este tema forma parte de la guía de supervisión y contabilidad de acceso remoto en Windows Server 2016.
+description: Obtenga información acerca de cómo usar la consola de administración de en el servidor de acceso remoto para supervisar el estado de las operaciones.
 manager: brianlic
 ms.topic: article
 ms.assetid: 077a3a64-2fa3-4994-9711-ec1fbdc081ba
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 6c3204aee3b10e8871de744ce7db70a0ca81cc0e
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 74d43d4f1feacdeb10eb5e1ee55462187cf628f5
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947321"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98039785"
 ---
 # <a name="monitor-the-operations-status-of-the-remote-access-server-and-its-components"></a>Supervisar el estado de las operaciones de acceso remoto y de sus componentes
 

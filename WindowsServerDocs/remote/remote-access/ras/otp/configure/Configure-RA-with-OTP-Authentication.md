@@ -1,18 +1,18 @@
 ---
 title: Configurar el acceso remoto con autenticación OTP
-description: Este tema forma parte de la guía deploy Remote Access with OTP Authentication in Windows Server 2016.
+description: Obtenga información acerca de los pasos de configuración necesarios para implementar una única implementación de multisitio de acceso remoto de Windows Server 2016 o Windows Server 2012.
 manager: brianlic
 ms.topic: article
 ms.assetid: 82505b18-dd77-4dd1-aa27-b2962b8241ca
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 45d33aa5008835d6f8ae840a893bb453825b42dc
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: b9b73b894456de75ae55e55b58cbc40c3f91489e
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949771"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98038875"
 ---
 # <a name="configure-remote-access-with-otp-authentication"></a>Configurar el acceso remoto con autenticación OTP
 

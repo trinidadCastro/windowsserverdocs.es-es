@@ -1,18 +1,18 @@
 ---
 title: Instalar la WEB1 de servidor web
-description: Este tema forma parte de la guía de implementación de certificados de servidor para las implementaciones cableadas e inalámbricas de 802.1 X
+description: Obtenga información acerca de cómo instalar el rol de servidor servidor Web (IIS).
 manager: brianlic
 ms.topic: article
 ms.assetid: f51c9e38-98bb-49c1-9d39-427d07021499
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: c3d71c1e0108c9036f3dba7e3508d774ab6677ee
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 12e7aef5399609c554b11d5564fd93478babbfb5
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947841"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98038585"
 ---
 # <a name="install-the-web-server-web1"></a>Instalar la WEB1 de servidor web
 

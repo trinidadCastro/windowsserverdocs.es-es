@@ -1,18 +1,18 @@
 ---
 title: Paso 1 planear una implementación de servidor único avanzado
-description: Este tema forma parte de la guía deploy Remote Access with OTP Authentication in Windows Server 2016.
+description: Obtenga información acerca de cómo planear y configurar una implementación avanzada de un solo servidor.
 manager: brianlic
 ms.topic: article
 ms.assetid: 96538cbb-7d6c-4860-9ec7-b1834284ad10
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 8355899442eb5cd3bf062ad3beea5b11bbfa5de8
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: c4a23a5ef05d512fb3e5a482912bac0cc268966f
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97950271"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040175"
 ---
 # <a name="step-1-plan-an-advanced-single-server-deployment"></a>Paso 1 planear una implementación de servidor único avanzado
 

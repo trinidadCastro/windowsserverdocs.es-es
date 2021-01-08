@@ -1,18 +1,18 @@
 ---
 title: Información general de implementación de acceso inalámbrico
-description: Este tema forma parte de la guía de redes de Windows Server 2016 "implementación de acceso inalámbrico autenticado de Password-Based 802.1 X"
+description: Obtenga información acerca de los componentes de implementación de acceso inalámbrico necesarios para implementar el acceso inalámbrico autenticado mediante 802.1 X con PEAP-MS-CHAP v2.
 manager: brianlic
 ms.topic: article
 ms.assetid: 29ae0f54-f045-465a-a08e-5867979345f2
 author: eross-msft
 ms.author: lizross
 ms.date: 08/07/2020
-ms.openlocfilehash: 336f8af276e14d0f54702f04539f041cf1c71400
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 2eb6bf9b3b51416c5ecc5cc49fb4da41b8fbb52a
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97943281"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98038415"
 ---
 # <a name="wireless-access-deployment-overview"></a>Información general de implementación de acceso inalámbrico
 

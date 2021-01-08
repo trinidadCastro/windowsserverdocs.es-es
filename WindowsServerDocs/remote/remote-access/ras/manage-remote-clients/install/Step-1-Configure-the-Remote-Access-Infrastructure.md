@@ -1,18 +1,18 @@
 ---
 title: Paso 1 configurar la infraestructura de acceso remoto
-description: Este tema forma parte de la guía administrar los clientes de DirectAccess de forma remota en Windows Server 2016.
+description: Obtenga información acerca de cómo configurar la infraestructura necesaria para una implementación de acceso remoto avanzada con un solo servidor de acceso remoto en un entorno mixto de IPv4 e IPv6.
 manager: brianlic
 ms.topic: article
 ms.assetid: 0e7d1f5b-c939-47ca-892f-5bb285027fbc
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: df58a68da0eedebe0b21fd1b0a4651f342c12434
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 7e857093f7f2e4e9e986f20b2c59e92de6a2c56c
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947721"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040043"
 ---
 # <a name="step-1-configure-the-remote-access-infrastructure"></a>Paso 1 configurar la infraestructura de acceso remoto
 
@@ -436,7 +436,7 @@ Tanto si usa un certificado privado como un certificado autofirmado, requiere lo
 
     Este paso no es necesario si el sitio web del servidor de ubicación de red se hospeda en el servidor de acceso remoto.
 
-3.  Configure un sitio de CRL que Hass alta disponibilidad en la red interna.
+3.  Configure un sitio de CRL que tenga alta disponibilidad en la red interna.
 
     Puedes acceder a los puntos de distribución CRL mediante:
 

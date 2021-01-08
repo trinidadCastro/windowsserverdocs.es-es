@@ -1,18 +1,18 @@
 ---
 title: Implementación del acceso inalámbrico autenticado mediante 802.1X basado en contraseña
-description: Este tema forma parte de la guía de redes de Windows Server 2016 "implementación de acceso inalámbrico autenticado de Password-Based 802.1 X"
+description: Obtenga información sobre cómo implementar los ingenieros de Institute of Electrical and Electronics Engineers 802.1 X-Authenticated IEEE 802,11 Wireless Access Using Protected Extensible Authentication Protocol (Protocolo de autenticación por desafío mutuo de Microsoft versión 2).
 manager: brianlic
 ms.topic: article
 ms.assetid: ff06ba23-9c0f-49ec-8f7b-611cf8d73a1b
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 2b6a04f10814a077ab1b8aefa612c9fbe6e153a6
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 6a861bf9df9d80efc5fd82b8c74ea54b71c8aef5
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97948421"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98038405"
 ---
 # <a name="deploy-password-based-8021x-authenticated-wireless-access"></a>Implementación del \- acceso inalámbrico autenticado mediante 802.1 x basado en contraseña
 
@@ -194,7 +194,7 @@ En Windows Server 2016, los siguientes \- métodos de cifrado inalámbrico basad
 > [!IMPORTANT]
 > Wired Equivalent Privacy \( WEP \) era el estándar de seguridad inalámbrica original que se usaba para cifrar el tráfico de red. No debe implementar WEP en la red porque existen \- vulnerabilidades conocidas en esta forma de seguridad obsoleta.
 
-### <a name="active-directory-doman-services-ad-ds"></a>Active Directory dominio Services \( AD DS\)
+### <a name="active-directory-domain-services-ad-ds"></a>Active Directory Domain Services \( AD DS\)
 AD DS proporciona una base de datos distribuida que almacena y administra información acerca de los recursos de red y los \- datos específicos de la aplicación en \- las aplicaciones habilitadas para el directorio. Los administradores pueden usar AD DS para organizar los elementos de una red (por ejemplo, los usuarios, los equipos y otros dispositivos) en una estructura de contención jerárquica. La estructura de contención jerárquica incluye el Active Directory bosque, los dominios de las unidades organizativas del bosque y las unidades organizativas \( \) de cada dominio. Un servidor que ejecuta AD DS se denomina controlador de *dominio*.
 
 AD DS contiene las cuentas de usuario, las cuentas de equipo y las propiedades de cuenta que requieren IEEE 802.1 X y PEAP \- MS \- CHAP v2 para autenticar las credenciales de usuario y evaluar la autorización para las conexiones inalámbricas.
@@ -253,11 +253,11 @@ La autenticación de \- MS CHAP v2 de PEAP mutua correcta \- tiene dos partes pr
 
     Si implementa su propia entidad de certificación privada, el certificado de CA se instala automáticamente en el almacén de certificados de entidades de certificación raíz de confianza para el usuario actual y para el equipo local cuando directiva de grupo se actualiza en el equipo cliente miembro del dominio. Si decide implementar certificados de servidor desde una entidad de certificación pública, asegúrese de que el certificado de CA público ya está en el almacén de certificados de entidades de certificación raíz de confianza.
 
-2.  NPS autentica al usuario. Después de que el cliente autentique correctamente el NPS, el cliente envía las credenciales basadas en contraseña del usuario \- al NPS, que comprueba las credenciales del usuario en la base de datos de cuentas de usuario en Active Directory dominio Services \( AD DS \) .
+2.  NPS autentica al usuario. Después de que el cliente autentique correctamente el NPS, el cliente envía las credenciales basadas en contraseña del usuario \- al NPS, que comprueba las credenciales del usuario con respecto a la base de datos de cuentas de usuario en Active Directory Domain Services \( AD DS \) .
 
 Si las credenciales son válidas y la autenticación se realiza correctamente, el NPS comienza la fase de autorización de procesamiento de la solicitud de conexión. Si las credenciales no son válidas y se produce un error en la autenticación, NPS envía un mensaje de rechazo de acceso y se deniega la solicitud de conexión.
 
-#### <a name="authorization"></a>Authorization
+#### <a name="authorization"></a>Autorización
 
 El servidor que ejecuta NPS realiza la autorización de la siguiente manera:
 

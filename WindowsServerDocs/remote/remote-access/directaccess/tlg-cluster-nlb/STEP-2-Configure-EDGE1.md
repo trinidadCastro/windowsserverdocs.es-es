@@ -1,18 +1,18 @@
 ---
 title: Paso 2 configurar EDGE1
-description: 'Este tema forma parte de la guía del laboratorio de pruebas: demostración de DirectAccess en un clúster con Windows NLB para Windows Server 2016'
+description: Obtenga información sobre cómo configurar DirectAccess en el servidor de EDGE1.
 manager: brianlic
 ms.topic: article
 ms.assetid: 84457351-1ca7-4e7c-8e2c-53d55b1fcdc0
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: fb0bd2c2f6b043eec28b7b3499c05ead578653fa
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 52f94c6625286e9243419a668381995a18b28fae
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97948231"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98039335"
 ---
 # <a name="step-2-configure-edge1"></a>Paso 2 configurar EDGE1
 

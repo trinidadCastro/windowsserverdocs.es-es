@@ -1,18 +1,18 @@
 ---
 title: Configuración del equilibrador de carga de software para el equilibrio de carga y la traducción de direcciones de red (NAT)
-description: Este tema forma parte de la guía de redes definidas por software sobre cómo administrar cargas de trabajo de inquilinos y redes virtuales en Windows Server 2016.
+description: Aprenda a usar el equilibrador de carga de software de red definido por software para proporcionar traducción de direcciones de red salientes, NAT de entrada o equilibrio de carga entre varias instancias de una aplicación.
 manager: grcusanz
 ms.topic: article
 ms.assetid: 73bff8ba-939d-40d8-b1e5-3ba3ed5439c3
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/23/2018
-ms.openlocfilehash: e7488c546753594f61e034b271fcaddfd52a0233
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a5130ab588f46bd8be8174a853b4e1f9cc1a568f
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87954051"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98038235"
 ---
 # <a name="configure-the-software-load-balancer-for-load-balancing-and-network-address-translation-nat"></a>Configuración del equilibrador de carga de software para el equilibrio de carga y la traducción de direcciones de red (NAT)
 
@@ -20,7 +20,7 @@ ms.locfileid: "87954051"
 
 Puede usar este tema para obtener información sobre cómo usar el SLB del equilibrador de carga de software de redes definidas por software \( Sdn \) \( \) para proporcionar \( NAT de traducción de direcciones de red salientes \) , NAT de entrada o equilibrio de carga entre varias instancias de una aplicación.
 
-## <a name="software-load-balancer-overview"></a>Información general de Load Balancer de software
+## <a name="software-load-balancer-overview"></a>Introducción al software Load Balancer
 
 El software de SDN Load Balancer \( SLB \) ofrece alta disponibilidad y rendimiento de red a las aplicaciones. Es un \( equilibrador de carga TCP de nivel 4, UDP \) que distribuye el tráfico entrante entre las instancias de servicio en buen estado en Cloud Services o máquinas virtuales definidas en un conjunto de equilibrador de carga.
 

@@ -1,6 +1,6 @@
 ---
 title: Ajustar el rendimiento de los adaptadores de red
-description: Este tema forma parte de la guía de optimización del rendimiento del subsistema de red para Windows Server 2016.
+description: Obtenga información acerca de cómo optimizar los adaptadores de red de rendimiento para equipos que ejecutan Windows Server 2016 y versiones posteriores.
 audience: Admin - CI ID 111485 - CSSTroubleshoot
 ms.topic: article
 ms.assetid: 0b9b0f80-415c-4f5e-8377-c09b51d9c5dd
@@ -8,12 +8,12 @@ manager: dcscontentpm
 ms.author: v-tea
 author: Teresa-Motiv
 ms.date: 12/23/2019
-ms.openlocfilehash: 4b3c32a6382e7538ccfb1fab22b4d2be9495b3b0
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 04f6540cb86aa6af8b2c315132ff84765937e675
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96866054"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98039016"
 ---
 # <a name="performance-tuning-network-adapters"></a>Ajustar el rendimiento de los adaptadores de red
 

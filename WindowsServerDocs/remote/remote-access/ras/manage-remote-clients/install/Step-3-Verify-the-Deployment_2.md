@@ -1,18 +1,18 @@
 ---
 title: Paso 3 comprobación de la implementación
-description: Este tema forma parte de la guía administrar los clientes de DirectAccess de forma remota en Windows Server 2016.
+description: Obtenga información acerca de cómo comprobar que ha configurado correctamente la implementación para la administración remota de los clientes de DirectAccess.
 manager: brianlic
 ms.topic: article
 ms.assetid: 6a78a078-d2e7-4cbd-b8d5-20cfb6d1524b
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 9a3555364690228ec8723ee8c3123edaa4606c06
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 7b59a37eb6d24c6de61acdff9fa544f1ec6f0fce
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947701"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040015"
 ---
 # <a name="step-3-verify-the-deployment"></a>Paso 3 comprobación de la implementación
 

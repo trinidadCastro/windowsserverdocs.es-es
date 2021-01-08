@@ -1,18 +1,18 @@
 ---
 title: Establecer el ámbito de acceso para registros de recursos DNS
-description: Este tema forma parte de la guía de administración de la administración de direcciones IP (IPAM) en Windows Server 2016.
+description: Obtenga información sobre cómo establecer el ámbito de acceso para los registros de recursos DNS mediante la consola de cliente de IPAM.
 manager: brianlic
 ms.topic: article
 ms.assetid: a96a8752-5678-49c5-b069-d2cce8042a51
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: f2ebe0b05baf98317d432efaebfff7f0f4578d16
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: ac8ef616587ac214cf75240e88d941f74de03d41
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97948341"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98039395"
 ---
 # <a name="set-access-scope-for-dns-resource-records"></a>Establecer el ámbito de acceso para registros de recursos DNS
 

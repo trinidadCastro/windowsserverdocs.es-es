@@ -1,18 +1,18 @@
 ---
 title: Crear un rol de usuario para Access Control
-description: Este tema forma parte de la guía de administración de la administración de direcciones IP (IPAM) en Windows Server 2016.
+description: Obtenga información sobre cómo crear un nuevo rol de usuario Access Control en la consola de cliente de IPAM.
 manager: brianlic
 ms.topic: article
 ms.assetid: ae6a42db-a104-401b-a8e6-b85c47d30b46
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: fc0f0adbc19841662b8ec95491196c8047bd0cc2
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 88c0f82c6e6168d97681e0d6f795dd4101afc6a7
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97948041"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98039725"
 ---
 # <a name="create-a-user-role-for-access-control"></a>Crear un rol de usuario para Access Control
 
