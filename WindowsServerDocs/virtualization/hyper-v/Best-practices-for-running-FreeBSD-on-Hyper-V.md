@@ -5,17 +5,17 @@ ms.topic: article
 ms.assetid: 0c66f1c8-2606-43a3-b4cc-166acaaf2d2a
 ms.author: benarm
 author: BenjaminArmstrong
-ms.date: 01/09/2017
-ms.openlocfilehash: 09b6f532bac2b57fd8334556501c6197fa3036cc
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.date: 01/08/2021
+ms.openlocfilehash: 396366e72dcfda60131267299ac7427ad83b05df
+ms.sourcegitcommit: 209b0995a11c89bb9ece3db0d48a35d7ba5bbd9d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90747160"
+ms.lasthandoff: 01/09/2021
+ms.locfileid: "98053658"
 ---
 # <a name="best-practices-for-running-freebsd-on-hyper-v"></a>Prácticas recomendadas para ejecutar FreeBSD en Hyper-V
 
->Se aplica a: Windows Server 2019, Windows Server 2016, Hyper-V Server 2016, Windows Server 2012 R2, Hyper-V Server 2012 R2, Windows Server 2012, Hyper-V Server 2012, Windows Server 2008 R2, Windows 10, Windows 8.1, Windows 8, Windows 7,1, Windows 7
+>Se aplica a: Azure Stack HCl, versión 20H2; Windows Server 2019, Windows Server 2016, Hyper-V Server 2016, Windows Server 2012 R2, Hyper-V Server 2012 R2, Windows Server 2012, Hyper-V Server 2012, Windows Server 2008 R2, Windows 10, Windows 8.1, Windows 8, Windows 7,1, Windows 7
 
 Este tema contiene una lista de recomendaciones para ejecutar FreeBSD como sistema operativo invitado en una máquina virtual de Hyper-V.
 
@@ -23,13 +23,13 @@ Este tema contiene una lista de recomendaciones para ejecutar FreeBSD como siste
 
 El protocolo de redundancia de direcciones comunes (CARP) permite que varios hosts compartan la misma dirección IP y el identificador de host virtual (VHID) para ayudar a proporcionar alta disponibilidad para uno o más servicios. Si se produce un error en uno o más hosts, los demás hosts se toman de forma transparente para que los usuarios no perciban un error del servicio. Para usar CARP en FreeBSD 10,2, siga las instrucciones del [manual de FreeBSD](https://www.freebsd.org/doc/en/books/handbook/carp.html) y haga lo siguiente en el administrador de Hyper-V.
 
-* Compruebe que la máquina virtual tiene un adaptador de red y que tiene asignado un conmutador virtual. Seleccione la máquina virtual y seleccione **Actions**  >  **configuración**de acciones.
+* Compruebe que la máquina virtual tiene un adaptador de red y que tiene asignado un conmutador virtual. Seleccione la máquina virtual y seleccione   >  **configuración** de acciones.
 
 ![Captura de pantalla de la configuración de la máquina virtual con el adaptador de red seleccionado](media/Hyper-V_Settings_NetworkAdapter.png)
 
 * Habilite la suplantación de direcciones MAC. Para ello:
 
-   1. Seleccione la máquina virtual y seleccione **Actions**  >  **configuración**de acciones.
+   1. Seleccione la máquina virtual y seleccione   >  **configuración** de acciones.
 
    2. Expanda **adaptador de red** y seleccione **características avanzadas**.
 
@@ -85,6 +85,6 @@ Si el conmutador virtual del host se basa en el adaptador de red inalámbrica, r
 ```
 
 
-Vea también
+Consulte también
 
 * [Máquinas virtuales de FreeBSD compatibles en Hyper-V](Supported-FreeBSD-virtual-machines-on-Hyper-V.md)

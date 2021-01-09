@@ -5,17 +5,17 @@ ms.topic: article
 ms.assetid: a08648eb-eea0-4e2b-87fb-52bfe8953491
 ms.author: benarm
 author: BenjaminArmstrong
-ms.date: 04/15/2020
-ms.openlocfilehash: 216bd83eb06cd14b2b2290e3294041b097cfdbd9
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.date: 01/08/2021
+ms.openlocfilehash: a0fdba4c5315ee4cbe00c5fd9dd98f5ae770301d
+ms.sourcegitcommit: 209b0995a11c89bb9ece3db0d48a35d7ba5bbd9d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90747170"
+ms.lasthandoff: 01/09/2021
+ms.locfileid: "98053628"
 ---
 # <a name="best-practices-for-running-linux-on-hyper-v"></a>Prácticas recomendadas para ejecutar Linux en Hyper-V
 
->Se aplica a: Windows Server 2019, Windows Server 2016, Hyper-V Server 2016, Windows Server 2012 R2, Hyper-V Server 2012 R2, Windows Server 2012, Hyper-V Server 2012, Windows Server 2008 R2, Windows 10, Windows 8.1, Windows 8, Windows 7,1, Windows 7
+>Se aplica a: Azure Stack HCl, versión 20H2; Windows Server 2019, Windows Server 2016, Hyper-V Server 2016, Windows Server 2012 R2, Hyper-V Server 2012 R2, Windows Server 2012, Hyper-V Server 2012, Windows Server 2008 R2, Windows 10, Windows 8.1, Windows 8, Windows 7,1, Windows 7
 
 Este tema contiene una lista de recomendaciones para ejecutar máquinas virtuales Linux en Hyper-V.
 
@@ -40,7 +40,7 @@ PS > New-VHD -Path C:\MyVHDs\test.vhdx -SizeBytes 127GB -Dynamic -BlockSizeBytes
 
 ## <a name="grub-menu-timeout-on-generation-2-virtual-machines"></a>Tiempo de espera del menú de GRUB en la generación 2 Virtual Machines
 
-Debido a que el hardware heredado se quita de la emulación en máquinas virtuales de generación 2, el temporizador de la cuenta atrás del menú de GRUB se recuenta demasiado rápido para que se muestre el menú de GRUB, cargando inmediatamente la entrada predeterminada. Hasta que se corrija GRUB para usar el temporizador compatible con EFI, modifique **/boot/grub/grub.conf**,/**etc/default/GRUB**o equivalente a tener "timeout = 100.000" en lugar del valor predeterminado "timeout = 5".
+Debido a que el hardware heredado se quita de la emulación en máquinas virtuales de generación 2, el temporizador de la cuenta atrás del menú de GRUB se recuenta demasiado rápido para que se muestre el menú de GRUB, cargando inmediatamente la entrada predeterminada. Hasta que se corrija GRUB para usar el temporizador compatible con EFI, modifique **/boot/grub/grub.conf**,/**etc/default/GRUB** o equivalente a tener "timeout = 100.000" en lugar del valor predeterminado "timeout = 5".
 
 ## <a name="pxe-boot-on-generation-2-virtual-machines"></a>Arranque PxE en la generación 2 Virtual Machines
 

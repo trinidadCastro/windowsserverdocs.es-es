@@ -5,18 +5,18 @@ ms.topic: article
 ms.assetid: 4bf8783d-dee5-4b3e-8cce-2b11b117c189
 author: jperrin
 ms.author: japerrin
-ms.date: 11/11/2020
-ms.openlocfilehash: e92e52856bf293bbfbe55f9dc325ad0438f68a86
-ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
+ms.date: 01/08/2021
+ms.openlocfilehash: f9a599f4929826c227e96ec96086a8d235f9095a
+ms.sourcegitcommit: 209b0995a11c89bb9ece3db0d48a35d7ba5bbd9d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97904530"
+ms.lasthandoff: 01/09/2021
+ms.locfileid: "98053648"
 ---
 <a name="supported-centos-and-red-hat-enterprise-linux-virtual-machines-on-hyper-v"></a>Compatibilidad con máquinas virtuales de alta y Red Hat Enterprise Linux en Hyper-V
 =========================================================================
 
->   Se aplica a: Windows Server 2019, Hyper-V Server 2019, Windows Server 2016, Hyper-V Server 2016, Windows Server 2012 R2, Hyper-V Server 2012 R2, Windows 10, Windows 8.1
+>   Se aplica a: Azure Stack HCl, versión 20H2; Windows Server 2019, Hyper-V Server 2019, Windows Server 2016, Hyper-V Server 2016, Windows Server 2012 R2, Hyper-V Server 2012 R2, Windows 10 Windows 8.1
 
 Los siguientes mapas de distribución de características indican las características que se encuentran en las versiones integradas y descargables de Linux Integration Services. Los problemas conocidos y las soluciones alternativas para cada distribución se muestran después de las tablas.
 

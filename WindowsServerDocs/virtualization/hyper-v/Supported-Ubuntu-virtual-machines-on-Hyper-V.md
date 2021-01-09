@@ -5,17 +5,17 @@ ms.topic: article
 ms.assetid: 95ea5f7c-25c6-494b-8ffd-2a77f631ee94
 ms.author: benarm
 author: BenjaminArmstrong
-ms.date: 08/29/2020
-ms.openlocfilehash: 4e1384d372714932d45f9274d8c6e98eb42a5a04
-ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
+ms.date: 01/08/2021
+ms.openlocfilehash: 1e05555a21aa656f5b1c90a56cbb244687b81ea3
+ms.sourcegitcommit: 209b0995a11c89bb9ece3db0d48a35d7ba5bbd9d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97834820"
+ms.lasthandoff: 01/09/2021
+ms.locfileid: "98053548"
 ---
 # <a name="supported-ubuntu-virtual-machines-on-hyper-v"></a>Máquinas virtuales de Ubuntu admitidas en Hyper-V
 
->Se aplica a: Windows Server 2019, Hyper-V Server 2019, Windows Server 2016, Hyper-V Server 2016, Windows Server 2012 R2, Hyper-V Server 2012 R2, Windows 10, Windows 8.1
+>Se aplica a: Azure Stack HCl, versión 20H2; Windows Server 2019, Hyper-V Server 2019, Windows Server 2016, Hyper-V Server 2016, Windows Server 2012 R2, Hyper-V Server 2012 R2, Windows 10 Windows 8.1
 
 El siguiente mapa de distribución de características indica las características de cada versión. Los problemas conocidos y las soluciones alternativas para cada distribución se enumeran después de la tabla.
 

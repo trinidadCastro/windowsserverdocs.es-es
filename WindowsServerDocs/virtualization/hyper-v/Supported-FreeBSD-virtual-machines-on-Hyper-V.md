@@ -5,17 +5,17 @@ ms.topic: article
 ms.assetid: 930e758f-bd50-46b4-a3a4-9857110f17b4
 ms.author: benarm
 author: BenjaminArmstrong
-ms.date: 04/07/2020
-ms.openlocfilehash: f79c2c09f5fdce570ad6e61037756dab0d4056a1
-ms.sourcegitcommit: 48d45b2adf44afb0207214be9c57fe589360d177
+ms.date: 01/08/2021
+ms.openlocfilehash: cfda833dd6c644eec85b3f4914c89449bb906880
+ms.sourcegitcommit: 209b0995a11c89bb9ece3db0d48a35d7ba5bbd9d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97834870"
+ms.lasthandoff: 01/09/2021
+ms.locfileid: "98053588"
 ---
 # <a name="supported-freebsd-virtual-machines-on-hyper-v"></a>Máquinas virtuales de FreeBSD compatibles en Hyper-V
 
->Se aplica a: Windows Server 2019, Hyper-V Server 2019, Windows Server 2016, Hyper-V Server 2016, Windows Server 2012 R2, Hyper-V Server 2012 R2, Windows 10, Windows 8.1
+>Se aplica a: Azure Stack HCl, versión 20H2; Windows Server 2019, Hyper-V Server 2019, Windows Server 2016, Hyper-V Server 2016, Windows Server 2012 R2, Hyper-V Server 2012 R2, Windows 10 Windows 8.1
 
 El siguiente mapa de distribución de características indica las características de cada versión. Los problemas conocidos y las soluciones alternativas para cada distribución se enumeran después de la tabla.
 
