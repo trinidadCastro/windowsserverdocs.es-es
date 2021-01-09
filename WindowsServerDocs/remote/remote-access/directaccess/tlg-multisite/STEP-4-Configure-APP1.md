@@ -1,18 +1,18 @@
 ---
 title: Paso 4 configurar APP1
-description: 'Este tema forma parte de la guía del laboratorio de pruebas: demostración de una implementación multisitio de DirectAccess para Windows Server 2016'
+description: Obtenga información acerca de cómo configurar la puerta de enlace predeterminada y el servidor DNS.
 manager: brianlic
 ms.topic: article
 ms.assetid: 7000e80f-31b1-43c5-b51e-1469d26909e5
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: a7af71ccb620f86be31ece09b6fe810ac3ff0f34
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 43b77e32bae337ee1751ed9e6c12e2fa30f0c52c
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97950011"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040465"
 ---
 # <a name="step-4-configure-app1"></a>Paso 4 configurar APP1
 

@@ -1,18 +1,18 @@
 ---
 title: ver roles y permisos de rol
-description: Este tema forma parte de la guía de administración de la administración de direcciones IP (IPAM) en Windows Server 2016.
+description: Obtenga información sobre cómo ver Access Control roles de usuario en la consola de cliente de IPAM.
 manager: brianlic
 ms.topic: article
 ms.assetid: da8dce90-b54c-4ded-a48a-0cda5ccf1d8a
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 32db718c9789edb429890b0419f219b44d1cd36f
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: e36ad6fd78d53b34dd922f663384a2d04eb2cf25
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97948701"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040455"
 ---
 # <a name="view-roles-and-role-permissions"></a>ver roles y permisos de rol
 

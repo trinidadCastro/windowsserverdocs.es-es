@@ -1,18 +1,18 @@
 ---
 title: Pasos para configurar el laboratorio de pruebas con autenticación OTP y RSA SecurID
-description: 'Este tema forma parte de la guía del laboratorio de pruebas: demostración de DirectAccess con autenticación OTP y RSA SecurID para Windows Server 2016'
+description: Obtenga información acerca de cómo configurar la infraestructura de acceso remoto, configurar el cliente y el servidor de acceso remoto, y probar la conectividad de DirectAccess desde las subredes HomeNet y Internet.
 manager: brianlic
 ms.topic: article
 ms.assetid: 0a40183c-afd1-43ca-b306-05745640a37d
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 5ed481a474203e9436796ffa87a30c41ac9fa1cd
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: a7b4293626ab8ab625e2c6be71d346d34bc44100
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949791"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040325"
 ---
 # <a name="steps-for-configuring-the-test-lab-with-otp-authentication-and-rsa-securid"></a>Pasos para configurar el laboratorio de pruebas con autenticación OTP y RSA SecurID
 

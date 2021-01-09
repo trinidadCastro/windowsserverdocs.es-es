@@ -1,18 +1,18 @@
 ---
 title: Paso 12 probar la conectividad de DirectAccess
-description: 'Este tema forma parte de la guía del laboratorio de pruebas: demostración de una implementación multisitio de DirectAccess para Windows Server 2016'
+description: Obtenga información acerca de cómo asegurarse de que los equipos cliente que se encuentran en las redes Internet o HomeNet tienen la configuración de directiva de grupo correcta.
 manager: brianlic
 ms.topic: article
 ms.assetid: 65ac1c23-3a47-4e58-888d-9dde7fba1586
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 533ba6aef1c64de60990c3f67c09d3be1996d63b
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 64672bfe50d2f1acfb5ea0013f53114ada9164fa
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97950051"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040535"
 ---
 # <a name="step-12-test-directaccess-connectivity"></a>Paso 12 probar la conectividad de DirectAccess
 

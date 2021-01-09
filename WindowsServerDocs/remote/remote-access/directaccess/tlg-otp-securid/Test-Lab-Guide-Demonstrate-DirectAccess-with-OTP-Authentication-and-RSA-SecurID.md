@@ -1,18 +1,18 @@
 ---
 title: 'Guía del laboratorio de pruebas: demostración de DirectAccess con autenticación OTP y RSA SecurID'
-description: 'Este tema forma parte de la guía del laboratorio de pruebas: demostración de DirectAccess con autenticación OTP y RSA SecurID para Windows Server 2016'
+description: Obtenga información sobre cómo ampliar la configuración de la configuración de un solo servidor de DirectAccess con la guía del laboratorio de pruebas IPv4 e IPv6 mixta para mostrar una configuración de contraseña de un solo uso (OTP) de acceso remoto.
 manager: brianlic
 ms.topic: article
 ms.assetid: 10c7a49c-5671-4bec-b562-13fdd67f4629
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 14a7af29c0c927f33cbc36313a080e46e35f3263
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 91f24de07909fabcb0b3d2272d57887cfa12a22e
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949261"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040315"
 ---
 # <a name="test-lab-guide-demonstrate-directaccess-with-otp-authentication-and-rsa-securid"></a>Guía del laboratorio de pruebas: demostración de DirectAccess con autenticación OTP y RSA SecurID
 

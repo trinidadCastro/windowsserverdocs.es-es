@@ -1,18 +1,18 @@
 ---
 title: Información general sobre el escenario de laboratorio de prueba de NLB de clúster de DirectAccess
-description: 'Este tema forma parte de la guía del laboratorio de pruebas: demostración de DirectAccess en un clúster con Windows NLB para Windows Server 2016'
+description: Obtenga información sobre el escenario de laboratorio de pruebas de NLB del clúster de DirectAccess y las tres subredes de las que consta.
 manager: brianlic
 ms.topic: article
 ms.assetid: cd1e9efd-19e9-49e7-8432-881f661c9792
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: e13c630bae539aadd01828d8e3eaa5524a05aa6f
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 7c4b0aac8c5d16826a5e173fb28424333887f6be
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97946521"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040275"
 ---
 # <a name="overview-of-the-directaccess-cluster-nlb-test-lab-scenario"></a>Información general sobre el escenario de laboratorio de prueba de NLB de clúster de DirectAccess
 

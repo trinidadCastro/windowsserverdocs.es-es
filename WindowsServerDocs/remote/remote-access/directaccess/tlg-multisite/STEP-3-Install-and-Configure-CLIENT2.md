@@ -1,18 +1,18 @@
 ---
 title: Paso 3 instalación y configuración de cliente2
-description: 'Este tema forma parte de la guía del laboratorio de pruebas: demostración de una implementación multisitio de DirectAccess para Windows Server 2016'
+description: Obtenga información acerca de cómo instalar y configurar cliente2.
 manager: brianlic
 ms.topic: article
 ms.assetid: f009fdd1-94e6-4ccb-8c6e-609a5394db53
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 28c612e3e4b2df5095dcf4abe6f081e11d8722dd
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: e64b54edec32ea7944c04d088fa0a4ac983f98b2
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97950021"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040475"
 ---
 # <a name="step-3-install-and-configure-client2"></a>Paso 3 instalación y configuración de cliente2
 

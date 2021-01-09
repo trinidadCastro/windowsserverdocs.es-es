@@ -1,18 +1,18 @@
 ---
 title: Elección de un adaptador de red
-description: Este tema forma parte de la guía de optimización del rendimiento del subsistema de red para Windows Server 2016.
+description: Obtenga información acerca de cómo obtener información sobre algunas de las características de los adaptadores de red que pueden afectar a las opciones de compra.
 ms.topic: article
 ms.assetid: a6615411-83d9-495f-8a6a-1ebc8b12f164
 manager: dcscontentpm
 ms.author: v-tea
 author: Teresa-Motiv
 ms.date: 08/07/2020
-ms.openlocfilehash: b136adc4e7cfae29ebb0517f83ac763d98bd622c
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 0a1730ccf8aef478d3d82ea9d08b1dd8129f3942
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949041"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040415"
 ---
 # <a name="choosing-a-network-adapter"></a>Elección de un adaptador de red
 

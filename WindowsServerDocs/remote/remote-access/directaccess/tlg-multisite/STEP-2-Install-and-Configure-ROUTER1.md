@@ -1,18 +1,18 @@
 ---
 title: Paso 2 Instalación y configuración de ENRUTADOR1
-description: 'Este tema forma parte de la guía del laboratorio de pruebas: demostración de una implementación multisitio de DirectAccess para Windows Server 2016'
+description: Aprenda a instalar y configurar ENRUTADOR1.
 manager: brianlic
 ms.topic: article
 ms.assetid: dc20b1a0-540d-4531-a176-50b87c071600
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 88f85d230b26566a0053eb508a1dc8a696a95d6a
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: d505d40af963645bff711956c83e239668668716
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97950031"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040515"
 ---
 # <a name="step-2-install-and-configure-router1"></a>Paso 2 Instalación y configuración de ENRUTADOR1
 

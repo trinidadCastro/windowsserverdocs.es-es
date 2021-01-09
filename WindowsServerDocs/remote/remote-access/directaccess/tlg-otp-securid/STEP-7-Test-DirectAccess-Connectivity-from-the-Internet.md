@@ -1,18 +1,18 @@
 ---
 title: Paso 7 probar la conectividad de DirectAccess desde Internet
-description: 'Este tema forma parte de la guía del laboratorio de pruebas: demostración de DirectAccess con autenticación OTP y RSA SecurID para Windows Server 2016'
+description: Obtenga información sobre cómo empezar a probar la conectividad desde Internet.
 manager: brianlic
 ms.topic: article
 ms.assetid: ed2a1616-30c6-482a-9a02-4a5023621f58
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: ab3239b6ef7ef4d4404a3a8e8d89296b87115090
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: f921a536d229edc6295df2f18d3ab2bda62133aa
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949801"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040335"
 ---
 # <a name="step-7-test-directaccess-connectivity-from-the-internet"></a>Paso 7 probar la conectividad de DirectAccess desde Internet
 

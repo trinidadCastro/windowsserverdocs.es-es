@@ -5,20 +5,20 @@ ms.date: 05/28/2020
 author: Deland-Han
 ms.author: delhan
 ms.topic: troubleshooting
-ms.openlocfilehash: 39469ef6b36af20a2fd8fdab8f3400d5991c2446
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 5cce39ea42af57bbfd400427f763dfca5da75d7b
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97948561"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040305"
 ---
-# <a name="iaas-with-sql-alwayson---tuning-failover-cluster-network-thresholds"></a>IaaS con SQL AlwaysOn: Ajuste de umbrales de red de clústeres de conmutación por error
+# <a name="iaas-with-sql-server---tuning-failover-cluster-network-thresholds"></a>IaaS con umbrales de red de clústeres de conmutación por error de optimización de SQL Server
 
 En este artículo se presentan soluciones para ajustar el umbral de las redes de clústeres de conmutación por error.
 
 ## <a name="symptom"></a>Síntoma
 
-Cuando se ejecutan nodos de clúster de conmutación por error de Windows en IaaS con SQL Server AlwaysOn, se recomienda cambiar la configuración de clúster a un estado de supervisión más flexible. La configuración del clúster fuera de la caja es restrictiva y podría provocar interrupciones innecesarias. La configuración predeterminada está diseñada para redes locales muy optimizadas y no tiene en cuenta la posibilidad de una latencia inducida causada por un entorno de varios inquilinos como Windows Azure (IaaS).
+Cuando se ejecutan nodos de clúster de conmutación por error de Windows en IaaS con un SQL Server Always On grupo de disponibilidad, se recomienda cambiar la configuración de clúster a un estado de supervisión más flexible. La configuración del clúster fuera de la caja es restrictiva y podría provocar interrupciones innecesarias. La configuración predeterminada está diseñada para redes locales muy optimizadas y no tiene en cuenta la posibilidad de una latencia inducida causada por un entorno de varios inquilinos como Windows Azure (IaaS).
 
 Los clústeres de conmutación por error de Windows Server están supervisando constantemente las conexiones de red y el estado de los nodos de un clúster de Windows.  Si un nodo no es accesible a través de la red, se toma la acción de recuperación para recuperar y poner las aplicaciones y servicios en línea en otro nodo del clúster. La latencia en la comunicación entre los nodos del clúster puede producir el siguiente error:
 
@@ -76,7 +76,7 @@ Hay dos opciones de configuración que se usan para configurar el estado de Cone
 
 De forma predeterminada, Windows Server 2016 establece **SameSubnetThreshold** en 10 y **SameSubnetDelay** en 1000 ms. Por ejemplo, si se produce un error en la supervisión de la conectividad durante 10 segundos, se alcanza el umbral de conmutación por error, lo que da lugar a que el nodo se quite de la pertenencia al clúster. Esto hace que los recursos se muevan a otro nodo disponible en el clúster. Se informará de los errores del clúster, incluido el error 1135 del clúster (anterior).
 
-## <a name="resolution"></a>Solución
+## <a name="resolution"></a>Resolución
 
 En un entorno de IaaS, relajar las opciones de configuración de red de clústeres.
 
@@ -117,7 +117,7 @@ El **umbral** define el número de latidos que se omiten antes de que el clúste
     > [!NOTE]
     > Cambiar el umbral del clúster surtirá efecto inmediatamente, no tendrá que reiniciar el clúster ni los recursos.
 
-    Se recomiendan las siguientes opciones para la misma subred y las implementaciones entre regiones de los grupos de disponibilidad AlwaysOn.
+    Se recomienda la siguiente configuración para la misma subred y para implementaciones entre regiones de grupos de disponibilidad.
 
     ```powershell
     C:\Windows\system32> (get-cluster).SameSubnetThreshold = 20

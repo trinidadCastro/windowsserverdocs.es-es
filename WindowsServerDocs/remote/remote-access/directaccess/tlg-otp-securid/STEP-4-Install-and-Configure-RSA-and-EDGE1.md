@@ -1,18 +1,18 @@
 ---
 title: Paso 4 Instalación y configuración de RSA y EDGE1
-description: 'Este tema forma parte de la guía del laboratorio de pruebas: demostración de DirectAccess con autenticación OTP y RSA SecurID para Windows Server 2016'
+description: Obtenga información sobre cómo instalar y configurar RSA y EDGE1.
 manager: brianlic
 ms.topic: article
 ms.assetid: d46ede6f-1a21-414d-b8c3-6b5c87344b9d
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 591d6051d6c2a754416f48b615fa17c286b822c8
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 51cfdf8e40ce6ba43a4067e16c82a777637e6382
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97948971"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040365"
 ---
 # <a name="step-4-install-and-configure-rsa-and-edge1"></a>Paso 4 Instalación y configuración de RSA y EDGE1
 

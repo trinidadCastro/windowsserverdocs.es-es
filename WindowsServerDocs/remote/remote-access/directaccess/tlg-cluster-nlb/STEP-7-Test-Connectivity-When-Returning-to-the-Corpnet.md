@@ -1,18 +1,18 @@
 ---
 title: Paso 7 probar la conectividad al volver a la red corporativa
-description: 'Este tema forma parte de la guía del laboratorio de pruebas: demostración de DirectAccess en un clúster con Windows NLB para Windows Server 2016'
+description: Obtenga información acerca de cómo probar la conectividad al volver a la red corporativa en cliente1.
 manager: brianlic
 ms.topic: article
 ms.assetid: 5a7252d0-6db8-4a9d-98ee-75082ecd2929
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: a808b97ad531c38f3f6a08f416b0f0f30a5e50fa
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: c4b9392c6234d1b99f65dd0a133dc2e6be4be893
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97946541"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040545"
 ---
 # <a name="step-7-test-connectivity-when-returning-to-the-corpnet"></a>Paso 7 probar la conectividad al volver a la red corporativa
 

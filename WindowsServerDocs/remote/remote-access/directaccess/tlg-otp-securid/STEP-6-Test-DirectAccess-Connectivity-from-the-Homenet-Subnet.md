@@ -1,18 +1,18 @@
 ---
 title: Paso 6 probar la conectividad de DirectAccess desde la subred HomeNet
-description: 'Este tema forma parte de la guía del laboratorio de pruebas: demostración de DirectAccess con autenticación OTP y RSA SecurID para Windows Server 2016'
+description: Obtenga información sobre cómo empezar a probar la conectividad desde la subred HomeNet.
 manager: brianlic
 ms.topic: article
 ms.assetid: b9b77cfd-8dd4-476b-a118-f3d6bf59e7b1
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 5dbfc9e65ca40eadc0812317c95f5a9b34b63619
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 1d0cd5c85ca97ffd7d5275d2402db17a560255fa
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949811"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040345"
 ---
 # <a name="step-6-test-directaccess-connectivity-from-the-homenet-subnet"></a>Paso 6 probar la conectividad de DirectAccess desde la subred HomeNet
 

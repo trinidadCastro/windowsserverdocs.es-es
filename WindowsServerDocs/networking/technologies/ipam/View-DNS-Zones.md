@@ -1,18 +1,18 @@
 ---
 title: Visualización de zonas DNS
-description: Este tema forma parte de la guía de administración de la administración de direcciones IP (IPAM) en Windows Server 2016.
+description: Obtenga información sobre cómo ver zonas DNS en la consola de cliente de IPAM.
 manager: brianlic
 ms.topic: article
 ms.assetid: 2cfe4e40-ec6d-4541-baa9-d772409fe27c
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 7b9a5d7c4894f9f9019f0b481ece392ac12e3cd4
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 3d336c9a0a97d8423f604066ef0866dad313c4a5
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97948711"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040425"
 ---
 # <a name="view-dns-zones"></a>Visualización de zonas DNS
 

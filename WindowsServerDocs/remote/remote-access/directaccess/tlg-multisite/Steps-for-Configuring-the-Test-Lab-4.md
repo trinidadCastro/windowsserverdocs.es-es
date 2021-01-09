@@ -1,18 +1,18 @@
 ---
 title: Pasos para configurar el laboratorio de pruebas
-description: 'Este tema forma parte de la guía del laboratorio de pruebas: demostración de una implementación multisitio de DirectAccess para Windows Server 2016'
+description: Obtenga información acerca de cómo configurar la infraestructura de acceso remoto, configurar los clientes y servidores de acceso remoto y probar la conectividad de DirectAccess desde las subredes Internet y HomeNet.
 manager: brianlic
 ms.topic: article
 ms.assetid: dc7205b4-a822-4038-ab67-ec0a870737f2
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 54241bc7cb593fda1f4bfd1f60a20eb0b03694ec
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 7123b4010c34843db4a09d49794a426e109ce22f
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947951"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040265"
 ---
 # <a name="steps-for-configuring-the-test-lab"></a>Pasos para configurar el laboratorio de pruebas
 

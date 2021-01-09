@@ -1,18 +1,18 @@
 ---
 title: Paso 13 probar la conectividad de DirectAccess desde detrás de un dispositivo NAT
-description: 'Este tema forma parte de la guía del laboratorio de pruebas: demostración de una implementación multisitio de DirectAccess para Windows Server 2016'
+description: Obtenga información acerca de cómo probar la conectividad Teredo y la conectividad IP-HTTPS en ambos equipos cliente.
 manager: brianlic
 ms.topic: article
 ms.assetid: 796825c3-5e3e-4745-a921-25ab90b95ede
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 3ad38999df70c7ed8e6088687723090911dccbff
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 60cd8351a877fe2c66fdd2392348e3efbc26e6cc
+ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97950041"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040525"
 ---
 # <a name="step-13-test-directaccess-connectivity-from-behind-a-nat-device"></a>Paso 13 probar la conectividad de DirectAccess desde detrás de un dispositivo NAT
 
