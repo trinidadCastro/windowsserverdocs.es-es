@@ -1,21 +1,21 @@
 ---
-title: 'Escritorio remoto: comparación de las aplicaciones cliente'
-description: Aprenda cómo se comparan las diferentes aplicaciones de Escritorio remoto cuando se trata de las características y funciones admitidas.
+title: 'Escritorio remoto: comparación de los redireccionamientos de las aplicaciones cliente'
+description: Descubra en qué se diferencian las diversas aplicaciones de Escritorio remoto en lo que respecta a los redireccionamientos.
 ms.topic: article
 ms.assetid: 12efe858-6b76-4e08-9f72-b9603aceb0fc
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 10/07/2020
+ms.date: 12/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c34ab9c769beb25437e26442d85f75d40db163e
-ms.sourcegitcommit: ed77cfe8140a480b025907716e3635d40a5e3303
+ms.openlocfilehash: 7d06703386b60ad88271f3239700ef1a97e5c82c
+ms.sourcegitcommit: e57536e28902ae52d3040141bbd2aa00e91bbdd3
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91806640"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97644605"
 ---
-# <a name="compare-the-clients"></a>Comparación de los clientes
+# <a name="compare-the-clients-redirections"></a>Comparación de los clientes: redireccionamientos
 
 >Se aplica a: Windows 10, Windows 8.1, Windows Server 2019, Windows Server 2016 y Windows Server 2012 R2
 
@@ -62,3 +62,7 @@ Cuando se habilita el redireccionamiento del puerto USB, los dispositivos USB co
 | Altavoces            | X                         | X                           | X             | X       | X           | X                               | X (excepto Internet Explorer) |
 
 *Para el redireccionamiento de la impresora: la aplicación macOS admite el controlador de impresora Publisher Imagesetter de manera predeterminada. No admiten el redireccionamiento de los controladores de impresora nativos.
+
+## <a name="other-resources"></a>Otros recursos
+
+Si busca comparaciones de características, consulte [Comparación de los clientes: características](remote-desktop-features.md).

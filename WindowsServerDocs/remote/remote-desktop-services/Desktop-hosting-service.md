@@ -1,17 +1,17 @@
 ---
 title: Servicio de hospedaje de escritorio
-description: Describe los componentes de un servicio de hospedaje de escritorio.
+description: Obtenga información sobre los componentes del servicio de hospedaje de escritorio en Windows Server.
 ms.author: helohr
 ms.date: 07/06/2018
 ms.topic: article
 author: heidilohr
 manager: lizross
-ms.openlocfilehash: e1973bca8218f1ece287b03fee24486e95fe5492
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 4453c63b364cf664b9f1a0bd0325bcb88b6d3b2b
+ms.sourcegitcommit: 5f234fb15c1d0365b60e83a50bf953e317d6239c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971642"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879434"
 ---
 # <a name="desktop-hosting-service"></a>Servicio de hospedaje de escritorio
 
@@ -55,7 +55,7 @@ Hay varias maneras de implementar una base de datos SQL:
 Para más información acerca de cómo configurar una infraestructura de base datos SQL con alta disponibilidad, consulta los siguientes artículos:
 
 * [¿Qué es el servicio Azure SQL Database?](/azure/sql-database/sql-database-technical-overview)
-* [Creación y configuración de grupos de disponibilidad (SQL Server)](/sql/database-engine/availability-groups/windows/creation-and-configuration-of-availability-groups-sql-server?view=sql-server-2017).
+* [Creación y configuración de grupos de disponibilidad (SQL Server)](/sql/database-engine/availability-groups/windows/creation-and-configuration-of-availability-groups-sql-server?view=sql-server-2017&preserve-view=true).
 * [Adición del servidor de Agente de conexión a Escritorio remoto para la implementación y la configuración de alta disponibilidad](rds-connection-broker-cluster.md).
 
 ## <a name="file-server"></a>Servidor de archivos

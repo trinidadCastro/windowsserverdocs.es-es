@@ -6,14 +6,14 @@ ms.assetid: b7d8158c-aee1-4c60-8a46-40ce5595b8e8
 author: HeidiLohr
 manager: lizross
 ms.author: helohr
-ms.date: 10/22/2020
+ms.date: 12/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 70b9bfee5837af27576962698a408a45715bbd35
-ms.sourcegitcommit: de9e13e0e74721d6edbecf4acc12465fff3d5df0
+ms.openlocfilehash: c3598c1371d7b633c8ec91f41defa795f380c08c
+ms.sourcegitcommit: 4f7308430a69fe7965e16aa5b31f87c5d68e4a09
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92497053"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97577427"
 ---
 # <a name="remote-desktop-clients"></a>Clientes de Escritorio remoto
 
@@ -29,13 +29,13 @@ Antes de empezar, consulte el artículo [Configuración compatible](remote-deskt
 
 Están disponibles las siguientes aplicaciones cliente:
 
-| Dispositivo          | Obtener la aplicación                                                                                                  | Instrucciones de configuración                                                                |
-|-----------------|-----------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
-| Escritorio de Windows | [Cliente de escritorio de Windows](windowsdesktop.md#install-the-client)                                               | [Introducción al cliente de escritorio de Windows](windowsdesktop.md) |
-| Tienda Windows   | [Cliente de Windows 10 en Microsoft Store](https://go.microsoft.com/fwlink/?LinkID=616709)                   | [Introducción al cliente de Microsoft Store](windows.md)          |
-| Android         | [Cliente Android en Google Play](https://play.google.com/store/apps/details?id=com.microsoft.rdc.android)     | [Introducción al cliente de Android](remote-desktop-android.md) |
-| iOS             | [Cliente de iOS en la Store de iTunes](https://itunes.apple.com/app/microsoft-remote-desktop/id714464092?mt=8)     | [Introducción al cliente de iOS](remote-desktop-ios.md)         |
-| macOS           | [Cliente de macOS en la tienda de iTunes](https://itunes.apple.com/app/microsoft-remote-desktop/id1295203466?mt=12) | [Introducción al cliente de macOS](remote-desktop-mac.md)       |
+| Cliente | Obtener la aplicación | Documentación | La versión más reciente |
+|-----------------|-------------|------|---|
+| Escritorio de Windows | [Cliente de escritorio de Windows](windowsdesktop.md#install-the-client) | [Introducción](windowsdesktop.md), [Novedades](windowsdesktop-whatsnew.md) | 1.2.1524  |
+| Microsoft Store   | [Cliente de Windows 10 en Microsoft Store](https://go.microsoft.com/fwlink/?LinkID=616709) | [Introducción](windows.md), [Novedades](windows-whatsnew.md)  | 1.2.1535  |
+| Android         | [Cliente Android en Google Play](https://play.google.com/store/apps/details?id=com.microsoft.rdc.android)     | [Introducción](remote-desktop-android.md), [Novedades](android-whatsnew.md) | 10.0.8 |
+| iOS             | [Cliente de iOS en la App Store](https://apps.apple.com/app/microsoft-remote-desktop/id714464092)     | [Introducción](remote-desktop-ios.md), [Novedades](ios-whatsnew.md)         | 10.2.3 |
+| macOS | [Cliente de macOS en la App Store](https://apps.apple.com/app/microsoft-remote-desktop/id1295203466?mt=12) | [Introducción](remote-desktop-mac.md), [Novedades](mac-whatsnew.md)       | 10.5.0 |
 
 ## <a name="configuring-the-remote-pc"></a>Configurar el PC remoto
 

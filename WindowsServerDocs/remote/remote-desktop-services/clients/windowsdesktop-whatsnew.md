@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 12/01/2020
+ms.date: 12/15/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a9d10b23da6dc5fcd414bdab05afc20e15273763
-ms.sourcegitcommit: 090be8d858a830e46e1a9097afafd9c4275477b7
+ms.openlocfilehash: 0ce679c49abac80e4d3fa1edef9768ae8abf34b3
+ms.sourcegitcommit: 4f7308430a69fe7965e16aa5b31f87c5d68e4a09
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96578438"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97577407"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novedades del cliente de escritorio de Windows
 
@@ -25,7 +25,15 @@ El cliente se puede configurar para distintos [grupos de usuarios](windowsdeskto
 |Grupo de usuarios |La versión más reciente  |Versión mínima admitida |
 |-----------|----------------|--------------------------|
 |Público     |1.2.1524        |1.2.945                   |
-|Insider    |1.2.1524        |1.2.945                   |
+|Insider    |1.2.1526        |1.2.945                   |
+
+## <a name="updates-for-version-121526-insider"></a>Actualizaciones de la versión 1.2.1526 (Insider)
+
+*Fecha de publicación: 15/12/2020*
+
+Descarga: [Windows de 64 bits](https://go.microsoft.com/fwlink/?linkid=2139233), [Windows de 32 bits](https://go.microsoft.com/fwlink/?linkid=2139144), [ARM64 de Windows](https://go.microsoft.com/fwlink/?linkid=2139368)
+
+- Se ha agregado compatibilidad con la característica de protección de captura de pantalla para puntos de conexión de Windows 10. Para obtener más información, consulte [Procedimientos recomendados de seguridad del host de sesión](/azure/virtual-desktop/security-guide#session-host-security-best-practices).
 
 ## <a name="updates-for-version-121524"></a>Actualizaciones para la versión 1.2.1524
 

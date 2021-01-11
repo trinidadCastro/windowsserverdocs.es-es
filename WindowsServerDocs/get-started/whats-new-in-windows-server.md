@@ -6,12 +6,12 @@ ms.topic: article
 author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: medium
-ms.openlocfilehash: 51d14aab4b972cc608e9b3afe3e6313e6efffbd8
-ms.sourcegitcommit: 7c0794e257f602bd71af5eb9a11b8a03d2b9adfd
+ms.openlocfilehash: 2ba281106fbc6149b226326e79a41618efbc0fc2
+ms.sourcegitcommit: 4f7308430a69fe7965e16aa5b31f87c5d68e4a09
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97390253"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97577397"
 ---
 # <a name="whats-new-in-windows-server"></a>Novedades de Windows Server
 
@@ -27,7 +27,8 @@ Versiones del Canal de mantenimiento a largo plazo (LTSC):
 Versiones del Canal semianual:
 
 - [Novedades de Windows Server, versiones 2004 y 20H2](whats-new-in-windows-server-2004.md)
-- [Novedades de Windows Server, versiones 1903 y 1909](../get-started-19/whats-new-in-windows-server-1903-1909.md) (se dejó de dar servicio el 8 de diciembre de 2020)
+- [Novedades de Windows Server, versión 1909](../get-started-19/whats-new-in-windows-server-1903-1909.md) 
+- [Novedades de Windows Server, versión 1903](../get-started-19/whats-new-in-windows-server-1903-1909.md) (se dejó de dar servicio el 8 de diciembre de 2020)
 - [Novedades de Windows Server, versión 1809](whats-new-in-windows-server-1809.md) (se dejó de dar servicio el 10 de noviembre de 2020)
 - [Novedades de Windows Server, versión 1803](whats-new-in-windows-server-1803.md) (se dejó de dar servicio el 12 de noviembre de 2019)
 - [Novedades de Windows Server, versión 1709](whats-new-in-windows-server-1709.md) (se dejó de dar servicio el 9 de abril de 2019)
