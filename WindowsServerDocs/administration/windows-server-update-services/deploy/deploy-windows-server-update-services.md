@@ -1,18 +1,18 @@
 ---
 title: Implementar Windows Server Update Services
 description: 'Tema de Windows Server Update Services (WSUS): información general sobre el proceso de implementación con vínculos a los cuatro pasos necesarios para realizarlo'
-ms.topic: get-started-article
+ms.topic: how-to
 ms.assetid: 2708f6b2-4252-4b8f-9b7e-84c9b4222075
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 78df9b93205e07e58310ad2077571b29b9ff5360
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 86ec94c832dcd894a18a60a7fc3c351072893448
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89624543"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947631"
 ---
 # <a name="deploy-windows-server-update-services"></a>Implementar Windows Server Update Services
 

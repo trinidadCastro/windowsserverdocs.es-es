@@ -5,12 +5,13 @@ ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.localizationpriority: medium
-ms.openlocfilehash: c2feaaff614d00afeaf5d132c446eebe5fdf0989
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: ef5a4df53efeb6e24a86d74906fc5847d1924163
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87966782"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947561"
 ---
 # <a name="install-and-manage-extensions"></a>Instalar y administrar extensiones
 
@@ -36,7 +37,7 @@ Windows Admin Center admite varias fuentes y puede ver y administrar paquetes de
 3. Haz clic en el botón **Agregar** para agregar otra fuente. Para una fuente de NuGet, escribe la dirección URL de la fuente de NuGet V2. El proveedor o el administrador de la fuente de NuGet debe poder proporcionar la información de la dirección URL. En un recurso compartido de archivos, escribe la ruta de acceso completa del recurso compartido de archivos en el que se almacenan los archivos de paquete de extensión (.nupkg).
 4. Haga clic en **Agregar**. Si la puerta de enlace debe ejecutarse en un modo con privilegios elevados para realizar este cambio, se te presentará una petición de elevación de UAC. Este mensaje solo se mostrará si está ejecutando Windows Admin Center en modo de escritorio.
 
-La lista **Extensiones disponibles** mostrará las extensiones de todas las fuentes registradas. Puede comprobar de qué fuente es cada extensión en la columna**Fuente del paquete**.
+La lista **Extensiones disponibles** mostrará las extensiones de todas las fuentes registradas. Puede comprobar de qué fuente es cada extensión en la columna **Fuente del paquete**.
 
 ## <a name="uninstalling-an-extension"></a>Desinstalar una extensión
 

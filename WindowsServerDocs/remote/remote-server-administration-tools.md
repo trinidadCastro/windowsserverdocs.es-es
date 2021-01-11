@@ -1,17 +1,18 @@
 ---
 title: Herramientas de administración remota del servidor
 description: Tema de nivel superior para Herramientas de administración remota del servidor
-ms.topic: get-started-article
+ms.topic: how-to
 ms.assetid: d54a1f5e-af68-497e-99be-97775769a7a7
 ms.author: lizross
 author: eross-msft
 manager: mtillman
-ms.openlocfilehash: a9851e00cde56c37d86b923a6780427d6dfab900
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.date: 09/09/2020
+ms.openlocfilehash: 1b74b746e0b6ddde9590b00f22b42b45d75ada79
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89624194"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97950251"
 ---
 # <a name="remote-server-administration-tools"></a>Herramientas de administración remota del servidor
 
@@ -91,7 +92,7 @@ Si tienes una versión de Windows 10 anterior a la Actualización de octubre de
 
 ##### <a name="to-uninstall-remote-server-administration-tools-for-windows-10-after-rsat-package-install"></a>Para desinstalar Herramientas de administración remota del servidor para Windows 10 (después de instalar el paquete de RSAT)
 
-1. En el escritorio, haga clic en **Inicio**, **Todas las aplicaciones**, **Sistema de Windows**y **Panel de control**.
+1. En el escritorio, haga clic en **Inicio**, **Todas las aplicaciones**, **Sistema de Windows** y **Panel de control**.
 
 2. En **Programas**, haga clic en **Desinstalar un programa**.
 
@@ -103,11 +104,11 @@ Si tienes una versión de Windows 10 anterior a la Actualización de octubre de
    S
    ##### <a name="to-turn-off-specific-tools-after-rsat-package-install"></a>Para desactivar herramientas específicas (después de instalar el paquete de RSAT)
 
-6. En el escritorio, haga clic en **Inicio**, **Todas las aplicaciones**, **Sistema de Windows**y **Panel de control**.
+6. En el escritorio, haga clic en **Inicio**, **Todas las aplicaciones**, **Sistema de Windows** y **Panel de control**.
 
-7. Haga clic en **Programas**y, a continuación, en **Programas y características** ; haga clic en **Activar o desactivar las características de Windows**.
+7. Haga clic en **Programas** y, a continuación, en **Programas y características** ; haga clic en **Activar o desactivar las características de Windows**.
 
-8. En el cuadro de diálogo **Características de Windows** , expanda **Herramientas de administración remota del servidor**y, a continuación, expanda **Herramientas de administración de roles** o **Herramientas de administración de características**.
+8. En el cuadro de diálogo **Características de Windows** , expanda **Herramientas de administración remota del servidor** y, a continuación, expanda **Herramientas de administración de roles** o **Herramientas de administración de características**.
 
 9. Desactive las casillas de las herramientas que desee desactivar.
 
@@ -131,7 +132,7 @@ En Herramientas de administración remota del servidor para Windows 10, se obti
 
 ##### <a name="to-start-server-manager-on-a-client-computer"></a>Para iniciar el Administrador del servidor en un equipo cliente
 
-1.  En el menú **Inicio** , haga clic en **Todas las aplicaciones**y en **Herramientas administrativas**.
+1.  En el menú **Inicio** , haga clic en **Todas las aplicaciones** y en **Herramientas administrativas**.
 
 2.  En la carpeta **Herramientas administrativas** , haga clic en **Administrador del servidor**.
 
@@ -139,7 +140,7 @@ Aunque no aparezcan enumerados en el menú **Herramientas** de la consola del Ad
 
 ##### <a name="to-start-windows-powershell-with-elevated-user-rights-run-as-administrator"></a>Para iniciar Windows PowerShell con permisos del usuario elevados (Ejecutar como administrador)
 
-1.  En el menú **Inicio** , haga clic en **Todas las aplicaciones**, **Sistema de Windows**y **Windows PowerShell**.
+1.  En el menú **Inicio** , haga clic en **Todas las aplicaciones**, **Sistema de Windows** y **Windows PowerShell**.
 
 2.  Para ejecutar Windows PowerShell como administrador desde el escritorio, haz clic con el botón derecho en el acceso directo de **Windows PowerShell** y, luego, haz clic en **Ejecutar como administrador**.
 

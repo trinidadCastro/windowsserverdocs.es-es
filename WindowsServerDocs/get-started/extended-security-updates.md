@@ -4,15 +4,15 @@ description: Aprenda a usar las actualizaciones de seguridad extendidas (ESU) de
 ms.mktglfcycl: manage
 author: iainfoulds
 ms.author: daveba
-ms.topic: get-started-article
+ms.topic: how-to
 ms.localizationpriority: high
 ms.date: 02/21/2020
-ms.openlocfilehash: c66a008c94927de4b8e3fb4e0042785571272081
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: eeb1c011973b0b0d63ea93f838f144eee7defda0
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93071357"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97949271"
 ---
 # <a name="how-to-use-windows-server-2008-and-2008-r2-extended-security-updates-esu"></a>Uso de las actualizaciones de seguridad extendidas (ESU) de Windows Server 2008 y 2008 R2
 
@@ -104,18 +104,18 @@ Para registrar la máquina virtual para las actualizaciones de seguridad extendi
 
     [No se pudo encontrar el tipo de recurso en el espacio de nombres "Microsoft.WindowsESU"]().
 
-6. En **Detalles de Azure** , seleccione su suscripción de Azure, un grupo de recursos y una ubicación para la clave.
+6. En **Detalles de Azure**, seleccione su suscripción de Azure, un grupo de recursos y una ubicación para la clave.
 
-    En **Detalles de registro** , escriba la siguiente información:
+    En **Detalles de registro**, escriba la siguiente información:
 
     | Valor             | Value |
     |---------------------|-------|
-    | Nombre de clave            | Un nombre para mostrar para la clave, como *Agreement01* . |
+    | Nombre de clave            | Un nombre para mostrar para la clave, como *Agreement01*. |
     | Número de contrato    | El número de contrato que ha generado el sistema de administración de contratos de licencias por volumen o MSLicense para programas Contrato Enterprise. |
     | Número de equipos | Elija el número de equipos en los que desea instalar las actualizaciones de seguridad extendidas con esta clave. |
     | Sistema operativo    | Elija el sistema operativo con el que se va a usar esta clave, como Windows Server 2008 o Windows Server 2008 R2. |
 
-    Cuando esté preparado, seleccione **Examinar y registrar** .
+    Cuando esté preparado, seleccione **Examinar y registrar**.
 
     >[!NOTE]
     >Asegúrate de que has seleccionado la suscripción de Azure a cuya la versión preliminar privada te uniste en el filtro global. Selecciona el botón **Filtrar** en la cinta de opciones de Azure Portal para comprobar el filtro de suscripción global.
@@ -140,7 +140,7 @@ Para obtener las claves en el Centro de servicios de licencias por volumen:
 
 1. Ve a la [página del Centro de servicios de licencias por volumen](https://www.microsoft.com/vlsc) e inicia sesión con tus credenciales de Azure.
 
-2. Selecciona **Licencias** > **Resumen de relación** > **Id. de licencia** > **Claves de producto** .
+2. Selecciona **Licencias** > **Resumen de relación** > **Id. de licencia** > **Claves de producto**.
 
 Para más información sobre cómo obtener actualizaciones de seguridad extendidas para dispositivos Windows válidos, consulta [esta publicación de Tech Community](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/obtaining-extended-security-updates-for-eligible-windows-devices/ba-p/1167091#).
 

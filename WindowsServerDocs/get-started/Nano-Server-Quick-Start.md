@@ -3,16 +3,16 @@ title: Inicio rápido de Nano Server
 description: Pasos para implementar rápidamente un Nano Server básico en máquinas virtuales o físicas
 manager: DonGill
 ms.date: 09/05/2017
-ms.topic: get-started-article
+ms.topic: how-to
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 49166470cc5ef52cd46a9f92875099602a13acee
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 76fd7513af6d673141e2fdc09923605647eac711
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87959573"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97950001"
 ---
 # <a name="nano-server-quick-start"></a>Inicio rápido de Nano Server
 
