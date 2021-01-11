@@ -7,12 +7,12 @@ author: msjimwu
 ms.author: jimwu
 manager: mtillman
 ms.date: 3/15/2018
-ms.openlocfilehash: 769e9db9be5121b47c72b076bba3a78be841c5de
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 80bc794a5719792941f91d6d50fe35b92006dea6
+ms.sourcegitcommit: 29b8942ea46196c12a67f6b6ad7f8dd46bf94fb2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89625151"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98065671"
 ---
 # <a name="deploy-windows-server-hybrid-cloud-print"></a>Implementar la impresión en la nube híbrida de Windows Server
 
@@ -82,7 +82,7 @@ Para habilitar la comunicación autenticada con los servicios HCP, es necesario 
     ![Registro de aplicaciones de AAD 3](../media/hybrid-cloud-print/AAD-AppRegistration-AllApps.png)
 
 2. Exponga la API de las dos aplicaciones Web.
-    - Mientras sigue en la hoja **registros de aplicaciones** , haga clic en la aplicación de servicio de detección Mopria, seleccione **exponer una API**y luego haga clic en **establecer** junto a URI de ID. de aplicación.
+    - Mientras sigue en la hoja **registros de aplicaciones** , haga clic en la aplicación de servicio de detección Mopria, seleccione **exponer una API** y luego haga clic en **establecer** junto a URI de ID. de aplicación.
 
     ![API 1 de AAD exponiendo](../media/hybrid-cloud-print/AAD-AppRegistration-Mopria-ExposeAPI.png)
 
@@ -107,11 +107,11 @@ Para habilitar la comunicación autenticada con los servicios HCP, es necesario 
 
     ![Permiso de API de AAD 1](../media/hybrid-cloud-print/AAD-AppRegistration-APIPermission.png)
 
-    - Cambie a las **API que usa mi organización**y luego use el cuadro de búsqueda para encontrar el servicio de detección de Mopria agregado anteriormente. Haga clic en el servicio en el resultado de la búsqueda.
+    - Cambie a las **API que usa mi organización** y luego use el cuadro de búsqueda para encontrar el servicio de detección de Mopria agregado anteriormente. Haga clic en el servicio en el resultado de la búsqueda.
 
     ![Permiso de API de AAD 2](../media/hybrid-cloud-print/AAD-AppRegistration-APIPermission-Mopria.png)
 
-    - Seleccione **permisos delegados**. Active la casilla situada junto al ámbito de la API. Haga clic en **Agregar permisos**.
+    - Seleccione **Permisos delegados**. Active la casilla situada junto al ámbito de la API. Haga clic en **Agregar permisos**.
 
     ![Permiso de API de AAD 3](../media/hybrid-cloud-print/AAD-AppRegistration-APIPermission-Mopria-Add.png)
 
@@ -119,7 +119,7 @@ Para habilitar la comunicación autenticada con los servicios HCP, es necesario 
 
     ![Permiso de API de AAD 4](../media/hybrid-cloud-print/AAD-AppRegistration-APIPermission-ECP-Add.png)
 
-    - Una vez que se devuelva a la hoja permisos de la API, espere 10 segundos antes de hacer clic en **consentimiento de administrador general..**..
+    - Una vez que se devuelva a la hoja permisos de la API, espere 10 segundos antes de hacer clic en **conceder consentimiento de administración..**..
 
     ![Permiso 5 de la API de AAD](../media/hybrid-cloud-print/AAD-AppRegistration-APIPermission-GrantConsent.png)
 
@@ -212,13 +212,13 @@ Para habilitar la comunicación autenticada con los servicios HCP, es necesario 
 
     - Compruebe el archivo de registro para ver si hay algún error: `C:\Program Files\WindowsPowerShell\Modules\PublishCloudPrinter\1.0.0.0\CloudPrintDeploy.log`
 
-4. Ejecute **RegitEdit** en un símbolo del sistema con privilegios elevados. Vaya a equipo \ HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows\CurrentVersion\CloudPrint\EnterpriseCloudPrintService.
+4. Ejecute **RegitEdit** en un símbolo del sistema con privilegios elevados. Vaya a Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CloudPrint\EnterpriseCloudPrintService.
     - Asegúrese de que AzureAudience está establecido en el URI del ID. de aplicación de la aplicación de impresión en la nube de la empresa.
     - Asegúrese de que AzureTenant está establecido en el nombre de dominio Azure AD.
 
     ![Claves del registro de ECP del servidor de impresión](../media/hybrid-cloud-print/PrintServer-RegEdit-ECP.png)
 
-5. Vaya a equipo \ HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows\CurrentVersion\CloudPrint\MopriaDiscoveryService.
+5. Vaya a Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CloudPrint\MopriaDiscoveryService.
     - Asegúrese de que AzureAudience es el URI de ID. de aplicación de la aplicación de servicio de detección Mopria.
     - Asegúrese de que AzureTenant es el nombre de dominio Azure AD.
     - Asegúrese de que la dirección URL es el URI del ID. de aplicación de la aplicación de servicio de detección Mopria.
@@ -306,12 +306,12 @@ Para habilitar la comunicación autenticada con los servicios HCP, es necesario 
 1. Revise el documento [delegación restringida de Kerberos para el inicio de sesión único en las aplicaciones con el proxy de aplicación](/azure/active-directory/manage-apps/application-proxy-configure-single-sign-on-with-kcd).
 
 2. Configurar la Active Directory local.
-    - En el equipo de Active Directory, abra administrador del servidor y vaya a **herramientas**  >  **Active Directory usuarios y equipos**.
+    - En el equipo de Active Directory, abra administrador del servidor y vaya a **herramientas**  >  **Active Directory usuarios y equipos**.
     - Navegue hasta el nodo **equipos** y seleccione el servidor del conector.
-    - Haga clic con el botón **Properties**secundario en la  ->  pestaña**delegación**de propiedades   .
-    - Seleccione **confiar en este equipo para la delegación solo a los servicios especificados**.
-    - Seleccione **usar cualquier protocolo de autenticación**.
-    - En **servicios en los que esta cuenta puede presentar credenciales delegadas**.
+    - Haga clic con el botón secundario en la  ->  pestaña **delegación** de propiedades.
+    - Seleccione **Confiar en este equipo para la delegación solo a los servicios especificados**.
+    - Seleccione **Usar cualquier protocolo de autenticación**.
+    - En **servicios en los que esta cuenta puede presentar credenciales delegadas**.
         - Agregue el nombre de entidad de seguridad de servicio (SPN) de la máquina del servidor de impresión.
         - Seleccione HOST para tipo de servicio.
     ![Delegación Active Directory](../media/hybrid-cloud-print/AD-Delegation.png)
@@ -331,7 +331,7 @@ Para habilitar la comunicación autenticada con los servicios HCP, es necesario 
     - Establezca el SPN de la **aplicación interno** en el SPN del equipo del servidor de impresión.
     - Establezca **identidad de inicio de sesión delegada** en nombre principal de usuario.
     - Repita el procedimiento para la aplicación EntperiseCloudPrint.
-    ![Inicio de sesión único de AAD IWA](../media/hybrid-cloud-print/AAD-SingleSignOn-IWA.png)
+    ![Sign-On único de AAD IWA](../media/hybrid-cloud-print/AAD-SingleSignOn-IWA.png)
 
 ### <a name="step-6---configure-the-required-mdm-policies"></a>Paso 6: configurar las directivas de MDM necesarias
 
@@ -447,7 +447,7 @@ A continuación se muestran problemas comunes durante la implementación de HCP
 |Error |Pasos recomendados |
 |------|------|
 |Error de script de PowerShell de CloudPrintDeploy | <ul><li>Asegúrese de que Windows Server tiene la actualización más reciente.</li><li>Si se usa Windows Server Update Services (WSUS), consulte [Cómo hacer que las características a petición y los paquetes de idioma estén disponibles cuando se usa WSUS/SCCM](/windows/deployment/update/fod-and-lang-packs).</li></ul> |
-|Error en la instalación de SQLite con el mensaje: se detectó un bucle de dependencia para el paquete ' System. Data. SQLite ' | Install-Package System. Data. SQLite. Core-ProviderName Nuget-SkipDependencies<br>Install-Package System. Data. SQLite. EF6-ProviderName Nuget-SkipDependencies<br>Install-Package System. Data. SQLite. Linq-ProviderName Nuget-SkipDependencies<br><br>Una vez que los paquetes se hayan descargado correctamente, asegúrese de que tienen la misma versión. Si no es así, agregue el parámetro-requiredversion a los comandos anteriores y establézcalo para que tenga la misma versión. |
+|Error en la instalación de SQLite con el mensaje: se detectó un bucle de dependencia para el paquete ' System. Data. SQLite ' | Install-Package System. Data. SQLite. Core-ProviderName, Nuget-SkipDependencies<br>Install-Package System. Data. SQLite. EF6-ProviderName Nuget-SkipDependencies<br>Install-Package System. Data. SQLite. Linq-ProviderName Nuget-SkipDependencies<br><br>Una vez que los paquetes se hayan descargado correctamente, asegúrese de que tienen la misma versión. Si no es así, agregue el parámetro-requiredversion a los comandos anteriores y establézcalo para que tenga la misma versión. |
 |No se pudo publicar la impresora | <ul><li>Para la autenticación previa de paso a través, asegúrese de que el usuario que publica la impresora tiene los permisos adecuados para la base de datos de publicación.</li><li>Para Azure AD autenticación previa, asegúrese de que la autenticación de Windows está habilitada en IIS. Consulte el paso 5,3. Además, pruebe primero la autenticación de paso a través. Si funciona la autenticación previa de paso a través, es probable que el problema esté relacionado con el proxy de aplicación. Consulte [solución de problemas de proxy de aplicación y mensajes de error](/azure/active-directory/manage-apps/application-proxy-troubleshoot). Tenga en cuenta que al cambiar a passthrough se restablece la configuración de inicio de sesión único; Vuelva a consultar el paso 5 para configurar Azure AD autenticación previa de nuevo.</li></ul> |
 |Los trabajos de impresión permanecen en el estado de la impresora | <ul><li>Asegúrese de que TLS 1,2 está habilitado en el servidor del conector. Consulte el artículo vinculado en el paso 2,1.</li><li>Asegúrese de que HTTP2 esté deshabilitado en el servidor del conector. Consulte el artículo vinculado en el paso 2,1.</li></ul> |
 
