@@ -7,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 1be762cefabdc40050e7656ec29033778b92bbf6
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 8e458a59348cc02d2f7e19aaef1c8bca78ae505b
+ms.sourcegitcommit: 6a62d736e4d9989515c6df85e2577662deb042b6
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97050493"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98103757"
 ---
 # <a name="the-role-of-the-claims-engine"></a>El papel del motor de notificaciones
 En su nivel más alto, el motor de notificaciones en Servicios de federación de Active Directory (AD FS) \( AD FS \) es un \- motor basado en reglas que se dedica a atender y procesar solicitudes de notificación para el servicio de Federación. El motor de notificaciones es la única entidad dentro del Servicio de federación que se encarga de ejecutar cada uno de los conjuntos de reglas en todas las relaciones de confianza federadas que ha configurado y de entregar el resultado de salida a la canalización de notificaciones.
@@ -21,7 +21,7 @@ Aunque la canalización de notificaciones es más un concepto lógico del proces
 
 Como se muestra en la siguiente ilustración, el motor de notificaciones realiza la acción de aceptar las reglas de aceptación de notificaciones entrantes, autorizar las reglas de autorización de los \( \) solicitantes de notificaciones \( \) y emitir las reglas de emisión de notificaciones salientes \( \) a través de reglas de notificación en todas las relaciones de confianza federadas de su organización.
 
-![Roles AD FS](media/adfs2_enginepipeline.gif)
+![Ilustración que muestra los procesos realizados por el motor de notificaciones.](media/adfs2_enginepipeline.gif)
 
 ## <a name="claim-rules-execution-process"></a>Proceso de ejecución de reglas de notificación
 Cuando configura una relación de confianza para proveedor de notificaciones o una relación de confianza para usuario autenticado en su organización con reglas de notificación, el conjunto \( \) de reglas de notificación para esa confianza actúa como equipo selector para las notificaciones entrantes al invocar el motor de notificaciones para que aplique la lógica necesaria en las reglas de notificación para determinar si se emiten notificaciones y qué notificaciones.
@@ -44,7 +44,7 @@ El motor de notificaciones crea el conjunto de notificaciones de entrada cuando 
 
 Por ejemplo, en la ilustración siguiente, el motor de notificaciones lee las notificaciones de A y B a partir de las notificaciones entrantes y las copia en el conjunto de notificaciones de entrada. Cuando se encuentran en el conjunto de notificaciones de entrada, el motor de notificaciones recupera y procesa las notificaciones A y B como entradas para la lógica en la primera regla del conjunto de reglas de notificación.
 
-![Roles AD FS](media/adfs2_context1.gif)
+![Ilustración en la que se muestra que el motor de notificaciones Lee las notificaciones de A y B de las notificaciones entrantes y las copia en el conjunto de notificaciones de entrada.](media/adfs2_context1.gif)
 
 Todas las reglas de un conjunto de reglas de notificación comparten el mismo conjunto de notificaciones de entrada. Cada regla de ese conjunto puede agregarse al conjunto de notificaciones de entrada compartida, por lo que afectará a todas las reglas sucesivas del conjunto.
 
@@ -69,7 +69,7 @@ Si se usa la instrucción *add*, las notificaciones se agregan solo al conjunto 
 
 Si la parte de la condición de una regla dentro de un conjunto de reglas no coincide con ninguna notificación del conjunto de notificaciones de entrada, la parte de la instrucción de emisión de la regla se omite y, por tanto, no se agrega ninguna notificación al conjunto de notificaciones de salida ni al de entrada. En la siguiente ilustración y sus pasos correspondientes se muestra lo que sucede cuando el motor de notificaciones ejecuta una regla de transformación:
 
-![Roles AD FS](media/adfs2_context2.gif)
+![Ilustración que muestra lo que sucede cuando el motor de notificaciones ejecuta una regla de transformación.](media/adfs2_context2.gif)
 
 1.  El motor de notificaciones agrega las notificaciones entrantes al conjunto de notificaciones de entrada.
 
@@ -103,7 +103,7 @@ Si el conjunto de reglas de notificación que se ejecuta durante el paso 2 del p
 
 El objetivo de las reglas de autorización es emitir una notificación de denegación o de permiso, según si el usuario está habilitado o no para obtener un token para el usuario autenticado proporcionado. Tal y como se muestra en la siguiente ilustración, la canalización usa la salida de la ejecución de autorización para determinar si el conjunto de reglas de emisión se ejecuta o no, en función de la presencia o ausencia de la \/ notificaciones de permiso o denegación, pero el resultado de la ejecución de autorización en sí no se usa como entrada para el conjunto de reglas de notificaciones.
 
-![Roles AD FS](media/adfs2_authorization.gif)
+![La siguiente ilustración muestra la salida de la ejecución de autorización para determinar si se ejecuta o no el conjunto de reglas de emisión.](media/adfs2_authorization.gif)
 
 Para más información sobre la autorización de notificaciones, consulte [When to Use an Authorization Claim Rule](When-to-Use-an-Authorization-Claim-Rule.md).
 

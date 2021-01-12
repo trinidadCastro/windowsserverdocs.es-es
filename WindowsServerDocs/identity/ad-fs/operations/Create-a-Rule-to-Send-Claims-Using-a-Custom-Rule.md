@@ -7,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: fe34270ad7535995d85d85eb091b67b79ab78c83
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 5f1bb307565ce29defd918f8da606ee058113baf
+ms.sourcegitcommit: 6a62d736e4d9989515c6df85e2577662deb042b6
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97048163"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98103867"
 ---
 # <a name="create-a-rule-to-send-claims-using-a-custom-rule"></a>Crear una regla para enviar notificaciones mediante una regla personalizada
 
@@ -30,19 +30,19 @@ La pertenencia al grupo **administradores**, o equivalente, en el equipo local e
 1.  En el Administrador del servidor, haga clic en **Herramientas** y, luego, seleccione **Administración de AD FS**.
 
 2.  En el árbol de consola, en **AD FS**, haga clic en relaciones de confianza para usuario **autenticado**.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)
+![Captura de pantalla que muestra dónde seleccionar las relaciones de confianza para usuario autenticado en el árbol de la consola cuando se crea una regla para pasar a través o filtrar una demanda entrante en una relación de confianza para usuario autenticado en Windows Server 2016.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)
 
 3.  \-Haga clic con el botón derecho en la confianza seleccionada y luego haga clic en **Editar Directiva de emisión de notificaciones**.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)
+![Captura de pantalla que muestra dónde seleccionar la opción de menú Editar Directiva de emisión de notificaciones cuando se crea una regla para pasar a través o filtrar una demanda entrante en una relación de confianza para usuario autenticado en Windows Server 2016.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)
 
 4.  En el cuadro de diálogo **Editar Directiva de emisión de notificaciones** , en **reglas de transformación de emisión** , haga clic en **Agregar regla** para iniciar el Asistente para reglas.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)
+![Captura de pantalla que muestra dónde seleccionar Agregar regla al crear una regla para pasar a través o filtrar una demanda entrante en una relación de confianza para usuario autenticado en Windows Server 2016.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)
 
 5.  En la **página Seleccionar plantilla de regla** , en **plantilla de regla de notificación**, seleccione **enviar notificaciones mediante una regla personalizada** de la lista y, a continuación, haga clic en **siguiente**.
-![crear regla](media/Create-a-Rule-to-Send-Claims-Using-a-Custom-Rule/custom3.PNG)
+![Captura de pantalla que muestra dónde seleccionar las notificaciones de envío mediante una regla personalizada cuando se crea una regla para pasar a través o filtrar una notificación entrante en una relación de confianza para usuario autenticado en Windows Server 2016.](media/Create-a-Rule-to-Send-Claims-Using-a-Custom-Rule/custom3.PNG)
 
 6.  En la página **configurar regla** , en **nombre de la regla de notificaciones**, escriba el nombre para mostrar de esta regla. En **regla personalizada**, escriba o pegue la sintaxis del lenguaje de reglas de notificaciones que desea para esta regla.
-![crear regla](media/Create-a-Rule-to-Send-Claims-Using-a-Custom-Rule/custom4.PNG)
+![Captura de pantalla que muestra dónde se escribe el nombre de la regla de notificaciones.](media/Create-a-Rule-to-Send-Claims-Using-a-Custom-Rule/custom4.PNG)
 
 7.  Haga clic en **Finalizar**
 
@@ -53,19 +53,19 @@ La pertenencia al grupo **administradores**, o equivalente, en el equipo local e
 1.  En el Administrador del servidor, haga clic en **Herramientas** y, luego, seleccione **Administración de AD FS**.
 
 2.  En el árbol de consola, en **AD FS**, haga clic en **confianzas de proveedor de notificaciones**.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)
+![Captura de pantalla que muestra dónde seleccionar las confianzas del proveedor de notificaciones cuando se crea una regla para pasar a través o filtrar una notificación entrante en una confianza de proveedor de notificaciones en Windows Server 2016](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)
 
 3.  Haga clic con el botón secundario \- en la confianza seleccionada y, a continuación, haga clic en **editar reglas de notificaciones**.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)
+![Captura de pantalla que muestra dónde seleccionar editar reglas de notificación cuando se crea una regla para pasar a través o filtrar una notificación entrante en una confianza de proveedor de notificaciones en Windows Server 2016.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)
 
 4.  En el cuadro de diálogo **editar reglas de notificaciones** , en **reglas de transformación de aceptación** , haga clic en **Agregar regla** para iniciar el Asistente para reglas.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG)
+![Captura de pantalla que muestra dónde seleccionar Agregar regla cuando se crea una regla para pasar a través o filtrar una notificación entrante en una confianza de proveedor de notificaciones en Windows Server 2016.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG)
 
 5.  En la **página Seleccionar plantilla de regla** , en **plantilla de regla de notificación**, seleccione **enviar notificaciones mediante una regla personalizada** de la lista y, a continuación, haga clic en **siguiente**.
-![crear regla](media/Create-a-Rule-to-Send-Claims-Using-a-Custom-Rule/custom3.PNG)
+![Captura de pantalla que muestra dónde se selecciona la plantilla enviar notificación mediante una regla personalizada cuando se crea una regla para pasar a través o filtrar una notificación entrante en una confianza de proveedor de notificaciones en Windows Server 2016.](media/Create-a-Rule-to-Send-Claims-Using-a-Custom-Rule/custom3.PNG)
 
 6.  En la página **configurar regla** , en **nombre de la regla de notificaciones**, escriba el nombre para mostrar de esta regla. En **regla personalizada**, escriba o pegue la sintaxis del lenguaje de reglas de notificaciones que desea para esta regla.
-![crear regla](media/Create-a-Rule-to-Send-Claims-Using-a-Custom-Rule/custom4.PNG)
+![Captura de pantalla que muestra dónde escribir el nombre de la regla de notificación cuando se crea una regla para pasar a través o filtrar una notificación entrante en una confianza de proveedor de notificaciones en Windows Server 2016.](media/Create-a-Rule-to-Send-Claims-Using-a-Custom-Rule/custom4.PNG)
 
 7.  Haga clic en **Finalizar**
 
@@ -96,7 +96,7 @@ La pertenencia al grupo **administradores**, o equivalente, en el equipo local e
 2.  En el árbol de consola, en **AD FS \\ relaciones de confianza**, haga clic en **confianzas de proveedor de notificaciones** o en **confianzas** de usuario de confianza y, a continuación, haga clic en una confianza específica en la lista en la que desea crear esta regla.
 
 3.  Haga clic con el botón secundario \- en la confianza seleccionada y, a continuación, haga clic en **editar reglas de notificaciones**.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)
+![Captura de pantalla que muestra dónde seleccionar editar reglas de notificación cuando se crea una regla para enviar notificaciones mediante una notificación personalizada en Windows Server 2012 R2.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)
 
 4.  En el cuadro de diálogo **editar reglas de notificaciones** , seleccione una de las siguientes pestañas, que depende de la confianza que está editando y en qué conjunto de reglas desea crear esta regla y, a continuación, haga clic en **Agregar regla** para iniciar el Asistente para reglas que está asociado con ese conjunto de reglas:
 
@@ -110,10 +110,10 @@ La pertenencia al grupo **administradores**, o equivalente, en el equipo local e
  ![ crear regla](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)
 
 5.  En la **página Seleccionar plantilla de regla** , en **plantilla de regla de notificación**, seleccione **enviar notificaciones mediante una regla personalizada** de la lista y, a continuación, haga clic en **siguiente**.
-![crear regla](media/Create-a-Rule-to-Send-Claims-Using-a-Custom-Rule/custom1.PNG)
+![Captura de pantalla que muestra dónde seleccionar la plantilla enviar notificaciones mediante una regla personalizada cuando se crea una regla para enviar notificaciones mediante una notificación personalizada en Windows Server 2012 R2.](media/Create-a-Rule-to-Send-Claims-Using-a-Custom-Rule/custom1.PNG)
 
 6.  En la página **configurar regla** , en **nombre de la regla de notificaciones**, escriba el nombre para mostrar de esta regla. En **regla personalizada**, escriba o pegue la sintaxis del lenguaje de reglas de notificaciones que desea para esta regla.
-![crear regla](media/Create-a-Rule-to-Send-Claims-Using-a-Custom-Rule/custom2.PNG)
+![Captura de pantalla que muestra dónde escribir el nombre de la regla de notificación cuando se crea una regla para enviar notificaciones mediante una notificación personalizada en Windows Server 2012 R2.](media/Create-a-Rule-to-Send-Claims-Using-a-Custom-Rule/custom2.PNG)
 
 7.  Haga clic en **Finalizar**
 

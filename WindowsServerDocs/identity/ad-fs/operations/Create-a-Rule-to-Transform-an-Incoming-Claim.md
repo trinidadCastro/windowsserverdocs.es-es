@@ -7,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 7dbb6ca59de0d7a9c3e696084409323e743b27f1
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 77df2bd340d1587836c6197282263f8d5629c00f
+ms.sourcegitcommit: 6a62d736e4d9989515c6df85e2577662deb042b6
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97040043"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98103847"
 ---
 # <a name="create-a-rule-to-transform-an-incoming-claim"></a>Crear una regla para transformar una notificación entrante
 
@@ -28,16 +28,16 @@ La pertenencia al grupo **administradores**, o equivalente, en el equipo local e
 1.  En el Administrador del servidor, haga clic en **Herramientas** y, luego, seleccione **Administración de AD FS**.
 
 2.  En el árbol de consola, en **AD FS**, haga clic en relaciones de confianza para usuario **autenticado**.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)
+![Captura de pantalla que muestra dónde seleccionar las relaciones de confianza para usuario autenticado cuando se crea una regla para transformar una demanda entrante en una relación de confianza para usuario autenticado en Windows Server 2016.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)
 
 3.  \-Haga clic con el botón derecho en la confianza seleccionada y luego haga clic en **Editar Directiva de emisión de notificaciones**.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)
+![Captura de pantalla que muestra dónde seleccionar la Directiva editar emisión de notificaciones cuando se crea una regla para transformar una demanda entrante en una relación de confianza para usuario autenticado en Windows Server 2016.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)
 
 4.  En el cuadro de diálogo **Editar Directiva de emisión de notificaciones** , en **reglas de transformación de emisión** , haga clic en **Agregar regla** para iniciar el Asistente para reglas.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)
+![Captura de pantalla que muestra dónde seleccionar Agregar regla al crear una regla para transformar una demanda entrante en una relación de confianza para usuario autenticado en Windows Server 2016.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)
 
 5.  En la **página Seleccionar plantilla de regla** , en **plantilla de regla de notificaciones**, seleccione **transformar una notificaciones entrantes** de la lista y, a continuación, haga clic en **siguiente**.
-![crear regla](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform3.PNG)
+![Captura de pantalla que muestra dónde seleccionar la transformación una notificaciones entrantes al crear una regla para transformar una demanda entrante en una relación de confianza para usuario autenticado en Windows Server 2016.](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform3.PNG)
 
 6.  En la página **configurar regla** , en **nombre de la regla de notificaciones**, escriba el nombre para mostrar de esta regla. En **tipo de notificaciones entrantes**, seleccione un tipo de demanda en la lista. En **tipo de notificaciones salientes**, seleccione un tipo de notificaciones en la lista y, a continuación, seleccione una de las siguientes opciones, que depende de los requisitos de su organización:
 
@@ -45,8 +45,8 @@ La pertenencia al grupo **administradores**, o equivalente, en el equipo local e
 
     -   **Reemplazar un valor de notificación entrante por un valor de notificación saliente diferente**
 
-    -   **Reemplazar las \- notificaciones de sufijo de correo electrónico entrante por una nueva regla de creación de sufijo de \- correo electrónico** 
- ![](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform4.PNG)
+    -   **Reemplazar \- notificaciones entrantes de sufijos de correo electrónico con una captura de pantalla nuevo \- sufijo de correo electrónico** 
+ ![ que muestra dónde escribir el nombre de la regla de notificación cuando se crea una regla para transformar una notificación entrante en una relación de confianza para usuario autenticado en Windows Server 2016.](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform4.PNG)
 
 7.  Haga clic en el botón **Finalizar**.
 
@@ -62,16 +62,16 @@ La pertenencia al grupo **administradores**, o equivalente, en el equipo local e
 1.  En el Administrador del servidor, haga clic en **Herramientas** y, luego, seleccione **Administración de AD FS**.
 
 2.  En el árbol de consola, en **AD FS**, haga clic en **confianzas de proveedor de notificaciones**.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)
+![Captura de pantalla que muestra dónde seleccionar las confianzas del proveedor de notificaciones cuando se crea una regla para transformar una notificación entrante en una confianza de proveedor de notificaciones en Windows Server 2016.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)
 
 3.  Haga clic con el botón secundario \- en la confianza seleccionada y, a continuación, haga clic en **editar reglas de notificaciones**.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)
+![Captura de pantalla que muestra dónde seleccionar editar reglas de notificación cuando se crea una regla para transformar una notificación entrante en una confianza de proveedor de notificaciones en Windows Server 2016.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)
 
 4.  En el cuadro de diálogo **editar reglas de notificaciones** , en **reglas de transformación de aceptación** , haga clic en **Agregar regla** para iniciar el Asistente para reglas.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG)
+![Captura de pantalla que muestra dónde seleccionar Agregar regla al crear una regla para transformar una notificación entrante en una confianza de proveedor de notificaciones en Windows Server 2016.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG)
 
 5.  En la **página Seleccionar plantilla de regla** , en **plantilla de regla de notificaciones**, seleccione **transformar una notificaciones entrantes** de la lista y, a continuación, haga clic en **siguiente**.
-![crear regla](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform3.PNG)
+![Captura de pantalla que muestra dónde seleccionar la plantilla transformar una notificación entrante al crear una regla para transformar una notificación entrante en una confianza de proveedor de notificaciones en Windows Server 2016.](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform3.PNG)
 
 6.  En la página **configurar regla** , en **nombre de la regla de notificaciones**, escriba el nombre para mostrar de esta regla. En **tipo de notificaciones entrantes**, seleccione un tipo de demanda en la lista. En **tipo de notificaciones salientes**, seleccione un tipo de notificaciones en la lista y, a continuación, seleccione una de las siguientes opciones, que depende de los requisitos de su organización:
 
@@ -79,8 +79,8 @@ La pertenencia al grupo **administradores**, o equivalente, en el equipo local e
 
     -   **Reemplazar un valor de notificación entrante por un valor de notificación saliente diferente**
 
-    -   **Reemplazar las \- notificaciones de sufijo de correo electrónico entrante por una nueva regla de creación de sufijo de \- correo electrónico** 
- ![](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform4.PNG)
+    -   **Reemplazar \- notificaciones de sufijos de correo electrónico entrantes por una captura de pantalla nuevo \- sufijo de correo electrónico** 
+ ![ que muestra dónde escribir el nombre de la regla de notificación cuando se crea una regla para transformar una notificación entrante en una confianza de proveedor de notificaciones en Windows Server 2016.](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform4.PNG)
 
 7.  Haga clic en el botón **Finalizar**.
 
@@ -98,7 +98,7 @@ La pertenencia al grupo **administradores**, o equivalente, en el equipo local e
 2.  En el árbol de consola, en **AD FS \\ relaciones de confianza**, haga clic en **confianzas de proveedor de notificaciones** o en **confianzas** de usuario de confianza y, a continuación, haga clic en una confianza específica en la lista en la que desea crear esta regla.
 
 3.  Haga clic con el botón secundario \- en la confianza seleccionada y, a continuación, haga clic en **editar reglas de notificaciones**.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)
+![Captura de pantalla que muestra dónde seleccionar editar reglas de notificaciones cuando se crea una regla en Windows Server 2012 R2.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)
 
 4.  En el cuadro de diálogo **editar reglas de notificaciones** , seleccione una de las siguientes pestañas, que depende de la confianza que está editando y en qué conjunto de reglas desea crear esta regla y, a continuación, haga clic en **Agregar regla** para iniciar el Asistente para reglas que está asociado con ese conjunto de reglas:
 
@@ -109,10 +109,10 @@ La pertenencia al grupo **administradores**, o equivalente, en el equipo local e
     -   **Reglas de autorización de emisión**
 
     -   Reglas de autorización de **delegación** 
- ![ crear regla](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)
+ ![ Captura de pantalla que muestra dónde seleccionar editar reglas de notificaciones cuando se crea una regla para transformar una demanda entrante en Windows Server 2012 R2.](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)
 
 5.  En la **página Seleccionar plantilla de regla** , en **plantilla de regla de notificaciones**, seleccione **transformar una notificaciones entrantes** de la lista y, a continuación, haga clic en **siguiente**.
-![crear regla](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform1.PNG)
+![Captura de pantalla que muestra dónde seleccionar la plantilla transformar una notificaciones entrantes al crear una regla para transformar una demanda entrante en Windows Server 2012 R2.](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform1.PNG)
 
 6.  En la página **configurar regla** , en **nombre de la regla de notificaciones**, escriba el nombre para mostrar de esta regla. En **tipo de notificaciones entrantes**, seleccione un tipo de demanda en la lista. En **tipo de notificaciones salientes**, seleccione un tipo de notificaciones en la lista y, a continuación, seleccione una de las siguientes opciones, que depende de los requisitos de su organización:
 

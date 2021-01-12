@@ -6,12 +6,12 @@ ms.author: delhan
 manager: dcscontentpm
 ms.date: 11/12/2019
 ms.topic: article
-ms.openlocfilehash: 55ac25e37f7c7621426db031ba1ad148d3a02a98
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 2816b2ac03fda883e67a0dd58f7797a0e4847678
+ms.sourcegitcommit: 6a62d736e4d9989515c6df85e2577662deb042b6
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97042403"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98103877"
 ---
 # <a name="configuring-certificate-enrollment-web-service-for-certificate-key-based-renewal-on-a-custom-port"></a>Configuración del Servicio web de inscripción de certificados para la renovación basada en claves de certificados en un puerto personalizado
 
@@ -132,7 +132,7 @@ Este comando instala el Servicio web de inscripción de certificados (CES) para 
 ##### <a name="step-2-check-the-internet-information-services-iis-manager-console"></a>Paso 2 comprobar la consola del administrador de Internet Information Services (IIS)
 
 Después de una instalación correcta, espera ver la siguiente pantalla en la consola del administrador de Internet Information Services (IIS).
-![Administrador de IIS](media/certificate-enrollment-certificate-key-based-renewal-4.png)
+![Captura de pantalla que muestra la consola de Internet Information Services Manager.](media/certificate-enrollment-certificate-key-based-renewal-4.png)
 
 En **sitio web predeterminado**, seleccione **ADPolicyProvider_CEP_UsernamePassword** y, a continuación, abra configuración de la **aplicación**. Anote el **identificador** y el **URI**.
 
@@ -250,16 +250,16 @@ En el equipo cliente, configure las directivas de inscripción y la Directiva de
    b. En **tipo de autenticación**, seleccione **nombre de usuario y contraseña**.
 
    c. Establezca una prioridad de **10** y, a continuación, valide el servidor de directivas.
-      ![Directiva de inscripción](media/certificate-enrollment-certificate-key-based-renewal-10.png)
+      ![Captura de pantalla que muestra dónde establecer la prioridad.](media/certificate-enrollment-certificate-key-based-renewal-10.png)
 
    > [!Note]
    > Asegúrese de que el número de puerto se agrega al URI y se permite en el firewall.
 
 5. Inscriba el primer certificado del equipo a través de certlm. msc.
-   ![Directiva de inscripción](media/certificate-enrollment-certificate-key-based-renewal-11.png)
+   ![Captura de pantalla que muestra dónde seleccionar la Directiva de inscripción de certificados.](media/certificate-enrollment-certificate-key-based-renewal-11.png)
 
    Seleccione la plantilla KBR e inscriba el certificado.
-   ![Directiva de inscripción](media/certificate-enrollment-certificate-key-based-renewal-12.png)
+   ![Captura de pantalla que muestra dónde seleccionar la plantilla K B R.](media/certificate-enrollment-certificate-key-based-renewal-12.png)
 
 6. Abra **gpedit. msc** de nuevo. Edite el **cliente de servicios de certificados: Directiva de inscripción de certificados** y, a continuación, agregue la Directiva de inscripción de la renovación basada en claves:
 
@@ -286,7 +286,7 @@ Ejecute el siguiente comando:
 certreq -machine -q -enroll -cert <thumbprint> renew
 ```
 
-![command](media/certificate-enrollment-certificate-key-based-renewal-14.png)
+![Captura de pantalla que muestra cómo ejecutar el comando proporcionado.](media/certificate-enrollment-certificate-key-based-renewal-14.png)
 
 ### <a name="method-2"></a>Método 2
 
@@ -296,7 +296,7 @@ Por ejemplo, la plantilla de certificado tiene una configuración de validez de 
 
 Por lo tanto, si avanza el tiempo hasta 8:10 P.M. el 19 desde que nuestra ventana de renovación se estableció en 8 horas en la plantilla, la ejecución de certutil-Pulse (para desencadenar el motor de AE) inscribe el certificado automáticamente.
 
-![command](media/certificate-enrollment-certificate-key-based-renewal-15.png)
+![.](media/certificate-enrollment-certificate-key-based-renewal-15.png)
 
 Una vez finalizada la prueba, revierta la configuración de tiempo al valor original y, a continuación, reinicie el equipo cliente.
 
@@ -313,7 +313,7 @@ Una vez finalizada la prueba, revierta la configuración de tiempo al valor orig
 
 [Install-AdcsEnrollmentWebService](/powershell/module/adcsdeployment/install-adcsenrollmentwebservice)
 
-Vea también
+Consulte también
 
 [Foro de seguridad de Windows Server](https://aka.ms/adcsforum)
 

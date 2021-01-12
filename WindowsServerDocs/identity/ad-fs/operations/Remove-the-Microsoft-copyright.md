@@ -7,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: a5b377989315462789b9b33faf5267211c93bf8c
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: e602ae1f188de72ae974e45d8a5f341185216eb5
+ms.sourcegitcommit: 6a62d736e4d9989515c6df85e2577662deb042b6
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97039733"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98103747"
 ---
 # <a name="remove-the-microsoft-copyright"></a>Quitar el copyright de Microsoft
 
@@ -20,7 +20,7 @@ ms.locfileid: "97039733"
 
 De forma predeterminada, las páginas AD FS contienen el copyright de Microsoft. Para quitar el copyright de las páginas que personalices, puedes usar el siguiente procedimiento.
 
-![quitar Copyright](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom1.png)
+![Captura de pantalla que muestra la página de inicio de sesión de con los derechos de autor en la parte inferior.](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom1.png)
 
 ## <a name="to-remove-the-microsoft-copyright"></a>Para quitar el copyright de Microsoft
 

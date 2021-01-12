@@ -7,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 19b11885e28c23f789031e4b0c619cd660bd22e3
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 4cc0079a5494a6390cc347d01174cfd5b2db7326
+ms.sourcegitcommit: 6a62d736e4d9989515c6df85e2577662deb042b6
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97045283"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98103737"
 ---
 # <a name="the-role-of-the-ad-fs-configuration-database"></a>Papel de la base de datos de configuración de AD FS
 
@@ -60,7 +60,7 @@ Debido al importante rol que se reproduce en la base de datos de configuración 
 
 Cuando se agrega un servidor de federación a la granja, el nuevo equipo que se convierte en un servidor de federación secundario se conecta al servidor de federación principal para replicar la copia de la base de datos de configuración de AD FS. A partir de este punto, el nuevo servidor de federación continúa extrayendo las actualizaciones del servidor de federación principal de forma regular, como se muestra en la ilustración siguiente.
 
-![Roles AD FS](media/adfs2_WID.png)
+![En la ilustración siguiente se muestra que el nuevo servidor de Federación sigue extrayendo las actualizaciones del servidor de Federación principal de forma periódica.](media/adfs2_WID.png)
 
 Todos los servidores de federación secundarios sondean el servidor de federación principal cada cinco minutos para comprobar si hay cambios. Puede ajustar este \- valor predeterminado de cinco minutos o forzar una sincronización inmediata en cualquier momento mediante un cmdlet de Windows PowerShell. Para más información acerca de cómo hacer esto, vea [Administración de AD FS con Windows PowerShell](https://go.microsoft.com/fwlink/?LinkID=179634).
 

@@ -1,18 +1,18 @@
 ---
-description: Más información acerca de la actualización a AD FS en Windows Server 2016 con una base de datos WID
+description: Más información acerca de la actualización a AD FS en Windows Server 2016 y 2019 con una base de datos WID
 ms.assetid: 7671e0c9-faf0-40de-808a-62f54645f891
-title: Actualización a AD FS en Windows Server 2016
+title: Actualizar a AD FS en Windows Server 2016 y 2019
 author: billmath
 manager: femila
 ms.date: 04/09/2018
 ms.topic: article
 ms.author: billmath
-ms.openlocfilehash: 6be8d01bc7e729ee15a1488f5721e7db5f3d364d
-ms.sourcegitcommit: 3247e193d9fe1b57543fff215460a6d9db52f58b
+ms.openlocfilehash: abd5addb17456c61e207a8ce2ce19792eb9081cd
+ms.sourcegitcommit: 6a62d736e4d9989515c6df85e2577662deb042b6
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97814944"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98103687"
 ---
 # <a name="upgrading-to-ad-fs-in-windows-server-2016-using-a-wid-database"></a>Actualización a AD FS en Windows Server 2016 mediante una base de datos WID
 

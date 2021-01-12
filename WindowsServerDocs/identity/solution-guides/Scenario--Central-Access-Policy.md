@@ -7,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 74fab5d6d790c4cf8ff4548f723a58dee50a941e
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 8413f257b91035f8ec01602f1b440bc8cbd75a9a
+ms.sourcegitcommit: 6a62d736e4d9989515c6df85e2577662deb042b6
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97044613"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98103777"
 ---
 # <a name="scenario-central-access-policy"></a>Escenario: Directiva de acceso central
 
@@ -52,11 +52,11 @@ Una regla de directiva de acceso central tiene las partes lógicas siguientes:
 
 Las dos ilustraciones siguientes muestran el flujo de trabajo en el acceso central y las directivas de auditoría.
 
-![guías de soluciones](media/Scenario--Central-Access-Policy/DynamicAccessControl_RevGuide.JPG)
+![Diagrama que muestra los conceptos de la Directiva de acceso central y de auditoría.](media/Scenario--Central-Access-Policy/DynamicAccessControl_RevGuide.JPG)
 
 **Figura 1** Conceptos de acceso central y directiva de auditoría
 
-![guías de soluciones](media/Scenario--Central-Access-Policy/DynamicAccessControl_RevGuide_2.JPG)
+![Diagrama que muestra el flujo de trabajo de la Directiva de acceso central.](media/Scenario--Central-Access-Policy/DynamicAccessControl_RevGuide_2.JPG)
 
 **Figura 2** Flujo de trabajo de directiva de acceso central
 

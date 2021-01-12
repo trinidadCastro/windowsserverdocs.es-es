@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: f80daef1d7d6bfae0cc78e3ed41474995186fbb5
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: ce03cb4c851abb4b0eb6fbce8a7fe9667f74403d
+ms.sourcegitcommit: 6a62d736e4d9989515c6df85e2577662deb042b6
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97047533"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98103827"
 ---
 # <a name="guarded-fabric-and-shielded-vms-overview"></a>Información general sobre máquinas virtuales blindadas y tejido protegido
 
@@ -82,7 +82,7 @@ El archivo de datos de blindaje (archivo PDK) proporciona comprobaciones en rela
 
 La siguiente ilustración muestra el archivo de datos de blindaje y los elementos de configuración relacionados.
 
-![Archivo de datos de blindaje](../media/Guarded-Fabric-Shielded-VM/shielded-vms-shielding-data-file.png)
+![Ilustración que muestra el archivo de datos de blindaje y los elementos de configuración relacionados.](../media/Guarded-Fabric-Shielded-VM/shielded-vms-shielding-data-file.png)
 
 ## <a name="what-are-the-types-of-virtual-machines-that-a-guarded-fabric-can-run"></a>¿Cuáles son los tipos de máquinas virtuales que puede ejecutar un tejido protegido?
 

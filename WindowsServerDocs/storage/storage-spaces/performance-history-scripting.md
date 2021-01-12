@@ -7,12 +7,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 05/15/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 3894e6ce2e5f89c98d064ceedb3822cf9ab7061a
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 76820414e98487e3cf046f53d914f090ba037e48
+ms.sourcegitcommit: 6a62d736e4d9989515c6df85e2577662deb042b6
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97048933"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98103767"
 ---
 # <a name="scripting-with-powershell-and-storage-spaces-direct-performance-history"></a>Scripting con PowerShell y Espacios de almacenamiento directo historial de rendimiento
 
@@ -42,9 +42,9 @@ En este ejemplo se usa la `ClusterNode.Cpu.Usage` serie desde el `LastWeek` per�
 
 En la captura de pantalla siguiente, vemos que *servidor-02* tenía un pico no explicado la semana pasada:
 
-![Captura de pantalla de PowerShell](media/performance-history/Show-CpuMinMaxAvg.png)
+![Captura de pantalla que muestra que el servidor 02 tenía un pico no explicado la semana pasada.](media/performance-history/Show-CpuMinMaxAvg.png)
 
-### <a name="how-it-works"></a>Cómo funciona
+### <a name="how-it-works"></a>Funcionamiento
 
 La salida de las `Get-ClusterPerf` canalizaciones perfectamente en el cmdlet integrado `Measure-Object` , solo se especifica la `Value` propiedad. Con sus `-Maximum` `-Minimum` marcas, y `-Average` , `Measure-Object` nos da las tres primeras columnas de forma gratuita. Para realizar el análisis del cuartil, podemos canalizar a `Where-Object` y contar cuántos valores eran `-Gt` (mayores que) 25, 50 o 75. El último paso es Beautify con `Format-Hours` `Format-Percent` las funciones auxiliares y, ciertamente opcional.
 
@@ -101,9 +101,9 @@ En este ejemplo se usa la `PhysicalDisk.Latency.Average` serie desde el `LastHou
 
 En la captura de pantalla siguiente, vemos que no hay valores atípicos:
 
-![Captura de pantalla de PowerShell](media/performance-history/Show-LatencyOutlierHDD.png)
+![Captura de pantalla que muestra que no hay valores atípicos.](media/performance-history/Show-LatencyOutlierHDD.png)
 
-### <a name="how-it-works"></a>Cómo funciona
+### <a name="how-it-works"></a>Funcionamiento
 
 En primer lugar, se excluyen las unidades inactivas o casi inactivas comprobando esto de forma `PhysicalDisk.Iops.Total` coherente `-Gt 1` . Para cada HDD activo, canalizamos su `LastHour` período de tiempo, formado por 360 medidas a intervalos de 10 segundos, a `Measure-Object -Average` para obtener la latencia media en la última hora. Esto configura el rellenado.
 
@@ -208,9 +208,9 @@ El historial de rendimiento también puede responder a preguntas en *este moment
 
 En la captura de pantalla siguiente, vemos las 10 principales máquinas virtuales por actividad de almacenamiento:
 
-![Captura de pantalla de PowerShell](media/performance-history/Show-TopIopsVMs.png)
+![Captura de pantalla que muestra las 10 principales máquinas virtuales por actividad de almacenamiento.](media/performance-history/Show-TopIopsVMs.png)
 
-### <a name="how-it-works"></a>Cómo funciona
+### <a name="how-it-works"></a>Funcionamiento
 
 A diferencia de `Get-PhysicalDisk` , el `Get-VM` cmdlet no es compatible con clústeres; solo devuelve las máquinas virtuales del servidor local. Para realizar consultas desde cada servidor en paralelo, se ajusta nuestra llamada en `Invoke-Command (Get-ClusterNode).Name { ... }` . Para cada máquina virtual, obtenemos `VHD.Iops.Total` las `VHD.Iops.Read` medidas, y `VHD.Iops.Write` . Si no se especifica el `-TimeFrame` parámetro, obtenemos el `MostRecent` único punto de datos para cada uno.
 
@@ -260,9 +260,9 @@ En este ejemplo se usa la `NetAdapter.Bandwidth.Total` serie desde el `LastDay` 
 
 En la captura de pantalla siguiente, vemos que un *#2 de Fabrikam NX-4 Pro* alcanza el máximo en el último día:
 
-![Captura de pantalla de PowerShell](media/performance-history/Show-NetworkSaturation.png)
+![Captura de pantalla que muestra que la #2 de Fabrikam NX-4 Pro alcanzó el máximo en el último día.](media/performance-history/Show-NetworkSaturation.png)
 
-### <a name="how-it-works"></a>Cómo funciona
+### <a name="how-it-works"></a>Funcionamiento
 
 Repetimos nuestro `Invoke-Command` truco con respecto a `Get-NetAdapter` en todos los servidores y la canalización en `Get-ClusterPerf` . A lo largo del proceso, tomamos dos propiedades importantes: su `LinkSpeed` cadena como "10 Gbps" y su entero sin formato, `Speed` como 10 mil millones. Usamos `Measure-Object` para obtener el promedio y el pico del último día (recordatorio: cada medida en el `LastDay` período de tiempo representa 5 minutos) y multiplicar por 8 bits por byte para obtener una comparación de manzanas a manzanas.
 
@@ -332,11 +332,11 @@ Para ver las tendencias de las macros, el historial de rendimiento se conserva h
 
 En la captura de pantalla siguiente, vemos que el volumen de *copia de seguridad* agrega unos 15 GB por día:
 
-![Captura de pantalla de PowerShell](media/performance-history/Show-StorageTrend.png)
+![Captura de pantalla que muestra que el volumen de copia de seguridad está agregando unos 15 GB por día.](media/performance-history/Show-StorageTrend.png)
 
 A esta velocidad, alcanzará su capacidad en otro 42 días.
 
-### <a name="how-it-works"></a>Cómo funciona
+### <a name="how-it-works"></a>Funcionamiento
 
 El `LastYear` período de tiempo tiene un punto de datos por día. Aunque solo necesita estrictamente dos puntos para ajustarse a una línea de tendencia, en la práctica es mejor requerir más, como 14 días. Usamos `Select-Object -Last 14` para configurar una matriz de puntos *(x, y)* , para *x* en el intervalo [1, 14]. Con estos puntos, se implementa el [algoritmo de mínimos cuadrados lineal](http://mathworld.wolfram.com/LeastSquaresFitting.html) sencillo para buscar `$A` y `$B` que Parametriza la línea de mejor ajuste *y = AX + b*. Bienvenido a la escuela alta de nuevo.
 
@@ -449,7 +449,7 @@ En la captura de pantalla siguiente, vemos las 10 principales máquinas virtuale
 
 ![Captura de pantalla de PowerShell](media/performance-history/Show-TopMemoryVMs.png)
 
-### <a name="how-it-works"></a>Cómo funciona
+### <a name="how-it-works"></a>Funcionamiento
 
 Repetimos nuestro `Invoke-Command` truco, introducido anteriormente, en `Get-VM` en cada servidor. Usamos `Measure-Object -Average` para obtener la media mensual de cada máquina virtual y, a continuación, va `Sort-Object` seguido de `Select-Object -First 10` para obtener nuestro marcador. (O tal vez sea nuestra lista *más deseada* ?)
 

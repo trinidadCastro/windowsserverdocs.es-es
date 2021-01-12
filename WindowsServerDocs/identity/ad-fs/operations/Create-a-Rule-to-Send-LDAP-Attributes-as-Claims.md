@@ -7,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 6b6cddaa5df89e16f77022b41400be75c2bd67d5
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: d6487cebe0f0cdfeec30fd6f25813254c35a7256
+ms.sourcegitcommit: 6a62d736e4d9989515c6df85e2577662deb042b6
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97048083"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98103797"
 ---
 # <a name="create-a-rule-to-send-ldap-attributes-as-claims"></a>Crear una regla para enviar atributos LDAP como notificaciones
 
@@ -28,19 +28,19 @@ La pertenencia al grupo **Administradores** o equivalente en el equipo local es 
 1.  En el Administrador del servidor, haga clic en **Herramientas** y, luego, seleccione **Administración de AD FS**.
 
 2.  En el árbol de consola, en **AD FS**, haga clic en relaciones de confianza para usuario **autenticado**.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)
+![Captura de pantalla que muestra dónde seleccionar las relaciones de confianza para usuario autenticado cuando se crea una regla para enviar atributos LDAP como notificaciones para una relación de confianza para usuario autenticado en Windows Server 2016.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)
 
 3.  \-Haga clic con el botón derecho en la confianza seleccionada y luego haga clic en **Editar Directiva de emisión de notificaciones**.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)
+![Captura de pantalla que muestra dónde seleccionar Editar Directiva de emisión de notificaciones cuando se crea una regla para enviar atributos LDAP como notificaciones para una relación de confianza para usuario autenticado en Windows Server 2016.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)
 
 4.  En el cuadro de diálogo **Editar Directiva de emisión de notificaciones** , en **reglas de transformación de emisión** , haga clic en **Agregar regla** para iniciar el Asistente para reglas.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)
+![Captura de pantalla que muestra dónde seleccionar Agregar regla cuando se crea una regla para enviar atributos LDAP como notificaciones para una relación de confianza para usuario autenticado en Windows Server 2016.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)
 
 5.  En la **página Seleccionar plantilla de regla** , en **plantilla de regla de notificación**, seleccione **Enviar atributos LDAP como notificaciones** en la lista y, a continuación, haga clic en **siguiente**.
-![crear regla](media/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims/ldap1.PNG)
+![Captura de pantalla que muestra dónde seleccionar la plantilla enviar atributos LDAP como notificaciones al crear una regla para enviar atributos LDAP como notificaciones para una relación de confianza para usuario autenticado en Windows Server 2016.](media/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims/ldap1.PNG)
 
 6.  En la página **configurar regla** , en nombre de la **regla de notificaciones** , escriba el nombre para mostrar de esta regla, seleccione el **almacén de atributos** y, a continuación, seleccione el atributo LDAP y asígnelo al tipo de notificaciones salientes.
-![crear regla](media/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims/ldap2.PNG)
+![Captura de pantalla que muestra dónde escribir el nombre de la regla de notificación cuando se crea una regla para enviar atributos LDAP como notificaciones para una relación de confianza para usuario autenticado en Windows Server 2016.](media/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims/ldap2.PNG)
 
 7.  Haga clic en el botón **Finalizar**.
 
@@ -51,19 +51,19 @@ La pertenencia al grupo **Administradores** o equivalente en el equipo local es 
 1.  En el Administrador del servidor, haga clic en **Herramientas** y, luego, seleccione **Administración de AD FS**.
 
 2.  En el árbol de consola, en **AD FS**, haga clic en **confianzas de proveedor de notificaciones**.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)
+![Captura de pantalla que muestra dónde seleccionar las confianzas del proveedor de notificaciones cuando se crea una regla para enviar atributos LDAP como notificaciones para una confianza de proveedor de notificaciones en Windows Server 2016.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)
 
 3.  Haga clic con el botón secundario \- en la confianza seleccionada y, a continuación, haga clic en **editar reglas de notificaciones**.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)
+![Captura de pantalla que muestra dónde seleccionar editar reglas de notificación cuando se crea una regla para enviar atributos LDAP como notificaciones para una confianza de proveedor de notificaciones en Windows Server 2016.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)
 
 4.  En el cuadro de diálogo **editar reglas de notificaciones** , en **reglas de transformación de aceptación** , haga clic en **Agregar regla** para iniciar el Asistente para reglas.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG)
+![Captura de pantalla que muestra dónde seleccionar Agregar regla cuando se crea una regla para enviar atributos LDAP como notificaciones para una confianza de proveedor de notificaciones en Windows Server 2016.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG)
 
 5.  En la **página Seleccionar plantilla de regla** , en **plantilla de regla de notificación**, seleccione **Enviar atributos LDAP como notificaciones** en la lista y, a continuación, haga clic en **siguiente**.
-![crear regla](media/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims/ldap1.PNG)
+![Captura de pantalla que muestra dónde se deben seleccionar enviar atributos LDAP como notificaciones cuando se crea una regla en Windows Server 2016.](media/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims/ldap1.PNG)
 
 6.  En la página **configurar regla** , en nombre de la **regla de notificaciones** , escriba el nombre para mostrar de esta regla, seleccione el **almacén de atributos** y, a continuación, seleccione el atributo LDAP y asígnelo al tipo de notificaciones salientes.
-![crear regla](media/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims/ldap2.PNG)
+![Captura de pantalla que muestra dónde escribir el nombre de la regla de notificación cuando se crea una regla para enviar atributos LDAP como notificaciones para una confianza de proveedor de notificaciones en Windows Server 2016.](media/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims/ldap2.PNG)
 
 7.  Haga clic en el botón **Finalizar**.
 
@@ -78,7 +78,7 @@ La pertenencia al grupo **Administradores** o equivalente en el equipo local es 
 2.  En el árbol de consola, en **relaciones de \\ confianza de ad FSAD FS**, haga clic en **confianzas de proveedor de notificaciones** o en **confianzas para usuario autenticado** y, a continuación, haga clic en una confianza específica en la lista en la que desea crear esta regla.
 
 3.  Haga clic con el botón secundario \- en la confianza seleccionada y, a continuación, haga clic en **editar reglas de notificaciones**.
-![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)
+![Captura de pantalla que muestra dónde seleccionar editar reglas de notificación cuando se crea una regla para enviar atributos LDAP como notificaciones para Windows Server 2012 R2.](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)
 
 4.  En el cuadro de diálogo **editar reglas de notificaciones** , seleccione una de las siguientes pestañas, en función de la confianza que esté editando y el conjunto de reglas en el que desee crear esta regla y, a continuación, haga clic en **Agregar regla** para iniciar el Asistente para reglas que está asociado con ese conjunto de reglas:
 
@@ -89,10 +89,10 @@ La pertenencia al grupo **Administradores** o equivalente en el equipo local es 
     -   **Reglas de autorización de emisión**
 
     -   Reglas de autorización de **delegación** 
- ![ crear regla](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)
+ ![ Captura de pantalla que muestra dónde seleccionar Agregar regla cree una regla para enviar atributos LDAP como notificaciones para Windows Server 2012 R2.](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)
 
 5.  En la **página Seleccionar plantilla de regla** , en **plantilla de regla de notificación**, seleccione **Enviar atributos LDAP como notificaciones** en la lista y, a continuación, haga clic en **siguiente**.
-![crear regla](media/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims/ldap3.PNG)
+![Captura de pantalla que muestra dónde se deben seleccionar enviar atributos LDAP como notificaciones creación de una regla para Windows Server 2012 R2.](media/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims/ldap3.PNG)
 
 6.  En la página **configurar regla** , en nombre de la **regla de notificaciones** , escriba el nombre para mostrar de esta regla, en **almacén de atributos** , seleccione **Active Directory** y, en **asignación de atributos LDAP a tipos de notificaciones salientes** , seleccione el **atributo LDAP** deseado y los tipos de **tipo de notificaciones salientes** correspondientes en las listas desplegables \- .
 
