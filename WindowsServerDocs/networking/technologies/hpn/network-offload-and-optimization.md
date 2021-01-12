@@ -1,18 +1,18 @@
 ---
 title: Descarga de la red y tecnologías de optimización
-description: En este tema se proporciona información general sobre las tecnologías de descarga y optimización en Windows Server 2016, e incluye vínculos a instrucciones adicionales sobre estas tecnologías.
+description: Obtenga información sobre las diferentes características de descarga y optimización de red disponibles en Windows Server 2016 y analice Cómo ayudan a las redes a ser más eficientes.
 ms.topic: article
 ms.assetid: 0cafb1cc-5798-42f5-89b6-3ffe7ac024ba
 manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 09/20/2018
-ms.openlocfilehash: e6f53fa8462a51e23fa9fc00aad89d8a8a3ee445
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 8d0728dda0bca8188668c1bbb3570390f8608432
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87947009"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98112921"
 ---
 # <a name="network-offload-and-optimization-technologies"></a>Descarga de la red y tecnologías de optimización
 

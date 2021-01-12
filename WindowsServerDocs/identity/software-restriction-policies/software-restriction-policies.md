@@ -1,18 +1,18 @@
 ---
 title: Directivas de restricción de software
-description: Seguridad de Windows Server
+description: Obtenga información sobre las directivas de restricción de software (SRP) en Windows Server 2012 y Windows 8 y busque vínculos a información técnica sobre SRP a partir de Windows Server 2003.
 ms.topic: article
 ms.assetid: 5c0befad-07c3-4262-b418-372d01850305
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: f4019902622b667267562a8490b6540a6c27d1e4
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 3d98c52719efeec447d9bdedc4fb824c6dbeca4d
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89640236"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98112951"
 ---
 # <a name="software-restriction-policies"></a>Directivas de restricción de software
 
@@ -71,14 +71,14 @@ Se necesitan las siguientes características para crear y mantener las directiva
 
 Si el diseño requiere la implementaciones de estas directivas en el dominio, además de la lista anterior se necesitarán las siguientes características:
 
--   Active Directory Domain Services
+-   Servicios de dominio de Active Directory
 
 -   Directiva de grupo
 
 ## <a name="server-manager-information"></a><a name="BKMK_INSTALL"></a>Información sobre el Administrador del servidor
 Las directivas de restricción de software son una extensión del Editor de directivas de grupo local y no se instalan a través de Administrador del servidor, Agregar roles y características.
 
-## <a name="see-also"></a><a name="BKMK_LINKS"></a>Vea también
+## <a name="see-also"></a><a name="BKMK_LINKS"></a>Otras referencias
 En la tabla siguiente se proporcionan vínculos a recursos importantes para comprender y usar SRP.
 
 |Tipo de contenido|Referencias|

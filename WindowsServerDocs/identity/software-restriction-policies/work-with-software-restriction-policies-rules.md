@@ -1,18 +1,18 @@
 ---
 title: Trabajo con reglas de directivas de restricción de software
-description: Seguridad de Windows Server
+description: Obtenga información acerca de los procedimientos que trabajan con las reglas de certificado, ruta de acceso, zona de Internet y hash mediante directivas de restricción de software.
 ms.topic: article
 ms.assetid: 4a8047d5-9bb9-4bed-bc8f-583a237731e2
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 883788eb2966a2f5e108b912f087abd4e601ea0b
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: d36483dec8d5802df042d3444e477bcb508a9819
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89624214"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98113451"
 ---
 # <a name="work-with-software-restriction-policies-rules"></a>Trabajo con reglas de directivas de restricción de software
 
@@ -50,7 +50,7 @@ Cuando se crean reglas para el dominio mediante directiva de grupo, debe tener p
 
 1.  Abra Directivas de restricción de software.
 
-2.  En el árbol de consola o en el panel de detalles, haga clic con el botón secundario en **reglas adicionales**y, a continuación, haga clic en **nueva regla de certificado**.
+2.  En el árbol de consola o en el panel de detalles, haga clic con el botón secundario en **reglas adicionales** y, a continuación, haga clic en **nueva regla de certificado**.
 
 3.  Haga clic en **Examinar** y, a continuación, seleccione un certificado o archivo firmado.
 
@@ -164,7 +164,7 @@ La configuración de directiva de la pestaña **Editores de confianza** de la di
 
 ##### <a name="to-configure-the-trusted-publishers-policy-settings-for-a-local-computer"></a>Para establecer la configuración de la directiva Editores de confianza en un equipo local
 
-1.  En la pantalla **Inicio** , escriba**gpedit. msc** y, a continuación, presione Entrar.
+1.  En la pantalla **Inicio** , escriba **gpedit. msc** y, a continuación, presione Entrar.
 
 2.  En el árbol de consola, en **Directiva de equipo local\Configuración del equipo\Configuración de Windows\Configuración de seguridad**, haga clic en **Directivas de clave pública**.
 
@@ -190,7 +190,7 @@ La configuración de directiva de la pestaña **Editores de confianza** de la di
 
 1.  En la pantalla **Inicio** , escriba, **gpedit. msc** en **Buscar programas y archivos** o en Windows 8, en el escritorio y, a continuación, presione Entrar.
 
-2.  En el árbol de consola, en **Directiva de dominio predeterminada** o **Directiva de equipo local**, haga doble clic en **configuración del equipo**, **configuración de Windows**y configuración de **seguridad**y, a continuación, haga clic en **directivas de clave pública**.
+2.  En el árbol de consola, en **Directiva de dominio predeterminada** o **Directiva de equipo local**, haga doble clic en **configuración del equipo**, **configuración de Windows** y configuración de **seguridad** y, a continuación, haga clic en **directivas de clave pública**.
 
 3.  Haga doble clic en **Configuración de validación de rutas de certificados** y, a continuación, haga clic en la pestaña **Editores de confianza**.
 
@@ -221,7 +221,7 @@ Por ejemplo, puede crear una regla de hash y establecer el nivel de seguridad en
 
 1.  Abra Directivas de restricción de software.
 
-2.  En el árbol de consola o en el panel de detalles, haga clic con el botón secundario en **reglas adicionales**y, a continuación, haga clic en **nueva regla de hash**.
+2.  En el árbol de consola o en el panel de detalles, haga clic con el botón secundario en **reglas adicionales** y, a continuación, haga clic en **nueva regla de hash**.
 
 3.  Haga clic en **examinar** para buscar un archivo.
 
@@ -249,11 +249,11 @@ Las reglas de zona de Internet solo se aplican a los paquetes de Windows Install
 
 1.  Abra Directivas de restricción de software.
 
-2.  En el árbol de consola o en el panel de detalles, haga clic con el botón secundario en **reglas adicionales**y, a continuación, haga clic en **nueva regla de zona de Internet**.
+2.  En el árbol de consola o en el panel de detalles, haga clic con el botón secundario en **reglas adicionales** y, a continuación, haga clic en **nueva regla de zona de Internet**.
 
 3.  En **Zona de Internet**, haga clic en una zona de Internet.
 
-4.  En **nivel de seguridad**, haga clic en no **permitido** o no **restringido**y, a continuación, haga clic en **Aceptar**.
+4.  En **nivel de seguridad**, haga clic en no **permitido** o no **restringido** y, a continuación, haga clic en **Aceptar**.
 
 > [!NOTE]
 > -   Es posible que sea necesario crear una nueva configuración de directiva de restricción de software para el objeto de directiva de grupo (GPO), si aun no lo ha hecho.
@@ -270,7 +270,7 @@ Como estas reglas se especifican a través de la ruta de acceso, si se mueve un 
 
 1.  Abra Directivas de restricción de software.
 
-2.  En el árbol de consola o en el panel de detalles, haga clic con el botón secundario en **reglas adicionales**y, a continuación, haga clic en **nueva regla de ruta de acceso**.
+2.  En el árbol de consola o en el panel de detalles, haga clic con el botón secundario en **reglas adicionales** y, a continuación, haga clic en **nueva regla de ruta de acceso**.
 
 3.  En **Ruta de acceso**, escriba una ruta de acceso o haga clic en **Examinar** para buscar un archivo o una carpeta.
 
@@ -300,11 +300,11 @@ Como estas reglas se especifican a través de la ruta de acceso, si se mueve un 
 
 3.  Abra Directivas de restricción de software.
 
-4.  En el árbol de consola o en el panel de detalles, haga clic con el botón secundario en **reglas adicionales**y, a continuación, haga clic en **nueva regla de ruta de acceso**.
+4.  En el árbol de consola o en el panel de detalles, haga clic con el botón secundario en **reglas adicionales** y, a continuación, haga clic en **nueva regla de ruta de acceso**.
 
 5.  En **ruta de acceso**, pegue el nombre de la clave del registro, seguido del nombre del valor.
 
-6.  Incluya la ruta de acceso del registro entre signos de porcentaje (%), por ejemplo,% HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\PlatformSDK\Directories\InstallDir%.
+6.  Incluya la ruta de acceso del registro entre signos de porcentaje (%), por ejemplo,% HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PlatformSDK\Directories\InstallDir%.
 
 7.  En **nivel de seguridad**, haga clic en no **permitido** o no **restringido**.
 

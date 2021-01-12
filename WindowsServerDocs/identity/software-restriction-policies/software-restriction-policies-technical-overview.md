@@ -1,18 +1,18 @@
 ---
 title: Información técnica de Directivas de restricción de software
-description: Seguridad de Windows Server
+description: Obtenga información sobre las directivas de restricción de software, Cuándo y cómo usar la característica y qué cambios se han implementado en las versiones anteriores.
 ms.topic: article
 ms.assetid: dc7013b0-0efd-40fd-bd6d-75128adbd0b8
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 49d0f32d1634a37f5ddda71f8147017e9863b1e6
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: f8167814376e630ce45097c1fc6abfdd562dce57
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89640245"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98113281"
 ---
 # <a name="software-restriction-policies-technical-overview"></a>Información técnica de Directivas de restricción de software
 
@@ -29,7 +29,7 @@ Las directivas de restricción de software son directivas de confianza, las cuá
 
 -   [Administración de las directivas de restricción de software](administer-software-restriction-policies.md)
 
-    -   [Determinar la lista de permitidos y el inventario de aplicaciones para las directivas de restricción de software](determine-allow-deny-list-and-application-inventory-for-software-restriction-policies.md)
+    -   [Determinar Allow-Deny lista y el inventario de aplicaciones para las directivas de restricción de software](determine-allow-deny-list-and-application-inventory-for-software-restriction-policies.md)
 
     -   [Trabajo con reglas de directivas de restricción de software](work-with-software-restriction-policies-rules.md)
 

@@ -1,18 +1,18 @@
 ---
 title: Información general sobre contraseñas
-description: Seguridad de Windows Server
+description: Obtenga información acerca de las contraseñas que se usan en los sistemas operativos Windows y busque vínculos a documentación y debates sobre el uso de contraseñas en una estrategia de administración de credenciales.
 ms.topic: article
 ms.assetid: f608960e-2039-4c91-9c8c-9b81053c675e
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 1b917691f931836605cfe044c725f5200925d2ca
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 34397f99156f743e4e2ea07e319a1eeadcb5682a
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89621887"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98113421"
 ---
 # <a name="passwords-overview"></a>Información general sobre contraseñas
 
@@ -39,7 +39,7 @@ No se ha dejado de usar ninguna funcionalidad de contraseña en Windows Server 2
 ## <a name="software-requirements"></a><a name="BKMK_SOFT"></a>Requisitos de software
 En entornos empresariales, las contraseñas se administran normalmente con Active Directory Domain Services. Las contraseñas también se pueden administrar en el equipo local con las opciones de configuración de seguridad local, directivas de cuenta y Directiva de contraseñas.
 
-## <a name="see-also"></a><a name="BKMK_LINKS"></a>Vea también
+## <a name="see-also"></a><a name="BKMK_LINKS"></a>Otras referencias
 En esta tabla se enumeran recursos adicionales para las características de contraseña, la tecnología y la administración de credenciales.
 
 |Tipo de contenido|Referencias|

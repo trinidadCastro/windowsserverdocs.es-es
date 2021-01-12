@@ -1,18 +1,18 @@
 ---
 title: Implementar VPN de Always On
-description: En este tema se proporcionan instrucciones detalladas para implementar Always On VPN en Windows Server 2016.
+description: Obtenga información sobre el flujo de trabajo para implementar Always On conexiones VPN para equipos cliente de Windows 10 Unidos a un dominio remoto.
 ms.topic: article
 ms.assetid: ad748de2-d175-47bf-b05f-707dc48692cf
 ms.localizationpriority: medium
 ms.date: 11/05/2018
 ms.author: v-tea
 author: Teresa-MOTIV
-ms.openlocfilehash: 1ba1e31c743d986e777af26f9acee5ed8820515a
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: f206fec4bfbc6f5e821539cf1e230832372a289e
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87958273"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98113221"
 ---
 # <a name="deploy-always-on-vpn"></a>Implementar VPN de Always On
 

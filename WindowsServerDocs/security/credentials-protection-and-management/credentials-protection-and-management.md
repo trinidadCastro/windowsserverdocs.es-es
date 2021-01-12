@@ -1,18 +1,18 @@
 ---
 title: Protección y administración de credenciales
-description: Seguridad de Windows Server
+description: Obtenga información sobre las características y los métodos introducidos en Windows Server 2012 R2 y Windows 8.1 para los controles de protección de credenciales y autenticación de dominios para reducir el robo de credenciales.
 ms.topic: article
 ms.assetid: e457229c-0126-40fe-948c-101c943e1b57
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 37fbec56a855a4d875680a8c1e2c9e0055ed9f12
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 12d4c0372ad6c5a0f67dde5c8e7eac7cc651cd49
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89641188"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98113501"
 ---
 # <a name="credentials-protection-and-management"></a>Protección y administración de credenciales
 

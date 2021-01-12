@@ -1,18 +1,18 @@
 ---
 title: Determinación de la lista de permisos y denegaciones y del inventario de aplicaciones para directivas de restricción de software
-description: Seguridad de Windows Server
+description: Obtenga información acerca de cómo crear una lista de permitidos y denegaciones para que las aplicaciones se administren mediante directivas de restricción de software (SRP) a partir de Windows Server 2008 y Windows Vista.
 ms.topic: article
 ms.assetid: 0abb73b6-b5d8-4505-8ab1-2f29e4bf0411
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 9da7cc8490f5b660ed5ce327b4572dc968e10c48
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 64b7c085c8bf64aa4d7d9d9de346ac71274f650c
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89637860"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98113431"
 ---
 # <a name="determine-allow-deny-list-and-application-inventory-for-software-restriction-policies"></a>Determinación de la lista de permisos y denegaciones y del inventario de aplicaciones para directivas de restricción de software
 
@@ -46,7 +46,7 @@ Para usar de forma eficaz la regla predeterminada permitir, debe determinar exac
 
 2.  Cree el siguiente valor del registro para habilitar la característica de registro avanzado y establezca la ruta de acceso en la que se debe escribir el archivo de registro.
 
-    **"HKEY_LOCAL_MACHINE \SOFTWARE\Policies\Microsoft\Windows\Safer\CodeIdentifiers"**
+    **"HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Safer\CodeIdentifiers"**
 
     Valor de cadena: *nombreDeArchivoDeRegistro ruta de acceso a nombreDeArchivoDeRegistro*
 

@@ -1,18 +1,18 @@
 ---
 title: Uso de directivas de restricción de software para ayudar a proteger equipos frente a virus de correo electrónico
-description: Seguridad de Windows Server
+description: Obtenga información acerca de cómo establecer directivas de control de aplicaciones mediante directivas de restricción de software (SRP) para ayudar a proteger el equipo frente a virus de correo electrónico a partir de Windows Server 2008 y Windows Vista.
 ms.topic: article
 ms.assetid: 02f23979-f832-4e46-bdea-21fd77db35b2
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 502d9a097928c6a9b828ebc3b9d5b3544d456388
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: bf7da1388ecbe65269ee6d847c86e643b3bc39bd
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89640221"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98113461"
 ---
 # <a name="use-software-restriction-policies-to-help-protect-your-computer-against-an-email-virus"></a>Uso de directivas de restricción de software para ayudar a proteger equipos frente a virus de correo electrónico
 

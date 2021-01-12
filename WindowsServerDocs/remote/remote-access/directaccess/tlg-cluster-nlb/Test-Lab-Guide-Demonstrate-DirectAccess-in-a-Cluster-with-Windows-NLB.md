@@ -1,18 +1,18 @@
 ---
 title: 'Guía del laboratorio de pruebas: demostración de DirectAccess en un clúster con Windows NLB'
-description: Obtenga información sobre cómo extender la configuración de la instalación de un solo servidor de DirectAccess con la guía del laboratorio de pruebas IPv4 e IPv6 mixta para demostrar la configuración de clúster y el equilibrio de carga de red de DirectAccess.
+description: Obtenga información acerca de cómo ampliar la configuración de la configuración de un solo servidor de DirectAccess con la guía del laboratorio de pruebas IPv4 e IPv6 mixto para mostrar la configuración de clúster y el equilibrio de carga de red de DirectAccess.
 manager: brianlic
 ms.topic: article
 ms.assetid: db15dcf5-4d64-48d7-818a-06c2839e1289
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: b6876141c55a78e8c6271558b1eb3246b3ebe4d7
-ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
+ms.openlocfilehash: 9412711a2b4f394908547bb3381a1319955046b1
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98040555"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98112851"
 ---
 # <a name="test-lab-guide-demonstrate-directaccess-in-a-cluster-with-windows-nlb"></a>Guía del laboratorio de prueba: mostrar DirectAccess en un clúster con Windows NLB
 

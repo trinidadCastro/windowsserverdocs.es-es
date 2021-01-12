@@ -1,18 +1,18 @@
 ---
 title: Crear la clave raíz del Servicio de distribución de claves (KDS)
-description: Seguridad de Windows Server
+description: Obtenga información sobre cómo crear una clave raíz del servicio de distribución de claves (kdssvc.dll) de Microsoft en el controlador de dominio mediante Windows PowerShell para generar contraseñas de cuentas de servicio administradas de grupo en Windows Server 2012 o posterior.
 ms.topic: article
 ms.assetid: 42e5db8f-1516-4d42-be0a-fa932f5588e9
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 6f1852e245bb2f8a26fb15ebe67bfaab8c260192
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 84b925cb44aa8f1da43ac71beff3341da3ff3880
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89638078"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98112931"
 ---
 # <a name="create-the-key-distribution-services-kds-root-key"></a>Crear la clave raíz del Servicio de distribución de claves (KDS)
 

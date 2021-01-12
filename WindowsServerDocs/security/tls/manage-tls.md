@@ -1,17 +1,17 @@
 ---
 title: Administración de Seguridad de la capa de transporte (TLS)
-description: Seguridad de Windows Server
+description: Obtenga información acerca de cómo administrar la seguridad de la capa de transporte.
 ms.topic: article
 author: justinha
 ms.author: justinha
 manager: brianlic
 ms.date: 05/16/2018
-ms.openlocfilehash: a6af172f515345a18bbd16f37b8007302ffbab70
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: c6dc0bcefda94b8d2b5490fa2378f60d26877bc5
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96864035"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98113301"
 ---
 # <a name="manage-transport-layer-security-tls"></a>Administración de Seguridad de la capa de transporte (TLS)
 
@@ -33,7 +33,7 @@ Los cambios en el orden de los conjuntos de cifrado TLS surtirán efecto en el s
 
 Puede usar el orden de los conjuntos de cifrado SSL directiva de grupo configuración para configurar el orden predeterminado del conjunto de cifrado TLS.
 
-1. En el consola de administración de directivas de grupo, vaya a **configuración del equipo**  >  **plantillas administrativas**  >  **Network**  >  **Opciones de configuración de SSL** de red.
+1. En el consola de administración de directivas de grupo, vaya a **configuración del equipo**  >  **plantillas administrativas**  >    >  **Opciones de configuración de SSL** de red.
 2. Haga doble clic en **orden de conjunto de cifrado SSL** y, a continuación, haga clic en la opción **habilitado** .
 3. Haga clic con el botón secundario en el cuadro **conjuntos de cifrado SSL** y seleccione **seleccionar todo** en el menú emergente.
 

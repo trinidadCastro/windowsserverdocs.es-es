@@ -1,18 +1,18 @@
 ---
 title: Directiva de calidad de servicio (QoS)
-description: En este tema se proporciona información general sobre la Directiva de calidad de servicio (QoS), que permite usar directiva de grupo para priorizar el ancho de banda del tráfico de red de aplicaciones y servicios específicos en Windows Server 2016.
+description: Aprenda a usar la Directiva de QoS como punto central de la administración del ancho de banda de red en toda la infraestructura de Active Directory mediante la creación de perfiles de QoS, cuyos valores se distribuyen con directiva de grupo.
 ms.topic: article
 ms.assetid: 16918506-102c-482e-89d3-004ad8d6aabe
 manager: brianlic
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: dd43c38e44a02b3d50bff952b8a174b049c585d8
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 616fe115246b1b6bb6aa4eae6c98265ff6250765
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97946661"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98113391"
 ---
 # <a name="quality-of-service-qos-policy"></a>Directiva QoS de calidad de servicio \( \)
 

@@ -1,18 +1,18 @@
 ---
 title: Group Managed Service Accounts Overview
-description: Seguridad de Windows Server
+description: Obtener información acerca de la cuenta de servicio administrada de grupo; aplicaciones especialmente prácticas, cambios en la implementación de Microsoft y requisitos de hardware y software.
 ms.topic: article
 ms.assetid: cef0693c-f861-48a7-a1c0-8d1bc06143ce
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: ce51e1f1dab3940154ecee6b2743c39e2ff654b5
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: ad6fc6ff95fda08369d88bd76606b523a56cd0b2
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89638040"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98113441"
 ---
 # <a name="group-managed-service-accounts-overview"></a>Group Managed Service Accounts Overview
 
@@ -49,7 +49,7 @@ GMSA no se aplican a los sistemas operativos Windows anteriores a Windows Server
 ## <a name="server-manager-information"></a>Información sobre el Administrador del servidor
 No hay ningún paso de configuración necesario para implementar MSA y gMSA con Administrador del servidor o el \- cmdlet install WindowsFeature.
 
-## <a name="see-also"></a><a name="BKMK_LINKS"></a>Vea también
+## <a name="see-also"></a><a name="BKMK_LINKS"></a>Otras referencias
 En la tabla siguiente se proporcionan vínculos a recursos adicionales relacionados con las cuentas de servicio administradas y las cuentas de servicio administradas de grupo.
 
 |Tipo de contenido|Referencias|

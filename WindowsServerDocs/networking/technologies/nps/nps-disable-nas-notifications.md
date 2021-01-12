@@ -1,18 +1,18 @@
 ---
 title: Deshabilitación del reenvío de notificaciones NAS en NPS
-description: En este tema se proporcionan instrucciones sobre cómo configurar las autenticaciones simultáneas del servidor de directivas de redes en Windows Server 2016.
+description: Obtenga información acerca de cómo deshabilitar el reenvío de mensajes de inicio y detención de los servidores de acceso a la red a los miembros de un grupo de servidores remotos RADIUS configurado en NPS.
 manager: brianlic
 ms.topic: article
 ms.assetid: a09bfb03-95fc-4534-bf3c-97078ef6b07e
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 795db196c5fd1b6241fe0b32c3d277e674e1e9aa
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: f99e8e19df70113997600e25528647b608146d27
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949001"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98112861"
 ---
 # <a name="disable-nas-notification-forwarding-in-nps"></a>Deshabilitación del reenvío de notificaciones NAS en NPS
 

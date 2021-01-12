@@ -1,18 +1,18 @@
 ---
 title: Arquitectura de la directiva QoS
-description: En este tema se proporciona información general sobre la Directiva de calidad de servicio (QoS), que permite usar directiva de grupo para priorizar el ancho de banda del tráfico de red de aplicaciones y servicios específicos en Windows Server 2016.
+description: Obtenga información sobre la arquitectura de la directiva QoS.
 ms.topic: article
 ms.assetid: 25097cb8-b9b1-41c9-b3c7-3610a032e0d8
 manager: brianlic
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: d95ed99889eef110f45f5c672b7491d7bbe1cdcc
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 68b61610a28c81141e336826229793f681276ade
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97950291"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98113291"
 ---
 # <a name="qos-policy-architecture"></a>Arquitectura de la directiva QoS
 

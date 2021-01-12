@@ -1,18 +1,18 @@
 ---
 title: Directivas de autenticación y silos de directivas de autenticación
-description: Seguridad de Windows Server
+description: Obtenga información sobre los silos de directivas de autenticación y las directivas que pueden restringir las cuentas a esos silos.
 ms.topic: article
 ms.assetid: 7eb0e640-033d-49b5-ab44-3959395ad567
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 931ebeda8b865c16dc6f67ae765b6bc6f7aaed1f
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 30afdda4b0d3eabeb8f57ed3b0ad1c9d79ebc9ee
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89621938"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98113521"
 ---
 # <a name="authentication-policies-and-authentication-policy-silos"></a>Directivas de autenticación y silos de directivas de autenticación
 
@@ -35,7 +35,7 @@ Un silo de directivas de autenticación controla qué cuentas puede restringir e
 
 **Esquema de Active Directory para silos de directivas de autenticación**
 
-|Display Name (Nombre para mostrar)|Descripción|
+|Nombre para mostrar|Descripción|
 |--------|--------|
 |Authentication Policy Silo|Una instancia de esta clase define las directivas de autenticación y los comportamientos relacionados para los usuarios, equipos y servicios asignados.|
 |Authentication Policy Silos|Un contenedor de esta clase puede contener objetos de silo de directivas de autenticación.|
@@ -59,7 +59,7 @@ Las directivas de autenticación controlan lo siguiente:
 
 El tipo de cuenta Active Directory determina el rol del llamador como uno de los siguientes:
 
--   **User**
+-   **Usuario**
 
     Los usuarios siempre deben ser miembros del grupo de seguridad Usuarios protegidos que, de forma predeterminada, rechaza los intentos de autenticación con NTLM.
 

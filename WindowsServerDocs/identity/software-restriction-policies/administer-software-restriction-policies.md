@@ -1,18 +1,18 @@
 ---
 title: Administración de las directivas de restricción de software
-description: Seguridad de Windows Server
+description: Obtenga información acerca de cómo administrar directivas de control de aplicaciones mediante directivas de restricción de software (SRP) a partir de Windows Server 2008 y Windows Vista.
 ms.topic: article
 ms.assetid: 8cc22093-67d1-47b6-9ddd-4569b6761ce9
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: b67464b2a1b1d9f1828afc7885ddd8e18116c1d6
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 84667034011ee655720e14f370fcd338e29dc98b
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89637872"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98112941"
 ---
 # <a name="administer-software-restriction-policies"></a>Administración de las directivas de restricción de software
 
@@ -41,7 +41,7 @@ Este tema contiene:
 
 Para obtener información acerca de cómo realizar tareas específicas con SRP, consulte lo siguiente:
 
--   [Determinar la lista de permitidos y el inventario de aplicaciones para las directivas de restricción de software](determine-allow-deny-list-and-application-inventory-for-software-restriction-policies.md)
+-   [Determinar Allow-Deny lista y el inventario de aplicaciones para las directivas de restricción de software](determine-allow-deny-list-and-application-inventory-for-software-restriction-policies.md)
 
 -   [Trabajo con reglas de directivas de restricción de software](work-with-software-restriction-policies-rules.md)
 
@@ -74,7 +74,7 @@ Para obtener información acerca de cómo realizar tareas específicas con SRP, 
 
 1.  Abra Microsoft Management Console (MMC).
 
-2.  En el menú **archivo** , haga clic en **Agregar o quitar complemento**y, a continuación, haga clic en **Agregar**.
+2.  En el menú **archivo** , haga clic en **Agregar o quitar complemento** y, a continuación, haga clic en **Agregar**.
 
 3.  Haga clic en **Editor de directivas de grupo local** y, a continuación, haga clic en **Agregar**.
 
@@ -122,7 +122,7 @@ Para obtener información acerca de cómo realizar tareas específicas con SRP, 
 
     **Mientras?**
 
-    -   Sitios y servicios de Active Directory [*Domain_Controller_Name. Domain_Name*]/sites/site
+    -   Sitios y servicios de Active Directory [*Domain_Controller_Name. nombre_dominio*]/sitios/sitio
 
 3.  Haga clic en una entrada de **Directiva de grupo vínculos de objeto** para seleccionar un objeto Directiva de grupo existente (GPO) y, a continuación, haga clic en **Editar**. También puede hacer clic en **Nuevo** para crear un nuevo GPO y, a continuación, haga clic en **Editar**.
 
@@ -214,6 +214,6 @@ Para obtener información acerca de cómo realizar tareas específicas con SRP, 
 
 > [!NOTE]
 > -   Para llevar a cabo este procedimiento, debe ser miembro del grupo Administradores del equipo local o tener delegada la autoridad adecuada. Si el equipo está unido a un dominio, los miembros del grupo Administradores de dominio podrían llevar a cabo este procedimiento.
-> -   De manera predeterminada, las directivas de restricción de software no comprueban las bibliotecas de vínculos dinámicos (DLL). Comprobar las DLL puede reducir el rendimiento del sistema, porque las directivas de restricción de software deben ser evaluadas cada vez que se carga una DLL. Sin embargo, puede elegir comprobar las DLL si le preocupa recibir un virus que ataque las DLL. Si el nivel de seguridad predeterminado se establece en no **permitido**y habilita la comprobación de dll, debe crear reglas de directivas de restricción de software que permitan la ejecución de cada dll.
+> -   De manera predeterminada, las directivas de restricción de software no comprueban las bibliotecas de vínculos dinámicos (DLL). Comprobar las DLL puede reducir el rendimiento del sistema, porque las directivas de restricción de software deben ser evaluadas cada vez que se carga una DLL. Sin embargo, puede elegir comprobar las DLL si le preocupa recibir un virus que ataque las DLL. Si el nivel de seguridad predeterminado se establece en no **permitido** y habilita la comprobación de dll, debe crear reglas de directivas de restricción de software que permitan la ejecución de cada dll.
 
 

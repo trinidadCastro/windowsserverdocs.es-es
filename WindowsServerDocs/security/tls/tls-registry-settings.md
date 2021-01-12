@@ -1,17 +1,17 @@
 ---
 title: Configuración del Registro de Seguridad de la capa de transporte (TLS)
-description: Seguridad de Windows Server
+description: Obtenga información acerca de la configuración del registro compatible para la implementación de Windows del protocolo seguridad de la capa de transporte (TLS).
 ms.topic: article
 author: justinha
 ms.author: justinha
 manager: brianlic
 ms.date: 02/28/2019
-ms.openlocfilehash: 3304d236511c9018d734984029239608e59ab1a3
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 474b8d709fca920290459601e7c214d8167ff1a2
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989567"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98113401"
 ---
 # <a name="transport-layer-security-tls-registry-settings"></a>Configuración del Registro de Seguridad de la capa de transporte (TLS)
 
@@ -101,7 +101,7 @@ Dado que SNI y CCS permiten que IIS se escale a miles de sitios web que pueden t
 
 Versiones aplicables: todas las versiones a partir de Windows Server 2012 y Windows 8.
 
-Ruta de acceso del registro: [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL]
+Ruta de acceso del registro: [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL]
 
 Agregue la siguiente clave:
 
@@ -117,7 +117,7 @@ Para deshabilitar, establezca el valor DWORD en 0:
 ## <a name="fipsalgorithmpolicy"></a>FIPSAlgorithmPolicy
 
 Esta entrada controla el cumplimiento del Estándar federal de procesamiento de información (FIPS).
-El valor predeterminado es 0.
+El valor predeterminado es 0.
 
 Versiones aplicables: todas las versiones a partir de Windows Server 2012 y Windows 8.
 
@@ -180,9 +180,9 @@ Esta entrada no existe en el registro de forma predeterminada.
 Después de haber creado la entrada, cambie el valor DWORD a la longitud de bit deseada.
 Si no se configura, no se aplica un máximo.
 
-## <a name="keyexchangealgorithm---diffie-hellman-key-sizes"></a>KeyExchangeAlgorithm: tamaños de clave Diffie-Hellman
+## <a name="keyexchangealgorithm---diffie-hellman-key-sizes"></a>Tamaños de clave de KeyExchangeAlgorithm-Diffie-Hellman
 
-Esta entrada controla los tamaños de clave Diffie-Hellman.
+Esta entrada controla los tamaños de clave de Diffie-Hellman.
 
 El uso de algoritmos de intercambio de claves se debe controlar configurando el orden de los conjuntos de cifrado.
 
@@ -190,17 +190,17 @@ Agregado en Windows 10, versión 1507 y Windows Server 2016.
 
 Ruta de acceso del registro: HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\KeyExchangeAlgorithms\Diffie-Hellman
 
-Para especificar un intervalo mínimo admitido de longitud de bit de clave Diffie-Helman para el cliente TLS, cree una entrada **ClientMinKeyBitLength** .
+Para especificar un intervalo mínimo admitido de Diffie-Helman longitud de bit de clave para el cliente TLS, cree una entrada **ClientMinKeyBitLength** .
 Esta entrada no existe en el registro de forma predeterminada.
 Después de haber creado la entrada, cambie el valor DWORD a la longitud de bit deseada.
 Si no se configura, 1024 bits será el mínimo.
 
-Para especificar un intervalo máximo compatible de longitud de bit de clave Diffie-Helman para el cliente TLS, cree una entrada **ClientMaxKeyBitLength** .
+Para especificar un intervalo máximo compatible de Diffie-Helman longitud de bit de clave para el cliente TLS, cree una entrada **ClientMaxKeyBitLength** .
 Esta entrada no existe en el registro de forma predeterminada.
 Después de haber creado la entrada, cambie el valor DWORD a la longitud de bit deseada.
 Si no se configura, no se aplica un máximo.
 
-Para especificar la longitud de bit de clave Diffie-Helman para el servidor TLS predeterminado, cree una entrada **ServerMinKeyBitLength** .
+Para especificar el Diffie-Helman longitud de bit de clave para el servidor TLS predeterminado, cree una entrada **ServerMinKeyBitLength** .
 Esta entrada no existe en el registro de forma predeterminada.
 Después de haber creado la entrada, cambie el valor DWORD a la longitud de bit deseada.
 Si no se configura, el valor predeterminado es 2048 bits.
@@ -268,8 +268,8 @@ Comportamiento predeterminado de enviar lista de emisores de confianza
 
 | Versión de Windows | Time |
 |-----------------|------|
-| Windows Server 2012 y Windows 8 y versiones posteriores | FALSE |
-| Windows Server 2008 R2 y Windows 7 y versiones anteriores | TRUE |
+| Windows Server 2012 y Windows 8 y versiones posteriores | false |
+| Windows Server 2008 R2 y Windows 7 y versiones anteriores | true |
 
 Versiones aplicables: todas las versiones a partir de Windows Server 2008 y Windows Vista.
 
@@ -307,7 +307,7 @@ Tabla de subclaves de SSL 2.0
 | Subclave | Descripción |
 |--------|-------------|
 | Cliente | Controla el uso de SSL 2,0 en el cliente SSL. |
-| Servidor | Controla el uso de SSL 2,0 en el servidor SSL. |
+| Server | Controla el uso de SSL 2,0 en el servidor SSL. |
 
 Para deshabilitar SSL 2,0 para el cliente o el servidor, cambie el valor DWORD a 0.
 Si una aplicación SSPI solicita usar SSL 2,0, se le denegará.
@@ -338,7 +338,7 @@ Tabla de subclaves de SSL 3.0
 | Subclave | Descripción |
 |--------|-------------|
 | Cliente | Controla el uso de SSL 3,0 en el cliente SSL. |
-| Servidor | Controla el uso de SSL 3,0 en el servidor SSL. |
+| Server | Controla el uso de SSL 3,0 en el servidor SSL. |
 
 Para deshabilitar SSL 3,0 para el cliente o el servidor, cambie el valor DWORD a 0.
 Si una aplicación SSPI solicita usar SSL 3,0, se le denegará.
@@ -367,7 +367,7 @@ Tabla de subclaves de TLS 1.0
 | Subclave | Descripción |
 |--------|-------------|
 | Cliente | Controla el uso de TLS 1,0 en el cliente TLS. |
-| Servidor | Controla el uso de TLS 1,0 en el servidor TLS. |
+| Server | Controla el uso de TLS 1,0 en el servidor TLS. |
 
 Para deshabilitar TLS 1,0 para el cliente o el servidor, cambie el valor DWORD a 0.
 Si una aplicación SSPI solicita usar TLS 1,0, se le denegará.
@@ -396,7 +396,7 @@ Tabla de subclaves de TLS 1.1
 | Subclave | Descripción |
 |--------|-------------|
 | Cliente | Controla el uso de TLS 1,1 en el cliente TLS. |
-| Servidor | Controla el uso de TLS 1,1 en el servidor TLS. |
+| Server | Controla el uso de TLS 1,1 en el servidor TLS. |
 
 Para deshabilitar TLS 1,1 para el cliente o el servidor, cambie el valor DWORD a 0.
 Si una aplicación SSPI solicita usar TLS 1,1, se le denegará.
@@ -425,7 +425,7 @@ Tabla de subclaves de TLS 1.2
 | Subclave | Descripción |
 |--------|-------------|
 | Cliente | Controla el uso de TLS 1,2 en el cliente TLS. |
-| Servidor | Controla el uso de TLS 1,2 en el servidor TLS. |
+| Server | Controla el uso de TLS 1,2 en el servidor TLS. |
 
 Para deshabilitar TLS 1,2 para el cliente o el servidor, cambie el valor DWORD a 0.
 Si una aplicación SSPI solicita usar TLS 1,2, se le denegará.
@@ -454,7 +454,7 @@ Tabla de subclave DTLS 1,0
 | Subclave | Descripción |
 |--------|-------------|
 | Cliente | Controla el uso de DTLS 1,0 en el cliente de DTLS. |
-| Servidor | Controla el uso de DTLS 1,0 en el servidor de DTLS. |
+| Server | Controla el uso de DTLS 1,0 en el servidor de DTLS. |
 
 Para deshabilitar DTLS 1,0 para el cliente o el servidor, cambie el valor DWORD a 0.
 Si una aplicación SSPI solicita que use DTLS 1,0, se le denegará.
@@ -483,7 +483,7 @@ Tabla de subclave DTLS 1,2
 | Subclave | Descripción |
 |--------|-------------|
 | Cliente | Controla el uso de DTLS 1,2 en el cliente de DTLS. |
-| Servidor | Controla el uso de DTLS 1,2 en el servidor de DTLS. |
+| Server | Controla el uso de DTLS 1,2 en el servidor de DTLS. |
 
 
 Para deshabilitar DTLS 1,2 para el cliente o el servidor, cambie el valor DWORD a 0.

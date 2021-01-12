@@ -1,18 +1,18 @@
 ---
 title: Información general de TLS-SSL (Schannel SSP)
-description: Seguridad de Windows Server
+description: Obtenga información sobre los cambios en la funcionalidad del proveedor de compatibilidad para seguridad de Schannel (SSP).
 ms.topic: article
 ms.assetid: c8836345-16bb-4dcc-8d2b-2b9b687456a3
 author: justinha
 ms.author: justinha
 manager: brianlic
 ms.date: 05/16/2018
-ms.openlocfilehash: 2592783d0f5187c27db45522420c93ac52748667
-ms.sourcegitcommit: 5f234fb15c1d0365b60e83a50bf953e317d6239c
+ms.openlocfilehash: 831c92b85a9089161011ca89aa1e829d032ce22c
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97879704"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98113331"
 ---
 # <a name="overview-of-tls---ssl-schannel-ssp"></a>Información general sobre TLS-SSL (Schannel SSP)
 
@@ -102,7 +102,7 @@ Para obtener información acerca de los datos, incluido el almacén definido por
 
 Hay tres modos de confianza de autenticación de cliente admitidos por el proveedor de Schannel. El modo de confianza controla cómo se realiza la validación de la cadena de certificados del cliente y es una configuración de todo el sistema controlada por el REG_DWORD "ClientAuthTrustMode" en HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\Schannel.
 
-|Valor|Modo de confianza|Descripción|
+|Value|Modo de confianza|Descripción|
 |-----|-------|--------|
 |0|Confianza de la máquina (valor predeterminado)|Requiere la emisión del certificado de cliente por parte de un certificado de la lista de emisores de confianza.|
 |1|Confianza de raíz exclusiva|Requiere que un certificado de cliente se encadene con un certificado raíz contenido en el almacén del emisor de confianza especificado por el emisor. El certificado también debe ser emitido por un emisor de la lista de emisores de confianza|

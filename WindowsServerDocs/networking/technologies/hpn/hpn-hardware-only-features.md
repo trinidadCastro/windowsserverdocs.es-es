@@ -1,18 +1,18 @@
 ---
 title: Redes de alto rendimiento
-description: En este tema se proporciona información general sobre las tecnologías de descarga y optimización en Windows Server 2016, e incluye vínculos a instrucciones adicionales sobre estas tecnologías.
+description: Obtenga información sobre redes de alto rendimiento y cómo las aceleraciones de hardware mejoran el rendimiento de la red junto con el software, pero no forman parte de forma íntima de ninguna característica de software.
 ms.topic: article
 ms.assetid: 0cafb1cc-5798-42f5-89b6-3ffe7ac024ba
 manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 09/12/2018
-ms.openlocfilehash: 30055b7954674b1cea99e7ef60d45cfa33543c3d
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 13ab5cec3ef8ec035351f0a2a30c2152b1f48499
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996739"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98113089"
 ---
 # <a name="hardware-only-ho-features-and-technologies"></a>Tecnologías y características de solo hardware
 
@@ -29,7 +29,7 @@ En la ruta de acceso de recepción, la descarga de la suma de comprobación calc
 
 En la ruta de acceso de envío, la descarga de la suma de comprobación calcula e inserta las sumas de comprobación en el encabezado IP, TCP o UDP según corresponda.
 
-Deshabilitar descarga de suma de comprobación en la ruta de acceso de envío no deshabilita el cálculo y la inserción de suma de comprobación para los paquetes enviados al controlador de minipuerto mediante la característica de descarga de envío grande (LSO).Para deshabilitar todos los cálculos de descarga de suma de comprobación, el usuario también debe deshabilitar la LSO.
+Deshabilitar descarga de suma de comprobación en la ruta de acceso de envío no deshabilita el cálculo y la inserción de suma de comprobación para los paquetes enviados al controlador de minipuerto mediante la característica de descarga de envío grande (LSO).  Para deshabilitar todos los cálculos de descarga de suma de comprobación, el usuario también debe deshabilitar la LSO.
 
 _**Administrar descargas de suma de comprobación de direcciones**_
 
@@ -47,7 +47,7 @@ En las propiedades avanzadas hay varias propiedades distintas:
 
 De forma predeterminada, siempre están habilitadas. Se recomienda habilitar siempre todas estas descargas.
 
-La descarga de la suma de comprobación se puede administrar mediante los cmdlets enable-NetAdapterChecksumOffload y Disable-NetAdapterChecksumOffload. Por ejemplo, el siguiente cmdlet habilita los cálculos de suma de comprobación de TCP (IPv4) y UDP (IPv4):
+La descarga de la suma de comprobación se puede administrar mediante los cmdlets Enable-NetAdapterChecksumOffload y Disable-NetAdapterChecksumOffload. Por ejemplo, el siguiente cmdlet habilita los cálculos de suma de comprobación de TCP (IPv4) y UDP (IPv4):
 
 ```PowerShell
 Enable-NetAdapterChecksumOffload –Name * -TcpIPv4 -UdpIPv4

@@ -1,18 +1,18 @@
 ---
 title: Solución de problemas de las directivas de restricción de software
-description: Seguridad de Windows Server
+description: Obtenga información acerca de los problemas comunes y sus soluciones al solucionar problemas de las directivas de restricción de software (SRP) a partir de Windows Server 2008 y Windows Vista.
 ms.topic: article
 ms.assetid: 4fd53736-03e7-4bf9-ba90-d1212d93e19a
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 003a71ed8c6b7e8d9b788c4eb8aa5efcc4bd6286
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: b9c96f43ebbcc41a210357b2006d2b153a69545a
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89640217"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98113481"
 ---
 # <a name="troubleshoot-software-restriction-policies"></a>Solución de problemas de las directivas de restricción de software
 
@@ -28,7 +28,7 @@ A partir de Windows Server 2008 R2 y Windows 7, se puede usar Windows AppLocker 
 ### <a name="windows-cannot-open-a-program"></a>Windows no puede abrir un programa
 Los usuarios reciben un mensaje que indica "Windows no puede abrir este programa porque se ha impedido mediante una directiva de restricción de software. Para obtener más información, abra Visor de eventos o póngase en contacto con el administrador del sistema ". O bien, en la línea de comandos, un mensaje indica "el sistema no puede ejecutar el programa especificado".
 
-**Causa:** Se creó el nivel de seguridad predeterminado (o una regla) para que el programa de software se establezca como no **permitido**y, como resultado, no se iniciará.
+**Causa:** Se creó el nivel de seguridad predeterminado (o una regla) para que el programa de software se establezca como no **permitido** y, como resultado, no se iniciará.
 
 **Solución:** Busque en el registro de eventos una descripción detallada del mensaje. El mensaje del registro de eventos indica qué programa de software está establecido como no **permitido** y qué regla se aplica al programa.
 
@@ -85,6 +85,6 @@ Las directivas de restricción de software solucionan el problema de regular el 
 
 1.  Investigue el registro de eventos del sistema, filtrando por el origen de "Directiva de restricción de software". Las entradas expresan explícitamente qué regla se implementa para cada aplicación.
 
-2.  Habilitación del registro avanzado. Para obtener más información [, vea determinar la lista de permitidos y el inventario de aplicaciones para directivas de restricción de software](software-restriction-policies.md) .
+2.  Habilitación del registro avanzado. Consulte [determinar Allow-Deny lista y el inventario de aplicaciones para las directivas de restricción de software](software-restriction-policies.md) para obtener más información.
 
 

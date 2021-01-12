@@ -1,18 +1,18 @@
 ---
 title: Protocolo de seguridad de la capa de transporte
-description: Seguridad de Windows Server
+description: Obtenga información sobre cómo funciona el protocolo de seguridad de la capa de transporte (TLS) y proporciona vínculos a las RFC de IETF para TLS 1,0, TLS 1,1 y TLS 1,2.
 ms.topic: article
 ms.assetid: de510bb0-a9f6-4bbe-8f8a-8dd7473bbae8
 author: justinha
 ms.author: justinha
 manager: brianlic
 ms.date: 05/16/2018
-ms.openlocfilehash: 5641d79c40edaa17fd6c8fddc8cd80cbd30a0951
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 634045d6e513157e555290875f44b416729944c8
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989483"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98113351"
 ---
 # <a name="transport-layer-security-protocol"></a>Protocolo de seguridad de la capa de transporte
 

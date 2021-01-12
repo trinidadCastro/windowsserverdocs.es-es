@@ -1,18 +1,18 @@
 ---
 title: Getting Started with Group Managed Service Accounts
-description: Seguridad de Windows Server
+description: Obtenga información acerca de cómo habilitar y usar cuentas de servicio administradas de grupo en Windows Server 2012.
 ms.topic: article
 ms.assetid: 7130ad73-9688-4f64-aca1-46a9187a46cf
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 8a6e0ff7e0ba412ff3f8241465a71ab8b81f7d80
-ms.sourcegitcommit: 8c0a419ae5483159548eb0bc159f4b774d4c3d85
+ms.openlocfilehash: 0d20f0824e83b67ad75feac7490f0b355e85320d
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93235852"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98112961"
 ---
 # <a name="getting-started-with-group-managed-service-accounts"></a>Getting Started with Group Managed Service Accounts
 

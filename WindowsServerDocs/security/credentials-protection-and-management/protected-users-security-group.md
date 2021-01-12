@@ -1,18 +1,18 @@
 ---
 title: Grupo de seguridad de usuarios protegidos
-description: Seguridad de Windows Server
+description: Obtenga información acerca de la característica de usuarios protegidos del grupo de seguridad de Active Directory y cómo funciona.
 ms.topic: article
 ms.assetid: 1b0b5180-f65a-43ac-8ef3-66014116f296
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: ba53c87119e798c3d3346b8fc245ffcc4e092a4d
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 0e663cf40481fd0c89863cd7cd206e963e2d72e0
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89639806"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98113491"
 ---
 # <a name="protected-users-security-group"></a>Grupo de seguridad de usuarios protegidos
 

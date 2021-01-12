@@ -1,18 +1,18 @@
 ---
 title: Kerberos Constrained Delegation Overview
-description: Seguridad de Windows Server
+description: Obtenga información sobre las nuevas capacidades de delegación restringida de Kerberos en Windows Server 2012 R2 y Windows Server 2012.
 ms.topic: article
 ms.assetid: 51923b0a-0c1a-47b2-93a0-d36f8e295589
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: cdee2aaecf8710b9801b689b141b16d0dbacc691
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: 20918e31553d7a7802ed466d2663fb42ae99ca3a
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766798"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98113161"
 ---
 # <a name="kerberos-constrained-delegation-overview"></a>Kerberos Constrained Delegation Overview
 
@@ -73,9 +73,9 @@ Un servicio back-end puede usar expresiones ACL estándar para determinar cómo 
 
 Para configurar un servicio de recurso para que permita que un servicio front-end obtenga acceso en nombre de los usuarios, use cmdlets de Windows PowerShell.
 
--   Para recuperar una lista de entidades de seguridad, use los cmdlets **Get-ADComputer**, **Get-ADServiceAccount**y **Get-ADUser** con el parámetro **Properties PrincipalsAllowedToDelegateToAccount** .
+-   Para recuperar una lista de entidades de seguridad, use los cmdlets **Get-ADComputer**, **Get-ADServiceAccount** y **Get-ADUser** con el parámetro **Properties PrincipalsAllowedToDelegateToAccount** .
 
--   Para configurar el servicio de recursos, use los cmdlets **New-ADComputer**, **New-ADServiceAccount**, **New-ADUser**, **set-ADComputer**, **set-ADServiceAccount**y **set-ADUser** con el parámetro **PrincipalsAllowedToDelegateToAccount** .
+-   Para configurar el servicio de recursos, use los cmdlets **New-ADComputer**, **New-ADServiceAccount**, **New-ADUser**, **set-ADComputer**, **set-ADServiceAccount** y **set-ADUser** con el parámetro **PrincipalsAllowedToDelegateToAccount** .
 
 ## <a name="software-requirements"></a><a name="BKMK_SOFT"></a>Requisitos de software
 La delegación restringida basada en recursos solo se puede configurar en un controlador de dominio que ejecute Windows Server 2012 R2 y Windows Server 2012, pero se puede aplicar en un bosque de modo mixto.
