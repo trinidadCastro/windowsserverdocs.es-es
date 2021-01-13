@@ -7,16 +7,16 @@ ms.reviewer: anandy
 manager: mtillman
 ms.date: 07/17/2018
 ms.topic: article
-ms.openlocfilehash: 0cfb91269e0a55524346d7189d728848d9c6e670
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 930da983421b7e6367b1d387c6bbd80538a8fab9
+ms.sourcegitcommit: decb6c8caf4851b13af271d926c650d010a6b9e9
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87940472"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98177444"
 ---
 # <a name="build-a-native-client-application-using-oauth-public-clients-with-ad-fs-2016-or-later"></a>Compilar una aplicación cliente nativa con clientes de OAuth público con AD FS 2016 o posterior
 
-## <a name="overview"></a>Introducción
+## <a name="overview"></a>Información general
 
 En este artículo se muestra cómo crear una aplicación nativa que interactúe con una API Web protegida por AD FS 2016 o posterior.
 
@@ -86,11 +86,11 @@ Los siguientes cambios de código son necesarios para obtener la información an
 
 **App.config**
 
-* Agregue la clave **ida: Authority** con el valor que describe el servicio AD FS. Por ejemplo: https://fs.contoso.com/adfs/
+* Agregue la clave **ida: Authority** con el valor que describe el servicio AD FS. Por ejemplo, https://fs.contoso.com/adfs/.
 * Modifique la clave **ida: ClientID** con el valor de **identificador de cliente** en la página **aplicación nativa** durante la creación del grupo de aplicaciones en AD FS. Por ejemplo, 3f07368b-6efd-4f50-A330-d93853f4c855
-* Modifique **todo: todo: TodoListResourceId** con el valor de **identificador** en la página **configurar API Web** durante la creación del grupo de aplicaciones en AD FS. Por ejemplo: https://localhost:44321/
-* Modifique la página **todo: TodoListBaseAddress** con el valor de **identificador** en la página **configurar API Web** durante la creación del grupo de aplicaciones en AD FS. Por ejemplo: https://localhost:44321/
-* Establezca el valor de **ida: RedirectUri** con el valor de **URI de redirección** en la página **aplicación nativa** durante la creación del grupo de aplicaciones en AD FS. Por ejemplo: https://ToDoListClient
+* Modifique **todo: todo: TodoListResourceId** con el valor de **identificador** en la página **configurar API Web** durante la creación del grupo de aplicaciones en AD FS. Por ejemplo, https://localhost:44321/.
+* Modifique la página **todo: TodoListBaseAddress** con el valor de **identificador** en la página **configurar API Web** durante la creación del grupo de aplicaciones en AD FS. Por ejemplo, https://localhost:44321/.
+* Establezca el valor de **ida: RedirectUri** con el valor de **URI de redirección** en la página **aplicación nativa** durante la creación del grupo de aplicaciones en AD FS. Por ejemplo, https://ToDoListClient.
 * Para facilitar la lectura, puede quitar o comentar la clave de **ida: tenant** y **ida: AADInstance**.
 
   ![Configuración de la aplicación](media/native-client-with-ad-fs-2016/app_configfile.PNG)
@@ -123,9 +123,9 @@ Dos archivos necesitan cambios en este proyecto: Web.config y Startup.Auth.cs. W
 **Web.config**
 
 * Comentario de la clave **ida: tenant** , ya que no es necesaria
-* Agregue la clave para **ida: Authority** con el valor que indica el FQDN del servicio de Federación, por ejemplo,https://fs.contoso.com/adfs/
+* Agregue la clave para **ida: Authority** con el valor que indica el FQDN del servicio de Federación, por ejemplo, https://fs.contoso.com/adfs/
 * Modifique clave **ida: Audience** con el valor del identificador de la API Web que especificó en la página de configuración de la **API Web** durante el agregar grupo de aplicaciones en AD FS.
-* Agregue la clave **ida: AdfsMetadataEndpoint** con el valor correspondiente a la dirección URL de metadatos de Federación del servicio AD FS, por ejemplo:https://fs.contoso.com/federationmetadata/2007-06/federationmetadata.xml
+* Agregue la clave **ida: AdfsMetadataEndpoint** con el valor correspondiente a la dirección URL de metadatos de Federación del servicio AD FS, por ejemplo: https://fs.contoso.com/federationmetadata/2007-06/federationmetadata.xml
 
 ![Configuración de la Web](media/native-client-with-ad-fs-2016/webconfig.PNG)
 
@@ -157,7 +157,7 @@ Ejecución de la aplicación
 ![Propiedades de la solución](media/native-client-with-ad-fs-2016/solutionproperties.png)
 
 2.  Presione el botón F5 o seleccione Depurar > continuar en la barra de menús. Esto iniciará la aplicación nativa y el WebAPI. Haga clic en el botón iniciar sesión de la aplicación nativa para que aparezca un inicio de sesión interactivo desde AD AL y redirija a su servicio de AD FS. Escriba las credenciales de un usuario válido.
-![Inicio de sesión](media/native-client-with-ad-fs-2016/sign-in.png)
+![Captura de pantalla que muestra el cuadro de diálogo iniciar sesión.](media/native-client-with-ad-fs-2016/sign-in.png)
 
 En este paso, la aplicación nativa se redirigió a AD FS y tenía un token de identificador y un token de acceso para la API Web.
 
@@ -165,5 +165,5 @@ En este paso, la aplicación nativa se redirigió a AD FS y tenía un token de i
 
 ![Inicio de sesión](media/native-client-with-ad-fs-2016/clienttodoadd.png)
 
-## <a name="next-steps"></a>Pasos a seguir
+## <a name="next-steps"></a>Pasos siguientes
 [Desarrollo de AD FS](../../ad-fs/AD-FS-Development.md)

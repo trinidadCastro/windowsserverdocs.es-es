@@ -1,18 +1,18 @@
 ---
 title: Información general de TLS/SSL (Schannel SSP)
-description: Seguridad de Windows Server
+description: Obtenga información sobre las implementaciones de TLS y SSL en Windows con el proveedor de servicios de seguridad de Schannel (SSP).
 ms.topic: article
 ms.assetid: 1b7b0432-1bef-4912-8c9a-8989d47a4da9
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 05/16/2018
-ms.openlocfilehash: 21ad7977039eda311dd6f093fc53c09c08cf0317
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: fc4e4e89be200a2276532b0c4859e4900897a4b5
+ms.sourcegitcommit: decb6c8caf4851b13af271d926c650d010a6b9e9
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89637845"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98177594"
 ---
 # <a name="tlsssl-overview-schannel-ssp"></a>Información general de TLS/SSL (Schannel SSP)
 
@@ -38,7 +38,7 @@ Por ejemplo, puede usar TLS/SSL para:
 -   Acceso SQL
 -   Correo electrónico
 
-## <a name="requirements"></a><a name="BKMK_SOFT"></a>Requisitos
+## <a name="requirements"></a><a name="BKMK_SOFT"></a>Satisfacer
 Los protocolos TLS y SSL usan un modelo cliente/servidor y se basan en la autenticación de certificados, que requiere una infraestructura de clave pública.
 
 ## <a name="server-manager-information"></a><a name="BKMK_INSTALL"></a>Información sobre el Administrador del servidor
@@ -48,4 +48,4 @@ No hay pasos de configuración necesarios para implementar TLS, SSL o Schannel.
 
 -   [Paquete de seguridad Schannel](/windows/desktop/com/schannel)
 -   [Canal seguro](/windows/desktop/SecAuthN/secure-channel)
--   [Protocolo de seguridad de la capa de transporte](/windows/desktop/SecAuthN/transport-layer-security-protocol)
+-   [Protocolo Seguridad de la capa de transporte](/windows/desktop/SecAuthN/transport-layer-security-protocol)

@@ -1,18 +1,18 @@
 ---
 title: Security Support Provider Interface Architecture
-description: Seguridad de Windows Server
+description: Obtenga información acerca de los protocolos de autenticación de Windows que se utilizan en la arquitectura de la interfaz del proveedor de compatibilidad para seguridad (SSPI).
 ms.topic: article
 ms.assetid: de09e099-5711-48f8-adbd-e7b8093a0336
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: da7c390427a3f0f2348d91e14d0affef905db390
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: 9fec62a409db079a3ef6861111b61ba89e190062
+ms.sourcegitcommit: decb6c8caf4851b13af271d926c650d010a6b9e9
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766958"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98177326"
 ---
 # <a name="security-support-provider-interface-architecture"></a>Security Support Provider Interface Architecture
 
@@ -180,7 +180,7 @@ Este proveedor se incluye de forma predeterminada en las versiones designadas en
 -   [\[MS-TLSP \] : Perfil de seguridad de la capa de transporte (TLS)](/openspecs/windows_protocols/ms-tlsp/58aba05b-62b0-4cd1-b88b-dc8a24920346)
 
 ### <a name="negotiate-security-support-provider"></a><a name="BKMK_NegoSSP"></a>Negociar proveedor de compatibilidad de seguridad
-El mecanismo de negociación simple y protegida de GSS-API (SPNEGO) constituye la base para negociar SSP, whichcan se puede usar para negociar un protocolo de autenticación específico. Cuando una aplicación llama en SSPI para iniciar sesión en una red, puede especificar un SSP para que procese la solicitud. Si la aplicación especifica el SSP Negotiate, analiza la solicitud y selecciona el proveedor adecuado para administrar la solicitud, en función de las directivas de seguridad configuradas por el cliente.
+El mecanismo de negociación simple y protegida de GSS-API (SPNEGO) constituye la base para negociar SSP, que se puede utilizar para negociar un protocolo de autenticación específico. Cuando una aplicación llama en SSPI para iniciar sesión en una red, puede especificar un SSP para que procese la solicitud. Si la aplicación especifica el SSP Negotiate, analiza la solicitud y selecciona el proveedor adecuado para administrar la solicitud, en función de las directivas de seguridad configuradas por el cliente.
 
 SPNEGO se especifica en RFC 2478.
 

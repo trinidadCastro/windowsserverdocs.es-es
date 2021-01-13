@@ -1,18 +1,18 @@
 ---
 title: Registrar un NPS en un dominio de Active Directory
-description: Puede usar este tema para registrar un servidor que ejecuta servidor de directivas de redes en Windows Server 2016 en el dominio predeterminado de NPS o en otro dominio.
+description: Obtenga información sobre cómo registrar un servidor que ejecuta servidor de directivas de redes en Windows Server 2016 en el dominio predeterminado de NPS o en otro dominio.
 manager: brianlic
 ms.topic: article
 ms.assetid: 2de954fd-a7d8-4cc6-85b1-b0c3c06f788f
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 15cdd18b6b6e5baffc47e1f4ecac7daaf580602a
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 1cd7f5432cc1b141fc2b202170d2cc4ebd4b4f82
+ms.sourcegitcommit: decb6c8caf4851b13af271d926c650d010a6b9e9
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947091"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98177484"
 ---
 # <a name="register-an-nps-in-an-active-directory-domain"></a>Registrar un NPS en un dominio de Active Directory
 

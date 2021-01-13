@@ -1,18 +1,18 @@
 ---
 title: Información general de Windows Defender para Windows Server
-description: Seguridad de Windows Server
+description: Obtenga información sobre el antivirus de Windows Defender y cómo es protección contra malware que protege inmediatamente y activamente Windows Server 2016 contra malware conocido.
 ms.topic: article
 ms.assetid: 751efb33-a08e-4e90-9208-6f2bc319e029
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 4ed6a8f9fc9618156963bd2b3c51e4819d8adb36
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 8ac75cfa4faf2321931b89e5ffb7d0b1325e55c1
+ms.sourcegitcommit: decb6c8caf4851b13af271d926c650d010a6b9e9
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89638649"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98177524"
 ---
 # <a name="windows-defender-antivirus-for-windows-server"></a>Antivirus de Windows Defender para Windows Server
 

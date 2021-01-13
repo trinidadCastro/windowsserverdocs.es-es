@@ -1,18 +1,18 @@
 ---
 title: Arquitectura de autenticación de Windows
-description: Seguridad de Windows Server
+description: Obtenga información sobre el esquema de arquitectura básico para la autenticación de Windows.
 ms.topic: article
 ms.assetid: 07c9d6bb-9b03-407d-89b6-97c7551b256b
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 7f2ad45a12f8542e4af9a77a9dc76a9596df2143
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 3120ee3cb49d9eeb53f37c604de169dd923f8be3
+ms.sourcegitcommit: decb6c8caf4851b13af271d926c650d010a6b9e9
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89638712"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98177584"
 ---
 # <a name="windows-authentication-architecture"></a>Arquitectura de autenticación de Windows
 

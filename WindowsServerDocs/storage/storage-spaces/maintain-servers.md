@@ -8,12 +8,12 @@ author: eldenchristensen
 ms.date: 10/08/2018
 ms.assetid: 73dd8f9c-dcdb-4b25-8540-1d8707e9a148
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f2a8a926fefe68b0afe79c0d120164d97f1eb90
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 78166006da9936da144c871009e2cf44fb146ea5
+ms.sourcegitcommit: decb6c8caf4851b13af271d926c650d010a6b9e9
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97042073"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98177344"
 ---
 # <a name="taking-a-storage-spaces-direct-server-offline-for-maintenance"></a>Desconectar un servidor de Espacios de almacenamiento directo para su mantenimiento
 
@@ -68,20 +68,20 @@ Suspend-ClusterNode -Drain
 
 Para hacer esto en Administrador de clústeres de conmutación por error, vaya a **nodos**, haga clic con el botón secundario en el nodo y seleccione **pausar**  >  **roles de purga**.
 
-![Pause-Drain](media/maintain-servers/pause-drain.png)
+![Captura de pantalla del Administrador de clústeres de conmutación por error que muestra la opción pausar bobinas de purga seleccionada.](media/maintain-servers/pause-drain.png)
 
 Todas las máquinas virtuales comenzarán a migrar en vivo a otros servidores del clúster. Esta operación puede tardar unos minutos.
 
    > [!NOTE]
    > Cuando pausa y purga el nodo de clúster correctamente, Windows realiza una comprobación de seguridad automática para asegurarse de que es seguro continuar. Si hay volúmenes en mal estado, se detendrá y le avisará de que no es seguro continuar.
 
-![Safety-Check](media/maintain-servers/safety-check.png)
+![Captura de pantalla que muestra un mensaje de error que indica que un espacio en clúster está en una condición degradada y que la acción no se puede completar.](media/maintain-servers/safety-check.png)
 
 ## <a name="shutting-down-the-server"></a>Apagar el servidor
 
 Una vez que se haya agotado el servidor, se mostrará en **pausa** en Administrador de clústeres de conmutación por error y PowerShell.
 
-![En pausa](media/maintain-servers/paused.png)
+![Captura de pantalla del Administrador de clústeres de conmutación por error en el que se muestra que uno de los nodos está en pausa.](media/maintain-servers/paused.png)
 
 Ahora puede reiniciarse o cerrarse de forma segura, tal como lo haría normalmente (por ejemplo, mediante el uso de los cmdlets de PowerShell Restart-Computer o Stop-Computer).
 
@@ -115,7 +115,7 @@ Resume-ClusterNode –Failback Immediate
 
 Para hacer esto en Administrador de clústeres de conmutación por error, vaya a **nodos**, haga clic con el botón secundario en el nodo y, después, seleccione **reanudar**  >  **errores de roles de nuevo**.
 
-![Resume-Failback](media/maintain-servers/resume-failback.png)
+![Captura de pantalla del Administrador de clústeres de conmutación por error en el que se muestra la opción reanudar errores de roles atrás seleccionada.](media/maintain-servers/resume-failback.png)
 
 ## <a name="waiting-for-storage-to-resync"></a>Esperando a que se resincronice el almacenamiento
 

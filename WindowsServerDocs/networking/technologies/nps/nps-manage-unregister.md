@@ -1,18 +1,18 @@
 ---
 title: Anular el registro de NPS de un dominio de Active Directory
-description: Puede usar este tema para registrar un servidor que ejecuta servidor de directivas de redes en Windows Server 2016 en el dominio predeterminado de NPS o en otro dominio.
+description: Obtenga información sobre cómo anular el registro de un NPS desde un Dominio de Active Directory para que pueda trasladar un NPS a otro dominio, reemplazar un NPS o retirar un NPS.
 manager: brianlic
 ms.topic: article
 ms.assetid: 68a94616-3c29-45bd-bd33-e4c578f119e1
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: aff5090a5f9fcd2791835f21e2caf1c0dccaa510
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 032a7b36b207c75955f879b4740a43d32e543228
+ms.sourcegitcommit: decb6c8caf4851b13af271d926c650d010a6b9e9
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949341"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98177414"
 ---
 # <a name="unregister-an-nps-from-an-active-directory-domain"></a>Anular el registro de NPS de un dominio de Active Directory
 

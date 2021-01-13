@@ -8,12 +8,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 06/28/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: d1f975299593db29da20c35a621ea870e436d8be
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: d60b186ff118d3e162e2eb117493ef09becdd363
+ms.sourcegitcommit: decb6c8caf4851b13af271d926c650d010a6b9e9
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97048943"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98177574"
 ---
 # <a name="planning-volumes-in-storage-spaces-direct"></a>Planeación de volúmenes en Espacios de almacenamiento directo
 
@@ -28,11 +28,11 @@ Los volúmenes son donde se colocan los archivos que las cargas de trabajo neces
    >[!NOTE]
    > Volúmenes compartidos de clúster.En la documentación de Espacios de almacenamiento directo, usamos el término "volumen" para hacer referencia conjuntamente al volumen y al disco virtual que contiene, incluida la funcionalidad proporcionada por otras características integradas de Windows, como los volúmenes compartidos de clúster (CSV) y ReFS. No es necesario entender estas distinciones a nivel de implementación para planear e implementar Espacios de almacenamiento directo correctamente.
 
-![what-are-volumes](media/plan-volumes/what-are-volumes.png)
+![Diagrama que describe qué son los volúmenes.](media/plan-volumes/what-are-volumes.png)
 
 Todos los volúmenes son accesibles para todos los servidores del clúster al mismo tiempo. Una vez creados, se muestran en **C:\ClusterStorage\\** en todos los servidores.
 
-![csv-folder-screenshot](media/plan-volumes/csv-folder-screenshot.png)
+![Captura de pantalla de una ventana del explorador de archivos que muestra los volúmenes de almacenamiento del clúster.](media/plan-volumes/csv-folder-screenshot.png)
 
 ## <a name="choosing-how-many-volumes-to-create"></a>Elección del número de volúmenes que crear
 
@@ -66,17 +66,17 @@ Con dos servidores en el clúster, puede usar la creación de reflejo bidireccio
 
 La creación de reflejo bidireccional mantiene dos copias de todos los datos, una copia en las unidades de cada servidor. Su eficiencia de almacenamiento es del 50%; para escribir 1 TB de datos, necesita al menos 2 TB de capacidad de almacenamiento físico en el bloque de almacenamiento. La creación de reflejo bidireccional puede tolerar de manera segura un error de hardware cada vez (un servidor o una unidad).
 
-![two-way-mirror](media/plan-volumes/two-way-mirror.png)
+![Diagrama que describe el concepto de almacenamiento de datos reflejado bidireccional.](media/plan-volumes/two-way-mirror.png)
 
 La resistencia anidada (disponible solo en Windows Server 2019) proporciona resistencia de datos entre servidores con creación de reflejo bidireccional y, a continuación, agrega resistencia dentro de un servidor con creación de reflejo bidireccional o paridad acelerada por reflejo. El anidamiento proporciona resistencia de datos incluso cuando un servidor se está reiniciando o no está disponible. Su eficacia de almacenamiento es del 25% con la creación de reflejo bidireccional anidada y de alrededor del 35-40% para la paridad anidada con aceleración de reflejo. La resistencia anidada puede tolerar de manera segura dos errores de hardware a la vez (dos unidades, o un servidor y una unidad del servidor restante). Debido a esta resistencia de datos adicional, se recomienda usar la resistencia anidada en las implementaciones de producción de clústeres de dos servidores si ejecuta Windows Server 2019. Para más información, consulte [Resistencia anidada](nested-resiliency.md).
 
-![Paridad acelerada por reflejo anidada](media/nested-resiliency/nested-mirror-accelerated-parity.png)
+![Diagrama que describe el concepto de paridad anidada de reflejo.](media/nested-resiliency/nested-mirror-accelerated-parity.png)
 
 ### <a name="with-three-servers"></a>Con tres servidores
 
 Con tres servidores, debe usar la creación de reflejo triple para mejorar la tolerancia a errores y el rendimiento. La creación de reflejo triple mantiene tres copias de todos los datos, una copia en las unidades de cada servidor. Su eficiencia de almacenamiento es del 33,3%; para escribir 1 TB de datos, necesita al menos 3 TB de capacidad de almacenamiento físico en el bloque de almacenamiento. La creación de reflejo triple puede tolerar de forma segura [al menos dos problemas de hardware (unidad o servidor) a la vez](storage-spaces-fault-tolerance.md#examples). Si dos nodos dejan de estar disponibles, el bloque de almacenamiento perderá el cuórum, ya que 2/3 de los discos no están disponibles y no se podrá acceder a los discos virtuales. Sin embargo, un nodo puede estar inactivo y se puede producir un error en uno o varios discos de otro nodo y los discos virtuales permanecerán en línea. Por ejemplo, si se está reiniciando un servidor cuando, de repente, se produce un error en otra unidad u otro servidor, la seguridad y la accesibilidad de los datos se mantienen.
 
-![three-way-mirror](media/plan-volumes/three-way-mirror.png)
+![Diagrama que describe el concepto de almacenamiento de datos de reflejo triple.](media/plan-volumes/three-way-mirror.png)
 
 ### <a name="with-four-or-more-servers"></a>Con cuatro o más servidores
 
@@ -84,7 +84,7 @@ Con cuatro o más servidores, puede elegir para cada volumen si desea utilizar l
 
 La paridad dual proporciona la misma tolerancia a errores que la creación de reflejo triple, pero con una mayor eficacia de almacenamiento. Con cuatro servidores, su eficacia de almacenamiento es 50,0%: para almacenar 2 TB de datos, necesita 4 TB de capacidad de almacenamiento físico en el bloque de almacenamiento. Esto aumenta hasta el 66,7% de la eficiencia del almacenamiento con siete servidores y continúa hasta el 80,0% de eficiencia del almacenamiento. La contrapartida es que la codificación de paridad es un proceso más intensivo, lo que puede limitar su rendimiento.
 
-![dual-parity](media/plan-volumes/dual-parity.png)
+![Diagrama que describe el concepto de almacenamiento de datos de paridad doble.](media/plan-volumes/dual-parity.png)
 
 El tipo de resistencia que usar depende de las necesidades de la carga de trabajo. En esta tabla se resume qué cargas de trabajo son una buena opción para cada tipo de resistencia, así como el rendimiento y la eficacia de almacenamiento de cada tipo de resistencia.
 
@@ -142,7 +142,7 @@ El tamaño es distinto de la *superficie* del volumen, la capacidad total de alm
 
 Las superficies de los volúmenes deben caber en el bloque de almacenamiento.
 
-![size-versus-footprint](media/plan-volumes/size-versus-footprint.png)
+![Diagrama que muestra que el tamaño del volumen tiene que caber en el bloque de almacenamiento.](media/plan-volumes/size-versus-footprint.png)
 
 ### <a name="reserve-capacity"></a>Capacidad de reserva
 
@@ -150,7 +150,7 @@ Al dejar sin asignar algo de capacidad en el bloque de almacenamiento, se propor
 
 Se recomienda reservar el equivalente de una unidad de capacidad por servidor, hasta 4 unidades. Puede reservar más a su discreción, pero esta recomendación mínima garantiza que una reparación en contexto, paralela e inmediata pueda realizarse correctamente después del error de cualquier unidad.
 
-![reserva](media/plan-volumes/reserve.png)
+![Diagrama que describe el concepto de capacidad de reserva.](media/plan-volumes/reserve.png)
 
 Por ejemplo, si tiene 2 servidores y usa unidades de 1 TB de capacidad, disponga 2 x 1 = 2 TB del bloque como reserva. Si tiene 3 servidores y unidades de 1 TB de capacidad, disponga 3 x 1 = 3 TB como reserva. Si tiene 4 servidores y unidades de 1 TB de capacidad, disponga 4 x 1 = 4 TB como reserva.
 
@@ -187,7 +187,7 @@ No es necesario que todos los volúmenes tengan el mismo tamaño, pero para simp
 
 Los cuatro volúmenes se ajustan exactamente a la capacidad de almacenamiento físico disponible en nuestro bloque, lo que resulta ideal.
 
-![ejemplo](media/plan-volumes/example.png)
+![Diagrama que muestra un ejemplo de cuatro volúmenes que caben exactamente en la capacidad de almacenamiento físico disponible en el grupo.](media/plan-volumes/example.png)
 
    >[!TIP]
    > No es necesario crear todos los volúmenes inmediatamente. Siempre puede ampliar volúmenes o crear nuevos volúmenes más adelante.

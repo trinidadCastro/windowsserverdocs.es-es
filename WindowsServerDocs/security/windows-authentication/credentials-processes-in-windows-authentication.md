@@ -1,18 +1,18 @@
 ---
 title: Procesos de las credenciales en la autenticación de Windows
-description: Seguridad de Windows Server
+description: Obtenga información acerca de cómo la autenticación de Windows procesa las credenciales.
 ms.topic: article
 ms.assetid: 48c60816-fb8b-447c-9c8e-800c2e05b14f
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 3d2948c632697e6278b716784f68c7a0085eab07
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 397294b9dba9535b098dde715e8eef75ae50cad5
+ms.sourcegitcommit: decb6c8caf4851b13af271d926c650d010a6b9e9
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89640081"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98177604"
 ---
 # <a name="credentials-processes-in-windows-authentication"></a>Procesos de las credenciales en la autenticación de Windows
 
@@ -24,7 +24,7 @@ La administración de credenciales de Windows es el proceso por el que el sistem
 
 De forma predeterminada, las credenciales de Windows se validan en la base de datos del administrador de cuentas de seguridad (SAM) en el equipo local o en Active Directory en un equipo unido a un dominio, a través del servicio Winlogon. Las credenciales se recopilan a través de los datos proporcionados por el usuario en la interfaz de usuario de inicio de sesión o mediante programación a través de la interfaz de programación de aplicaciones (API) para presentarse al destino de autenticación.
 
-La información de seguridad local se almacena en el registro en **HKEY_LOCAL_MACHINE \Security**. La información almacenada incluye la configuración de Directiva, los valores de seguridad predeterminados y la información de la cuenta, como las credenciales de inicio de sesión en caché. Aquí también se almacena una copia de la base de datos de SAM, aunque está protegida contra escritura.
+La información de seguridad local se almacena en el registro en **HKEY_LOCAL_MACHINE\SECURITY**. La información almacenada incluye la configuración de Directiva, los valores de seguridad predeterminados y la información de la cuenta, como las credenciales de inicio de sesión en caché. Aquí también se almacena una copia de la base de datos de SAM, aunque está protegida contra escritura.
 
 En el diagrama siguiente se muestran los componentes necesarios y las rutas de acceso que las credenciales toman a través del sistema para autenticar el usuario o el proceso para un inicio de sesión correcto.
 
@@ -250,7 +250,7 @@ Cuando un usuario inicia sesión en un dispositivo Windows 8.1, LSA guarda las c
 
 Al reiniciar, el usuario inicia sesión automáticamente mediante el mecanismo de inicio de sesión automático y, a continuación, el equipo se bloquea además para proteger la sesión del usuario. El bloqueo se inicia a través de Winlogon, mientras que la administración de credenciales se realiza mediante LSA. Al iniciar sesión automáticamente y bloquear la sesión del usuario en la consola, las aplicaciones de la pantalla de bloqueo del usuario se reinician y están disponibles.
 
-Para obtener más información acerca de ARSO, consulte [Inicio de sesión con reinicio automático de Winlogon &#40;ARSO&#41;](winlogon-automatic-restart-sign-on-arso.md).
+Para obtener más información sobre ARSO, consulte [reinicio automático de Winlogon Sign-On &#40;ARSO&#41;](winlogon-automatic-restart-sign-on-arso.md).
 
 ### <a name="stored-user-names-and-passwords-in-windows-vista-and-windows-xp"></a>Nombres de usuario y contraseñas almacenados en Windows Vista y Windows XP
 En Windows Server 2008, Windows Server 2003, Windows Vista y Windows XP, **los nombres de usuario y contraseñas almacenados** en el panel de control simplifican la administración y el uso de varios conjuntos de credenciales de inicio de sesión, incluidos los certificados X. 509 usados con tarjetas inteligentes y las credenciales de Windows Live (ahora denominados cuenta de Microsoft). Las credenciales: parte del perfil del usuario, se almacenan hasta que sea necesario. Esta acción puede aumentar la seguridad en función de cada recurso asegurándose de que si una contraseña está en peligro, no ponga en peligro toda la seguridad.
@@ -314,9 +314,9 @@ La tecnología de tarjeta inteligente virtual se presentó en Windows 8. Almacen
 
 **Autenticación remota e inalámbrica**
 
-La autenticación de red remota e inalámbrica es otra tecnología que usa certificados para la autenticación. El servicio de autenticación de Internet (IAS) y los servidores de red privada virtual usan el protocolo de autenticación extensible (EAP-TLS), el protocolo de autenticación extensible protegido (PEAP) o el protocolo de seguridad de Internet (IPsec) para realizar la autenticación basada en certificados para muchos tipos de acceso de red, incluidas las conexiones de red privada virtual (VPN) y inalámbricas.
+La autenticación de red remota e inalámbrica es otra tecnología que usa certificados para la autenticación. El servicio de autenticación de Internet (IAS) y los servidores de red privada virtual usan la autenticación extensible Protocol-Transport seguridad de nivel (EAP-TLS), el protocolo de autenticación extensible protegido (PEAP) o el protocolo de seguridad de Internet (IPsec) para realizar la autenticación basada en certificados para muchos tipos de acceso de red, incluidas las conexiones de red privada virtual (VPN) y inalámbricas.
 
 Para obtener información acerca de la autenticación basada en certificados en redes, consulte [autenticación de acceso a la red y certificados](/previous-versions/windows/it-pro/windows-server-2003/cc759575(v=ws.10)).
 
-## <a name="see-also"></a><a name="BKMK_SeeAlso"></a>Vea también
+## <a name="see-also"></a><a name="BKMK_SeeAlso"></a>Otras referencias
 [Conceptos de autenticación de Windows](./windows-authentication-concepts.md)

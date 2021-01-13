@@ -5,12 +5,12 @@ ms.date: 05/28/2020
 author: Deland-Han
 ms.author: delhan
 ms.topic: troubleshooting
-ms.openlocfilehash: 5cce39ea42af57bbfd400427f763dfca5da75d7b
-ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
+ms.openlocfilehash: e24521ac89c0eb1eb4b2063ec7d70384a3755a33
+ms.sourcegitcommit: decb6c8caf4851b13af271d926c650d010a6b9e9
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98040305"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98177514"
 ---
 # <a name="iaas-with-sql-server---tuning-failover-cluster-network-thresholds"></a>IaaS con umbrales de red de clústeres de conmutación por error de optimización de SQL Server
 
@@ -76,7 +76,7 @@ Hay dos opciones de configuración que se usan para configurar el estado de Cone
 
 De forma predeterminada, Windows Server 2016 establece **SameSubnetThreshold** en 10 y **SameSubnetDelay** en 1000 ms. Por ejemplo, si se produce un error en la supervisión de la conectividad durante 10 segundos, se alcanza el umbral de conmutación por error, lo que da lugar a que el nodo se quite de la pertenencia al clúster. Esto hace que los recursos se muevan a otro nodo disponible en el clúster. Se informará de los errores del clúster, incluido el error 1135 del clúster (anterior).
 
-## <a name="resolution"></a>Resolución
+## <a name="resolution"></a>Solución
 
 En un entorno de IaaS, relajar las opciones de configuración de red de clústeres.
 
@@ -90,7 +90,7 @@ C:\Windows\system32> get-cluster | fl *subnet*
 
 Valores predeterminados, mínimo, máximo y recomendado para cada sistema operativo compatible
 
-| Descripción | SO | Min | Max | Valor predeterminado | Recomendado |
+| Descripción | SO | Min | Max | Default | Recomendado |
 |--|--|--|--|--|--|
 | CrossSubnetThreshold | 2008 R2 | 3 | 20 | 5 | 20 |
 | Umbral de CrossSubnet | 2012 | 3 | 120 | 5 | 20 |
@@ -133,7 +133,7 @@ El **umbral** define el número de latidos que se omiten antes de que el clúste
     C:\Windows\system32> get-cluster | fl *subnet*
     ```
 
-    :::image type="content" source="media/iaas-sql-failover-cluster/cmd.png" alt-text="cmd" border="false":::
+    :::image type="content" source="media/iaas-sql-failover-cluster/cmd.png" alt-text="Captura de pantalla de la ventana de PowerShell que muestra los resultados del comando." border="false":::
 
 ## <a name="references"></a>Referencias
 

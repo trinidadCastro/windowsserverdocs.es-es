@@ -8,12 +8,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 09/21/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a6ab48a2079513e69538eb2673be4cf7d656b94f
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 633b36da552160e7a72793ace93e554e02d7d468
+ms.sourcegitcommit: decb6c8caf4851b13af271d926c650d010a6b9e9
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97047763"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98177544"
 ---
 # <a name="understanding-the-cache-in-storage-spaces-direct"></a>Descripción de la memoria caché de Espacios de almacenamiento directo
 
@@ -44,13 +44,13 @@ Estos se pueden combinar de varias maneras que se agrupan en dos categorías: "t
 
 Todas las implementaciones all-flash tienen el objetivo de maximizar el rendimiento del almacenamiento y no incluyen unidades de disco duro (HDD) rotacionales.
 
-![Posibilidades de implementación de todo flash](media/understand-the-cache/All-Flash-Deployment-Possibilities.png)
+![Diagrama que muestra las posibilidades de implementación de todos los flash.](media/understand-the-cache/All-Flash-Deployment-Possibilities.png)
 
 ### <a name="hybrid-deployment-possibilities"></a>Posibilidades de implementación híbrida
 
 Las implementaciones híbridas tienen como objetivo equilibrar el rendimiento y la capacidad o maximizar la capacidad, e incluyen unidades de disco duro (HDD) rotacionales.
 
-![Posibilidades de implementación híbridas](media/understand-the-cache/Hybrid-Deployment-Possibilities.png)
+![Diagrama que muestra las posibilidades de la implementación híbrida.](media/understand-the-cache/Hybrid-Deployment-Possibilities.png)
 
 ## <a name="cache-drives-are-selected-automatically"></a>Las unidades de caché se seleccionan de forma automática.
 
@@ -58,7 +58,7 @@ En las implementaciones con varios tipos de unidades, Espacios de almacenamiento
 
 El tipo "más rápido" se determina según la siguiente jerarquía.
 
-![Jerarquía de tipos de unidad](media/understand-the-cache/Drive-Type-Hierarchy.png)
+![Diagrama que muestra la jerarquía de la velocidad de las distintas unidades con la unidad de disco duro más lenta y el mayor de los más rápidos.](media/understand-the-cache/Drive-Type-Hierarchy.png)
 
 Por ejemplo, si tiene NVMe y SSD, la NVMe se almacenará en caché para los SSD.
 
@@ -76,7 +76,7 @@ Si todas las unidades son del mismo tipo, no se configura automáticamente ningu
 
 El comportamiento de la memoria caché se determina automáticamente según los tipos de las unidades de las que se realiza el almacenamiento en caché. Al realizar el almacenamiento en caché de las unidades de estado sólido (por ejemplo, almacenamiento en caché NVMe para SSD), solo las escrituras se almacenan en caché. Al almacenar en caché las unidades de disco duro (por ejemplo, almacenar en caché los discos SSD para las unidades HDD), tanto las lecturas como las escrituras se almacenan en caché.
 
-![Comportamiento de lectura y escritura en caché](media/understand-the-cache/Cache-Read-Write-Behavior.png)
+![Diagrama que muestra la memoria caché, la lectura y el comportamiento de escritura de la implementación de All-Flash en lugar de una implementación híbrida.](media/understand-the-cache/Cache-Read-Write-Behavior.png)
 
 ### <a name="write-only-caching-for-all-flash-deployments"></a>Almacenamiento en caché de solo escritura para las implementaciones todo flash
 
@@ -117,7 +117,7 @@ Dado que la memoria caché está debajo del resto de la pila de almacenamiento d
 
 Dado que la resistencia de la característica Espacios de almacenamiento directo ocurre, como mínimo, en el nivel de servidor (es decir, las copias de datos siempre se escriben en servidores diferentes, a lo sumo una copia por servidor), los datos que están en la memoria caché aprovechan la misma resistencia que los datos que no están en la caché.
 
-![Arquitectura de la caché en el lado servidor](media/understand-the-cache/Cache-Server-Side-Architecture.png)
+![Diagrama que muestra la arquitectura del servidor de caché.](media/understand-the-cache/Cache-Server-Side-Architecture.png)
 
 Por ejemplo, cuando se usa la creación de reflejo triple, se escriben tres copias de los datos en servidores diferentes, y se colocan en la memoria caché. Independientemente de si se retiran del almacenamiento provisional posteriormente o no, siempre existirán tres copias.
 
@@ -125,7 +125,7 @@ Por ejemplo, cuando se usa la creación de reflejo triple, se escriben tres copi
 
 El enlace entre las unidades de caché y de capacidad puede tener cualquier proporción, desde 1:1 hasta 1:12 e incluso más. Se ajusta dinámicamente cada vez que se agregan o quitan unidades como, por ejemplo, al escalar verticalmente o después de errores. Esto significa que puede agregar unidades de caché o unidades de capacidad de forma independiente, siempre que lo desee.
 
-![Enlace dinámico](media/understand-the-cache/Dynamic-Binding.gif)
+![Animación que muestra cómo los enlaces de unidad son dinámicos.](media/understand-the-cache/Dynamic-Binding.gif)
 
 Se recomienda que el número de unidades de capacidad sea un múltiplo del número de unidades de caché por motivos de simetría. Por ejemplo, si tienes 4 unidades de caché, habrá un rendimiento más uniforme con 8 unidades de capacidad (relación 1:2) que con 7 o 9 unidades.
 
@@ -137,7 +137,7 @@ Durante un breve período, las unidades de capacidad que estaban enlazadas a la 
 
 Este escenario es el motivo por el que se necesitan al menos dos unidades de caché por servidor para mantener el rendimiento.
 
-![Control de errores](media/understand-the-cache/Handling-Failure.gif)
+![Animación que muestra por qué, como mínimo, se necesitan dos unidades de caché por servidor para conservar el rendimiento.](media/understand-the-cache/Handling-Failure.gif)
 
 Después, puede reemplazar la unidad de caché igual que lo haría con cualquier otra unidad.
 
@@ -196,7 +196,7 @@ Puedes comprobar que las unidades que propones están en uso para almacenamiento
 
 La configuración manual habilita las siguientes posibilidades de implementación:
 
-![Posibilidades de implementación exóticas](media/understand-the-cache/Exotic-Deployment-Possibilities.png)
+![Diagrama que muestra las posibilidades de implementación manual.](media/understand-the-cache/Exotic-Deployment-Possibilities.png)
 
 ### <a name="set-cache-behavior"></a>Establecimiento del comportamiento de la caché
 

@@ -1,18 +1,18 @@
 ---
 title: Equilibrio de carga del servidor proxy NPS
-description: Puede usar este tema para obtener información sobre las características y la funcionalidad de VPN de Windows Server 2016 y Windows 10.
+description: Obtenga información sobre el equilibrio de carga del servidor proxy NPS y los métodos que puede usar para equilibrar la carga de solicitudes de conexión enviadas a su NPSs.
 ms.topic: article
 ms.assetid: 528280e6-b47e-489f-b310-b257d434aa0d
 manager: brianlic
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: c4e94e943fa3759b813c885b65292079ee086868
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 8788bf67b9688f9938b509eb9683c71ee2030208
+ms.sourcegitcommit: decb6c8caf4851b13af271d926c650d010a6b9e9
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949361"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98177494"
 ---
 # <a name="nps-proxy-server-load-balancing"></a>Equilibrio de carga del servidor proxy NPS
 

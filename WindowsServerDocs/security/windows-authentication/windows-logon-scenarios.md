@@ -1,18 +1,18 @@
 ---
 title: Escenarios de inicio de sesión de Windows
-description: Seguridad de Windows Server
+description: Obtenga información sobre los escenarios comunes de inicio de sesión e inicio de sesión de Windows.
 ms.topic: article
 ms.assetid: 66b7c568-67b7-4ac9-a479-a5a3b8a66142
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 1ea8f8cde4dd99c50e9dbc1d5a035f413c875114
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 34d1d70c88395e109a45a1f4a57d2fafb09c07ce
+ms.sourcegitcommit: decb6c8caf4851b13af271d926c650d010a6b9e9
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89638725"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98177554"
 ---
 # <a name="windows-logon-scenarios"></a>Escenarios de inicio de sesión de Windows
 

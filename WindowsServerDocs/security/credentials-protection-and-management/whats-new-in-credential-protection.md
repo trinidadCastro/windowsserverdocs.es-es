@@ -1,18 +1,18 @@
 ---
 title: Novedades de la protección de credenciales
-description: Seguridad de Windows Server
+description: Obtenga información sobre Credential Guard para usuarios con sesión iniciada, protección de credenciales remotas para usuarios con sesión iniciada y protecciones de dominio.
 ms.topic: article
 ms.assetid: 1b0b5180-f65a-43ac-8ef3-66014116f297
 author: gitmichiko
 ms.author: michikos
 manager: dongill
 ms.date: 03/06/2017
-ms.openlocfilehash: 521562b938b002e4c5fe5ffee5fcd7c677551f98
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 8f546884ef8400da397a6f2508b9e9ee2e5422e8
+ms.sourcegitcommit: decb6c8caf4851b13af271d926c650d010a6b9e9
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87995761"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98177314"
 ---
 # <a name="whats-new-in-credential-protection"></a>Novedades de la protección de credenciales
 

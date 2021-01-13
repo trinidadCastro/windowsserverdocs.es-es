@@ -1,18 +1,18 @@
 ---
 title: Funcionamiento del Control de cuentas de usuario
-description: Seguridad de Windows Server
+description: Obtenga información sobre el control de cuentas de usuario (UAC) y cómo ayuda a evitar que programas malintencionados dañen un equipo y ayuda a las organizaciones a implementar un escritorio mejor administrado.
 ms.topic: article
 ms.assetid: da83ddb2-6182-417c-aa8e-0b47b2e17d13
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 66af2af28a1c26920e906f58f738e25d5032c4c1
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 948ef5cc3145f3ecdb35415f77f316ed265b44bf
+ms.sourcegitcommit: decb6c8caf4851b13af271d926c650d010a6b9e9
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89639444"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98177624"
 ---
 # <a name="how-user-account-control-works"></a>Funcionamiento del Control de cuentas de usuario
 
@@ -50,7 +50,7 @@ Con UAC habilitado, Windows Server 2012 solicita consentimiento o solicita las c
 
 **La petición de consentimiento**
 
-La petición de consentimiento aparece cuando un usuario trata de realizar una tarea que requiere un token de acceso administrativo de usuario. A continuación se muestra una captura de pantalla de la petición de consentimiento.
+La petición de consentimiento aparece cuando un usuario trata de realizar una tarea que requiere un token de acceso administrativo de usuario. A continuación se muestra una captura de pantalla de la petición de consentimiento de UAC.
 
 ![Captura de pantalla de la petición de consentimiento de UAC](../media/How-User-Account-Control-Works/UACConsentPrompt.gif)
 
@@ -58,7 +58,7 @@ La petición de consentimiento aparece cuando un usuario trata de realizar una t
 
 La petición de credenciales aparece cuando un usuario estándar trata de realizar una tarea que requiere un token de acceso administrativo de usuario. El comportamiento de petición predeterminado de usuario estándar se puede configurar mediante el complemento de directiva de seguridad local (Secpol.msc) o la directiva de grupo. Si el valor de la configuración de directiva Control de cuentas de usuario: comportamiento de la petición de elevación para los administradores en Modo de aprobación de administrador se establece en Pedir credenciales, los administradores también tendrán que suministrar sus credenciales.
 
-A continuación se muestra una captura de pantalla con un ejemplo de petición de credenciales de UAC.
+La captura de pantalla siguiente es un ejemplo de la solicitud de credenciales de UAC.
 
 ![Captura de pantalla que muestra un ejemplo de la solicitud de credenciales de UAC](../media/How-User-Account-Control-Works/UACCredentialPrompt.gif)
 
@@ -78,7 +78,7 @@ La codificación de color de las peticiones de elevación es la siguiente:
 
 **Icono de escudo**
 
-Algunos elementos del Panel de control (como **Propiedades de fecha y hora**) contienen una combinación de operaciones de usuario estándar y administrador. Así, los usuarios estándar pueden ver el reloj y cambiar la zona horaria, pero necesitan un token de acceso de administrador completo para cambiar la hora del sistema local. A continuación se muestra una captura de pantalla del elemento del Panel de control **Propiedades de fecha y hora**.
+Algunos elementos del Panel de control (como **Propiedades de fecha y hora**) contienen una combinación de operaciones de usuario estándar y administrador. Así, los usuarios estándar pueden ver el reloj y cambiar la zona horaria, pero necesitan un token de acceso de administrador completo para cambiar la hora del sistema local. La siguiente es una captura de pantalla del elemento del panel de control **propiedades de fecha y hora** .
 
 ![Captura de pantalla que muestra el elemento de panel de control * * propiedades de fecha y hora * *](../media/How-User-Account-Control-Works/UACShieldIcon.gif)
 

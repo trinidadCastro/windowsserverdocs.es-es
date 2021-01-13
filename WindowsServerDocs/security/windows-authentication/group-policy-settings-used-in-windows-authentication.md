@@ -1,18 +1,18 @@
 ---
 title: Configuración de directiva de grupo utilizada en la autenticación de Windows
-description: Seguridad de Windows Server
+description: Obtenga información sobre el uso y el impacto de la configuración de directiva de grupo en el proceso de autenticación.
 ms.topic: article
 ms.assetid: 9e237f89-45b1-4a4e-9b72-11dc7d6a470b
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: b26d9a454361c5487ceac408f0ab78db1657fa4b
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 9cc5bceade2c10fe89e6a93cbd79815f2dec2c1e
+ms.sourcegitcommit: decb6c8caf4851b13af271d926c650d010a6b9e9
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89640069"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98177294"
 ---
 # <a name="group-policy-settings-used-in-windows-authentication"></a>Configuración de directiva de grupo utilizada en la autenticación de Windows
 
@@ -37,7 +37,7 @@ Por ejemplo, puede aplicar las directivas siguientes a los grupos, en función d
 
 En la tabla siguiente se enumeran los grupos de directivas relevantes para la autenticación y se proporcionan vínculos a documentación que pueden ayudarle a configurar esas directivas.
 
-|Grupo de directivas|Location|Descripción|
+|Grupo de directivas|Ubicación|Descripción|
 |--------|------|--------|
 |**Directiva de contraseñas**|Directiva de \ de configuración del equipo local|Las directivas de contraseñas afectan a las características y el comportamiento de las contraseñas. Las directivas de contraseñas se utilizan para las cuentas de dominio o las cuentas de usuario locales. Determinan la configuración de contraseñas, como la aplicación y la duración.<p>Para obtener información sobre la configuración específica, consulte [Directiva de contraseñas](/windows/security/threat-protection/security-policy-settings/password-policy).|
 |**Directiva de bloqueo de cuenta**|Directiva de \ de configuración del equipo local|Las opciones de directiva de bloqueo de cuenta deshabilitan las cuentas después de un número de intentos de inicio de sesión erróneos. El uso de estas opciones puede ayudarle a detectar y bloquear los intentos de interrumpir las contraseñas.<p>Para obtener información acerca de las opciones de directiva de bloqueo de cuenta, consulte [Directiva de bloqueo de cuenta](/windows/security/threat-protection/security-policy-settings/account-lockout-policy).|
