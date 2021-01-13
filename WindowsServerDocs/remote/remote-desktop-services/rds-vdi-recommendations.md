@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 2a44dc9f-c221-4bf7-89c3-fb4c86a90f8c
 author: jaimeo
 manager: dougkim
-ms.openlocfilehash: cd08794084c8f2ac5c9822331b89ad03005e82a4
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 39193d0863845ff34d86a39bfd734cd6aba05fc4
+ms.sourcegitcommit: 029b1e19ce11160d5f988046e04a83e8ab5a60dc
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87946358"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97904910"
 ---
 # <a name="recommended-settings-for-vdi-desktops"></a>Configuración recomendada para dispositivos de escritorio VDI
 
@@ -333,7 +333,7 @@ Contrae **Red** y, a continuación, expande **Sistema**. Ajusta cada configuraci
 ||Impedir que Windows envíe un informe de error cuando un controlador de dispositivo solicite software adicional durante su instalación|Habilitada|
 ||Desactivar los globos de "Nuevo hardware encontrado" durante la instalación de los dispositivos|Habilitada|
 
-Expande **Sistema de archivos**, haz doble clic en **NTFS**, haz doble clic en **Opciones de creación de nombre corto**, selecciona el botón de radio de **Habilitado** y, luego, usa el menú desplegable**Opciones** para seleccionar **Habilitar en todos los volúmenes**. Haz clic en el botón **Aceptar** para guardar.
+Expande **Sistema de archivos**, haz doble clic en **NTFS**, haz doble clic en **Opciones de creación de nombre corto**, selecciona el botón de radio de **Habilitado** y, luego, usa el menú desplegable **Opciones** para seleccionar **Habilitar en todos los volúmenes**. Haz clic en el botón **Aceptar** para guardar.
 
 Contrae **Sistema de archivos** y, a continuación, expande **Administración de comunicaciones de Internet**. Haz clic en **Configuración de comunicaciones de Internet**. Ajusta cada configuración como se indica a continuación haciendo doble clic en ella. A continuación, selecciona el botón de radio de **Habilitado** y haz clic en el botón **Aceptar**:
 
@@ -416,7 +416,7 @@ Contrae **Sistema** y, a continuación, expande **Componentes de Windows**. Ajus
 
 En el mismo nivel que la configuración de **Internet Explorer** que acaba de ajustar en la tabla anterior, ten en cuenta otro nivel de carpetas que abarcan desde **Aceleradores** hasta **Barras de herramientas**. Es decir, ahora estás en Directiva de equipo local > Configuración del equipo > Plantillas administrativas > Componentes de Windows > Internet Explorer.
 
-Abre la carpeta **Eliminar el historial de exploración**, haz doble clic en **Permitir que se elimine el historial de exploración al salir**, selecciona **Habilitar** y, a continuación, haz clic en **Aceptar**para guardar y salir.
+Abre la carpeta **Eliminar el historial de exploración**, haz doble clic en **Permitir que se elimine el historial de exploración al salir**, selecciona **Habilitar** y, a continuación, haz clic en **Aceptar** para guardar y salir.
 
 Usa la flecha Atrás de la esquina superior izquierda del Editor de directivas de grupo local para volver al nivel de **Internet Explorer**. Haz doble clic en **Configuración de Internet**, en **Configuración avanzada** y, a continuación, ajusta la configuración en las subcarpetas del siguiente modo:
 
@@ -565,5 +565,5 @@ Para quitar la aplicación OneDrive, sigue estos pasos:
 4. Haz clic o pulsa **Activar o desactivar iconos del sistema** y, a continuación, activa o desactiva cada icono del sistema según quieras que esté o no en la imagen.
 
 ### <a name="delete-downloaded-updates"></a>Eliminación de las actualizaciones descargadas
-1. Mediante el Explorador de archivos, ve a **C:\Windows\Software Distribution\Download**.
+1. Mediante el Explorador de archivos, vaya a **C:\Windows\SoftwareDistribution\Download**.
 2. Elimina todos los archivos y carpetas de ese directorio.

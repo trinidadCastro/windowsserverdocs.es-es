@@ -1,6 +1,6 @@
 ---
 title: 'Notas de la versión: problemas importantes de Windows Server, versión 1709'
-description: Se resumen problemas críticos que requieren soluciones para evitar bloqueos, faltas de respuesta, errores de instalación o pérdida de datos.
+description: Obtenga información sobre los problemas críticos que requieren soluciones alternativas para evitar bloqueos, errores de instalación o pérdidas de datos en la versión 1709 de Windows Server.
 ms.date: 04/23/2018
 ms.topic: article
 ms.assetid: 134aab85-664f-4d44-87ef-9e5fd389071f
@@ -8,12 +8,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: f707dbbe22624489f9c5939987ea9831cc467214
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: d71a6bd94026615df4966d322e009be0a94d1fc3
+ms.sourcegitcommit: 605a9b46b74b2c7a9116e631e902467ea02a6e70
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766708"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97965777"
 ---
 # <a name="release-notes-important-issues-in-windows-server-version-1709"></a>Notas de la versión: Problemas importantes en Windows Server, versión 1709
 

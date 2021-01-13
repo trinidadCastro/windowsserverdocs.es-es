@@ -1,17 +1,17 @@
 ---
 title: 'Notas de la versión: Problemas importantes en Windows Server 2016'
-description: Se resumen problemas críticos que requieren soluciones para evitar bloqueos, faltas de respuesta, errores de instalación o pérdida de datos.
+description: Obtenga información sobre los problemas críticos que requieren soluciones alternativas para evitar bloqueos, errores de instalación o pérdidas de datos en la versión 2016 de Windows Server.
 ms.date: 11/13/2018
 ms.topic: article
 ms.assetid: 134aab85-664f-4d44-87ef-9e5fd389071f
 author: jaimeo
 ms.author: jaimeo
-ms.openlocfilehash: b7e86b0841023548b1df1937bdf0820d59e12292
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 6800776f569ebe78a15a35d3e6d66d93c5854ce8
+ms.sourcegitcommit: 605a9b46b74b2c7a9116e631e902467ea02a6e70
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990503"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97965150"
 ---
 # <a name="release-notes-important-issues-in-windows-server-2016"></a>Notas de la versión: Problemas importantes en Windows Server 2016
 
@@ -76,7 +76,7 @@ Vuelva al centro principal de [Windows Server 2016](../index.yml).
 
 ## <a name="storport-performance"></a>Rendimiento de Storport
 
-Algunos sistemas pueden presentar un rendimiento de almacenamiento reducido al ejecutar una nueva instalación de Windows Server 2016 frente a Windows Server 2012 R2.  Durante el desarrollo de Windows Server 2016 se realizaron una serie de cambios para mejorar la seguridad y confiabilidad de la plataforma. Algunos de esos cambios, como la habilitación de Windows Defender de manera predeterminada, dan como resultado rutas de acceso de E/S más largas, que pueden reducir el rendimiento de E/S en determinadas cargas de trabajo y determinados patrones. Microsoft no recomienda deshabilitar Windows Defender, ya que es una importante capa de protección para sus sistemas. 
+Algunos sistemas pueden presentar un rendimiento de almacenamiento reducido al ejecutar una nueva instalación de Windows Server 2016 frente a Windows Server 2012 R2.    Durante el desarrollo de Windows Server 2016 se realizaron una serie de cambios para mejorar la seguridad y confiabilidad de la plataforma. Algunos de esos cambios, como la habilitación de Windows Defender de manera predeterminada, dan como resultado rutas de acceso de E/S más largas, que pueden reducir el rendimiento de E/S en determinadas cargas de trabajo y determinados patrones. Microsoft no recomienda deshabilitar Windows Defender, ya que es una importante capa de protección para sus sistemas. 
 
 ## <a name="copyright"></a>Copyright
 

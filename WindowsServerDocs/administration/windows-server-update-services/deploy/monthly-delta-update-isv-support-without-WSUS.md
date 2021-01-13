@@ -1,17 +1,17 @@
 ---
 title: Compatibilidad de ISV de actualización Delta mensual sin WSUS
 description: 'Tema de Windows Server Update Services (WSUS): cómo los fabricantes de software independientes (ISV) pueden usar temporalmente la actualización mensual Delta en lugar de la entrega de actualizaciones Express de WSUS para reducir el tamaño de los paquetes'
-ms.topic: get-started article
+ms.topic: how-to
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 2b983b06a9f8bf4c2a6d5c72aef13689a72b3684
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 5c15784e7b276605b09eeb3014cd0d823750afa4
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89624472"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97947611"
 ---
 # <a name="monthly-delta-update-isv-support-without-wsus"></a>Compatibilidad de ISV de actualización Delta mensual sin WSUS
 
@@ -44,8 +44,8 @@ Al usar la actualización mensual Delta, los paquetes solo contendrán actualiza
 
 Las actualizaciones Delta y Acumulativa tienen el mismo número de KB, con la misma clasificación y versión al mismo tiempo. Las actualizaciones pueden distinguirse por el título de la actualización en el catálogo o por el nombre de la MSU:
 
-- 02-2017 *\***Actualización Delta**\**   para Windows 10 Version 1607 para sistemas basados en x64 (KB1234567)
-- 02-2017 *\***Actualización Acumulativa**\**   para Windows 10 Version 1607 para sistemas basados en x86 (KB1234567)
+- 2017-02 *\***Actualización diferencial**\** para la versión 1607 de Windows 10 para sistemas basados en x64 (KB1234567)
+- 2017-02 *\***Actualización acumulativa**\** para la versión 1607 de Windows 10 para sistemas basados en x86 (KB1234567)
 
 ### <a name="when-to-use-monthly-delta-update"></a>Cuándo usar la actualización mensual Delta
 

@@ -1,18 +1,18 @@
 ---
 title: Actualización de las implementaciones de Servicios de Escritorio remoto en Windows Server 2016
-description: En este artículo se describe cómo actualizar las implementaciones existentes de Servicios de Escritorio remoto a Windows Server 2016.
+description: Obtenga información sobre cómo puede actualizar las implementaciones existentes de Servicios de Escritorio remoto a Windows Server 2016.
 ms.author: spatnaik
 ms.date: 03/20/2018
 ms.topic: article
 ms.assetid: f7b1f1f6-57c8-40ab-a235-e36240dcc1f8
 author: spatnaik
 manager: scottman
-ms.openlocfilehash: a56511873c020172af0bb0813c2ee31f82ee5a2b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b3e4df45e77cabe5d4dde7ff633ed823d4bb5366
+ms.sourcegitcommit: 605a9b46b74b2c7a9116e631e902467ea02a6e70
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971512"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97965827"
 ---
 # <a name="upgrading-your-remote-desktop-services-deployments-to-windows-server-2016"></a>Actualización de las implementaciones de Servicios de Escritorio remoto en Windows Server 2016
 

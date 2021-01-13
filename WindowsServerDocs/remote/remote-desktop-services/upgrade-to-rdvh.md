@@ -1,18 +1,18 @@
 ---
 title: Actualización del host de virtualización de Escritorio remoto a Windows Server 2016
-description: En este artículo se describe cómo actualizar las implementaciones existentes de Servicios de Escritorio remoto a Windows Server 2016.
+description: Obtenga información sobre cómo puede actualizar su Host de virtualización de Escritorio remoto a Windows Server 2016.
 ms.author: spatnaik
 ms.date: 08/01/2016
 ms.topic: article
 ms.assetid: 5aed8ba7-f541-4416-b01c-4d3b1712e2b1
 author: spatnaik
 manager: scottman
-ms.openlocfilehash: 4260748ada0371e637edef23a579e7253721f4f4
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 3f42d078158cf6f78151418836795925e2bdb926
+ms.sourcegitcommit: 605a9b46b74b2c7a9116e631e902467ea02a6e70
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948828"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97965797"
 ---
 # <a name="upgrading-your-remote-desktop-virtualization-host-to-windows-server-2016"></a>Actualización del host de virtualización de Escritorio remoto a Windows Server 2016
 
@@ -61,7 +61,7 @@ Estos servidores deben actualizarse a la vez. Sigue los pasos indicados a contin
        > [!NOTE]
        > Como se mencionó, ya deberías haber creado una nueva subcarpeta de destino antes de este paso. El cuadro de diálogo Seleccionar la carpeta no te permitirá crear una subcarpeta en este paso.
 
-       Haz clic en **Siguiente**y, después, en **Finalizado**.
+       Haz clic en **Siguiente** y, después, en **Finalizado**.
 11. Una vez que se han reubicado las VM, puedes agregarlas como objetos de clúster de **alta disponibilidad**:
      1. Abre el Administrador de clústeres de conmutación por error en un servidor host de virtualización de Escritorio remoto actualizado.
      1. Haz clic con el botón derecho en el nodo **Roles** y, a continuación, haz clic en **Configurar rol**. En la página **Inicio** del Asistente para alta disponibilidad, haz clic en **Siguiente**.

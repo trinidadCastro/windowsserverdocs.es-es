@@ -6,12 +6,13 @@ ms.assetid: 8cb9b59f-0255-4261-b49a-562c5ea50ee0
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: f72d3dfc3cd6f54b123cb00baf9ba75e4faeb906
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.date: 08/07/2020
+ms.openlocfilehash: f65dc656a857b19b663190885bd5bc4c93441364
+ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969472"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97948311"
 ---
 # <a name="netsh-command-syntax-contexts-and-formatting"></a>Sintaxis, contextos y formatos de comandos netsh
 
@@ -156,43 +157,43 @@ Opcional. Especifica que quieres que el comando se ejecute en un equipo remoto.
 > [!IMPORTANT]
 > Si usas algunos comandos netsh de forma remota en otro equipo con el parámetro **netsh –r**, el servicio Registro remoto debe estar en ejecución en el equipo remoto. Si no está en ejecución, Windows muestra un mensaje de error "No se encontró la ruta de red".
 
-***`RemoteComputer`***
+**_`RemoteComputer`_* _
 
 Opcional. Especifica el equipo remoto que quieres configurar.
 
-**`-u`**
+_ *`-u`**
 
 Opcional. Especifica que quieres ejecutar el comando netsh en una cuenta de usuario.
 
-***`DomainName\\`***
+**_`DomainName\\`_* _
 
-Opcional. Especifica el dominio donde se encuentra la cuenta de usuario. El valor predeterminado es el dominio local si no se especifica *NombreDeDominio\\* .
+Opcional. Especifica el dominio donde se encuentra la cuenta de usuario. El valor predeterminado es el dominio local si no se especifica _NombreDeDominio\\*.
 
-***`UserName`***
+***`UserName`** _
 
 Opcional. Especifica el nombre de la cuenta de usuario.
 
-**`-p`**
+_ *`-p`**
 
 Opcional. Especifica que quieres proporcionar una contraseña para la cuenta de usuario.
 
-***`Password`***
+**_`Password`_* _
 
-Opcional. Especifica la contraseña de la cuenta de usuario que especificaste con **-u** *NombreDeUsuario*.
+Opcional. Especifica la contraseña de la cuenta de usuario que especificó con _ *-u** *NombreDeUsuario*.
 
-***`NetshCommand`***
+***`NetshCommand`** _
 
-Opcional. Especifica el comando **netsh** que quieres ejecutar.
+Opcional. Especifica el comando _ *netsh** que quiere ejecutar.
 
 **`-f`**
 
 Opcional. Sale de **netsh** después de ejecutar el script que se designa con *ArchivoDeScript*.
 
-***`ScriptFile`***
+***`ScriptFile`** _
 
 Opcional. Especifica el script que quieres ejecutar.
 
-**`/?`**
+_ *`/?`**
 
 Opcional. Muestra la ayuda en el símbolo del sistema de netsh.
 
