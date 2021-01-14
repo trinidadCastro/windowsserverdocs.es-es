@@ -4,15 +4,15 @@ description: Obtenga información acerca de cómo puede usar la puerta de enlace
 ms.topic: article
 ms.assetid: cd4908f0-0d6f-4c02-8f98-4dc88c3dcb65
 ms.date: 11/05/2018
-ms.author: v-tea
-author: Teresa-MOTIV
+ms.author: lizross
+author: eross-msft
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e5f8a6a68fc62bb6be02a6a332547c8d301aa95
-ms.sourcegitcommit: decb6c8caf4851b13af271d926c650d010a6b9e9
+ms.openlocfilehash: 39b4af187e8649723a7c065215fd13f1b8cd783f
+ms.sourcegitcommit: 34f292cf40f1bd698786cf05a2b27ffe184a55b8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98177254"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98192703"
 ---
 # <a name="virtual-private-networking-vpn"></a>Red privada virtual (VPN)
 
