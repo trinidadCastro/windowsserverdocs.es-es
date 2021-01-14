@@ -7,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 7b095dc75d18af2a03f7d6a95d4865bc6e975097
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 00d88c05bf5a662c1375d0cc632e195752627631
+ms.sourcegitcommit: e0070b24e0423187eb2b36ba92072fed23880aa8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97046333"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98186423"
 ---
 # <a name="troubleshooting-active-directory-replication-problems"></a>Solución de problemas de replicación de Active Directory
 
@@ -26,7 +26,7 @@ En el resto de este tema se explican las herramientas y una metodología general
 
 Los errores de replicación de entrada o de salida hacen que Active Directory objetos que representan la topología de replicación, la programación de replicación, los controladores de dominio, los usuarios, los equipos, las contraseñas, los grupos de seguridad, las pertenencias a grupos y directiva de grupo sean incoherentes entre los controladores de dominio. La incoherencia del directorio y el error de replicación causan errores operativos o resultados incoherentes, según el controlador de dominio con el que se haya establecido contacto para la operación, y pueden impedir la aplicación de los permisos de directiva de grupo y control de acceso. Active Directory Domain Services (AD DS) depende de la conectividad de red, la resolución de nombres, la autenticación y la autorización, la base de datos de directorio, la topología de replicación y el motor de replicación. Cuando la causa principal de un problema de replicación no es evidente de inmediato, la determinación de la causa entre las diversas causas posibles requiere la eliminación sistemática de las causas probables.
 
-Para obtener una herramienta basada en la interfaz de usuario que le ayude a supervisar la replicación y a diagnosticar errores, consulte [Active Directory Replication Status Tool](https://www.microsoft.com/download/details.aspx?id=30005)
+Para que una herramienta basada en la interfaz de usuario pueda supervisar la replicación y diagnosticar errores, descargue y ejecute la [herramienta de soporte técnico de Microsoft y del Asistente para recuperación](https://aka.ms/sara-adreplication), **o** use la [herramienta de Active Directory Replication status](https://www.microsoft.com/download/details.aspx?id=30005) si solo desea analizar el estado de replicación.
 
 Para obtener un documento completo en el que se describe cómo puede usar la herramienta repadmin para solucionar problemas de Active Directory la replicación está disponible; consulte [supervisión y solución de problemas de la replicación de Active Directory mediante repadmin](https://go.microsoft.com/fwlink/?LinkId=122830).
 

@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 5fe0f2a5dfd51f3b7689db7b3ad6a38938428a01
-ms.sourcegitcommit: 4165d4a9198228d4ec809ccd7d791f8de2aeb159
+ms.openlocfilehash: 4102971c4490eb42ccd5d17e7cc60f09c95b6878
+ms.sourcegitcommit: e0070b24e0423187eb2b36ba92072fed23880aa8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97091269"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98186403"
 ---
 # <a name="findstr"></a>findstr
 
@@ -94,7 +94,7 @@ findstr hello there x.y
 Para buscar *Hello* en el archivo *x. y*, escriba:
 
 ```
-findstr /c:hello there x.y
+findstr /c:"hello there" x.y
 ```
 
 Para buscar todas las apariciones de la palabra *Windows* (con una letra mayúscula inicial W) en el *proposal.txt* de archivo, escriba:
