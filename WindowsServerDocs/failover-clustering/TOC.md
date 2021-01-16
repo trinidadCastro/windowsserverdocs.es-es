@@ -5,8 +5,7 @@
 ### [Cuórum de clúster y grupo](../storage/storage-spaces/understand-quorum.md)
 ### [Reconocimiento de dominio de error](fault-domains.md)
 ### [SMB multicanal simplificada y redes de clústeres de varias NIC](smb-multichannel.md)
-### [Equilibrio de carga de VM](vm-load-balancing-overview.md)
-### [Detalles sobre equilibrio de carga de VM](vm-load-balancing-deep-dive.md)
+### [Equilibrio de carga de VM](/azure-stack/hci/manage/vm-load-balancing)
 ### [Conjuntos de clústeres](../storage/storage-spaces/cluster-sets.md)
 ### [Afinidad de clústeres](cluster-affinity.md)
 ## Planear
