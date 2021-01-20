@@ -7,12 +7,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 02/22/2018
 ms.topic: article
-ms.openlocfilehash: 24dcb859c35d82ab81460ccaea2ceb1dba5e502c
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: d2cd5f71afdb629b22438258541f91be4817b997
+ms.sourcegitcommit: 7674bbe49517bbfe0e2c00160e08240b60329fd9
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97040883"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98603460"
 ---
 # <a name="build-a-multi-tiered-application-using-on-behalf-of-obo-using-oauth-with-ad-fs-2016-or-later"></a>Compilar una aplicación de varios niveles mediante "en nombre de" (OBO) mediante OAuth con AD FS 2016 o posterior.
 
@@ -21,7 +21,7 @@ En este tutorial se proporcionan instrucciones para implementar una autenticaci�
 > [!WARNING]
 > El ejemplo que se puede compilar aquí es solo con fines educativos. Estas instrucciones son para la implementación más sencilla y mínima posible para exponer los elementos necesarios del modelo. Es posible que el ejemplo no incluya todos los aspectos del control de errores y otras funciones de relación y se Centre solo en obtener una autenticación OBO correcta.
 
-## <a name="overview"></a>Información general
+## <a name="overview"></a>Introducción
 
 En este ejemplo, vamos a crear un flujo de autenticación donde un cliente tendrá acceso a un servicio Web de nivel intermedio y el servicio Web actuará en nombre del cliente autenticado para obtener un token de acceso.
 
@@ -34,7 +34,7 @@ A continuación se muestra el flujo de autenticación que obtendrá el ejemplo
 4. AD FS devuelve el token de acceso al servicio Web de nivel intermedio. Para obtener funcionalidad adicional, el servicio de nivel intermedio necesita acceso al servidor WebAPI de back-end
 5. El cliente utiliza el token de acceso para usar el servicio de nivel intermedio.
 6. El servicio de nivel intermedio proporciona el token de acceso al punto de conexión del token de AD FS y solicita el token de acceso para el back-end de WebAPI en nombre del usuario autenticado.
-7. AD FS devuelve el token de acceso para el back-end de WebAPI al servicio de nivel intermedio que se está deteniendo como cliente
+7. AD FS devuelve el token de acceso para el back-end de WebAPI al servicio de nivel intermedio que actúa como cliente
 8. El servicio de nivel intermedio usa el token de acceso proporcionado por AD FS en el paso 7 para tener acceso al servicio WebAPI de back-end como cliente y realizar las funciones necesarias.
 
 ## <a name="sample-structure"></a>Estructura de ejemplo
@@ -94,27 +94,27 @@ En el formulario actual del ejemplo, la autenticación se configura para realiza
 
 Abra el MMC de administración de AD FS y agregue un nuevo grupo de aplicaciones. Seleccione la plantilla Native-Application-WebAPI.
 
-![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO2.PNG)
+![Captura de pantalla de la Página principal del Asistente para agregar grupos de aplicaciones que muestra el resaltado Native-Application-WebAPI.](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO2.PNG)
 
 Haga clic en siguiente y aparecerá la página para proporcionar información sobre la aplicación cliente. Asigne un nombre adecuado a la aplicación cliente en AD FS. Copie el identificador de cliente y guárdelo en un lugar en el que pueda acceder más adelante, ya que será necesario en la configuración de la aplicación en Visual Studio.
 
 >Nota: el URI de redirección puede ser cualquier URI arbitrario ya que realmente no se usa en el caso de clientes nativos.
 
-![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO11.PNG)
+![Captura de pantalla de la página aplicación nativa del Asistente para agregar grupo de aplicaciones.](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO11.PNG)
 
 Haga clic en siguiente y aparecerá la página para proporcionar información acerca de WebAPI. Asigne un nombre adecuado a la entrada AD FS de WebAPI y escriba el URI de redireccionamiento como el URI que ve en Visual Studio para ToDoListService
 
-![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO16.PNG)
+![Captura de pantalla de las propiedades del proyecto de servicio de la lista de tareas que muestran el redireccionamiento U R I.](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO16.PNG)
 
-![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO18.PNG)
+![Captura de pantalla de la página configurar API Web del Asistente para agregar grupo de aplicaciones que muestra el URI de redireccionamiento rellenado en el campo de texto.](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO18.PNG)
 
 Haga clic en siguiente y verá la página elegir Directiva de Access Control. Asegúrese de ver "permitir todos" en la sección Directiva.
 
-![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO1.PNG)
+![Captura de pantalla de la página elegir Directiva de Access Control del Asistente para agregar grupo de aplicaciones.](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO1.PNG)
 
 Haga clic en siguiente y aparecerá la página configurar permisos de aplicación. En esta página, seleccione los ámbitos permitidos como OpenID (seleccionada de forma predeterminada) y user_impersonation. El ámbito ' user_impersonation ' es necesario para poder solicitar correctamente un token de acceso en nombre de AD FS.
 
-![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO12.PNG)
+![Captura de pantalla de la página configurar permisos de aplicación del Asistente para agregar grupo de aplicaciones.](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO12.PNG)
 
 Haga clic en siguiente para mostrar la página Resumen. Recorra el resto del asistente y finalice la configuración.
 
@@ -129,25 +129,25 @@ c:[]
 => issue(Type = "http://schemas.microsoft.com/identity/claims/scope", Value = "user_impersonation");
 ```
 
-![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO10.PNG)
+![Captura de pantalla del cuadro de diálogo Propiedades que muestra la pestaña reglas de transformación de emisión.](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO10.PNG)
 
 **Agregar ToDoListService como cliente en el grupo de aplicaciones**
 
 En esta fase, es necesario realizar una entrada adicional en AD FS para que la aplicación WebServer actúe como un cliente y no como un recurso. Abra el grupo de aplicaciones que acaba de crear y haga clic en Agregar aplicación.
 
-![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO15.PNG)
+![Captura de pantalla del cuadro de diálogo Propiedades que muestra la opción Agregar aplicación en la esquina inferior izquierda de la ventana.](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO15.PNG)
 
 Se le presentará la página "agregar una nueva aplicación a MySampleGroup". En esa página, seleccione "aplicación de servidor o sitio web" como aplicación independiente.
 
-![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO19.PNG)
+![Captura de pantalla de la Página principal del Asistente para agregar una nueva aplicación a MySampleGroup con la opción aplicación de servidor o sitio web resaltada.](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO19.PNG)
 
 Haga clic en siguiente y se le presentará la página para proporcionar los detalles de la aplicación. Proporcione un nombre adecuado para la entrada de configuración en la sección nombre. Asegúrese de que el identificador de cliente es el mismo que el identificador de ToDoListServiceWebAPI
 
-![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO20.PNG)
+![Captura de pantalla de la página aplicación de servidor del Asistente para agregar una nueva aplicación a MySampleGroup que muestra el identificador de cliente correcto.](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO20.PNG)
 
 Haga clic en siguiente y se le presentará la página para configurar las credenciales de la aplicación. Haga clic en "generar un secreto compartido". Se le presentará un secreto que se genera automáticamente. Copie el secreto en alguna ubicación, ya que será necesario mientras configuramos ToDoListService en Visual Studio.
 
-![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO17.PNG)
+![Captura de pantalla de la página configurar credenciales de aplicación del Asistente para agregar una nueva aplicación a MySampleGroup que muestra la opción generar un secreto compartido seleccionado.](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO17.PNG)
 
 Haga clic en siguiente y complete el asistente.
 
@@ -216,22 +216,22 @@ Para completar el flujo en nombre de, debe crear un recurso de back-end al que e
 * Haga clic con el botón derecho en la solución ' WebAPI-Onbehalfof-DotNet ' en el explorador de soluciones y seleccione Agregar > nuevo proyecto.
 * Elección de la plantilla de aplicación Web de ASP.NET
 
-![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO4.PNG)
+![Captura de pantalla del cuadro de diálogo Agregar nuevo proyecto con la opción A S punto NET resaltada.](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO4.PNG)
 
 * En el siguiente símbolo del sistema, haga clic en "cambiar autenticación"
 * Seleccione ' cuentas profesionales y educativas ' y, en la lista desplegable derecha, seleccione ' local '.
 * Escriba la ruta de acceso de federationmetadata.xml de la implementación de AD FS y proporcione un URI de la aplicación (proporcione cualquier URI por ahora, y lo cambiará más adelante) y haga clic en Aceptar para agregar el proyecto a la solución.
 
-![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO9.PNG)
+![Captura de pantalla del cuadro de diálogo cambiar autenticación con el valor de la aplicación D U R I resaltado.](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO9.PNG)
 
 * Haga clic con el botón derecho en controladores en el explorador de soluciones, en el nuevo proyecto creado. Seleccionar controlador de > de complementos
 * En la selección de plantilla, seleccione ' controlador de Web API 2-vacío ' y haga clic en Aceptar.
 
-![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO3.PNG)
+![Captura de pantalla del cuadro de diálogo Agregar scaffold con la opción de controlador P I 2 de la web y vacía resaltada.](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO3.PNG)
 
 * Asigne un nombre adecuado al controlador.
 
-![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO13.PNG)
+![Captura de pantalla del cuadro de diálogo Agregar controlador que muestra el valor del nombre del controlador resaltado.](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO13.PNG)
 
 * Agregue el código siguiente en el controlador:
 
@@ -261,17 +261,17 @@ Este código simplemente devolverá la cadena cuando alguien ponga una solicitud
 
 Abra el grupo de aplicaciones MySampleGroup. Haga clic en Agregar aplicación y seleccione plantilla de API Web y haga clic en siguiente.
 
-![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO6.PNG)
+![Captura de pantalla de la Página principal del Asistente para agregar una nueva aplicación a MySampleGroup con la opción API Web resaltada.](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO6.PNG)
 
 En la página configurar API Web, proporcione un nombre adecuado para la entrada WebAPI y el identificador. El identificador debe ser la dirección URL de SSL de valor del proyecto WebAPIOBO en Visual Studio (similar a lo que hicimos para BackendWebAPIAdfsAdd).
 
-![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO8.PNG)
+![Captura de pantalla de las propiedades del proyecto WebAPIOBO con S S L U R L resaltado.](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO8.PNG)
 
-![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO7.PNG)
+![Captura de pantalla de la página configurar web a P I del Asistente para agregar una nueva aplicación a MySampleGroup con el valor de host local resaltado.](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO7.PNG)
 
 Continúe con el resto del asistente, igual que cuando se configuró ToDoListService WebAPI. Al final, el grupo de aplicaciones debe tener el siguiente aspecto:
 
-![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO5.PNG)
+![Captura de pantalla del cuadro de diálogo mis propiedades de grupo de ejemplo que muestra el ToDoListService WebAPI enumerado en la sección de la aplicación.](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO5.PNG)
 
 ### <a name="modifying-the-todolistservice-code"></a>Modificar el código de ToDoListService
 
@@ -280,7 +280,7 @@ Continúe con el resto del asistente, igual que cuando se configuró ToDoListSer
 * Abrir el archivo de Web.config
 * Modificar las claves siguientes
 
-| Clave | Valor |
+| Clave | Value |
 |:-|:-|
 | ida: audiencia | IDENTIFICADOR de ToDoListService tal como se indica en AD FS al configurar ToDoListService WebAPI, por ejemplo, https://localhost:44321/ |
 | ida: ClientID | IDENTIFICADOR de ToDoListService tal como se indica en AD FS al configurar ToDoListService WebAPI, por ejemplo, <https://localhost:44321/> </br>**Es muy importante que ida: Audience y ida: ClientID coincidan entre sí.** |
@@ -364,7 +364,7 @@ private static string OBOWebAPIBase = ConfigurationManager.AppSettings["ida:OBOW
 
 **Modificar la demanda usada para el nombre**
 
-A partir de AD FS vamos a emitir la demanda de Nmae, pero no vamos a emitir notificaciones de NameIdentifier. En el ejemplo se usa NameIdentifier para clave única en los elementos de la lista de tareas. Para simplificar, puede quitar de forma segura el NameIdentifier con la demanda de nombre en el código. Busque y reemplace todas las apariciones de NameIdentifier por nombre.
+Desde AD FS vamos a emitir la afirmación de nombre, pero no vamos a emitir notificaciones de NameIdentifier. En el ejemplo se usa NameIdentifier para clave única en los elementos de la lista de tareas. Para simplificar, puede quitar de forma segura el NameIdentifier con la demanda de nombre en el código. Busque y reemplace todas las apariciones de NameIdentifier por nombre.
 
 **Modificar rutina post y CallGraphAPIOnBehalfOfUser ()**
 
@@ -490,29 +490,29 @@ De forma predeterminada, Visual Studio está configurado para ejecutar un proyec
 * Haga clic con el botón derecho en la solución y seleccione Propiedades.
 * En la página Propiedades, seleccione proyectos de inicio múltiples y cambie la acción a iniciar para las tres entradas.
 
-![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO14.PNG)
+![Captura de pantalla del cuadro de diálogo páginas de propiedades de la solución que muestra la opción proyecto de inicio múltiple seleccionada y todas las acciones de los proyectos establecidas en iniciar.](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO14.PNG)
 
 Presione F5 y ejecute la solución.
 
-![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO24.PNG)
+![Captura de pantalla del cuadro de diálogo cliente de la lista de tareas pendientes.](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO24.PNG)
 
 Haga clic en el botón iniciar sesión. Se le pedirá que inicie sesión con AD FS
 
-![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO25.PNG)
+![Captura de pantalla de la página de inicio de sesión.](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO25.PNG)
 
 Después de iniciar sesión, agregue un elemento ToDo en la lista. En segundo plano, vamos a realizar una operación post en el ToDoListService que realizará una post a la API Web de WebAPIOBO.
 
-![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO26.PNG)
+![Captura de pantalla del cuadro de diálogo cliente de la lista de tareas con el campo de texto crear un elemento para que se rellene.](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO26.PNG)
 
-Si la operación se realiza correctamente, verá que el elemento se ha agregado a la lista con el mensaje adicional de la API Web de back-end a la que se obtuvo acceso mediante el flujo de autenticación de OBO.
+Si la operación se realiza correctamente, verá que el elemento se ha agregado a la lista con el mensaje adicional de la API Web de back-end a la que se obtuvo acceso mediante OBO Flow.
 
-![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO27.PNG)
+![Captura de pantalla del cuadro de diálogo cliente de la lista de tareas con el nuevo elemento que se va a rellenar la sección elementos pendientes.](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO27.PNG)
 
 También puede ver los seguimientos detallados de Fiddler. Inicie Fiddler y habilite el descifrado HTTPS. Puede ver que realizamos dos solicitudes al punto de conexión/ADFS/oautincludes.
-En la primera interacción, presentamos el código de acceso al punto de conexión del token y obtenemos un token de acceso para https://localhost:44321/ ![ AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO22.PNG)
+En la primera interacción, presentamos el código de acceso al punto de conexión del token y obtenemos un token de acceso para https://localhost:44321/ ![ la captura de pantalla de la pestaña WebForms y la pestaña sin formato de Fiddler U he mostrado el código de acceso presentado.](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO22.PNG)
 
 En la segunda interacción con el punto de conexión del token, puede ver que hemos **requested_token_use** establecido como **on_behalf_of** y estamos usando el token de acceso obtenido para el servicio Web de nivel intermedio, es decir, https://localhost:44321/ como la aserción para obtener el token en nombre de.
-![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO23.PNG)
+![Captura de pantalla de la pestaña WebForms y la pestaña sin formato de Fiddler U he mostrado la opción de uso de tokens solicitada establecida en en nombre de.](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO23.PNG)
 
 ## <a name="next-steps"></a>Pasos siguientes
 [Desarrollo de AD FS](../../ad-fs/AD-FS-Development.md)

@@ -7,12 +7,12 @@ ms.topic: how-to
 author: nedpyle
 ms.date: 04/15/2020
 ms.assetid: 12bc8e11-d63c-4aef-8129-f92324b2bf1b
-ms.openlocfilehash: 6cb59e94549aed049a4555ad2d9d7fd0448da4f8
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 51bd95800ed7658a5123d00d6d04c6fb7b95d111
+ms.sourcegitcommit: 7674bbe49517bbfe0e2c00160e08240b60329fd9
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97948621"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98603394"
 ---
 # <a name="frequently-asked-questions-about-storage-replica"></a>Preguntas frecuentes acerca de Réplica de almacenamiento
 
@@ -172,31 +172,6 @@ vssadmin revert shadow /shadow={shadown copy ID GUID listed previously}
 También puede programar esta herramienta para que se ejecute periódicamente mediante una tarea programada. Para más información sobre el uso de VSS, revise [Vssadmin](../../administration/windows-commands/vssadmin.md). No es necesario ni sirve de nada realizar una copia de seguridad de los volúmenes de registros. Si intenta hacerlo, VSS lo ignorará.
 
 El uso de Copias de seguridad de Windows Server, Microsoft Azure Backup, Microsoft DPM u otra instantánea, VSS, máquina virtual o tecnologías basadas en archivos es compatible con Réplica de almacenamiento siempre que trabajen en el nivel de volumen. Réplica de almacenamiento no admite la copia de seguridad y restauración basada en bloques.
-
-## <a name="can-i-configure-replication-to-restrict-bandwidth-usage"></a><a name="FAQ14"></a> ¿Se puede configurar la replicación para restringir el uso de ancho de banda?
-
-Sí, mediante el limitador de ancho de banda de SMB. Esto es una configuración global para todo el tráfico de Réplica de almacenamiento y, por tanto, afecta a toda la replicación desde este servidor. Normalmente, es necesaria solo con la configuración de sincronización inicial de Réplica de almacenamiento, donde se deben transferir todos los datos del volumen. Si se necesita después de la sincronización inicial, el ancho de banda de red es demasiado bajo para la carga de trabajo de E/S; reduzca el flujo de E/S o aumente el ancho de banda.
-
-Solo debe utilizarse con la replicación asincrónica (nota: la sincronización inicial siempre es asincrónica, incluso si ha especificado la opción sincrónica).
-También puede utilizar las directivas de calidad de servicio de red para ajustar el tráfico de Réplica de almacenamiento. El uso de la replicación de Réplica de almacenamiento inicializada con un alto nivel de coincidencia también reducirá considerablemente el uso global del ancho de banda en la sincronización inicial.
-
-Para establecer el límite de ancho de banda, use:
-
-```
-Set-SmbBandwidthLimit  -Category StorageReplication -BytesPerSecond x
-```
-
-Para ver el límite de ancho de banda, use:
-
-```
-Get-SmbBandwidthLimit -Category StorageReplication
-```
-
-Para quitar el límite de ancho de banda, use:
-
-```
-Remove-SmbBandwidthLimit -Category StorageReplication
-```
 
 ## <a name="what-network-ports-does-storage-replica-require"></a><a name="FAQ15"></a>¿Qué puertos de red requiere la réplica de almacenamiento?
 

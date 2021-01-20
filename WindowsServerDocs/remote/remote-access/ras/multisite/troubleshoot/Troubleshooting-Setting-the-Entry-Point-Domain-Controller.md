@@ -1,18 +1,18 @@
 ---
 title: Solucionar problemas relacionados con el establecimiento del controlador de dominio de punto de entrada
-description: Este tema forma parte de la guía de implementación de varios servidores de acceso remoto en una implementación multisitio en Windows Server 2016.
+description: Obtenga información acerca de cómo solucionar problemas relacionados con el comando Set-DAEntryPointDC.
 manager: brianlic
 ms.topic: article
 ms.assetid: b12dd0e8-1d80-4d4b-bb45-586f19d17ef0
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 4772097844992317e1549252b11cb614286518b1
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 9398bb52804f91229f0038ce4eee4ba5c6717434
+ms.sourcegitcommit: 7674bbe49517bbfe0e2c00160e08240b60329fd9
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97950521"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98603402"
 ---
 # <a name="troubleshooting-setting-the-entry-point-domain-controller"></a>Solucionar problemas relacionados con el establecimiento del controlador de dominio de punto de entrada
 

@@ -5,12 +5,12 @@ ms.author: adagashe
 ms.topic: article
 author: adagashe
 ms.date: 01/10/2020
-ms.openlocfilehash: 40ee23fa8c1fa88c54e5c8ee1e2c3ebd3453bfff
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 0cbcccb66c3fa49fb55a882601cf8044bc1dc99c
+ms.sourcegitcommit: 7674bbe49517bbfe0e2c00160e08240b60329fd9
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87961141"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98603446"
 ---
 # <a name="use-azure-monitor-to-send-emails-for-health-service-faults"></a>Uso de Azure Monitor para enviar correos electrónicos sobre errores del Servicio de mantenimiento
 
@@ -139,7 +139,7 @@ Para comprender la configuración compatible, revise los [sistemas operativos Wi
 
 En el centro de administración de Windows, puede configurar las alertas predeterminadas que se aplicarán a todos los servidores del área de trabajo Log Analytics.
 
-![GIF de configuración de alertas "](media/configure-azure-monitor/setup1.gif)
+![Un breve vídeo que muestra un usuario que configura las alertas predeterminadas que se aplicarán a todos los servidores del área de trabajo Log Analytics.](media/configure-azure-monitor/setup1.gif)
 
 Estas son las alertas y sus condiciones predeterminadas que puede modificar:
 
@@ -154,7 +154,7 @@ Estas son las alertas y sus condiciones predeterminadas que puede modificar:
 
 Una vez configuradas las alertas en el centro de administración de Windows, puede ver las alertas en el área de trabajo de log Analytics en Azure.
 
-![GIF de configuración de alertas "](media/configure-azure-monitor/setup2.gif)
+![Un vídeo corto en el que se muestra el usuario que tiene acceso a las alertas en el área de trabajo de log Analytics de Azure.](media/configure-azure-monitor/setup2.gif)
 
 Durante este flujo de incorporación, los pasos siguientes se están produciendo en el capó. Se explica cómo configurarlos en detalle en caso de que quiera configurar manualmente el clúster.
 
@@ -206,7 +206,7 @@ Event | where (EventLevelName == "Error")
 
 ![Filter](media/configure-azure-monitor/log-analytics-portal-eventlist-02.png)
 
-Una vez realizadas las consultas de apropiados para los eventos que le interesan, guárdelas en el paso siguiente.
+Una vez que haya realizado las consultas adecuadas para los eventos que le interesan, guárdelas para el paso siguiente.
 
 ### <a name="create-alerts"></a>Creación de alertas
 Ahora, vamos a examinar un ejemplo de creación de una alerta.
@@ -216,7 +216,7 @@ Ahora, vamos a examinar un ejemplo de creación de una alerta.
 3. Como primer paso, en la sección **Crear alerta**, seleccione el área de trabajo de Log Analytics como el recurso, ya que se trata de una señal de alerta basada en el registro.  Filtre los resultados seleccionando la **Suscripción** específica en la lista desplegable si tiene más de una, la cual contiene el área de trabajo de Log Analytics creada anteriormente.  Filtre el **Tipo de recurso** seleccionando **Log Analytics** en la lista desplegable.  Por último, seleccione el **recurso** **DefaultLAWorkspace** y haga clic en **Listo**.<br><br> ![Tarea del paso 1 de creación de alertas](media/configure-azure-monitor/alert-rule-03.png)<br>
 4. En la sección **Criterios de alerta**, haga clic en **Agregar criterios** para seleccionar la consulta guardada y, a continuación, especifique la lógica que sigue la regla de alertas.
 5. Configure la alerta con la siguiente información: a. En la lista desplegable **Basado en**, seleccione **Unidades métricas**.  Una medida de métricas creará una alerta por cada objeto de la consulta con un valor que supere el umbral especificado.
-   b. En **condición**, seleccione **mayor que** y especifique un thershold.
+   b. Para **Condición**, seleccione **Mayor que** y especifique un umbral.
    c. A continuación, defina cuándo desencadenar la alerta. Por ejemplo, puede seleccionar **Infracciones consecutivas** y, en la lista desplegable, seleccionar **Mayor que** y escribir un valor de 3.
    d. En la sección Evaluation based on (Evaluación basada en), modifique el valor de **Período** a **30** minutos y el de **Frecuencia** a 5. La regla se ejecutará cada cinco minutos y devolverá los registros que se crearon dentro de los últimos 30 minutos desde la hora actual.  El hecho de establecer el período de tiempo en una ventana más amplia justifica la posibilidad de latencia en los datos y garantiza que la consulta devuelve datos para evitar un falso negativo en aquellos casos en los que la alerta nunca se activa.
 6. Haga clic en **Listo** para finalizar la regla de alertas.<br><br> ![Configurar la señal de alerta](media/configure-azure-monitor/alert-signal-logic-02.png)<br>

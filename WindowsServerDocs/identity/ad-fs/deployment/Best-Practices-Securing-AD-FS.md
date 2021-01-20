@@ -7,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 10aa277a990dd91016c4dada6f8de3730b1a60fc
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: e70a62a80b3a40b70c261e96b841db92a996bb46
+ms.sourcegitcommit: 7674bbe49517bbfe0e2c00160e08240b60329fd9
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969802"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98603409"
 ---
 # <a name="best-practices-for-securing-active-directory-federation-services"></a>Prácticas recomendadas para proteger Servicios de federación de Active Directory (AD FS)
 
@@ -23,20 +23,20 @@ Este documento se aplica a AD FS y WAP en Windows Server 2012 R2 y Windows Serve
 ## <a name="standard-deployment-topology"></a>Topología de implementación estándar
 Para la implementación en entornos locales, se recomienda una topología de implementación estándar que consta de uno o varios servidores de AD FS en la red corporativa interna, con uno o varios servidores de proxy de aplicación web (WAP) en una red perimetral o extranet.  En cada capa, AD FS y WAP, se coloca un equilibrador de carga de hardware o software delante de la granja de servidores y controla el enrutamiento del tráfico.  Los firewalls se colocan según sea necesario delante de la dirección IP externa del equilibrador de carga delante de cada granja de servidores (FS y proxy).
 
-![Topología estándar de AD FS](media/Best-Practices-Securing-AD-FS/adfssec1.png)
+![Diagrama que muestra una topología de D F S estándar.](media/Best-Practices-Securing-AD-FS/adfssec1.png)
 
 >[!NOTE]
-> AD FS requiere que un controlador de dominio de escritura completo funcione en lugar de un controlador de dominio de solo lectura. Si una topología planeada incluye un controlador de dominio de solo lectura, el controlador de dominio de solo lectura se puede usar para la autenticación, pero el procesamiento de notificaciones LDAP requerirá una conexión al controlador de dominio de escritura.
+> AD FS requiere que un controlador de dominio de escritura completo funcione en lugar de un controlador de dominio de Read-Only. Si una topología planeada incluye un Read-Only controlador de dominio, el controlador de dominio de Read-Only se puede usar para la autenticación, pero el procesamiento de notificaciones LDAP requerirá una conexión al controlador de dominio de escritura.
 
 ## <a name="ports-required"></a>Puertos necesarios
 En el diagrama siguiente se muestran los puertos de firewall que se deben habilitar entre y entre los componentes de la implementación de AD FS y WAP.  Si la implementación no incluye Azure AD/Office 365, se pueden omitir los requisitos de sincronización.
 
 >Tenga en cuenta que el puerto 49443 solo es necesario si se usa la autenticación de certificado de usuario, que es opcional para Azure AD y Office 365.
 
-![Topología estándar de AD FS](media/Best-Practices-Securing-AD-FS/adfssec2.png)
+![diagrama que muestra los puertos y protocolos necesarios para una implementación D F S.](media/Best-Practices-Securing-AD-FS/adfssec2.png)
 
 >[!NOTE]
-> El puerto 808 (Windows Server 2012R2) o el puerto 1501 (Windows Server 2016 +) es el puerto net. TCP AD FS usa para que el punto de conexión de WCF local transfiera los datos de configuración al proceso de servicio y PowerShell. Este puerto se puede ver mediante la ejecución de Get-AdfsProperties | Seleccione NetTcpPort. Se trata de un puerto local que no necesitará abrirse en el firewall, pero se mostrará en un examen de puerto.
+> El puerto 808 (Windows Server 2012R2) o el puerto 1501 (Windows Server 2016 +) es el puerto net. TCP AD FS usa para que el punto de conexión de WCF local transfiera los datos de configuración al proceso de servicio y PowerShell. Este puerto se puede visualizar ejecutando Get-AdfsProperties | Seleccione NetTcpPort. Se trata de un puerto local que no necesitará abrirse en el firewall, pero se mostrará en un examen de puerto.
 
 ### <a name="azure-ad-connect-and-federation-serverswap"></a>Servidores de Azure AD Connect y Federación/WAP
 En esta tabla se describen los puertos y protocolos que son necesarios para la comunicación entre el servidor de Azure AD Connect y servidores de federación/WAP.
@@ -146,9 +146,9 @@ Set-AdfsProperties -EnableExtranetLockout $true -ExtranetLockoutThreshold 15 -Ex
 
 Como referencia, la documentación pública de esta característica está [aquí](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn486806(v=ws.11)).
 
-### <a name="disable-ws-trust-windows-endpoints-on-the-proxy-ie-from-extranet"></a>Deshabilitar los puntos de conexión de Windows de WS-Trust en el proxy, es decir, desde la extranet
+### <a name="disable-ws-trust-windows-endpoints-on-the-proxy-ie-from-extranet"></a>Deshabilitar WS-Trust puntos de conexión de Windows en el proxy, es decir, desde la extranet
 
-Los puntos de conexión de Windows de WS-Trust (*/ADFS/Services/Trust/2005/windowstransport* y */ADFS/Services/Trust/13/windowstransport*) están diseñados únicamente para ser puntos de conexión orientados a la intranet que usan el enlace WIA en https. Exponerlos a la extranet podría permitir que las solicitudes a estos puntos de conexión omitan las protecciones de bloqueo. Estos extremos deben deshabilitarse en el proxy (es decir, deshabilitarse de la extranet) para proteger el bloqueo de cuentas de AD mediante los siguientes comandos de PowerShell. No hay ningún impacto en el usuario final conocido mediante la deshabilitación de estos puntos de conexión en el proxy.
+WS-Trust puntos de conexión de Windows (*/ADFS/Services/Trust/2005/windowstransport* y */ADFS/Services/Trust/13/windowstransport*) están diseñados únicamente para ser puntos de conexión orientados a la intranet que usan el enlace WIA en https. Exponerlos a la extranet podría permitir que las solicitudes a estos puntos de conexión omitan las protecciones de bloqueo. Estos extremos deben deshabilitarse en el proxy (es decir, deshabilitarse de la extranet) para proteger el bloqueo de cuentas de AD mediante los siguientes comandos de PowerShell. No hay ningún impacto en el usuario final conocido mediante la deshabilitación de estos puntos de conexión en el proxy.
 
 ```powershell
 Set-AdfsEndpoint -TargetAddressPath /adfs/services/trust/2005/windowstransport -Proxy $false
@@ -172,6 +172,6 @@ Install-AdfsFarm -CertificateThumbprint <String> -DecryptionCertificateThumbprin
 
 donde:
 
-- `CertificateThumbprint`es el certificado SSL
-- `SigningCertificateThumbprint`es el certificado de firma (con clave protegida HSM)
-- `DecryptionCertificateThumbprint`es el certificado de cifrado (con clave protegida HSM)
+- `CertificateThumbprint` es el certificado SSL
+- `SigningCertificateThumbprint` es el certificado de firma (con clave protegida HSM)
+- `DecryptionCertificateThumbprint` es el certificado de cifrado (con clave protegida HSM)
