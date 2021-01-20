@@ -5,13 +5,13 @@ ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.localizationpriority: medium
-ms.date: 08/07/2020
-ms.openlocfilehash: ef5a4df53efeb6e24a86d74906fc5847d1924163
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.date: 01/14/2021
+ms.openlocfilehash: 20e2c1098aaf77559c32cca8f457a3ec5e3080f8
+ms.sourcegitcommit: 17571fb06af2634dbf0163a2c08014cd6e9f9762
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947561"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98206064"
 ---
 # <a name="install-and-manage-extensions"></a>Instalar y administrar extensiones
 
@@ -62,7 +62,7 @@ Si Windows Admin Center está instalado en un equipo que no está conectado a In
 2. Haz clic en el nombre del paquete que quieras instalar para ver la página de detalles del paquete.
 3. Haga clic en el vínculo **Descargar** en el panel de la derecha de la página de detalles del paquete y descargue el archivo .nupkg para la extensión.
 4. Repite los pasos 2 y 3 para todos los paquetes que quieras descargar.
-5. Copia los archivos de paquete en un recurso compartido de archivos al que se pueda tener acceso desde el equipo en el que está instalado Windows Admin Center o en el disco local del equipo.
+5. Copie los archivos de paquete en un recurso compartido de archivos al que se pueda acceder desde el equipo en el que está instalado Windows Admin Center o en el disco local de dicho equipo.
 6. [Sigue las instrucciones para instalar extensiones desde otra fuente](#installing-extensions-from-a-different-feed).
 
 ### <a name="downloading-packages-with-a-powershell-script"></a>Descarga de paquetes con un script de PowerShell

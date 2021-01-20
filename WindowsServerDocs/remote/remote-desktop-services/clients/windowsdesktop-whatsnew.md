@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 12/15/2020
+ms.date: 01/12/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ce679c49abac80e4d3fa1edef9768ae8abf34b3
-ms.sourcegitcommit: 4f7308430a69fe7965e16aa5b31f87c5d68e4a09
+ms.openlocfilehash: 1d5dc9e76680b6c222f67b8f94c12bedd57af263
+ms.sourcegitcommit: 56297d3b8aa8f4796cb74b736d599d433aeee339
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97577407"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98134811"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novedades del cliente de escritorio de Windows
 
@@ -24,18 +24,20 @@ El cliente se puede configurar para distintos [grupos de usuarios](windowsdeskto
 
 |Grupo de usuarios |La versión más reciente  |Versión mínima admitida |
 |-----------|----------------|--------------------------|
-|Público     |1.2.1524        |1.2.945                   |
-|Insider    |1.2.1526        |1.2.945                   |
+|Público     |1.2.1525        |1.2.945                   |
+|Insider    |1.2.1670        |1.2.945                   |
 
-## <a name="updates-for-version-121526-insider"></a>Actualizaciones de la versión 1.2.1526 (Insider)
+## <a name="updates-for-version-121670-insider"></a>Actualizaciones de la versión 1.2.1670 (Insider)
 
-*Fecha de publicación: 15/12/2020*
+*Fecha de publicación: 12/1/2021*
 
 Descarga: [Windows de 64 bits](https://go.microsoft.com/fwlink/?linkid=2139233), [Windows de 32 bits](https://go.microsoft.com/fwlink/?linkid=2139144), [ARM64 de Windows](https://go.microsoft.com/fwlink/?linkid=2139368)
 
 - Se ha agregado compatibilidad con la característica de protección de captura de pantalla para puntos de conexión de Windows 10. Para obtener más información, consulte [Procedimientos recomendados de seguridad del host de sesión](/azure/virtual-desktop/security-guide#session-host-security-best-practices).
+- Se ha agregado compatibilidad con los servidores proxy que requieren autenticación para la suscripción de la fuente.
+- El cliente ahora muestra una notificación con una opción de reintento si una actualización no se descarga correctamente.
 
-## <a name="updates-for-version-121524"></a>Actualizaciones para la versión 1.2.1524
+## <a name="updates-for-version-121525"></a>Actualizaciones para la versión 1.2.1525
 
 *Fecha de publicación: 01/12/2020*
 

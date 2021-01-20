@@ -6,12 +6,12 @@ author: dahavey
 ms.author: dahavey
 ms.date: 05/08/2018
 ms.topic: article
-ms.openlocfilehash: c407db49c289414cd92b3ff0316d4097754fac5b
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 66b24e4f1b99ba13e48520743069fc4aff4abf28
+ms.sourcegitcommit: 6a62d736e4d9989515c6df85e2577662deb042b6
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97046833"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98103667"
 ---
 # <a name="how-the-windows-time-service-works"></a>Funcionamiento del servicio Hora de Windows
 
@@ -69,7 +69,7 @@ En la ilustración siguiente se muestra la arquitectura del servicio de hora de 
 
 **Arquitectura de servicio de hora de Windows**
 
-![Hora de Windows](../media/Windows-Time-Service/How-the-Windows-Time-Service-Works/trnt_sec_arcc.gif)
+![Diagrama que muestra la arquitectura del servicio Hora de Windows.](../media/Windows-Time-Service/How-the-Windows-Time-Service-Works/trnt_sec_arcc.gif)
 
 El administrador de control de servicios es responsable de iniciar y detener el servicio de hora de Windows. El administrador del servicio de hora de Windows es responsable de iniciar la acción de los proveedores de hora de NTP incluidos con el sistema operativo. El administrador del servicio de hora de Windows controla todas las funciones del servicio de hora de Windows y la fusión de todas las muestras de hora. Además de proporcionar información sobre el estado actual del sistema, como el origen de la hora actual o la última vez que se actualizó el reloj del sistema, el administrador del servicio de hora de Windows también es responsable de crear eventos en el registro de eventos.
 

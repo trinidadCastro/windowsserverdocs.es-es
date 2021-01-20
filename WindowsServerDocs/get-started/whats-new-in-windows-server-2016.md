@@ -1,6 +1,6 @@
 ---
 title: What's New in Windows Server 2016 (Novedades en Windows Server 2016)
-description: ¿Cuáles son las nuevas características de proceso, identidad, administración, automatización, redes, seguridad y almacenamiento?
+description: Descubra las nuevas características de proceso, identidad, administración, automatización, redes, seguridad y almacenamiento de Windows Server 2016.
 ms.date: 05/21/2019
 ms.topic: article
 ms.assetid: 2827f332-44d4-4785-8b13-98429087dcc7
@@ -8,12 +8,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 5dfed9e70e4f0406c59c31201c8d2d1a9b3caafe
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: 0e4b52f7f4bdbbf82a9f87a02a0305c7e351163c
+ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766868"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98113121"
 ---
 # <a name="whats-new-in-windows-server-2016"></a>What's New in Windows Server 2016 (Novedades en Windows Server 2016)
 
@@ -92,7 +92,7 @@ Windows Server 2016 y Windows 10 incluyen la nueva característica PackageManage
 Para más información, consulta [https://github.com/OneGet/oneget/wiki](https://github.com/OneGet/oneget/wiki).
 
 ### <a name="powershell-enhancements-to-assist-digital-forensics-and-help-reduce-security-breaches"></a>Mejoras de PowerShell para ayudar a realizar análisis forenses digitales y a reducir las infracciones de seguridad
-Para ayudar al equipo responsable a investigar sistemas comprometidos, a veces conocido como el “equipo azul”, se ha agregado la funcionalidad adicional de registros de PowerShell y otra funcionalidad de análisis forenses digitales, ademá de una funcionalidad para ayudar a reducir las vulnerabilidades en scripts, como PowerShell restringido y API CodeGeneration seguras.
+Para ayudar al equipo responsable a investigar sistemas comprometidos, a veces conocido como el “equipo azul”, se ha agregado la funcionalidad adicional de registros de PowerShell y otra funcionalidad de análisis forenses digitales, además de una funcionalidad para ayudar a reducir las vulnerabilidades en scripts, como PowerShell restringido y API CodeGeneration seguras.
 
 Para obtener información, consulta [PowerShell ♥ the Blue Team](https://devblogs.microsoft.com/powershell/powershell-the-blue-team/).
 
@@ -105,7 +105,7 @@ Ahora puede reflejar y enrutar tráfico a dispositivos virtuales nuevos o existe
 ### <a name="tcp-performance-improvements"></a>Mejoras en el rendimiento de TCP
 El valor predeterminado del intervalo de congestión inicial (ICW) se ha aumentado de 4 a 10 y TCP Fast Open (TFO) se ha implementado. TFO reduce la cantidad de tiempo necesario para establecer una conexión TCP y el ICW aumentado permite la transferencia de objetos más grandes a la ráfaga inicial. Esta combinación puede reducir significativamente el tiempo necesario para transferir un objeto de Internet entre el cliente y la nube.
 
-Para mejorar el comportamiento de TCP al realizar la recuperación de pérdida de paquetes, se han implementado Tail Loss Probe (TLP) y Recent Acknowledgement (RACK) en TCP. TLP ayuda a convertir los tiempos de espera de retransmisión (RTO) para recuperaciones rápidas y RACK reduce el tiempo necesario para que la recuperación rápida retransmita un paquete perdido. 
+Para mejorar el comportamiento de TCP al realizar la recuperación de pérdida de paquetes, se han implementado Tail Loss Probe (TLP) y Recent Acknowledgement (RACK) de TCP.  TLP ayuda a convertir los tiempos de espera de retransmisión (RTO) para recuperaciones rápidas y RACK reduce el tiempo necesario para que la recuperación rápida retransmita un paquete perdido. 
 
 ## <a name="security-and-assurance"></a>[Seguridad y control](../security/Security-and-Assurance.yml)
 Incluye soluciones y características de seguridad para que los profesionales de TI implementen en su entorno de nube y centro de datos. Para obtener información sobre la seguridad en Windows Server 2016 en general, vea [Seguridad y control](../security/Security-and-Assurance.yml).
