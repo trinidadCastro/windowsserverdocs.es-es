@@ -4,14 +4,14 @@ ms.author: jgerend
 manager: daveba
 ms.topic: article
 author: jasongerend
-ms.date: 06/07/2019
+ms.date: 01/21/2021
 description: En este tema se describen los espacios de nombres DFS, que es un servicio de rol de Windows Server que permite agrupar las carpetas compartidas ubicadas en distintos servidores en uno o más espacios de nombres estructurados lógicamente.
-ms.openlocfilehash: 5f2ab44b902d5ed1d27be9eb14bda8f003387f52
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: ffc909f4feb23d26cf496eddca51899a97f4cafe
+ms.sourcegitcommit: fc2a7c69a74edcd79372054c4a9a24237510babd
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96866004"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98672947"
 ---
 # <a name="dfs-namespaces-overview"></a>Información general sobre espacios de nombres DFS
 
@@ -106,11 +106,11 @@ Install-WindowsFeature "FS-DFS-Namespace", "RSAT-DFS-Mgmt-Con"
 
 ## <a name="interoperability-with-azure-virtual-machines"></a>Interoperabilidad con máquinas virtuales de Azure
 
-Se ha probado el uso de espacios de nombres DFS en una máquina virtual en Microsoft Azure; sin embargo, hay algunas limitaciones y requisitos que debe seguir.
-
-- No se pueden agrupar en clúster espacios de nombres independientes en máquinas virtuales de Azure.
+Se ha probado el uso de espacios de nombres DFS en una máquina virtual en Microsoft Azure.
 
 - Puede hospedar espacios de nombres basados en dominio en máquinas virtuales de Azure, incluidos los entornos con Azure Active Directory.
+- Puede agrupar los espacios de nombres independientes en máquinas virtuales de Azure mediante clústeres de conmutación por error que usan discos [compartidos](/azure/virtual-machines/disks-shared) o [discos ultra](/azure/virtual-machines/disks-enable-ultra-ssd).
+
 
 Para obtener información sobre cómo empezar a trabajar con Azure virtual machines, consulte la [documentación de Azure virtual machines](/azure/virtual-machines/).
 
@@ -125,5 +125,5 @@ Para obtener más información relacionada, vea los siguientes recursos.
 | **Operaciones**    | [Espacios de nombres DFS: preguntas más frecuentes](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee404780(v=ws.10)) |
 | **Recursos de la comunidad** | [Foro de TechNet sobre servicios de archivos y almacenamiento](/answers/topics/windows-server-storage.html) |
 | **Protocolos**        | [Protocolos de servicios de archivo en Windows Server](/openspecs/windows_protocols/MS-WINPROTLP/df36f95e-6a6b-48d6-a3ae-35a17674f546) (desusado) |
-| **Tecnologías relacionadas** | [Clústeres de conmutación por error](../../failover-clustering/failover-clustering-overview.md)|
+| **Tecnologías relacionadas** | [Clúster de conmutación por error](../../failover-clustering/failover-clustering-overview.md)|
 | **Soporte técnico** | [Soporte técnico Windows IT Pro](https://www.microsoft.com/itpro/windows/support)|
