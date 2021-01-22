@@ -7,17 +7,18 @@ ms.author: billmath
 manager: mtillman
 ms.date: 11/14/2018
 ms.topic: article
-ms.openlocfilehash: 93bca831222700f12cccd2ae6aef60ca189197b9
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 60e93280e00fb980871c1289047ee2ff54d4d449
+ms.sourcegitcommit: eb995fa887ffe1408b9f67caf743c66107173666
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97048853"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98666594"
 ---
 # <a name="configuring-alternate-login-id"></a>Configuración de identificador de inicio de sesión alternativo
 
 
 ## <a name="what-is-alternate-login-id"></a>¿Qué es el identificador de inicio de sesión alternativo?
+
 En la mayoría de los escenarios, los usuarios usan sus UPN (nombres de entidad de seguridad de usuario) para iniciar sesión en sus cuentas. Sin embargo, en algunos entornos debido a las directivas corporativas o a las dependencias de la aplicación de línea de negocio local, los usuarios pueden usar algún otro tipo de inicio de sesión.
 
 > [!NOTE]
@@ -35,6 +36,7 @@ Una organización puede tener que usar un identificador alternativo en los escen
    En los escenarios mencionados anteriormente, el identificador alternativo con AD FS permite a los usuarios iniciar sesión en Azure AD sin modificar los UPN locales.
 
 ## <a name="configure-alternate-logon-id"></a>Configurar el identificador de inicio de sesión alternativo
+
 Con Azure AD Connect se recomienda usar Azure AD Connect para configurar el identificador de inicio de sesión alternativo para su entorno.
 
 - Para ver la nueva configuración de Azure AD Connect, consulte conexión a Azure AD para obtener instrucciones detalladas sobre cómo configurar el identificador alternativo y la granja de AD FS.
@@ -46,6 +48,7 @@ Cuando Azure AD Connect se proporciona información detallada sobre el entorno d
 > Microsoft recomienda usar Azure AD Connect para configurar el identificador de inicio de sesión alternativo.
 
 ### <a name="manually-configure-alternate-id"></a>Configuración manual del ID. alternativo
+
 Para configurar el identificador de inicio de sesión alternativo, debe realizar las siguientes tareas: configurar las confianzas del proveedor de notificaciones de AD FS para habilitar el identificador de inicio de sesión alternativo
 
 1.  Si tiene el servidor 2012R2, asegúrese de que tiene KB2919355 instalado en todos los servidores AD FS. Puede obtenerla a través de Windows Update Services o descargarla directamente.
@@ -80,6 +83,7 @@ Set-AdfsClaimsProviderTrust -TargetIdentifier "AD AUTHORITY" -AlternateLoginID $
 > Lo siguiente solo se ha probado con AD FS y no con proveedores de identidades de terceros.
 
 ### <a name="exchange-and-skype-for-business"></a>Exchange y Skype empresarial
+
 Si usa un identificador de inicio de sesión alternativo con Exchange y Skype empresarial, la experiencia del usuario varía en función de si está usando HMA o no.
 
 > [!NOTE]
@@ -88,6 +92,7 @@ Si usa un identificador de inicio de sesión alternativo con Exchange y Skype em
 o más información, consulte [Introducción a la autenticación moderna híbrida](https://support.office.com/article/Hybrid-Modern-Authentication-overview-and-prerequisites-for-using-it-with-on-premises-Skype-for-Business-and-Exchange-servers-ef753b32-7251-4c9e-b442-1a5aec14e58d)
 
 ### <a name="pre-requisites-for-exchange-and-skype-for-business"></a>Requisitos previos de Exchange y Skype empresarial
+
 A continuación se indican los requisitos previos para lograr el inicio de sesión único con el identificador alternativo.
 
 - Exchange Online debe tener activada la autenticación moderna.
@@ -110,12 +115,15 @@ La configuración del directorio para el inicio de sesión único con el identif
 Con la siguiente configuración adicional, la experiencia del usuario se ha mejorado de forma significativa y se pueden conseguir solicitudes de casi cero para la autenticación de los usuarios de ID. alternativo de la organización.
 
 ##### <a name="step-1-update-to-required-office-version"></a>Paso 1. Actualizar a la versión de Office requerida
+
 La versión 1712 de Office (compilación no 8827,2148) y versiones posteriores han actualizado la lógica de autenticación para controlar el escenario de identificador alternativo. Con el fin de aprovechar la nueva lógica, los equipos cliente deben actualizarse a la versión 1712 de Office (compilación no 8827,2148) y versiones posteriores.
 
 ##### <a name="step-2-update-to-required-windows-version"></a>Paso 2. Actualizar a la versión de Windows necesaria
+
 La versión 1709 y posteriores de Windows han actualizado la lógica de autenticación para controlar el escenario de identificador alternativo. Con el fin de aprovechar la nueva lógica, los equipos cliente deben actualizarse a la versión 1709 y posteriores de Windows.
 
 ##### <a name="step-3-configure-registry-for-impacted-users-using-group-policy"></a>Paso 3. Configurar el registro para los usuarios afectados mediante la Directiva de grupo
+
 Las aplicaciones de Office se basan en la información insertada por el administrador de directorios para identificar el entorno de identificador alternativo. Las siguientes claves del registro deben configurarse para ayudar a las aplicaciones de Office a autenticar al usuario con el identificador alternativo sin mostrar ningún mensaje adicional.
 
 |RegKey que se va a agregar|Nombre, tipo y valor de datos RegKey|Windows 7/8|Windows 10|Descripción|
@@ -139,7 +147,7 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zo
 
 ### <a name="non-exchange-and-skype-for-business-clients"></a>Clientes que no son de Exchange y Skype empresarial
 
-|Cliente|Declaración de compatibilidad|Comentarios|
+|Remoto|Declaración de compatibilidad|Comentarios|
 | ----- | -----|-----|
 |Equipos de Microsoft|Compatible|<li>Microsoft Teams admite AD FS (SAML-P, WS-FED, WS-Trust y OAuth) y la autenticación moderna.</li><li> Los principales equipos de Microsoft, como las funcionalidades de canales, chats y archivos, funcionan con un identificador de inicio de sesión alternativo.</li><li>el cliente debe investigar por separado la primera y las aplicaciones de terceros. Esto se debe a que cada aplicación tiene sus propios protocolos de autenticación.</li>|
 |OneDrive para la Empresa|Compatible: se recomienda la clave del registro del lado cliente |Con el identificador alternativo configurado, verá que el UPN local se rellena previamente en el campo de comprobación. Esto debe cambiarse a la identidad alternativa que se está usando. Se recomienda usar la clave del registro del lado cliente que se indica en este artículo: Office 2013 y Lync 2013 solicitan periódicamente las credenciales a SharePoint Online, OneDrive y Lync Online.|
@@ -148,7 +156,7 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zo
 
 ### <a name="exchange-and-skype-for-business-clients"></a>Clientes de Exchange y Skype empresarial
 
-|Cliente|Declaración de soporte: con HMA|Instrucción de soporte técnico: sin HMA|
+|Remoto|Declaración de soporte: con HMA|Instrucción de soporte técnico: sin HMA|
 | ----- |----- | ----- |
 |Outlook|Compatible, sin mensajes adicionales|Compatible</br></br>Con **autenticación moderna** para Exchange Online: compatible</br></br>Con **autenticación normal** para Exchange Online: se admite con las siguientes advertencias:</br><li>Debe estar en un equipo unido a un dominio y estar conectado a la red corporativa </li><li>Solo se puede usar un identificador alternativo en entornos que no permiten el acceso externo a los usuarios de buzones. Esto significa que los usuarios solo pueden autenticarse en su buzón de una manera compatible cuando están conectados y Unidos a la red corporativa, en una VPN o conectados a través de máquinas de acceso directo, pero obtiene un par de mensajes adicionales al configurar el perfil de Outlook.|
 |Carpetas públicas híbridas|Compatible, no hay ningún mensaje adicional.|Con **autenticación moderna** para Exchange Online: compatible</br></br>Con **autenticación normal** para Exchange Online: no compatible</br></br><li>Las carpetas públicas híbridas no pueden expandirse si se usan IDENTIFICADOres alternativos y, por lo tanto, no deben usarse actualmente con métodos de autenticación normales.|
@@ -164,11 +172,9 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zo
     - Los dominios no enrutables (por ejemplo, contoso. local) que no se pueden comprobar mediante Azure AD.
     - Entornos administrados que no tienen AD FS implementado.
 
-
 - Cuando está habilitada, la característica de identificador de inicio de sesión alternativo solo está disponible para la autenticación de nombre de usuario y contraseña en todos los protocolos de autenticación de nombre de usuario y contraseña admitidos por AD FS (SAML-P, WS-FED, WS-Trust y OAuth).
 
-
-- Cuando se realiza la autenticación integrada de Windows (WIA) (por ejemplo, cuando los usuarios intentan obtener acceso a una aplicación corporativa en un equipo unido a un dominio desde la intranet y AD FS administrador ha configurado la Directiva de autenticación para usar WIA para intranet), UPN Isused para la autenticación. Si ha configurado alguna regla de notificaciones para los usuarios de confianza para la característica de identificador de inicio de sesión alternativo, debe asegurarse de que esas reglas siguen siendo válidas en el caso de WIA.
+- Cuando se realiza la autenticación integrada de Windows (WIA) (por ejemplo, cuando los usuarios intentan obtener acceso a una aplicación corporativa en un equipo unido a un dominio desde la intranet y AD FS administrador ha configurado la Directiva de autenticación para utilizar WIA para intranet), se usa el UPN para la autenticación. Si ha configurado alguna regla de notificaciones para los usuarios de confianza para la característica de identificador de inicio de sesión alternativo, debe asegurarse de que esas reglas siguen siendo válidas en el caso de WIA.
 
 - Cuando está habilitada, la característica de identificador de inicio de sesión alternativo requiere que al menos un servidor de catálogo global sea accesible desde el servidor de AD FS para cada bosque de cuenta de usuario que AD FS admita. Si no se alcanza un servidor de catálogo global en el bosque de cuentas de usuario, AD FS se revierte al uso de UPN. De forma predeterminada, todos los controladores de dominio son servidores de catálogo global.
 
@@ -183,6 +189,7 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zo
 - El nuevo tipo de notificaciones que contiene el valor del identificador de inicio de sesión alternativo es **http: schemas. Microsoft. com/ws/2013/11/alternateloginid**
 
 ## <a name="events-and-performance-counters"></a>Eventos y contadores de rendimiento
+
 Se han agregado los siguientes contadores de rendimiento para medir el rendimiento de los servidores de AD FS cuando el identificador de inicio de sesión alternativo está habilitado:
 
 - Autenticaciones de identificador de inicio de sesión alternativo: número de autenticaciones realizadas mediante el identificador de inicio de sesión alternativo
@@ -203,4 +210,5 @@ A continuación se muestran varios casos de error y el impacto correspondiente e
 |   Se encuentran varios objetos de usuario en varios bosques    |          Error de inicio de sesión           |           ID. de evento 364 con el mensaje de excepción MSIS8014: se encontraron varias cuentas de usuario con la identidad ' {0} ' en los bosques: {1}            |
 
 ## <a name="see-also"></a>Consulte también
+
 [Operaciones de AD FS](../ad-fs-operations.md)

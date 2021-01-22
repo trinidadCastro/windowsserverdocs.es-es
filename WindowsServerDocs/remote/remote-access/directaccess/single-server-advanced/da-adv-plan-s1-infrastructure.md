@@ -7,12 +7,12 @@ ms.assetid: aa3174f3-42af-4511-ac2d-d8968b66da87
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 4ffab45b40e659c505248aa8ac8518b896796246
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: d66a07d5357667b83380f320f77e0cbce56cdde1
+ms.sourcegitcommit: eb995fa887ffe1408b9f67caf743c66107173666
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97944771"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98666584"
 ---
 # <a name="step-1-plan-the-advanced-directaccess-infrastructure"></a>Paso 1 planear la infraestructura de DirectAccess avanzada
 
@@ -323,6 +323,17 @@ La detección automática funciona de la siguiente manera:
 
 -   Si la red corporativa se basa en IPv6, la dirección predeterminada es la dirección IPv6 de los servidores DNS en la red corporativa.
 
+> [!NOTE]
+> A partir de la actualización 2020 de Windows 10, un cliente ya no registra sus direcciones IP en los servidores DNS configurados en una tabla de directivas de resolución de nombres (NRPT).
+> Si se necesita el registro de DNS, por ejemplo, la **Administración fuera**, se puede habilitar explícitamente con esta clave del registro en el cliente:
+>
+> Ruta de acceso: `HKLM\System\CurrentControlSet\Services\Dnscache\Parameters`<br/>
+> Tipo: `DWORD`<br/>
+> Nombre de valor: `DisableNRPTForAdapterRegistration`<br/>
+> Valores:<br/>
+> `1` -Registro DNS deshabilitado (valor predeterminado desde la actualización de Windows 10 2020 de mayo)<br/>
+> `0` -Registro DNS habilitado
+
 **Servidores de infraestructura**
 
 -   **Servidor de ubicación de red**
@@ -416,7 +427,7 @@ En un entorno DNS que no sea de cerebro dividido, el espacio de nombres de Inter
 
 Si un nombre no se puede resolver con DNS, para resolver el nombre en la subred local, el servicio cliente DNS en Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows 8 y Windows 7 pueden usar la resolución local de nombres, con los protocolos de resolución de nombres de multidifusión local de vínculo (LLMNR) y NetBIOS sobre TCP/IP.
 
-La resolución local de nombres suele ser necesaria para la conectividad punto a punto cuando el equipo se encuentra en redes privadas, como redes domésticas de una única subred. Cuando el servicio Cliente DNS realiza la resolución local de los nombres de servidores de la intranet y el equipo está conectado a una subred compartida en Internet, los usuarios malintencionados pueden capturar los mensajes de LLMNR y de NetBIOS sobre TCP/IP para determinar los nombres de los servidores de la intranet. En la página DNS del Asistente para configuración de DirectAccess se configura el comportamiento de la resolución local de nombres según los tipos de respuestas recibidos de los servidores DNS de la intranet. Están disponibles las siguientes opciones:
+La resolución local de nombres suele ser necesaria para la conectividad punto a punto cuando el equipo se encuentra en redes privadas, como redes domésticas de una única subred. Cuando el servicio Cliente DNS realiza la resolución local de los nombres de servidores de la intranet y el equipo está conectado a una subred compartida en Internet, los usuarios malintencionados pueden capturar los mensajes de LLMNR y de NetBIOS sobre TCP/IP para determinar los nombres de los servidores de la intranet. En la página DNS del Asistente para configuración de DirectAccess se configura el comportamiento de la resolución local de nombres según los tipos de respuestas recibidos de los servidores DNS de la intranet. Están disponibles las opciones siguientes:
 
 -   **Usar la resolución local de nombres si el nombre no existe en DNS**. Esta opción es la más segura porque el cliente de DirectAccess realiza la resolución local solo para los nombres de servidor que los servidores DNS de la intranet no puedan resolver. Si se puede tener acceso a los servidores DNS de la intranet, se resuelven los nombres de los servidores de la intranet. Si los servidores DNS de la intranet no son accesibles o si hay otros tipos de errores de DNS, los nombres de los servidores de la intranet no se filtran a la subred a través de la resolución local de nombres.
 
@@ -483,7 +494,7 @@ DirectAccess usa AD DS y Active Directory objetos de directiva de grupo (GPO) de
 
     AD DS se usa para autenticación. El túnel de infraestructura usa la autenticación NTLMv2 para la cuenta de equipo que se está conectando al servidor de DirectAccess, y la cuenta debe incluirse en un dominio de Active Directory. El túnel de intranet usa la autenticación Kerberos para que el usuario cree el segundo túnel.
 
--   **Objetos de directiva de grupo**
+-   **Objetos directiva de grupo**
 
     DirectAccess recopila las opciones de configuración en los GPO que se aplican a los servidores, clientes y servidores de aplicaciones internos de DirectAccess.
 
@@ -681,4 +692,3 @@ La consola de administración de acceso remoto mostrará el siguiente mensaje de
 ## <a name="next-steps"></a>Pasos siguientes
 
 -   [Paso 2: planear las implementaciones de DirectAccess](da-adv-plan-s2-deployments.md)
-

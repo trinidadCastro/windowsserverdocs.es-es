@@ -6,12 +6,12 @@ ms.topic: article
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 65b514fd61e812abfc52d42b88fbd39e125c2003
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 834259ce4d7349359c54a8cd2d4219feff4a31d3
+ms.sourcegitcommit: eb995fa887ffe1408b9f67caf743c66107173666
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97948261"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98666554"
 ---
 # <a name="step-1-plan-the-basic-directaccess-infrastructure"></a>Paso 1 planear la infraestructura de DirectAccess básica
 El primer paso para una implementación básica de DirectAccess en un único servidor es planear la infraestructura necesaria para la implementación. En este tema se describen los pasos para la planificación de la infraestructura:
@@ -114,6 +114,17 @@ En las implementaciones de DirectAccess se requiere DNS para lo siguiente:
     1.  Si la red corporativa se basa en IPv4 (o en IPv4 e IPv6), la dirección predeterminada será la dirección DNS64 del adaptador interno del servidor de DirectAccess.
 
     2.  Si la red corporativa se basa en IPv6, la dirección predeterminada es la dirección IPv6 de los servidores DNS en la red corporativa.
+
+> [!NOTE]
+> A partir de la actualización 2020 de Windows 10, un cliente ya no registra sus direcciones IP en los servidores DNS configurados en una tabla de directivas de resolución de nombres (NRPT).
+> Si se necesita el registro de DNS, por ejemplo, la **Administración fuera**, se puede habilitar explícitamente con esta clave del registro en el cliente:
+>
+> Ruta de acceso: `HKLM\System\CurrentControlSet\Services\Dnscache\Parameters`<br/>
+> Tipo: `DWORD`<br/>
+> Nombre de valor: `DisableNRPTForAdapterRegistration`<br/>
+> Valores:<br/>
+> `1` -Registro DNS deshabilitado (valor predeterminado desde la actualización de Windows 10 2020 de mayo)<br/>
+> `0` -Registro DNS habilitado
 
 -   **Servidores de infraestructura**
 
@@ -247,4 +258,3 @@ La **Administración de DirectAccess** mostrará el siguiente mensaje de error: 
 ### <a name="next-step"></a><a name="BKMK_Links"></a>Paso siguiente
 
 -   [Paso 2: Planear la implementación básica de DirectAccess](da-basic-plan-s2-deployment.md)
-

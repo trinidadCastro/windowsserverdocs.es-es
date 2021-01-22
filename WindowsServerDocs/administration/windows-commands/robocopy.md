@@ -7,24 +7,24 @@ author: jasongerend
 ms.author: jgerend
 manager: lizapo
 ms.date: 06/07/2020
-ms.openlocfilehash: 23d2742d7afeba630c11545cefa3696da05fbcc6
-ms.sourcegitcommit: 7c0794e257f602bd71af5eb9a11b8a03d2b9adfd
+ms.openlocfilehash: eb3da171f835cf8715fc2f6b3e08020921f31d3d
+ms.sourcegitcommit: eb995fa887ffe1408b9f67caf743c66107173666
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97390263"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98666564"
 ---
 # <a name="robocopy"></a>robocopy
 
 Copia los datos de archivo de una ubicación a otra.
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>Sintaxis
 
 ```
 robocopy <source> <destination> [<file>[ ...]] [<options>]
 ```
 
-Por ejemplo, para copiar un archivo llamado *yearly-Report. mov* de *c:\Informes* en un recurso compartido de archivos *\\ marketing\videos* mientras se habilita el multithreading para obtener un mayor rendimiento (con el parámetro **/MT** ) y la capacidad de reiniciar la transferencia en caso de que se interrumpa (con el parámetro **/z** ), escriba:
+Por ejemplo, para copiar un archivo llamado *yearly-Report. mov* de *c:\Informes* en un recurso compartido de archivos *\\ \\ marketing\videos* mientras se habilita el multithreading para obtener un mayor rendimiento (con el parámetro **/MT** ) y la capacidad de reiniciar la transferencia en caso de que se interrumpa (con el parámetro **/z** ), escriba:
 
 ```dos
 robocopy c:\reports '\\marketing\videos' yearly-report.mov /mt /z
@@ -159,7 +159,7 @@ robocopy c:\reports '\\marketing\videos' yearly-report.mov /mt /z
 
 ### <a name="exit-return-codes"></a>Códigos de salida (Return)
 
-| Value | Descripción |
+| Valor | Descripción |
 |--|--|
 | 0 | No se copió ningún archivo. No se encontró ningún error. No hubo coincidencia de archivos. Los archivos ya existen en el directorio de destino; por lo tanto, se omitió la operación de copia. |
 | 1 | Todos los archivos se han copiado correctamente. |

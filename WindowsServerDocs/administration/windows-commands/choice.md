@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 382e3618e66f56e05ebd0a7d6b6034e6d7543d64
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 78cc02dc6c777aa8bcb394d19d2f7c5b2c129c01
+ms.sourcegitcommit: eb995fa887ffe1408b9f67caf743c66107173666
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89629687"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98666544"
 ---
 # <a name="choice"></a>choice
 
@@ -36,7 +36,7 @@ choice [/c [<choice1><choice2><…>]] [/n] [/cs] [/t <timeout> /d <choice>] [/m 
 | /m `<text>` | Especifica el mensaje que se va a mostrar antes de la lista de opciones. Si no se especifica **/m** , solo se muestra el mensaje de elección. |
 | /? | Muestra la ayuda en el símbolo del sistema. |
 
-## <a name="remarks"></a>Observaciones
+## <a name="remarks"></a>Comentarios
 
 - La variable de entorno **ERRORLEVEL** se establece en el índice de la clave que el usuario selecciona en la lista de opciones. La primera opción de la lista devuelve un valor de `1` , el segundo un valor de `2` , y así sucesivamente. Si el usuario presiona una tecla que no es una opción válida, la **opción** suena un pitido de advertencia.
 
@@ -47,7 +47,7 @@ choice [/c [<choice1><choice2><…>]] [/n] [/cs] [/t <timeout> /d <choice>] [/m 
 
 ## <a name="examples"></a>Ejemplos
 
-Para presentar las opciones **Y**, **N**y **C**, escriba la siguiente línea en un archivo por lotes:
+Para presentar las opciones **Y**, **N** y **C**, escriba la siguiente línea en un archivo por lotes:
 
 ```
 choice /c ync
@@ -59,10 +59,10 @@ El siguiente mensaje aparece cuando el archivo por lotes ejecuta el comando **Ch
 [Y,N,C]?
 ```
 
-Para ocultar las opciones **Y**, **N**y **C**, pero mostrar el texto **sí**, **no**o **continuar**, escriba la siguiente línea en un archivo por lotes:
+Para ocultar las opciones **Y**, **N** y **C**, pero mostrar el texto **sí**, **no** o **continuar**, escriba la siguiente línea en un archivo por lotes:
 
 ```
-choice /c ync /n /m Yes, No, or Continue?
+choice /c ync /n /m "Yes, No, or Continue?"
 ```
 
 > [!NOTE]
@@ -71,7 +71,7 @@ choice /c ync /n /m Yes, No, or Continue?
 Para mostrar tanto el texto como las opciones que se usan en los ejemplos anteriores, escriba la siguiente línea en un archivo por lotes:
 
 ```
-choice /c ync /m Yes, No, or Continue
+choice /c ync /m "Yes, No, or Continue"
 ```
 
 Para establecer un límite de tiempo de cinco segundos y especificar **N** como valor predeterminado, escriba la siguiente línea en un archivo por lotes:
