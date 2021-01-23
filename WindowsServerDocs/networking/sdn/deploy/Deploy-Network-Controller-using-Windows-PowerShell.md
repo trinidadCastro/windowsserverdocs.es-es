@@ -1,24 +1,24 @@
 ---
 title: Implementación de controladora de red con Windows PowerShell
-description: En este tema se proporcionan instrucciones sobre el uso de Windows PowerShell para implementar la controladora de red en uno o varios equipos o máquinas virtuales (VM) que ejecutan Windows Server 2016.
+description: En este tema se proporcionan instrucciones sobre el uso de Windows PowerShell para implementar la controladora de red en uno o varios equipos o máquinas virtuales (VM) que ejecutan Windows Server 2019 o 2016.
 ms.topic: how-to
 ms.assetid: 2448d381-55aa-4c14-997a-202c537c6727
 ms.author: anpaul
 author: AnirbanPaul
 manager: grcusanz
 ms.date: 08/23/2018
-ms.openlocfilehash: 78adaa6182ed24596471cb0ed5f1a736417af4d9
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 3e7e020dfa5567608c53d41c4478a54ba89fb720
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97948391"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716231"
 ---
 # <a name="deploy-network-controller-using-windows-powershell"></a>Implementación de controladora de red con Windows PowerShell
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016
+>Se aplica a: Windows Server 2019, Windows Server 2016
 
-En este tema se proporcionan instrucciones sobre el uso de Windows PowerShell para implementar la controladora de red en una o varias máquinas virtuales (VM) que ejecutan Windows Server 2016.
+En este tema se proporcionan instrucciones sobre el uso de Windows PowerShell para implementar la controladora de red en una o varias máquinas virtuales (VM) que ejecutan Windows Server 2019 o 2016.
 
 >[!IMPORTANT]
 >No implemente el rol del servidor Controladora de red en hosts físicos. Para implementar la controladora de red, debe instalar el rol de servidor de la controladora de red en una máquina virtual de Hyper-V \( \) que esté instalada en un host de Hyper-v. Una vez que haya instalado el controlador de red en las máquinas virtuales en tres hosts de Hyper- \- v diferentes, debe habilitar los \- hosts de Hyper v para las redes definidas por software de \( Sdn \) agregando los hosts a la controladora de red mediante el comando de Windows PowerShell **New-NetworkControllerServer**. Al hacerlo, permite funcionar al equilibrador de carga de las redes definidas por software. Para obtener más información, consulte [New-NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver).

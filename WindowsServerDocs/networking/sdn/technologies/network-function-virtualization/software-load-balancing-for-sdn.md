@@ -1,26 +1,26 @@
 ---
 title: Equilibrio de carga de software (SLB) para SDN
-description: Puede usar este tema para obtener información sobre el equilibrio de carga de software para redes definidas por software en Windows Server 2016.
+description: Puede usar este tema para obtener información sobre el equilibrio de carga de software para redes definidas por software en Windows Server 2019 y 2016.
 manager: grcusanz
 ms.topic: article
 ms.assetid: 97abf182-4725-4026-801c-122db96964ed
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 12/08/2020
-ms.openlocfilehash: 0a621d3a856af1a575ece73d7091ef9022e90d42
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: ffa860afaba6399cf17dabadbe0dc90c70f75526
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97948371"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98717001"
 ---
 # <a name="software-load-balancing-slb-for-sdn"></a>\(SLB \) de equilibrio de carga de software para Sdn
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016
+>Se aplica a: Windows Server 2019, Windows Server 2016
 
-Puede usar este tema para obtener información sobre el equilibrio de carga de software para redes definidas por software en Windows Server 2016.
+Puede usar este tema para obtener información sobre el equilibrio de carga de software para redes definidas por software en Windows Server 2019 y 2016.
 
-Los proveedores de servicios en la nube (CSP) y las empresas que implementan redes definidas por software (SDN) en Windows Server 2016 pueden usar el equilibrio de carga de software (SLB) para distribuir uniformemente el tráfico de red del inquilino y del cliente del inquilino entre los recursos de red virtual. El SLB de Windows Server permite habilitar múltiples servidores para que hospeden la misma carga de trabajo, lo que proporciona alta disponibilidad y escalabilidad.
+Los proveedores de servicios en la nube (CSP) y las empresas que están implementando redes definidas por software (SDN) en Windows Server pueden usar el equilibrio de carga de software (SLB) para distribuir uniformemente el tráfico de red del inquilino y del cliente del inquilino entre los recursos de red virtual. El SLB de Windows Server permite habilitar múltiples servidores para que hospeden la misma carga de trabajo, lo que proporciona alta disponibilidad y escalabilidad.
 
 El SLB de Windows Server incluye las siguientes funcionalidades.
 

@@ -7,16 +7,16 @@ ms.assetid: 3c361575-1050-46f4-ac94-fa42102f83c1
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/30/2018
-ms.openlocfilehash: 3fa6fcd735a2cad6a062d7b2daaa7cf206589c20
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: fc263ea778209da699cc7c78fd6111f512760951
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87954061"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716901"
 ---
 # <a name="use-network-virtual-appliances-on-a-virtual-network"></a>Uso de dispositivos virtuales de red en una red virtual
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016
+>Se aplica a: Windows Server 2019, Windows Server 2016
 
 En este tema, aprenderá a implementar aplicaciones virtuales de red en redes virtuales de inquilinos. Puede agregar aplicaciones virtuales de red a redes que realizan funciones de enrutamiento definido por el usuario y de creación de reflejo del puerto.
 
@@ -24,7 +24,7 @@ En este tema, aprenderá a implementar aplicaciones virtuales de red en redes vi
 
 Puede usar uno de los dos tipos de aplicaciones virtuales:
 
-1. **Enrutamiento definido por el usuario** : reemplaza los enrutadores distribuidos en la red virtual con las capacidades de enrutamiento del dispositivo virtual.  Con el enrutamiento definido por el usuario, el dispositivo virtual se usa como un enrutador entre las subredes virtuales de la red virtual.
+1. **Enrutamiento definido por el usuario** : reemplaza los enrutadores distribuidos en la red virtual con las capacidades de enrutamiento del dispositivo virtual.  Con el enrutamiento definido por el usuario, la aplicación virtual se usa como un enrutador entre las subredes virtuales de la red virtual.
 
 2. **Creación de reflejo del puerto** : todo el tráfico de red que entra o sale del puerto supervisado se duplica y se envía a una aplicación virtual para su análisis.
 

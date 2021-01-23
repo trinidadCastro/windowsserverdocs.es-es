@@ -7,16 +7,16 @@ ms.assetid: f9945c55-c2d0-448f-86dd-8c734e1b2987
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/07/2020
-ms.openlocfilehash: 6acfb6cbd3a8eaa528dd7457d5de008209b99ad3
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: c99da7531df37500e7c1e0d05dfc5f755a1253c0
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97948401"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716151"
 ---
 # <a name="contact-the-datacenter-and-cloud-networking-team"></a>Contacto con el equipo de centros de datos y redes de nube
 
-> Se aplica a: Windows Server 2016
+> Se aplica a: Windows Server 2019 y Windows Server 2016
 
 El equipo de redes de la nube y el centro de trabajo crean las soluciones de redes de **contenedores** y de red de Microsoft **definidas \( \) por software** . Use esta página para ponerse en contacto con el equipo: para formular preguntas, proporcionar comentarios, notificar errores o realizar solicitudes de características.
 

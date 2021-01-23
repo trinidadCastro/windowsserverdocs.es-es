@@ -7,14 +7,16 @@ ms.assetid: bc625de9-ee31-40a4-9ad2-7448bfbfb6e6
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/30/2018
-ms.openlocfilehash: c66030d1940bca12ab603767da2d17d1086004a6
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: de9f178d6f70478de162db9c063d414b021c9d1e
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996533"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716481"
 ---
 # <a name="secure-the-network-controller"></a>Proteger la controladora de red
+
+>Se aplica a: Windows Server 2019, Windows Server 2016
 
 En este tema, aprenderá a configurar la seguridad de todas las comunicaciones entre la [controladora de red](../technologies/network-controller/network-controller.md) y otro software y dispositivos.
 
@@ -31,7 +33,7 @@ Las rutas de comunicación que puede proteger incluyen la comunicación de North
 
 La controladora de red admite la autenticación, autorización y cifrado para la comunicación de Northbound. En las secciones siguientes se proporciona información sobre cómo configurar estas opciones de seguridad.
 
-### <a name="authentication"></a>Autenticación
+### <a name="authentication"></a>Authentication
 
 Al configurar la autenticación para la comunicación de Northbound de controladora de red, permite que los nodos de clúster de la controladora de red y los clientes de administración comprueben la identidad del dispositivo con el que se están comunicando.
 
@@ -49,7 +51,7 @@ La controladora de red admite los tres modos de autenticación entre los cliente
 Puede configurar el modo de autenticación para la comunicación de Northbound mediante el comando de Windows PowerShell **[install-NetworkController](/powershell/module/networkcontroller/install-networkcontroller)** con el parámetro _ClientAuthentication_ .
 
 
-### <a name="authorization"></a>Autorización
+### <a name="authorization"></a>Authorization
 
 Al configurar la autorización para la comunicación de Northbound de controladora de red, permite a los nodos de clúster de la controladora de red y a los clientes de administración comprobar que el dispositivo con el que se están comunicando es de confianza y que tiene permiso para participar en la comunicación.
 
@@ -92,7 +94,7 @@ Puede configurar este modo con el parámetro **ClusterAuthentication** del coman
 
 Para obtener más información, consulte [install-NetworkControllerCluster](/powershell/module/networkcontroller/install-networkcontrollercluster).
 
-### <a name="authentication"></a>Autenticación
+### <a name="authentication"></a>Authentication
 
 Al configurar la autenticación de la comunicación del clúster de controladora de red, permite que los nodos de clúster de la controladora de red comprueben la identidad de los demás nodos con los que se están comunicando.
 
@@ -107,7 +109,7 @@ La controladora de red admite los siguientes tres modos de autenticación entre 
 
 3. **No**. Al elegir este modo, no se realiza ninguna autenticación entre los nodos de la controladora de red. Este modo se proporciona solo para fines de prueba y no se recomienda para su uso en un entorno de producción.
 
-### <a name="authorization"></a>Autorización
+### <a name="authorization"></a>Authorization
 
 Al configurar la autorización para la comunicación del clúster de controladora de red, permite que los nodos del clúster de la controladora de red comprueben que los nodos con los que se están comunicando son de confianza y tienen permiso para participar en la comunicación.
 
@@ -142,7 +144,7 @@ En la tabla siguiente se proporciona información acerca de la interacción de l
 
 Para cada uno de estos protocolos, el mecanismo de comunicación se describe en la sección siguiente.
 
-### <a name="authentication"></a>Autenticación
+### <a name="authentication"></a>Authentication
 
 Para la comunicación de southbound, se usan los siguientes protocolos y métodos de autenticación.
 
@@ -152,7 +154,7 @@ Para la comunicación de southbound, se usan los siguientes protocolos y método
 
 2. **WinRM**. Para este protocolo, la autenticación se realiza mediante Kerberos \( para las máquinas Unidas a un dominio \) y mediante el uso \( de certificados para equipos que no están Unidos a un dominio \) .
 
-### <a name="authorization"></a>Autorización
+### <a name="authorization"></a>Authorization
 
 Para la comunicación de southbound, se usan los siguientes protocolos y métodos de autorización.
 

@@ -1,24 +1,24 @@
 ---
 title: Servicio DNS interno (iDNS) para SDN
-description: En este tema se explica cómo puede proporcionar servicios DNS a las cargas de trabajo de inquilino hospedado mediante el uso de DNS interno (IDN), que se integra con las redes definidas por software en Windows Server 2016.
+description: En este tema se explica cómo puede proporcionar servicios DNS a las cargas de trabajo de inquilino hospedado mediante el uso de DNS interno (IDN), que se integra con las redes definidas por software en Windows Server 2019 y 2016.
 manager: grcusanz
 ms.topic: how-to
 ms.assetid: ad848a5b-0811-4c67-afe5-6147489c0384
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 01/04/2021
-ms.openlocfilehash: 03f8164212cb08bedffd1caf2f35e2dd7814b9aa
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: f104a9546be7e3a0403387358ea63c94a43b3027
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949961"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716331"
 ---
 # <a name="internal-dns-service-idns-for-sdn"></a>Servicio DNS interno (iDNS) para SDN
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016
+>Se aplica a: Windows Server 2019, Windows Server 2016
 
-Si trabaja para un CSP o una empresa de proveedor de servicios en la nube \( \) que planea implementar redes de redes definidas por software \( \) en Windows Server 2016, puede proporcionar servicios DNS a las cargas de trabajo de inquilino hospedado mediante el uso de DNS interno \( IDN \) , que se integra con Sdn.
+Si trabaja para un proveedor de servicios en la nube \( CSP \) o Enterprise que planea implementar redes definidas por software \( Sdn \) en Windows Server 2019 o 2016, puede proporcionar servicios DNS a las cargas de trabajo de inquilino hospedado mediante el uso de DNS interno \( IDN \) , que se integra con Sdn.
 
 \( \) Las aplicaciones y las máquinas virtuales hospedadas requieren que DNS se comunique dentro de sus propias redes y con recursos externos en Internet. Con IDN, puede proporcionar a los inquilinos los servicios de resolución de nombres DNS para su espacio de nombres local aislado y para los recursos de Internet.
 

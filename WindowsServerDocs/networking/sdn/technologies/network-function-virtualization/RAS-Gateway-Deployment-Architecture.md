@@ -1,22 +1,22 @@
 ---
 title: Arquitectura de implementación de puerta de enlace de RAS
-description: Puede usar este tema para obtener información acerca de la implementación del proveedor de servicios en la nube (CSP) de la puerta de enlace de RAS en Windows Server 2016, incluidos los grupos de puerta de enlace RAS, los Reflejadores de ruta e implementación de varias puertas de enlace para inquilinos individuales.
+description: Puede usar este tema para obtener información acerca de la implementación del proveedor de servicios en la nube (CSP) de la puerta de enlace de RAS en Windows Server 2019 y 2016, incluidos los grupos de puerta de enlace de RAS, y la implementación de varias puertas de enlace para inquilinos individuales.
 manager: grcusanz
 ms.topic: how-to
 ms.assetid: d46e4e91-ece0-41da-a812-af8ab153edc4
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/07/2020
-ms.openlocfilehash: abc36a7e26ab25f7f121538dcadf9761b111a6e2
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: be8f41b71c1ee1c817e37919cacf33c11128abc4
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949371"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716981"
 ---
 # <a name="ras-gateway-deployment-architecture"></a>Arquitectura de implementación de puerta de enlace de RAS
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016
+>Se aplica a: Windows Server 2019, Windows Server 2016
 
 Puede usar este tema para obtener información acerca de la implementación del proveedor de servicios en la nube (CSP) de la puerta de enlace RAS, incluidos los grupos de puerta de enlace RAS, los reflectores de rutas y la implementación de varias puertas de enlace para inquilinos individuales.
 

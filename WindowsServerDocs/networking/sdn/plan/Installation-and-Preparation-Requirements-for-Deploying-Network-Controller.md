@@ -7,16 +7,16 @@ ms.assetid: 7f899e62-6e5b-4fca-9a59-130d4766ee2f
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/10/2018
-ms.openlocfilehash: 74e449b51cb5513e353067e64d41aeedf6652672
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 088ea4a49c2785a691a52a9e816e26a709c19d07
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97948381"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716601"
 ---
 # <a name="requirements-for-deploying-network-controller"></a>Requisitos de implementación de Controladora de red
 
-> Se aplica a: Windows Server (canal semianual), Windows Server 2016
+> Se aplica a: Windows Server 2019, Windows Server 2016
 
 Prepare su centro de información para la implementación de la controladora de red, que requiere uno o varios equipos o máquinas virtuales, y un equipo o máquina virtual. Para poder implementar la controladora de red, debe configurar los grupos de seguridad, las ubicaciones de los archivos de registro (si es necesario) y el registro de DNS dinámico.
 
@@ -24,8 +24,8 @@ Prepare su centro de información para la implementación de la controladora de 
 
 La implementación de la controladora de red requiere uno o varios equipos o máquinas virtuales que actúan como controladora de red y un equipo o una máquina virtual para servir como cliente de administración para la controladora de red.
 
-- Todas las máquinas virtuales y los equipos planeados como nodos de controladora de red deben ejecutar Windows Server 2016 Datacenter Edition.
-- Cualquier equipo o máquina virtual (VM) en la que instale la controladora de red debe ejecutar la edición Datacenter de Windows Server 2016.
+- Todas las máquinas virtuales y equipos planeados como nodos de controladora de red deben ejecutar Windows Server 2019 o 2016 Datacenter Edition.
+- Cualquier equipo o máquina virtual (VM) en la que instale la controladora de red debe ejecutar Windows Server 2019 o 2016 Datacenter Edition.
 - El equipo o la máquina virtual del cliente de administración de la controladora de red deben ejecutar Windows 10.
 
 ## <a name="configuration-requirements"></a>Requisitos de configuración
@@ -44,14 +44,14 @@ Cree grupos para los usuarios que tienen permiso para:
 > [!NOTE]
 > Todos los usuarios que agregue deben ser miembros del grupo usuarios del dominio en Active Directory usuarios y equipos.
 
-### <a name="step-2-configure-log-file-locations-if-needed"></a>Paso 2. Configurar las ubicaciones del archivo de registro si es necesario
+### <a name="step-2-configure-log-file-locations-if-needed"></a>Paso 2. Configurar las ubicaciones del archivo de registro si es necesario
 
 Lo siguiente que desea hacer es configurar las ubicaciones de archivo para almacenar los registros de depuración de la controladora de red en el equipo o la máquina virtual de la controladora de red o en un recurso compartido de archivos remoto.
 
 > [!NOTE]
 > Si almacena los registros en un recurso compartido de archivos remoto, asegúrese de que el recurso compartido es accesible desde el controlador de red.
 
-### <a name="step-3-configure-dynamic-dns-registration-for-network-controller"></a>Paso 3. Configurar el registro de DNS dinámico para la controladora de red
+### <a name="step-3-configure-dynamic-dns-registration-for-network-controller"></a>Paso 3. Configurar el registro de DNS dinámico para la controladora de red
 
 Por último, lo siguiente que desea hacer es implementar nodos de clúster de controladora de red en la misma subred o en subredes diferentes.
 

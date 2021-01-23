@@ -1,31 +1,31 @@
 ---
 title: Administrar certificados para redes definidas por software
-description: Puede usar este tema para aprender a administrar certificados de Northbound de controladora de red y comunicaciones de southbound al implementar redes definidas por software (SDN) en Windows Server 2016 Datacenter.
+description: Puede usar este tema para aprender a administrar certificados de Northbound de controladora de red y comunicaciones de southbound al implementar redes definidas por software (SDN) en Windows Server 2019 y 2016 Datacenter.
 manager: grcusanz
 ms.topic: article
 ms.assetid: c4e2f6c7-0364-4bf8-bb66-9af59c0bbd74
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/22/2018
-ms.openlocfilehash: 2bd72ec096d7c1301601848602a1d55e44ca5086
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: bcba64a74a2414cb239257161de50bf99acbad62
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96866514"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716352"
 ---
 # <a name="manage-certificates-for-software-defined-networking"></a>Administrar certificados para redes definidas por software
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016
+>Se aplica a: Windows Server 2019, Windows Server 2016
 
-Puede usar este tema para obtener información sobre cómo administrar certificados para la Northbound de la controladora de red y las comunicaciones de southbound al implementar el software de redes definidas por software \( \) en Windows Server 2016 Datacenter y se usa System Center Virtual Machine Manager \( SCVMM \) como cliente de administración de Sdn.
+Puede usar este tema para obtener información sobre cómo administrar certificados para la Northbound de la controladora de red y las comunicaciones de southbound al implementar SDN de redes definidas por software \( \) en Windows Server 2019 o 2016 Datacenter y usa System Center Virtual Machine Manager \( SCVMM \) como el cliente de administración de Sdn.
 
 >[!NOTE]
 >Para obtener información general acerca de la controladora de red, consulte [controladora de red](../technologies/network-controller/Network-Controller.md).
 
 Si no usa Kerberos para proteger la comunicación de la controladora de red, puede usar certificados X. 509 para la autenticación, la autorización y el cifrado.
 
-SDN en Windows Server 2016 Datacenter admite \- \( \) certificados X. 509 firmados por la entidad de certificación y con firma automática. En este tema se proporcionan instrucciones paso a paso para crear estos certificados y aplicarlos a los canales de comunicación de la controladora de red Northbound con clientes de administración y southbound Communications con dispositivos de red, como el software Load Balancer \( SLB \) .
+SDN en Windows Server 2019 y 2016 Datacenter admite \- \( \) certificados X. 509 firmados por la entidad de certificación y con firma automática. En este tema se proporcionan instrucciones paso a paso para crear estos certificados y aplicarlos a los canales de comunicación de la controladora de red Northbound con clientes de administración y southbound Communications con dispositivos de red, como el software Load Balancer \( SLB \) .
 .
 Cuando se usa \- la autenticación basada en certificados, debe inscribir un certificado en los nodos de la controladora de red que se utiliza de las siguientes maneras.
 

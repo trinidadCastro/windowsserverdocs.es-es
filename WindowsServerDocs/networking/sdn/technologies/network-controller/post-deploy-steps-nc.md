@@ -1,20 +1,22 @@
 ---
 title: Pasos posteriores a la implementación para la Controladora de red
-description: En este tema se proporcionan instrucciones de configuración de certificados para implementaciones que no son de Kerberos de la controladora de red en Windows Server 2016 Datacenter.
+description: En este tema se proporcionan instrucciones de configuración de certificados para implementaciones que no son de Kerberos de la controladora de red en Windows Server 2019 y 2016 Datacenter.
 manager: grcusanz
 ms.topic: article
 ms.assetid: eea0aca9-8d89-48fb-8068-fca40c90d34b
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/07/2020
-ms.openlocfilehash: 7be8ccaf791155d1c0a8f07e4549a858bf4b82d8
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 446b187dfa33a9498b70d1d77eb4d5c7cbd33090
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949391"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716341"
 ---
 # <a name="post-deployment-steps-for-network-controller"></a>Pasos posteriores a la implementación para la Controladora de red
+
+> Se aplica a: Windows Server 2019, Windows Server 2016
 
 Al instalar el controlador de red, puede elegir implementaciones de Kerberos o no Kerberos.
 

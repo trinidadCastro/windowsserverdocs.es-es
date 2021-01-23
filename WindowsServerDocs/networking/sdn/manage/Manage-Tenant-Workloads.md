@@ -7,16 +7,16 @@ ms.assetid: 16359b15-a0e4-4f42-9d70-6ef0d851d219
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/26/2018
-ms.openlocfilehash: 2a571b6ed9a850f6e81d6cdddeb2f62c5eac1271
-ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
+ms.openlocfilehash: a5a1cac6dc86e9b032601820cd80c36130a4b174
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98038215"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716681"
 ---
 # <a name="manage-tenant-workloads"></a>Administración de cargas de trabajo de inquilinos
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016
+>Se aplica a: Windows Server 2019, Windows Server 2016
 
 Este tema contiene vínculos a documentación que le permite administrar las cargas de trabajo de inquilinos mediante la adición de máquinas virtuales de inquilino (VM), el uso de aplicaciones virtuales de red, la configuración del equilibrio de carga de software, etc.
 

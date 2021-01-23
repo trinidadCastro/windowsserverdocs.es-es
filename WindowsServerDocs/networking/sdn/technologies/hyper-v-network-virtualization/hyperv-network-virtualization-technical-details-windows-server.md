@@ -7,16 +7,16 @@ ms.assetid: 9efe0231-94c1-4de7-be8e-becc2af84e69
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/07/2020
-ms.openlocfilehash: 7b9fdb3e4bb6404e129a97222be9aa3e8adbf614
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 3e7a4c5d52ae9fff29e558bcd8d0bdbc3c9d7d0a
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949431"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716971"
 ---
 # <a name="hyper-v-network-virtualization-technical-details-in-windows-server-2016"></a>Detalles técnicos de la virtualización de red de Hyper-V en Windows Server 2016
 
->Se aplica a: Windows Server 2016
+>Se aplica a: Windows Server 2019, Windows Server 2016
 
 La virtualización de servidores permite que se ejecuten varias instancias de servidor al mismo tiempo en un solo host físico; aunque las instancias del servidor estén aisladas entre sí. Cada máquina virtual básicamente funciona como si fuera el único servidor que se ejecuta en el equipo físico.
 
@@ -285,7 +285,7 @@ Figura 9: Arquitectura de HNV
 ## <a name="summary"></a>Resumen
 Los centros de datos basados en la nube pueden proporcionar muchos beneficios como mayor escalabilidad y mejor utilización de los recursos. Advertir estos beneficios potenciales requiere una tecnología que fundamentalmente aborde los problemas de escalabilidad multiempresa en un entorno dinámico. HNV se diseñó para abordar estos problemas y también mejorar la eficacia operativa del centro de datos al desacoplar la topología de red virtual para la topología de red física. Basándose en un estándar existente, HNV se ejecuta en el centro de información de hoy en día y funciona con la infraestructura VXLAN existente. Ahora, los clientes con HNV pueden consolidar sus centros de recursos en una nube privada o ampliar sin problemas sus centros de recursos al entorno de un proveedor de servidores de hospedaje con una nube híbrida.
 
-## <a name="see-also"></a><a name="BKMK_LINKS"></a>Otras referencias
+## <a name="see-also"></a><a name="BKMK_LINKS"></a>Vea también
 Para obtener más información sobre HNVv2, consulte los siguientes vínculos:
 
 

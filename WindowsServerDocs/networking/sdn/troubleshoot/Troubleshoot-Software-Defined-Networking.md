@@ -1,24 +1,24 @@
 ---
 title: Solucionar problemas de SDN
-description: En este tema se proporcionan vínculos a contenido sobre la solución de problemas de redes definidas por software en Windows Server 2016.
+description: En este tema se proporcionan vínculos a contenido sobre la solución de problemas de redes definidas por software en Windows Server 2019 y 2016.
 manager: grcusanz
 ms.topic: article
 ms.assetid: 427048db-bab6-49b1-9611-099bb547ec0e
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/07/2020
-ms.openlocfilehash: caf9e7e68f5cbfe91932fddbc34508792aecb18a
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 9c5ee9e7bfaf90f330fb8ed6d3f703714049ff04
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947121"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716891"
 ---
 # <a name="troubleshoot-sdn"></a>Solucionar problemas de SDN
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016
+>Se aplica a: Windows Server 2019, Windows Server 2016
 
-En los temas de esta sección se proporciona información sobre cómo solucionar problemas de las tecnologías de redes definidas por software (SDN) que se incluyen en Windows Server 2016.
+En los temas de esta sección se proporciona información sobre cómo solucionar problemas de las tecnologías de redes definidas por software (SDN) que se incluyen en Windows Server 2019 y 2016.
 
 > [!NOTE]
 > Para obtener documentación adicional sobre redes definidas por software, puede usar las siguientes secciones de la biblioteca.

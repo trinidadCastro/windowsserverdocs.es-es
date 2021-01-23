@@ -7,16 +7,16 @@ ms.assetid: 8e9e5c81-aa61-479e-abaf-64c5e95f90dc
 ms.author: grcusanz
 author: AnirbanPaul
 ms.date: 08/26/2018
-ms.openlocfilehash: 6d597d4ced923c751e54ed4678ffb2d956a7b471
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 5c05a611b19248db46e92b23edf7a02eee05a008
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87994770"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716101"
 ---
 # <a name="guest-clustering-in-a-virtual-network"></a>Clústeres invitados en una red virtual
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016
+>Se aplica a: Windows Server 2019, Windows Server 2016
 
 Las máquinas virtuales conectadas a una red virtual solo pueden usar las direcciones IP asignadas por la controladora de red para comunicarse en la red.  Las tecnologías de agrupación en clústeres que requieren una dirección IP flotante, como los clústeres de conmutación por error de Microsoft, requieren algunos pasos adicionales para que funcionen correctamente.
 
@@ -148,13 +148,13 @@ Puede usar los pasos siguientes para configurar un clúster de conmutación por 
 2. Cree el clúster en un nodo.
 
    ```PowerShell
-   New-Cluster -Name $ClusterName -NoStorage -Node $nodes[0]
+   New-Cluster -Name $ClusterName -NoStorage -Node $nodes[0]
    ```
 
 3. Detenga el recurso de clúster.
 
    ```PowerShell
-   Stop-ClusterResource "Cluster Name" 
+   Stop-ClusterResource "Cluster Name" 
    ```
 
 4. Establezca la dirección IP del clúster y el puerto de sondeo.<p>La dirección IP debe coincidir con la dirección IP de front-end utilizada en el ejemplo anterior, y el puerto de sondeo debe coincidir con el puerto de sondeo en el ejemplo anterior.
@@ -166,14 +166,14 @@ Puede usar los pasos siguientes para configurar un clúster de conmutación por 
 5. Inicie los recursos del clúster.
 
    ```PowerShell
-    Start-ClusterResource "Cluster IP Address"  -Wait 60 
-    Start-ClusterResource "Cluster Name"  -Wait 60 
+    Start-ClusterResource "Cluster IP Address"  -Wait 60 
+    Start-ClusterResource "Cluster Name"  -Wait 60 
    ```
 
 6. Agregue los nodos restantes.
 
    ```PowerShell
-   Add-ClusterNode $nodes[1]
+   Add-ClusterNode $nodes[1]
    ```
 
 _**El clúster está activo.**_ El tráfico dirigido a la VIP en el puerto especificado se dirige al nodo activo.

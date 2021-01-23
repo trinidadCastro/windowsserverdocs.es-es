@@ -7,12 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: b9fdfa0dddabd96623532d1b67dc2a189cde66d9
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: aed5fac9cf53ec41d79828ef94eb194b6dfb1d84
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97946251"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716951"
 ---
 # <a name="token-signing-certificates"></a>Certificados de firma de tokens
 
@@ -44,10 +44,6 @@ El servidor Web del asociado de recurso utiliza la clave pública del certificad
 ## <a name="deployment-considerations-for-token-signing-certificates"></a>Consideraciones de implementación para certificados de firma de tokens \-
 Al implementar el primer servidor de Federación en una nueva instalación de AD FS, debe obtener un certificado de firma de tokens \- e instalarlo en el almacén de certificados personales del equipo local en ese servidor de Federación. Puede obtener un \- certificado de firma de tokens solicitando uno de una CA de empresa o una entidad de certificación pública, o bien mediante la creación de un \- certificado autofirmado.
 
-Cuando se implementa una granja de AD FS, \- los certificados de firma de tokens se instalan de forma diferente, en función de cómo se cree la granja de servidores.
-
-Hay dos opciones de granja de servidores que puede considerar al obtener \- los certificados de firma de tokens para la implementación:
-
 -   Una clave privada de un certificado de firma de tokens \- se comparte entre todos los servidores de Federación de una granja.
 
     En un entorno de granja de servidores de Federación, se recomienda que todos los servidores de Federación compartan \( o reutilicen \) el mismo certificado de firma de tokens \- . Puede instalar un único \- certificado de firma de tokens desde una entidad de certificación en un servidor de Federación y, a continuación, exportar la clave privada, siempre que el certificado emitido se marque como exportable.
@@ -56,13 +52,6 @@ Hay dos opciones de granja de servidores que puede considerar al obtener \- los 
 
     ![La ilustración que muestra la clave privada de un solo certificado de firma de tokens \- puede compartirse en todos los servidores de Federación de una granja.](media/adfs2_fedserver_certstory_3.gif)
 
--   Hay un \- certificado de firma de tokens único para cada servidor de Federación de una granja.
-
-    Cuando se usan varios certificados únicos en la granja, cada servidor de la granja firma los tokens con su propia clave privada única.
-
-    Como se muestra en la siguiente ilustración, puede obtener un \- certificado de firma de tokens independiente para cada servidor de Federación de la granja. Esta opción es más costosa si tiene previsto obtener los \- certificados de firma de tokens de una CA pública.
-
-    ![firma de tokens](media/adfs2_fedserver_certstory_4.gif)
 
 Para obtener información acerca de cómo instalar un certificado al usar los servicios de Certificate Server de Microsoft como entidad de certificación empresarial, vea [iis 7,0: crear un certificado de servidor de dominio en iis 7,0](https://go.microsoft.com/fwlink/?LinkId=108548).
 

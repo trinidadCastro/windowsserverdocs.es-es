@@ -1,24 +1,24 @@
 ---
 title: Novedades de Puerta de enlace de RAS
-description: Puede usar este tema para obtener información acerca de las nuevas características de puerta de enlace RAS, que es un enrutador compatible con Protocolo de puerta de enlace de borde (BGP) basado en software y multiinquilino en Windows Server 2016.
+description: Puede usar este tema para obtener información acerca de las nuevas características de puerta de enlace de RAS, que es un enrutador compatible con Protocolo de puerta de enlace de borde (BGP) basado en software y multiinquilino en Windows Server 2019 y 2016.
 manager: grcusanz
 ms.topic: how-to
 ms.assetid: 709cb192-313a-47b5-954e-eb5f6fee51a7
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/07/2020
-ms.openlocfilehash: c40969f18684dbe3fffff205c9f46582c7a2b3ae
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 3b6ccfa396e0e083bf68ba39e22d093303bd55c1
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97943211"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716991"
 ---
 # <a name="whats-new-in-ras-gateway"></a>Novedades de Puerta de enlace de RAS
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016
+>Se aplica a: Windows Server 2019, Windows Server 2016
 
-Puede usar este tema para obtener información acerca de las nuevas características de puerta de enlace RAS, que es un enrutador compatible con Protocolo de puerta de enlace de borde (BGP) basado en software y multiinquilino en Windows Server 2016. El enrutador BGP de puerta de enlace RAS multiempresa está diseñado para los proveedores de servicios en la nube (CSP) y las empresas que hospedan varias redes virtuales de inquilinos mediante la virtualización de red de Hyper-V.
+Puede usar este tema para obtener información acerca de las nuevas características de puerta de enlace de RAS, que es un enrutador compatible con Protocolo de puerta de enlace de borde (BGP) basado en software y en varios inquilinos introducido en Windows Server 2016. El enrutador BGP de puerta de enlace RAS multiempresa está diseñado para los proveedores de servicios en la nube (CSP) y las empresas que hospedan varias redes virtuales de inquilinos mediante la virtualización de red de Hyper-V.
 
 > [!NOTE]
 > En Windows Server 2012 R2, la puerta de enlace RAS se denomina puerta de enlace RRAS. y, en System Center Virtual Machine Manager, la puerta de enlace de RAS se denomina puerta de enlace de Windows Server.

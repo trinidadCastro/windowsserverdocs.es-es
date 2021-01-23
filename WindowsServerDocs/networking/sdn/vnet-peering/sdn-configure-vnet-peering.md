@@ -6,16 +6,16 @@ ms.topic: how-to
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/08/2018
-ms.openlocfilehash: 41cd82ec188cb91aac3b1c044e5ca7d3120a4543
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 5a4468da9121c541cd87a037bea9f94da1cc582d
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949081"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716591"
 ---
 # <a name="configure-virtual-network-peering"></a>Configuración del emparejamiento de red virtual
 
->Se aplica a: Windows Server
+>Se aplica a: Windows Server 2019, Windows Server 2016
 
 En este procedimiento, usará Windows PowerShell para crear dos redes virtuales, cada una con una subred. A continuación, configure el emparejamiento entre las dos redes virtuales para habilitar la conectividad entre ellos.
 
@@ -63,7 +63,7 @@ $vnetproperties.Subnets = @($vsubnet)
 New-NetworkControllerVirtualNetwork -ResourceId "Contoso_VNet1" -ConnectionUri $uri -Properties $vnetproperties
 ```
 
-## <a name="step-2-create-the-second-virtual-network"></a>Paso 2. Crear la segunda red virtual.
+## <a name="step-2-create-the-second-virtual-network"></a>Paso 2. Crear la segunda red virtual.
 
 En este paso, creará una segunda red virtual con una subred. El siguiente script de ejemplo crea una red virtual de Woodgrove con una subred.
 
@@ -87,7 +87,7 @@ $vnetproperties.Subnets = @($vsubnet)
 New-NetworkControllerVirtualNetwork -ResourceId "Woodgrove_VNet1" -ConnectionUri $uri -Properties $vnetproperties
 ```
 
-## <a name="step-3-configure-peering-from-the-first-virtual-network-to-the-second-virtual-network"></a>Paso 3. Configuración del emparejamiento desde la primera red virtual a la segunda red virtual
+## <a name="step-3-configure-peering-from-the-first-virtual-network-to-the-second-virtual-network"></a>Paso 3. Configuración del emparejamiento desde la primera red virtual a la segunda red virtual
 
 En este paso, configurará el emparejamiento entre la primera red virtual y la segunda red virtual que creó en los dos pasos anteriores. En el siguiente script de ejemplo se establece el emparejamiento de redes virtuales desde **Contoso_vnet1** a **Woodgrove_vnet1**.
 

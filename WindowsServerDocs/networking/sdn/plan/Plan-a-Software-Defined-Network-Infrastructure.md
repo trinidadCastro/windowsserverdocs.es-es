@@ -7,28 +7,27 @@ ms.assetid: ea7e53c8-11ec-410b-b287-897c7aaafb13
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/10/2018
-ms.openlocfilehash: 1d461d8da9c19e0aa755d4173f86050a7b389062
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 0473b130b53018132ff5e705808a6fd3e37fccaa
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949991"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716501"
 ---
 # <a name="plan-a-software-defined-network-infrastructure"></a>Planeación de una infraestructura de red definida por software
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016
+>Se aplica a: Windows Server 2019, Windows Server 2016
 
 Obtenga información sobre la planeación de la implementación de una infraestructura de red definida por software, incluidos los requisitos previos de hardware y software.
-
 
 ## <a name="prerequisites"></a>Requisitos previos
 En este tema se describe una serie de requisitos previos de hardware y software, entre los que se incluyen:
 
--   **Grupos de seguridad configurados, ubicaciones de archivos de registro y registro de DNS dinámico** Debe preparar su centro de información para la implementación de la controladora de red, que requiere uno o varios equipos o máquinas virtuales, y un equipo o máquina virtual. Para poder implementar la controladora de red, debe configurar los grupos de seguridad, las ubicaciones de los archivos de registro (si es necesario) y el registro de DNS dinámico.  Si no ha preparado el centro de datos para la implementación de la controladora de red, vea [requisitos de instalación y preparación para](Installation-and-Preparation-Requirements-for-Deploying-Network-Controller.md) la implementación de la controladora de red para más información.
+-   **Grupos de seguridad configurados, ubicaciones de archivos de registro y registro de DNS dinámico.** Debe preparar su centro de información para la implementación de la controladora de red, que requiere uno o varios equipos o máquinas virtuales, y un equipo o máquina virtual. Para poder implementar la controladora de red, debe configurar los grupos de seguridad, las ubicaciones de los archivos de registro (si es necesario) y el registro de DNS dinámico.  Si no ha preparado el centro de datos para la implementación de la controladora de red, vea [requisitos de instalación y preparación para](Installation-and-Preparation-Requirements-for-Deploying-Network-Controller.md) la implementación de la controladora de red para más información.
 
--   **Red física**  Necesita acceso a los dispositivos de red físicos para configurar redes VLAN, enrutamiento, BGP, protocolo de puente del centro de datos (ETS) si usa una tecnología RDMA y el protocolo de puente del centro de datos (PFC) si usa una tecnología RDMA basada en RoCE. En este tema se muestra la configuración del conmutador manual, así como el emparejamiento BGP en conmutadores y enrutadores de nivel 3, o en una máquina virtual del servidor de enrutamiento y acceso remoto (RRAS).
+-   **Red física.**  Necesita acceso a los dispositivos de red físicos para configurar redes VLAN, enrutamiento, BGP, protocolo de puente del centro de datos (ETS) si usa una tecnología RDMA y el protocolo de puente del centro de datos (PFC) si usa una tecnología RDMA basada en RoCE. En este tema se muestra la configuración del conmutador manual, así como el emparejamiento BGP en conmutadores y enrutadores de nivel 3, o en una máquina virtual del servidor de enrutamiento y acceso remoto (RRAS).
 
--   **Hosts de proceso físicos**  Estos hosts ejecutan Hyper-V y son necesarios para hospedar la infraestructura de SDN y las máquinas virtuales de inquilino.  Se necesita hardware de red específico en estos hosts para obtener el mejor rendimiento, que se describe más adelante en la sección **hardware de red** .
+-   **Hosts de proceso físicos.**  Estos hosts ejecutan Hyper-V y son necesarios para hospedar la infraestructura de SDN y las máquinas virtuales de inquilino.  Se necesita hardware de red específico en estos hosts para obtener el mejor rendimiento, que se describe más adelante en la sección **hardware de red** .
 
 
 ## <a name="physical-network-and-compute-host-configuration"></a>Configuración de la red física y del host de proceso
@@ -74,7 +73,7 @@ Es necesario crear y aprovisionar redes lógicas adicionales para el uso de la p
 |---------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |   **Red lógica de tránsito**   | La puerta de enlace de RAS y SLB/MUX usan la red lógica de tránsito para intercambiar información de emparejamiento de BGP y el tráfico de inquilinos de norte/sur (interno externo). Normalmente, el tamaño de esta subred será menor que el de los demás. Solo los hosts de proceso físico que ejecutan máquinas virtuales de puerta de enlace RAS o SLB/MUX deben tener conectividad a esta subred con estas VLAN troncales y accesibles en los puertos de conmutador a los que están conectados los adaptadores de red de los hosts de proceso. Cada máquina virtual de SLB/MUX o de puerta de enlace RAS está asignada estáticamente a una dirección IP de la red lógica de tránsito. |
 | **Red lógica de VIP pública**  |                                                                                                                             La red lógica de VIP pública debe tener prefijos de subred IP que sean enrutables fuera del entorno de nube (normalmente enrutable a Internet).  Serán las direcciones IP de front-end que usan los clientes externos para tener acceso a los recursos de las redes virtuales, incluida la VIP de front-end para la puerta de enlace de sitio a sitio.                                                                                                                             |
-| **Red lógica de VIP privada** |                                                                                                                                                                                       No es necesario que la red lógica de VIP privada sea enrutable fuera de la nube, ya que se usa para VIP a las que solo se tiene acceso desde clientes internos de la nube, como el uso de SLB o servicios privados.                                                                                                                                                                                       |
+| **Red lógica de VIP privada** |                                                                                                                                                                                       No es necesario que la red lógica de VIP privada sea enrutable fuera de la nube, ya que se usa para las VIP a las que solo se tiene acceso desde clientes internos de la nube, como el administrador de SLB o servicios privados.                                                                                                                                                                                       |
 |   **Red lógica de IP virtual de encapsulación de enrutamiento genérico**   |                                                                                                                                           La red VIP GRE es una subred que existe únicamente para definir direcciones IP virtuales que se asignan a máquinas virtuales de puerta de enlace que se ejecutan en el tejido SDN para un tipo de conexión GRE S2S. Esta red no debe configurarse previamente en los conmutadores físicos o el enrutador y no deben tener una VLAN asignada.                                                                                                                                            |
 
 ---
@@ -228,7 +227,7 @@ Se puede usar cualquier tipo de almacenamiento que sea compatible con Hyper-V, c
 
 **Requisitos de proceso del host** En la tabla siguiente se muestran los requisitos mínimos de hardware y software para los cuatro hosts físicos usados en la implementación de ejemplo.
 
-Host|Requisitos de hardware|Requisitos de software|
+administrador de flujos de trabajo|Requisitos de hardware|Requisitos de software|
 --------|-------------------------|-------------------------
 |Host de Hyper-v físico|CPU de 4 núcleos a 2,66 GHz<p>32 GB de RAM<p>300 GB de espacio en disco<p>Un adaptador de red físico de 1 Gb/s (o más rápido)|SO: Windows Server 2016<p>Rol de Hyper-V instalado|
 

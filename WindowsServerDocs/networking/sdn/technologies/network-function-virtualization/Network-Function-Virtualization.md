@@ -1,22 +1,22 @@
 ---
 title: Virtualización de función de red
-description: Puede usar este tema para obtener información sobre la virtualización de función de red, que le permite implementar aplicaciones de red virtual como firewall de centro de seguridad de red, puerta de enlace RAS multiempresa y equilibrio de carga de software (SLB) en Windows Server 2016.
+description: Puede usar este tema para obtener información sobre la virtualización de función de red, que le permite implementar aplicaciones de red virtual como firewall de centro de seguridad de red, puerta de enlace RAS multiempresa y equilibrio de carga de software (SLB) en Windows Server 2019 y 2016.
 manager: grcusanz
 ms.topic: article
 ms.assetid: 79df3bbe-48fd-4eff-8df6-35f6317566f3
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/07/2020
-ms.openlocfilehash: b5b2b4bb93a9d90e9c74f8310430ef3e7d826f1d
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 9f35ff0cea3800eb3f5b86bcb9466f5ec2c5d665
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949091"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716701"
 ---
 # <a name="network-function-virtualization"></a>Virtualización de función de red
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016
+>Se aplica a: Windows Server 2019, Windows Server 2016
 
 Puede usar este tema para obtener información acerca de la virtualización de función de red, que le permite implementar aplicaciones de red virtual, como firewall de centros de seguridad, puerta de enlace RAS multiinquilino y el multiplexador SLB de equilibrio de carga de software \( \) \( MUX \) .
 

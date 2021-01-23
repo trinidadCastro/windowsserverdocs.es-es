@@ -1,28 +1,27 @@
 ---
 title: Medición de salida en la red virtual
-description: 'Un aspecto fundamental de la monetización de la red en la nube es la salida del ancho de banda de red. Por ejemplo: transferencias de datos salientes en Microsoft Azure modelo de negocio. Los datos de salida se cobran en función de la cantidad total de datos que salen de los centros de datos de Azure a través de Internet en un ciclo de facturación determinado.'
+description: Un aspecto fundamental de la monetización de la red en la nube es la salida del ancho de banda de red, por ejemplo, las transferencias de datos de salida en el modelo de negocio Microsoft Azure. Los datos de salida se cobran en función de la cantidad total de datos que salen de los centros de datos de Azure a través de Internet en un ciclo de facturación determinado.
 manager: grcusanz
 ms.topic: how-to
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 10/02/2018
-ms.openlocfilehash: 821adcc4ae3ac99a92de8b0b57e3248be1786ce3
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 9af91caea19536a457cc26db10370a0c4d592e4c
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947281"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716001"
 ---
 # <a name="egress-metering-in-a-virtual-network"></a>Medición de salida en una red virtual
 
->Se aplica a: Windows Server 2019
-
+>Se aplica a: Windows Server 2019, Windows Server 2016
 
 Un aspecto fundamental de la monetización de la red en la nube es la posibilidad de facturar según el uso de ancho de banda de red. Los datos de salida se cobran en función de la cantidad total de datos que salen del centro de datos a través de Internet en un ciclo de facturación determinado.
 
-La medición de salida del tráfico de red de SDN en Windows Server 2019 permite ofrecer medidores de uso para las transferencias de datos de salida. El tráfico de red que deja cada red virtual, pero que permanece dentro del centro de datos, puede realizarse por separado, por lo que se puede excluir de los cálculos de facturación. Se realiza un seguimiento de los paquetes enlazados a las direcciones IP de destino que no se incluyen en uno de los intervalos de direcciones sin facturar como transferencias de datos de salida facturadas.
+La medición de salida del tráfico de red de SDN en Windows Server 2019 permite ofrecer medidores de uso para las transferencias de datos de salida. El tráfico de red que deja cada red virtual pero que permanece dentro del centro de datos se puede seguir por separado, por lo que se puede excluir de los cálculos de facturación. Se realiza un seguimiento de los paquetes enlazados a las direcciones IP de destino que no se incluyen en uno de los intervalos de direcciones sin facturar como transferencias de datos de salida facturadas.
 
-## <a name="virtual-network-unbilled-address-ranges-allowlist-of-ip-ranges"></a>Intervalos de direcciones no facturados de red virtual (permitidos de intervalos IP)
+## <a name="virtual-network-unbilled-address-ranges-allow-list-of-ip-ranges"></a>Intervalos de direcciones no facturados de red virtual (permitir lista de intervalos IP)
 
 Puede encontrar intervalos de direcciones no facturados en la propiedad **UnbilledAddressRanges** de una red virtual existente. De forma predeterminada, no se han agregado intervalos de direcciones.
 

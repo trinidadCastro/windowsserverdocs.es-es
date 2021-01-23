@@ -1,22 +1,22 @@
 ---
 title: Alta disponibilidad de la puerta de enlace de RAS
-description: Puede usar este tema para obtener información sobre las configuraciones de alta disponibilidad para la puerta de enlace multiinquilino de RAS para redes definidas por software (SDN) en Windows Server 2016.
+description: Puede usar este tema para obtener información sobre las configuraciones de alta disponibilidad para la puerta de enlace multiinquilino de RAS para redes definidas por software (SDN) en Windows Server 2019 y 2016.
 manager: grcusanz
 ms.topic: how-to
 ms.assetid: 34d826c9-65bc-401f-889d-cf84e12f0144
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/07/2020
-ms.openlocfilehash: 81eab7d646626d705ae8c57b022309c4864bf6d7
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: e591404d4225ff62fc70440a08445255dfe24d6e
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97948841"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98717021"
 ---
 # <a name="ras-gateway-high-availability"></a>Alta disponibilidad de la puerta de enlace de RAS
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016
+>Se aplica a: Windows Server 2019, Windows Server 2016
 
 Puede usar este tema para obtener información sobre las configuraciones de alta disponibilidad para la puerta de enlace multiinquilino de RAS para redes definidas por software (SDN).
 

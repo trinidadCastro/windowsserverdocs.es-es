@@ -7,16 +7,16 @@ ms.assetid: 79e87013-7f27-4031-8383-288bcb291731
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/07/2020
-ms.openlocfilehash: 205f6aa8d1fb957ad607d205b61c2f039bc43885
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 05c6ce0a16bb9cf63f7510cbaeb5434fee0b24c8
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97950141"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716141"
 ---
 # <a name="microsoft-azure-and-software-defined-networking"></a>Microsoft Azure y redes definidas por software
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016
+>Se aplica a: Windows Server 2019, Windows Server 2016
 
 Microsoft Azure es la plataforma en la nube de Microsoft: una colección cada vez mayor de servicios integrados (proceso, almacenamiento, datos, redes y aplicaciones) que le ayudarán a moverse más rápido, hacer más y ahorrar dinero.
 

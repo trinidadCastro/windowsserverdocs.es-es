@@ -1,21 +1,21 @@
 ---
 description: 'Más información acerca de: emparejamiento de redes virtuales'
-title: Emparejamiento de redes virtuales de Azure
+title: Emparejamiento de redes virtuales
 manager: grcusanz
 ms.topic: how-to
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/08/2018
-ms.openlocfilehash: 5bd66299271257026504dcff4b5021c0be4ef73a
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 325dd4468281e1b6b5ab1fb577908d9a29ba2a28
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97945751"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716581"
 ---
-# <a name="virtual-network-peering"></a>Emparejamiento de redes virtuales de Azure
+# <a name="virtual-network-peering"></a>Emparejamiento de redes virtuales
 
->Se aplica a: Windows Server
+>Se aplica a: Windows Server 2019, Windows Server 2016
 
 El emparejamiento de redes virtuales permite conectar dos redes virtuales sin problemas. Una vez emparejadas, para fines de conectividad, las redes virtuales aparecen como una sola.
 

@@ -1,22 +1,22 @@
 ---
 title: Implementar una infraestructura de red definida por software mediante scripts
-description: En este tema se explica cómo implementar una infraestructura de red definida por software de Microsoft (SDN) mediante scripts en Windows Server 2016.
+description: En este tema se explica cómo implementar una infraestructura de red definida por software de Microsoft (SDN) mediante scripts en Windows Server 2019 y 2016.
 manager: grcusanz
 ms.topic: how-to
 ms.assetid: 5ba5bb37-ece0-45cb-971b-f7149f658d19
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/23/2018
-ms.openlocfilehash: ed8327dd53fa75ccb864207d430c8c863940f090
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 706077c7ebd260f0a497568935fb94718408a655
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97950111"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716471"
 ---
 # <a name="deploy-a-software-defined-network-infrastructure-using-scripts"></a>Implementación de una infraestructura de red definida por software con scripts
 
-> Se aplica a: Windows Server (canal semianual), Windows Server 2016
+> Se aplica a: Windows Server 2019, Windows Server 2016
 
 En este tema, se implementa una infraestructura de red definida por software de Microsoft (SDN) mediante scripts. La infraestructura incluye un controlador de red de alta disponibilidad (HA), un/MUX de Load Balancer software de alta disponibilidad (SLB), redes virtuales y listas de Access Control asociadas (ACL). Además, otro script implementa una carga de trabajo de inquilinos para que pueda validar la infraestructura de SDN.
 
@@ -29,7 +29,7 @@ También puede implementar una infraestructura de SDN mediante Virtual Machine M
 > [!IMPORTANT]
 > Antes de comenzar la implementación, debe planear y configurar los hosts y la infraestructura de red física. Para más información, consulta [Planeación de una infraestructura de red definida por software](../../sdn/plan/Plan-a-Software-Defined-Network-Infrastructure.md).
 
-Todos los hosts de Hyper-V deben tener instalado Windows Server 2016.
+Todos los hosts de Hyper-V deben tener instalado Windows Server 2019 o 2016.
 
 ## <a name="deployment-steps"></a>Pasos de implementación
 Para empezar, configure el conmutador virtual de Hyper-v (servidores físicos) y la asignación de direcciones IP. Se puede usar cualquier tipo de almacenamiento que sea compatible con Hyper-V, compartido o local.
@@ -86,7 +86,7 @@ Para empezar, configure el conmutador virtual de Hyper-v (servidores físicos) y
 
    a. Haga clic con el botón secundario en **Inicio**, seleccione **sistema** y, a continuación, haga clic en **Cambiar configuración**.
    b. Haga clic en **Cambiar**.
-   c. Haga clic en **dominio** y especifique el nombre de dominio.  "" "" d. Haga clic en **Aceptar**.
+   c. Haga clic en **dominio** y especifique el nombre de dominio.  "" "" d. Haga clic en **OK**.
    e. Escriba las credenciales de nombre de usuario y contraseña cuando se le solicite.
    f. Reinicie el servidor.
 
@@ -129,7 +129,7 @@ Siga los pasos siguientes para validar que la red de host está configurada corr
 2. Descargue los archivos de instalación del repositorio en el equipo de implementación designado. Haga clic en **clonar o descargar** y, a continuación, haga clic en **Descargar zip**.
 
    > [!NOTE]
-   > El equipo de implementación designado debe ejecutar Windows Server 2016 o posterior.
+   > El equipo de implementación designado debe ejecutar Windows Server 2016 o versiones posteriores.
 
 3. Expanda el archivo zip y copie la carpeta **SDNExpress** en la carpeta del equipo de implementación `C:\` .
 

@@ -7,16 +7,16 @@ ms.assetid: b9552054-4eb9-48db-a6ce-f36ae55addcd
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/23/2018
-ms.openlocfilehash: 8b6c109948f472154ceff7d97aef63d0a77f4624
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 73e0868fdf03ac940ab4540671d05614a4fc5221
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87947153"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716861"
 ---
 # <a name="add-a-virtual-gateway-to-a-tenant-virtual-network"></a>Adición de una puerta de enlace virtual a una red virtual de inquilino
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016
+>Se aplica a: Windows Server 2019, Windows Server 2016
 
 Obtenga información sobre cómo usar los cmdlets y scripts de Windows PowerShell para proporcionar conectividad de sitio a sitio para las redes virtuales del inquilino. En este tema, agregará puertas de enlace virtuales de inquilino a instancias de puerta de enlace RAS que son miembros de los grupos de puertas de enlace, con el controlador de red. La puerta de enlace de RAS admite hasta 100 inquilinos, según el ancho de banda usado por cada inquilino. Controladora de red determina automáticamente la mejor puerta de enlace de RAS que se usará al implementar una nueva puerta de enlace virtual para los inquilinos.
 

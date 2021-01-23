@@ -7,16 +7,16 @@ ms.assetid: e9a8f2fd-48fe-4a90-9250-f6b32488b7a4
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/27/2018
-ms.openlocfilehash: 71ea9f33dbebf34614a67a9c305761d66b31411b
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 8e8cb44b22751a45c8ea37d652525c01b0a707cb
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87993983"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716911"
 ---
 # <a name="upgrade-backup-and-restore-sdn-infrastructure"></a>Actualización, copia de seguridad y restauración de la infraestructura de SDN
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016
+>Se aplica a: Windows Server 2019, Windows Server 2016
 
 En este tema, aprenderá a actualizar, realizar una copia de seguridad y restaurar una infraestructura de SDN.
 
@@ -37,7 +37,7 @@ Instale las mismas actualizaciones de Windows en todos los componentes del siste
 
 Al actualizar cada componente, puede usar cualquiera de los métodos estándar para instalar actualizaciones de Windows. Sin embargo, para garantizar un tiempo de inactividad mínimo para las cargas de trabajo y la integridad de la base de datos de la controladora de red, siga estos pasos:
 
-1. Actualice las consolas de administración de.<p>Instale las actualizaciones en cada uno de los equipos en los que usa el módulo de PowerShell de la controladora de red.  Incluye cualquier lugar en el que tenga el rol RSAT-NetworkController instalado por sí mismo. Excluyendo las propias máquinas virtuales de la controladora de red; los actualizará en el paso siguiente.
+1. Actualice las consolas de administración de.<p>Instale las actualizaciones en cada uno de los equipos en los que usa el módulo de PowerShell de la controladora de red.  Incluye cualquier lugar en el que tenga el rol de RSAT-NetworkController instalado por sí solo. Excluyendo las propias máquinas virtuales de la controladora de red; los actualizará en el paso siguiente.
 
 2. En la primera máquina virtual de controladora de red, instale todas las actualizaciones y reinicie.
 

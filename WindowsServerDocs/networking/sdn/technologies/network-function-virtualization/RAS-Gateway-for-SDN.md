@@ -1,28 +1,26 @@
 ---
 title: Puerta de enlace RAS para SDN
-description: Puede usar este tema para obtener información sobre la puerta de enlace RAS, que es un enrutador compatible con Protocolo de puerta de enlace de borde (BGP) basado en software y multiinquilino en Windows Server 2016.
+description: Puede usar este tema para obtener información sobre la puerta de enlace de RAS, que es un enrutador compatible con el software, multiempresa, Protocolo de puerta de enlace de borde (BGP) en Windows Server 2019 y 2016.
 manager: grcusanz
 ms.topic: article
 ms.assetid: a32357a5-ab1a-4a4c-848a-7a4ed65b1921
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/07/2020
-ms.openlocfilehash: d8bd138599001bdf31aa52c817b64d2475e9b783
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: d5709f00e865a19f14568ea0eebb670276b22f1f
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97946031"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98717011"
 ---
 # <a name="ras-gateway-for-sdn"></a>Puerta de enlace RAS para SDN
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016 # # puerta de enlace RAS para SDN
-
+>Se aplica a: Windows Server 2019, Windows Server 2016
 
 La puerta de enlace RAS es un enrutador compatible con software, multiempresa, Protocolo de puerta de enlace de borde (BGP) diseñado para proveedores de servicios en la nube (CSP) y empresas que hospedan varias redes virtuales de inquilinos mediante virtualización de red de Hyper-V. Las puertas de enlace RAS enrutan el tráfico de red entre la red física y los recursos de red de VM, independientemente de la ubicación. Puede enrutar el tráfico de red en la misma ubicación física o en muchas ubicaciones diferentes.
 
 Multiinquilino es la capacidad de una infraestructura de nube para admitir las cargas de trabajo de máquinas virtuales de varios inquilinos, pero aislarlas entre sí, mientras que todas las cargas de trabajo se ejecutan en la misma infraestructura. Las distintas cargas de trabajo de un inquilino individual pueden interconectarse y administrarse de manera remota, pero estos sistemas no se interconectan con las cargas de trabajo de los demás inquilinos, ni tampoco pueden los demás inquilinos administrarlas de manera remota.
-
 
 > [!NOTE]
 > Además de este tema, están disponibles los siguientes temas de puerta de enlace RAS.

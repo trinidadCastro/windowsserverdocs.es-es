@@ -7,16 +7,16 @@ ms.assetid: 6d783ff6-7dd5-496c-9ed9-5c36612c6859
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/23/2018
-ms.openlocfilehash: 95307dafd077f1efc3b44131494ced709334a2d8
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 3b7bbec3cb145d9cb5fbd2339e2150e2dc01286b
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87962238"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716831"
 ---
 # <a name="configure-quality-of-service-qos-for-a-tenant-vm-network-adapter"></a>Configurar la calidad de servicio (QoS) para un adaptador de red de máquina virtual de inquilino
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016
+>Se aplica a: Windows Server 2019, Windows Server 2016
 
 Al configurar QoS para un adaptador de red de máquina virtual de inquilino, tiene la opción de elegir entre el protocolo de puente del centro de datos \( DCB \) o la QoS de redes definidas por software \( \) .
 

@@ -6,16 +6,16 @@ ms.topic: how-to
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/22/2018
-ms.openlocfilehash: c4350636c0977b23c94a73fb8bf7a6179736eb5a
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 0bb62eda416d60f130573ee01e75d47f09d4a3c2
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949131"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716461"
 ---
 # <a name="gateway-bandwidth-allocation"></a>Asignación de ancho de banda de puerta de enlace
 
->Se aplica a: Windows Server
+>Se aplica a: Windows Server 2019
 
 En Windows Server 2016, el ancho de banda de túnel individual para IPsec, GRE y L3 era una proporción de la capacidad total de la puerta de enlace. Por lo tanto, los clientes proporcionarían la capacidad de puerta de enlace basada en el ancho de banda TCP estándar que esperaba esta máquina virtual de puerta de enlace.
 

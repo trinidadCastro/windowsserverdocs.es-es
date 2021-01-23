@@ -7,16 +7,16 @@ ms.assetid: 7e2b4540-de56-4d5f-bb8e-9f81ca0ea4eb
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/26/2018
-ms.openlocfilehash: 371df0a31c35cb6453cf47ce1ae545ca4e5c261c
-ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
+ms.openlocfilehash: d535d001b5ec38a3553a995176a528838904beb8
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98038195"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716011"
 ---
 # <a name="manage-sdn"></a>Administrar SDN
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016
+>Se aplica a: Windows Server 2019, Windows Server 2016
 
 Puede usar los temas de esta sección para administrar las redes definidas por software, incluidas las cargas de trabajo de inquilinos y las redes virtuales.
 

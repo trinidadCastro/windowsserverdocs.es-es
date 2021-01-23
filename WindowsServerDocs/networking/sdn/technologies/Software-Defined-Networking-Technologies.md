@@ -1,24 +1,24 @@
 ---
 title: Tecnologías de SDN
-description: Los temas de esta sección proporcionan información general e información técnica sobre las tecnologías de redes definidas por software que se incluyen en Windows Server 2016.
+description: Los temas de esta sección proporcionan información general e información técnica sobre las tecnologías de redes definidas por software que se incluyen en Windows Server 2019 y 2016.
 manager: grcusanz
 ms.topic: article
 ms.assetid: b491089c-5bcb-49d4-95b1-915b7ce69f88
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 02/14/2019
-ms.openlocfilehash: 69e01630cf34a588b6861c833015076bd4a31ef4
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 62a0773fb51397cab2893826939736685eed798b
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996471"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716241"
 ---
 # <a name="sdn-technologies"></a>Tecnologías de SDN
 
->Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
+>Se aplica a: Windows Server 2019, Windows Server 2016
 
-Los temas de esta sección proporcionan información general e información técnica sobre las tecnologías de redes definidas por software que se incluyen en Windows Server 2016.
+Los temas de esta sección proporcionan información general e información técnica sobre las tecnologías de redes definidas por software que se incluyen en Windows Server 2019 y 2016.
 
 ## <a name="network-controller"></a>[Controladora de red](network-controller/Network-Controller.md)
 
@@ -72,7 +72,7 @@ SET es una solución alternativa para la formación de equipos NIC que puede usa
 El conjunto le permite agrupar entre uno y ocho adaptadores de red Ethernet físicos en uno o varios adaptadores de red virtuales basados en software. Estos adaptadores de red virtuales proporcionan un rendimiento rápido y tolerancia a errores en caso de que se produzca un error en el adaptador de red.
 Los adaptadores de red de miembros deben estar instalados en el mismo host físico de Hyper-V que se van a colocar en un equipo.
 
-Además, puede usar comandos de Windows PowerShell para habilitar el protocolo de puente del centro de datos (DCB), crear un conmutador virtual de Hyper-V con una NIC virtual de RDMA (vNIC) y crear un conmutador virtual de Hyper-V con SET y RDMA VNIC. Para obtener más información, vea [acceso directo a memoria remota (RDMA) y switch Embedded Teaming (Set)](../../../virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming.md).
+Además, puede usar comandos de Windows PowerShell para habilitar el protocolo de puente del centro de datos (DCB), crear un conmutador virtual de Hyper-V con una NIC virtual de RDMA (vNIC) y crear un conmutador virtual de Hyper-V con SET y RDMA VNIC. Para más información, consulte [Acceso directo a memoria remota (RDMA) y Switch Embedded Teaming (SET)](../../../virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming.md).
 
 ## <a name="border-gateway-protocol-bgp"></a>[Protocolo de puerta de enlace de borde (BGP)](../../../remote/remote-access/bgp/Border-Gateway-Protocol-BGP.md)
 

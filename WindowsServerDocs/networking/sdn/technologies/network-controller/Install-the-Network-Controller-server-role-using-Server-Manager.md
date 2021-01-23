@@ -1,22 +1,22 @@
 ---
 title: Instale el rol de servidor de la controladora de red mediante Administrador del servidor
-description: En este tema se proporcionan instrucciones sobre cómo instalar el rol de servidor de la controladora de red mediante Administrador del servidor en Windows Server 2016.
+description: En este tema se proporcionan instrucciones sobre cómo instalar el rol de servidor de la controladora de red mediante Administrador del servidor en Windows Server 2019 y 2016.
 manager: grcusanz
 ms.topic: how-to
 ms.assetid: 3a6e4352-ff62-4290-b8a4-5c83740070fc
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 11/02/2020
-ms.openlocfilehash: 5a0b8ac221c30b2f474ea94bbce44849b5fe132a
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 024cfb82aa4d539e5d5cbec0fd956b83e0224766
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949411"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716941"
 ---
 # <a name="install-the-network-controller-server-role-using-server-manager"></a>Instale el rol de servidor de la controladora de red mediante Administrador del servidor
 
-> Se aplica a: Windows Server (canal semianual), Windows Server 2016
+> Se aplica a: Windows Server 2019, Windows Server 2016
 
 En este tema se proporcionan instrucciones sobre cómo instalar el rol de servidor de la controladora de red mediante Administrador del servidor.
 
@@ -27,7 +27,7 @@ Después de instalar el controlador de red, debe usar comandos de Windows PowerS
 
 ### <a name="to-install-network-controller"></a>Para instalar el controlador de red
 
-1. En el Administrador del servidor, haga clic en **Administrar** y en **Agregar roles y características**. Se abre el Asistente para agregar roles y características. Haga clic en **Next**.
+1. En el Administrador del servidor, haga clic en **Administrar** y en **Agregar roles y características**. Se abre el Asistente para agregar roles y características. Haga clic en **Siguiente**.
 
 2. En **Seleccionar tipo de instalación**, mantenga la configuración predeterminada y haga clic en **siguiente**.
 

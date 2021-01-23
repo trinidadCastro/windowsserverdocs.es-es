@@ -7,16 +7,16 @@ ms.assetid: 73bff8ba-939d-40d8-b1e5-3ba3ed5439c3
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/23/2018
-ms.openlocfilehash: a5130ab588f46bd8be8174a853b4e1f9cc1a568f
-ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
+ms.openlocfilehash: 646329bfdf487f96989addb841a3bdaed02438ac
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98038235"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716821"
 ---
 # <a name="configure-the-software-load-balancer-for-load-balancing-and-network-address-translation-nat"></a>Configuración del equilibrador de carga de software para el equilibrio de carga y la traducción de direcciones de red (NAT)
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016
+>Se aplica a: Windows Server 2019, Windows Server 2016
 
 Puede usar este tema para obtener información sobre cómo usar el SLB del equilibrador de carga de software de redes definidas por software \( Sdn \) \( \) para proporcionar \( NAT de traducción de direcciones de red salientes \) , NAT de entrada o equilibrio de carga entre varias instancias de una aplicación.
 

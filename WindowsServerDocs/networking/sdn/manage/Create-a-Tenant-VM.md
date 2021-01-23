@@ -7,16 +7,16 @@ ms.assetid: 3c62f533-1815-4f08-96b1-dc271f5a2b36
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/24/2018
-ms.openlocfilehash: 2ca1c308ee38726d02ef19ebdfa4c83086fef0a7
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: ad45131964eb44af2e55f005dd52e43f69d321db
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87995145"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716721"
 ---
 # <a name="create-a-vm-and-connect-to-a-tenant-virtual-network-or-vlan"></a>Creación de una máquina virtual y conexión a una red VLAN o red virtual de inquilino
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016
+>Se aplica a: Windows Server 2019, Windows Server 2016
 
 En este tema, creará una máquina virtual de inquilino y la conectará a una red virtual que creó con virtualización de red de Hyper-V o a una red de área local virtual (VLAN). Puede usar los cmdlets de la controladora de red de Windows PowerShell para conectarse a una red virtual o NetworkControllerRESTWrappers para conectarse a una VLAN.
 

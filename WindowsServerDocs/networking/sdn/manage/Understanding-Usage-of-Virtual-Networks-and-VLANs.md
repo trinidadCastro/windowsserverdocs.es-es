@@ -7,21 +7,18 @@ ms.assetid: 84ac2458-3fcf-4c4f-acfe-6105443dd83f
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/26/2018
-ms.openlocfilehash: 1f1f1f56fbac8c7faa7628ac0adb0cbeef3a78d3
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 58ab0a66e5f08ba9661326b418170563a56a86a4
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87962219"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716661"
 ---
 # <a name="understand-the-usage-of-virtual-networks-and-vlans"></a>Comprender el uso de redes virtuales y VLAN
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016
+>Se aplica a: Windows Server 2019, Windows Server 2016
 
 En este tema, obtendrá información sobre las redes virtuales de virtualización de red de Hyper-V y cómo se diferencian de las redes de área local virtual (VLAN). Con virtualización de red de Hyper-V, cree redes virtuales de superposición, también denominadas redes virtuales.
-
-
-
 
 Las redes definidas por software (SDN) en Windows Server 2016 se basan en la Directiva de programación para redes virtuales de superposición en un conmutador virtual de Hyper-V. Puede crear redes virtuales de superposición, también denominadas redes virtuales, con virtualización de red de Hyper-V.
 
@@ -34,5 +31,3 @@ La red física en la que se tuneliza el tráfico encapsulado de cada inquilino s
 Puede crear redes lógicas y subredes adicionales a efectos de infraestructura para llevar el tráfico de administración, el tráfico de almacenamiento, el tráfico de migración en vivo, etc.
 
 Microsoft SDN no admite el aislamiento de redes de inquilinos mediante el uso de VLAN. El aislamiento de inquilinos se logra únicamente mediante el uso de la encapsulación y las redes virtuales de superposición de virtualización de red de Hyper-V.
-
-

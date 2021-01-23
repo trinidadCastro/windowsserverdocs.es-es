@@ -1,22 +1,22 @@
 ---
 title: Seguridad para SDN
-description: Puede usar los temas de esta sección para obtener información sobre la seguridad en redes definidas por software de \( \) Windows Server 2016 Datacenter.
+description: Puede usar los temas de esta sección para obtener información sobre la seguridad en redes definidas por software de \( \) Windows Server 2019 y 2016 Datacenter.
 manager: grcusanz
 ms.topic: article
 ms.assetid: 763d11a8-4225-4d96-b56f-1ec62e256bfd
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 12/09/2020
-ms.openlocfilehash: 8af53f7e8c03b8f4e0aa780e4c1944852557bd82
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 195e1ce39f8a01e83434a56e57d6d3d498dd30c3
+ms.sourcegitcommit: fb2ae5e6040cbe6dde3a87aee4a78b08f9a9ea7c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97949971"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98716362"
 ---
 # <a name="security-for-sdn"></a>Seguridad para SDN
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016
+>Se aplica a: Windows Server 2019, Windows Server 2016
 
 Puede usar los temas de esta sección para obtener información sobre la seguridad en redes definidas por software de \( Sdn \) .
 
