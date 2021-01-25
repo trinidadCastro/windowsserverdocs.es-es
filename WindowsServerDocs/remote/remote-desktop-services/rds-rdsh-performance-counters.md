@@ -2,23 +2,23 @@
 title: Uso de contadores de rendimiento para diagnosticar problemas de capacidad de respuesta de las aplicaciones en los hosts de sesión de Escritorio remoto
 description: ¿Funcionan muy lentamente las aplicaciones en la sesión de Escritorio remoto? Obtén información acerca de los contadores de rendimiento que puede utilizar para diagnosticar problemas de rendimiento de aplicaciones en RDSH
 ms.author: elizapo
-ms.date: 07/11/2019
+ms.date: 01/19/2021
 ms.topic: article
 author: lizap
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 1db80d7ad93eea13decf90f1195a022c27c83e5e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 7681c8abca0cc6b36fb8f8bebab7526733993e97
+ms.sourcegitcommit: 7674bbe49517bbfe0e2c00160e08240b60329fd9
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87954992"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98603419"
 ---
 # <a name="use-performance-counters-to-diagnose-app-performance-problems-on-remote-desktop-session-hosts"></a>Uso de contadores de rendimiento para diagnosticar problemas de rendimiento de las aplicaciones en los hosts de sesión de Escritorio remoto
 
 > Se aplica a: Windows Server 2019, Windows 10
 
-Uno de los problemas más difíciles de diagnosticar es que el rendimiento de las aplicaciones sea deficiente (las aplicaciones funcionan con lentitud o no responden). Tradicionalmente, el primer paso del diagnóstico es recopilar los datos de la CPU, memoria, entrada/salida del disco, y otras métricas y, después, usar herramientas como Windows Performance Analyzer para intentar averiguar qué es lo que provoca el problema. Por desgracia, en la mayoría de los casos, estos datos no ayudan a identificar la causa raíz, ya que los contadores de consumo de recursos tienen variaciones frecuentes y grandes, lo que dificulta la lectura de los datos y su correlación con el problema notificado. Para ayudarle a solucionar rápidamente los problemas de rendimiento de las aplicaciones, hemos agregado varios contadores de rendimiento nuevos (se pueden [descargar](#download-windows-server-insider-software) a través del [programa Windows Insider](https://insider.windows.com)) que miden los flujos de entrada del usuario.
+Uno de los problemas más difíciles de diagnosticar es que el rendimiento de las aplicaciones sea deficiente (las aplicaciones funcionan con lentitud o no responden). Tradicionalmente, el primer paso del diagnóstico es recopilar los datos de la CPU, memoria, entrada/salida del disco, y otras métricas y, después, usar herramientas como Windows Performance Analyzer para intentar averiguar qué es lo que provoca el problema. Por desgracia, en la mayoría de los casos, estos datos no ayudan a identificar la causa raíz, ya que los contadores de consumo de recursos tienen variaciones frecuentes y grandes, lo que dificulta la lectura de los datos y su correlación con el problema notificado.
 
 > [!NOTE]
 > El contador de retraso de entrada de usuario solo es compatible con:
@@ -135,12 +135,6 @@ Este es su aspecto si se activan las dos claves:
 
 Las herramientas de supervisión pueden consumir este contador mediante [contadores de rendimiento](/windows/win32/perfctrs/using-performance-counters).
 
-## <a name="download-windows-server-insider-software"></a>Descarga del software Windows Server Insider
-
-Los usuarios registrados de Insider puede ir directamente a la [página de descarga de Windows Server Insider Preview](https://microsoft.com/en-us/software-download/windowsinsiderpreviewserver) para obtener las descargas más recientes del software Insider.  Para aprender a registrarse como usuario de Insider, consulte [Introducción a Windows Server](https://insider.windows.com/en-us/for-business-getting-started-server/).
-
 ## <a name="share-your-feedback"></a>Comparte tus comentarios
 
 Puedes enviar tus comentarios acerca de esta característica a través del Centro de opiniones. Selecciona **Aplicaciones > Todas las demás aplicaciones** e incluya "contadores de rendimiento de RDS (Monitor de rendimiento)" en el título de la publicación.
-
-Para obtener ideas acerca de las características generales, visite la [página de UserVoice de RDS](https://aka.ms/uservoice-rds).
