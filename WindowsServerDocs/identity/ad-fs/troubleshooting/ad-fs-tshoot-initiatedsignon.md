@@ -6,12 +6,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 01/03/2017
 ms.topic: article
-ms.openlocfilehash: 8ab9497a2c6711c638010c66b9a7c7dd8066876f
-ms.sourcegitcommit: 03048411c07c1a1d0c8bb0b2a60c1c17c9987314
+ms.openlocfilehash: b6a3582ec8aa114362c3b4af15f7389ffa0bb52e
+ms.sourcegitcommit: 6717decb5839aa340c81811d6fde020aabaddb3b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96938975"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98781882"
 ---
 # <a name="ad-fs-troubleshooting---idp-initiated-sign-on"></a>Solución de problemas de AD FS de Idp-Initiated de inicio de sesión
 La página de inicio de sesión de AD FS se puede usar para comprobar si la autenticación está funcionando o no.  Para ello, vaya a la página e inicie sesión.  Además, podemos usar la página de inicio de sesión para comprobar que se muestran todos los usuarios de confianza de SAML 2,0.
@@ -36,18 +36,28 @@ Utilice el siguiente procedimiento para probar la autenticación de AD FS con la
 
 
 ## <a name="test-authentication-using-a-seamless-logon-experience"></a>Probar la autenticación con una experiencia de inicio de sesión sin problemas
+
 Puede probar la experiencia de inicio de sesión sin problemas asegurándose de que la dirección URL de los servidores de AD FS se ha agregado a la zona Intranet local de las opciones de Internet.  Utilice el siguiente procedimiento:
 
-1.  En un cliente de Windows 10, haga clic en Inicio y escriba opciones de Internet y seleccione Opciones de Internet.
-2.   Haga clic en la pestaña seguridad, haga clic en Intranet local y, a continuación, haga clic en el botón sitios.
-![Sencilla](media/ad-fs-tshoot-initiatedsignon/idp8.png)
-1.  Haga clic en Avanzada.
-2.  Escriba la dirección URL y haga clic en Agregar.  Haga clic en Cerrar.
-![Agregar dirección URL](media/ad-fs-tshoot-initiatedsignon/idp9.png)
-1.  Haga clic en Aceptar.  Haga clic en Aceptar.  Esto debe cerrar las opciones de Internet.
-2.  Abra un explorador Web y vaya a la página de inicio de sesión de IDP.  Ejemplo:  https://sts.contoso.com/adfs/ls/idpinitiatedsignon.aspx
-3.  Haga clic en el botón iniciar sesión.  Debe iniciar sesión automáticamente y no se le pedirán las credenciales.
-![Sencilla](media/ad-fs-tshoot-initiatedsignon/idp6.png)
+1. En un cliente de Windows 10, haga clic en Inicio y escriba opciones de Internet y seleccione Opciones de Internet.
+
+1. Haga clic en la pestaña seguridad, haga clic en Intranet local y, a continuación, haga clic en el botón sitios.
+
+    ![Captura de pantalla de la pestaña seguridad del cuadro de diálogo Propiedades de Internet que muestra la opción de Intranet local resaltada.](media/ad-fs-tshoot-initiatedsignon/idp8.png)
+
+1. Haga clic en Avanzada.
+
+1. Escriba la dirección URL y haga clic en Agregar.  Haga clic en Cerrar.
+
+    ![Agregar dirección URL](media/ad-fs-tshoot-initiatedsignon/idp9.png)
+
+1. Haga clic en Aceptar.  Haga clic en Aceptar.  Esto debe cerrar las opciones de Internet.
+
+1. Abra un explorador Web y vaya a la página de inicio de sesión de IDP.  Ejemplo:  https://sts.contoso.com/adfs/ls/idpinitiatedsignon.aspx
+
+1. Haga clic en el botón iniciar sesión.  Debe iniciar sesión automáticamente y no se le pedirán las credenciales.
+
+    ![Captura de pantalla de la página de inicio de sesión en la que se muestra que el usuario no solicitó credenciales.](media/ad-fs-tshoot-initiatedsignon/idp6.png)
 
 ## <a name="next-steps"></a>Pasos siguientes
 

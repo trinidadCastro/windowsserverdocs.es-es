@@ -6,12 +6,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 06/13/2018
 ms.topic: article
-ms.openlocfilehash: 2f730fad7996c17dbe7c7130f078492917537efb
-ms.sourcegitcommit: e0070b24e0423187eb2b36ba92072fed23880aa8
+ms.openlocfilehash: 7e3299d9d33690066206a5698958f95663414ae4
+ms.sourcegitcommit: 6717decb5839aa340c81811d6fde020aabaddb3b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98186413"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98781815"
 ---
 # <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016-or-later"></a>Compilar una aplicación Web de una sola página mediante OAuth y ADAL.JS con AD FS 2016 o posterior
 
@@ -25,7 +25,7 @@ En este escenario, cuando el usuario inicia sesión, el front-end de JavaScript 
 > [!NOTE]
 > Este tutorial **solo** es aplicable a AD FS Server 2016 y versiones posteriores.
 
-## <a name="overview"></a>Información general
+## <a name="overview"></a>Introducción
 En este ejemplo, vamos a crear un flujo de autenticación en el que un cliente de aplicación de una sola página se autenticará en AD FS para proteger el acceso a los recursos de WebAPI en el back-end. A continuación se muestra el flujo de autenticación general
 
 ![Autorización de AD FS](media/Single-Page-Application-with-AD-FS/authenticationflow.png)
@@ -78,17 +78,17 @@ En el ejemplo, WebAPI se configura para escuchar en https://localhost:44326/ . E
 
 1. Abra la consola de administración de AD FS y haga clic en **Agregar grupo de aplicaciones**. En el **Asistente para agregar grupos de aplicaciones** , escriba el nombre de la aplicación, Description y seleccione el **explorador Web que tiene acceso a una plantilla de aplicación web** en la sección **aplicaciones cliente-servidor** , como se muestra a continuación
 
-    ![Crear nuevo grupo de aplicaciones](media/Single-Page-Application-with-AD-FS/appgroup_step1.png)
+    ![Captura de pantalla de la Página principal del Asistente para agregar grupos de aplicaciones que muestra el explorador Web que tiene acceso a una plantilla de aplicación web resaltada.](media/Single-Page-Application-with-AD-FS/appgroup_step1.png)
 
 2. En la **aplicación nativa** de la página siguiente, proporcione el identificador de cliente de la aplicación y el URI de redireccionamiento, como se muestra a continuación
 
-    ![Crear nuevo grupo de aplicaciones](media/Single-Page-Application-with-AD-FS/appgroup_step2.png)
+    ![Captura de pantalla de la página aplicación nativa del Asistente para agregar grupos de aplicaciones que muestra el redireccionamiento U R I.](media/Single-Page-Application-with-AD-FS/appgroup_step2.png)
 
 3. En la página siguiente, **aplique la directiva Access Control** dejar los permisos como *permitir todos*
 
 4. La página de resumen debe ser similar a la siguiente
 
-    ![Crear nuevo grupo de aplicaciones](media/Single-Page-Application-with-AD-FS/appgroup_step3.png)
+    ![Captura de pantalla de la página Resumen del Asistente para agregar grupo de aplicaciones.](media/Single-Page-Application-with-AD-FS/appgroup_step3.png)
 
 5. Haga clic en **siguiente** para completar la adición del grupo de aplicaciones y cierre el asistente.
 
@@ -177,11 +177,11 @@ Haga clic en Inicio de sesión.  La lista de tareas desencadenará el flujo de a
 
 En Fiddler, puede ver el token que se devuelve como parte de la dirección URL en el # Fragment.
 
-![Fiddler](media/Single-Page-Application-with-AD-FS/singleapp5a.png)
+![Captura de pantalla de Fiddler que muestra que puede ver el token que se devuelve como parte de la dirección URL en el # Fragment.](media/Single-Page-Application-with-AD-FS/singleapp5a.png)
 
 Ahora podrá llamar a la API de back-end para agregar elementos de la lista de tareas pendientes para el usuario que ha iniciado sesión:
 
-![Fiddler](media/Single-Page-Application-with-AD-FS/singleapp6.png)
+![Captura de pantalla de la aplicación de ejemplo de ADAL JS.](media/Single-Page-Application-with-AD-FS/singleapp6.png)
 
 ## <a name="next-steps"></a>Pasos siguientes
 [Desarrollo de AD FS](../../ad-fs/AD-FS-Development.md)

@@ -6,17 +6,17 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 43c5cbda88f02792a4c0a8f91f84909a3c303c2b
-ms.sourcegitcommit: 9e19436bd8b20af60284071ab512405aebfbec83
+ms.openlocfilehash: 25c0c6f6f13d036ca5bc83df86cd63940d82f46c
+ms.sourcegitcommit: 6717decb5839aa340c81811d6fde020aabaddb3b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97811452"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98781842"
 ---
 # <a name="managing-ssltls-protocols-and-cipher-suites-for-ad-fs"></a>Administración de los protocolos SSL/TLS y los conjuntos de cifrado para AD FS
 La siguiente documentación proporciona información sobre cómo deshabilitar y habilitar determinados protocolos TLS/SSL y conjuntos de cifrado que se usan en AD FS
 
-## <a name="tlsssl-schannel-and-cipher-suites-in-ad-fs"></a>Conjuntos de cifrado TLS/SSL, SChannel y Cipher en AD FS
+## <a name="tlsssl-schannel-and-cipher-suites-in-ad-fs"></a>Conjuntos de cifrado TLS/SSL, SChannel y de cifrado en AD FS
 
 La seguridad de la capa de transporte (TLS) y el Capa de sockets seguros (SSL) son protocolos que proporcionan comunicaciones seguras.  Servicios de federación de Active Directory (AD FS) usa estos protocolos para las comunicaciones.  Actualmente existen varias versiones de estos protocolos.
 
@@ -42,7 +42,7 @@ En el día y la edad actuales, la protección de los servidores y la eliminació
 
 Las claves del registro siguientes se encuentran en la misma ubicación: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols.  Use regedit o PowerShell para habilitar o deshabilitar estos protocolos y conjuntos de cifrado.
 
-![Ubicación del Registro](media/Managing-SSL-Protocols-in-AD-FS/registry.png)
+![Captura de pantalla del editor del registro que muestra las claves del registro ubicadas en la carpeta protocolos.](media/Managing-SSL-Protocols-in-AD-FS/registry.png)
 
 ## <a name="enable-and-disable-ssl-20"></a>Habilitar y deshabilitar SSL 2,0
 Use las siguientes claves del registro y sus valores para habilitar y deshabilitar SSL 2,0.
@@ -178,7 +178,7 @@ Use las siguientes claves del registro y sus valores para habilitar y deshabilit
     Write-Host 'TLS 1.1 has been disabled.'
 ```
 
-## <a name="enable-and-disable-tls-12"></a>Habilitación y deshabilitación de TLS 1,2
+## <a name="enable-and-disable-tls-12"></a>Habilitación y deshabilitación de TLS 1.2
 
 Use las siguientes claves del registro y sus valores para habilitar y deshabilitar TLS 1,2.
 
@@ -217,7 +217,7 @@ Use las siguientes claves del registro y sus valores para habilitar y deshabilit
 
 - HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\
 
-![Ubicación del Registro](media/Managing-SSL-Protocols-in-AD-FS/cipher.png)
+![Captura de pantalla del editor del registro que muestra las claves del registro ubicadas en la carpeta ciphers.](media/Managing-SSL-Protocols-in-AD-FS/cipher.png)
 
 
 
@@ -250,7 +250,7 @@ Use las siguientes claves del registro y sus valores para habilitar y deshabilit
 
 Puede deshabilitar determinados cifrados específicos si los quita de HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Cryptography\Configuration\Local\SSL\00010002
 
-![Ubicación del Registro](media/Managing-SSL-Protocols-in-AD-FS/suites.png)
+![Captura de pantalla del editor del registro que muestra el cuadro de diálogo Editar cadena múltiple para la carpeta 00010002.](media/Managing-SSL-Protocols-in-AD-FS/suites.png)
 
 Para habilitar un conjunto de cifrado, agregue su valor de cadena a la clave de valor de cadena múltiple de funciones.  Por ejemplo, si queremos habilitar TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384_P521, lo agregaremos a la cadena.
 

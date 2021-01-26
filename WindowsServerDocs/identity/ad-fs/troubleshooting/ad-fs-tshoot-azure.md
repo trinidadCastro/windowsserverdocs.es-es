@@ -6,12 +6,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 03/01/2018
 ms.topic: article
-ms.openlocfilehash: d7941733ff2191e94c6c1e380d4349585a5c98d3
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d176ed425ffe760a018a090ba66e43597a1bbc05
+ms.sourcegitcommit: 6717decb5839aa340c81811d6fde020aabaddb3b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87956182"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98781825"
 ---
 # <a name="ad-fs-troubleshooting---azure-ad"></a>Solución de problemas de AD FS-Azure AD
 Con el crecimiento de la nube, una gran cantidad de empresas se han trasladado a usar Azure AD para sus diversas aplicaciones y servicios.  La Federación con Azure AD se ha convertido en una práctica estándar con muchas organizaciones.  En este documento se tratan algunos de los aspectos de la solución de problemas que surgen con esta Federación.  Algunos de los temas del documento general de solución de problemas siguen perteneciendo a la Federación con Azure, por lo que este documento se centrará solo en detalles con Azure AD y AD FS interacción.
@@ -36,9 +36,9 @@ Si no se está redireccionando, hay algunas cosas que desea comprobar
 
 3. Por último, desea comprobar [DNS](ad-fs-tshoot-dns.md) y asegurarse de que los servidores de AD FS o los servidores WAP se resuelven desde Internet.  Compruebe que esto se resuelve y que se puede navegar a él.
 
-4. También puede usar el cmdlt de PowerShell `Get-AzureADDomain` para obtener esta información también.
+4. También puede usar el cmdlet de PowerShell `Get-AzureADDomain` para obtener esta información también.
 
-   ![Pantalla de cmdlet de PowerShell](media/ad-fs-tshoot-azure/azure6.png)
+   ![Captura de pantalla de la ventana de PowerShell que muestra los resultados del comando Get-AzureADDomain.](media/ad-fs-tshoot-azure/azure6.png)
 
 ### <a name="you-are-receiving-an-unknown-auth-method-error"></a>Recibe un error de método de autenticación desconocido
 Puede encontrar un error de "método de autenticación desconocido" que indica que AuthnContext no se admite en el nivel de AD FS o STS cuando se le redirige desde Azure.
@@ -69,7 +69,7 @@ Clases de contexto de autenticación SAML admitidas
 |Método de autenticación|URI de clase de contexto de autenticación|
 |-----|-----|
 |Nombre de usuario y contraseña|urn:oasis:names:tc:SAML:2.0:ac:classes:Password|
-|Transporte protegido por contraseña|urn: oasis: names: TC: SAML: 2.0: AC: classes: PasswordProtectedTransport|
+|Transporte protegido por contraseña|urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport|
 |Cliente de seguridad de la capa de transporte (TLS)|urn: oasis: names: TC: SAML: 2.0: AC: classes: TLSClient
 |Certificado X.509|urn: oasis: names: TC: SAML: 2.0: AC: classes: X509
 |Autenticación integrada de Windows|urn: Federation: autenticación: Windows|
@@ -121,9 +121,9 @@ Una vez que AD FS emite un token, Azure AD puede producir un error. En esta situ
         - UPN: el valor de esta demanda debe coincidir con el UPN de los usuarios en Azure AD.
         - ImmutableID: el valor de esta demanda debe coincidir con el sourceAnchor o ImmutableID del usuario en Azure AD.
 
-Para obtener el valor de atributo de usuario en Azure AD, ejecute la siguiente línea de comandos:`Get-AzureADUser –UserPrincipalName <UPN>`
+Para obtener el valor de atributo de usuario en Azure AD, ejecute la siguiente línea de comandos: `Get-AzureADUser –UserPrincipalName <UPN>`
 
-![Pantalla de cmdlet de PowerShell](media/ad-fs-tshoot-azure/azure5.png)
+![Captura de pantalla de la ventana de PowerShell que muestra los resultados del comando Get-AzureADUser.](media/ad-fs-tshoot-azure/azure5.png)
 
    - SAML 2,0:
        - IDPEmail: el valor de esta demanda debe coincidir con el nombre principal de usuario de los usuarios de Azure AD.
@@ -144,6 +144,6 @@ A continuación se muestra una lista rápida de aspectos que se deben comprobar 
 - credenciales obsoletas o almacenadas en caché en el administrador de credenciales de Windows
 - El algoritmo hash seguro que está configurado en la relación de confianza para usuario autenticado para Office 365 está establecido en SHA1
 
-## <a name="next-steps"></a>Pasos a seguir
+## <a name="next-steps"></a>Pasos siguientes
 
 - [Solución de problemas de AD FS](ad-fs-tshoot-overview.md)

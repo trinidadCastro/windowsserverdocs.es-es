@@ -6,12 +6,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 01/18/2018
 ms.topic: article
-ms.openlocfilehash: f30b66bd80b3c5002bdc2c66a1d89718cdb1ee39
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 96d202a0c4379d2d52e41bdfb0c750e0e64ffaf2
+ms.sourcegitcommit: 6717decb5839aa340c81811d6fde020aabaddb3b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87956212"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98781928"
 ---
 # <a name="ad-fs-troubleshooting---fiddler---ws-federation"></a>Solución de problemas de AD FS-Fiddler-WS-Federation
 
@@ -30,7 +30,7 @@ Solicitud:
 Respuesta:
 
 - La respuesta es un HTTP 302 (redirigir).  Los datos de transporte del encabezado de respuesta muestran adónde redirigirse a (https://sts.contoso.com/adfs/ls)
-- La dirección URL de redireccionamiento contiene wa = wsignin 1,0, que nos indica que nuestra aplicación RP ha creado una solicitud de inicio de sesión de WS-Federation para nosotros y lo ha enviado al punto de conexión de/ADFS/LS/del AD FS.  Esto se conoce como enlace de redirección.
+- La dirección URL de redireccionamiento contiene wa = wsignin 1,0, que nos indica que nuestra aplicación de RP ha creado una solicitud de inicio de sesión de WS-Federation para nosotros y lo ha enviado al punto de conexión/ADFS/LS/de la AD FS.  Esto se conoce como enlace de redirección.
 
 ![Transporte de datos en el encabezado de respuesta](media/ad-fs-tshoot-fiddler-ws-fed/fiddler2.png)
 
@@ -44,10 +44,10 @@ Solicitud:
 
 Respuesta:
 
-- La respuesta es un mensaje de solicitud de credenciales.  Esto indica que usamos Forms authnetication
+- La respuesta es un mensaje de solicitud de credenciales.  Esto indica que usamos la autenticación mediante formularios
 - Al hacer clic en la vista previa de la respuesta, puede ver la solicitud de credenciales.
 
-![Continuación del seguimiento de Fiddler](media/ad-fs-tshoot-fiddler-ws-fed/fiddler6.png)
+![Captura de pantalla de la vista Web de la respuesta que muestra la solicitud de credenciales.](media/ad-fs-tshoot-fiddler-ws-fed/fiddler6.png)
 
 ## <a name="step-5-and-6"></a>Paso 5 y 6
 
@@ -64,7 +64,7 @@ Respuesta:
 
 ## <a name="step-7-and-8"></a>Paso 7 y 8
 
-![Continuación del seguimiento de Fiddler](media/ad-fs-tshoot-fiddler-ws-fed/fiddler5.png)
+![Captura de pantalla del seguimiento de Fiddler que muestra la solicitud get T t t P y la respuesta a esa solicitud.](media/ad-fs-tshoot-fiddler-ws-fed/fiddler5.png)
 
 Solicitud:
 
@@ -80,7 +80,7 @@ Respuesta:
 
 ## <a name="step-9-and-10"></a>Paso 9 y 10
 
-![Continuación del seguimiento de Fiddler](media/ad-fs-tshoot-fiddler-ws-fed/fiddler7.png)
+![Captura de pantalla del seguimiento de Fiddler que muestra la solicitud de publicación H T t P y la respuesta a esa solicitud.](media/ad-fs-tshoot-fiddler-ws-fed/fiddler7.png)
 
 Solicitud:
 
@@ -102,6 +102,6 @@ Respuesta:
 
 - La respuesta es correcta
 
-## <a name="next-steps"></a>Pasos a seguir
+## <a name="next-steps"></a>Pasos siguientes
 
 - [Solución de problemas de AD FS](ad-fs-tshoot-overview.md)

@@ -6,12 +6,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 03/01/2018
 ms.topic: article
-ms.openlocfilehash: 349b673b7c062fd8f14d9a9fd857e1d7c859d3de
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 1f4ff57aa825fef008845e228e8d724a1fab9072
+ms.sourcegitcommit: 6717decb5839aa340c81811d6fde020aabaddb3b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87954201"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98781918"
 ---
 # <a name="ad-fs-troubleshooting---claims-rules-syntax"></a>Solución de problemas de AD FS: sintaxis de reglas de notificaciones
 Una demanda es una instrucción que hace un sujeto sobre sí misma u otro asunto.  Las notificaciones las emite un usuario de confianza, y se les asigna uno o varios valores y, a continuación, se empaquetan en los tokens de seguridad que emite el servidor de AD FS.  En este artículo se trata la sintaxis y la creación de notificaciones.  Para obtener información sobre la emisión de notificaciones [, consulte AD FS solución de problemas: emisión de notificaciones](ad-fs-tshoot-claims-issuance.md).
@@ -45,27 +45,27 @@ Para obtener más información sobre las notificaciones y la sintaxis, vea [el r
 ## <a name="claims-rule-editor"></a>Editor de reglas de notificaciones
 La comprobación de sintaxis se realiza mediante el editor de reglas de notificaciones una vez completada la notificación y haciendo clic en **Aceptar**.  Por lo tanto, si tiene la sintaxis incorrecta, el editor le informará.
 
-![claims](media/ad-fs-tshoot-claims/claims1.png)
+![Captura de pantalla del cuadro de diálogo de administración de D F S que muestra un mensaje que indica que la sintaxis de la regla de notificaciones personalizadas no es válida.](media/ad-fs-tshoot-claims/claims1.png)
 
 ## <a name="event-logs"></a>Registros de eventos
 Al intentar solucionar problemas de una notificación con los registros, el mejor enfoque consiste en buscar la salida de las notificaciones.  Puede buscar eventos 1000 y 1001 en el registro de eventos.
 
-![claims](media/ad-fs-tshoot-claims/claims2.png)
+![Captura de pantalla del cuadro de diálogo Propiedades de evento que muestra los resultados de un evento 1000 D.](media/ad-fs-tshoot-claims/claims2.png)
 
 ## <a name="creating-a-sample-application"></a>Creación de una aplicación de ejemplo
 También puede crear una aplicación de ejemplo que repite las notificaciones.  Por ejemplo, puede usar una aplicación de ejemplo y crear un usuario de confianza que tenga la misma demanda en la que está intentando solucionar problemas y ver si la aplicación tiene algún problema con dicha demanda.
 
-![claims](media/ad-fs-tshoot-claims/claim4.png)
+![Captura de pantalla de la aplicación de ejemplo que se muestra en un explorador.](media/ad-fs-tshoot-claims/claim4.png)
 
 Aquí encontrará una buena aplicación Web de ejemplo.  Esta aplicación es una aplicación web simple que devuelve las notificaciones que recibe del usuario de confianza.  Para usarlo, debe editar la aplicación web.config de la siguiente manera:
-- cambiar https://app1.contoso.com/sampapp a la dirección URL que utilizará para hospedar el sampapp
+- cambiar https://app1.contoso.com/sampapp a la dirección URL que utilizará para hospedar la aplicación de ejemplo
 - cambiar todas las instancias de sts.contoso.com para que apunten al servidor de Federación AD FS
 - Reemplazo de la huella digital con la huella digital
 
-![claims](media/ad-fs-tshoot-claims/claims3.png)
+![Captura de pantalla de Visual Studio que muestra el archivo de configuración Web.](media/ad-fs-tshoot-claims/claims3.png)
 
 El siguiente [artículo del blog](/archive/blogs/tangent_thoughts/install-and-configure-a-simple-net-4-5-sample-federated-application-samapp) contiene instrucciones detalladas excelentes para configurar esta opción.
 
-## <a name="next-steps"></a>Pasos a seguir
+## <a name="next-steps"></a>Pasos siguientes
 
 - [Solución de problemas de AD FS](ad-fs-tshoot-overview.md)
