@@ -5,14 +5,14 @@ manager: eldenc
 ms.author: nedpyle
 ms.topic: how-to
 author: nedpyle
-ms.date: 04/26/2019
+ms.date: 01/27/2021
 ms.assetid: 6c5b9431-ede3-4438-8cf5-a0091a8633b0
-ms.openlocfilehash: 9d7153b5147d576f54fa90efc5724f994618cfc5
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: ad15d4159190a41b62bf2df1d4eb2db827c2a8a4
+ms.sourcegitcommit: ebe97af985429ec5cdb86eba75820bc180552811
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97941731"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98925913"
 ---
 # <a name="stretch-cluster-replication-using-shared-storage"></a>Replicación de clúster extendido con almacenamiento compartido
 
@@ -22,6 +22,9 @@ En este ejemplo de evaluación, configurará estos equipos y su almacenamiento e
 
 > [!IMPORTANT]
 > En esta evaluación, los servidores de distintos sitios deben ser capaces de comunicarse con los otros servidores a través de una red, pero sin tener ninguna conectividad física en el almacenamiento compartido del otro sitio. En este escenario no se usa Espacios de almacenamiento directo.
+
+> [!NOTE]
+> También puede que desee considerar el uso de una solución de HCl Azure Stack para implementar un clúster extendido. Para obtener más información, consulte [Introducción a los clústeres extendidos en Azure Stack HCl](https://docs.microsoft.com/azure-stack/hci/concepts/stretched-clusters).
 
 ## <a name="terms"></a>Términos
 En este tutorial se utiliza como ejemplo el siguiente entorno:
@@ -804,3 +807,4 @@ Ahora podrá administrar y hacer funcionar su clúster extendido. Puede realizar
 ## <a name="see-also"></a>Consulte también
 - [Windows Server 2016](../../index.yml)
 - [Espacios de almacenamiento directo en Windows Server 2016](../storage-spaces/storage-spaces-direct-overview.md)
+- [Clústeres extendidos en Azure Stack HCl](https://docs.microsoft.com/azure-stack/hci/concepts/stretched-clusters)
