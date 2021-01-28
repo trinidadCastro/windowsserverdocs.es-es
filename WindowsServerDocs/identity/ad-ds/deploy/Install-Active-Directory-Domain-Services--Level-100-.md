@@ -7,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: e66a03ec89a2cd77fbeafd59972a24a020ed66f7
-ms.sourcegitcommit: 5f234fb15c1d0365b60e83a50bf953e317d6239c
+ms.openlocfilehash: 1d7217d6e559315cd1f5e4b1aac500cf28b2bd11
+ms.sourcegitcommit: 2ede79efbadd109099bb6fdb744796adde123922
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97879844"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98923675"
 ---
 # <a name="install-active-directory-domain-services-level-100"></a>Instalar Active Directory Domain Services (Nivel 100)
 
@@ -198,7 +198,7 @@ También puede proporcionar una cadena segura como una cadena segura como una va
 ### <a name="using-test-cmdlets"></a><a name="BKMK_TestCmdlets"></a>Uso de cmdlets de prueba
 Cada cmdlet ADDSDeployment tiene un cmdlet de prueba correspondiente. Los cmdlets de prueba ejecutan solo las comprobaciones de requisitos previos para la operación de instalación; no se configura la instalación. Los argumentos para cada cmdlet de prueba son los mismos que para el cmdlet de instalación correspondiente, pero **"SkipPreChecks** no está disponible para los cmdlets de prueba.
 
-|Cmdlet de prueba|Description|
+|Cmdlet de prueba|Descripción|
 |---------------|---------------|
 |Test-ADDSForestInstallation|Ejecuta los requisitos previos para la instalación de un bosque nuevo de Active Directory.|
 |Test-ADDSDomainInstallation|Ejecuta los requisitos previos para la instalación de un dominio nuevo de Active Directory.|
@@ -360,12 +360,12 @@ Use los siguientes procedimientos para instalar AD DS con el método de la GUI.
 
 9. En la página **Resultados**, compruebe que la instalación se haya realizado correctamente y haga clic en **Promover este servidor a controlador de dominio** para iniciar el Asistente para configuración de Servicios de dominio de Active Directory.
 
-    ![Instalar AD DS](media/Install-Active-Directory-Domain-Services--Level-100-/ADDS_SMI_SMPromotes.gif)
+    ![Captura de pantalla de la página progreso de la instalación del Asistente para agregar roles y características con la opción promover este servidor a controlador de dominio llamada.](media/Install-Active-Directory-Domain-Services--Level-100-/ADDS_SMI_SMPromotes.gif)
 
     > [!IMPORTANT]
     > Si cierra el Asistente para agregar roles en este momento sin iniciar el Asistente para configuración de Servicios de dominio de Active Directory, podrá hacer clic en Tareas en el Administrador del servidor para reiniciarlo.
 
-    ![Instalar AD DS](media/Install-Active-Directory-Domain-Services--Level-100-/ADDS_SMI_Tasks.gif)
+    ![Captura de pantalla del Administrador del servidor que muestra el icono de advertencia de configuración posterior a la implementación.](media/Install-Active-Directory-Domain-Services--Level-100-/ADDS_SMI_Tasks.gif)
 
 10. En la página **Configuración de implementación**, elija una de las siguientes opciones:
 
@@ -442,7 +442,7 @@ Una instalación por fases de un RODC permite la creación de un RODC en dos fas
 
     4.  En el panel de tareas (panel derecho), haga clic en **Crear previamente una cuenta de controlador de dominio de solo lectura**.
 
-    O bien
+    -O bien-
 
     1.  Haga clic en **Inicio**, luego en **Herramientas administrativas** y, a continuación, haga clic en **Usuarios y equipos de Active Directory**.
 

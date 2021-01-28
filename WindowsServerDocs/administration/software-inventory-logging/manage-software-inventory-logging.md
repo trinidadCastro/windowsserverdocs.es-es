@@ -7,18 +7,18 @@ author: brentfor
 ms.author: brentf
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: dba46b75da685f5b2cb74e8e08c53db9aa643aba
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 9be0d8c33ca8347cd03f4db1cb99c1d371add1c3
+ms.sourcegitcommit: 2ede79efbadd109099bb6fdb744796adde123922
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89628267"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98923660"
 ---
 # <a name="manage-software-inventory-logging"></a>Administrar el Registro de inventario de software
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
-En este documento se describe cómo administrar el registro de inventario de software, una característica que ayuda a los administradores del centro de datos a registrar fácilmente los datos de administración de activos de software de Microsoft para sus implementaciones a lo largo del tiempo. En este documento se describe cómo administrar el Registro de inventario de software. Antes de usar el registro de inventario de software con Windows Server 2012 R2, asegúrese de que Windows Update [kb 3000850](https://support.microsoft.com/kb/3000850) y [KB 3060681](https://support.microsoft.com/kb/3060681) están instalados en cada sistema que se debe inventariar. No se requieren actualizaciones de Microsoft para Windows Server 2016. Esta característica se ejecuta localmente en cada servidor para que se incluya en el inventario. No recopila datos de servidores remotos.
+En este documento se describe cómo administrar el registro de inventario de software, una característica que ayuda a los administradores del centro de datos a registrar fácilmente los datos de administración de activos de software de Microsoft para sus implementaciones a lo largo del tiempo. En este documento se describe cómo administrar el Registro de inventario de software. Antes de usar el registro de inventario de software con Windows Server 2012 R2, asegúrese de que Windows Update [kb 3000850](https://support.microsoft.com/kb/3000850) y [KB 3060681](https://support.microsoft.com/kb/3060681) están instalados en cada sistema que se debe inventariar. No se requieren actualizaciones de Windows para Windows Server 2016. Esta característica se ejecuta localmente en cada servidor para que se incluya en el inventario. No recopila datos de servidores remotos.
 
 La característica de Registro de inventario de software también puede agregarse a dos versiones de Windows Server anteriores a Windows Server 2012 R2. Puede instalar las siguientes actualizaciones para agregar la funcionalidad de Registro de inventario de software a Windows Server 2012 y Windows Server 2008 R2 SP1:
 
@@ -204,7 +204,7 @@ El Registro de inventario de software no pretende ser un componente crítico. Es
 
 2. Abra el Explorador de Windows.
 
-3. Vaya a **\Windows\System32\Logfiles\SIL \\ **
+3. Vaya a **\Windows\System32\Logfiles\SIL \\**
 
 4. Elimine todos los archivos de esa carpeta.
 
@@ -212,7 +212,7 @@ El Registro de inventario de software no pretende ser un componente crítico. Es
 El Registro de inventario de software almacenará temporalmente colecciones de datos cada hora si no pueden realizar los reenvíos a través de la red. Los archivos de registro se almacenan en el directorio \Windows\System32\LogFiles\SIL\. Se pueden realizar copias de seguridad de estos datos del Registro de inventario de software con las copias de seguridad de servidor programadas periódicamente.
 
 > [!IMPORTANT]
-> Si por alguna razón es necesario realizar una reparación de la instalación o una actualización del sistema operativo, se perderán los archivos de registro almacenados localmente.Si estos datos son fundamentales para las operaciones, se recomienda realizar copias de seguridad antes de la instalación del nuevo sistema operativo. Después de reparar o actualizar, restaure simplemente en la misma ubicación.
+> Si por alguna razón es necesario realizar una reparación de la instalación o una actualización del sistema operativo, se perderán los archivos de registro almacenados localmente.  Si estos datos son fundamentales para las operaciones, se recomienda realizar copias de seguridad antes de la instalación del nuevo sistema operativo. Después de reparar o actualizar, restaure simplemente en la misma ubicación.
 
 > [!NOTE]
 > Si por alguna razón la administración de la duración de retención de los datos registrados localmente por SIL es importante, se puede configurar cambiando el valor del registro aquí: \ HKEY_LOCAL_MACHINE \\ SOFTWARE\Microsoft\Windows\SoftwareInventoryLogging. El valor predeterminado es ' 30 ' para 30 días.
@@ -229,18 +229,18 @@ Los datos almacenados localmente en un equipo Windows Server (solo se produce si
 
 ## <a name="working-with-date-and-time-settings-in-windows-server-2012-r2-software-inventory-logging"></a><a name="BKMK_Step8"></a>Trabajar con valores de fecha y hora en el Registro de inventario de software de Windows Server 2012 R2
 
--   Al usar [Set-SilLogging](/previous-versions/windows/powershell-scripting/dn283387(v=wps.630)) -TimeOfDay para configurar la hora a la que se ejecuta el registro de SIL, se debe especificar una fecha y hora.Se establecerá la fecha del calendario y no se producirá el registro hasta que se llegue a esa fecha, en la hora del sistema local.
+-   Al usar [Set-SilLogging](/previous-versions/windows/powershell-scripting/dn283387(v=wps.630)) -TimeOfDay para configurar la hora a la que se ejecuta el registro de SIL, se debe especificar una fecha y hora. Se establecerá la fecha del calendario y no se producirá el registro hasta que se llegue a esa fecha, en la hora del sistema local.
 
 -   Cuando se usa [Get-SilSoftware](/previous-versions/windows/powershell-scripting/dn283397(v=wps.630))o [Get-SilWindowsUpdate](/previous-versions/windows/powershell-scripting/dn283393(v=wps.630)), "InstallDate" mostrará siempre 12:00: a.m., un valor sin sentido.
 
--   Cuando se usa [Get-SilUalAccess](/previous-versions/windows/powershell-scripting/dn283389(v=wps.630)), "SampleDate" mostrará siempre 11:59: p.m., un valor sin sentido.La fecha se corresponde con los datos pertinentes para estas consultas de cmdlet.
+-   Cuando se usa [Get-SilUalAccess](/previous-versions/windows/powershell-scripting/dn283389(v=wps.630)), "SampleDate" mostrará siempre 11:59: p.m., un valor sin sentido.  La fecha se corresponde con los datos pertinentes para estas consultas de cmdlet.
 
 ## <a name="enabling-and-configuring-software-inventory-logging-in-a-mounted-virtual-hard-disk"></a><a name="BKMK_Step10"></a>Habilitación y configuración del Registro de inventario de software en un disco duro virtual montado
 El Registro de inventario de software también admite la configuración y habilitación de máquinas virtuales sin conexión. Los usos prácticos de esto están diseñados para cubrir la configuración de "imagen dorada" para la implementación amplia en centros de datos, así como para configurar imágenes de usuario final que van desde una implementación local a una nube.
 
 Para admitir estos usos, el Registro de inventario de software tiene entradas de registro asociadas con cada opción configurable.  Estos valores del registro pueden encontrarse en \ HKEY_LOCAL_MACHINE \\ SOFTWARE\Microsoft\Windows\SoftwareInventoryLogging.
 
-| Función | Nombre del valor | data | Cmdlet correspondiente (solo disponible en el sistema operativo que se ejecuta) |
+| Función | Nombre del valor | Datos | Cmdlet correspondiente (solo disponible en el sistema operativo que se ejecuta) |
 | --- | --- | --- | --- |
 |Iniciar o detener la característica|CollectionState|1 o 0|[Start-SilLogging](/previous-versions/windows/powershell-scripting/dn283391(v=wps.630)), [Stop-SilLogging](/previous-versions/windows/powershell-scripting/dn283394(v=wps.630))|
 |Especifica el punto de agregación de destino en la red|TargetUri|string|[Set-SilLogging](/previous-versions/windows/powershell-scripting/dn283387(v=wps.630)) -TargetURI|
@@ -273,20 +273,20 @@ Se realizaron los cambios siguientes en la configuración predeterminada y la ca
 > [!NOTE]
 > Esta funcionalidad se elimina con la instalación de la actualización [KB 3000850](https://support.microsoft.com/kb/3000850).
 
-Al usar el registro de inventario de software en un host de Hyper-V de Windows Server 2012 R2, es posible recuperar los datos de SIL de los invitados de Windows Server 2012 R2 que se ejecutan localmente, si el registro de SIL se ha iniciado en los invitados. Sin embargo, esto solo es posible cuando se usan los cmdlets de PowerShell Get-SilData y Publish-SilData, y solo es posible con WIndows Server 2012 R2 en host e invitado.El objetivo de esta capacidad es permitir que los administradores del centro de datos ofrezcan máquinas virtuales invitadas a los inquilinos u otras entidades de una gran empresa, a fin de capturar datos de inventario de software en el host del hipervisor y posteriormente reenviar todos esos datos a un agregador (o un URI de destino).
+Al usar el registro de inventario de software en un host de Hyper-V de Windows Server 2012 R2, es posible recuperar los datos de SIL de los invitados de Windows Server 2012 R2 que se ejecutan localmente, si el registro de SIL se ha iniciado en los invitados. Sin embargo, esto solo es posible cuando se usan los cmdlets de PowerShell Get-SilData y Publish-SilData y solo es posible con Windows Server 2012 R2 en host e invitado.  El objetivo de esta capacidad es permitir que los administradores del centro de datos ofrezcan máquinas virtuales invitadas a los inquilinos u otras entidades de una gran empresa, a fin de capturar datos de inventario de software en el host del hipervisor y posteriormente reenviar todos esos datos a un agregador (o un URI de destino).
 
-A continuación se muestran dos ejemplos del aspecto de la salida en la consola de PowerShell (muy abreviada) en un host de Hyper-V de Windows Server 2012 R2 que ejecuta una máquina virtual invitada de Windows Server 2012 R2 con el registro de SIL iniciado.Puede observar que el primer ejemplo, que usa únicamente Get-SilData, dará como resultado todos los datos desde el host, como se esperaba.También se incluyen todos los datos de SIL del invitado, pero en un formato contraído.Para expandir y ver los datos del invitado, corte y pegue el fragmento de código que se usa en el segundo ejemplo de más abajo.Los objetos de datos del SIL del invitado siempre tendrán el GUID de la máquina virtual asociado dentro del objeto.
+A continuación se muestran dos ejemplos del aspecto de la salida en la consola de PowerShell (muy abreviada) en un host de Hyper-V de Windows Server 2012 R2 que ejecuta una máquina virtual invitada de Windows Server 2012 R2 con el registro de SIL iniciado.  Puede observar que el primer ejemplo, que usa únicamente Get-SilData, dará como resultado todos los datos desde el host, como se esperaba.  También se incluyen todos los datos de SIL del invitado, pero en un formato contraído.  Para expandir y ver los datos del invitado, corte y pegue el fragmento de código que se usa en el segundo ejemplo de más abajo.  Los objetos de datos del SIL del invitado siempre tendrán el GUID de la máquina virtual asociado dentro del objeto.
 
 > [!NOTE]
-> Dado que los datos del SIL se muestran como resultados en la consola, al usar el cmdlet Get-SilData, en las secuencias de datos, los objetos no siempre se mostrarán en la salida en un orden predecible.En los dos ejemplos siguientes, se ha aplicado formato de color al texto (azul para los datos del host físico y verde para los datos del invitado virtual) solo como una herramienta ilustrativa para este documento.
+> Dado que los datos del SIL se muestran como resultados en la consola, al usar el cmdlet Get-SilData, en las secuencias de datos, los objetos no siempre se mostrarán en la salida en un orden predecible.  En los dos ejemplos siguientes, se ha aplicado formato de color al texto (azul para los datos del host físico y verde para los datos del invitado virtual) solo como una herramienta ilustrativa para este documento.
 
 **Ejemplo de salida 1**
 
-![Imagen de un informe de salida de ejemplo](../media/software-inventory-logging/SILHyper-VExample1.png)
+![Captura de pantalla del primer ejemplo de informe de salida.](../media/software-inventory-logging/SILHyper-VExample1.png)
 
-**Ejemplo de salida 2** (función Expand-SilData)
+**Ejemplo de salida 2** (función de Expand-SilData)
 
-![Imagen de un informe de salida de ejemplo](../media/software-inventory-logging/SILHyper-VExample2.png)
+![Captura de pantalla del segundo informe de salida de ejemplo que incluye la función Expand-SilData.](../media/software-inventory-logging/SILHyper-VExample2.png)
 
 ## <a name="see-also"></a>Consulte también
 [Introducción al registro](get-started-with-software-inventory-logging.md) 
