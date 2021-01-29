@@ -8,12 +8,12 @@ manager: daveba
 ms.reviewer: cahick
 ms.date: 08/20/2019
 ms.topic: article
-ms.openlocfilehash: bbeff22ce85e1c108852a0e978ad56b1e70d10c5
-ms.sourcegitcommit: b115e5edc545571b6ff4f42082cc3ed965815ea4
+ms.openlocfilehash: 36cb5e03e8e9693b4227e2cde650f9a2f6ccbab6
+ms.sourcegitcommit: d1815253b47e776fb96a3e91556fd231bef8ee6d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93070547"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99042511"
 ---
 # <a name="winlogon-automatic-restart-sign-on-arso"></a>Inicio de sesión con reinicio automático de Winlogon (ARSO)
 
@@ -79,7 +79,7 @@ Si deshabilita esta configuración de Directiva, el dispositivo no configura el 
 
 **Tipo:** DWORD
 
-![Winlogon](media/Winlogon-Automatic-Restart-Sign-On--ARSO-/gtr-adds-signinpolicy.png)
+![Captura de pantalla del inicio de sesión y bloqueo del último usuario interactivo automáticamente después de un cuadro de diálogo de reinicio.](media/Winlogon-Automatic-Restart-Sign-On--ARSO-/gtr-adds-signinpolicy.png)
 
 ## <a name="policy-2"></a>#2 de Directiva
 
@@ -120,7 +120,7 @@ Si deshabilita o no configura esta opción, el inicio de sesión automático se 
 
 **Tipo:** DWORD
 
-![Winlogon](media/Winlogon-Automatic-Restart-Sign-On--ARSO-/arso-policy-setting.png)
+![Captura de pantalla del cuadro de diálogo Configurar el modo de inicio de sesión automático y bloqueo del último usuario interactivo después de un reinicio o un arranque en frío.](media/Winlogon-Automatic-Restart-Sign-On--ARSO-/arso-policy-setting.png)
 
 ## <a name="troubleshooting"></a>Solución de problemas
 

@@ -5,12 +5,12 @@ ms.date: 05/28/2020
 author: Deland-Han
 ms.author: delhan
 ms.topic: troubleshooting
-ms.openlocfilehash: f75e6bcca3a4447920d3b3f571fc606ad68752e6
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 902ce4f5e30811d54d986c63fb8ca30cd0803aa5
+ms.sourcegitcommit: d1815253b47e776fb96a3e91556fd231bef8ee6d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97947191"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99042481"
 ---
 # <a name="troubleshooting-cluster-issue-with-event-id-1135"></a>Solución de problemas de clúster con el id. de evento 1135
 
@@ -69,8 +69,8 @@ Hay tres escenarios típicos:
 
 Está examinando todos los eventos y todos los nodos del clúster indican que el nodo A ha perdido la comunicación.
 
-![Escenario a ](media/troubleshooting-cluster-event-id-1135/18647.png)
- ![](media/troubleshooting-cluster-event-id-1135/18648.png)
+![Diagrama que muestra el nodo A, el nodo B y el nodo C que se comunican correctamente. ](media/troubleshooting-cluster-event-id-1135/18647.png)
+ ![ El diagrama que muestra que el nodo A ha perdido la comunicación con el nodo B y el nodo C.](media/troubleshooting-cluster-event-id-1135/18648.png)
 
 Podría ser posible que, al ver los registros del sistema en el nodo A, tenga eventos para todos los nodos restantes del clúster.
 
@@ -84,11 +84,11 @@ Debe revisar y validar los problemas de comunicación y configuración de la red
 
 Está viendo los eventos en los nodos y Supongamos que el clúster está disperso en dos sitios. El nodo A, el nodo B y el nodo C en el sitio 1 y el nodo D & nodo E en el sitio 2.
 
-![Escenario B](media/troubleshooting-cluster-event-id-1135/18649.png)
+![Diagrama que muestra que el sitio 1 se está comunicando correctamente con el sitio 2 a través de un vínculo WAN.](media/troubleshooting-cluster-event-id-1135/18649.png)
 
 En los nodos A, B y C, verá que los eventos que se registran son para la conectividad a los nodos D & E. Del mismo modo, cuando vea los eventos en los nodos D & E, los eventos sugieren que se perdió la comunicación con A, B y C.
 
-![Escenario B](media/troubleshooting-cluster-event-id-1135/18650.png)
+![El diagrama que muestra que el sitio 1 ha perdido la conexión de vínculo WAN con el sitio 2.](media/troubleshooting-cluster-event-id-1135/18650.png)
 
 #### <a name="solution"></a>Solución
 

@@ -7,12 +7,12 @@ author: msjimwu
 ms.author: jimwu
 manager: mtillman
 ms.date: 3/15/2018
-ms.openlocfilehash: 80bc794a5719792941f91d6d50fe35b92006dea6
-ms.sourcegitcommit: 29b8942ea46196c12a67f6b6ad7f8dd46bf94fb2
+ms.openlocfilehash: 143848ed2ea4c9c1b01e3df795faacfcca9c2968
+ms.sourcegitcommit: d1815253b47e776fb96a3e91556fd231bef8ee6d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98065671"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99042591"
 ---
 # <a name="deploy-windows-server-hybrid-cloud-print"></a>Implementar la impresión en la nube híbrida de Windows Server
 
@@ -200,15 +200,15 @@ Para habilitar la comunicación autenticada con los servicios HCP, es necesario 
 
     - Consulte la siguiente captura de pantalla para buscar el nombre de dominio de Azure Active Directory.
 
-    ![Servidor de impresión cómo obtener el nombre de dominio de AAD](../media/hybrid-cloud-print/PrintServer-GetAADDomainName.png)
+      ![Servidor de impresión cómo obtener el nombre de dominio de AAD](../media/hybrid-cloud-print/PrintServer-GetAADDomainName.png)
 
     - Consulte la siguiente captura de pantalla para buscar el identificador de Azure Active Directory.
 
-    ![Implementación de impresión en la nube del servidor de impresión](../media/hybrid-cloud-print/PrintServer-GetAADId.png)
+      ![Captura de pantalla de Azure que muestra el Azure Active Directory, las propiedades y las opciones de directorio I D que se han llamado.](../media/hybrid-cloud-print/PrintServer-GetAADId.png)
 
     - La salida del script CloudPrintDeploy tiene el siguiente aspecto:
 
-    ![Implementación de impresión en la nube del servidor de impresión](../media/hybrid-cloud-print/PrintServer-CloudPrintDeploy.png)
+      ![Captura de pantalla de la ventana de PowerShell que muestra el aspecto del script CloudPrintDeploy.](../media/hybrid-cloud-print/PrintServer-CloudPrintDeploy.png)
 
     - Compruebe el archivo de registro para ver si hay algún error: `C:\Program Files\WindowsPowerShell\Modules\PublishCloudPrinter\1.0.0.0\CloudPrintDeploy.log`
 
@@ -223,7 +223,7 @@ Para habilitar la comunicación autenticada con los servicios HCP, es necesario 
     - Asegúrese de que AzureTenant es el nombre de dominio Azure AD.
     - Asegúrese de que la dirección URL es el URI del ID. de aplicación de la aplicación de servicio de detección Mopria.
 
-    ![Claves del registro Mopria del servidor de impresión](../media/hybrid-cloud-print/PrintServer-RegEdit-Mopria.png)
+    ![Captura de pantalla que muestra la carpeta del servicio de detección Mopria que se muestra en el editor del registro con los valores de la audiencia de Azure, el inquilino de Azure y la dirección URL.](../media/hybrid-cloud-print/PrintServer-RegEdit-Mopria.png)
 
 6. Ejecute **iisreset** en un símbolo del sistema de PowerShell de elevación. Esto garantizará que cualquier cambio del registro realizado en el paso anterior surta efecto.
 
@@ -244,7 +244,7 @@ Para habilitar la comunicación autenticada con los servicios HCP, es necesario 
 
    > Nota: se recomienda descargar e instalar la versión más reciente si se omite la opción-requiredversion.
 
-    ![Claves del registro Mopria del servidor de impresión](../media/hybrid-cloud-print/PrintServer-InstallSQLite.png)
+    ![Captura de pantalla de la ventana de PowerShell que muestra los resultados de los cmdlets Register-PackageSource y Install-Package.](../media/hybrid-cloud-print/PrintServer-InstallSQLite.png)
 
 9. Copie los archivos dll de SQLite en la carpeta MopriaCloudService webapp bin (C:\inetpub\wwwroot\MopriaCloudService\bin).
     - Cree un archivo. PS1 que contenga el siguiente script de PowerShell.
@@ -299,7 +299,7 @@ Para habilitar la comunicación autenticada con los servicios HCP, es necesario 
     - En el explorador de archivos, abra las propiedades del archivo MopriaDeviceDb. DB para agregar usuarios o grupos que pueden publicar en la base de datos Mopria en la pestaña seguridad. Los usuarios o grupos deben existir en el Active Directory local y sincronizarse con Azure AD.
     - Si la solución se implementa en un dominio no enrutable (por ejemplo, *midominio*. local), el dominio Azure ad (por ejemplo, *domainname*. onmicrosoft.com, o uno adquirido de otro fabricante) debe agregarse como sufijo UPN a la Active Directory local. Esto es así para que el mismo usuario exacto que va a publicar impresoras (por ejemplo, admin@*domainname*. onmicrosoft.com) se pueda agregar en la configuración de seguridad del archivo de base de datos. Consulte [preparar un dominio no enrutable para la sincronización de directorios](/office365/enterprise/prepare-a-non-routable-domain-for-directory-synchronization).
 
-    ![Claves del registro Mopria del servidor de impresión](../media/hybrid-cloud-print/PrintServer-SQLiteDB.png)
+    ![Captura de pantalla de la pestaña seguridad del cuadro de diálogo Propiedades de d punto D b del dispositivo Mopria con el valor de administración H C resaltado.](../media/hybrid-cloud-print/PrintServer-SQLiteDB.png)
 
 ### <a name="step-5-optional---configure-pre-authentication-with-azure-ad"></a>Paso 5 \[ opcional \] : configuración de la autenticación previa con Azure ad
 
@@ -423,7 +423,7 @@ Para habilitar la comunicación autenticada con los servicios HCP, es necesario 
 
         `Publish-CloudPrinter -Query -DiscoveryEndpoint https://mopriadiscoveryservice-contoso.msappproxy.net/mcs -AzureClientId dbe4feeb-cb69-40fc-91aa-73272f6d8fe1 -AzureTenantGuid 8de6a14a-5a23-4c1c-9ae4-1481ce356034 -DiscoveryResourceId https://mopriadiscoveryservice-contoso.msappproxy.net/mcs/`
 
-## <a name="verify-the-deployment"></a>Comprobar la implementación
+## <a name="verify-the-deployment"></a>Comprobación de la implementación
 
 En un Azure AD dispositivo Unido que tiene configuradas las directivas MDM:
 - Abra un explorador Web y vaya a https://mopriadiscoveryservice- *tenant-name*. msappproxy.net/MCS/Services.

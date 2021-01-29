@@ -6,12 +6,12 @@ ms.topic: article
 author: johnmarlin-msft
 ms.author: johnmar
 ms.date: 02/01/2019
-ms.openlocfilehash: 56130833ca2c3de8752fb79f5acdf30a1fafae2f
-ms.sourcegitcommit: 67a486b4fb3937a457eb00d21a2e33b753489fd8
+ms.openlocfilehash: 1f5c3dfadc295caa6f3232c9cb1e98b3ed7861c1
+ms.sourcegitcommit: d1815253b47e776fb96a3e91556fd231bef8ee6d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88149559"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99042531"
 ---
 # <a name="deploying-a-two-node-clustered-file-server"></a>Implementación de un servidor de archivos en clúster de dos nodos
 
@@ -166,7 +166,7 @@ En este paso, se instalará el rol de servidor de archivos y la característica 
 
 1. Abra **Administrador del servidor** y, en la lista desplegable **administrar** , seleccione **Agregar roles y características**.
 
-   ![Incorporación de características](media/Cluster-File-Server/Cluster-FS-Add-Feature.png)
+   ![Captura de pantalla de la lista desplegable administrar de Administrador del servidor con la opción Agregar roles y características resaltada.](media/Cluster-File-Server/Cluster-FS-Add-Feature.png)
 
 2. Si se abre la ventana **antes de comenzar** , elija **siguiente**.
 
@@ -174,9 +174,9 @@ En este paso, se instalará el rol de servidor de archivos y la característica 
 
 4. Asegúrese de **seleccionar un servidor del grupo de servidores** está seleccionado, el nombre del equipo está resaltado y **siguiente**.
 
-5. Para el rol de servidor, en la lista de roles, Abra **servicios de archivo**, seleccione servidor de **archivos**y **siguiente**.
+5. Para el rol de servidor, en la lista de roles, Abra **servicios de archivo**, seleccione servidor de **archivos** y **siguiente**.
 
-   ![Agregar rol](media/Cluster-File-Server/Cluster-FS-Add-FS-Role-1.png)
+   ![Captura de pantalla de la página roles del servidor del cuadro de diálogo Agregar roles y características que muestra la opción servidor de archivos seleccionada y resaltada.](media/Cluster-File-Server/Cluster-FS-Add-FS-Role-1.png)
 
 6. Para las características, en la lista de características, seleccione **clúster de conmutación por error**.  Aparecerá un cuadro de diálogo emergente en el que se enumeran las herramientas de administración que también se están instalando.  Mantenga todos los seleccionados, elija **Agregar características** y **siguiente**.
 
@@ -274,7 +274,7 @@ Lo siguiente creará un clúster fuera de los equipos y la configuración que ti
    > [!NOTE]
    > Si utiliza direcciones IP estáticas, debe seleccionar la red que se va a usar y especificar la dirección IP que utilizará para el nombre del clúster.  Si usa DHCP para las direcciones IP, la dirección IP se configurará automáticamente.
 
-6. Seleccione **Siguiente**.
+6. Elija **Siguiente**.
 
 7. En la página **confirmación** , compruebe lo que ha configurado y seleccione **siguiente** para crear el clúster.
 
@@ -312,7 +312,7 @@ Para configurar un clúster de conmutación por error de servidor de archivos, s
 
 6. En la lista de roles, elija **servidor de archivos** y **siguiente**.
 
-7. En tipo de servidor de archivos, seleccione **servidor de archivos para uso general** y **siguiente**.<br>Para obtener información sobre Servidor de archivos de escalabilidad horizontal, consulte [información general sobre servidor de archivos de escalabilidad horizontal](sofs-overview.md).
+7. En tipo de servidor de archivos, seleccione **servidor de archivos para uso general** y **siguiente**.<br>Para obtener información sobre Scale-Out servidor de archivos, consulte [información general sobre servidor de archivos de escalabilidad horizontal](sofs-overview.md).
 
    ![Tipo de servidor de archivos](media/Cluster-File-Server/Cluster-FS-File-Server-Type.png)
 
@@ -321,7 +321,7 @@ Para configurar un clúster de conmutación por error de servidor de archivos, s
    > [!NOTE]
    > Si utiliza direcciones IP estáticas, debe seleccionar la red que se va a usar y especificar la dirección IP que utilizará para el nombre del clúster.  Si usa DHCP para las direcciones IP, la dirección IP se configurará automáticamente.
 
-9. Seleccione **Siguiente**.
+9. Elija **Siguiente**.
 
 10. En la ventana **seleccionar almacenamiento** , seleccione la unidad adicional (no el testigo) que contendrá los recursos compartidos y haga clic en **siguiente**.
 

@@ -7,12 +7,12 @@ author: johnmarlin-msft
 ms.author: johnmar
 ms.date: 02/28/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e25660eda2d21658f01fe1d8a01ae86a4b42116
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 1c45fe1ea576946e499013c3dccb04cfef90c9a2
+ms.sourcegitcommit: d1815253b47e776fb96a3e91556fd231bef8ee6d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990949"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99042521"
 ---
 # <a name="upgrading-failover-clusters-on-the-same-hardware"></a>Actualización de clústeres de conmutación por error en el mismo hardware
 
@@ -22,7 +22,7 @@ Un clúster de conmutación por error es un grupo de equipos independientes que 
 
 En esta guía se describen los pasos para actualizar los nodos de clúster a Windows Server 2019 o Windows Server 2016 desde una versión anterior con el mismo hardware.
 
-## <a name="overview"></a>Introducción
+## <a name="overview"></a>Información general
 
 La actualización del sistema operativo en un clúster de conmutación por error existente solo se admite cuando se pasa de Windows Server 2016 a Windows 2019.  Si el clúster de conmutación por error ejecuta una versión anterior, como Windows Server 2012 R2 y versiones anteriores, la actualización de mientras se ejecutan los servicios de clúster no permitirá unir nodos juntos.  Si usa el mismo hardware, se pueden realizar pasos para obtener la versión más reciente.
 
@@ -40,11 +40,11 @@ En el ejemplo siguiente, el nombre del clúster de conmutación por error es CLU
 
 1. En Administrador de clústeres de conmutación por error, vacíe todos los recursos del NODO1 al NODO2 haciendo clic con el botón secundario del mouse en el nodo y seleccionando roles de **pausa** y **purga**.  Como alternativa, puede usar el comando de PowerShell [Suspend-CLUSTERNODE](/powershell/module/failoverclusters/suspend-clusternode).
 
-    ![Nodo de purga](media/In-Place-Upgrade/In-Place-Upgrade-2.png)
+    ![Captura de pantalla del Administrador de clústeres de conmutación por error que muestra la opción pausar roles de purga >.](media/In-Place-Upgrade/In-Place-Upgrade-2.png)
 
 2. Expulse el NODO1 del clúster haciendo clic con el botón secundario en el nodo y seleccionando **más acciones** y **expulsar**.  Como alternativa, puede usar el comando de PowerShell [Remove-CLUSTERNODE](/powershell/module/failoverclusters/remove-clusternode).
 
-    ![Nodo de purga](media/In-Place-Upgrade/In-Place-Upgrade-3.png)
+    ![Captura de pantalla del Administrador de clústeres de conmutación por error que muestra las acciones más > la opción de expulsión.](media/In-Place-Upgrade/In-Place-Upgrade-3.png)
 
 3. Como medida de precaución, desconecte el NODO1 del almacenamiento que está usando.  En algunos casos, basta con desconectar los cables de almacenamiento del equipo.  Consulte con el proveedor de almacenamiento los pasos adecuados de desasociación si es necesario.  En función del almacenamiento, es posible que no sea necesario.
 
@@ -52,11 +52,11 @@ En el ejemplo siguiente, el nombre del clúster de conmutación por error es CLU
 
 5. Cree un nuevo clúster llamado CLUSTER1 con el NODO1.  Abra Administrador de clústeres de conmutación por error y, en el panel **Administración** , elija **crear clúster** y siga las instrucciones del asistente.
 
-    ![Nodo de purga](media/In-Place-Upgrade/In-Place-Upgrade-4.png)
+    ![Captura de pantalla del panel de administración de la Administrador de clústeres de conmutación por error que muestra la opción de creación de clústeres llamada.](media/In-Place-Upgrade/In-Place-Upgrade-4.png)
 
 6. Una vez creado el clúster, los roles deberán migrarse desde el clúster original a este nuevo clúster.  En el nuevo clúster, haga clic con el botón derecho en el nombre del clúster (CLUSTER1) y seleccione **más acciones** y **copiar roles de clúster**.  Siga el Asistente para migrar los roles.
 
-    ![Nodo de purga](media/In-Place-Upgrade/In-Place-Upgrade-5.png)
+    ![Captura de pantalla del Administrador de clústeres de conmutación por error que muestra las acciones más > opción copiar clúster.](media/In-Place-Upgrade/In-Place-Upgrade-5.png)
 
 7.  Una vez que se han migrado todos los recursos, apague el NODO2 (clúster original) y desconecte el almacenamiento para que no se produzca ninguna interferencia.  Conecte el almacenamiento al NODO1.  Una vez que todo está conectado, ponga todos los recursos en línea y asegúrese de que funcionan como debiera.
 
@@ -74,7 +74,7 @@ Una vez que haya comprobado que todo funciona como debería, NODO2 se puede volv
 
    c. Al elegir aceptar o aplicar, verá el cuadro de diálogo emergente siguiente.
 
-    ![Nodo de purga](media/In-Place-Upgrade/In-Place-Upgrade-6.png)
+    ![Captura de pantalla del cuadro de diálogo confirmar acción.](media/In-Place-Upgrade/In-Place-Upgrade-6.png)
 
     d. El servicio de clúster se detendrá y será necesario volver a iniciarlo para que se complete el cambio de nombre.
 
