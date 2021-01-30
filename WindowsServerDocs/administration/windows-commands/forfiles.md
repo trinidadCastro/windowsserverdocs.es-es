@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 05/20/2020
-ms.openlocfilehash: b5b2511e49c379be20c7be5abf08581a17f0a463
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 29858d1f8dcbb3a6ba99dec0c520fd147115a0ec
+ms.sourcegitcommit: 1e94c10ff51f43325fa9184b09bbdfeb8c8fed36
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89634791"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99081673"
 ---
 # <a name="forfiles"></a>forfiles
 
@@ -63,7 +63,7 @@ forfiles [/P pathname] [/M searchmask] [/S] [/C command] [/D [+ | -] [{<date> | 
 
     - Diferencie los archivos de los directorios mediante la @ISDIR variable.
 
-    - Incluya caracteres especiales en la línea de comandos mediante el código hexadecimal del carácter, en formato 0x*HH* (por ejemplo, 0x09 para una tabulación).
+    - Incluya caracteres especiales en la línea de comandos mediante el código hexadecimal del carácter, en formato 0x *HH* (por ejemplo, 0x09 para una tabulación).
 
 - Este comando funciona implementando la `recurse subdirectories` marca en las herramientas que están diseñadas para procesar un solo archivo.
 
@@ -78,7 +78,7 @@ forfiles /P c:\ /S /M *.bat /C "cmd /c echo @file is a batch file"
 Para enumerar todos los directorios de la unidad C, escriba:
 
 ```
-forfiles /P c:\ /S /M *.* /C "cmd /c if @isdir==TRUE echo @file is a directory"
+forfiles /P c:\ /S /M * /C "cmd /c if @isdir==TRUE echo @file is a directory"
 ```
 
 Para enumerar todos los archivos del directorio actual que tienen al menos un año, escriba:

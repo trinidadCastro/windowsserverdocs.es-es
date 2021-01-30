@@ -6,12 +6,12 @@ ms.topic: article
 author: jasongerend
 ms.date: 01/21/2021
 description: En este tema se describen los espacios de nombres DFS, que es un servicio de rol de Windows Server que permite agrupar las carpetas compartidas ubicadas en distintos servidores en uno o más espacios de nombres estructurados lógicamente.
-ms.openlocfilehash: ffc909f4feb23d26cf496eddca51899a97f4cafe
-ms.sourcegitcommit: fc2a7c69a74edcd79372054c4a9a24237510babd
+ms.openlocfilehash: cb9a0a8c90cb906046397280281fbea39231e0e0
+ms.sourcegitcommit: 1e94c10ff51f43325fa9184b09bbdfeb8c8fed36
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98672947"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99081761"
 ---
 # <a name="dfs-namespaces-overview"></a>Información general sobre espacios de nombres DFS
 
@@ -121,7 +121,7 @@ Para obtener más información relacionada, vea los siguientes recursos.
 | Tipo de contenido        | Referencias |
 | ------------------  | ----------------|
 | **Evaluación del producto** | [Novedades de los espacios de nombres DFS y Replicación DFS en Windows Server](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn281957(v=ws.11)) |
-| **Implementación**    | [Consideraciones sobre la escalabilidad de espacios de nombres DFS](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) |
+| **Implementación**    | [Consideraciones sobre la escalabilidad de espacios de nombres DFS](https://techcommunity.microsoft.com/t5/storage-at-microsoft/dfs-namespace-scalability-considerations/ba-p/424485) |
 | **Operaciones**    | [Espacios de nombres DFS: preguntas más frecuentes](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee404780(v=ws.10)) |
 | **Recursos de la comunidad** | [Foro de TechNet sobre servicios de archivos y almacenamiento](/answers/topics/windows-server-storage.html) |
 | **Protocolos**        | [Protocolos de servicios de archivo en Windows Server](/openspecs/windows_protocols/MS-WINPROTLP/df36f95e-6a6b-48d6-a3ae-35a17674f546) (desusado) |

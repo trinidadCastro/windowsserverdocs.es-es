@@ -4,14 +4,14 @@ description: Preguntas más frecuentes sobre el servicio de migración de almace
 author: nedpyle
 ms.author: nedpyle
 manager: siroy
-ms.date: 06/02/2020
+ms.date: 01/29/2021
 ms.topic: article
-ms.openlocfilehash: c59be01c856cac27f4372291b52bd43419c9ac46
-ms.sourcegitcommit: 65eef102021ed2b5abd73dca8a0ffd6eb174d705
+ms.openlocfilehash: 48dd8848f401556dc005727484006a95bf1f51b9
+ms.sourcegitcommit: f89c1bc137ff92eeca2499131854287f28851f63
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93035781"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99084963"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>Preguntas más frecuentes sobre el servicio de migración de almacenamiento (p + f)
 
@@ -60,11 +60,11 @@ El servicio de migración de almacenamiento migra todas las marcas, la configura
 - Tiempo de espera de CA
 - Límite de usuarios simultáneos
 - Disponible continuamente
-- Description
+- Descripción
 - Cifrar datos
 - Comunicación remota de identidad
 - Infraestructura
-- Name
+- Nombre
 - Ruta de acceso
 - Con ámbito
 - Nombre de ámbito
@@ -165,6 +165,10 @@ Al realizar una transferencia, el servicio de migración de almacenamiento busca
 ## <a name="what-do-the-error-numbers-mean-in-the-transfer-csv"></a>¿Qué significan los números de error en el CSV de transferencia?
 
 La mayoría de los errores encontrados en el archivo CSV de transferencia son códigos de error del sistema de Windows. Puede averiguar lo que significa cada error revisando la documentación de los [códigos de error de Win32](/windows/win32/debug/system-error-codes).
+
+## <a name="are-existing-certificates-updated-on-the-destination-server-during-cutover"></a>¿Se han actualizado los certificados existentes en el servidor de destino durante el traslado?
+
+Un servidor de destino puede contener certificados emitidos antes del traslado: en su almacén de certificados local, con el nombre del servidor que forma parte del asunto, el nombre alternativo del firmante u otros campos. Cuando se produce el traslado y se cambia el nombre del servidor, no se actualizan estos certificados. Debe volver a emitir los certificados a los servidores con el nuevo nombre con los métodos de implementación actuales, como directiva de grupo o la inscripción Web.    
 
 ## <a name="what-are-my-options-to-give-feedback-file-bugs-or-get-support"></a><a name="give-feedback"></a> ¿Cuáles son mis opciones para proporcionar comentarios, errores de archivos u obtener soporte técnico?
 

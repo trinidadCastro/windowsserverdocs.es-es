@@ -1,5 +1,5 @@
 ---
-title: Escenarios de recuperación ante desastres para la infraestructura hiperconvergida
+title: Escenarios de recuperación ante desastres para la infraestructura de Hyper-Converged
 manager: eldenc
 ms.topic: article
 author: johnmarlin-msft
@@ -7,12 +7,12 @@ ms.author: johnmar
 ms.date: 03/29/2018
 description: En este artículo se describen los escenarios disponibles hoy en día para la recuperación ante desastres de HCl de Microsoft (Espacios de almacenamiento directo)
 ms.localizationpriority: medium
-ms.openlocfilehash: e154cd4bbb5039e2a35237ec2a4644ebecff8d06
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d1da4cf9e3c6b1d3b0043bc73462730d1e9457c4
+ms.sourcegitcommit: 1e94c10ff51f43325fa9184b09bbdfeb8c8fed36
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87961149"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99081771"
 ---
 # <a name="disaster-recovery-with-storage-spaces-direct"></a>Recuperación ante desastres con Espacios de almacenamiento directo
 
@@ -83,13 +83,13 @@ Cuando HCI participa en la réplica de Hyper-V, debe tener el recurso del [agent
 
 ## <a name="backup-and-restore"></a>Copia de seguridad y restauración
 
-Una opción de recuperación ante desastres tradicional que no se habla mucho pero es igual de importante es el error de todo el clúster o de un nodo del clúster. Cualquiera de las opciones de este escenario hace uso de copias de seguridad de Windows NT.
+Una opción de recuperación ante desastres tradicional que no se habla mucho pero es igual de importante es el error de todo el clúster o de un nodo del clúster. Cualquiera de las opciones de este escenario hace uso de Copias de seguridad de Windows Server.
 
 Siempre es una recomendación tener copias de seguridad periódicas de la infraestructura hiperconvergida. Mientras se ejecuta el servicio de clúster, si realiza una copia de seguridad del estado del sistema, la base de datos del registro del clúster formará parte de esa copia de seguridad. La restauración del clúster o de la base de datos tiene dos métodos diferentes (no autoritativos y autoritativos).
 
 ### <a name="non-authoritative"></a>No autoritativo
 
-Una restauración no autoritativa puede realizarse mediante la copia de seguridad de Windows NT y equivale a una restauración completa solo del nodo del clúster. Si solo necesita restaurar un nodo de clúster (y la base de datos del registro del clúster) y toda la información del clúster actual, debe realizar la restauración mediante no autoritativo. Las restauraciones no autoritativas se pueden realizar a través de la interfaz de copia de seguridad de Windows NT o la WBADMIN.EXE de línea de comandos.
+Una restauración no autoritativa puede realizarse mediante Copias de seguridad de Windows Server y equivale a una restauración completa solo del nodo del clúster. Si solo necesita restaurar un nodo de clúster (y la base de datos del registro del clúster) y toda la información del clúster actual, debe realizar la restauración mediante no autoritativo. Las restauraciones no autoritativas se pueden realizar a través de la interfaz de Copias de seguridad de Windows Server o la WBADMIN.EXE de línea de comandos.
 
 Una vez que restaure el nodo, deje que se una al clúster. Lo que ocurrirá es que pasará al clúster en ejecución existente y actualizará toda su información con lo que hay actualmente.
 

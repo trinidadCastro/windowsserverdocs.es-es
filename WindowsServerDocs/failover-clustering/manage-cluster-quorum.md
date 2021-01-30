@@ -7,12 +7,12 @@ ms.author: jgerend
 manager: lizross
 ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: cf4b9a5196c6cf92d4f075d25e03ab719b341422
-ms.sourcegitcommit: d08965d64f4a40ac20bc81b14f2d2ea89c48c5c8
+ms.openlocfilehash: 7aec60e1d66e956875dd43889fdeb69485292eae
+ms.sourcegitcommit: 1e94c10ff51f43325fa9184b09bbdfeb8c8fed36
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96865734"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99081741"
 ---
 # <a name="configure-and-manage-quorum"></a>Configurar y administrar el cuórum
 
@@ -58,7 +58,7 @@ En la tabla siguiente encontrarás información adicional y consideraciones sobr
 | ---------    |---------        |---------                        |
 | Testigo de disco     |  <ul><li> LUN dedicado que almacena una copia de la base de datos del clúster</li><li> Recomendado para clústeres con almacenamiento compartido (no replicado)</li>       |  <ul><li>El tamaño del LUN debe ser como mínimo de 512 MB</li><li> Debe ser exclusivo para el clúster y no debe asignarse a un rol en clúster</li><li> Debe incluirse en almacenamiento en clúster y completar sin errores las pruebas de validación de almacenamiento</li><li> No puede ser un disco que sea un volumen compartido de clúster (CSV)</li><li> Disco básico con un solo volumen</li><li> No necesita tener asignada una letra de unidad</li><li> Puede formatearse como NTFS o como ReFS</li><li> De manera opcional, se puede configurar con RAID de hardware para tolerancia a errores</li><li> Debe excluirse de las copias de seguridad y de los análisis antivirus</li><li> No se admite un testigo de disco con Espacios de almacenamiento directo</li>|
 | Testigo de recurso compartido de archivos     | <ul><li>El recurso compartido de archivos SMB que se configura en un servidor de archivos que ejecute Windows Server</li><li> No almacena una copia de la base de datos del clúster</li><li> Mantiene toda la información del clúster en el archivo witness.log</li><li> Recomendado para clústeres multisitio con almacenamiento replicado </li>       |  <ul><li>Debe disponer de un mínimo de 5 MB de espacio</li><li> Debe ser dedicado para un solo clúster y no usarse para almacenar datos de usuarios o de aplicaciones</li><li> Debe tener habilitados los permisos de escritura para el objeto de equipo del nombre del clúster</li></ul><br>A continuación, encontrarás consideraciones adicionales para un servidor de archivos que hospede el testigo de recurso compartido de archivos:<ul><li>Un solo servidor de archivos se puede configurar con testigos del recurso compartido de archivos para varios clústeres.</li><li> El servidor de archivos debe encontrarse en un sitio que esté separado de la carga de trabajo del clúster. Esto ofrece las mismas oportunidades de supervivencia para cualquier clúster si se pierden las comunicaciones de red de sitio a sitio. Si el servidor de archivos se encuentra en el mismo sitio, dicho sitio se convertirá en el sitio principal y será el único sitio que podrá conectarse al recurso compartido de archivos.</li><li> El servidor de archivos se puede ejecutar en una máquina virtual si esta no está hospedada en el mismo clúster que usa el testigo de recurso compartido de archivos.</li><li> Para obtener una alta disponibilidad, el servidor de archivos se puede configurar en un clúster de conmutación por error separado. </li>      |
-| Testigo en la nube     |  <ul><li>Un archivo testigo almacenado en el almacenamiento de blobs de Azure</li><li> Recomendado cuando todos los servidores del clúster tienen una conexión a Internet confiable.</li>      |  Vea [implementación de un testigo en la nube](./deploy-cloud-witness.md).       |
+| Testigo en la nube     |  <ul><li>Un archivo testigo almacenado en Azure Blob Storage</li><li> Recomendado cuando todos los servidores del clúster tienen una conexión a Internet confiable.</li>      |  Vea [implementación de un testigo en la nube](./deploy-cloud-witness.md).       |
 
 ### <a name="node-vote-assignment"></a>Asignación de votos de nodos
 
@@ -320,6 +320,6 @@ En la tabla siguiente se resumen las consideraciones y recomendaciones para esta
 
 ## <a name="more-information"></a>Más información
 
-* [Clústeres de conmutación por error](./failover-clustering-overview.md)
+* [Clúster de conmutación por error](./failover-clustering-overview.md)
 * [Cmdlets de Windows PowerShell de clústeres de conmutación por error](/powershell/module/failoverclusters/)
 * [Descripción del Cuórum de clústeres y grupos](../storage/storage-spaces/understand-quorum.md)

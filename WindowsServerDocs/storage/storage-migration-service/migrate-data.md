@@ -4,14 +4,14 @@ description: Breve descripción del tema de los resultados del motor de búsqued
 author: jasongerend
 ms.author: jgerend
 manager: elizapo
-ms.date: 03/25/2020
+ms.date: 01/29/2021
 ms.topic: article
-ms.openlocfilehash: 6a6fa412ec4a4472c0651332187515f7f4988641
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d38a6c058d6629f0b73e613e417dea76a22bc71b
+ms.sourcegitcommit: f89c1bc137ff92eeca2499131854287f28851f63
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87939353"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99084953"
 ---
 # <a name="use-storage-migration-service-to-migrate-a-server"></a>Usar el servicio de migración de almacenamiento para migrar un servidor
 
@@ -25,9 +25,9 @@ Antes de empezar, instale el servicio de migración de almacenamiento y asegúre
 2. En el centro de administración de Windows, conéctese al servidor de Orchestrator que ejecuta Windows Server 2019. <br>Este es el servidor en el que instalará el servicio de migración de almacenamiento y lo usará para administrar la migración. Si va a migrar un solo servidor, puede usar el servidor de destino siempre y cuando ejecute Windows Server 2019. Se recomienda usar un servidor de orquestación independiente para las migraciones de varios servidores.
 3. Vaya a **Administrador del servidor** (en el centro de administración de Windows) > **servicio de migración de almacenamiento** y seleccione **instalar** para instalar el servicio de migración de almacenamiento y sus componentes necesarios (se muestra en la figura 1).
     ![Captura de pantalla de la página del servicio de migración de almacenamiento que muestra el botón instalar, ](media/migrate/install.png) **figura 1: instalación del servicio de migración de almacenamiento**
-4. Instale el proxy del servicio de migración de almacenamiento en todos los servidores de destino que ejecutan Windows Server 2019. Esto duplica la velocidad de transferencia cuando está instalado en los servidores de destino. <br>Para ello, conéctese al servidor de destino en el centro de administración de Windows y, a continuación, vaya a **Administrador del servidor** (en el centro de administración de windows) > **roles y características**, > **características**, seleccione el **proxy del servicio de migración de almacenamiento**y, a continuación, seleccione **instalar**.
-5. Si tiene previsto migrar a o desde clústeres de conmutación por error de Windows, instale las herramientas de clúster de conmutación por error en el servidor de Orchestrator. <br>Para ello, conéctese al servidor de Orchestrator en el centro de administración de Windows y, a continuación, vaya a **Administrador del servidor** (en el centro de administración de windows) > **roles y características**, > **características**, > **herramientas de administración remota del servidor**, > herramientas de **Administración de características**, seleccione Herramientas de **clúster de conmutación por error**y, a continuación, seleccione **instalar**.
-6. En todos los servidores de origen y en los servidores de destino que ejecutan Windows Server 2012 R2 o Windows Server 2016, en el centro de administración de Windows, conéctese a cada servidor, vaya a **Administrador del servidor** (en el centro de administración de Windows) > reglas de entrada de **firewall**  >  **Incoming rules**y, a continuación, compruebe que están habilitadas las siguientes reglas:
+4. Instale el proxy del servicio de migración de almacenamiento en todos los servidores de destino que ejecutan Windows Server 2019. Esto duplica la velocidad de transferencia cuando está instalado en los servidores de destino. <br>Para ello, conéctese al servidor de destino en el centro de administración de Windows y, a continuación, vaya a **Administrador del servidor** (en el centro de administración de windows) > **roles y características**, > **características**, seleccione el **proxy del servicio de migración de almacenamiento** y, a continuación, seleccione **instalar**.
+5. Si tiene previsto migrar a o desde clústeres de conmutación por error de Windows, instale las herramientas de clúster de conmutación por error en el servidor de Orchestrator. <br>Para ello, conéctese al servidor de Orchestrator en el centro de administración de Windows y, a continuación, vaya a **Administrador del servidor** (en el centro de administración de windows) > **roles y características**, > **características**, > **herramientas de administración remota del servidor**, > herramientas de **Administración de características**, seleccione Herramientas de **clúster de conmutación por error** y, a continuación, seleccione **instalar**.
+6. En todos los servidores de origen y en los servidores de destino que ejecutan Windows Server 2012 R2 o Windows Server 2016, en el centro de administración de Windows, conéctese a cada servidor, vaya a **Administrador del servidor** (en el centro de administración de Windows) > reglas de entrada de **firewall**  >  y, a continuación, compruebe que están habilitadas las siguientes reglas:
     - Compartir archivos e impresoras (SMB de entrada)
     - Servicio NetLogon (NP-in)
     - Instrumental de administración de Windows (DCOM-In)
@@ -107,10 +107,17 @@ En este paso, se recortan de los servidores de origen a los servidores de destin
 3. En la página **configurar traslado** , especifique qué adaptador de red del destino debe tomar la configuración de cada adaptador del origen. De esta forma, se mueve la dirección IP del origen al destino como parte de la transferencia, y se asigna al servidor de origen una nueva dirección IP DHCP o estática. Tiene la opción de omitir todas las migraciones de red o ciertas interfaces.
 4. Especifique la dirección IP que se usará para el servidor de origen después de que el traslado traslade su dirección al destino. Puede usar DHCP o una dirección estática. Si usa una dirección estática, la nueva subred debe ser la misma que la antigua o bien se producirá un error en la misma.
     ![Captura de pantalla que muestra un servidor de origen y sus direcciones IP y nombres de equipo y de qué se reemplazarán después de la ](media/migrate/cutover.png) **figura 4 de destino: un servidor de origen y cómo se moverá su configuración de red al destino**
-5. Especifique cómo cambiar el nombre del servidor de origen después de que el servidor de destino adopte el nombre. Puede usar un nombre generado de forma aleatoria o escribir uno personalmente. Luego, seleccione **Siguiente**.
+5. Especifique cómo cambiar el nombre del servidor de origen después de que el servidor de destino adopte el nombre. Puede usar un nombre generado de forma aleatoria o escribir uno personalmente. A continuación, seleccione **Siguiente**.
 6. Seleccione **siguiente** en la página **ajustar la configuración de transferencia** .
 7. Seleccione **validar** en la página **validar el dispositivo de origen y de destino** y, a continuación, seleccione **siguiente**.
 8. Cuando esté listo para realizar el traslado, seleccione **iniciar el traslado**. <br>Es posible que los usuarios y las aplicaciones experimenten una interrupción mientras se mueven la dirección y los nombres y los servidores se reinician varias veces, pero no se verán afectados por la migración. El tiempo que tarda la transferencia depende de la rapidez con que se reinicien los servidores, así como de los tiempos de replicación de DNS y Active Directory.
+
+## <a name="post-migration-operations"></a>Operaciones posteriores a la migración
+
+Después de migrar un servidor o clúster, evalúe el entorno para ver si se pueden realizar operaciones posteriores a la migración: 
+
+- **Cree un plan para el servidor de origen que se ha retirado ahora**. El servicio de migración de almacenamiento usa el proceso de traslado para que un servidor de destino asuma la identidad de un servidor de origen, cambiando los nombres y las direcciones IP del origen para que los usuarios y las aplicaciones dejen de tener acceso. No obstante, no se desactiva o se altera de algún otro modo el contenido del servidor de origen. Debe crear un plan para retirar el servidor de origen. Se recomienda dejar el origen en línea durante al menos dos semanas en caso de que se pierdan datos en uso, para que los archivos se puedan recuperar fácilmente sin necesidad de restaurar la copia de seguridad sin conexión. Después de ese período, se recomienda desactivar el servidor durante otras cuatro semanas para que siga estando disponible para la recuperación de datos, pero ya no consuma recursos operativos o de energía. Después de ese período, realice una copia de seguridad completa final del servidor y, a continuación, evalúe la reasignación si es un servidor físico o elimine si se trata de una máquina virtual.      
+- **Vuelva a emitir los certificados en el nuevo servidor de destino**. En el momento en que el servidor de destino estaba en línea pero aún no se ha reducido, es posible que se le hayan emitido certificados a través de la inscripción automática u otros procesos. Cambiar el nombre de un servidor de Windows no cambia ni reemite automáticamente los certificados existentes, por lo que los certificados existentes pueden contener el nombre del servidor antes del traslado de ti. Debe examinar los certificados existentes en ese servidor y volver a emitir los nuevos según sea necesario.   
 
 ## <a name="additional-references"></a>Referencias adicionales
 

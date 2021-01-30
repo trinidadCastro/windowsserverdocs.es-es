@@ -7,12 +7,12 @@ ms.author: daveba
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: fe950d2ebe5d5ae4508921367d9e0b9044f6ae88
-ms.sourcegitcommit: 65b6de6b44d41f1180c45db11cdd60cb2a093b46
+ms.openlocfilehash: 1f435d77215515562fa8a58fed522b094ef19ada
+ms.sourcegitcommit: 1e94c10ff51f43325fa9184b09bbdfeb8c8fed36
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97039323"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99081723"
 ---
 # <a name="determining-the-cost"></a>Determinar el costo
 
@@ -39,7 +39,7 @@ En la tabla siguiente se enumeran las velocidades de los distintos tipos de rede
 |100Baset|100 Mbps|
 |Gigabit Ethernet|1 gigabit por segundo (Gbps)|
 
-Use la tabla siguiente para calcular el costo de cada vínculo a sitio basado en la velocidad de vínculo de la velocidad de red de área extensa (WAN). Para la velocidad de vínculo WAN que no aparece en la tabla, puede calcular un factor de costo relativo dividiendo 1.024 por el registro del ancho de banda disponible, medido en kbps.
+Use la tabla siguiente para calcular el costo de cada vínculo a sitio basado en la velocidad de vínculo de la velocidad de red de área extensa (WAN). Para la velocidad de vínculo WAN que no aparece en la tabla, puede calcular un factor de costo relativo dividiendo 1.024 por el logaritmo del ancho de banda disponible, medido en kbps.
 
 |Ancho de banda disponible (kbps)|Costo|
 |--------------------------------|--------|
@@ -56,6 +56,5 @@ Use la tabla siguiente para calcular el costo de cada vínculo a sitio basado en
 |4 096|283|
 
 Estos costos no reflejan las diferencias de confiabilidad entre los vínculos de red. Establezca costos mayores en los vínculos de red propensos a errores para que no tenga que depender de esos vínculos para la replicación. Al establecer los costos de vínculo de sitio más altos, puede controlar la conmutación por error de replicación cuando se produce un error en un vínculo de sitio.
-
 
 
