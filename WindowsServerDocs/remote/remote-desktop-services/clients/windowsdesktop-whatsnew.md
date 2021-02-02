@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 01/12/2021
+ms.date: 01/27/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d5dc9e76680b6c222f67b8f94c12bedd57af263
-ms.sourcegitcommit: 56297d3b8aa8f4796cb74b736d599d433aeee339
+ms.openlocfilehash: c0f316517c722e407e36c489556a4e6069020a23
+ms.sourcegitcommit: 2ede79efbadd109099bb6fdb744796adde123922
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98134811"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98923653"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novedades del cliente de escritorio de Windows
 
@@ -24,10 +24,10 @@ El cliente se puede configurar para distintos [grupos de usuarios](windowsdeskto
 
 |Grupo de usuarios |La versión más reciente  |Versión mínima admitida |
 |-----------|----------------|--------------------------|
-|Público     |1.2.1525        |1.2.945                   |
-|Insider    |1.2.1670        |1.2.945                   |
+|Público     |1.2.1672        |1.2.945                   |
+|Insider    |1.2.1672        |1.2.945                   |
 
-## <a name="updates-for-version-121670-insider"></a>Actualizaciones de la versión 1.2.1670 (Insider)
+## <a name="updates-for-version-121672"></a>Actualizaciones para la versión 1.2.1672
 
 *Fecha de publicación: 12/1/2021*
 
@@ -36,12 +36,13 @@ Descarga: [Windows de 64 bits](https://go.microsoft.com/fwlink/?linkid=2139233),
 - Se ha agregado compatibilidad con la característica de protección de captura de pantalla para puntos de conexión de Windows 10. Para obtener más información, consulte [Procedimientos recomendados de seguridad del host de sesión](/azure/virtual-desktop/security-guide#session-host-security-best-practices).
 - Se ha agregado compatibilidad con los servidores proxy que requieren autenticación para la suscripción de la fuente.
 - El cliente ahora muestra una notificación con una opción de reintento si una actualización no se descarga correctamente.
+- Se han solucionado algunos problemas de accesibilidad con el foco del teclado y el modo de alto contraste.
 
 ## <a name="updates-for-version-121525"></a>Actualizaciones para la versión 1.2.1525
 
 *Fecha de publicación: 01/12/2020*
 
-Descarga: [Windows de 64 bits](https://go.microsoft.com/fwlink/?linkid=2139369), [Windows de 32 bits](https://go.microsoft.com/fwlink/?linkid=2139456), [ARM64 de Windows](https://go.microsoft.com/fwlink/?linkid=2139370)
+Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4M4Qb), [Windows de 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4M4Qc), [ARM64 de Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4M4Qa)
 
 - Se ha agregado la vista de lista de los recursos remotos, para que los nombres de aplicación más largos sean legibles.
 - Se ha agregado el icono de notificación que aparece cuando hay disponible una actualización para el cliente.
@@ -49,8 +50,6 @@ Descarga: [Windows de 64 bits](https://go.microsoft.com/fwlink/?linkid=2139369),
 ## <a name="updates-for-version-121446"></a>Actualizaciones para la versión 1.2.1446
 
 *Fecha de publicación: 27/10/2020*
-
-Descarga: [Windows de 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4Hq7C), [Windows de 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4HvgF), [ARM64 de Windows](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4Ho64)
 
 - Se ha agregado la característica de actualización automática, que permite al cliente instalar automáticamente las actualizaciones más recientes.
 - El cliente ahora distingue entre fuentes diferentes del centro de conexiones.

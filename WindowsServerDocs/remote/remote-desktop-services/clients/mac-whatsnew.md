@@ -5,20 +5,30 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 12/02/2020
+ms.date: 01/27/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: b9b811f3a0beb71461f868c61f0508566136a5d8
-ms.sourcegitcommit: dce404a0a4500a693e294e0431c93f0ae90f8b13
+ms.openlocfilehash: 6fd6a464b1f816fbaf93c7c4efed805305ef7aa8
+ms.sourcegitcommit: ebe97af985429ec5cdb86eba75820bc180552811
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96563825"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98925922"
 ---
 # <a name="whats-new-in-the-macos-client"></a>Novedades del cliente de macOS
 
 El [cliente de Escritorio remoto para macOS](remote-desktop-mac.md) se actualiza periódicamente, con lo que se agregan nuevas características y se corrigen problemas. Aquí puedes encontrar las actualizaciones más recientes.
 
 Si tienes algún problema, puedes ponerte en contacto con nosotros a través **Ayuda** > **Notificar un problema**.
+
+## <a name="updates-for-version-1051"></a>Actualizaciones para la versión 10.5.1
+
+*Fecha de publicación: 29/01/2020*
+
+¡Es el momento del primer lanzamiento del año! En esta versión, hemos realizado los siguientes cambios:
+
+- Se ha solucionado un problema por el que la interfaz de usuario dejaba de resolver un nombre de área de trabajo durante la suscripción.
+- Se ha corregido un error en la sesión en el que las actualizaciones de gráficos se detenían mientras el cliente seguía enviando entradas.
+- Se han resuelto varios problemas de confiabilidad identificados en informes de bloqueos.
 
 ## <a name="updates-for-version-1050"></a>Actualizaciones para la versión 10.5.0
 
@@ -92,7 +102,6 @@ En esta versión, hemos realizado actualizaciones sustanciales en el código sub
 - Se corrigieron varios problemas de accesibilidad que afectaban a los escenarios de navegación del teclado y VoiceOver.
 - Gran cantidad de actualizaciones para mejorar la interoperabilidad con las características actuales y futuras en el servicio Windows Virtual Desktop.
 - Ahora puede configurar el nivel de compatibilidad de AVC anunciado por el cliente desde un símbolo del sistema de terminal. Estos son los niveles de soporte técnico que puede configurar:
-  
    - No anunciar la compatibilidad con AVC al servidor: `defaults write com.microsoft.rdc.macos AvcSupportLevel disabled`
    - Anunciar la compatibilidad con AVC420 al servidor: `defaults write com.microsoft.rdc.macos AvcSupportLevel avc420`
    - Anunciar la compatibilidad con AVC444 al servidor: `defaults write com.microsoft.rdc.macos AvcSupportLevel avc444`

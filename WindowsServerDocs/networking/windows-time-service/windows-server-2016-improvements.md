@@ -5,16 +5,16 @@ author: dahavey
 ms.author: dahavey
 ms.date: 10/17/2018
 ms.topic: article
-ms.openlocfilehash: a09022cf1ad2929dfdffa244b86c211970b53aae
-ms.sourcegitcommit: a7fb96c0b1d186baeb29349befbbd6bd3b955813
+ms.openlocfilehash: 0dd8c4c9714f50ba3eee45efdb714e66a8916dd6
+ms.sourcegitcommit: 2ede79efbadd109099bb6fdb744796adde123922
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94522528"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98923667"
 ---
 # <a name="time-accuracy-improvements-for-windows-server-2016"></a>Mejoras en la precisión temporal para Windows Server 2016
 
-Windows Server 2016 ha mejorado los algoritmos que usa para corregir la hora y programar el reloj local para que se sincronice con la hora UTC. NTP usa 4 valores para calcular el desfase de hora en función de las marcas de tiempo de la solicitud o respuesta del cliente y del servidor. Sin embargo, las redes tienen ruido y puede haber picos en los datos de NTP debido a la congestión de la red y otros factores que afectan a la latencia de la red. Los algoritmos de Windows 2016 calculan la media de este ruido mediante una serie de técnicas diferentes, lo que da como resultado un reloj estable y exacto. Además, el origen que usamos para una hora precisa hace referencia a una API mejorada que nos proporciona una mejor resolución. Con estas mejoras, podemos lograr una precisión de 1 ms con respecto a la hora UTC en un dominio.
+Windows Server 2016 ha mejorado los algoritmos que usa para corregir la hora y programar el reloj local para que se sincronice con la hora UTC. NTP usa 4 valores para calcular el desfase de hora en función de las marcas de tiempo de la solicitud o respuesta del cliente y del servidor. Sin embargo, las redes tienen ruido y puede haber picos en los datos de NTP debido a la congestión de la red y otros factores que afectan a la latencia de la red. Los algoritmos de Windows 2016 calculan la media de este ruido mediante una serie de técnicas diferentes, lo que da como resultado un reloj estable y exacto. Además, el origen que usamos para una hora precisa hace referencia a una API mejorada que nos proporciona una mejor resolución. Con estas mejoras, podemos lograr una precisión de 1 ms con respecto a la hora UTC de un dominio.
 
 ## <a name="hyper-v"></a>Hyper-V
 
@@ -23,7 +23,7 @@ Windows 2016 ha mejorado el servicio TimeSync de Hyper-V. Entre las mejoras se 
 > [!NOTE]
 > La carga se creó con el banco de pruebas Prime95 mediante un perfil equilibrado.
 
-Además, el nivel de capa que el host notifica al invitado es más transparente. Anteriormente, el host presentaba una capa fija de 2, independientemente de su precisión. Con los cambios en Windows Server 2016, el host informa de una capa mayor que la del host, lo que da como resultado una hora mejorada para los invitados virtuales. W32Time determina la capa del host con medios normales según su hora de origen. Los invitados de Windows 2016 unidos a un dominio encontrarán el reloj más preciso, en lugar de definir como valor predeterminado el host. Por este motivo, recomendamos deshabilitar manualmente la configuración del proveedor de hora de Hyper-V para las máquinas que participan en un dominio de Windows 2012 R2 y versiones anteriores.
+Además, el nivel de capa que el host notifica al invitado es más transparente. Anteriormente, el host presentaba un valor de capa fijo de 2, independientemente de su precisión. Con los cambios en Windows Server 2016, el host informa de una capa mayor que la del host, lo que da como resultado una hora más precisa para los invitados virtuales. W32Time determina la capa del host con medios normales según su hora de origen. Los invitados de Windows 2016 unidos a un dominio encontrarán el reloj más preciso, en lugar de definir como valor predeterminado el host. Por este motivo, recomendamos deshabilitar manualmente la configuración del proveedor de hora de Hyper-V para las máquinas que participan en un dominio de Windows 2012 R2 y versiones anteriores.
 
 ## <a name="monitoring"></a>Supervisión
 
@@ -68,7 +68,7 @@ A continuación, se describen los cambios en la configuración predeterminada en
 | |Frecuencia de sondeo|N/D|1204 - 32 768 segundos|1024 - 32 768 segundos|
 | |Frecuencia de actualización del reloj|N/D|Una vez cada 5 minutos|Una vez cada 5 minutos|
 |**Invitado de Hyper-V**||||
-| |Servidor horario|Elige la mejor opción en función de la capa del host y el servidor horario.|Elige la mejor opción en función de la capa del host y el servidor horario.|El valor predeterminado es Host.|
+| |Servidor horario|Elige la mejor opción en función de la capa del host y el servidor horario|Elige la mejor opción en función de la capa del host y el servidor horario|El valor predeterminado es Host.|
 | |Frecuencia de sondeo|Según el rol anterior|Según el rol anterior|Según el rol anterior|
 | |Frecuencia de actualización del reloj|Según el rol anterior|Según el rol anterior|Según el rol anterior|
 
@@ -81,7 +81,7 @@ Con el fin de proporcionar horas más precisas, los valores predeterminados de l
 
 En el caso de los dispositivos que funcionan con batería, el aumento de la frecuencia de sondeo puede producir problemas. Los dispositivos con batería no almacenan la hora cuando están desactivados. Por este motivo, cuando se reanudan, es posible que requieran correcciones frecuentes en el reloj. El aumento de la frecuencia de sondeo hará que el reloj se vuelva inestable y también puede que use más energía. Microsoft no recomienda cambiar la configuración predeterminada del cliente.
 
-Los controladores de dominio deberían verse afectados mínimamente, incluso con el efecto multiplicado del aumento de las actualizaciones de los clientes NTP en un dominio de AD. NTP tiene un consumo de recursos mucho más pequeño en comparación con otros protocolos y un impacto marginal. Es más probable que alcances los límites de otras funciones de dominio antes de verte afectado por el aumento de actualizaciones de Windows Server 2016. Active Directory usa NTP seguro, que tiende a sincronizar la hora con menos precisión que NTP simple, pero hemos verificado que se escalará verticalmente a los clientes con dos capas fuera del controlador de dominio principal.
+Los controladores de dominio deberían verse afectados mínimamente, incluso con el efecto multiplicado del aumento de las actualizaciones de los clientes NTP en un dominio de AD. NTP tiene un consumo de recursos mucho más pequeño en comparación con otros protocolos y un impacto marginal. Es más probable que alcances los límites de otras funciones de dominio antes de verte afectado por el aumento de actualizaciones de Windows Server 2016. Active Directory usa NTP seguro, que tiende a sincronizar la hora con menos precisión que NTP simple, pero hemos verificado que se escalará verticalmente a los clientes que se encuentren a dos capas del controlador de dominio principal.
 
 Como plan conservador, debes reservar 100 solicitudes NTP por segundo por núcleo. Por ejemplo, en un dominio formado por 4 controladores de dominio con 4 núcleos cada uno, deberías poder atender 1600 solicitudes NTP por segundo. Si tienes 10 000 clientes configurados para sincronizar la hora una vez cada 64 segundos y las solicitudes se reciben uniformemente a lo largo del tiempo, verás 10 000/64 o aproximadamente 160 solicitudes por segundo, distribuidas en todos los controladores de dominios. Esto corresponde fácilmente a las solicitudes de 1600 NTP por segundo basadas en este ejemplo. Estas recomendaciones de planificación son conservadoras y, por supuesto, tienen una gran dependencia en la red y las velocidades y cargas del procesador, por lo que, como siempre, establece tus entornos como base de referencia y pruébalos.
 
@@ -113,33 +113,33 @@ Los resultados de las pruebas que se muestran a continuación son un subconjunto
 
 Para la comparación, probamos una topología basada en Windows Server 2012 R2 y Windows Server 2016. Ambas topologías están compuestas por dos equipos host de Hyper-V físicos que hacen referencia a una máquina Windows Server 2016 con hardware de reloj de GPS instalado. Cada host ejecuta 3 invitados de Windows unidos a un dominio, que se organizan según la siguiente topología. Las líneas representan la jerarquía de tiempo y el protocolo o transporte que se utiliza.
 
-![Diagrama de la topología de la hora de Windows](../media/Windows-Time-Service/Windows-2016-Accurate-Time/topology1.png)
+![Diagrama de la topología de horas de Windows con un solo cliente de dominio secundario ejecutándose en el primer host de Hyper-V.](../media/Windows-Time-Service/Windows-2016-Accurate-Time/topology1.png)
 
-![Diagrama de la topología de la hora de Windows](../media/Windows-Time-Service/Windows-2016-Accurate-Time/topology2.png)
+![Diagrama de la topología de horas de Windows con dos clientes de dominio secundario; uno se ejecuta en el primer host de Hyper-V y el otro, en el segundo host de Hyper-V.](../media/Windows-Time-Service/Windows-2016-Accurate-Time/topology2.png)
 
 ### <a name="graphical-results-overview"></a>Información general sobre los resultados de los gráficos
 
 Los dos gráficos siguientes representan la precisión horaria de dos miembros específicos de un dominio basado en la topología anterior. Cada gráfico muestra los resultados de Windows Server 2012 R2 y 2016, los cuales demuestran las mejoras visualmente. La precisión se mide desde la máquina invitada en comparación con el host. Los datos de los gráficos representan un subconjunto del conjunto completo de pruebas que hemos realizado y muestran los escenarios mejores y peores.
 
-![Diagrama de la topología de la hora de Windows](../media/Windows-Time-Service/Windows-2016-Accurate-Time/topology3.png)
+![Diagrama de la topología de horas de Windows con el servidor PDC del dominio raíz y los servidores de cliente de dominio secundario en el primer host de Hyper-V resaltados.](../media/Windows-Time-Service/Windows-2016-Accurate-Time/topology3.png)
 
 ### <a name="performance-of-the-root-domain-pdc"></a>Rendimiento de PDC del dominio raíz
 
 El controlador de dominio principal raíz se sincroniza con el host de Hyper-V (mediante VMIC), que es una instancia de Windows Server 2016 con hardware GPS que se ha demostrado que es precisa y estable. Se trata de un requisito fundamental para lograr una precisión de 1 ms, que se refleja con el área sombreada de color verde.
 
-![Hora de Windows](../media/Windows-Time-Service/Windows-2016-Accurate-Time/chart1.png)
+![Diagrama que representa el dominio raíz.](../media/Windows-Time-Service/Windows-2016-Accurate-Time/chart1.png)
 
 ### <a name="performance-of-the-child-domain-client"></a>Rendimiento del cliente del dominio secundario
 
 El cliente del dominio secundario se adjunta a un controlador de dominio principal del dominio secundario que se comunica con el controlador de dominio principal raíz. El tiempo también está dentro del requisito de 1 ms.
 
-![Hora de Windows](../media/Windows-Time-Service/Windows-2016-Accurate-Time/chart2.png)
+![Diagrama que representa el cliente de dominio secundario.](../media/Windows-Time-Service/Windows-2016-Accurate-Time/chart2.png)
 
 ### <a name="long-distance-test"></a>Prueba de larga distancia
 
 En el gráfico siguiente se compara un salto de red virtual con seis saltos de red físicos con Windows Server 2016. Dos gráficos se superponen entre sí con transparencia para mostrar los datos superpuestos. El aumento de los saltos de red significa que la latencia es mayor y que hay desviaciones de más tiempo. El gráfico se amplía y, por lo tanto, los límites de 1 ms, que se representan en el área verde, son más grandes. Como puedes ver, el tiempo sigue siendo de 1 ms con varios saltos. Se desplaza negativamente, lo que muestra una asimetría de la red. Por supuesto, cada red es diferente y las mediciones dependen de una gran variedad de factores ambientales.
 
-![Hora de Windows](../media/Windows-Time-Service/Windows-2016-Accurate-Time/chart3.png)
+![Diagrama que representa la prueba de larga distancia.](../media/Windows-Time-Service/Windows-2016-Accurate-Time/chart3.png)
 
 ## <a name="best-practices-for-accurate-timekeeping"></a>Procedimientos recomendados para la precisión de la hora
 
