@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: ded1b6741829fb74d3be9b33828c89b8091faf1a
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: cc2c81e1b534c25ea0aa6a6abd6c2089620b920e
+ms.sourcegitcommit: 84b97d34d606b6bf4b6ec8760a93107f1b311428
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89624388"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99245386"
 ---
 # <a name="viewing-and-managing-updates"></a>Visualización y administración de actualizaciones
 
@@ -45,13 +45,13 @@ En la página **actualizaciones** , puede hacer lo siguiente:
 
 #### <a name="to-filter-the-list-of-updates-displayed-on-the-updates-page"></a>Para filtrar la lista de actualizaciones que se muestran en la página actualizaciones
 
-1.  En la consola de administración de WSUS, expanda **actualizaciones**y, a continuación, haga clic en **todas las actualizaciones**.
+1.  En la consola de administración de WSUS, expanda **actualizaciones** y, a continuación, haga clic en **todas las actualizaciones**.
 
 2.  En el panel central junto a **aprobación**, seleccione el estado de aprobación deseado y, junto a **Estado** , seleccione el estado de la instalación que desee. Haga clic en **Actualizar**.
 
 #### <a name="to-create-a-new-update-view-on-wsus"></a>Para crear una nueva vista de actualización en WSUS
 
-1.  En la consola de administración de WSUS, expanda **actualizaciones**y, a continuación, haga clic en **todas las actualizaciones**.
+1.  En la consola de administración de WSUS, expanda **actualizaciones** y, a continuación, haga clic en **todas las actualizaciones**.
 
 2.  En el panel **acciones** , haga clic en **nueva vista de actualización**.
 
@@ -71,7 +71,7 @@ En la página **actualizaciones** , puede hacer lo siguiente:
 
 5.  En **paso 3: especifique un nombre**, asigne un nombre a la nueva vista.
 
-6.  Haga clic en **OK**.
+6.  Haga clic en **Aceptar**.
 
 La nueva vista aparecerá en el panel vista de árbol en actualizaciones. Se mostrará, como las vistas estándar, en el panel central al seleccionarlo.
 
@@ -81,11 +81,11 @@ La nueva vista aparecerá en el panel vista de árbol en actualizaciones. Se mos
 
 2.  En el panel **acciones** , haga clic en **Buscar**.
 
-3.  En la ventana **Buscar** , en la pestaña **actualizaciones** , escriba los criterios de búsqueda. Puede usar el texto de los campos **título**, **Descripción**y **número de artículo de Microsoft Knowledge base (KB)** . Cada uno de estos elementos es una propiedad que se muestra en la pestaña **detalles** de las propiedades de la actualización.
+3.  En la ventana **Buscar** , en la pestaña **actualizaciones** , escriba los criterios de búsqueda. Puede usar el texto de los campos **título**, **Descripción** y **número de artículo de Microsoft Knowledge base (KB)** . Cada uno de estos elementos es una propiedad que se muestra en la pestaña **detalles** de las propiedades de la actualización.
 
 #### <a name="to-view-the-properties-for-an-update"></a>Para ver las propiedades de una actualización
 
-1.  En la consola de administración de WSUS, expanda **actualizaciones**y, a continuación, haga clic en **todas las actualizaciones**.
+1.  En la consola de administración de WSUS, expanda **actualizaciones** y, a continuación, haga clic en **todas las actualizaciones**.
 
 2.  En la lista de actualizaciones, haga clic en la actualización que desea ver.
 
@@ -177,21 +177,21 @@ Para ver estos iconos, debe habilitar la columna sustitución en la consola de U
  No existe ninguna preocupación operativa.
 
 ### <a name="superseding-icon"></a>Icono de sustitución
- ![icon](../../media/wsus/wsus-superseding.png) Esta actualización sustituye a otras actualizaciones.
+ :::image type="icon" source="../../media/wsus/wsus-superseding.png"::: Esta actualización sustituye a otras actualizaciones.
 
  **Preocupaciones operativas:**
 
  No existe ninguna preocupación operativa.
 
 ### <a name="superseded--superseding-icon"></a>Icono de sustitución de & reemplazado
- ![icon](../../media/wsus/wsus-superseded.png) Esta actualización se sustituye por otra actualización y sustituye a otras actualizaciones.
+ :::image type="icon" source="../../media/wsus/wsus-superseded.png"::: Esta actualización se sustituye por otra actualización y sustituye a otras actualizaciones.
 
  **Preocupaciones operativas:**
 
  Reemplace estas actualizaciones por las actualizaciones de reemplazo cuando sea posible.
 
 ### <a name="superseded-icon"></a>Icono de sustituido
- ![icon](../../media/wsus/wsus-superseded-leaf.png) Esta actualización se ha sustituido por otra actualización.
+ :::image type="icon" source="../../media/wsus/wsus-superseded-leaf.png"::: Esta actualización se ha sustituido por otra actualización.
 
  **Preocupaciones operativas:**
 

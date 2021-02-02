@@ -7,12 +7,12 @@ author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
 ms.topic: article
-ms.openlocfilehash: 35defc771c18753296eb37c96f65086626475a95
-ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
+ms.openlocfilehash: 900a536fb5a5f0f1ab37725a133fa822107ec9cd
+ms.sourcegitcommit: 84b97d34d606b6bf4b6ec8760a93107f1b311428
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98113471"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99245454"
 ---
 # <a name="manage-different-domains-in-active-directory-administrative-center"></a>Administrar dominios diferentes en Centro de administración de Active Directory
 
@@ -36,11 +36,11 @@ ms.locfileid: "98113471"
 
 2.  Para abrir **agregar nodos de navegación**, haga clic en **administrar** y, a continuación, haga clic en **agregar nodos de navegación** , tal como se muestra en la siguiente ilustración.
 
-     ![Captura de pantalla que muestra la interfaz de usuario agregar nodos de navegación * *](media/ADDS_ADACAddNavNode.gif)
+     ![Captura de pantalla del Centro de administración de Active Directory que muestra la lista desplegable administrar con la opción agregar nodos de navegación disponible para selección.](media/ADDS_ADACAddNavNode.gif)
 
 3.  En **agregar nodos de navegación**, haga clic en **conectar con otros dominios** , tal como se muestra en la siguiente ilustración.
 
-     ![Captura de pantalla que muestra la interfaz de usuario agregar nodos de navegación * *](media/ADDS_ADACConnectToDomain.gif)
+     ![Captura de pantalla que muestra el cuadro de diálogo agregar nodos de navegación que muestra la opción conectar a otros dominios disponible para la selección.](media/ADDS_ADACConnectToDomain.gif)
 
 4.  En **conectar a**, escriba el nombre del dominio externo que desea administrar, \( por ejemplo, **contoso.com** \) y, a continuación, haga clic en **Aceptar**.
 
@@ -55,7 +55,7 @@ ms.locfileid: "98113471"
 
 2. Para abrir **agregar nodos de navegación**, cerca de la parte superior de la ventana de centro de administración de Active Directory, haga clic en **agregar nodos de navegación** , tal como se muestra en la siguiente ilustración.
 
-    ![Captura de pantalla que muestra la interfaz de usuario agregar nodos de navegación * *](media/click_add_nav_nodes.gif)
+    ![Captura de pantalla de la Centro de administración de Active Directory con la opción agregar nodos de navegación disponible para la selección.](media/click_add_nav_nodes.gif)
 
    > [!NOTE]
    >  Otra manera de abrir **agregar nodos de navegación** es hacer clic con el botón secundario en \- cualquier lugar del espacio vacío en el panel de navegación centro de administración de Active Directory y, a continuación, hacer clic en **agregar nodos de navegación**.

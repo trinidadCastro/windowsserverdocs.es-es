@@ -6,12 +6,12 @@ author: justinha
 ms.author: justinha
 manager: brianlic
 ms.date: 05/16/2018
-ms.openlocfilehash: c6dc0bcefda94b8d2b5490fa2378f60d26877bc5
-ms.sourcegitcommit: d42b80f947dbfa8660d982be67d77745a28081e5
+ms.openlocfilehash: d3e06dbaf61b422779822cce208040601f2e56fa
+ms.sourcegitcommit: 84b97d34d606b6bf4b6ec8760a93107f1b311428
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98113301"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99245416"
 ---
 # <a name="manage-transport-layer-security-tls"></a>Administración de Seguridad de la capa de transporte (TLS)
 
@@ -123,7 +123,7 @@ El proceso de distribución de una curva es el siguiente:
 4. Configure la colección del registro de preferencias directiva de grupo recién creada agregando un nuevo **elemento del registro** para cada valor del registro que aparece en *HKEY_LOCAL_MACHINE\CurrentControlSet\Control\Cryptography\ECCParameters\[ curveName]*.
 5. Implemente el directiva de grupo objeto que contiene directiva de grupo elemento de colección del registro en equipos con Windows 10 y Windows Server 2016 que deben recibir las nuevas curvas con nombre.
 
-    ![GPP distribuir curvas](../media/Transport-Layer-Security-protocol/gpp-distribute-curves.png)
+    ![Captura de pantalla de la pestaña Preferencias del Editor de administración de directivas de grupo.](../media/Transport-Layer-Security-protocol/gpp-distribute-curves.png)
 
     *Figura 3 uso de las preferencias de directiva de grupo para distribuir curvas*
 
@@ -133,6 +133,6 @@ A partir de Windows 10 y Windows Server 2016, se puede usar la configuración de
 Mediante el uso de ECC genérico y este valor, las organizaciones pueden agregar sus propias curvas con nombre de confianza (que están aprobadas para su uso con TLS) al sistema operativo y, a continuación, agregar esas curvas con nombre al valor de prioridad de curva directiva de grupo para asegurarse de que se usan en protocolos de enlace de TLS futuros.
 Las nuevas listas de prioridades de curva se activan en el siguiente reinicio después de recibir la configuración de la Directiva.
 
-![GPP distribuir curvas](../media/Transport-Layer-Security-protocol/gp-managing-tls-curve-priority-order.png)
+![Captura de pantalla del cuadro de diálogo orden de curva CEE.](../media/Transport-Layer-Security-protocol/gp-managing-tls-curve-priority-order.png)
 
 *Figura 4 administración de la prioridad de curva TLS mediante directiva de grupo*

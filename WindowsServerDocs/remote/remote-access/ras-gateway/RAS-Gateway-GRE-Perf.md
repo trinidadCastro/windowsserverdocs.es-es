@@ -7,12 +7,12 @@ ms.assetid: c051b2ec-de0f-49d1-82b9-5742b259cd7c
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: fceb3ff5421be65a9bb25ae74510257f70d0aaa6
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: c34cec47edc2808d16964f3a8f3071c50940a578
+ms.sourcegitcommit: 84b97d34d606b6bf4b6ec8760a93107f1b311428
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97946781"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99245406"
 ---
 # <a name="ras-gateway-gre-tunnel-throughput-and-performance"></a>Rendimiento de túnel GRE de puerta de enlace de RAS
 
@@ -20,7 +20,7 @@ ms.locfileid: "97946781"
 
 Puede usar este tema para obtener información sobre el \( \) \( rendimiento del túnel GRE de encapsulación de puerta de enlace ras del servidor de acceso remoto \) en Windows Server, versión 1709, en un \( entorno de prueba basado en redes de red no definido por software \) .
 
-La puerta de enlace RAS es un enrutador de software y una puerta de enlace que puede usar en el modo de un solo inquilino o en el modo multiempresa. En este tema se describe el modo de un solo inquilino, la configuración de alta disponibilidad con clústeres de conmutación por error. Las estadísticas de rendimiento del túnel GRE que se presentan en este tema son válidas para la puerta de enlace de RAS en los modos de inquilino de singele y multiinquilino.
+La puerta de enlace RAS es un enrutador de software y una puerta de enlace que puede usar en el modo de un solo inquilino o en el modo multiempresa. En este tema se describe el modo de un solo inquilino, la configuración de alta disponibilidad con clústeres de conmutación por error. Las estadísticas de rendimiento del túnel GRE que se presentan en este tema son válidas para la puerta de enlace RAS en los modos de inquilino único y multiinquilino.
 
 >[!NOTE]
 >Los clústeres de conmutación por error son una característica de Windows Server que permite agrupar varios servidores en un clúster tolerante a errores. Para obtener más información, consulte [clústeres de conmutación por error](../../../failover-clustering/failover-clustering-overview.md)
@@ -92,11 +92,11 @@ Con varias sesiones TCP, el uso de CPU alcanza el 100% y el rendimiento máximo 
 
 En la ilustración siguiente se muestra el uso de CPU en las dos máquinas virtuales de puerta de enlace de RAS. La máquina virtual activa, la máquina virtual de puerta de enlace RAS #1, está a la izquierda, mientras que la máquina virtual pasiva, la máquina virtual de puerta de enlace RAS #2, está a la derecha.
 
-![Uso de CPU de VM de puerta de enlace en el administrador de tareas](../../media/GRE-Tunnel-Perf/Gre-Tunnel-01.jpg)
+![Captura de pantalla de dos ventanas del administrador de tareas que muestran el uso de CPU en las dos máquinas virtuales de puerta de enlace de RAS cuando hay varias sesiones TCP.](../../media/GRE-Tunnel-Perf/Gre-Tunnel-01.jpg)
 
 En la ilustración siguiente se muestra el rendimiento de la red Ethernet en las máquinas virtuales de puerta de enlace RAS. La máquina virtual activa, la máquina virtual de puerta de enlace RAS #1, está a la izquierda, mientras que la máquina virtual pasiva, la máquina virtual de puerta de enlace RAS #2, está a la derecha.
 
-![Rendimiento de red Ethernet de VM de puerta de enlace en el administrador de tareas](../../media/GRE-Tunnel-Perf/Gre-Tunnel-02.jpg)
+![Captura de pantalla de dos ventanas del administrador de tareas que muestran el rendimiento de la red Ethernet en las máquinas virtuales de puerta de enlace RAS cuando hay varias sesiones TCP.](../../media/GRE-Tunnel-Perf/Gre-Tunnel-02.jpg)
 
 
 ### <a name="gre-tunnel-performance-with-one-tcp-connection"></a>Rendimiento del túnel GRE con una conexión TCP
@@ -107,11 +107,11 @@ El rendimiento máximo del túnel GRE es de entre 400-500 Mbps.
 
 En la ilustración siguiente se muestra el uso de CPU en las dos máquinas virtuales de puerta de enlace de RAS. La máquina virtual activa, la máquina virtual de puerta de enlace RAS #1, está a la izquierda, mientras que la máquina virtual pasiva, la máquina virtual de puerta de enlace RAS #2, está a la derecha.
 
-![Uso de CPU de VM de puerta de enlace en el administrador de tareas](../../media/GRE-Tunnel-Perf/Gre-Tunnel-03.jpg)
+![Captura de pantalla de dos ventanas del administrador de tareas que muestran el uso de CPU en las dos máquinas virtuales de puerta de enlace de RAS cuando hay una sesión TCP.](../../media/GRE-Tunnel-Perf/Gre-Tunnel-03.jpg)
 
 
 En la ilustración siguiente se muestra el rendimiento de la red Ethernet en las máquinas virtuales de puerta de enlace RAS. La máquina virtual activa, la máquina virtual de puerta de enlace RAS #1, está a la izquierda, mientras que la máquina virtual pasiva, la máquina virtual de puerta de enlace RAS #2, está a la derecha.
 
-![Rendimiento de red Ethernet de VM de puerta de enlace en el administrador de tareas](../../media/GRE-Tunnel-Perf/Gre-Tunnel-04.jpg)
+![Captura de pantalla de dos ventanas del administrador de tareas que muestran el rendimiento de la red Ethernet en las máquinas virtuales de puerta de enlace RAS cuando hay una sesión TCP.](../../media/GRE-Tunnel-Perf/Gre-Tunnel-04.jpg)
 
 Para obtener más información sobre el rendimiento de la puerta de enlace RAS, consulte [ajuste del rendimiento de puerta de enlace HNV en redes definidas por software](../../../administration/performance-tuning/subsystem/software-defined-networking/hnv-gateway-performance.md).

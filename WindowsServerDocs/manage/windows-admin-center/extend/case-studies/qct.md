@@ -6,12 +6,12 @@ author: daniellee-msft
 ms.author: jol
 ms.date: 06/14/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 13f23a46647ec6cc2d8c2813c426f6372ead39ca
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b0c8ad554103db068defcc4438fd4790c2101ef9
+ms.sourcegitcommit: 84b97d34d606b6bf4b6ec8760a93107f1b311428
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964677"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99245376"
 ---
 # <a name="qct-management-suite-extension"></a>Extensión de QCT Management Suite
 
@@ -21,24 +21,24 @@ La extensión de QCT Management Suite para el centro de administración de Windo
 
 Controlado por los Pain Points de los clientes en torno a la supervisión y administración existentes, QCT proporciona características y funciones exclusivas y complementarias, que incluyen información general sobre los registros de eventos del sistema, los controladores de supervisión y el estado de los componentes de hardware para mejorar la experiencia de administración global.
 
-![Extensión QCT](../../media/extend-case-study-qct/D52T_DarkMode_Disk-Detail-General.PNG)
+![Captura de pantalla de la pestaña disco de la extensión QCT.](../../media/extend-case-study-qct/D52T_DarkMode_Disk-Detail-General.PNG)
 
 QCT Management Suite amplía la funcionalidad del centro de administración de Windows con las siguientes características clave:
 - **Administración de hardware exclusiva con un clic** : una interfaz de usuario intuitiva muestra información de hardware, como el nombre del modelo, el procesador, la memoria y el BIOS. Los administradores de TI pueden reiniciar el BMC con una interfaz de usuario sencilla con un solo clic.
 
-![Extensión QCT](../../media/extend-case-study-qct/D52T_Overview.PNG)
+![Captura de pantalla de la característica de administración de hardware exclusiva con un solo clic de la extensión QCT.](../../media/extend-case-study-qct/D52T_Overview.PNG)
 
 - **Asignación de disco e identificación LED para una compatibilidad de servicio eficaz** : diseño de la interfaz de usuario del asistente de QCT Management Suite muestra la ranura de cada disco seleccionado con información general de los perfiles de disco y los controles luminosos LED de los discos seleccionados para un reemplazo eficaz.
 
-![Extensión QCT](../../media/extend-case-study-qct/T21P_disk_mapping.png)
+![Captura de pantalla de la característica de reemplazo de disco de la extensión QCT.](../../media/extend-case-study-qct/T21P_disk_mapping.png)
 
 - Herramienta de supervisión fácil de usar para el registro de eventos de hardware y el estado de mantenimiento.
 
-![Extensión QCT](../../media/extend-case-study-qct/D52T_event_log.PNG)
+![Captura de pantalla de la herramienta de supervisión para el registro de eventos de hardware y el estado de mantenimiento que se incluye en la extensión QCT.](../../media/extend-case-study-qct/D52T_event_log.PNG)
 
 - **Administración de discos predictivo** : evalúe la condición del sistema con la información de S. M. A. R. T y las notificaciones en mal estado que permiten a las organizaciones tomar medidas antes de que se produzca el error total.
 
-![Extensión QCT](../../media/extend-case-study-qct/T21P_SMART.PNG)
+![Captura de pantalla de la información de S. M. A. R. T y de las notificaciones incorrectas que se incluyen en la extensión QCT.](../../media/extend-case-study-qct/T21P_SMART.PNG)
 
 Obtenga más información sobre el centro de administración de QCT Management Suite para Windows:
 - [Página Web de QCT Management Suite](https://go.qct.io/solutions/enterprise-private-cloud/qxstack-windows-server-cloud-ready-appliances/)

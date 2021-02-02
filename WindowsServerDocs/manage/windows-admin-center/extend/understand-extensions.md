@@ -6,12 +6,12 @@ author: daniellee-msft
 ms.author: jol
 ms.date: 06/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 44038185bb4f9cb61920033ce5edc67afb3de99b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 578376a10b83466382bf9e02f91ff94656bd6c88
+ms.sourcegitcommit: 84b97d34d606b6bf4b6ec8760a93107f1b311428
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964581"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99245482"
 ---
 # <a name="understanding-windows-admin-center-extensions"></a>Descripción de las extensiones del centro de administración de Windows
 
@@ -22,7 +22,7 @@ En caso de que aún no esté familiarizado con el funcionamiento del centro de a
 - **Servicio Web** ligero que sirve páginas web de interfaz de usuario del centro de administración de Windows para solicitudes de explorador Web.
 - **Componente de puerta de enlace** que escucha las solicitudes de API de REST de las páginas web y retransmite llamadas WMI o scripts de PowerShell que se ejecutan en un servidor o clúster de destino.
 
-![Arquitectura del centro de administración de Windows](../media/understand-extensions/wac-architecture-500px.png)
+![Diagrama de la arquitectura del centro de administración de Windows.](../media/understand-extensions/wac-architecture-500px.png)
 
 Las páginas web de la interfaz de usuario del centro de administración de Windows atendidas por el servicio web tienen dos componentes principales de la interfaz de usuario desde una perspectiva de extensibilidad, soluciones y herramientas, que se implementan como extensiones, y, un tercer tipo de extensión denominado complementos de puerta de enlace.
 
@@ -30,7 +30,7 @@ Las páginas web de la interfaz de usuario del centro de administración de Wind
 
 En la pantalla principal del centro de administración de Windows, de forma predeterminada, puede agregar conexiones que son de uno de los cuatro tipos: conexiones de Windows Server, conexiones de PC de Windows, conexiones de clúster de conmutación por error y conexiones de clúster hiperconvergidas. Una vez agregada una conexión, el nombre y el tipo de la conexión se mostrarán en la pantalla principal. Al hacer clic en el nombre de la conexión se intentará conectar con el servidor o clúster de destino y, a continuación, cargar la interfaz de usuario para la conexión.
 
-![Arquitectura del centro de administración de Windows](../media/understand-extensions/solutions-ui.png)
+![Captura de pantalla de la característica agregar conexiones del centro de administración de Windows.](../media/understand-extensions/solutions-ui.png)
 
 Cada uno de estos tipos de conexión se asignan a una solución y las soluciones se definen mediante un tipo de extensión denominado extensiones de "solución". Las soluciones suelen definir un tipo único de objeto que desea administrar a través del centro de administración de Windows, como servidores, equipos o clústeres de conmutación por error. También puede definir una nueva solución para conectarse a otros dispositivos, como los conmutadores de red y los servidores Linux, o incluso servicios como Servicios de Escritorio remoto.
 

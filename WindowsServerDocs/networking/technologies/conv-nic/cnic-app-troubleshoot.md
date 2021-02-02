@@ -7,12 +7,12 @@ manager: brianlic
 ms.author: lizross
 author: eross-msft
 ms.date: 12/18/2020
-ms.openlocfilehash: 652c945a4702e851cdfec382ebe31cd2bd7ea148
-ms.sourcegitcommit: 40905b1f9d68f1b7d821e05cab2d35e9b425e38d
+ms.openlocfilehash: 524d73c759230b375d50cb6645e9c336684a18ea
+ms.sourcegitcommit: 84b97d34d606b6bf4b6ec8760a93107f1b311428
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97945641"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99245396"
 ---
 # <a name="troubleshooting-converged-nic-configurations"></a>Solución de problemas de configuraciones de NIC convergentes
 
@@ -45,9 +45,9 @@ Host vNIC y la NIC física muestran funcionalidades RDMA que no son cero.
 Siga estos pasos si recibe resultados inesperados al ejecutar el comando **Get-NetAdapterRdma** .
 
 1. Asegúrese de que los controladores de Mlnx Miniport y Mlnx bus son los más recientes. Para Mellanox, use al menos 42.
-2. Compruebe que el minipuerto Mlnx y los controladores de bus coinciden comprobando la versión del controlador a través de Device Manager. El controlador de bus se puede encontrar en dispositivos del sistema. El nombre debe comenzar con la VPI de conexión Mellanox-X 3 PRO, como se muestra en la siguiente captura de pantalla de las propiedades del adaptador de red.
+2. Compruebe que el minipuerto Mlnx y los controladores de bus coinciden comprobando la versión del controlador a través de Administrador de dispositivos. El controlador de bus se puede encontrar en dispositivos del sistema. El nombre debe comenzar con la VPI de conexión Mellanox-X 3 PRO, tal como se muestra en la siguiente captura de pantalla de las propiedades del adaptador de red.
 
-![Propiedades del adaptador de red](../../media/Converged-NIC/CNIC-Troubleshooting/cnic-tshoot-02.jpg)
+   ![Captura de pantalla que muestra la pestaña información del cuadro de diálogo Propiedades de EthernetAdapter de Mellanox ConnectX-3 Pro y la ficha controlador del cuadro de diálogo Propiedades del adaptador de red Mellanox ConnectX-3 Pro VPI.](../../media/Converged-NIC/CNIC-Troubleshooting/cnic-tshoot-02.jpg)
 
 4. Asegúrese de que la red directa (RDMA) está habilitada en la NIC física y en el host vNIC.
 5. Asegúrese de que se crea vSwitch en el adaptador físico correcto comprobando sus capacidades de RDMA.
@@ -65,12 +65,12 @@ Get-SmbClientNetworkInterface
 
 El host vNIC debe aparecer también como compatible con RDMA desde la perspectiva de SMB.
 
-![Propiedades del adaptador de red](../../media/Converged-NIC/CNIC-Troubleshooting/cnic-tshoot-03.jpg)
+![Captura de pantalla de la ventana de PowerShell que muestra el resultado del cmdlet Get-SmbClientNetworkInterface.](../../media/Converged-NIC/CNIC-Troubleshooting/cnic-tshoot-03.jpg)
 
 ### <a name="get-smbclientnetworkinterface-unexpected-results"></a>Get-SmbClientNetworkInterface resultados inesperados
 
 1. Asegúrese de que los controladores de Mlnx Miniport y Mlnx bus son los más recientes. Para Mellanox, use al menos 42.
-2. Compruebe que el minipuerto Mlnx y los controladores de bus coinciden comprobando la versión del controlador a través de Device Manager. El controlador de bus se puede encontrar en dispositivos del sistema. El nombre debe comenzar con la VPI de conexión Mellanox-X 3 PRO, como se muestra en la siguiente captura de pantalla de las propiedades del adaptador de red.
+2. Compruebe que el minipuerto Mlnx y los controladores de bus coinciden comprobando la versión del controlador a través de Administrador de dispositivos. El controlador de bus se puede encontrar en dispositivos del sistema. El nombre debe comenzar con la VPI de conexión Mellanox-X 3 PRO, tal como se muestra en la siguiente captura de pantalla de las propiedades del adaptador de red.
 3. Asegúrese de que la red directa (RDMA) está habilitada en la NIC física y en el host vNIC.
 4. Asegúrese de que el conmutador virtual de Hyper-V se crea a través del adaptador físico correcto; para ello, compruebe sus capacidades de RDMA.
 5. Compruebe los registros de EventViewer para "cliente SMB" en la **aplicación y los servicios | Microsoft | Windows**.

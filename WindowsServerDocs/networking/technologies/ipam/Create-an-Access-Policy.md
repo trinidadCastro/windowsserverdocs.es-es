@@ -7,12 +7,12 @@ ms.assetid: 854bd064-2f86-4678-a940-a04b3e48ae10
 ms.author: lizross
 author: eross-msft
 ms.date: 08/07/2020
-ms.openlocfilehash: 11494ec838851ffffb6e3eab31cfb462e30e2462
-ms.sourcegitcommit: f8da45df984f0400922a8306855b0adfdaec71af
+ms.openlocfilehash: 3fd8490321070dc73658bd6c6cad08f09bb9025c
+ms.sourcegitcommit: 84b97d34d606b6bf4b6ec8760a93107f1b311428
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98039735"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99245492"
 ---
 # <a name="create-an-access-policy"></a>Crear una directiva de acceso
 
@@ -31,11 +31,11 @@ El requisito mínimo para realizar este procedimiento es la pertenencia al grupo
 
 2.  En el panel de navegación, haga clic en **control de acceso**. En el panel de navegación inferior, haga clic con el botón secundario en **directivas de acceso** y, a continuación, haga clic en **Agregar Directiva de acceso**.
 
-    ![Agregar Directiva de acceso](../../media/Create-an-Access-Policy/ipam_CreateAP_01.jpg)
+    ![Captura de pantalla de Administrador del servidor que muestra las directivas de acceso optoin resaltadas y la opción Agregar Directiva de acceso disponible para la selección.](../../media/Create-an-Access-Policy/ipam_CreateAP_01.jpg)
 
 3.  Se abre el cuadro de diálogo **Agregar Directiva de acceso** . En **configuración de usuario**, haga clic en **Agregar**.
 
-    ![Agregar Directiva de acceso](../../media/Create-an-Access-Policy/ipam_CreateAP_02.jpg)
+    ![Captura de pantalla del cuadro de diálogo Agregar Directiva de acceso.](../../media/Create-an-Access-Policy/ipam_CreateAP_02.jpg)
 
 4.  Se abre el cuadro de diálogo **Seleccionar usuario o grupo** . Haga clic en **Ubicaciones**.
 
